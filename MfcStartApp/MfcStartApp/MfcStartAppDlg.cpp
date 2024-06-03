@@ -10,6 +10,7 @@
 #include "Api.h"
 #include <iostream>
 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -17,7 +18,7 @@
 
 // CMfcStartAppDlg dialog
 
-
+extern "C" __declspec(dllimport) int NativeAdd(int a, int b);
 
 CMfcStartAppDlg::CMfcStartAppDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_MFCSTARTAPP_DIALOG, pParent)
@@ -97,7 +98,7 @@ void CMfcStartAppDlg::OnBnClickedButton1()
 
 	int r = api->Run(10);
 
-
+	int res = NativeAdd(1, 2);
 
 	delete api;
 }

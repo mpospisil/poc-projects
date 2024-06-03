@@ -62,7 +62,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>NativeApi.lib</AdditionalDependencies>
+      <AdditionalDependencies>NativeApi.lib;MixedApi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)\libs</AdditionalLibraryDirectories>
     </Link>
     <Midl>
@@ -91,7 +91,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>NativeApi.lib</AdditionalDependencies>
+      <AdditionalDependencies>NativeApi.lib;MixedApi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)\libs</AdditionalLibraryDirectories>
     </Link>
     <Midl>

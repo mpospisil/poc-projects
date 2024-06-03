@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MfcStartApp", "MfcStartApp\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeApi", "NativeApi\NativeApi.vcxproj", "{0FF38962-23EB-4753-911E-2C11A576D0A4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MixedApi", "MixedApi\MixedApi.vcxproj", "{52A8D2BC-812F-4C0B-9AE2-74F41AC031BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{0FF38962-23EB-4753-911E-2C11A576D0A4}.Debug|x64.Build.0 = Debug|x64
 		{0FF38962-23EB-4753-911E-2C11A576D0A4}.Release|x64.ActiveCfg = Release|x64
 		{0FF38962-23EB-4753-911E-2C11A576D0A4}.Release|x64.Build.0 = Release|x64
+		{52A8D2BC-812F-4C0B-9AE2-74F41AC031BB}.Debug|x64.ActiveCfg = Debug|x64
+		{52A8D2BC-812F-4C0B-9AE2-74F41AC031BB}.Debug|x64.Build.0 = Debug|x64
+		{52A8D2BC-812F-4C0B-9AE2-74F41AC031BB}.Release|x64.ActiveCfg = Release|x64
+		{52A8D2BC-812F-4C0B-9AE2-74F41AC031BB}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

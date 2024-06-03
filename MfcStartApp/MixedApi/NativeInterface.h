@@ -5,6 +5,8 @@
 #define MIXED_DLL_API __declspec(dllimport)
 #endif
 
+#include "Api.h"
+
 extern "C" {
-  MIXED_DLL_API int NativeAdd(int a, int b);
+  MIXED_DLL_API int NativeAdd(Api* pApi);
 }

@@ -18,7 +18,7 @@
 
 // CMfcStartAppDlg dialog
 
-extern "C" __declspec(dllimport) int NativeAdd(int a, int b);
+extern "C" __declspec(dllimport) int NativeAdd(Api* pApi);
 
 CMfcStartAppDlg::CMfcStartAppDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_MFCSTARTAPP_DIALOG, pParent)
@@ -96,9 +96,9 @@ void CMfcStartAppDlg::OnBnClickedButton1()
 {
 	Api* api = new Api();
 
-	int r = api->Run(10);
+	//int r = api->Run(10);
 
-	int res = NativeAdd(1, 2);
+	int res = NativeAdd(api);
 
 	delete api;
 }

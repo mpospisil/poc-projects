@@ -6,10 +6,13 @@ services:
     build:
       context: .
       dockerfile: ApiClientApp\Dockerfile
+    depends_on:
+      - apiservice
 
   apiservice:
     image: ${DOCKER_REGISTRY-}apiservice
     build:
       context: .
       dockerfile: ApiService\Dockerfile
-
+    ports:
+      - "8080:8080"

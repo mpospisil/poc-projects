@@ -4,15 +4,22 @@ namespace ApiClientApp
 {
 	internal class Program
 	{
-		static async void Main(string[] args)
+		static async Task<int> Main(string[] args)
 		{
 			Console.WriteLine("Hello, World!");
 
 			HttpClient client = new HttpClient();
-			using (HttpResponseMessage response = await client.GetAsync("https://localhost:5001/WeatherForecast"))
+			using (HttpResponseMessage response = await client.GetAsync("http://apiservice:8080/WeatherForecast"))
 			{
-				response.Content.ReadAsStreamAsync().Result.CopyTo(Console.OpenStandardOutput());
+				using (Stream stream = await response.Content.ReadAsStreamAsync())
+				using (StreamReader reader = new StreamReader(stream))
+				{
+					string result = await reader.ReadToEndAsync();
+					Console.WriteLine(result);
+				}
 			}
+
+			return 0;
 		}
 	}
 }

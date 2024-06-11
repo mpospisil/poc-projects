@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  apiclientapp:
+    image: ${DOCKER_REGISTRY-}apiclientapp
+    build:
+      context: .
+      dockerfile: ApiClientApp\Dockerfile
+
+  apiservice:
+    image: ${DOCKER_REGISTRY-}apiservice
+    build:
+      context: .
+      dockerfile: ApiService\Dockerfile
+

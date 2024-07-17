@@ -1,0 +1,29 @@
+# IdeaRSOpenModelMaterialMatSteelIdeaRSOpenModel
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] 
+
+## Example
+
+```python
+from openapi_client.models.idea_rs_open_model_material_mat_steel_idea_rs_open_model import IdeaRSOpenModelMaterialMatSteelIdeaRSOpenModel
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of IdeaRSOpenModelMaterialMatSteelIdeaRSOpenModel from a JSON string
+idea_rs_open_model_material_mat_steel_idea_rs_open_model_instance = IdeaRSOpenModelMaterialMatSteelIdeaRSOpenModel.from_json(json)
+# print the JSON string representation of the object
+print(IdeaRSOpenModelMaterialMatSteelIdeaRSOpenModel.to_json())
+
+# convert the object into a dict
+idea_rs_open_model_material_mat_steel_idea_rs_open_model_dict = idea_rs_open_model_material_mat_steel_idea_rs_open_model_instance.to_dict()
+# create an instance of IdeaRSOpenModelMaterialMatSteelIdeaRSOpenModel from a dict
+idea_rs_open_model_material_mat_steel_idea_rs_open_model_from_dict = IdeaRSOpenModelMaterialMatSteelIdeaRSOpenModel.from_dict(idea_rs_open_model_material_mat_steel_idea_rs_open_model_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

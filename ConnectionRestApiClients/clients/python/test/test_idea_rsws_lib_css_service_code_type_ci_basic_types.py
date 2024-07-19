@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rsws_lib_css_service_code_type_ci_basic_types import IdeaRSWsLibCssServiceCodeTypeCIBasicTypes
+from connection_restapi_client_poc.models.idea_rsws_lib_css_service_code_type_ci_basic_types import IdeaRSWsLibCssServiceCodeTypeCIBasicTypes
 
 class TestIdeaRSWsLibCssServiceCodeTypeCIBasicTypes(unittest.TestCase):
     """IdeaRSWsLibCssServiceCodeTypeCIBasicTypes unit test stubs"""

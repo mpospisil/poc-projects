@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
 
 class TestIdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin(unittest.TestCase):
     """IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin unit test stubs"""
@@ -40,7 +40,7 @@ class TestIdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIde
                 name = '',
                 description = '',
                 analysis_type = 'Stress_Strain',
-                load_options = connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_settings_con_loading_options_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Settings_ConLoadingOptions-IdeaStatiCa_Plugin(
+                load_options = connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_settings_con_loading_options_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Settings_ConLoadingOptions-IdeaStatiCa_Plugin(
                     loads_in_equilibrium = True, 
                     loads_in_percentage = True, ),
                 bearing_member_id = 56,

@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.ci_geometry2_di_poly_line2_dci_basic_types import CIGeometry2DIPolyLine2DCIBasicTypes
+from connection_restapi_client_poc.models.ci_geometry2_di_poly_line2_dci_basic_types import CIGeometry2DIPolyLine2DCIBasicTypes
 
 class TestCIGeometry2DIPolyLine2DCIBasicTypes(unittest.TestCase):
     """CIGeometry2DIPolyLine2DCIBasicTypes unit test stubs"""
@@ -35,13 +35,13 @@ class TestCIGeometry2DIPolyLine2DCIBasicTypes(unittest.TestCase):
         model = CIGeometry2DIPolyLine2DCIBasicTypes()
         if include_optional:
             return CIGeometry2DIPolyLine2DCIBasicTypes(
-                start_point = connection-restapi-client-poc.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
+                start_point = connection_restapi_client_poc.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
                     x = 1.337, 
                     y = 1.337, ),
                 is_closed = True,
                 segments = [
-                    connection-restapi-client-poc.models.ci_geometry2_d_i_segment2_d_ci_basic_types.CI_Geometry2D_ISegment2D-CI_BasicTypes(
-                        end_point = connection-restapi-client-poc.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
+                    connection_restapi_client_poc.models.ci_geometry2_d_i_segment2_d_ci_basic_types.CI_Geometry2D_ISegment2D-CI_BasicTypes(
+                        end_point = connection_restapi_client_poc.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
                             x = 1.337, 
                             y = 1.337, ), )
                     ],

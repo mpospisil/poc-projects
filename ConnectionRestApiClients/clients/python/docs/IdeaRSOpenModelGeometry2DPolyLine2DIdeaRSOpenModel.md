@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model import IdeaRSOpenModelGeometry2DPolyLine2DIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model import IdeaRSOpenModelGeometry2DPolyLine2DIdeaRSOpenModel
 
 # TODO update the JSON string below
 json = "{}"

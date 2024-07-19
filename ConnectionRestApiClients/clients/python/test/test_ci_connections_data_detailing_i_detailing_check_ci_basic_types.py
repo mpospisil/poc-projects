@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types import CIConnectionsDataDetailingIDetailingCheckCIBasicTypes
+from connection_restapi_client_poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types import CIConnectionsDataDetailingIDetailingCheckCIBasicTypes
 
 class TestCIConnectionsDataDetailingIDetailingCheckCIBasicTypes(unittest.TestCase):
     """CIConnectionsDataDetailingIDetailingCheckCIBasicTypes unit test stubs"""

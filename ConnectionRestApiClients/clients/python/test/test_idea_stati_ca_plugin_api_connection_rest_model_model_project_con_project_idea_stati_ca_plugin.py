@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
 
 class TestIdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin(unittest.TestCase):
     """IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin unit test stubs"""
@@ -36,7 +36,7 @@ class TestIdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStati
         if include_optional:
             return IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin(
                 project_id = '',
-                project_info = connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_data_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProjectData-IdeaStatiCa_Plugin(
+                project_info = connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_data_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProjectData-IdeaStatiCa_Plugin(
                     name = '', 
                     description = '', 
                     project_number = '', 
@@ -44,13 +44,13 @@ class TestIdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStati
                     design_code = '', 
                     date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),
                 connections = [
-                    connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConConnection-IdeaStatiCa_Plugin(
+                    connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConConnection-IdeaStatiCa_Plugin(
                         id = 56, 
                         identifier = '', 
                         name = '', 
                         description = '', 
                         analysis_type = 'Stress_Strain', 
-                        load_options = connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_settings_con_loading_options_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Settings_ConLoadingOptions-IdeaStatiCa_Plugin(
+                        load_options = connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_settings_con_loading_options_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Settings_ConLoadingOptions-IdeaStatiCa_Plugin(
                             loads_in_equilibrium = True, 
                             loads_in_percentage = True, ), 
                         bearing_member_id = 56, 

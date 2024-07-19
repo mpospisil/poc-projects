@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.api.template_api import TemplateApi
+from connection_restapi_client_poc.api.template_api import TemplateApi
 
 
 class TestTemplateApi(unittest.TestCase):

@@ -3,7 +3,7 @@
 #
 # ref: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: connection-restapi-client-poc Python package
+name: connection_restapi_client_poc Python package
 
 on: [push, pull_request]
 

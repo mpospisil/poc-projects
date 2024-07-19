@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model import IdeaRSOpenModelGeometry3DVector3DIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model import IdeaRSOpenModelGeometry3DVector3DIdeaRSOpenModel
 
 class TestIdeaRSOpenModelGeometry3DVector3DIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelGeometry3DVector3DIdeaRSOpenModel unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_message_open_messages_idea_rs_open_model import IdeaRSOpenModelMessageOpenMessagesIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_message_open_messages_idea_rs_open_model import IdeaRSOpenModelMessageOpenMessagesIdeaRSOpenModel
 
 class TestIdeaRSOpenModelMessageOpenMessagesIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelMessageOpenMessagesIdeaRSOpenModel unit test stubs"""
@@ -36,7 +36,7 @@ class TestIdeaRSOpenModelMessageOpenMessagesIdeaRSOpenModel(unittest.TestCase):
         if include_optional:
             return IdeaRSOpenModelMessageOpenMessagesIdeaRSOpenModel(
                 messages = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_message_open_message_idea_rs_open_model.IdeaRS_OpenModel_Message_OpenMessage-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_message_open_message_idea_rs_open_model.IdeaRS_OpenModel_Message_OpenMessage-IdeaRS_OpenModel(
                         number = 'Unspecified', 
                         description = '', )
                     ]

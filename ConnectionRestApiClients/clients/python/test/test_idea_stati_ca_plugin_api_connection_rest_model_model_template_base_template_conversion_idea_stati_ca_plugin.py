@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_base_template_conversion_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateBaseTemplateConversionIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_base_template_conversion_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateBaseTemplateConversionIdeaStatiCaPlugin
 
 class TestIdeaStatiCaPluginApiConnectionRestModelModelTemplateBaseTemplateConversionIdeaStatiCaPlugin(unittest.TestCase):
     """IdeaStatiCaPluginApiConnectionRestModelModelTemplateBaseTemplateConversionIdeaStatiCaPlugin unit test stubs"""
@@ -40,7 +40,7 @@ class TestIdeaStatiCaPluginApiConnectionRestModelModelTemplateBaseTemplateConver
                 new_value = '',
                 description = '',
                 new_template_id = '',
-                new_element = connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_selected_element_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_SelectedElement-IdeaStatiCa_Plugin(
+                new_element = connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_selected_element_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_SelectedElement-IdeaStatiCa_Plugin(
                     name = '', 
                     table_id = '', 
                     element_id = '', 

@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_stati_ca_connection_basic_types_data_check_outcome_ci_basic_types import IdeaStatiCaConnectionBasicTypesDataCheckOutcomeCIBasicTypes
+from connection_restapi_client_poc.models.idea_stati_ca_connection_basic_types_data_check_outcome_ci_basic_types import IdeaStatiCaConnectionBasicTypesDataCheckOutcomeCIBasicTypes
 
 class TestIdeaStatiCaConnectionBasicTypesDataCheckOutcomeCIBasicTypes(unittest.TestCase):
     """IdeaStatiCaConnectionBasicTypesDataCheckOutcomeCIBasicTypes unit test stubs"""

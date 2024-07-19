@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_stati_ca_connection_basic_types_data_crt_comp_check_isci_basic_types import IdeaStatiCaConnectionBasicTypesDataCrtCompCheckISCIBasicTypes
+from connection_restapi_client_poc.models.idea_stati_ca_connection_basic_types_data_crt_comp_check_isci_basic_types import IdeaStatiCaConnectionBasicTypesDataCrtCompCheckISCIBasicTypes
 
 class TestIdeaStatiCaConnectionBasicTypesDataCrtCompCheckISCIBasicTypes(unittest.TestCase):
     """IdeaStatiCaConnectionBasicTypesDataCrtCompCheckISCIBasicTypes unit test stubs"""

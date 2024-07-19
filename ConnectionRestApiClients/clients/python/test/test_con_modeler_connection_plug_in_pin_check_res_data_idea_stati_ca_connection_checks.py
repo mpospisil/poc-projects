@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.con_modeler_connection_plug_in_pin_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInPinCheckResDataIdeaStatiCaConnectionChecks
+from connection_restapi_client_poc.models.con_modeler_connection_plug_in_pin_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInPinCheckResDataIdeaStatiCaConnectionChecks
 
 class TestConModelerConnectionPlugInPinCheckResDataIdeaStatiCaConnectionChecks(unittest.TestCase):
     """ConModelerConnectionPlugInPinCheckResDataIdeaStatiCaConnectionChecks unit test stubs"""
@@ -97,9 +97,9 @@ class TestConModelerConnectionPlugInPinCheckResDataIdeaStatiCaConnectionChecks(u
                 is_fire_design = True,
                 fire_temperature = 1.337,
                 factor_kb_theta = 1.337,
-                detailing_checks_pin = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_pin_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksPin-CI_BasicTypes(
+                detailing_checks_pin = connection_restapi_client_poc.models.ci_connections_data_detailing_detailing_checks_pin_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksPin-CI_BasicTypes(
                     results = [
-                        connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                        connection_restapi_client_poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                             constraint_value = 1.337, 
                             detailing_check_category = 'None', 
                             detailing_check_type = 'None', 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types import IdeaRSConnectionsDataThinPlateValidityCriterionCIBasicTypes
+from connection_restapi_client_poc.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types import IdeaRSConnectionsDataThinPlateValidityCriterionCIBasicTypes
 
 # TODO update the JSON string below
 json = "{}"

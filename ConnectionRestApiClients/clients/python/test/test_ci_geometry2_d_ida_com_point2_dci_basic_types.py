@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.ci_geometry2_d_ida_com_point2_dci_basic_types import CIGeometry2DIdaComPoint2DCIBasicTypes
+from connection_restapi_client_poc.models.ci_geometry2_d_ida_com_point2_dci_basic_types import CIGeometry2DIdaComPoint2DCIBasicTypes
 
 class TestCIGeometry2DIdaComPoint2DCIBasicTypes(unittest.TestCase):
     """CIGeometry2DIdaComPoint2DCIBasicTypes unit test stubs"""

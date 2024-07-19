@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_connection_anchor_grid_idea_rs_open_model import IdeaRSOpenModelConnectionAnchorGridIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_connection_anchor_grid_idea_rs_open_model import IdeaRSOpenModelConnectionAnchorGridIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionAnchorGridIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionAnchorGridIdeaRSOpenModel unit test stubs"""
@@ -35,7 +35,7 @@ class TestIdeaRSOpenModelConnectionAnchorGridIdeaRSOpenModel(unittest.TestCase):
         model = IdeaRSOpenModelConnectionAnchorGridIdeaRSOpenModel()
         if include_optional:
             return IdeaRSOpenModelConnectionAnchorGridIdeaRSOpenModel(
-                concrete_block = connection-restapi-client-poc.models.idea_rs_open_model_connection_concrete_block_idea_rs_open_model.IdeaRS_OpenModel_Connection_ConcreteBlock-IdeaRS_OpenModel(
+                concrete_block = connection_restapi_client_poc.models.idea_rs_open_model_connection_concrete_block_idea_rs_open_model.IdeaRS_OpenModel_Connection_ConcreteBlock-IdeaRS_OpenModel(
                     lenght = 1.337, 
                     width = 1.337, 
                     height = 1.337, 
@@ -57,25 +57,25 @@ class TestIdeaRSOpenModelConnectionAnchorGridIdeaRSOpenModel(unittest.TestCase):
                 bolt_assembly_name = '',
                 standard = '',
                 material = '',
-                origin = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
+                origin = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
                     x = 1.337, 
                     y = 1.337, 
                     z = 1.337, 
                     id = 56, ),
-                axis_x = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
+                axis_x = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
                     x = 1.337, 
                     y = 1.337, 
                     z = 1.337, ),
-                axis_y = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
+                axis_y = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
                     x = 1.337, 
                     y = 1.337, 
                     z = 1.337, ),
-                axis_z = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
+                axis_z = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
                     x = 1.337, 
                     y = 1.337, 
                     z = 1.337, ),
                 positions = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
                         x = 1.337, 
                         y = 1.337, 
                         z = 1.337, 

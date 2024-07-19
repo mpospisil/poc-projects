@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types import IdeaRSConnectionsDataThinPlateValidityCIBasicTypes
+from connection_restapi_client_poc.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types import IdeaRSConnectionsDataThinPlateValidityCIBasicTypes
 
 class TestIdeaRSConnectionsDataThinPlateValidityCIBasicTypes(unittest.TestCase):
     """IdeaRSConnectionsDataThinPlateValidityCIBasicTypes unit test stubs"""
@@ -37,7 +37,7 @@ class TestIdeaRSConnectionsDataThinPlateValidityCIBasicTypes(unittest.TestCase):
             return IdeaRSConnectionsDataThinPlateValidityCIBasicTypes(
                 related_plate_name = '',
                 validity_criteria = [
-                    connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
+                    connection_restapi_client_poc.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
                         value_name = '', 
                         value = 1.337, 
                         limit = 1.337, )

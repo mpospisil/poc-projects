@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_pin_ci_basic_types import CIConnectionsDataDetailingDetailingChecksPinCIBasicTypes
+from connection_restapi_client_poc.models.ci_connections_data_detailing_detailing_checks_pin_ci_basic_types import CIConnectionsDataDetailingDetailingChecksPinCIBasicTypes
 
 # TODO update the JSON string below
 json = "{}"

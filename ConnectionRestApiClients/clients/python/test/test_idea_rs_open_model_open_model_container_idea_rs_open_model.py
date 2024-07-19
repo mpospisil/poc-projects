@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_open_model_container_idea_rs_open_model import IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_open_model_container_idea_rs_open_model import IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
 
 class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel unit test stubs"""
@@ -35,205 +35,205 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
         model = IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel()
         if include_optional:
             return IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(
-                open_model = connection-restapi-client-poc.models.idea_rs_open_model_open_model_idea_rs_open_model.IdeaRS_OpenModel_OpenModel-IdeaRS_OpenModel(
+                open_model = connection_restapi_client_poc.models.idea_rs_open_model_open_model_idea_rs_open_model.IdeaRS_OpenModel_OpenModel-IdeaRS_OpenModel(
                     version = 56, 
-                    origin_settings = connection-restapi-client-poc.models.origin_settings.originSettings(), 
+                    origin_settings = connection_restapi_client_poc.models.origin_settings.originSettings(), 
                     point3_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
                             x = 1.337, 
                             y = 1.337, 
                             z = 1.337, 
                             id = 56, )
                         ], 
                     line_segment3_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_line_segment3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_LineSegment3D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_line_segment3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_LineSegment3D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     arc_segment3_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_arc_segment3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_ArcSegment3D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_arc_segment3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_ArcSegment3D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     poly_line3_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_poly_line3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_PolyLine3D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_poly_line3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_PolyLine3D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     region3_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_region3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Region3D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_region3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Region3D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     mat_concrete = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_material_mat_concrete_idea_rs_open_model.IdeaRS_OpenModel_Material_MatConcrete-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_material_mat_concrete_idea_rs_open_model.IdeaRS_OpenModel_Material_MatConcrete-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     mat_reinforcement = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_material_mat_reinforcement_idea_rs_open_model.IdeaRS_OpenModel_Material_MatReinforcement-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_material_mat_reinforcement_idea_rs_open_model.IdeaRS_OpenModel_Material_MatReinforcement-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     mat_steel = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_material_mat_steel_idea_rs_open_model.IdeaRS_OpenModel_Material_MatSteel-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_material_mat_steel_idea_rs_open_model.IdeaRS_OpenModel_Material_MatSteel-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     mat_prestress_steel = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_material_mat_prestress_steel_idea_rs_open_model.IdeaRS_OpenModel_Material_MatPrestressSteel-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_material_mat_prestress_steel_idea_rs_open_model.IdeaRS_OpenModel_Material_MatPrestressSteel-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     mat_welding = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_material_mat_welding_idea_rs_open_model.IdeaRS_OpenModel_Material_MatWelding-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_material_mat_welding_idea_rs_open_model.IdeaRS_OpenModel_Material_MatWelding-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     cross_section = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_cross_section_cross_section_idea_rs_open_model.IdeaRS_OpenModel_CrossSection_CrossSection-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_cross_section_cross_section_idea_rs_open_model.IdeaRS_OpenModel_CrossSection_CrossSection-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     reinforced_cross_section = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_cross_section_reinforced_cross_section_idea_rs_open_model.IdeaRS_OpenModel_CrossSection_ReinforcedCrossSection-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_cross_section_reinforced_cross_section_idea_rs_open_model.IdeaRS_OpenModel_CrossSection_ReinforcedCrossSection-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     hinge_element1_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_hinge_element1_d_idea_rs_open_model.IdeaRS_OpenModel_Model_HingeElement1D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_hinge_element1_d_idea_rs_open_model.IdeaRS_OpenModel_Model_HingeElement1D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     opening = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_opening_idea_rs_open_model.IdeaRS_OpenModel_Detail_Opening-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_opening_idea_rs_open_model.IdeaRS_OpenModel_Detail_Opening-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     dapped_end = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_dapped_end_idea_rs_open_model.IdeaRS_OpenModel_Detail_DappedEnd-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_dapped_end_idea_rs_open_model.IdeaRS_OpenModel_Detail_DappedEnd-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     patch_device = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_patch_device_idea_rs_open_model.IdeaRS_OpenModel_Detail_PatchDevice-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_patch_device_idea_rs_open_model.IdeaRS_OpenModel_Detail_PatchDevice-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     element1_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_element1_d_idea_rs_open_model.IdeaRS_OpenModel_Model_Element1D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_element1_d_idea_rs_open_model.IdeaRS_OpenModel_Model_Element1D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     beam = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_beam_idea_rs_open_model.IdeaRS_OpenModel_Detail_Beam-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_beam_idea_rs_open_model.IdeaRS_OpenModel_Detail_Beam-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     member1_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_member1_d_idea_rs_open_model.IdeaRS_OpenModel_Model_Member1D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_member1_d_idea_rs_open_model.IdeaRS_OpenModel_Model_Member1D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     element2_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_element2_d_idea_rs_open_model.IdeaRS_OpenModel_Model_Element2D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_element2_d_idea_rs_open_model.IdeaRS_OpenModel_Model_Element2D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     wall = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_wall_idea_rs_open_model.IdeaRS_OpenModel_Detail_Wall-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_wall_idea_rs_open_model.IdeaRS_OpenModel_Detail_Wall-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     member2_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_member2_d_idea_rs_open_model.IdeaRS_OpenModel_Model_Member2D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_member2_d_idea_rs_open_model.IdeaRS_OpenModel_Model_Member2D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     rigid_link = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_rigid_link_idea_rs_open_model.IdeaRS_OpenModel_Model_RigidLink-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_rigid_link_idea_rs_open_model.IdeaRS_OpenModel_Model_RigidLink-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     point_on_line3_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point_on_line3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_PointOnLine3D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_point_on_line3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_PointOnLine3D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     point_support_node = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_point_support_node_idea_rs_open_model.IdeaRS_OpenModel_Model_PointSupportNode-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_point_support_node_idea_rs_open_model.IdeaRS_OpenModel_Model_PointSupportNode-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     line_support_segment = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_line_support_segment_idea_rs_open_model.IdeaRS_OpenModel_Model_LineSupportSegment-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_line_support_segment_idea_rs_open_model.IdeaRS_OpenModel_Model_LineSupportSegment-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     loads_in_point = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_load_in_point_idea_rs_open_model.IdeaRS_OpenModel_Loading_LoadInPoint-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_load_in_point_idea_rs_open_model.IdeaRS_OpenModel_Loading_LoadInPoint-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     loads_on_line = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_load_on_line_idea_rs_open_model.IdeaRS_OpenModel_Loading_LoadOnLine-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_load_on_line_idea_rs_open_model.IdeaRS_OpenModel_Loading_LoadOnLine-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     strain_loads_on_line = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_strain_load_on_line_idea_rs_open_model.IdeaRS_OpenModel_Loading_StrainLoadOnLine-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_strain_load_on_line_idea_rs_open_model.IdeaRS_OpenModel_Loading_StrainLoadOnLine-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     point_loads_on_line = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_point_load_on_line_idea_rs_open_model.IdeaRS_OpenModel_Loading_PointLoadOnLine-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_point_load_on_line_idea_rs_open_model.IdeaRS_OpenModel_Loading_PointLoadOnLine-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     loads_on_surface = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_load_on_surface_idea_rs_open_model.IdeaRS_OpenModel_Loading_LoadOnSurface-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_load_on_surface_idea_rs_open_model.IdeaRS_OpenModel_Loading_LoadOnSurface-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     settlements = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_settlement_idea_rs_open_model.IdeaRS_OpenModel_Loading_Settlement-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_settlement_idea_rs_open_model.IdeaRS_OpenModel_Loading_Settlement-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     temperature_loads_on_line = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_temperature_load_on_line_idea_rs_open_model.IdeaRS_OpenModel_Loading_TemperatureLoadOnLine-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_temperature_load_on_line_idea_rs_open_model.IdeaRS_OpenModel_Loading_TemperatureLoadOnLine-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     load_group = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_load_group_idea_rs_open_model.IdeaRS_OpenModel_Loading_LoadGroup-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_load_group_idea_rs_open_model.IdeaRS_OpenModel_Loading_LoadGroup-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     load_case = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_load_case_idea_rs_open_model.IdeaRS_OpenModel_Loading_LoadCase-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_load_case_idea_rs_open_model.IdeaRS_OpenModel_Loading_LoadCase-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     combi_input = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_combi_input_idea_rs_open_model.IdeaRS_OpenModel_Loading_CombiInput-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_combi_input_idea_rs_open_model.IdeaRS_OpenModel_Loading_CombiInput-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     attribute = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_open_attribute_idea_rs_open_model.IdeaRS_OpenModel_OpenAttribute-IdeaRS_OpenModel()
+                        connection_restapi_client_poc.models.idea_rs_open_model_open_attribute_idea_rs_open_model.IdeaRS_OpenModel_OpenAttribute-IdeaRS_OpenModel()
                         ], 
                     connection_point = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_connection_connection_point_idea_rs_open_model.IdeaRS_OpenModel_Connection_ConnectionPoint-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_connection_connection_point_idea_rs_open_model.IdeaRS_OpenModel_Connection_ConnectionPoint-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     connections = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_connection_connection_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_ConnectionData-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_connection_connection_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_ConnectionData-IdeaRS_OpenModel(
                             conenction_point_id = 56, 
                             beams = [
-                                connection-restapi-client-poc.models.idea_rs_open_model_connection_beam_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_BeamData-IdeaRS_OpenModel(
+                                connection_restapi_client_poc.models.idea_rs_open_model_connection_beam_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_BeamData-IdeaRS_OpenModel(
                                     name = '', 
                                     plates = [
-                                        connection-restapi-client-poc.models.idea_rs_open_model_connection_plate_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_PlateData-IdeaRS_OpenModel(
+                                        connection_restapi_client_poc.models.idea_rs_open_model_connection_plate_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_PlateData-IdeaRS_OpenModel(
                                             name = '', 
                                             thickness = 1.337, 
                                             material = '', 
                                             outline_points = [
-                                                connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
+                                                connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
                                                     x = 1.337, 
                                                     y = 1.337, )
                                                 ], 
-                                            origin = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
+                                            origin = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
                                                 x = 1.337, 
                                                 y = 1.337, 
                                                 z = 1.337, 
                                                 id = 56, ), 
-                                            axis_x = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
+                                            axis_x = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
                                                 x = 1.337, 
                                                 y = 1.337, 
                                                 z = 1.337, ), 
-                                            axis_y = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
+                                            axis_y = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
                                                 x = 1.337, 
                                                 y = 1.337, 
                                                 z = 1.337, ), 
                                             axis_z = , 
                                             region = '', 
-                                            geometry = connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_region2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Region2D-IdeaRS_OpenModel(
-                                                outline = connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_PolyLine2D-IdeaRS_OpenModel(
-                                                    start_point = connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
+                                            geometry = connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_region2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Region2D-IdeaRS_OpenModel(
+                                                outline = connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_PolyLine2D-IdeaRS_OpenModel(
+                                                    start_point = connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
                                                         x = 1.337, 
                                                         y = 1.337, ), 
                                                     segments = [
-                                                        connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_segment2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Segment2D-IdeaRS_OpenModel(
+                                                        connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_segment2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Segment2D-IdeaRS_OpenModel(
                                                             end_point = , )
                                                         ], ), 
                                                 openings = [
-                                                    connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_PolyLine2D-IdeaRS_OpenModel()
+                                                    connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_PolyLine2D-IdeaRS_OpenModel()
                                                     ], ), 
                                             original_model_id = '', 
                                             is_negative_object = True, 
@@ -243,7 +243,7 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                                     mprl_name = '', 
                                     original_model_id = '', 
                                     cuts = [
-                                        connection-restapi-client-poc.models.idea_rs_open_model_connection_cut_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_CutData-IdeaRS_OpenModel(
+                                        connection_restapi_client_poc.models.idea_rs_open_model_connection_cut_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_CutData-IdeaRS_OpenModel(
                                             plane_point = , 
                                             normal_vector = , 
                                             direction = 'Default', 
@@ -252,10 +252,10 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                                     is_added = True, 
                                     added_member_length = 1.337, 
                                     is_negative_object = True, 
-                                    added_member = connection-restapi-client-poc.models.idea_rs_open_model_reference_element_idea_rs_open_model.IdeaRS_OpenModel_ReferenceElement-IdeaRS_OpenModel(
+                                    added_member = connection_restapi_client_poc.models.idea_rs_open_model_reference_element_idea_rs_open_model.IdeaRS_OpenModel_ReferenceElement-IdeaRS_OpenModel(
                                         type_name = '', 
                                         id = 56, 
-                                        element = connection-restapi-client-poc.models.idea_rs_open_model_open_element_id_idea_rs_open_model.IdeaRS_OpenModel_OpenElementId-IdeaRS_OpenModel(
+                                        element = connection_restapi_client_poc.models.idea_rs_open_model_open_element_id_idea_rs_open_model.IdeaRS_OpenModel_OpenElementId-IdeaRS_OpenModel(
                                             id = 56, ), ), 
                                     mirror_y = True, 
                                     ref_line_in_center_of_gravity = True, 
@@ -264,7 +264,7 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                                     id = 56, )
                                 ], 
                             plates = [
-                                connection-restapi-client-poc.models.idea_rs_open_model_connection_plate_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_PlateData-IdeaRS_OpenModel(
+                                connection_restapi_client_poc.models.idea_rs_open_model_connection_plate_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_PlateData-IdeaRS_OpenModel(
                                     name = '', 
                                     thickness = 1.337, 
                                     material = '', 
@@ -274,9 +274,9 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                                     id = 56, )
                                 ], 
                             folded_plates = [
-                                connection-restapi-client-poc.models.idea_rs_open_model_connection_folded_plate_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_FoldedPlateData-IdeaRS_OpenModel(
+                                connection_restapi_client_poc.models.idea_rs_open_model_connection_folded_plate_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_FoldedPlateData-IdeaRS_OpenModel(
                                     bends = [
-                                        connection-restapi-client-poc.models.idea_rs_open_model_connection_bend_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_BendData-IdeaRS_OpenModel(
+                                        connection_restapi_client_poc.models.idea_rs_open_model_connection_bend_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_BendData-IdeaRS_OpenModel(
                                             plate1_id = 56, 
                                             plate2_id = 56, 
                                             radius = 1.337, 
@@ -288,7 +288,7 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                                         ], )
                                 ], 
                             bolt_grids = [
-                                connection-restapi-client-poc.models.idea_rs_open_model_connection_bolt_grid_idea_rs_open_model.IdeaRS_OpenModel_Connection_BoltGrid-IdeaRS_OpenModel(
+                                connection_restapi_client_poc.models.idea_rs_open_model_connection_bolt_grid_idea_rs_open_model.IdeaRS_OpenModel_Connection_BoltGrid-IdeaRS_OpenModel(
                                     bolt_assembly_ref = '', 
                                     id = 56, 
                                     is_anchor = True, 
@@ -317,8 +317,8 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                                     bolt_interaction = 'Bearing', )
                                 ], 
                             anchor_grids = [
-                                connection-restapi-client-poc.models.idea_rs_open_model_connection_anchor_grid_idea_rs_open_model.IdeaRS_OpenModel_Connection_AnchorGrid-IdeaRS_OpenModel(
-                                    concrete_block = connection-restapi-client-poc.models.idea_rs_open_model_connection_concrete_block_idea_rs_open_model.IdeaRS_OpenModel_Connection_ConcreteBlock-IdeaRS_OpenModel(
+                                connection_restapi_client_poc.models.idea_rs_open_model_connection_anchor_grid_idea_rs_open_model.IdeaRS_OpenModel_Connection_AnchorGrid-IdeaRS_OpenModel(
+                                    concrete_block = connection_restapi_client_poc.models.idea_rs_open_model_connection_concrete_block_idea_rs_open_model.IdeaRS_OpenModel_Connection_ConcreteBlock-IdeaRS_OpenModel(
                                         lenght = 1.337, 
                                         width = 1.337, 
                                         height = 1.337, 
@@ -343,12 +343,12 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                                     shear_in_thread = True, )
                                 ], 
                             welds = [
-                                connection-restapi-client-poc.models.idea_rs_open_model_connection_weld_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_WeldData-IdeaRS_OpenModel(
+                                connection_restapi_client_poc.models.idea_rs_open_model_connection_weld_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_WeldData-IdeaRS_OpenModel(
                                     id = 56, 
                                     name = '', 
                                     thickness = 1.337, 
                                     material = '', 
-                                    weld_material = connection-restapi-client-poc.models.idea_rs_open_model_reference_element_idea_rs_open_model.IdeaRS_OpenModel_ReferenceElement-IdeaRS_OpenModel(
+                                    weld_material = connection_restapi_client_poc.models.idea_rs_open_model_reference_element_idea_rs_open_model.IdeaRS_OpenModel_ReferenceElement-IdeaRS_OpenModel(
                                         type_name = '', 
                                         id = 56, ), 
                                     weld_type = 'NotSpecified', 
@@ -356,7 +356,7 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                                     end = , )
                                 ], 
                             concrete_blocks = [
-                                connection-restapi-client-poc.models.idea_rs_open_model_connection_concrete_block_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_ConcreteBlockData-IdeaRS_OpenModel(
+                                connection_restapi_client_poc.models.idea_rs_open_model_connection_concrete_block_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_ConcreteBlockData-IdeaRS_OpenModel(
                                     id = 56, 
                                     name = '', 
                                     depth = 1.337, 
@@ -366,7 +366,7 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                                     original_model_id = '', )
                                 ], 
                             cut_beam_by_beams = [
-                                connection-restapi-client-poc.models.idea_rs_open_model_connection_cut_beam_by_beam_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_CutBeamByBeamData-IdeaRS_OpenModel(
+                                connection_restapi_client_poc.models.idea_rs_open_model_connection_cut_beam_by_beam_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_CutBeamByBeamData-IdeaRS_OpenModel(
                                     modified_object = , 
                                     cutting_object = , 
                                     is_weld = True, 
@@ -379,36 +379,36 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                                 ], )
                         ], 
                     reinforcement = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_reinforcement_idea_rs_open_model.IdeaRS_OpenModel_Detail_Reinforcement-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_reinforcement_idea_rs_open_model.IdeaRS_OpenModel_Detail_Reinforcement-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     isd_model = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_isd_model_idea_rs_open_model.IdeaRS_OpenModel_Detail_ISDModel-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_isd_model_idea_rs_open_model.IdeaRS_OpenModel_Detail_ISDModel-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     initial_imperfection_of_point = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_initial_imperfection_of_point_idea_rs_open_model.IdeaRS_OpenModel_Model_InitialImperfectionOfPoint-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_initial_imperfection_of_point_idea_rs_open_model.IdeaRS_OpenModel_Model_InitialImperfectionOfPoint-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     tendon = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_tendon_idea_rs_open_model.IdeaRS_OpenModel_Model_Tendon-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_tendon_idea_rs_open_model.IdeaRS_OpenModel_Model_Tendon-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     result_class = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_loading_result_class_idea_rs_open_model.IdeaRS_OpenModel_Loading_ResultClass-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_loading_result_class_idea_rs_open_model.IdeaRS_OpenModel_Loading_ResultClass-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     design_member = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_design_member_idea_rs_open_model.IdeaRS_OpenModel_Model_DesignMember-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_design_member_idea_rs_open_model.IdeaRS_OpenModel_Model_DesignMember-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     sub_structure = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_sub_structure_idea_rs_open_model.IdeaRS_OpenModel_Model_SubStructure-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_sub_structure_idea_rs_open_model.IdeaRS_OpenModel_Model_SubStructure-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
-                    connection_setup = connection-restapi-client-poc.models.idea_rs_open_model_connection_setup_idea_rs_open_model.IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel(
-                        steel_setup = connection-restapi-client-poc.models.steel_setup.steelSetup(), 
-                        concrete_setup = connection-restapi-client-poc.models.idea_rs_open_model_concrete_concrete_setup_idea_rs_open_model.IdeaRS_OpenModel_Concrete_ConcreteSetup-IdeaRS_OpenModel(
+                    connection_setup = connection_restapi_client_poc.models.idea_rs_open_model_connection_setup_idea_rs_open_model.IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel(
+                        steel_setup = connection_restapi_client_poc.models.steel_setup.steelSetup(), 
+                        concrete_setup = connection_restapi_client_poc.models.idea_rs_open_model_concrete_concrete_setup_idea_rs_open_model.IdeaRS_OpenModel_Concrete_ConcreteSetup-IdeaRS_OpenModel(
                             id = 56, ), 
                         stop_at_limit_strain = True, 
                         weld_evaluation_data = 'MaxForceElement', 
@@ -465,81 +465,81 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                         fatigue_section_offset = 1.337, 
                         condensed_element_length_factor = 1.337, 
                         gamma_mu = 1.337, ), 
-                    project_data = connection-restapi-client-poc.models.project_data.projectData(), 
+                    project_data = connection_restapi_client_poc.models.project_data.projectData(), 
                     check_member = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_check_member_idea_rs_open_model.IdeaRS_OpenModel_Model_CheckMember-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_check_member_idea_rs_open_model.IdeaRS_OpenModel_Model_CheckMember-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     concrete_check_section = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_concrete_check_section_idea_rs_open_model.IdeaRS_OpenModel_Concrete_CheckSection-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_concrete_check_section_idea_rs_open_model.IdeaRS_OpenModel_Concrete_CheckSection-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
-                    concrete_setup = connection-restapi-client-poc.models.idea_rs_open_model_concrete_concrete_setup_idea_rs_open_model.IdeaRS_OpenModel_Concrete_ConcreteSetup-IdeaRS_OpenModel(
+                    concrete_setup = connection_restapi_client_poc.models.idea_rs_open_model_concrete_concrete_setup_idea_rs_open_model.IdeaRS_OpenModel_Concrete_ConcreteSetup-IdeaRS_OpenModel(
                         id = 56, ), 
-                    project_data_concrete = connection-restapi-client-poc.models.project_data_concrete.projectDataConcrete(), 
+                    project_data_concrete = connection_restapi_client_poc.models.project_data_concrete.projectDataConcrete(), 
                     rebar_shape = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_rebar_shape_idea_rs_open_model.IdeaRS_OpenModel_Model_RebarShape-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_rebar_shape_idea_rs_open_model.IdeaRS_OpenModel_Model_RebarShape-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     rebar_general = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_rebar_general_idea_rs_open_model.IdeaRS_OpenModel_Model_RebarGeneral-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_rebar_general_idea_rs_open_model.IdeaRS_OpenModel_Model_RebarGeneral-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     rebar_single = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_rebar_single_idea_rs_open_model.IdeaRS_OpenModel_Model_RebarSingle-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_rebar_single_idea_rs_open_model.IdeaRS_OpenModel_Model_RebarSingle-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     rebar_stirrups = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_rebar_stirrups_idea_rs_open_model.IdeaRS_OpenModel_Model_RebarStirrups-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_rebar_stirrups_idea_rs_open_model.IdeaRS_OpenModel_Model_RebarStirrups-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     taper = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_taper_idea_rs_open_model.IdeaRS_OpenModel_Model_Taper-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_taper_idea_rs_open_model.IdeaRS_OpenModel_Model_Taper-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     span = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_model_span_idea_rs_open_model.IdeaRS_OpenModel_Model_Span-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_model_span_idea_rs_open_model.IdeaRS_OpenModel_Model_Span-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     solid_blocks3_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_solid_block3_d_idea_rs_open_model.IdeaRS_OpenModel_Detail_SolidBlock3D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_solid_block3_d_idea_rs_open_model.IdeaRS_OpenModel_Detail_SolidBlock3D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     surface_supports3_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_surface_support3_d_idea_rs_open_model.IdeaRS_OpenModel_Detail_SurfaceSupport3D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_surface_support3_d_idea_rs_open_model.IdeaRS_OpenModel_Detail_SurfaceSupport3D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     base_plates3_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_base_plate3_d_idea_rs_open_model.IdeaRS_OpenModel_Detail_BasePlate3D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_base_plate3_d_idea_rs_open_model.IdeaRS_OpenModel_Detail_BasePlate3D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     anchors3_d = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_anchor3_d_idea_rs_open_model.IdeaRS_OpenModel_Detail_Anchor3D-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_anchor3_d_idea_rs_open_model.IdeaRS_OpenModel_Detail_Anchor3D-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     detail_load_case = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_loading_detail_load_case_idea_rs_open_model.IdeaRS_OpenModel_Detail_Loading_DetailLoadCase-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_loading_detail_load_case_idea_rs_open_model.IdeaRS_OpenModel_Detail_Loading_DetailLoadCase-IdeaRS_OpenModel(
                             id = 56, )
                         ], 
                     detail_combination = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_detail_loading_detail_combination_idea_rs_open_model.IdeaRS_OpenModel_Detail_Loading_DetailCombination-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_detail_loading_detail_combination_idea_rs_open_model.IdeaRS_OpenModel_Detail_Loading_DetailCombination-IdeaRS_OpenModel(
                             id = 56, )
                         ], ),
-                open_model_result = connection-restapi-client-poc.models.idea_rs_open_model_result_open_model_result_idea_rs_open_model.IdeaRS_OpenModel_Result_OpenModelResult-IdeaRS_OpenModel(
+                open_model_result = connection_restapi_client_poc.models.idea_rs_open_model_result_open_model_result_idea_rs_open_model.IdeaRS_OpenModel_Result_OpenModelResult-IdeaRS_OpenModel(
                     result_on_members = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_result_result_on_members_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultOnMembers-IdeaRS_OpenModel(
-                            loading = connection-restapi-client-poc.models.idea_rs_open_model_result_loading_idea_rs_open_model.IdeaRS_OpenModel_Result_Loading-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_result_result_on_members_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultOnMembers-IdeaRS_OpenModel(
+                            loading = connection_restapi_client_poc.models.idea_rs_open_model_result_loading_idea_rs_open_model.IdeaRS_OpenModel_Result_Loading-IdeaRS_OpenModel(
                                 loading_type = 'LoadCase', 
                                 id = 56, ), 
                             members = [
-                                connection-restapi-client-poc.models.idea_rs_open_model_result_result_on_member_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultOnMember-IdeaRS_OpenModel(
-                                    member = connection-restapi-client-poc.models.idea_rs_open_model_result_member_idea_rs_open_model.IdeaRS_OpenModel_Result_Member-IdeaRS_OpenModel(
+                                connection_restapi_client_poc.models.idea_rs_open_model_result_result_on_member_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultOnMember-IdeaRS_OpenModel(
+                                    member = connection_restapi_client_poc.models.idea_rs_open_model_result_member_idea_rs_open_model.IdeaRS_OpenModel_Result_Member-IdeaRS_OpenModel(
                                         member_type = 'Member1D', 
                                         id = 56, ), 
                                     result_type = 'InternalForces', 
                                     local_system_type = 'Local', 
                                     results = [
-                                        connection-restapi-client-poc.models.idea_rs_open_model_result_result_base_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultBase-IdeaRS_OpenModel()
+                                        connection_restapi_client_poc.models.idea_rs_open_model_result_result_base_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultBase-IdeaRS_OpenModel()
                                         ], )
                                 ], )
                         ], )

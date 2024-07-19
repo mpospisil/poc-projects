@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection-restapi-client-poc.models.idea_rs_open_model_detail_isd_model_idea_rs_open_model import IdeaRSOpenModelDetailISDModelIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_detail_isd_model_idea_rs_open_model import IdeaRSOpenModelDetailISDModelIdeaRSOpenModel
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection-restapi-client-poc.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types import CIConnectionsDataAutoDesignShearForcesInShearPlanesCIBasicTypes
+from connection_restapi_client_poc.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types import CIConnectionsDataAutoDesignShearForcesInShearPlanesCIBasicTypes
 
 # TODO update the JSON string below
 json = "{}"

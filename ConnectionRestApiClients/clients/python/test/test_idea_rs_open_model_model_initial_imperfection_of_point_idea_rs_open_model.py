@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_model_initial_imperfection_of_point_idea_rs_open_model import IdeaRSOpenModelModelInitialImperfectionOfPointIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_model_initial_imperfection_of_point_idea_rs_open_model import IdeaRSOpenModelModelInitialImperfectionOfPointIdeaRSOpenModel
 
 class TestIdeaRSOpenModelModelInitialImperfectionOfPointIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelModelInitialImperfectionOfPointIdeaRSOpenModel unit test stubs"""

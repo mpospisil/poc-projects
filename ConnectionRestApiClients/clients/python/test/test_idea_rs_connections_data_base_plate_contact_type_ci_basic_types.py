@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_connections_data_base_plate_contact_type_ci_basic_types import IdeaRSConnectionsDataBasePlateContactTypeCIBasicTypes
+from connection_restapi_client_poc.models.idea_rs_connections_data_base_plate_contact_type_ci_basic_types import IdeaRSConnectionsDataBasePlateContactTypeCIBasicTypes
 
 class TestIdeaRSConnectionsDataBasePlateContactTypeCIBasicTypes(unittest.TestCase):
     """IdeaRSConnectionsDataBasePlateContactTypeCIBasicTypes unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_crt_comp_check_is_idea_rs_open_model import IdeaRSOpenModelCrtCompCheckISIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_crt_comp_check_is_idea_rs_open_model import IdeaRSOpenModelCrtCompCheckISIdeaRSOpenModel
 
 class TestIdeaRSOpenModelCrtCompCheckISIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelCrtCompCheckISIdeaRSOpenModel unit test stubs"""

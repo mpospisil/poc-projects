@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.con_modeler_connection_plug_in_bolt_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInBoltCheckResDataIdeaStatiCaConnectionChecks
+from connection_restapi_client_poc.models.con_modeler_connection_plug_in_bolt_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInBoltCheckResDataIdeaStatiCaConnectionChecks
 
 class TestConModelerConnectionPlugInBoltCheckResDataIdeaStatiCaConnectionChecks(unittest.TestCase):
     """ConModelerConnectionPlugInBoltCheckResDataIdeaStatiCaConnectionChecks unit test stubs"""
@@ -56,19 +56,19 @@ class TestConModelerConnectionPlugInBoltCheckResDataIdeaStatiCaConnectionChecks(
                 bolt_shear_forces = [
                     1.337
                     ],
-                shear_forces_in_shear_planes = connection-restapi-client-poc.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types.CI_Connections_Data_AutoDesign_ShearForcesInShearPlanes-CI_BasicTypes(
+                shear_forces_in_shear_planes = connection_restapi_client_poc.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types.CI_Connections_Data_AutoDesign_ShearForcesInShearPlanes-CI_BasicTypes(
                     shear_forces = [
-                        connection-restapi-client-poc.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
+                        connection_restapi_client_poc.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
                             qy = 1.337, 
                             qz = 1.337, )
                         ], 
-                    bolt_coordinate_system = connection-restapi-client-poc.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
+                    bolt_coordinate_system = connection_restapi_client_poc.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
                         origin = '', 
-                        axis_x = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                        axis_x = connection_restapi_client_poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                             direction_x = 1.337, 
                             direction_y = 1.337, 
                             direction_z = 1.337, 
-                            normalize = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                            normalize = connection_restapi_client_poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                                 direction_x = 1.337, 
                                 direction_y = 1.337, 
                                 direction_z = 1.337, 
@@ -250,11 +250,11 @@ class TestConModelerConnectionPlugInBoltCheckResDataIdeaStatiCaConnectionChecks(
                 tear_out_distance = 1.337,
                 phi_bearing = 1.337,
                 shear_plane_thread = True,
-                detailing_checks_bolt = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
+                detailing_checks_bolt = connection_restapi_client_poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
                     is_anchor = True, 
                     connector_id = 56, 
                     results = [
-                        connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                        connection_restapi_client_poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                             constraint_value = 1.337, 
                             detailing_check_category = 'None', 
                             detailing_check_type = 'None', 
@@ -265,10 +265,10 @@ class TestConModelerConnectionPlugInBoltCheckResDataIdeaStatiCaConnectionChecks(
                             target_element_name = '', )
                         ], ),
                 thin_plates_validity_en = [
-                    connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidity-CI_BasicTypes(
+                    connection_restapi_client_poc.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidity-CI_BasicTypes(
                         related_plate_name = '', 
                         validity_criteria = [
-                            connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
+                            connection_restapi_client_poc.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
                                 value_name = '', 
                                 value = 1.337, 
                                 limit = 1.337, )
@@ -280,11 +280,11 @@ class TestConModelerConnectionPlugInBoltCheckResDataIdeaStatiCaConnectionChecks(
                 rbp_snip = 1.337,
                 gamma_b_shear_snip = 1.337,
                 gamma_b_bearing_snip = 1.337,
-                bearing_detailing_errors_snip = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
+                bearing_detailing_errors_snip = connection_restapi_client_poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
                     is_anchor = True, 
                     connector_id = 56, 
                     results = [
-                        connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                        connection_restapi_client_poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                             constraint_value = 1.337, 
                             detailing_check_category = 'None', 
                             detailing_check_type = 'None', 

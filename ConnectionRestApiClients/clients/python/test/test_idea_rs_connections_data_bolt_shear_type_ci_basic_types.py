@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_connections_data_bolt_shear_type_ci_basic_types import IdeaRSConnectionsDataBoltShearTypeCIBasicTypes
+from connection_restapi_client_poc.models.idea_rs_connections_data_bolt_shear_type_ci_basic_types import IdeaRSConnectionsDataBoltShearTypeCIBasicTypes
 
 class TestIdeaRSConnectionsDataBoltShearTypeCIBasicTypes(unittest.TestCase):
     """IdeaRSConnectionsDataBoltShearTypeCIBasicTypes unit test stubs"""

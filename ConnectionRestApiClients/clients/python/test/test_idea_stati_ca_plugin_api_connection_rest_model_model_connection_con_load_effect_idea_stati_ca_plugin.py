@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
 
 class TestIdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin(unittest.TestCase):
     """IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin unit test stubs"""
@@ -37,10 +37,10 @@ class TestIdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIde
             return IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin(
                 is_percentage = True,
                 member_loadings = [
-                    connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_member_load_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConLoadEffectMemberLoad-IdeaStatiCa_Plugin(
+                    connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_member_load_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConLoadEffectMemberLoad-IdeaStatiCa_Plugin(
                         member_id = 56, 
                         position = 'End', 
-                        section_load = connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_section_load_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConLoadEffectSectionLoad-IdeaStatiCa_Plugin(
+                        section_load = connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_section_load_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConLoadEffectSectionLoad-IdeaStatiCa_Plugin(
                             n = 1.337, 
                             vy = 1.337, 
                             vz = 1.337, 

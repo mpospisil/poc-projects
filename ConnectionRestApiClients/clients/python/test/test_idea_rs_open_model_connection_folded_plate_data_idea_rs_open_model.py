@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_connection_folded_plate_data_idea_rs_open_model import IdeaRSOpenModelConnectionFoldedPlateDataIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_connection_folded_plate_data_idea_rs_open_model import IdeaRSOpenModelConnectionFoldedPlateDataIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionFoldedPlateDataIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionFoldedPlateDataIdeaRSOpenModel unit test stubs"""
@@ -36,62 +36,62 @@ class TestIdeaRSOpenModelConnectionFoldedPlateDataIdeaRSOpenModel(unittest.TestC
         if include_optional:
             return IdeaRSOpenModelConnectionFoldedPlateDataIdeaRSOpenModel(
                 plates = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_connection_plate_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_PlateData-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_connection_plate_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_PlateData-IdeaRS_OpenModel(
                         name = '', 
                         thickness = 1.337, 
                         material = '', 
                         outline_points = [
-                            connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
+                            connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
                                 x = 1.337, 
                                 y = 1.337, )
                             ], 
-                        origin = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
+                        origin = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
                             x = 1.337, 
                             y = 1.337, 
                             z = 1.337, 
                             id = 56, ), 
-                        axis_x = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
+                        axis_x = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
                             x = 1.337, 
                             y = 1.337, 
                             z = 1.337, ), 
-                        axis_y = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
+                        axis_y = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
                             x = 1.337, 
                             y = 1.337, 
                             z = 1.337, ), 
                         axis_z = , 
                         region = '', 
-                        geometry = connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_region2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Region2D-IdeaRS_OpenModel(
-                            outline = connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_PolyLine2D-IdeaRS_OpenModel(
-                                start_point = connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
+                        geometry = connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_region2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Region2D-IdeaRS_OpenModel(
+                            outline = connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_PolyLine2D-IdeaRS_OpenModel(
+                                start_point = connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
                                     x = 1.337, 
                                     y = 1.337, ), 
                                 segments = [
-                                    connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_segment2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Segment2D-IdeaRS_OpenModel(
+                                    connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_segment2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Segment2D-IdeaRS_OpenModel(
                                         end_point = , )
                                     ], ), 
                             openings = [
-                                connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_PolyLine2D-IdeaRS_OpenModel()
+                                connection_restapi_client_poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_PolyLine2D-IdeaRS_OpenModel()
                                 ], ), 
                         original_model_id = '', 
                         is_negative_object = True, 
                         id = 56, )
                     ],
                 bends = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_connection_bend_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_BendData-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_connection_bend_data_idea_rs_open_model.IdeaRS_OpenModel_Connection_BendData-IdeaRS_OpenModel(
                         plate1_id = 56, 
                         plate2_id = 56, 
                         radius = 1.337, 
-                        point1_of_side_boundary1 = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
+                        point1_of_side_boundary1 = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
                             x = 1.337, 
                             y = 1.337, 
                             z = 1.337, 
                             id = 56, ), 
-                        point2_of_side_boundary1 = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
+                        point2_of_side_boundary1 = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
                             x = 1.337, 
                             y = 1.337, 
                             z = 1.337, 
                             id = 56, ), 
-                        end_face_normal1 = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
+                        end_face_normal1 = connection_restapi_client_poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
                             x = 1.337, 
                             y = 1.337, 
                             z = 1.337, ), 

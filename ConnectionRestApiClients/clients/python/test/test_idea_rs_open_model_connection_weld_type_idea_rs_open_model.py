@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_connection_weld_type_idea_rs_open_model import IdeaRSOpenModelConnectionWeldTypeIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_connection_weld_type_idea_rs_open_model import IdeaRSOpenModelConnectionWeldTypeIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionWeldTypeIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionWeldTypeIdeaRSOpenModel unit test stubs"""

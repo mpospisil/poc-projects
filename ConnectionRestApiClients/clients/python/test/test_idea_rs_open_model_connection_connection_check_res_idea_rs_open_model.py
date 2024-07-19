@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_connection_connection_check_res_idea_rs_open_model import IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_connection_connection_check_res_idea_rs_open_model import IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel unit test stubs"""
@@ -36,7 +36,7 @@ class TestIdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel(unittest.Te
         if include_optional:
             return IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel(
                 check_res_summary = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_connection_check_res_summary_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResSummary-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_connection_check_res_summary_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResSummary-IdeaRS_OpenModel(
                         check_value = 1.337, 
                         check_status = True, 
                         load_case_id = 56, 
@@ -45,7 +45,7 @@ class TestIdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel(unittest.Te
                         skipped = True, )
                     ],
                 check_res_plate = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_connection_check_res_plate_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResPlate-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_connection_check_res_plate_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResPlate-IdeaRS_OpenModel(
                         name = '', 
                         check_status = True, 
                         load_case_id = 56, 
@@ -56,7 +56,7 @@ class TestIdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel(unittest.Te
                             ], )
                     ],
                 check_res_weld = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_connection_check_res_weld_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResWeld-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_connection_check_res_weld_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResWeld-IdeaRS_OpenModel(
                         name = '', 
                         id = 56, 
                         unity_check = 1.337, 
@@ -67,26 +67,26 @@ class TestIdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel(unittest.Te
                             ], )
                     ],
                 check_res_bolt = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_connection_check_res_bolt_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResBolt-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_connection_check_res_bolt_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResBolt-IdeaRS_OpenModel(
                         name = '', 
                         unity_check = 1.337, 
                         check_status = True, )
                     ],
                 check_res_anchor = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_connection_check_res_anchor_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResAnchor-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_connection_check_res_anchor_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResAnchor-IdeaRS_OpenModel(
                         name = '', 
                         unity_check = 1.337, 
                         check_status = True, )
                     ],
                 check_res_concrete_block = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_connection_check_res_concrete_block_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResConcreteBlock-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_connection_check_res_concrete_block_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResConcreteBlock-IdeaRS_OpenModel(
                         name = '', 
                         unity_check = 1.337, 
                         check_status = True, 
                         load_case_id = 56, )
                     ],
                 buckling_results = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_connection_buckling_res_idea_rs_open_model.IdeaRS_OpenModel_Connection_BucklingRes-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_connection_buckling_res_idea_rs_open_model.IdeaRS_OpenModel_Connection_BucklingRes-IdeaRS_OpenModel(
                         load_case_id = 56, 
                         shape = 56, 
                         factor = 1.337, )
@@ -94,9 +94,9 @@ class TestIdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel(unittest.Te
                 name = '',
                 connection_id = '',
                 id = 56,
-                messages = connection-restapi-client-poc.models.idea_rs_open_model_message_open_messages_idea_rs_open_model.IdeaRS_OpenModel_Message_OpenMessages-IdeaRS_OpenModel(
+                messages = connection_restapi_client_poc.models.idea_rs_open_model_message_open_messages_idea_rs_open_model.IdeaRS_OpenModel_Message_OpenMessages-IdeaRS_OpenModel(
                     messages = [
-                        connection-restapi-client-poc.models.idea_rs_open_model_message_open_message_idea_rs_open_model.IdeaRS_OpenModel_Message_OpenMessage-IdeaRS_OpenModel(
+                        connection_restapi_client_poc.models.idea_rs_open_model_message_open_message_idea_rs_open_model.IdeaRS_OpenModel_Message_OpenMessage-IdeaRS_OpenModel(
                             number = 'Unspecified', 
                             description = '', )
                         ], )

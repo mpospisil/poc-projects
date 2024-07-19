@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_result_loading_type_idea_rs_open_model import IdeaRSOpenModelResultLoadingTypeIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_result_loading_type_idea_rs_open_model import IdeaRSOpenModelResultLoadingTypeIdeaRSOpenModel
 
 class TestIdeaRSOpenModelResultLoadingTypeIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelResultLoadingTypeIdeaRSOpenModel unit test stubs"""

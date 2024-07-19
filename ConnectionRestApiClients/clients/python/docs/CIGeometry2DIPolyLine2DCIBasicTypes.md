@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection-restapi-client-poc.models.ci_geometry2_di_poly_line2_dci_basic_types import CIGeometry2DIPolyLine2DCIBasicTypes
+from connection_restapi_client_poc.models.ci_geometry2_di_poly_line2_dci_basic_types import CIGeometry2DIPolyLine2DCIBasicTypes
 
 # TODO update the JSON string below
 json = "{}"

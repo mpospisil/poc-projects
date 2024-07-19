@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.cigi_cl2_d_point2_dci_geometry2_d import CIGiCL2DPoint2DCIGeometry2D
+from connection_restapi_client_poc.models.cigi_cl2_d_point2_dci_geometry2_d import CIGiCL2DPoint2DCIGeometry2D
 
 class TestCIGiCL2DPoint2DCIGeometry2D(unittest.TestCase):
     """CIGiCL2DPoint2DCIGeometry2D unit test stubs"""

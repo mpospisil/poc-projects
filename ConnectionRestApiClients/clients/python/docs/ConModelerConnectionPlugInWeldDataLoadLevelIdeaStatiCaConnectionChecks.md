@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection-restapi-client-poc.models.con_modeler_connection_plug_in_weld_data_load_level_idea_stati_ca_connection_checks import ConModelerConnectionPlugInWeldDataLoadLevelIdeaStatiCaConnectionChecks
+from connection_restapi_client_poc.models.con_modeler_connection_plug_in_weld_data_load_level_idea_stati_ca_connection_checks import ConModelerConnectionPlugInWeldDataLoadLevelIdeaStatiCaConnectionChecks
 
 # TODO update the JSON string below
 json = "{}"

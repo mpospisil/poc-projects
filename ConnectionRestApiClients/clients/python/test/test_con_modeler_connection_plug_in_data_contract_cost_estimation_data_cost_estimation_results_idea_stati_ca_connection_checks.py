@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_results_idea_stati_ca_connection_checks import ConModelerConnectionPlugInDataContractCostEstimationDataCostEstimationResultsIdeaStatiCaConnectionChecks
+from connection_restapi_client_poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_results_idea_stati_ca_connection_checks import ConModelerConnectionPlugInDataContractCostEstimationDataCostEstimationResultsIdeaStatiCaConnectionChecks
 
 class TestConModelerConnectionPlugInDataContractCostEstimationDataCostEstimationResultsIdeaStatiCaConnectionChecks(unittest.TestCase):
     """ConModelerConnectionPlugInDataContractCostEstimationDataCostEstimationResultsIdeaStatiCaConnectionChecks unit test stubs"""
@@ -36,7 +36,7 @@ class TestConModelerConnectionPlugInDataContractCostEstimationDataCostEstimation
         if include_optional:
             return ConModelerConnectionPlugInDataContractCostEstimationDataCostEstimationResultsIdeaStatiCaConnectionChecks(
                 steel_costs = [
-                    connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_steel_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemSteel-IdeaStatiCa_ConnectionChecks(
+                    connection_restapi_client_poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_steel_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemSteel-IdeaStatiCa_ConnectionChecks(
                         unique_id = 56, 
                         unit_cost = 1.337, 
                         cost = 1.337, 
@@ -46,7 +46,7 @@ class TestConModelerConnectionPlugInDataContractCostEstimationDataCostEstimation
                         plate_thickness = 1.337, )
                     ],
                 fillet_weld_costs = [
-                    connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_weld_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemWeld-IdeaStatiCa_ConnectionChecks(
+                    connection_restapi_client_poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_weld_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemWeld-IdeaStatiCa_ConnectionChecks(
                         unique_id = 56, 
                         unit_cost = 1.337, 
                         cost = 1.337, 
@@ -58,7 +58,7 @@ class TestConModelerConnectionPlugInDataContractCostEstimationDataCostEstimation
                         weld_type = 'NotSpecified', )
                     ],
                 butt_weld_costs = [
-                    connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_weld_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemWeld-IdeaStatiCa_ConnectionChecks(
+                    connection_restapi_client_poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_weld_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemWeld-IdeaStatiCa_ConnectionChecks(
                         unique_id = 56, 
                         unit_cost = 1.337, 
                         cost = 1.337, 
@@ -70,7 +70,7 @@ class TestConModelerConnectionPlugInDataContractCostEstimationDataCostEstimation
                         weld_type = 'NotSpecified', )
                     ],
                 bolt_costs = [
-                    connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_bolt_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemBolt-IdeaStatiCa_ConnectionChecks(
+                    connection_restapi_client_poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_bolt_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemBolt-IdeaStatiCa_ConnectionChecks(
                         unique_id = 56, 
                         unit_cost = 1.337, 
                         cost = 1.337, 

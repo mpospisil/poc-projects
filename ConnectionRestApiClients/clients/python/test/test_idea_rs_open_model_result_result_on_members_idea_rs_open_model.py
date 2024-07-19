@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_result_result_on_members_idea_rs_open_model import IdeaRSOpenModelResultResultOnMembersIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_result_result_on_members_idea_rs_open_model import IdeaRSOpenModelResultResultOnMembersIdeaRSOpenModel
 
 class TestIdeaRSOpenModelResultResultOnMembersIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelResultResultOnMembersIdeaRSOpenModel unit test stubs"""
@@ -35,18 +35,18 @@ class TestIdeaRSOpenModelResultResultOnMembersIdeaRSOpenModel(unittest.TestCase)
         model = IdeaRSOpenModelResultResultOnMembersIdeaRSOpenModel()
         if include_optional:
             return IdeaRSOpenModelResultResultOnMembersIdeaRSOpenModel(
-                loading = connection-restapi-client-poc.models.idea_rs_open_model_result_loading_idea_rs_open_model.IdeaRS_OpenModel_Result_Loading-IdeaRS_OpenModel(
+                loading = connection_restapi_client_poc.models.idea_rs_open_model_result_loading_idea_rs_open_model.IdeaRS_OpenModel_Result_Loading-IdeaRS_OpenModel(
                     loading_type = 'LoadCase', 
                     id = 56, ),
                 members = [
-                    connection-restapi-client-poc.models.idea_rs_open_model_result_result_on_member_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultOnMember-IdeaRS_OpenModel(
-                        member = connection-restapi-client-poc.models.idea_rs_open_model_result_member_idea_rs_open_model.IdeaRS_OpenModel_Result_Member-IdeaRS_OpenModel(
+                    connection_restapi_client_poc.models.idea_rs_open_model_result_result_on_member_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultOnMember-IdeaRS_OpenModel(
+                        member = connection_restapi_client_poc.models.idea_rs_open_model_result_member_idea_rs_open_model.IdeaRS_OpenModel_Result_Member-IdeaRS_OpenModel(
                             member_type = 'Member1D', 
                             id = 56, ), 
                         result_type = 'InternalForces', 
                         local_system_type = 'Local', 
                         results = [
-                            connection-restapi-client-poc.models.idea_rs_open_model_result_result_base_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultBase-IdeaRS_OpenModel()
+                            connection_restapi_client_poc.models.idea_rs_open_model_result_result_base_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultBase-IdeaRS_OpenModel()
                             ], )
                     ]
             )

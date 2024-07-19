@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types import CIConnectionsDataDetailingDetailingChecksBoltCIBasicTypes
+from connection_restapi_client_poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types import CIConnectionsDataDetailingDetailingChecksBoltCIBasicTypes
 
 class TestCIConnectionsDataDetailingDetailingChecksBoltCIBasicTypes(unittest.TestCase):
     """CIConnectionsDataDetailingDetailingChecksBoltCIBasicTypes unit test stubs"""
@@ -38,7 +38,7 @@ class TestCIConnectionsDataDetailingDetailingChecksBoltCIBasicTypes(unittest.Tes
                 is_anchor = True,
                 connector_id = 56,
                 results = [
-                    connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                    connection_restapi_client_poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                         constraint_value = 1.337, 
                         detailing_check_category = 'None', 
                         detailing_check_type = 'None', 

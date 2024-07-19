@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection-restapi-client-poc.models.con_modeler_connection_plug_in_load_effect_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInLoadEffectDataIdeaStatiCaConnectionChecks
+from connection_restapi_client_poc.models.con_modeler_connection_plug_in_load_effect_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInLoadEffectDataIdeaStatiCaConnectionChecks
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types import CIConnectionsDataAutoDesignShearForcesInShearPlanesCIBasicTypes
+from connection_restapi_client_poc.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types import CIConnectionsDataAutoDesignShearForcesInShearPlanesCIBasicTypes
 
 class TestCIConnectionsDataAutoDesignShearForcesInShearPlanesCIBasicTypes(unittest.TestCase):
     """CIConnectionsDataAutoDesignShearForcesInShearPlanesCIBasicTypes unit test stubs"""
@@ -36,17 +36,17 @@ class TestCIConnectionsDataAutoDesignShearForcesInShearPlanesCIBasicTypes(unitte
         if include_optional:
             return CIConnectionsDataAutoDesignShearForcesInShearPlanesCIBasicTypes(
                 shear_forces = [
-                    connection-restapi-client-poc.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
+                    connection_restapi_client_poc.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
                         qy = 1.337, 
                         qz = 1.337, )
                     ],
-                bolt_coordinate_system = connection-restapi-client-poc.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
+                bolt_coordinate_system = connection_restapi_client_poc.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
                     origin = '', 
-                    axis_x = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                    axis_x = connection_restapi_client_poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                         direction_x = 1.337, 
                         direction_y = 1.337, 
                         direction_z = 1.337, 
-                        normalize = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                        normalize = connection_restapi_client_poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                             direction_x = 1.337, 
                             direction_y = 1.337, 
                             direction_z = 1.337, 

@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.api.export_api import ExportApi
+from connection_restapi_client_poc.api.export_api import ExportApi
 
 
 class TestExportApi(unittest.TestCase):

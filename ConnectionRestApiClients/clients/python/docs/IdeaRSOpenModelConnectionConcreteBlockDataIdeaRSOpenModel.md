@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection-restapi-client-poc.models.idea_rs_open_model_connection_concrete_block_data_idea_rs_open_model import IdeaRSOpenModelConnectionConcreteBlockDataIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_connection_concrete_block_data_idea_rs_open_model import IdeaRSOpenModelConnectionConcreteBlockDataIdeaRSOpenModel
 
 # TODO update the JSON string below
 json = "{}"

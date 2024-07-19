@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.con_modeler_connection_plug_in_plate_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInPlateCheckResDataIdeaStatiCaConnectionChecks
+from connection_restapi_client_poc.models.con_modeler_connection_plug_in_plate_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInPlateCheckResDataIdeaStatiCaConnectionChecks
 
 class TestConModelerConnectionPlugInPlateCheckResDataIdeaStatiCaConnectionChecks(unittest.TestCase):
     """ConModelerConnectionPlugInPlateCheckResDataIdeaStatiCaConnectionChecks unit test stubs"""
@@ -58,7 +58,7 @@ class TestConModelerConnectionPlugInPlateCheckResDataIdeaStatiCaConnectionChecks
                 contact_stress = 1.337,
                 limit_plastic_strain = 1.337,
                 fire_temperature = 1.337,
-                fire_temperature_calculation_data = connection-restapi-client-poc.models.idea_rs_connection_calculator_fire_design_fire_temperature_calculation_data_idea_rs_connection_calculator.IdeaRS_ConnectionCalculator_FireDesign_FireTemperatureCalculationData-IdeaRS_ConnectionCalculator(
+                fire_temperature_calculation_data = connection_restapi_client_poc.models.idea_rs_connection_calculator_fire_design_fire_temperature_calculation_data_idea_rs_connection_calculator.IdeaRS_ConnectionCalculator_FireDesign_FireTemperatureCalculationData-IdeaRS_ConnectionCalculator(
                     total_exposure_time = 56, 
                     time_interval = 56, 
                     init_temperature = 1.337, 

@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.api.member_api import MemberApi
+from connection_restapi_client_poc.api.member_api import MemberApi
 
 
 class TestMemberApi(unittest.TestCase):

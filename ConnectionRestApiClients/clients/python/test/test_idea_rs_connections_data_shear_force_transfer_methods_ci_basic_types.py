@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_connections_data_shear_force_transfer_methods_ci_basic_types import IdeaRSConnectionsDataShearForceTransferMethodsCIBasicTypes
+from connection_restapi_client_poc.models.idea_rs_connections_data_shear_force_transfer_methods_ci_basic_types import IdeaRSConnectionsDataShearForceTransferMethodsCIBasicTypes
 
 class TestIdeaRSConnectionsDataShearForceTransferMethodsCIBasicTypes(unittest.TestCase):
     """IdeaRSConnectionsDataShearForceTransferMethodsCIBasicTypes unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.microsoft_asp_net_core_mvc_ok_object_result_microsoft_asp_net_core_mvc_core import MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore
+from connection_restapi_client_poc.models.microsoft_asp_net_core_mvc_ok_object_result_microsoft_asp_net_core_mvc_core import MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore
 
 class TestMicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore(unittest.TestCase):
     """MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore unit test stubs"""
@@ -37,7 +37,7 @@ class TestMicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore(unittes
             return MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore(
                 value = None,
                 formatters = [
-                    connection-restapi-client-poc.models.microsoft_asp_net_core_mvc_formatters_i_output_formatter_microsoft_asp_net_core_mvc_abstractions.Microsoft_AspNetCore_Mvc_Formatters_IOutputFormatter-Microsoft_AspNetCore_Mvc_Abstractions()
+                    connection_restapi_client_poc.models.microsoft_asp_net_core_mvc_formatters_i_output_formatter_microsoft_asp_net_core_mvc_abstractions.Microsoft_AspNetCore_Mvc_Formatters_IOutputFormatter-Microsoft_AspNetCore_Mvc_Abstractions()
                     ],
                 content_types = [
                     ''

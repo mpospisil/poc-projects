@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_connections_data_weld_type_code_ci_basic_types import IdeaRSConnectionsDataWeldTypeCodeCIBasicTypes
+from connection_restapi_client_poc.models.idea_rs_connections_data_weld_type_code_ci_basic_types import IdeaRSConnectionsDataWeldTypeCodeCIBasicTypes
 
 class TestIdeaRSConnectionsDataWeldTypeCodeCIBasicTypes(unittest.TestCase):
     """IdeaRSConnectionsDataWeldTypeCodeCIBasicTypes unit test stubs"""

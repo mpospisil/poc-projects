@@ -1,4 +1,4 @@
-# connection-restapi-client-poc.ConnectionApi
+# connection_restapi_client_poc.ConnectionApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,22 +22,22 @@ Method | HTTP request | Description
 
 
 ```python
-import connection-restapi-client-poc
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
-from connection-restapi-client-poc.rest import ApiException
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
+from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection-restapi-client-poc.Configuration(
+configuration = connection_restapi_client_poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection-restapi-client-poc.ApiClient(configuration) as api_client:
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection-restapi-client-poc.ConnectionApi(api_client)
+    api_instance = connection_restapi_client_poc.ConnectionApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
 
@@ -89,22 +89,22 @@ No authorization required
 
 
 ```python
-import connection-restapi-client-poc
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_missing_weld_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin
-from connection-restapi-client-poc.rest import ApiException
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_missing_weld_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin
+from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection-restapi-client-poc.Configuration(
+configuration = connection_restapi_client_poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection-restapi-client-poc.ApiClient(configuration) as api_client:
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection-restapi-client-poc.ConnectionApi(api_client)
+    api_instance = connection_restapi_client_poc.ConnectionApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
 
@@ -156,22 +156,22 @@ No authorization required
 
 
 ```python
-import connection-restapi-client-poc
-from connection-restapi-client-poc.models.microsoft_asp_net_core_mvc_ok_object_result_microsoft_asp_net_core_mvc_core import MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore
-from connection-restapi-client-poc.rest import ApiException
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.microsoft_asp_net_core_mvc_ok_object_result_microsoft_asp_net_core_mvc_core import MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore
+from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection-restapi-client-poc.Configuration(
+configuration = connection_restapi_client_poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection-restapi-client-poc.ApiClient(configuration) as api_client:
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection-restapi-client-poc.ConnectionApi(api_client)
+    api_instance = connection_restapi_client_poc.ConnectionApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
 
@@ -223,22 +223,22 @@ No authorization required
 
 
 ```python
-import connection-restapi-client-poc
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_operation_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin
-from connection-restapi-client-poc.rest import ApiException
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_operation_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin
+from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection-restapi-client-poc.Configuration(
+configuration = connection_restapi_client_poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection-restapi-client-poc.ApiClient(configuration) as api_client:
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection-restapi-client-poc.ConnectionApi(api_client)
+    api_instance = connection_restapi_client_poc.ConnectionApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
 
@@ -290,22 +290,22 @@ No authorization required
 
 
 ```python
-import connection-restapi-client-poc
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_production_cost_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin
-from connection-restapi-client-poc.rest import ApiException
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_production_cost_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin
+from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection-restapi-client-poc.Configuration(
+configuration = connection_restapi_client_poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection-restapi-client-poc.ApiClient(configuration) as api_client:
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection-restapi-client-poc.ConnectionApi(api_client)
+    api_instance = connection_restapi_client_poc.ConnectionApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
 
@@ -357,25 +357,25 @@ No authorization required
 
 
 ```python
-import connection-restapi-client-poc
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
-from connection-restapi-client-poc.rest import ApiException
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
+from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection-restapi-client-poc.Configuration(
+configuration = connection_restapi_client_poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection-restapi-client-poc.ApiClient(configuration) as api_client:
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection-restapi-client-poc.ConnectionApi(api_client)
+    api_instance = connection_restapi_client_poc.ConnectionApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin = connection-restapi-client-poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin |  (optional)
 
     try:
         api_response = api_instance.api1_projects_project_id_connections_connection_id_put(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin)
@@ -426,22 +426,22 @@ No authorization required
 
 
 ```python
-import connection-restapi-client-poc
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
-from connection-restapi-client-poc.rest import ApiException
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
+from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection-restapi-client-poc.Configuration(
+configuration = connection_restapi_client_poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection-restapi-client-poc.ApiClient(configuration) as api_client:
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection-restapi-client-poc.ConnectionApi(api_client)
+    api_instance = connection_restapi_client_poc.ConnectionApi(api_client)
     project_id = 'project_id_example' # str | 
 
     try:

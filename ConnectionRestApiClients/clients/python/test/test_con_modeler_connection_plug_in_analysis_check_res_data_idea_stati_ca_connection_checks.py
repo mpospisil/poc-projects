@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.con_modeler_connection_plug_in_analysis_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInAnalysisCheckResDataIdeaStatiCaConnectionChecks
+from connection_restapi_client_poc.models.con_modeler_connection_plug_in_analysis_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInAnalysisCheckResDataIdeaStatiCaConnectionChecks
 
 class TestConModelerConnectionPlugInAnalysisCheckResDataIdeaStatiCaConnectionChecks(unittest.TestCase):
     """ConModelerConnectionPlugInAnalysisCheckResDataIdeaStatiCaConnectionChecks unit test stubs"""
@@ -41,7 +41,7 @@ class TestConModelerConnectionPlugInAnalysisCheckResDataIdeaStatiCaConnectionChe
                 max_plate_eps = 1.337,
                 max_weld_eps = 1.337,
                 points = [
-                    connection-restapi-client-poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
+                    connection_restapi_client_poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
                         point = '', 
                         x = 1.337, 
                         y = 1.337, )

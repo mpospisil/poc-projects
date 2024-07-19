@@ -14,7 +14,7 @@
 
 import unittest
 
-from connection-restapi-client-poc.models.idea_rs_open_model_cone_breakout_check_type_idea_rs_open_model import IdeaRSOpenModelConeBreakoutCheckTypeIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_rs_open_model_cone_breakout_check_type_idea_rs_open_model import IdeaRSOpenModelConeBreakoutCheckTypeIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConeBreakoutCheckTypeIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConeBreakoutCheckTypeIdeaRSOpenModel unit test stubs"""

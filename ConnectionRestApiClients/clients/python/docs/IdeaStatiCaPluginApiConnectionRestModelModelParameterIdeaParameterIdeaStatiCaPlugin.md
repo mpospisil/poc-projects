@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin
 
 # TODO update the JSON string below
 json = "{}"

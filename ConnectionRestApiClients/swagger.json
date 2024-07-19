@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/1/ConCalculation/{projectId}/calculate": {
+    "/api/1/projects/{projectId}/calculate": {
       "post": {
         "tags": [
-          "ConCalculation"
+          "Calculation"
         ],
         "parameters": [
           {
@@ -64,39 +64,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Result_ConResultSummary-IdeaStatiCa_Plugin"
-                  }
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Result_ConResultSummary-IdeaStatiCa_Plugin"
-                  }
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Result_ConResultSummary-IdeaStatiCa_Plugin"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Result_ConResultSummary-IdeaStatiCa_Plugin"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -109,10 +77,10 @@
         }
       }
     },
-    "/api/1/ConCalculation/{projectId}/results": {
+    "/api/1/projects/{projectId}/results": {
       "post": {
         "tags": [
-          "ConCalculation"
+          "Calculation"
         ],
         "parameters": [
           {
@@ -168,39 +136,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaRS_OpenModel_Connection_ConnectionCheckRes-IdeaRS_OpenModel"
-                  }
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaRS_OpenModel_Connection_ConnectionCheckRes-IdeaRS_OpenModel"
-                  }
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaRS_OpenModel_Connection_ConnectionCheckRes-IdeaRS_OpenModel"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaRS_OpenModel_Connection_ConnectionCheckRes-IdeaRS_OpenModel"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -213,10 +149,10 @@
         }
       }
     },
-    "/api/1/ConCalculation/{projectId}/rawresults-text": {
+    "/api/1/projects/{projectId}/rawresults-text": {
       "post": {
         "tags": [
-          "ConCalculation"
+          "Calculation"
         ],
         "summary": "Get json string which represents raw CBFEM results (an instance of CheckResultsData)",
         "parameters": [
@@ -285,10 +221,10 @@
         }
       }
     },
-    "/api/1/ConCalculation/{projectId}/rawresults": {
+    "/api/1/projects/{projectId}/rawresults": {
       "post": {
         "tags": [
-          "ConCalculation"
+          "Calculation"
         ],
         "summary": "Get raw CBFEM results (an instance of CheckResultsData)",
         "parameters": [
@@ -357,10 +293,10 @@
         }
       }
     },
-    "/api/1/ConConnection/{projectId}/Connection": {
+    "/api/1/projects/{projectId}/connections": {
       "get": {
         "tags": [
-          "ConConnection"
+          "Connection"
         ],
         "parameters": [
           {
@@ -370,14 +306,6 @@
             "schema": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
             }
           }
         ],
@@ -398,10 +326,47 @@
         }
       }
     },
-    "/api/1/ConConnection/{projectId}/{connectionId}/Connection": {
+    "/api/1/projects/{projectId}/connections/{connectionId}": {
+      "get": {
+        "tags": [
+          "Connection"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConConnection-IdeaStatiCa_Plugin"
+                }
+              }
+            }
+          }
+        }
+      },
       "put": {
         "tags": [
-          "ConConnection"
+          "Connection"
         ],
         "parameters": [
           {
@@ -476,10 +441,50 @@
         }
       }
     },
-    "/api/1/ConConnection/{projectId}/{connectionId}/Operations": {
+    "/api/1/projects/{projectId}/connections/{connectionId}/operations": {
+      "get": {
+        "tags": [
+          "Connection"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConOperation-IdeaStatiCa_Plugin"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "tags": [
-          "ConConnection"
+          "Connection"
         ],
         "parameters": [
           {
@@ -523,52 +528,12 @@
             }
           }
         }
-      },
-      "get": {
-        "tags": [
-          "ConConnection"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConOperation-IdeaStatiCa_Plugin"
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     },
-    "/api/1/ConConnection/{projectId}/{connectionId}/MissingWelds": {
+    "/api/1/projects/{projectId}/connections/{connectionId}/missing-welds": {
       "get": {
         "tags": [
-          "ConConnection"
+          "Connection"
         ],
         "parameters": [
           {
@@ -607,252 +572,10 @@
         }
       }
     },
-    "/api/1/ConConnection/{projectId}/{connectionId}/ExportIOMModel": {
+    "/api/1/projects/{projectId}/connections/{connectionId}/production-cost": {
       "get": {
         "tags": [
-          "ConConnection"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/1/ConConnection/{projectId}/{connectionId}/ExportIOMConnectionData": {
-      "get": {
-        "tags": [
-          "ConConnection"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_Connection_ConnectionData-IdeaRS_OpenModel"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConConnection/{projectId}/{connectionId}/UpdateProjectFromIOMFile": {
-      "post": {
-        "tags": [
-          "ConConnection"
-        ],
-        "summary": "Update an IDEA Connection project based on OpenModelContainer (model and results)",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "boolean"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConConnection/{projectId}/{connectionId}/UpdateProjectFromIOM": {
-      "post": {
-        "tags": [
-          "ConConnection"
-        ],
-        "summary": "Update an IDEA Connection project based on OpenModelContainer (model and results)",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "application/*+xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "boolean"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConConnection/{projectId}/{connectionId}/production-cost": {
-      "get": {
-        "tags": [
-          "ConConnection"
+          "Connection"
         ],
         "parameters": [
           {
@@ -888,10 +611,147 @@
         }
       }
     },
-    "/api/1/ConLoadEffect/{projectId}/{connectionId}/LoadEffect": {
+    "/api/1/projects/{projectId}/connections/{connectionId}/export-iom": {
       "get": {
         "tags": [
-          "ConLoadEffect"
+          "Export"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/export-iom-connection-data": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaRS_OpenModel_Connection_ConnectionData-IdeaRS_OpenModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/export-ifc": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/load-effects": {
+      "get": {
+        "tags": [
+          "LoadEffect"
         ],
         "parameters": [
           {
@@ -938,7 +798,7 @@
       },
       "post": {
         "tags": [
-          "ConLoadEffect"
+          "LoadEffect"
         ],
         "parameters": [
           {
@@ -996,10 +856,12 @@
             }
           }
         }
-      },
-      "put": {
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}": {
+      "get": {
         "tags": [
-          "ConLoadEffect"
+          "LoadEffect"
         ],
         "parameters": [
           {
@@ -1013,6 +875,68 @@
           },
           {
             "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "loadEffectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "isPercentage",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConLoadEffect-IdeaStatiCa_Plugin"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "LoadEffect"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "loadEffectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1057,12 +981,10 @@
             }
           }
         }
-      }
-    },
-    "/api/1/ConLoadEffect/{projectId}/{connectionId}/LoadEffect/{loadEffectId}": {
+      },
       "delete": {
         "tags": [
-          "ConLoadEffect"
+          "LoadEffect"
         ],
         "parameters": [
           {
@@ -1101,943 +1023,6 @@
                 "schema": {
                   "type": "integer",
                   "format": "int32"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConParameter/{projectId}/{connectionId}/Parameter": {
-      "get": {
-        "tags": [
-          "ConParameter"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "includeHidden",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameter-IdeaStatiCa_Plugin"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "ConParameter"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/xml": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
-                }
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
-                }
-              }
-            },
-            "application/*+xml": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
-                }
-              }
-            },
-            "application/json-patch+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
-                }
-              }
-            },
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
-                }
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
-                }
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaRS_Common_Parameters_ParameterData-CI_BasicTypes"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConParameter/{projectId}/{connectionId}/EvaluateExpression": {
-      "post": {
-        "tags": [
-          "ConParameter"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/xml": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+xml": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/json-patch+json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConProject/ConnectClient": {
-      "get": {
-        "tags": [
-          "ConProject"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConProject/Project": {
-      "post": {
-        "tags": [
-          "ConProject"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              }
-            }
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "ConProject"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                  }
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                  }
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConProject/{projectId}/Download": {
-      "get": {
-        "tags": [
-          "ConProject"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConProject/{projectId}/{connectionId}/Ifc": {
-      "get": {
-        "tags": [
-          "ConProject"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConProject/{projectId}/ProjectData": {
-      "get": {
-        "tags": [
-          "ConProject"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProjectData-IdeaStatiCa_Plugin"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConProject/CreateProjectFromIOMFile": {
-      "post": {
-        "tags": [
-          "ConProject"
-        ],
-        "summary": "Creates an IDEA Connection project based on OpenModelContainer (model and results)",
-        "parameters": [
-          {
-            "name": "ConnectionsToCreate",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int32"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConProject/CreateProjectFromIOM": {
-      "post": {
-        "tags": [
-          "ConProject"
-        ],
-        "summary": "Creates an IDEA Connection project based on OpenModelContainer (model and results)",
-        "parameters": [
-          {
-            "name": "ConnectionsToCreate",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int32"
-              }
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "application/*+xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConProject/{projectId}/Close": {
-      "get": {
-        "tags": [
-          "ConProject"
-        ],
-        "summary": "",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConProject/{projectId}/ConnectionSetup": {
-      "get": {
-        "tags": [
-          "ConProject"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "ConProject"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-              }
-            },
-            "application/*+xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-              }
-            },
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConTemplate/{projectId}/{connectionId}/ConnectionTemplateMapping": {
-      "post": {
-        "tags": [
-          "ConTemplate"
-        ],
-        "summary": "Get the default mappings for the application of the connection template passed in conTemplateGetParam\r\non connectionId in the project projectId",
-        "description": "The result IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.TemplateConversions can be modified by a user and used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.ConTemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.ConTemplateApplyParam) method.",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "The unique identifier of the opened connection in the ConnectionReastApi service",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the connection to apply the template",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Data of the template to apply",
-          "content": {
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
-              }
-            },
-            "application/*+xml": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
-              }
-            },
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_TemplateConversions-IdeaStatiCa_Plugin"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/ConTemplate/{projectId}/{connectionId}/ApplyConnectionTemplate": {
-      "post": {
-        "tags": [
-          "ConTemplate"
-        ],
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateApplyParam-IdeaStatiCa_Plugin"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateApplyParam-IdeaStatiCa_Plugin"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateApplyParam-IdeaStatiCa_Plugin"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateApplyParam-IdeaStatiCa_Plugin"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateApplyResult-IdeaStatiCa_Plugin"
                 }
               }
             }
@@ -2198,6 +1183,1030 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConMember-IdeaStatiCa_Plugin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/parameters": {
+      "get": {
+        "tags": [
+          "Parameter"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "includeHidden",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameter-IdeaStatiCa_Plugin"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Parameter"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
+                }
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
+                }
+              }
+            },
+            "application/*+xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
+                }
+              }
+            },
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Parameter_IdeaParameterUpdate-IdeaStatiCa_Plugin"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdeaRS_Common_Parameters_ParameterData-CI_BasicTypes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/evaluate-expression": {
+      "post": {
+        "tags": [
+          "Parameter"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/xml": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+xml": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/json-patch+json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/connect-client": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/open": {
+      "post": {
+        "tags": [
+          "Project"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/close": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/download": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/project-data": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProjectData-IdeaStatiCa_Plugin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/import-iom-file": {
+      "post": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Creates an IDEA Connection project based on OpenModelContainer (model and results)",
+        "parameters": [
+          {
+            "name": "ConnectionsToCreate",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/import-iom": {
+      "post": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Creates an IDEA Connection project based on OpenModelContainer (model and results)",
+        "parameters": [
+          {
+            "name": "ConnectionsToCreate",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "application/*+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Project_ConProject-IdeaStatiCa_Plugin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/update-iom-file": {
+      "post": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Update an IDEA Connection project based on OpenModelContainer (model and results)",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/update-iom": {
+      "post": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Update an IDEA Connection project based on OpenModelContainer (model and results)",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "application/*+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_OpenModelContainer-IdeaRS_OpenModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connection-setup": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Project"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+              }
+            },
+            "application/*+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+              }
+            },
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/apply-mapping": {
+      "post": {
+        "tags": [
+          "Template"
+        ],
+        "summary": "Get the default mappings for the application of the connection template passed in conTemplateGetParam\r\non connectionId in the project projectId",
+        "description": "The result IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.TemplateConversions can be modified by a user and used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.TemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.ConTemplateApplyParam) method.",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "The unique identifier of the opened connection in the ConnectionReastApi service",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "Id of the connection to apply the template",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Data of the template to apply",
+          "content": {
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
+              }
+            },
+            "application/*+xml": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
+              }
+            },
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateMappingGetParam-IdeaStatiCa_Plugin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_TemplateConversions-IdeaStatiCa_Plugin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/apply-template": {
+      "post": {
+        "tags": [
+          "Template"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateApplyParam-IdeaStatiCa_Plugin"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateApplyParam-IdeaStatiCa_Plugin"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateApplyParam-IdeaStatiCa_Plugin"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateApplyParam-IdeaStatiCa_Plugin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_ConTemplateApplyResult-IdeaStatiCa_Plugin"
                 }
               }
             }

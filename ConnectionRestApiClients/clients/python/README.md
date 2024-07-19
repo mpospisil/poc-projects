@@ -66,16 +66,16 @@ configuration = openapi_client.Configuration(
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ConCalculationApi(api_client)
+    api_instance = openapi_client.CalculationApi(api_client)
     project_id = 'project_id_example' # str | 
     idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin = openapi_client.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin |  (optional)
 
     try:
-        api_response = api_instance.api1_con_calculation_project_id_calculate_post(project_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin)
-        print("The response of ConCalculationApi->api1_con_calculation_project_id_calculate_post:\n")
+        api_response = api_instance.api1_projects_project_id_calculate_post(project_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin)
+        print("The response of CalculationApi->api1_projects_project_id_calculate_post:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ConCalculationApi->api1_con_calculation_project_id_calculate_post: %s\n" % e)
+        print("Exception when calling CalculationApi->api1_projects_project_id_calculate_post: %s\n" % e)
 
 ```
 
@@ -85,43 +85,45 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ConCalculationApi* | [**api1_con_calculation_project_id_calculate_post**](docs/ConCalculationApi.md#api1_con_calculation_project_id_calculate_post) | **POST** /api/1/ConCalculation/{projectId}/calculate | 
-*ConCalculationApi* | [**api1_con_calculation_project_id_rawresults_post**](docs/ConCalculationApi.md#api1_con_calculation_project_id_rawresults_post) | **POST** /api/1/ConCalculation/{projectId}/rawresults | Get raw CBFEM results (an instance of CheckResultsData)
-*ConCalculationApi* | [**api1_con_calculation_project_id_rawresults_text_post**](docs/ConCalculationApi.md#api1_con_calculation_project_id_rawresults_text_post) | **POST** /api/1/ConCalculation/{projectId}/rawresults-text | Get json string which represents raw CBFEM results (an instance of CheckResultsData)
-*ConCalculationApi* | [**api1_con_calculation_project_id_results_post**](docs/ConCalculationApi.md#api1_con_calculation_project_id_results_post) | **POST** /api/1/ConCalculation/{projectId}/results | 
-*ConConnectionApi* | [**api1_con_connection_project_id_connection_get**](docs/ConConnectionApi.md#api1_con_connection_project_id_connection_get) | **GET** /api/1/ConConnection/{projectId}/Connection | 
-*ConConnectionApi* | [**api1_con_connection_project_id_connection_id_connection_put**](docs/ConConnectionApi.md#api1_con_connection_project_id_connection_id_connection_put) | **PUT** /api/1/ConConnection/{projectId}/{connectionId}/Connection | 
-*ConConnectionApi* | [**api1_con_connection_project_id_connection_id_export_iom_connection_data_get**](docs/ConConnectionApi.md#api1_con_connection_project_id_connection_id_export_iom_connection_data_get) | **GET** /api/1/ConConnection/{projectId}/{connectionId}/ExportIOMConnectionData | 
-*ConConnectionApi* | [**api1_con_connection_project_id_connection_id_export_iom_model_get**](docs/ConConnectionApi.md#api1_con_connection_project_id_connection_id_export_iom_model_get) | **GET** /api/1/ConConnection/{projectId}/{connectionId}/ExportIOMModel | 
-*ConConnectionApi* | [**api1_con_connection_project_id_connection_id_missing_welds_get**](docs/ConConnectionApi.md#api1_con_connection_project_id_connection_id_missing_welds_get) | **GET** /api/1/ConConnection/{projectId}/{connectionId}/MissingWelds | 
-*ConConnectionApi* | [**api1_con_connection_project_id_connection_id_operations_delete**](docs/ConConnectionApi.md#api1_con_connection_project_id_connection_id_operations_delete) | **DELETE** /api/1/ConConnection/{projectId}/{connectionId}/Operations | 
-*ConConnectionApi* | [**api1_con_connection_project_id_connection_id_operations_get**](docs/ConConnectionApi.md#api1_con_connection_project_id_connection_id_operations_get) | **GET** /api/1/ConConnection/{projectId}/{connectionId}/Operations | 
-*ConConnectionApi* | [**api1_con_connection_project_id_connection_id_production_cost_get**](docs/ConConnectionApi.md#api1_con_connection_project_id_connection_id_production_cost_get) | **GET** /api/1/ConConnection/{projectId}/{connectionId}/production-cost | 
-*ConConnectionApi* | [**api1_con_connection_project_id_connection_id_update_project_from_iom_file_post**](docs/ConConnectionApi.md#api1_con_connection_project_id_connection_id_update_project_from_iom_file_post) | **POST** /api/1/ConConnection/{projectId}/{connectionId}/UpdateProjectFromIOMFile | Update an IDEA Connection project based on OpenModelContainer (model and results)
-*ConConnectionApi* | [**api1_con_connection_project_id_connection_id_update_project_from_iom_post**](docs/ConConnectionApi.md#api1_con_connection_project_id_connection_id_update_project_from_iom_post) | **POST** /api/1/ConConnection/{projectId}/{connectionId}/UpdateProjectFromIOM | Update an IDEA Connection project based on OpenModelContainer (model and results)
-*ConLoadEffectApi* | [**api1_con_load_effect_project_id_connection_id_load_effect_get**](docs/ConLoadEffectApi.md#api1_con_load_effect_project_id_connection_id_load_effect_get) | **GET** /api/1/ConLoadEffect/{projectId}/{connectionId}/LoadEffect | 
-*ConLoadEffectApi* | [**api1_con_load_effect_project_id_connection_id_load_effect_load_effect_id_delete**](docs/ConLoadEffectApi.md#api1_con_load_effect_project_id_connection_id_load_effect_load_effect_id_delete) | **DELETE** /api/1/ConLoadEffect/{projectId}/{connectionId}/LoadEffect/{loadEffectId} | 
-*ConLoadEffectApi* | [**api1_con_load_effect_project_id_connection_id_load_effect_post**](docs/ConLoadEffectApi.md#api1_con_load_effect_project_id_connection_id_load_effect_post) | **POST** /api/1/ConLoadEffect/{projectId}/{connectionId}/LoadEffect | 
-*ConLoadEffectApi* | [**api1_con_load_effect_project_id_connection_id_load_effect_put**](docs/ConLoadEffectApi.md#api1_con_load_effect_project_id_connection_id_load_effect_put) | **PUT** /api/1/ConLoadEffect/{projectId}/{connectionId}/LoadEffect | 
-*ConParameterApi* | [**api1_con_parameter_project_id_connection_id_evaluate_expression_post**](docs/ConParameterApi.md#api1_con_parameter_project_id_connection_id_evaluate_expression_post) | **POST** /api/1/ConParameter/{projectId}/{connectionId}/EvaluateExpression | 
-*ConParameterApi* | [**api1_con_parameter_project_id_connection_id_parameter_get**](docs/ConParameterApi.md#api1_con_parameter_project_id_connection_id_parameter_get) | **GET** /api/1/ConParameter/{projectId}/{connectionId}/Parameter | 
-*ConParameterApi* | [**api1_con_parameter_project_id_connection_id_parameter_put**](docs/ConParameterApi.md#api1_con_parameter_project_id_connection_id_parameter_put) | **PUT** /api/1/ConParameter/{projectId}/{connectionId}/Parameter | 
-*ConProjectApi* | [**api1_con_project_connect_client_get**](docs/ConProjectApi.md#api1_con_project_connect_client_get) | **GET** /api/1/ConProject/ConnectClient | 
-*ConProjectApi* | [**api1_con_project_create_project_from_iom_file_post**](docs/ConProjectApi.md#api1_con_project_create_project_from_iom_file_post) | **POST** /api/1/ConProject/CreateProjectFromIOMFile | Creates an IDEA Connection project based on OpenModelContainer (model and results)
-*ConProjectApi* | [**api1_con_project_create_project_from_iom_post**](docs/ConProjectApi.md#api1_con_project_create_project_from_iom_post) | **POST** /api/1/ConProject/CreateProjectFromIOM | Creates an IDEA Connection project based on OpenModelContainer (model and results)
-*ConProjectApi* | [**api1_con_project_project_get**](docs/ConProjectApi.md#api1_con_project_project_get) | **GET** /api/1/ConProject/Project | 
-*ConProjectApi* | [**api1_con_project_project_id_close_get**](docs/ConProjectApi.md#api1_con_project_project_id_close_get) | **GET** /api/1/ConProject/{projectId}/Close | 
-*ConProjectApi* | [**api1_con_project_project_id_connection_id_ifc_get**](docs/ConProjectApi.md#api1_con_project_project_id_connection_id_ifc_get) | **GET** /api/1/ConProject/{projectId}/{connectionId}/Ifc | 
-*ConProjectApi* | [**api1_con_project_project_id_connection_setup_get**](docs/ConProjectApi.md#api1_con_project_project_id_connection_setup_get) | **GET** /api/1/ConProject/{projectId}/ConnectionSetup | 
-*ConProjectApi* | [**api1_con_project_project_id_connection_setup_put**](docs/ConProjectApi.md#api1_con_project_project_id_connection_setup_put) | **PUT** /api/1/ConProject/{projectId}/ConnectionSetup | 
-*ConProjectApi* | [**api1_con_project_project_id_download_get**](docs/ConProjectApi.md#api1_con_project_project_id_download_get) | **GET** /api/1/ConProject/{projectId}/Download | 
-*ConProjectApi* | [**api1_con_project_project_id_project_data_get**](docs/ConProjectApi.md#api1_con_project_project_id_project_data_get) | **GET** /api/1/ConProject/{projectId}/ProjectData | 
-*ConProjectApi* | [**api1_con_project_project_post**](docs/ConProjectApi.md#api1_con_project_project_post) | **POST** /api/1/ConProject/Project | 
-*ConTemplateApi* | [**api1_con_template_project_id_connection_id_apply_connection_template_post**](docs/ConTemplateApi.md#api1_con_template_project_id_connection_id_apply_connection_template_post) | **POST** /api/1/ConTemplate/{projectId}/{connectionId}/ApplyConnectionTemplate | 
-*ConTemplateApi* | [**api1_con_template_project_id_connection_id_connection_template_mapping_post**](docs/ConTemplateApi.md#api1_con_template_project_id_connection_id_connection_template_mapping_post) | **POST** /api/1/ConTemplate/{projectId}/{connectionId}/ConnectionTemplateMapping | Get the default mappings for the application of the connection template passed in conTemplateGetParam  on connectionId in the project projectId
+*CalculationApi* | [**api1_projects_project_id_calculate_post**](docs/CalculationApi.md#api1_projects_project_id_calculate_post) | **POST** /api/1/projects/{projectId}/calculate | 
+*CalculationApi* | [**api1_projects_project_id_rawresults_post**](docs/CalculationApi.md#api1_projects_project_id_rawresults_post) | **POST** /api/1/projects/{projectId}/rawresults | Get raw CBFEM results (an instance of CheckResultsData)
+*CalculationApi* | [**api1_projects_project_id_rawresults_text_post**](docs/CalculationApi.md#api1_projects_project_id_rawresults_text_post) | **POST** /api/1/projects/{projectId}/rawresults-text | Get json string which represents raw CBFEM results (an instance of CheckResultsData)
+*CalculationApi* | [**api1_projects_project_id_results_post**](docs/CalculationApi.md#api1_projects_project_id_results_post) | **POST** /api/1/projects/{projectId}/results | 
+*ConnectionApi* | [**api1_projects_project_id_connections_connection_id_get**](docs/ConnectionApi.md#api1_projects_project_id_connections_connection_id_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId} | 
+*ConnectionApi* | [**api1_projects_project_id_connections_connection_id_missing_welds_get**](docs/ConnectionApi.md#api1_projects_project_id_connections_connection_id_missing_welds_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/missing-welds | 
+*ConnectionApi* | [**api1_projects_project_id_connections_connection_id_operations_delete**](docs/ConnectionApi.md#api1_projects_project_id_connections_connection_id_operations_delete) | **DELETE** /api/1/projects/{projectId}/connections/{connectionId}/operations | 
+*ConnectionApi* | [**api1_projects_project_id_connections_connection_id_operations_get**](docs/ConnectionApi.md#api1_projects_project_id_connections_connection_id_operations_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/operations | 
+*ConnectionApi* | [**api1_projects_project_id_connections_connection_id_production_cost_get**](docs/ConnectionApi.md#api1_projects_project_id_connections_connection_id_production_cost_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/production-cost | 
+*ConnectionApi* | [**api1_projects_project_id_connections_connection_id_put**](docs/ConnectionApi.md#api1_projects_project_id_connections_connection_id_put) | **PUT** /api/1/projects/{projectId}/connections/{connectionId} | 
+*ConnectionApi* | [**api1_projects_project_id_connections_get**](docs/ConnectionApi.md#api1_projects_project_id_connections_get) | **GET** /api/1/projects/{projectId}/connections | 
+*ExportApi* | [**api1_projects_project_id_connections_connection_id_export_ifc_get**](docs/ExportApi.md#api1_projects_project_id_connections_connection_id_export_ifc_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/export-ifc | 
+*ExportApi* | [**api1_projects_project_id_connections_connection_id_export_iom_connection_data_get**](docs/ExportApi.md#api1_projects_project_id_connections_connection_id_export_iom_connection_data_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/export-iom-connection-data | 
+*ExportApi* | [**api1_projects_project_id_connections_connection_id_export_iom_get**](docs/ExportApi.md#api1_projects_project_id_connections_connection_id_export_iom_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/export-iom | 
+*LoadEffectApi* | [**api1_projects_project_id_connections_connection_id_load_effects_get**](docs/LoadEffectApi.md#api1_projects_project_id_connections_connection_id_load_effects_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/load-effects | 
+*LoadEffectApi* | [**api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete**](docs/LoadEffectApi.md#api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete) | **DELETE** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId} | 
+*LoadEffectApi* | [**api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get**](docs/LoadEffectApi.md#api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId} | 
+*LoadEffectApi* | [**api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put**](docs/LoadEffectApi.md#api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId} | 
+*LoadEffectApi* | [**api1_projects_project_id_connections_connection_id_load_effects_post**](docs/LoadEffectApi.md#api1_projects_project_id_connections_connection_id_load_effects_post) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/load-effects | 
 *MemberApi* | [**api1_projects_project_id_connections_connection_id_members_get**](docs/MemberApi.md#api1_projects_project_id_connections_connection_id_members_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members | 
 *MemberApi* | [**api1_projects_project_id_connections_connection_id_members_member_id_get**](docs/MemberApi.md#api1_projects_project_id_connections_connection_id_members_member_id_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} | 
 *MemberApi* | [**api1_projects_project_id_connections_connection_id_members_member_id_put**](docs/MemberApi.md#api1_projects_project_id_connections_connection_id_members_member_id_put) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} | 
+*ParameterApi* | [**api1_projects_project_id_connections_connection_id_evaluate_expression_post**](docs/ParameterApi.md#api1_projects_project_id_connections_connection_id_evaluate_expression_post) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/evaluate-expression | 
+*ParameterApi* | [**api1_projects_project_id_connections_connection_id_parameters_get**](docs/ParameterApi.md#api1_projects_project_id_connections_connection_id_parameters_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/parameters | 
+*ParameterApi* | [**api1_projects_project_id_connections_connection_id_parameters_put**](docs/ParameterApi.md#api1_projects_project_id_connections_connection_id_parameters_put) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/parameters | 
+*ProjectApi* | [**api1_connect_client_get**](docs/ProjectApi.md#api1_connect_client_get) | **GET** /api/1/connect-client | 
+*ProjectApi* | [**api1_projects_get**](docs/ProjectApi.md#api1_projects_get) | **GET** /api/1/projects | 
+*ProjectApi* | [**api1_projects_import_iom_file_post**](docs/ProjectApi.md#api1_projects_import_iom_file_post) | **POST** /api/1/projects/import-iom-file | Creates an IDEA Connection project based on OpenModelContainer (model and results)
+*ProjectApi* | [**api1_projects_import_iom_post**](docs/ProjectApi.md#api1_projects_import_iom_post) | **POST** /api/1/projects/import-iom | Creates an IDEA Connection project based on OpenModelContainer (model and results)
+*ProjectApi* | [**api1_projects_open_post**](docs/ProjectApi.md#api1_projects_open_post) | **POST** /api/1/projects/open | 
+*ProjectApi* | [**api1_projects_project_id_close_get**](docs/ProjectApi.md#api1_projects_project_id_close_get) | **GET** /api/1/projects/{projectId}/close | 
+*ProjectApi* | [**api1_projects_project_id_connection_setup_get**](docs/ProjectApi.md#api1_projects_project_id_connection_setup_get) | **GET** /api/1/projects/{projectId}/connection-setup | 
+*ProjectApi* | [**api1_projects_project_id_connection_setup_put**](docs/ProjectApi.md#api1_projects_project_id_connection_setup_put) | **PUT** /api/1/projects/{projectId}/connection-setup | 
+*ProjectApi* | [**api1_projects_project_id_download_get**](docs/ProjectApi.md#api1_projects_project_id_download_get) | **GET** /api/1/projects/{projectId}/download | 
+*ProjectApi* | [**api1_projects_project_id_project_data_get**](docs/ProjectApi.md#api1_projects_project_id_project_data_get) | **GET** /api/1/projects/{projectId}/project-data | 
+*ProjectApi* | [**api1_projects_project_id_update_iom_file_post**](docs/ProjectApi.md#api1_projects_project_id_update_iom_file_post) | **POST** /api/1/projects/{projectId}/update-iom-file | Update an IDEA Connection project based on OpenModelContainer (model and results)
+*ProjectApi* | [**api1_projects_project_id_update_iom_post**](docs/ProjectApi.md#api1_projects_project_id_update_iom_post) | **POST** /api/1/projects/{projectId}/update-iom | Update an IDEA Connection project based on OpenModelContainer (model and results)
+*TemplateApi* | [**api1_projects_project_id_connections_connection_id_apply_mapping_post**](docs/TemplateApi.md#api1_projects_project_id_connections_connection_id_apply_mapping_post) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/apply-mapping | Get the default mappings for the application of the connection template passed in conTemplateGetParam  on connectionId in the project projectId
+*TemplateApi* | [**api1_projects_project_id_connections_connection_id_apply_template_post**](docs/TemplateApi.md#api1_projects_project_id_connections_connection_id_apply_template_post) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/apply-template | 
 
 
 ## Documentation For Models

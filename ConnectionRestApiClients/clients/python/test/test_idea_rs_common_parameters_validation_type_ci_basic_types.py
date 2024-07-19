@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_common_parameters_validation_type_ci_basic_types import IdeaRSCommonParametersValidationTypeCIBasicTypes
+from connection-restapi-client-poc.models.idea_rs_common_parameters_validation_type_ci_basic_types import IdeaRSCommonParametersValidationTypeCIBasicTypes
 
 class TestIdeaRSCommonParametersValidationTypeCIBasicTypes(unittest.TestCase):
     """IdeaRSCommonParametersValidationTypeCIBasicTypes unit test stubs"""

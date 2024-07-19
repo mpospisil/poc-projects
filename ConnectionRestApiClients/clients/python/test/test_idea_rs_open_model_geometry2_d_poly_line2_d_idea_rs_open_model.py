@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model import IdeaRSOpenModelGeometry2DPolyLine2DIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_poly_line2_d_idea_rs_open_model import IdeaRSOpenModelGeometry2DPolyLine2DIdeaRSOpenModel
 
 class TestIdeaRSOpenModelGeometry2DPolyLine2DIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelGeometry2DPolyLine2DIdeaRSOpenModel unit test stubs"""
@@ -35,12 +35,12 @@ class TestIdeaRSOpenModelGeometry2DPolyLine2DIdeaRSOpenModel(unittest.TestCase):
         model = IdeaRSOpenModelGeometry2DPolyLine2DIdeaRSOpenModel()
         if include_optional:
             return IdeaRSOpenModelGeometry2DPolyLine2DIdeaRSOpenModel(
-                start_point = openapi_client.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
+                start_point = connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
                     x = 1.337, 
                     y = 1.337, ),
                 segments = [
-                    openapi_client.models.idea_rs_open_model_geometry2_d_segment2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Segment2D-IdeaRS_OpenModel(
-                        end_point = openapi_client.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
+                    connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_segment2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Segment2D-IdeaRS_OpenModel(
+                        end_point = connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
                             x = 1.337, 
                             y = 1.337, ), )
                     ]

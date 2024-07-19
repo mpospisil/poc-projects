@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.con_modeler_connection_plug_in_weld_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInWeldCheckResDataIdeaStatiCaConnectionChecks
+from connection-restapi-client-poc.models.con_modeler_connection_plug_in_weld_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInWeldCheckResDataIdeaStatiCaConnectionChecks
 
 class TestConModelerConnectionPlugInWeldCheckResDataIdeaStatiCaConnectionChecks(unittest.TestCase):
     """ConModelerConnectionPlugInWeldCheckResDataIdeaStatiCaConnectionChecks unit test stubs"""
@@ -96,11 +96,11 @@ class TestConModelerConnectionPlugInWeldCheckResDataIdeaStatiCaConnectionChecks(
                 phi_w = 1.337,
                 omega_w = 1.337,
                 fuw = 1.337,
-                checks_nonconformities = openapi_client.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
+                checks_nonconformities = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
                     use_fillet_weld_leg_size = True, 
                     is_pjp_weld = True, 
                     results = [
-                        openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                        connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                             constraint_value = 1.337, 
                             detailing_check_category = 'None', 
                             detailing_check_type = 'None', 
@@ -110,11 +110,11 @@ class TestConModelerConnectionPlugInWeldCheckResDataIdeaStatiCaConnectionChecks(
                             target_element_id = 56, 
                             target_element_name = '', )
                         ], ),
-                detailing_checks_weld = openapi_client.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
+                detailing_checks_weld = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
                     use_fillet_weld_leg_size = True, 
                     is_pjp_weld = True, 
                     results = [
-                        openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                        connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                             constraint_value = 1.337, 
                             detailing_check_category = 'None', 
                             detailing_check_type = 'None', 

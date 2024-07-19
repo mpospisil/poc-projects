@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.ci_geometry3_d_vector3_dci_basic_types import CIGeometry3DVector3DCIBasicTypes
+from connection-restapi-client-poc.models.ci_geometry3_d_vector3_dci_basic_types import CIGeometry3DVector3DCIBasicTypes
 
 # TODO update the JSON string below
 json = "{}"

@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.idea_rs_open_model_connection_bolt_grid_idea_rs_open_model import IdeaRSOpenModelConnectionBoltGridIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_bolt_grid_idea_rs_open_model import IdeaRSOpenModelConnectionBoltGridIdeaRSOpenModel
 
 # TODO update the JSON string below
 json = "{}"

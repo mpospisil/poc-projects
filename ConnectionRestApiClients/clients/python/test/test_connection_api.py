@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.connection_api import ConnectionApi
+from connection-restapi-client-poc.api.connection_api import ConnectionApi
 
 
 class TestConnectionApi(unittest.TestCase):

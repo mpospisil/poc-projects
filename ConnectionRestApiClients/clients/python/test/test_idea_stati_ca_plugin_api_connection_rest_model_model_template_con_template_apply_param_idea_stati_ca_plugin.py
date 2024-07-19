@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin
 
 class TestIdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin(unittest.TestCase):
     """IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin unit test stubs"""
@@ -36,15 +36,15 @@ class TestIdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyPa
         if include_optional:
             return IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin(
                 connection_template = '',
-                mapping = openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_template_conversions_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_TemplateConversions-IdeaStatiCa_Plugin(
+                mapping = connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_template_conversions_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_TemplateConversions-IdeaStatiCa_Plugin(
                     conversions = [
-                        openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_base_template_conversion_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_BaseTemplateConversion-IdeaStatiCa_Plugin(
+                        connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_base_template_conversion_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_BaseTemplateConversion-IdeaStatiCa_Plugin(
                             original_value = '', 
                             original_template_id = '', 
                             new_value = '', 
                             description = '', 
                             new_template_id = '', 
-                            new_element = openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_selected_element_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_SelectedElement-IdeaStatiCa_Plugin(
+                            new_element = connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_selected_element_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Template_SelectedElement-IdeaStatiCa_Plugin(
                                 name = '', 
                                 table_id = '', 
                                 element_id = '', 

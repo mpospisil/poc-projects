@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_geometry2_d_segment2_d_idea_rs_open_model import IdeaRSOpenModelGeometry2DSegment2DIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_segment2_d_idea_rs_open_model import IdeaRSOpenModelGeometry2DSegment2DIdeaRSOpenModel
 
 class TestIdeaRSOpenModelGeometry2DSegment2DIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelGeometry2DSegment2DIdeaRSOpenModel unit test stubs"""
@@ -35,7 +35,7 @@ class TestIdeaRSOpenModelGeometry2DSegment2DIdeaRSOpenModel(unittest.TestCase):
         model = IdeaRSOpenModelGeometry2DSegment2DIdeaRSOpenModel()
         if include_optional:
             return IdeaRSOpenModelGeometry2DSegment2DIdeaRSOpenModel(
-                end_point = openapi_client.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
+                end_point = connection-restapi-client-poc.models.idea_rs_open_model_geometry2_d_point2_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry2D_Point2D-IdeaRS_OpenModel(
                     x = 1.337, 
                     y = 1.337, )
             )

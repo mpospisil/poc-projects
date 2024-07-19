@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.idea_rs_open_model_connection_cut_beam_by_beam_data_idea_rs_open_model import IdeaRSOpenModelConnectionCutBeamByBeamDataIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_cut_beam_by_beam_data_idea_rs_open_model import IdeaRSOpenModelConnectionCutBeamByBeamDataIdeaRSOpenModel
 
 # TODO update the JSON string below
 json = "{}"

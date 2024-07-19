@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.con_modeler_connection_plug_in_stiffness_chek_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInStiffnessChekDataIdeaStatiCaConnectionChecks
+from connection-restapi-client-poc.models.con_modeler_connection_plug_in_stiffness_chek_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInStiffnessChekDataIdeaStatiCaConnectionChecks
 
 class TestConModelerConnectionPlugInStiffnessChekDataIdeaStatiCaConnectionChecks(unittest.TestCase):
     """ConModelerConnectionPlugInStiffnessChekDataIdeaStatiCaConnectionChecks unit test stubs"""
@@ -53,19 +53,19 @@ class TestConModelerConnectionPlugInStiffnessChekDataIdeaStatiCaConnectionChecks
                 dx = 1.337,
                 kx = 1.337,
                 points = [
-                    openapi_client.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
+                    connection-restapi-client-poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
                         point = '', 
                         x = 1.337, 
                         y = 1.337, )
                     ],
                 points_shell = [
-                    openapi_client.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
+                    connection-restapi-client-poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
                         point = '', 
                         x = 1.337, 
                         y = 1.337, )
                     ],
                 points_linear = [
-                    openapi_client.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
+                    connection-restapi-client-poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
                         point = '', 
                         x = 1.337, 
                         y = 1.337, )

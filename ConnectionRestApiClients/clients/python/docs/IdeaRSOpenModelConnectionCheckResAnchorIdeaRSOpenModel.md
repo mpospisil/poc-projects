@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.idea_rs_open_model_connection_check_res_anchor_idea_rs_open_model import IdeaRSOpenModelConnectionCheckResAnchorIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_check_res_anchor_idea_rs_open_model import IdeaRSOpenModelConnectionCheckResAnchorIdeaRSOpenModel
 
 # TODO update the JSON string below
 json = "{}"

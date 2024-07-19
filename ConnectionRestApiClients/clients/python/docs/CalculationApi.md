@@ -1,4 +1,4 @@
-# openapi_client.CalculationApi
+# connection-restapi-client-poc.CalculationApi
 
 All URIs are relative to *http://localhost*
 
@@ -19,25 +19,25 @@ Method | HTTP request | Description
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_result_con_result_summary_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_result_con_result_summary_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CalculationApi(api_client)
+    api_instance = connection-restapi-client-poc.CalculationApi(api_client)
     project_id = 'project_id_example' # str | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin = openapi_client.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin = connection-restapi-client-poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin |  (optional)
 
     try:
         api_response = api_instance.api1_projects_project_id_calculate_post(project_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin)
@@ -87,25 +87,25 @@ Get raw CBFEM results (an instance of CheckResultsData)
 
 
 ```python
-import openapi_client
-from openapi_client.models.con_modeler_connection_plug_in_check_results_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.con_modeler_connection_plug_in_check_results_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CalculationApi(api_client)
+    api_instance = connection-restapi-client-poc.CalculationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened connection in the ConnectionReastApi service
-    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin = openapi_client.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin | Type of requested analysis and connection to calculate (optional)
+    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin = connection-restapi-client-poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin | Type of requested analysis and connection to calculate (optional)
 
     try:
         # Get raw CBFEM results (an instance of CheckResultsData)
@@ -156,24 +156,24 @@ Get json string which represents raw CBFEM results (an instance of CheckResultsD
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CalculationApi(api_client)
+    api_instance = connection-restapi-client-poc.CalculationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened connection in the ConnectionReastApi service
-    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin = openapi_client.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin | Type of requested analysis and connection to calculate (optional)
+    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin = connection-restapi-client-poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin | Type of requested analysis and connection to calculate (optional)
 
     try:
         # Get json string which represents raw CBFEM results (an instance of CheckResultsData)
@@ -224,25 +224,25 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_rs_open_model_connection_connection_check_res_idea_rs_open_model import IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_connection_check_res_idea_rs_open_model import IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CalculationApi(api_client)
+    api_instance = connection-restapi-client-poc.CalculationApi(api_client)
     project_id = 'project_id_example' # str | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin = openapi_client.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin = connection-restapi-client-poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin |  (optional)
 
     try:
         api_response = api_instance.api1_projects_project_id_results_post(project_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin)

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_member_load_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectMemberLoadIdeaStatiCaPlugin
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_member_load_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectMemberLoadIdeaStatiCaPlugin
 
 class TestIdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectMemberLoadIdeaStatiCaPlugin(unittest.TestCase):
     """IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectMemberLoadIdeaStatiCaPlugin unit test stubs"""
@@ -37,7 +37,7 @@ class TestIdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectMem
             return IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectMemberLoadIdeaStatiCaPlugin(
                 member_id = 56,
                 position = 'End',
-                section_load = openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_section_load_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConLoadEffectSectionLoad-IdeaStatiCa_Plugin(
+                section_load = connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_section_load_idea_stati_ca_plugin.IdeaStatiCa_Plugin_Api_ConnectionRest_Model_Model_Connection_ConLoadEffectSectionLoad-IdeaStatiCa_Plugin(
                     n = 1.337, 
                     vy = 1.337, 
                     vz = 1.337, 

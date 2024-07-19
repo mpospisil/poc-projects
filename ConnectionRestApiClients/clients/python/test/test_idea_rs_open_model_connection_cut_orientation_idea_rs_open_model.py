@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_connection_cut_orientation_idea_rs_open_model import IdeaRSOpenModelConnectionCutOrientationIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_cut_orientation_idea_rs_open_model import IdeaRSOpenModelConnectionCutOrientationIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionCutOrientationIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionCutOrientationIdeaRSOpenModel unit test stubs"""

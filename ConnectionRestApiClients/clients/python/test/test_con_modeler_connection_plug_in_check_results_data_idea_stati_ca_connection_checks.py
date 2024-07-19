@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.con_modeler_connection_plug_in_check_results_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks
+from connection-restapi-client-poc.models.con_modeler_connection_plug_in_check_results_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks
 
 class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(unittest.TestCase):
     """ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks unit test stubs"""
@@ -37,7 +37,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
             return ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                 code_type = 'None',
                 plates_deformation = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_plate_check_local_deformation_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_PlateCheckLocalDeformation-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_plate_check_local_deformation_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_PlateCheckLocalDeformation-IdeaStatiCa_ConnectionChecks(
                         max_deformation = 1.337, 
                         max_deformation_ratio = 1.337, 
                         limit_deformation = 1.337, 
@@ -57,7 +57,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 plates = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_plate_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_PlateCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_plate_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_PlateCheckResData-IdeaStatiCa_ConnectionChecks(
                         max_stress = 1.337, 
                         max_strain = 1.337, 
                         thickness = 1.337, 
@@ -81,7 +81,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         contact_stress = 1.337, 
                         limit_plastic_strain = 1.337, 
                         fire_temperature = 1.337, 
-                        fire_temperature_calculation_data = openapi_client.models.idea_rs_connection_calculator_fire_design_fire_temperature_calculation_data_idea_rs_connection_calculator.IdeaRS_ConnectionCalculator_FireDesign_FireTemperatureCalculationData-IdeaRS_ConnectionCalculator(
+                        fire_temperature_calculation_data = connection-restapi-client-poc.models.idea_rs_connection_calculator_fire_design_fire_temperature_calculation_data_idea_rs_connection_calculator.IdeaRS_ConnectionCalculator_FireDesign_FireTemperatureCalculationData-IdeaRS_ConnectionCalculator(
                             total_exposure_time = 56, 
                             time_interval = 56, 
                             init_temperature = 1.337, 
@@ -112,7 +112,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 plates_info = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_plate_check_res_data_info_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_PlateCheckResDataInfo-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_plate_check_res_data_info_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_PlateCheckResDataInfo-IdeaStatiCa_ConnectionChecks(
                         material_fy = 1.337, 
                         material_fy_phi = 1.337, 
                         material_fy_omega = 1.337, 
@@ -136,7 +136,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 bolts = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResData-IdeaStatiCa_ConnectionChecks(
                         bolt_tension_resistance = 1.337, 
                         bolt_punching_resistance = 1.337, 
                         bolt_tension_force = 1.337, 
@@ -158,19 +158,19 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         bolt_shear_forces = [
                             1.337
                             ], 
-                        shear_forces_in_shear_planes = openapi_client.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types.CI_Connections_Data_AutoDesign_ShearForcesInShearPlanes-CI_BasicTypes(
+                        shear_forces_in_shear_planes = connection-restapi-client-poc.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types.CI_Connections_Data_AutoDesign_ShearForcesInShearPlanes-CI_BasicTypes(
                             shear_forces = [
-                                openapi_client.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
                                     qy = 1.337, 
                                     qz = 1.337, )
                                 ], 
-                            bolt_coordinate_system = openapi_client.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
+                            bolt_coordinate_system = connection-restapi-client-poc.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
                                 origin = '', 
-                                axis_x = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                                axis_x = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                                     direction_x = 1.337, 
                                     direction_y = 1.337, 
                                     direction_z = 1.337, 
-                                    normalize = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                                    normalize = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                                         direction_x = 1.337, 
                                         direction_y = 1.337, 
                                         direction_z = 1.337, 
@@ -352,11 +352,11 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         tear_out_distance = 1.337, 
                         phi_bearing = 1.337, 
                         shear_plane_thread = True, 
-                        detailing_checks_bolt = openapi_client.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
+                        detailing_checks_bolt = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
                             is_anchor = True, 
                             connector_id = 56, 
                             results = [
-                                openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                                     constraint_value = 1.337, 
                                     detailing_check_category = 'None', 
                                     detailing_check_type = 'None', 
@@ -367,10 +367,10 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                                     target_element_name = '', )
                                 ], ), 
                         thin_plates_validity_en = [
-                            openapi_client.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidity-CI_BasicTypes(
+                            connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidity-CI_BasicTypes(
                                 related_plate_name = '', 
                                 validity_criteria = [
-                                    openapi_client.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
+                                    connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
                                         value_name = '', 
                                         value = 1.337, 
                                         limit = 1.337, )
@@ -382,7 +382,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         rbp_snip = 1.337, 
                         gamma_b_shear_snip = 1.337, 
                         gamma_b_bearing_snip = 1.337, 
-                        bearing_detailing_errors_snip = openapi_client.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
+                        bearing_detailing_errors_snip = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
                             is_anchor = True, 
                             connector_id = 56, ), 
                         critical_plate_thickness = 1.337, 
@@ -704,7 +704,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 bolts_info = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_bolt_check_res_data_info_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResDataInfo-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_bolt_check_res_data_info_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResDataInfo-IdeaStatiCa_ConnectionChecks(
                         bolt_tension_resistance = 1.337, 
                         compression_resistance = 1.337, 
                         moment_resistance = 1.337, 
@@ -726,7 +726,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 bolts_anchor = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResData-IdeaStatiCa_ConnectionChecks(
                         bolt_tension_resistance = 1.337, 
                         bolt_punching_resistance = 1.337, 
                         bolt_tension_force = 1.337, 
@@ -748,19 +748,19 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         bolt_shear_forces = [
                             1.337
                             ], 
-                        shear_forces_in_shear_planes = openapi_client.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types.CI_Connections_Data_AutoDesign_ShearForcesInShearPlanes-CI_BasicTypes(
+                        shear_forces_in_shear_planes = connection-restapi-client-poc.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types.CI_Connections_Data_AutoDesign_ShearForcesInShearPlanes-CI_BasicTypes(
                             shear_forces = [
-                                openapi_client.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
                                     qy = 1.337, 
                                     qz = 1.337, )
                                 ], 
-                            bolt_coordinate_system = openapi_client.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
+                            bolt_coordinate_system = connection-restapi-client-poc.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
                                 origin = '', 
-                                axis_x = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                                axis_x = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                                     direction_x = 1.337, 
                                     direction_y = 1.337, 
                                     direction_z = 1.337, 
-                                    normalize = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                                    normalize = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                                         direction_x = 1.337, 
                                         direction_y = 1.337, 
                                         direction_z = 1.337, 
@@ -942,11 +942,11 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         tear_out_distance = 1.337, 
                         phi_bearing = 1.337, 
                         shear_plane_thread = True, 
-                        detailing_checks_bolt = openapi_client.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
+                        detailing_checks_bolt = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
                             is_anchor = True, 
                             connector_id = 56, 
                             results = [
-                                openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                                     constraint_value = 1.337, 
                                     detailing_check_category = 'None', 
                                     detailing_check_type = 'None', 
@@ -957,10 +957,10 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                                     target_element_name = '', )
                                 ], ), 
                         thin_plates_validity_en = [
-                            openapi_client.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidity-CI_BasicTypes(
+                            connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidity-CI_BasicTypes(
                                 related_plate_name = '', 
                                 validity_criteria = [
-                                    openapi_client.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
+                                    connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
                                         value_name = '', 
                                         value = 1.337, 
                                         limit = 1.337, )
@@ -972,7 +972,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         rbp_snip = 1.337, 
                         gamma_b_shear_snip = 1.337, 
                         gamma_b_bearing_snip = 1.337, 
-                        bearing_detailing_errors_snip = openapi_client.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
+                        bearing_detailing_errors_snip = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
                             is_anchor = True, 
                             connector_id = 56, ), 
                         critical_plate_thickness = 1.337, 
@@ -1294,7 +1294,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 bolts_anchor_compression = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResData-IdeaStatiCa_ConnectionChecks(
                         bolt_tension_resistance = 1.337, 
                         bolt_punching_resistance = 1.337, 
                         bolt_tension_force = 1.337, 
@@ -1316,19 +1316,19 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         bolt_shear_forces = [
                             1.337
                             ], 
-                        shear_forces_in_shear_planes = openapi_client.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types.CI_Connections_Data_AutoDesign_ShearForcesInShearPlanes-CI_BasicTypes(
+                        shear_forces_in_shear_planes = connection-restapi-client-poc.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types.CI_Connections_Data_AutoDesign_ShearForcesInShearPlanes-CI_BasicTypes(
                             shear_forces = [
-                                openapi_client.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
                                     qy = 1.337, 
                                     qz = 1.337, )
                                 ], 
-                            bolt_coordinate_system = openapi_client.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
+                            bolt_coordinate_system = connection-restapi-client-poc.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
                                 origin = '', 
-                                axis_x = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                                axis_x = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                                     direction_x = 1.337, 
                                     direction_y = 1.337, 
                                     direction_z = 1.337, 
-                                    normalize = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                                    normalize = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                                         direction_x = 1.337, 
                                         direction_y = 1.337, 
                                         direction_z = 1.337, 
@@ -1510,11 +1510,11 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         tear_out_distance = 1.337, 
                         phi_bearing = 1.337, 
                         shear_plane_thread = True, 
-                        detailing_checks_bolt = openapi_client.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
+                        detailing_checks_bolt = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
                             is_anchor = True, 
                             connector_id = 56, 
                             results = [
-                                openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                                     constraint_value = 1.337, 
                                     detailing_check_category = 'None', 
                                     detailing_check_type = 'None', 
@@ -1525,10 +1525,10 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                                     target_element_name = '', )
                                 ], ), 
                         thin_plates_validity_en = [
-                            openapi_client.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidity-CI_BasicTypes(
+                            connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidity-CI_BasicTypes(
                                 related_plate_name = '', 
                                 validity_criteria = [
-                                    openapi_client.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
+                                    connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
                                         value_name = '', 
                                         value = 1.337, 
                                         limit = 1.337, )
@@ -1540,7 +1540,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         rbp_snip = 1.337, 
                         gamma_b_shear_snip = 1.337, 
                         gamma_b_bearing_snip = 1.337, 
-                        bearing_detailing_errors_snip = openapi_client.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
+                        bearing_detailing_errors_snip = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
                             is_anchor = True, 
                             connector_id = 56, ), 
                         critical_plate_thickness = 1.337, 
@@ -1862,7 +1862,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 bolts_anchor_info = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_bolt_check_res_data_info_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResDataInfo-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_bolt_check_res_data_info_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResDataInfo-IdeaStatiCa_ConnectionChecks(
                         bolt_tension_resistance = 1.337, 
                         compression_resistance = 1.337, 
                         moment_resistance = 1.337, 
@@ -1884,7 +1884,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 pre_bolts = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResData-IdeaStatiCa_ConnectionChecks(
                         bolt_tension_resistance = 1.337, 
                         bolt_punching_resistance = 1.337, 
                         bolt_tension_force = 1.337, 
@@ -1906,19 +1906,19 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         bolt_shear_forces = [
                             1.337
                             ], 
-                        shear_forces_in_shear_planes = openapi_client.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types.CI_Connections_Data_AutoDesign_ShearForcesInShearPlanes-CI_BasicTypes(
+                        shear_forces_in_shear_planes = connection-restapi-client-poc.models.ci_connections_data_auto_design_shear_forces_in_shear_planes_ci_basic_types.CI_Connections_Data_AutoDesign_ShearForcesInShearPlanes-CI_BasicTypes(
                             shear_forces = [
-                                openapi_client.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types.CI_Connections_Data_AutoDesign_InternalShearForces-CI_BasicTypes(
                                     qy = 1.337, 
                                     qz = 1.337, )
                                 ], 
-                            bolt_coordinate_system = openapi_client.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
+                            bolt_coordinate_system = connection-restapi-client-poc.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types.CI_Connections_Data_AutoDesign_BoltCoordinateSystem-CI_BasicTypes(
                                 origin = '', 
-                                axis_x = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                                axis_x = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                                     direction_x = 1.337, 
                                     direction_y = 1.337, 
                                     direction_z = 1.337, 
-                                    normalize = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                                    normalize = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                                         direction_x = 1.337, 
                                         direction_y = 1.337, 
                                         direction_z = 1.337, 
@@ -2100,11 +2100,11 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         tear_out_distance = 1.337, 
                         phi_bearing = 1.337, 
                         shear_plane_thread = True, 
-                        detailing_checks_bolt = openapi_client.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
+                        detailing_checks_bolt = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
                             is_anchor = True, 
                             connector_id = 56, 
                             results = [
-                                openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                                     constraint_value = 1.337, 
                                     detailing_check_category = 'None', 
                                     detailing_check_type = 'None', 
@@ -2115,10 +2115,10 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                                     target_element_name = '', )
                                 ], ), 
                         thin_plates_validity_en = [
-                            openapi_client.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidity-CI_BasicTypes(
+                            connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidity-CI_BasicTypes(
                                 related_plate_name = '', 
                                 validity_criteria = [
-                                    openapi_client.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
+                                    connection-restapi-client-poc.models.idea_rs_connections_data_thin_plate_validity_criterion_ci_basic_types.IdeaRS_Connections_Data_ThinPlateValidityCriterion-CI_BasicTypes(
                                         value_name = '', 
                                         value = 1.337, 
                                         limit = 1.337, )
@@ -2130,7 +2130,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         rbp_snip = 1.337, 
                         gamma_b_shear_snip = 1.337, 
                         gamma_b_bearing_snip = 1.337, 
-                        bearing_detailing_errors_snip = openapi_client.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
+                        bearing_detailing_errors_snip = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_bolt_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksBolt-CI_BasicTypes(
                             is_anchor = True, 
                             connector_id = 56, ), 
                         critical_plate_thickness = 1.337, 
@@ -2452,7 +2452,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 pre_bolts_info = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_bolt_check_res_data_info_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResDataInfo-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_bolt_check_res_data_info_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResDataInfo-IdeaStatiCa_ConnectionChecks(
                         bolt_tension_resistance = 1.337, 
                         compression_resistance = 1.337, 
                         moment_resistance = 1.337, 
@@ -2474,7 +2474,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 bolt_check_res_data_timbers = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_bolt_check_res_data_timber_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResDataTimber-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_bolt_check_res_data_timber_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BoltCheckResDataTimber-IdeaStatiCa_ConnectionChecks(
                         bolt_tension_resistance = 1.337, 
                         bolt_punching_resistance = 1.337, 
                         bolt_tension_force = 1.337, 
@@ -2538,7 +2538,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 pins = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_pin_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_PinCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_pin_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_PinCheckResData-IdeaStatiCa_ConnectionChecks(
                         pin_assembly_name = '', 
                         pin_shear_resistance = 1.337, 
                         pin_bearing_resistance = 1.337, 
@@ -2601,9 +2601,9 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         is_fire_design = True, 
                         fire_temperature = 1.337, 
                         factor_kb_theta = 1.337, 
-                        detailing_checks_pin = openapi_client.models.ci_connections_data_detailing_detailing_checks_pin_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksPin-CI_BasicTypes(
+                        detailing_checks_pin = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_pin_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksPin-CI_BasicTypes(
                             results = [
-                                openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                                     constraint_value = 1.337, 
                                     detailing_check_category = 'None', 
                                     detailing_check_type = 'None', 
@@ -2630,7 +2630,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 welds = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_weld_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_WeldCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_weld_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_WeldCheckResData-IdeaStatiCa_ConnectionChecks(
                         joined_item_name = '', 
                         designed_thickness = 1.337, 
                         thickness = 1.337, 
@@ -2692,11 +2692,11 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         phi_w = 1.337, 
                         omega_w = 1.337, 
                         fuw = 1.337, 
-                        checks_nonconformities = openapi_client.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
+                        checks_nonconformities = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
                             use_fillet_weld_leg_size = True, 
                             is_pjp_weld = True, 
                             results = [
-                                openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                                     constraint_value = 1.337, 
                                     detailing_check_category = 'None', 
                                     detailing_check_type = 'None', 
@@ -2706,7 +2706,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                                     target_element_id = 56, 
                                     target_element_name = '', )
                                 ], ), 
-                        detailing_checks_weld = openapi_client.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
+                        detailing_checks_weld = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
                             use_fillet_weld_leg_size = True, 
                             is_pjp_weld = True, ), 
                         weld_resistance = 1.337, 
@@ -2762,7 +2762,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 welds_info = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_weld_check_res_data_info_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_WeldCheckResDataInfo-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_weld_check_res_data_info_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_WeldCheckResDataInfo-IdeaStatiCa_ConnectionChecks(
                         item_name = '', 
                         equivalent_stress_resistance = 1.337, 
                         sigma_perpendicular_resistance = 1.337, 
@@ -2781,7 +2781,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 fatigue_checks = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_fatigue_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_FatigueCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_fatigue_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_FatigueCheckResData-IdeaStatiCa_ConnectionChecks(
                         stress_diagram = [
                             [
                                 1.337
@@ -2820,7 +2820,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 fatigue_sections_checks = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_fatigue_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_FatigueCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_fatigue_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_FatigueCheckResData-IdeaStatiCa_ConnectionChecks(
                         stress_diagram = [
                             [
                                 1.337
@@ -2859,7 +2859,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 fatigue_bolt_checks = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_fatigue_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_FatigueBoltCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_fatigue_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_FatigueBoltCheckResData-IdeaStatiCa_ConnectionChecks(
                         bolt_assembly_name = '', 
                         forces_all_load_cases = {
                             'key' : [
@@ -2881,7 +2881,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 fatigue_anchor_checks = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_fatigue_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_FatigueBoltCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_fatigue_bolt_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_FatigueBoltCheckResData-IdeaStatiCa_ConnectionChecks(
                         bolt_assembly_name = '', 
                         forces_all_load_cases = {
                             'key' : [
@@ -2903,7 +2903,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 fatigue_welds = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_weld_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_WeldCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_weld_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_WeldCheckResData-IdeaStatiCa_ConnectionChecks(
                         joined_item_name = '', 
                         designed_thickness = 1.337, 
                         thickness = 1.337, 
@@ -2965,11 +2965,11 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         phi_w = 1.337, 
                         omega_w = 1.337, 
                         fuw = 1.337, 
-                        checks_nonconformities = openapi_client.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
+                        checks_nonconformities = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
                             use_fillet_weld_leg_size = True, 
                             is_pjp_weld = True, 
                             results = [
-                                openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                                     constraint_value = 1.337, 
                                     detailing_check_category = 'None', 
                                     detailing_check_type = 'None', 
@@ -2979,7 +2979,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                                     target_element_id = 56, 
                                     target_element_name = '', )
                                 ], ), 
-                        detailing_checks_weld = openapi_client.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
+                        detailing_checks_weld = connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types.CI_Connections_Data_Detailing_DetailingChecksWeld-CI_BasicTypes(
                             use_fillet_weld_leg_size = True, 
                             is_pjp_weld = True, ), 
                         weld_resistance = 1.337, 
@@ -3035,7 +3035,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 concrete_blocks = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_concrete_block_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_ConcreteBlockCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_concrete_block_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_ConcreteBlockCheckResData-IdeaStatiCa_ConnectionChecks(
                         fjd = 1.337, 
                         average_stress = 1.337, 
                         nsd = 1.337, 
@@ -3045,15 +3045,15 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         center_compression = '', 
                         aeff2 = 1.337, 
                         supporting_regions = [
-                            openapi_client.models.ci_geometry2_d_i_region2_d_ci_basic_types.CI_Geometry2D_IRegion2D-CI_BasicTypes(
-                                outline = openapi_client.models.ci_geometry2_d_i_poly_line2_d_ci_basic_types.CI_Geometry2D_IPolyLine2D-CI_BasicTypes(
-                                    start_point = openapi_client.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
+                            connection-restapi-client-poc.models.ci_geometry2_d_i_region2_d_ci_basic_types.CI_Geometry2D_IRegion2D-CI_BasicTypes(
+                                outline = connection-restapi-client-poc.models.ci_geometry2_d_i_poly_line2_d_ci_basic_types.CI_Geometry2D_IPolyLine2D-CI_BasicTypes(
+                                    start_point = connection-restapi-client-poc.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
                                         x = 1.337, 
                                         y = 1.337, ), 
                                     is_closed = True, 
                                     segments = [
-                                        openapi_client.models.ci_geometry2_d_i_segment2_d_ci_basic_types.CI_Geometry2D_ISegment2D-CI_BasicTypes(
-                                            end_point = openapi_client.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
+                                        connection-restapi-client-poc.models.ci_geometry2_d_i_segment2_d_ci_basic_types.CI_Geometry2D_ISegment2D-CI_BasicTypes(
+                                            end_point = connection-restapi-client-poc.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
                                                 x = 1.337, 
                                                 y = 1.337, ), )
                                         ], 
@@ -3061,7 +3061,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                                     bounds = '', 
                                     id = 56, ), 
                                 openings = [
-                                    openapi_client.models.ci_geometry2_d_i_poly_line2_d_ci_basic_types.CI_Geometry2D_IPolyLine2D-CI_BasicTypes(
+                                    connection-restapi-client-poc.models.ci_geometry2_d_i_poly_line2_d_ci_basic_types.CI_Geometry2D_IPolyLine2D-CI_BasicTypes(
                                         is_closed = True, 
                                         length = 1.337, 
                                         bounds = '', 
@@ -3077,7 +3077,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                             'key' : [
                                 [
                                     [
-                                        openapi_client.models.ci_gi_cl2_d_path2_d_segment_ci_geometry2_d.CI_GiCL2D_Path2D_Segment-CI_Geometry2D(
+                                        connection-restapi-client-poc.models.ci_gi_cl2_d_path2_d_segment_ci_geometry2_d.CI_GiCL2D_Path2D_Segment-CI_Geometry2D(
                                             end = '', )
                                         ]
                                     ]
@@ -3119,7 +3119,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 summary = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_summary_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_SummaryCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_summary_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_SummaryCheckResData-IdeaStatiCa_ConnectionChecks(
                         check_value = 1.337, 
                         check_context = 'Nothing', 
                         msg_context = 'Analysis', 
@@ -3135,7 +3135,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 project_item = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_project_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_ProjectCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_project_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_ProjectCheckResData-IdeaStatiCa_ConnectionChecks(
                         item = '', 
                         item_info = '', 
                         id = 56, 
@@ -3148,14 +3148,14 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 analysis = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_analysis_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_AnalysisCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_analysis_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_AnalysisCheckResData-IdeaStatiCa_ConnectionChecks(
                         applied_load_percentage = 1.337, 
                         critical_load_coeff = 1.337, 
                         message = '', 
                         max_plate_eps = 1.337, 
                         max_weld_eps = 1.337, 
                         points = [
-                            openapi_client.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
+                            connection-restapi-client-poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
                                 point = '', 
                                 x = 1.337, 
                                 y = 1.337, )
@@ -3171,14 +3171,14 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 total_capacity = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_analysis_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_AnalysisCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_analysis_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_AnalysisCheckResData-IdeaStatiCa_ConnectionChecks(
                         applied_load_percentage = 1.337, 
                         critical_load_coeff = 1.337, 
                         message = '', 
                         max_plate_eps = 1.337, 
                         max_weld_eps = 1.337, 
                         points = [
-                            openapi_client.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
+                            connection-restapi-client-poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
                                 point = '', 
                                 x = 1.337, 
                                 y = 1.337, )
@@ -3194,7 +3194,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 base_plate_shear = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_base_plate_shear_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BasePlateShearCheckResData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_base_plate_shear_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BasePlateShearCheckResData-IdeaStatiCa_ConnectionChecks(
                         vrdf = 1.337, 
                         vrdx = 1.337, 
                         vrdy = 1.337, 
@@ -3255,7 +3255,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 stiffnesess = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_stiffness_chek_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_StiffnessChekData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_stiffness_chek_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_StiffnessChekData-IdeaStatiCa_ConnectionChecks(
                         beam_id = 56, 
                         component = '', 
                         component_id = 'Nx', 
@@ -3274,13 +3274,13 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         dx = 1.337, 
                         kx = 1.337, 
                         points = [
-                            openapi_client.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
+                            connection-restapi-client-poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
                                 point = '', 
                                 x = 1.337, 
                                 y = 1.337, )
                             ], 
                         points_shell = [
-                            openapi_client.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
+                            connection-restapi-client-poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
                                 point = '', 
                                 x = 1.337, 
                                 y = 1.337, )
@@ -3302,7 +3302,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 stiffnesess_axial = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_stiffness_chek_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_StiffnessChekData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_stiffness_chek_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_StiffnessChekData-IdeaStatiCa_ConnectionChecks(
                         beam_id = 56, 
                         component = '', 
                         component_id = 'Nx', 
@@ -3321,13 +3321,13 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         dx = 1.337, 
                         kx = 1.337, 
                         points = [
-                            openapi_client.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
+                            connection-restapi-client-poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
                                 point = '', 
                                 x = 1.337, 
                                 y = 1.337, )
                             ], 
                         points_shell = [
-                            openapi_client.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
+                            connection-restapi-client-poc.models.ci_gi_cl2_d_point2_d_ci_geometry2_d.CI_GiCL2D_Point2D-CI_Geometry2D(
                                 point = '', 
                                 x = 1.337, 
                                 y = 1.337, )
@@ -3349,7 +3349,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 bucklings = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_buckling_check_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BucklingCheckData-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_buckling_check_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_BucklingCheckData-IdeaStatiCa_ConnectionChecks(
                         shape = 56, 
                         shape_inx = 56, 
                         bucklig_load_coefficient = 1.337, 
@@ -3363,7 +3363,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         form = '', )
                     },
                 nonconformity = [
-                    openapi_client.models.con_modeler_connection_plug_in_summary_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_SummaryCheckResData-IdeaStatiCa_ConnectionChecks(
+                    connection-restapi-client-poc.models.con_modeler_connection_plug_in_summary_check_res_data_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_SummaryCheckResData-IdeaStatiCa_ConnectionChecks(
                         check_value = 1.337, 
                         check_context = 'Nothing', 
                         msg_context = 'Analysis', 
@@ -3378,9 +3378,9 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                         max_unity_check = 1.337, 
                         form = '', )
                     ],
-                cost_estimation_results = openapi_client.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_results_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationResults-IdeaStatiCa_ConnectionChecks(
+                cost_estimation_results = connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_results_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationResults-IdeaStatiCa_ConnectionChecks(
                     steel_costs = [
-                        openapi_client.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_steel_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemSteel-IdeaStatiCa_ConnectionChecks(
+                        connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_steel_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemSteel-IdeaStatiCa_ConnectionChecks(
                             unique_id = 56, 
                             unit_cost = 1.337, 
                             cost = 1.337, 
@@ -3390,7 +3390,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                             plate_thickness = 1.337, )
                         ], 
                     fillet_weld_costs = [
-                        openapi_client.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_weld_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemWeld-IdeaStatiCa_ConnectionChecks(
+                        connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_weld_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemWeld-IdeaStatiCa_ConnectionChecks(
                             unique_id = 56, 
                             unit_cost = 1.337, 
                             cost = 1.337, 
@@ -3402,7 +3402,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                             weld_type = 'NotSpecified', )
                         ], 
                     butt_weld_costs = [
-                        openapi_client.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_weld_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemWeld-IdeaStatiCa_ConnectionChecks(
+                        connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_weld_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemWeld-IdeaStatiCa_ConnectionChecks(
                             unique_id = 56, 
                             unit_cost = 1.337, 
                             cost = 1.337, 
@@ -3413,7 +3413,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                             leg_size = 1.337, )
                         ], 
                     bolt_costs = [
-                        openapi_client.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_bolt_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemBolt-IdeaStatiCa_ConnectionChecks(
+                        connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_bolt_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_DataContract_CostEstimationData_CostEstimationItemBolt-IdeaStatiCa_ConnectionChecks(
                             unique_id = 56, 
                             unit_cost = 1.337, 
                             cost = 1.337, 
@@ -3425,7 +3425,7 @@ class TestConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(
                     total_estimated_cost = 1.337, 
                     log_message = '', ),
                 welds_data_load_levels = {
-                    'key' : openapi_client.models.con_modeler_connection_plug_in_weld_data_load_level_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_WeldDataLoadLevel-IdeaStatiCa_ConnectionChecks(
+                    'key' : connection-restapi-client-poc.models.con_modeler_connection_plug_in_weld_data_load_level_idea_stati_ca_connection_checks.ConModeler_ConnectionPlugIn_WeldDataLoadLevel-IdeaStatiCa_ConnectionChecks(
                         weld_criterias = {
                             'key' : {
                                 'key' : [

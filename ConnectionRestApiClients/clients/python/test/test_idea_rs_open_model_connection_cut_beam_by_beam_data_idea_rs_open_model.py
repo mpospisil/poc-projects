@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_connection_cut_beam_by_beam_data_idea_rs_open_model import IdeaRSOpenModelConnectionCutBeamByBeamDataIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_cut_beam_by_beam_data_idea_rs_open_model import IdeaRSOpenModelConnectionCutBeamByBeamDataIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionCutBeamByBeamDataIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionCutBeamByBeamDataIdeaRSOpenModel unit test stubs"""
@@ -35,15 +35,15 @@ class TestIdeaRSOpenModelConnectionCutBeamByBeamDataIdeaRSOpenModel(unittest.Tes
         model = IdeaRSOpenModelConnectionCutBeamByBeamDataIdeaRSOpenModel()
         if include_optional:
             return IdeaRSOpenModelConnectionCutBeamByBeamDataIdeaRSOpenModel(
-                modified_object = openapi_client.models.idea_rs_open_model_reference_element_idea_rs_open_model.IdeaRS_OpenModel_ReferenceElement-IdeaRS_OpenModel(
+                modified_object = connection-restapi-client-poc.models.idea_rs_open_model_reference_element_idea_rs_open_model.IdeaRS_OpenModel_ReferenceElement-IdeaRS_OpenModel(
                     type_name = '', 
                     id = 56, 
-                    element = openapi_client.models.idea_rs_open_model_open_element_id_idea_rs_open_model.IdeaRS_OpenModel_OpenElementId-IdeaRS_OpenModel(
+                    element = connection-restapi-client-poc.models.idea_rs_open_model_open_element_id_idea_rs_open_model.IdeaRS_OpenModel_OpenElementId-IdeaRS_OpenModel(
                         id = 56, ), ),
-                cutting_object = openapi_client.models.idea_rs_open_model_reference_element_idea_rs_open_model.IdeaRS_OpenModel_ReferenceElement-IdeaRS_OpenModel(
+                cutting_object = connection-restapi-client-poc.models.idea_rs_open_model_reference_element_idea_rs_open_model.IdeaRS_OpenModel_ReferenceElement-IdeaRS_OpenModel(
                     type_name = '', 
                     id = 56, 
-                    element = openapi_client.models.idea_rs_open_model_open_element_id_idea_rs_open_model.IdeaRS_OpenModel_OpenElementId-IdeaRS_OpenModel(
+                    element = connection-restapi-client-poc.models.idea_rs_open_model_open_element_id_idea_rs_open_model.IdeaRS_OpenModel_OpenElementId-IdeaRS_OpenModel(
                         id = 56, ), ),
                 is_weld = True,
                 weld_thickness = 1.337,

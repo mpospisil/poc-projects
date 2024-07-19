@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_connection_distance_comparison_idea_rs_open_model import IdeaRSOpenModelConnectionDistanceComparisonIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_distance_comparison_idea_rs_open_model import IdeaRSOpenModelConnectionDistanceComparisonIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionDistanceComparisonIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionDistanceComparisonIdeaRSOpenModel unit test stubs"""

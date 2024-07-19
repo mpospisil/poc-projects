@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_parameters_bolt_shear_type_idea_rs_open_model import IdeaRSOpenModelParametersBoltShearTypeIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_parameters_bolt_shear_type_idea_rs_open_model import IdeaRSOpenModelParametersBoltShearTypeIdeaRSOpenModel
 
 class TestIdeaRSOpenModelParametersBoltShearTypeIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelParametersBoltShearTypeIdeaRSOpenModel unit test stubs"""

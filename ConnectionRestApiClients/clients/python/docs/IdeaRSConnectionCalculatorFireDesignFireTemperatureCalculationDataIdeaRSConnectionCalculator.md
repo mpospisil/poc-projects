@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.idea_rs_connection_calculator_fire_design_fire_temperature_calculation_data_idea_rs_connection_calculator import IdeaRSConnectionCalculatorFireDesignFireTemperatureCalculationDataIdeaRSConnectionCalculator
+from connection-restapi-client-poc.models.idea_rs_connection_calculator_fire_design_fire_temperature_calculation_data_idea_rs_connection_calculator import IdeaRSConnectionCalculatorFireDesignFireTemperatureCalculationDataIdeaRSConnectionCalculator
 
 # TODO update the JSON string below
 json = "{}"

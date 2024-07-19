@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.calculation_api import CalculationApi
+from connection-restapi-client-poc.api.calculation_api import CalculationApi
 
 
 class TestCalculationApi(unittest.TestCase):

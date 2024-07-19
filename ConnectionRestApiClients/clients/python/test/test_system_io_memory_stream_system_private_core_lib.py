@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.system_io_memory_stream_system_private_core_lib import SystemIOMemoryStreamSystemPrivateCoreLib
+from connection-restapi-client-poc.models.system_io_memory_stream_system_private_core_lib import SystemIOMemoryStreamSystemPrivateCoreLib
 
 class TestSystemIOMemoryStreamSystemPrivateCoreLib(unittest.TestCase):
     """SystemIOMemoryStreamSystemPrivateCoreLib unit test stubs"""

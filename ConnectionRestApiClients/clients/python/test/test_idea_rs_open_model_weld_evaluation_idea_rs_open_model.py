@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_weld_evaluation_idea_rs_open_model import IdeaRSOpenModelWeldEvaluationIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_weld_evaluation_idea_rs_open_model import IdeaRSOpenModelWeldEvaluationIdeaRSOpenModel
 
 class TestIdeaRSOpenModelWeldEvaluationIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelWeldEvaluationIdeaRSOpenModel unit test stubs"""

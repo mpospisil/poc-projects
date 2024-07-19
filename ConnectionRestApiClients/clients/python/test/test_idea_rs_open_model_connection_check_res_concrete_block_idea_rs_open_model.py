@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_connection_check_res_concrete_block_idea_rs_open_model import IdeaRSOpenModelConnectionCheckResConcreteBlockIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_check_res_concrete_block_idea_rs_open_model import IdeaRSOpenModelConnectionCheckResConcreteBlockIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionCheckResConcreteBlockIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionCheckResConcreteBlockIdeaRSOpenModel unit test stubs"""

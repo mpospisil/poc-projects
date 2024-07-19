@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_connection_setup_idea_rs_open_model import IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_setup_idea_rs_open_model import IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionSetupIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionSetupIdeaRSOpenModel unit test stubs"""
@@ -36,7 +36,7 @@ class TestIdeaRSOpenModelConnectionSetupIdeaRSOpenModel(unittest.TestCase):
         if include_optional:
             return IdeaRSOpenModelConnectionSetupIdeaRSOpenModel(
                 steel_setup = None,
-                concrete_setup = openapi_client.models.idea_rs_open_model_concrete_concrete_setup_idea_rs_open_model.IdeaRS_OpenModel_Concrete_ConcreteSetup-IdeaRS_OpenModel(
+                concrete_setup = connection-restapi-client-poc.models.idea_rs_open_model_concrete_concrete_setup_idea_rs_open_model.IdeaRS_OpenModel_Concrete_ConcreteSetup-IdeaRS_OpenModel(
                     id = 56, ),
                 stop_at_limit_strain = True,
                 weld_evaluation_data = 'MaxForceElement',

@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.con_modeler_connection_plug_in_fatigue_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInFatigueCheckResDataIdeaStatiCaConnectionChecks
+from connection-restapi-client-poc.models.con_modeler_connection_plug_in_fatigue_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInFatigueCheckResDataIdeaStatiCaConnectionChecks
 
 # TODO update the JSON string below
 json = "{}"

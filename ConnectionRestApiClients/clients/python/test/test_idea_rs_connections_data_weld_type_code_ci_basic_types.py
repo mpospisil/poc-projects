@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_connections_data_weld_type_code_ci_basic_types import IdeaRSConnectionsDataWeldTypeCodeCIBasicTypes
+from connection-restapi-client-poc.models.idea_rs_connections_data_weld_type_code_ci_basic_types import IdeaRSConnectionsDataWeldTypeCodeCIBasicTypes
 
 class TestIdeaRSConnectionsDataWeldTypeCodeCIBasicTypes(unittest.TestCase):
     """IdeaRSConnectionsDataWeldTypeCodeCIBasicTypes unit test stubs"""

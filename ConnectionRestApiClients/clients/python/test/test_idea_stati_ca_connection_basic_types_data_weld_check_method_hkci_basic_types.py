@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_stati_ca_connection_basic_types_data_weld_check_method_hkci_basic_types import IdeaStatiCaConnectionBasicTypesDataWeldCheckMethodHKCIBasicTypes
+from connection-restapi-client-poc.models.idea_stati_ca_connection_basic_types_data_weld_check_method_hkci_basic_types import IdeaStatiCaConnectionBasicTypesDataWeldCheckMethodHKCIBasicTypes
 
 class TestIdeaStatiCaConnectionBasicTypesDataWeldCheckMethodHKCIBasicTypes(unittest.TestCase):
     """IdeaStatiCaConnectionBasicTypesDataWeldCheckMethodHKCIBasicTypes unit test stubs"""

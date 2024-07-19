@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_result_result_on_member_idea_rs_open_model import IdeaRSOpenModelResultResultOnMemberIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_result_result_on_member_idea_rs_open_model import IdeaRSOpenModelResultResultOnMemberIdeaRSOpenModel
 
 class TestIdeaRSOpenModelResultResultOnMemberIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelResultResultOnMemberIdeaRSOpenModel unit test stubs"""
@@ -35,13 +35,13 @@ class TestIdeaRSOpenModelResultResultOnMemberIdeaRSOpenModel(unittest.TestCase):
         model = IdeaRSOpenModelResultResultOnMemberIdeaRSOpenModel()
         if include_optional:
             return IdeaRSOpenModelResultResultOnMemberIdeaRSOpenModel(
-                member = openapi_client.models.idea_rs_open_model_result_member_idea_rs_open_model.IdeaRS_OpenModel_Result_Member-IdeaRS_OpenModel(
+                member = connection-restapi-client-poc.models.idea_rs_open_model_result_member_idea_rs_open_model.IdeaRS_OpenModel_Result_Member-IdeaRS_OpenModel(
                     member_type = 'Member1D', 
                     id = 56, ),
                 result_type = 'InternalForces',
                 local_system_type = 'Local',
                 results = [
-                    openapi_client.models.idea_rs_open_model_result_result_base_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultBase-IdeaRS_OpenModel()
+                    connection-restapi-client-poc.models.idea_rs_open_model_result_result_base_idea_rs_open_model.IdeaRS_OpenModel_Result_ResultBase-IdeaRS_OpenModel()
                     ]
             )
         else:

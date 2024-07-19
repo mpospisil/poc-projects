@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.parameter_api import ParameterApi
+from connection-restapi-client-poc.api.parameter_api import ParameterApi
 
 
 class TestParameterApi(unittest.TestCase):

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.cigi_cl2_d_path2_d_segment_ci_geometry2_d import CIGiCL2DPath2DSegmentCIGeometry2D
+from connection-restapi-client-poc.models.cigi_cl2_d_path2_d_segment_ci_geometry2_d import CIGiCL2DPath2DSegmentCIGeometry2D
 
 # TODO update the JSON string below
 json = "{}"

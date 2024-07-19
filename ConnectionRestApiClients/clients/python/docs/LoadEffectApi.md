@@ -1,4 +1,4 @@
-# openapi_client.LoadEffectApi
+# connection-restapi-client-poc.LoadEffectApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,22 +20,22 @@ Method | HTTP request | Description
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.LoadEffectApi(api_client)
+    api_instance = connection-restapi-client-poc.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     is_percentage = True # bool |  (optional)
@@ -89,21 +89,21 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.LoadEffectApi(api_client)
+    api_instance = connection-restapi-client-poc.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     load_effect_id = 56 # int | 
@@ -157,22 +157,22 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.LoadEffectApi(api_client)
+    api_instance = connection-restapi-client-poc.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     load_effect_id = 56 # int | 
@@ -228,26 +228,26 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.LoadEffectApi(api_client)
+    api_instance = connection-restapi-client-poc.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     load_effect_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin = openapi_client.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin = connection-restapi-client-poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin |  (optional)
 
     try:
         api_response = api_instance.api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put(project_id, connection_id, load_effect_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin)
@@ -299,26 +299,26 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.models.con_modeler_connection_plug_in_load_effect_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInLoadEffectDataIdeaStatiCaConnectionChecks
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.con_modeler_connection_plug_in_load_effect_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInLoadEffectDataIdeaStatiCaConnectionChecks
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.LoadEffectApi(api_client)
+    api_instance = connection-restapi-client-poc.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin = openapi_client.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin = connection-restapi-client-poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin |  (optional)
 
     try:
         api_response = api_instance.api1_projects_project_id_connections_connection_id_load_effects_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin)

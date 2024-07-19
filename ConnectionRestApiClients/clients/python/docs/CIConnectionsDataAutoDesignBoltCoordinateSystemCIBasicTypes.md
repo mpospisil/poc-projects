@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types import CIConnectionsDataAutoDesignBoltCoordinateSystemCIBasicTypes
+from connection-restapi-client-poc.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types import CIConnectionsDataAutoDesignBoltCoordinateSystemCIBasicTypes
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_result_con_result_summary_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_result_con_result_summary_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin
 
 class TestIdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin(unittest.TestCase):
     """IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin unit test stubs"""
@@ -38,7 +38,7 @@ class TestIdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdea
                 id = 56,
                 passed = True,
                 result_summary = [
-                    openapi_client.models.idea_rs_open_model_connection_check_res_summary_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResSummary-IdeaRS_OpenModel(
+                    connection-restapi-client-poc.models.idea_rs_open_model_connection_check_res_summary_idea_rs_open_model.IdeaRS_OpenModel_Connection_CheckResSummary-IdeaRS_OpenModel(
                         check_value = 1.337, 
                         check_status = True, 
                         load_case_id = 56, 

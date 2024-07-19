@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_connection_cut_data_idea_rs_open_model import IdeaRSOpenModelConnectionCutDataIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_cut_data_idea_rs_open_model import IdeaRSOpenModelConnectionCutDataIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionCutDataIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionCutDataIdeaRSOpenModel unit test stubs"""
@@ -35,12 +35,12 @@ class TestIdeaRSOpenModelConnectionCutDataIdeaRSOpenModel(unittest.TestCase):
         model = IdeaRSOpenModelConnectionCutDataIdeaRSOpenModel()
         if include_optional:
             return IdeaRSOpenModelConnectionCutDataIdeaRSOpenModel(
-                plane_point = openapi_client.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
+                plane_point = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
                     x = 1.337, 
                     y = 1.337, 
                     z = 1.337, 
                     id = 56, ),
-                normal_vector = openapi_client.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
+                normal_vector = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_vector3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Vector3D-IdeaRS_OpenModel(
                     x = 1.337, 
                     y = 1.337, 
                     z = 1.337, ),

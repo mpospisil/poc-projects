@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.ci_connections_data_detailing_detailing_checks_pin_ci_basic_types import CIConnectionsDataDetailingDetailingChecksPinCIBasicTypes
+from connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_pin_ci_basic_types import CIConnectionsDataDetailingDetailingChecksPinCIBasicTypes
 
 class TestCIConnectionsDataDetailingDetailingChecksPinCIBasicTypes(unittest.TestCase):
     """CIConnectionsDataDetailingDetailingChecksPinCIBasicTypes unit test stubs"""
@@ -36,7 +36,7 @@ class TestCIConnectionsDataDetailingDetailingChecksPinCIBasicTypes(unittest.Test
         if include_optional:
             return CIConnectionsDataDetailingDetailingChecksPinCIBasicTypes(
                 results = [
-                    openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                    connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                         constraint_value = 1.337, 
                         detailing_check_category = 'None', 
                         detailing_check_type = 'None', 

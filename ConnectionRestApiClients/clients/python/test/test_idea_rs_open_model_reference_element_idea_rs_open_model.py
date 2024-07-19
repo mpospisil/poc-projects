@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_reference_element_idea_rs_open_model import IdeaRSOpenModelReferenceElementIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_reference_element_idea_rs_open_model import IdeaRSOpenModelReferenceElementIdeaRSOpenModel
 
 class TestIdeaRSOpenModelReferenceElementIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelReferenceElementIdeaRSOpenModel unit test stubs"""
@@ -37,7 +37,7 @@ class TestIdeaRSOpenModelReferenceElementIdeaRSOpenModel(unittest.TestCase):
             return IdeaRSOpenModelReferenceElementIdeaRSOpenModel(
                 type_name = '',
                 id = 56,
-                element = openapi_client.models.idea_rs_open_model_open_element_id_idea_rs_open_model.IdeaRS_OpenModel_OpenElementId-IdeaRS_OpenModel(
+                element = connection-restapi-client-poc.models.idea_rs_open_model_open_element_id_idea_rs_open_model.IdeaRS_OpenModel_OpenElementId-IdeaRS_OpenModel(
                     id = 56, )
             )
         else:

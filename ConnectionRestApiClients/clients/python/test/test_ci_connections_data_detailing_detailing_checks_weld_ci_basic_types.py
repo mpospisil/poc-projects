@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types import CIConnectionsDataDetailingDetailingChecksWeldCIBasicTypes
+from connection-restapi-client-poc.models.ci_connections_data_detailing_detailing_checks_weld_ci_basic_types import CIConnectionsDataDetailingDetailingChecksWeldCIBasicTypes
 
 class TestCIConnectionsDataDetailingDetailingChecksWeldCIBasicTypes(unittest.TestCase):
     """CIConnectionsDataDetailingDetailingChecksWeldCIBasicTypes unit test stubs"""
@@ -38,7 +38,7 @@ class TestCIConnectionsDataDetailingDetailingChecksWeldCIBasicTypes(unittest.Tes
                 use_fillet_weld_leg_size = True,
                 is_pjp_weld = True,
                 results = [
-                    openapi_client.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
+                    connection-restapi-client-poc.models.ci_connections_data_detailing_i_detailing_check_ci_basic_types.CI_Connections_Data_Detailing_IDetailingCheck-CI_BasicTypes(
                         constraint_value = 1.337, 
                         detailing_check_category = 'None', 
                         detailing_check_type = 'None', 

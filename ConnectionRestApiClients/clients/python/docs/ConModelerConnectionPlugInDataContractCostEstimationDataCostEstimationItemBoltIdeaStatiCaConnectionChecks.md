@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_bolt_idea_stati_ca_connection_checks import ConModelerConnectionPlugInDataContractCostEstimationDataCostEstimationItemBoltIdeaStatiCaConnectionChecks
+from connection-restapi-client-poc.models.con_modeler_connection_plug_in_data_contract_cost_estimation_data_cost_estimation_item_bolt_idea_stati_ca_connection_checks import ConModelerConnectionPlugInDataContractCostEstimationDataCostEstimationItemBoltIdeaStatiCaConnectionChecks
 
 # TODO update the JSON string below
 json = "{}"

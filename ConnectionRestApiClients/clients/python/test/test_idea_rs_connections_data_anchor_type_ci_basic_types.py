@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_connections_data_anchor_type_ci_basic_types import IdeaRSConnectionsDataAnchorTypeCIBasicTypes
+from connection-restapi-client-poc.models.idea_rs_connections_data_anchor_type_ci_basic_types import IdeaRSConnectionsDataAnchorTypeCIBasicTypes
 
 class TestIdeaRSConnectionsDataAnchorTypeCIBasicTypes(unittest.TestCase):
     """IdeaRSConnectionsDataAnchorTypeCIBasicTypes unit test stubs"""

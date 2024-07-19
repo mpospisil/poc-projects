@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.ci_geometry2_di_region2_dci_basic_types import CIGeometry2DIRegion2DCIBasicTypes
+from connection-restapi-client-poc.models.ci_geometry2_di_region2_dci_basic_types import CIGeometry2DIRegion2DCIBasicTypes
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.con_modeler_connection_plug_in_concrete_block_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInConcreteBlockCheckResDataIdeaStatiCaConnectionChecks
+from connection-restapi-client-poc.models.con_modeler_connection_plug_in_concrete_block_check_res_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInConcreteBlockCheckResDataIdeaStatiCaConnectionChecks
 
 class TestConModelerConnectionPlugInConcreteBlockCheckResDataIdeaStatiCaConnectionChecks(unittest.TestCase):
     """ConModelerConnectionPlugInConcreteBlockCheckResDataIdeaStatiCaConnectionChecks unit test stubs"""
@@ -44,15 +44,15 @@ class TestConModelerConnectionPlugInConcreteBlockCheckResDataIdeaStatiCaConnecti
                 center_compression = '',
                 aeff2 = 1.337,
                 supporting_regions = [
-                    openapi_client.models.ci_geometry2_d_i_region2_d_ci_basic_types.CI_Geometry2D_IRegion2D-CI_BasicTypes(
-                        outline = openapi_client.models.ci_geometry2_d_i_poly_line2_d_ci_basic_types.CI_Geometry2D_IPolyLine2D-CI_BasicTypes(
-                            start_point = openapi_client.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
+                    connection-restapi-client-poc.models.ci_geometry2_d_i_region2_d_ci_basic_types.CI_Geometry2D_IRegion2D-CI_BasicTypes(
+                        outline = connection-restapi-client-poc.models.ci_geometry2_d_i_poly_line2_d_ci_basic_types.CI_Geometry2D_IPolyLine2D-CI_BasicTypes(
+                            start_point = connection-restapi-client-poc.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
                                 x = 1.337, 
                                 y = 1.337, ), 
                             is_closed = True, 
                             segments = [
-                                openapi_client.models.ci_geometry2_d_i_segment2_d_ci_basic_types.CI_Geometry2D_ISegment2D-CI_BasicTypes(
-                                    end_point = openapi_client.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
+                                connection-restapi-client-poc.models.ci_geometry2_d_i_segment2_d_ci_basic_types.CI_Geometry2D_ISegment2D-CI_BasicTypes(
+                                    end_point = connection-restapi-client-poc.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
                                         x = 1.337, 
                                         y = 1.337, ), )
                                 ], 
@@ -60,7 +60,7 @@ class TestConModelerConnectionPlugInConcreteBlockCheckResDataIdeaStatiCaConnecti
                             bounds = '', 
                             id = 56, ), 
                         openings = [
-                            openapi_client.models.ci_geometry2_d_i_poly_line2_d_ci_basic_types.CI_Geometry2D_IPolyLine2D-CI_BasicTypes(
+                            connection-restapi-client-poc.models.ci_geometry2_d_i_poly_line2_d_ci_basic_types.CI_Geometry2D_IPolyLine2D-CI_BasicTypes(
                                 is_closed = True, 
                                 length = 1.337, 
                                 bounds = '', 
@@ -76,7 +76,7 @@ class TestConModelerConnectionPlugInConcreteBlockCheckResDataIdeaStatiCaConnecti
                     'key' : [
                         [
                             [
-                                openapi_client.models.ci_gi_cl2_d_path2_d_segment_ci_geometry2_d.CI_GiCL2D_Path2D_Segment-CI_Geometry2D(
+                                connection-restapi-client-poc.models.ci_gi_cl2_d_path2_d_segment_ci_geometry2_d.CI_GiCL2D_Path2D_Segment-CI_Geometry2D(
                                     end = '', )
                                 ]
                             ]

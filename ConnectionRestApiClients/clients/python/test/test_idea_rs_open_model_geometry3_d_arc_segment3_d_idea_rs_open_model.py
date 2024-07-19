@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_geometry3_d_arc_segment3_d_idea_rs_open_model import IdeaRSOpenModelGeometry3DArcSegment3DIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_arc_segment3_d_idea_rs_open_model import IdeaRSOpenModelGeometry3DArcSegment3DIdeaRSOpenModel
 
 class TestIdeaRSOpenModelGeometry3DArcSegment3DIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelGeometry3DArcSegment3DIdeaRSOpenModel unit test stubs"""

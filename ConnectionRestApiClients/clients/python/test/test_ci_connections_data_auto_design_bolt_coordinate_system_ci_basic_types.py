@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types import CIConnectionsDataAutoDesignBoltCoordinateSystemCIBasicTypes
+from connection-restapi-client-poc.models.ci_connections_data_auto_design_bolt_coordinate_system_ci_basic_types import CIConnectionsDataAutoDesignBoltCoordinateSystemCIBasicTypes
 
 class TestCIConnectionsDataAutoDesignBoltCoordinateSystemCIBasicTypes(unittest.TestCase):
     """CIConnectionsDataAutoDesignBoltCoordinateSystemCIBasicTypes unit test stubs"""
@@ -36,11 +36,11 @@ class TestCIConnectionsDataAutoDesignBoltCoordinateSystemCIBasicTypes(unittest.T
         if include_optional:
             return CIConnectionsDataAutoDesignBoltCoordinateSystemCIBasicTypes(
                 origin = '',
-                axis_x = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                axis_x = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                     direction_x = 1.337, 
                     direction_y = 1.337, 
                     direction_z = 1.337, 
-                    normalize = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                    normalize = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                         direction_x = 1.337, 
                         direction_y = 1.337, 
                         direction_z = 1.337, 
@@ -48,11 +48,11 @@ class TestCIConnectionsDataAutoDesignBoltCoordinateSystemCIBasicTypes(unittest.T
                         magnitude_squared = 1.337, ), 
                     magnitude = 1.337, 
                     magnitude_squared = 1.337, ),
-                axis_y = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                axis_y = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                     direction_x = 1.337, 
                     direction_y = 1.337, 
                     direction_z = 1.337, 
-                    normalize = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                    normalize = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                         direction_x = 1.337, 
                         direction_y = 1.337, 
                         direction_z = 1.337, 
@@ -60,11 +60,11 @@ class TestCIConnectionsDataAutoDesignBoltCoordinateSystemCIBasicTypes(unittest.T
                         magnitude_squared = 1.337, ), 
                     magnitude = 1.337, 
                     magnitude_squared = 1.337, ),
-                axis_z = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                axis_z = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                     direction_x = 1.337, 
                     direction_y = 1.337, 
                     direction_z = 1.337, 
-                    normalize = openapi_client.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
+                    normalize = connection-restapi-client-poc.models.ci_geometry3_d_vector3_d_ci_basic_types.CI_Geometry3D_Vector3D-CI_BasicTypes(
                         direction_x = 1.337, 
                         direction_y = 1.337, 
                         direction_z = 1.337, 

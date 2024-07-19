@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_cross_section_reinforced_cross_section_idea_rs_open_model import IdeaRSOpenModelCrossSectionReinforcedCrossSectionIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_cross_section_reinforced_cross_section_idea_rs_open_model import IdeaRSOpenModelCrossSectionReinforcedCrossSectionIdeaRSOpenModel
 
 class TestIdeaRSOpenModelCrossSectionReinforcedCrossSectionIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelCrossSectionReinforcedCrossSectionIdeaRSOpenModel unit test stubs"""

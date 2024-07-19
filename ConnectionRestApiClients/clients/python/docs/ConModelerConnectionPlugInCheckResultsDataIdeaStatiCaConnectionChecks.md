@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.con_modeler_connection_plug_in_check_results_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks
+from connection-restapi-client-poc.models.con_modeler_connection_plug_in_check_results_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks
 
 # TODO update the JSON string below
 json = "{}"

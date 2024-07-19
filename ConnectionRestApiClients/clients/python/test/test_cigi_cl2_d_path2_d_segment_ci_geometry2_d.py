@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.cigi_cl2_d_path2_d_segment_ci_geometry2_d import CIGiCL2DPath2DSegmentCIGeometry2D
+from connection-restapi-client-poc.models.cigi_cl2_d_path2_d_segment_ci_geometry2_d import CIGiCL2DPath2DSegmentCIGeometry2D
 
 class TestCIGiCL2DPath2DSegmentCIGeometry2D(unittest.TestCase):
     """CIGiCL2DPath2DSegmentCIGeometry2D unit test stubs"""

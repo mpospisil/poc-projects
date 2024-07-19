@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_stati_ca_connection_basic_types_data_weld_position_snipci_basic_types import IdeaStatiCaConnectionBasicTypesDataWeldPositionSNIPCIBasicTypes
+from connection-restapi-client-poc.models.idea_stati_ca_connection_basic_types_data_weld_position_snipci_basic_types import IdeaStatiCaConnectionBasicTypesDataWeldPositionSNIPCIBasicTypes
 
 class TestIdeaStatiCaConnectionBasicTypesDataWeldPositionSNIPCIBasicTypes(unittest.TestCase):
     """IdeaStatiCaConnectionBasicTypesDataWeldPositionSNIPCIBasicTypes unit test stubs"""

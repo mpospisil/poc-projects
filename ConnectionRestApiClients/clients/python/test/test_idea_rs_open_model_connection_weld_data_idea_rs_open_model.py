@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_rs_open_model_connection_weld_data_idea_rs_open_model import IdeaRSOpenModelConnectionWeldDataIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_weld_data_idea_rs_open_model import IdeaRSOpenModelConnectionWeldDataIdeaRSOpenModel
 
 class TestIdeaRSOpenModelConnectionWeldDataIdeaRSOpenModel(unittest.TestCase):
     """IdeaRSOpenModelConnectionWeldDataIdeaRSOpenModel unit test stubs"""
@@ -39,21 +39,21 @@ class TestIdeaRSOpenModelConnectionWeldDataIdeaRSOpenModel(unittest.TestCase):
                 name = '',
                 thickness = 1.337,
                 material = '',
-                weld_material = openapi_client.models.idea_rs_open_model_reference_element_idea_rs_open_model.IdeaRS_OpenModel_ReferenceElement-IdeaRS_OpenModel(
+                weld_material = connection-restapi-client-poc.models.idea_rs_open_model_reference_element_idea_rs_open_model.IdeaRS_OpenModel_ReferenceElement-IdeaRS_OpenModel(
                     type_name = '', 
                     id = 56, 
-                    element = openapi_client.models.idea_rs_open_model_open_element_id_idea_rs_open_model.IdeaRS_OpenModel_OpenElementId-IdeaRS_OpenModel(
+                    element = connection-restapi-client-poc.models.idea_rs_open_model_open_element_id_idea_rs_open_model.IdeaRS_OpenModel_OpenElementId-IdeaRS_OpenModel(
                         id = 56, ), ),
                 weld_type = 'NotSpecified',
                 connected_part_ids = [
                     ''
                     ],
-                start = openapi_client.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
+                start = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
                     x = 1.337, 
                     y = 1.337, 
                     z = 1.337, 
                     id = 56, ),
-                end = openapi_client.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
+                end = connection-restapi-client-poc.models.idea_rs_open_model_geometry3_d_point3_d_idea_rs_open_model.IdeaRS_OpenModel_Geometry3D_Point3D-IdeaRS_OpenModel(
                     x = 1.337, 
                     y = 1.337, 
                     z = 1.337, 

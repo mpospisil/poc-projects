@@ -1,4 +1,4 @@
-# openapi_client.ProjectApi
+# connection-restapi-client-poc.ProjectApi
 
 All URIs are relative to *http://localhost*
 
@@ -27,21 +27,21 @@ Method | HTTP request | Description
 
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
 
     try:
         api_response = api_instance.api1_connect_client_get()
@@ -87,22 +87,22 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
 
     try:
         api_response = api_instance.api1_projects_get()
@@ -148,22 +148,22 @@ Creates an IDEA Connection project based on OpenModelContainer (model and result
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
     connections_to_create = [56] # List[int] |  (optional)
 
     try:
@@ -214,25 +214,25 @@ Creates an IDEA Connection project based on OpenModelContainer (model and result
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_rs_open_model_open_model_container_idea_rs_open_model import IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_rs_open_model_open_model_container_idea_rs_open_model import IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
     connections_to_create = [56] # List[int] |  (optional)
-    idea_rs_open_model_open_model_container_idea_rs_open_model = openapi_client.IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel() # IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel |  (optional)
+    idea_rs_open_model_open_model_container_idea_rs_open_model = connection-restapi-client-poc.IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel() # IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel |  (optional)
 
     try:
         # Creates an IDEA Connection project based on OpenModelContainer (model and results)
@@ -283,22 +283,22 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
 
     try:
         api_response = api_instance.api1_projects_open_post()
@@ -344,21 +344,21 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
     project_id = 'project_id_example' # str | 
 
     try:
@@ -409,22 +409,22 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_rs_open_model_connection_setup_idea_rs_open_model import IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_setup_idea_rs_open_model import IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
     project_id = 'project_id_example' # str | 
 
     try:
@@ -474,24 +474,24 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_rs_open_model_connection_setup_idea_rs_open_model import IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_rs_open_model_connection_setup_idea_rs_open_model import IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
     project_id = 'project_id_example' # str | 
-    idea_rs_open_model_connection_setup_idea_rs_open_model = openapi_client.IdeaRSOpenModelConnectionSetupIdeaRSOpenModel() # IdeaRSOpenModelConnectionSetupIdeaRSOpenModel |  (optional)
+    idea_rs_open_model_connection_setup_idea_rs_open_model = connection-restapi-client-poc.IdeaRSOpenModelConnectionSetupIdeaRSOpenModel() # IdeaRSOpenModelConnectionSetupIdeaRSOpenModel |  (optional)
 
     try:
         api_response = api_instance.api1_projects_project_id_connection_setup_put(project_id, idea_rs_open_model_connection_setup_idea_rs_open_model=idea_rs_open_model_connection_setup_idea_rs_open_model)
@@ -541,22 +541,22 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.models.system_io_memory_stream_system_private_core_lib import SystemIOMemoryStreamSystemPrivateCoreLib
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.system_io_memory_stream_system_private_core_lib import SystemIOMemoryStreamSystemPrivateCoreLib
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
     project_id = 'project_id_example' # str | 
 
     try:
@@ -606,22 +606,22 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_data_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_data_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
     project_id = 'project_id_example' # str | 
 
     try:
@@ -671,21 +671,21 @@ Update an IDEA Connection project based on OpenModelContainer (model and results
 
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
     project_id = 'project_id_example' # str | 
 
     try:
@@ -736,24 +736,24 @@ Update an IDEA Connection project based on OpenModelContainer (model and results
 
 
 ```python
-import openapi_client
-from openapi_client.models.idea_rs_open_model_open_model_container_idea_rs_open_model import IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
-from openapi_client.rest import ApiException
+import connection-restapi-client-poc
+from connection-restapi-client-poc.models.idea_rs_open_model_open_model_container_idea_rs_open_model import IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
+from connection-restapi-client-poc.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = connection-restapi-client-poc.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with connection-restapi-client-poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ProjectApi(api_client)
+    api_instance = connection-restapi-client-poc.ProjectApi(api_client)
     project_id = 'project_id_example' # str | 
-    idea_rs_open_model_open_model_container_idea_rs_open_model = openapi_client.IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel() # IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel |  (optional)
+    idea_rs_open_model_open_model_container_idea_rs_open_model = connection-restapi-client-poc.IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel() # IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel |  (optional)
 
     try:
         # Update an IDEA Connection project based on OpenModelContainer (model and results)

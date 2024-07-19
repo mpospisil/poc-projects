@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types import CIConnectionsDataAutoDesignInternalShearForcesCIBasicTypes
+from connection-restapi-client-poc.models.ci_connections_data_auto_design_internal_shear_forces_ci_basic_types import CIConnectionsDataAutoDesignInternalShearForcesCIBasicTypes
 
 class TestCIConnectionsDataAutoDesignInternalShearForcesCIBasicTypes(unittest.TestCase):
     """CIConnectionsDataAutoDesignInternalShearForcesCIBasicTypes unit test stubs"""

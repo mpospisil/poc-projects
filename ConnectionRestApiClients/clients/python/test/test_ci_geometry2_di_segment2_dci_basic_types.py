@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.ci_geometry2_di_segment2_dci_basic_types import CIGeometry2DISegment2DCIBasicTypes
+from connection-restapi-client-poc.models.ci_geometry2_di_segment2_dci_basic_types import CIGeometry2DISegment2DCIBasicTypes
 
 class TestCIGeometry2DISegment2DCIBasicTypes(unittest.TestCase):
     """CIGeometry2DISegment2DCIBasicTypes unit test stubs"""
@@ -35,7 +35,7 @@ class TestCIGeometry2DISegment2DCIBasicTypes(unittest.TestCase):
         model = CIGeometry2DISegment2DCIBasicTypes()
         if include_optional:
             return CIGeometry2DISegment2DCIBasicTypes(
-                end_point = openapi_client.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
+                end_point = connection-restapi-client-poc.models.ci_geometry2_d_ida_com_point2_d_ci_basic_types.CI_Geometry2D_IdaComPoint2D-CI_BasicTypes(
                     x = 1.337, 
                     y = 1.337, )
             )

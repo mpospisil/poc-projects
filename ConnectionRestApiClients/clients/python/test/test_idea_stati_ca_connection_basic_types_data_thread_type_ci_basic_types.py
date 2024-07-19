@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.idea_stati_ca_connection_basic_types_data_thread_type_ci_basic_types import IdeaStatiCaConnectionBasicTypesDataThreadTypeCIBasicTypes
+from connection-restapi-client-poc.models.idea_stati_ca_connection_basic_types_data_thread_type_ci_basic_types import IdeaStatiCaConnectionBasicTypesDataThreadTypeCIBasicTypes
 
 class TestIdeaStatiCaConnectionBasicTypesDataThreadTypeCIBasicTypes(unittest.TestCase):
     """IdeaStatiCaConnectionBasicTypesDataThreadTypeCIBasicTypes unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.load_effect_api import LoadEffectApi
+from connection-restapi-client-poc.api.load_effect_api import LoadEffectApi
 
 
 class TestLoadEffectApi(unittest.TestCase):

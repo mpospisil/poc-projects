@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Connection Rest API 1.0",
-    "version": "1.0"
+    "title": "Connection Rest API 1.1",
+    "version": "1.1"
   },
   "paths": {
     "/api/1/projects/{projectId}/calculate": {

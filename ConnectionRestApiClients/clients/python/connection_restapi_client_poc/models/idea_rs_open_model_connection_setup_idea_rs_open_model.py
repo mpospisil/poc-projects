@@ -87,7 +87,8 @@ class IdeaRSOpenModelConnectionSetupIdeaRSOpenModel(BaseModel):
     fatigue_section_offset: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="fatigueSectionOffset")
     condensed_element_length_factor: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="condensedElementLengthFactor")
     gamma_mu: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="gammaMu")
-    __properties: ClassVar[List[str]] = ["steelSetup", "concreteSetup", "stopAtLimitStrain", "weldEvaluationData", "checkDetailing", "applyConeBreakoutCheck", "pretensionForceFpc", "gammaInst", "gammaC", "gammaM3", "anchorLengthForStiffness", "jointBetaFactor", "effectiveAreaStressCoeff", "effectiveAreaStressCoeffAISC", "frictionCoefficient", "limitPlasticStrain", "limitDeformation", "limitDeformationCheck", "analysisGNL", "analysisAllGNL", "warnPlasticStrain", "warnCheckLevel", "optimalCheckLevel", "distanceBetweenBolts", "distanceDiameterBetweenBP", "distanceBetweenBoltsEdge", "bearingAngle", "decreasingFtrd", "bracedSystem", "bearingCheck", "applyBetapInfluence", "memberLengthRatio", "divisionOfSurfaceOfCHS", "divisionOfArcsOfRHS", "numElement", "numberIterations", "mdiv", "minSize", "maxSize", "numElementRhs", "numElementPlate", "rigidBP", "alphaCC", "crackedConcrete", "developedFillers", "deformationBoltHole", "extensionLengthRationOpenSections", "extensionLengthRationCloseSections", "factorPreloadBolt", "baseMetalCapacity", "applyBearingCheck", "frictionCoefficientPbolt", "crtCompCheckIS", "boltMaxGripLengthCoeff", "fatigueSectionOffset", "condensedElementLengthFactor", "gammaMu"]
+    hss_limit_plastic_strain: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="hssLimitPlasticStrain")
+    __properties: ClassVar[List[str]] = ["steelSetup", "concreteSetup", "stopAtLimitStrain", "weldEvaluationData", "checkDetailing", "applyConeBreakoutCheck", "pretensionForceFpc", "gammaInst", "gammaC", "gammaM3", "anchorLengthForStiffness", "jointBetaFactor", "effectiveAreaStressCoeff", "effectiveAreaStressCoeffAISC", "frictionCoefficient", "limitPlasticStrain", "limitDeformation", "limitDeformationCheck", "analysisGNL", "analysisAllGNL", "warnPlasticStrain", "warnCheckLevel", "optimalCheckLevel", "distanceBetweenBolts", "distanceDiameterBetweenBP", "distanceBetweenBoltsEdge", "bearingAngle", "decreasingFtrd", "bracedSystem", "bearingCheck", "applyBetapInfluence", "memberLengthRatio", "divisionOfSurfaceOfCHS", "divisionOfArcsOfRHS", "numElement", "numberIterations", "mdiv", "minSize", "maxSize", "numElementRhs", "numElementPlate", "rigidBP", "alphaCC", "crackedConcrete", "developedFillers", "deformationBoltHole", "extensionLengthRationOpenSections", "extensionLengthRationCloseSections", "factorPreloadBolt", "baseMetalCapacity", "applyBearingCheck", "frictionCoefficientPbolt", "crtCompCheckIS", "boltMaxGripLengthCoeff", "fatigueSectionOffset", "condensedElementLengthFactor", "gammaMu", "hssLimitPlasticStrain"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -199,7 +200,8 @@ class IdeaRSOpenModelConnectionSetupIdeaRSOpenModel(BaseModel):
             "boltMaxGripLengthCoeff": obj.get("boltMaxGripLengthCoeff"),
             "fatigueSectionOffset": obj.get("fatigueSectionOffset"),
             "condensedElementLengthFactor": obj.get("condensedElementLengthFactor"),
-            "gammaMu": obj.get("gammaMu")
+            "gammaMu": obj.get("gammaMu"),
+            "hssLimitPlasticStrain": obj.get("hssLimitPlasticStrain")
         })
         return _obj
 

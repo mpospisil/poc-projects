@@ -4,9 +4,10 @@ from pprint import pprint
 import os
 import requests
 from urllib.parse import urljoin
+import json
 
 
-baseUrl = "http://localhost:5193"
+baseUrl = "http://localhost:5000"
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -60,12 +61,49 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
         try:
             # Get the project data
-            open_project_data = api_project.api1_projects_project_id_project_data_get(project_id)
-            pprint(open_project_data)
+            project_data = api_project.api1_projects_project_id_project_data_get(project_id)
+            pprint(project_data)
 
+            # Get API for connections in the project
+            api_connection = connection_restapi_client_poc.ConnectionApi(api_client)
 
+            # Get list of all connections in the project
+            connections_in_project = api_connection.api1_projects_project_id_connections_get(project_id)
+
+            # first connection in the project 
+            connection1 = connections_in_project[0]
+
+            pprint(connection1)
             
+             # get calculation API for the active project
+            api_calculation = connection_restapi_client_poc.CalculationApi(api_client)
+
+            # run stress-strain CBFEM analysis for the connection id = 1
+            calcParams = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin()
+            calcParams.connection_ids = [connection1.id]
+
+            # run stress-strain analysis for the connection
+            con1_cbfem_results = api_calculation.api1_projects_project_id_calculate_post(project_id, calcParams)
+            pprint(con1_cbfem_results)
+
+            # get detailed results
+            results_text = api_calculation.api1_projects_project_id_rawresults_text_post(project_id, calcParams)
+            #pprint(results_text)
+
+            # raw_results = api_calculation.api1_projects_project_id_rawresults_post(project_id, calcParams)
+            # pprint(raw_results)
+
+            raw_results = json.loads(results_text)
+            pprint(raw_results)
+
+            detailed_results = api_calculation.api1_projects_project_id_results_post(project_id, calcParams)
+            pprint(detailed_results)
+
+        except Exception as ee:
+            print("Exception when calling CalculationApi->api1_projects_project_id_calculate_post: %s\n" % ee)
+
         finally:
+            # close the active project on the backend
             closeProjectResult = api_project.api1_projects_project_id_close_get(project_id)
 
     except Exception as e:

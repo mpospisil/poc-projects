@@ -1971,7 +1971,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "application/xml": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
                 }
@@ -2038,27 +2038,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IdeaRS_OpenModel_ConnectionSetup-IdeaRS_OpenModel"
                 }
@@ -7752,6 +7732,10 @@
             "format": "double"
           },
           "gammaMu": {
+            "type": "number",
+            "format": "double"
+          },
+          "hssLimitPlasticStrain": {
             "type": "number",
             "format": "double"
           }

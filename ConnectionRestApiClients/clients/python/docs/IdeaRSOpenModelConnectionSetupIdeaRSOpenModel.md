@@ -62,6 +62,7 @@ Name | Type | Description | Notes
 **fatigue_section_offset** | **float** |  | [optional] 
 **condensed_element_length_factor** | **float** |  | [optional] 
 **gamma_mu** | **float** |  | [optional] 
+**hss_limit_plastic_strain** | **float** |  | [optional] 
 
 ## Example
 

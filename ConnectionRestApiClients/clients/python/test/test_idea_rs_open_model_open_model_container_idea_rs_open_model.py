@@ -464,7 +464,8 @@ class TestIdeaRSOpenModelOpenModelContainerIdeaRSOpenModel(unittest.TestCase):
                         bolt_max_grip_length_coeff = 1.337, 
                         fatigue_section_offset = 1.337, 
                         condensed_element_length_factor = 1.337, 
-                        gamma_mu = 1.337, ), 
+                        gamma_mu = 1.337, 
+                        hss_limit_plastic_strain = 1.337, ), 
                     project_data = connection_restapi_client_poc.models.project_data.projectData(), 
                     check_member = [
                         connection_restapi_client_poc.models.idea_rs_open_model_model_check_member_idea_rs_open_model.IdeaRS_OpenModel_Model_CheckMember-IdeaRS_OpenModel(

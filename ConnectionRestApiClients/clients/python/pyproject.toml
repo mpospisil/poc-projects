@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "connection_restapi_client_poc"
-version = "1.1.0"
-description = "Connection Rest API 1.1"
+version = "1.2.0"
+description = "Connection Rest API 1.2"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"
 readme = "README.md"
 repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
-keywords = ["OpenAPI", "OpenAPI-Generator", "Connection Rest API 1.1"]
+keywords = ["OpenAPI", "OpenAPI-Generator", "Connection Rest API 1.2"]
 include = ["connection_restapi_client_poc/py.typed"]
 
 [tool.poetry.dependencies]

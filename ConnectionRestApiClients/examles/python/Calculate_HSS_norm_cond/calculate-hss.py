@@ -34,6 +34,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
         # Add your ClientId to HTTP header
         api_client.default_headers['ClientId'] = clientId
+        api_client.default_headers['Content-Type'] = 'application/json'
 
 
         # temporary workaround to upload the project file
@@ -90,14 +91,23 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             results_text = api_calculation.api1_projects_project_id_rawresults_text_post(project_id, calcParams)
             #pprint(results_text)
 
-            # raw_results = api_calculation.api1_projects_project_id_rawresults_post(project_id, calcParams)
-            # pprint(raw_results)
-
             raw_results = json.loads(results_text)
             pprint(raw_results)
 
             detailed_results = api_calculation.api1_projects_project_id_results_post(project_id, calcParams)
             pprint(detailed_results)
+
+            # get connection setup
+            connection_setup =  api_project.api1_projects_project_id_connection_setup_get(project_id)
+            pprint(connection_setup)
+
+            # modify setup
+            connection_setup.hss_limit_plastic_strain = 0.02
+            modifiedSetup = api_project.api1_projects_project_id_connection_setup_put(project_id, connection_setup)
+
+            # recalculate connection
+            recalculate_results = api_calculation.api1_projects_project_id_calculate_post(project_id, calcParams)
+            pprint(recalculate_results)
 
         except Exception as ee:
             print("Exception when calling CalculationApi->api1_projects_project_id_calculate_post: %s\n" % ee)

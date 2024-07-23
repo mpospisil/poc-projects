@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConLibClientApp.Core", "ConLibClientApp.Core\ConLibClientApp.Core.csproj", "{3278DF1E-6909-44E6-8681-2235797250B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConLibClientApp", "ConLibClientApp\ConLibClientApp.csproj", "{185ACD14-2843-4FEC-8A58-66137B2B008C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConLibUI", "ConLibClient\ConLibUI\ConLibUI.vcxproj", "{9B53CDB2-CD72-47E4-A938-5EA7E1031474}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3278DF1E-6909-44E6-8681-2235797250B0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3278DF1E-6909-44E6-8681-2235797250B0}.Debug|x64.Build.0 = Debug|Any CPU
+		{3278DF1E-6909-44E6-8681-2235797250B0}.Release|x64.ActiveCfg = Release|Any CPU
+		{3278DF1E-6909-44E6-8681-2235797250B0}.Release|x64.Build.0 = Release|Any CPU
+		{185ACD14-2843-4FEC-8A58-66137B2B008C}.Debug|x64.ActiveCfg = Debug|x64
+		{185ACD14-2843-4FEC-8A58-66137B2B008C}.Debug|x64.Build.0 = Debug|x64
+		{185ACD14-2843-4FEC-8A58-66137B2B008C}.Release|x64.ActiveCfg = Release|x64
+		{9B53CDB2-CD72-47E4-A938-5EA7E1031474}.Debug|x64.ActiveCfg = Debug|x64
+		{9B53CDB2-CD72-47E4-A938-5EA7E1031474}.Debug|x64.Build.0 = Debug|x64
+		{9B53CDB2-CD72-47E4-A938-5EA7E1031474}.Release|x64.ActiveCfg = Release|x64
+		{9B53CDB2-CD72-47E4-A938-5EA7E1031474}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13183E8D-FB2E-422C-B4AD-4F0BD89A4FD5}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConLibClientApp.Core": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

@@ -3,13 +3,13 @@
 
 ## Enum
 
-* `MANUAL` (value: `'Manual'`)
+* `MANUAL` (value: `'manual'`)
 
-* `MANUALSMALLRODDIAM` (value: `'ManualSmallRodDiam'`)
+* `MANUALSMALLRODDIAM` (value: `'manualSmallRodDiam'`)
 
-* `AUTOMATICANDMACHINE` (value: `'AutomaticAndMachine'`)
+* `AUTOMATICANDMACHINE` (value: `'automaticAndMachine'`)
 
-* `AUTOMATIC` (value: `'Automatic'`)
+* `AUTOMATIC` (value: `'automatic'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

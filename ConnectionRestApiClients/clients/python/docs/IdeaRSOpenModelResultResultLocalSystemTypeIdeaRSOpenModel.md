@@ -3,11 +3,11 @@
 
 ## Enum
 
-* `LOCAL` (value: `'Local'`)
+* `LOCAL` (value: `'local'`)
 
-* `GLOBAL` (value: `'Global'`)
+* `GLOBAL` (value: `'global'`)
 
-* `PRINCIPLE` (value: `'Principle'`)
+* `PRINCIPLE` (value: `'principle'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

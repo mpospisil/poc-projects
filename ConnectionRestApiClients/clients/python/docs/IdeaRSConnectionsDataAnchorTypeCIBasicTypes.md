@@ -3,13 +3,13 @@
 
 ## Enum
 
-* `STRAIGHT` (value: `'Straight'`)
+* `STRAIGHT` (value: `'straight'`)
 
-* `WASHERPLATECIRCULAR` (value: `'WasherPlateCircular'`)
+* `WASHERPLATECIRCULAR` (value: `'washerPlateCircular'`)
 
-* `WASHERPLATERECTANGULAR` (value: `'WasherPlateRectangular'`)
+* `WASHERPLATERECTANGULAR` (value: `'washerPlateRectangular'`)
 
-* `HOOK` (value: `'Hook'`)
+* `HOOK` (value: `'hook'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

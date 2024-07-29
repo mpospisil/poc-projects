@@ -3,17 +3,17 @@
 
 ## Enum
 
-* `INTERNALFORCES` (value: `'InternalForces'`)
+* `INTERNALFORCES` (value: `'internalForces'`)
 
-* `DEFORMATION` (value: `'Deformation'`)
+* `DEFORMATION` (value: `'deformation'`)
 
-* `CROSSSECTIONNLA` (value: `'CrossSectionNLA'`)
+* `CROSSSECTIONNLA` (value: `'crossSectionNLA'`)
 
-* `CROSSSECTIONTA` (value: `'CrossSectionTA'`)
+* `CROSSSECTIONTA` (value: `'crossSectionTA'`)
 
-* `INTERACTIONDIAGRAM` (value: `'InteractionDiagram'`)
+* `INTERACTIONDIAGRAM` (value: `'interactionDiagram'`)
 
-* `CROSSSECTIONMESH` (value: `'CrossSectionMesh'`)
+* `CROSSSECTIONMESH` (value: `'crossSectionMesh'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

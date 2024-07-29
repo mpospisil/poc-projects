@@ -3,71 +3,71 @@
 
 ## Enum
 
-* `UNSPECIFIED` (value: `'Unspecified'`)
+* `UNSPECIFIED` (value: `'unspecified'`)
 
-* `INFORMATION` (value: `'Information'`)
+* `INFORMATION` (value: `'information'`)
 
-* `WARNING` (value: `'Warning'`)
+* `WARNING` (value: `'warning'`)
 
-* `WARNNOPROPERTYINDATA` (value: `'WarnNoPropertyInData'`)
+* `WARNNOPROPERTYINDATA` (value: `'warnNoPropertyInData'`)
 
-* `WARNVALUEOUTOFRANGE` (value: `'WarnValueOutOfRange'`)
+* `WARNVALUEOUTOFRANGE` (value: `'warnValueOutOfRange'`)
 
-* `WARNCURVECOUNT` (value: `'WarnCurveCount'`)
+* `WARNCURVECOUNT` (value: `'warnCurveCount'`)
 
-* `WARNREINFORCEMENTBARSCOLLISION` (value: `'WarnReinforcementBarsCollision'`)
+* `WARNREINFORCEMENTBARSCOLLISION` (value: `'warnReinforcementBarsCollision'`)
 
-* `ERROR` (value: `'Error'`)
+* `ERROR` (value: `'error'`)
 
-* `ERRNOOPENOBJECT` (value: `'ErrNoOpenObject'`)
+* `ERRNOOPENOBJECT` (value: `'errNoOpenObject'`)
 
-* `ERRDATAOBJECTNOTCREATED` (value: `'ErrDataObjectNotCreated'`)
+* `ERRDATAOBJECTNOTCREATED` (value: `'errDataObjectNotCreated'`)
 
-* `ERRNOOBJECTINOPENMODEL` (value: `'ErrNoObjectInOpenModel'`)
+* `ERRNOOBJECTINOPENMODEL` (value: `'errNoObjectInOpenModel'`)
 
-* `ERRNOREFERENCEOBJECTINOPENMODEL` (value: `'ErrNoReferenceObjectInOpenModel'`)
+* `ERRNOREFERENCEOBJECTINOPENMODEL` (value: `'errNoReferenceObjectInOpenModel'`)
 
-* `ERRNOEQUIVALENTOBJECTINDATAMODEL` (value: `'ErrNoEquivalentObjectInDataModel'`)
+* `ERRNOEQUIVALENTOBJECTINDATAMODEL` (value: `'errNoEquivalentObjectInDataModel'`)
 
-* `ERRNOCROSSSECTIONPARAMETER` (value: `'ErrNoCrossSectionParameter'`)
+* `ERRNOCROSSSECTIONPARAMETER` (value: `'errNoCrossSectionParameter'`)
 
-* `ERRBOLTSTOOCLOSE` (value: `'ErrBoltsTooClose'`)
+* `ERRBOLTSTOOCLOSE` (value: `'errBoltsTooClose'`)
 
-* `ERRBOLTSTOOCLOSEEDGE` (value: `'ErrBoltsTooCloseEdge'`)
+* `ERRBOLTSTOOCLOSEEDGE` (value: `'errBoltsTooCloseEdge'`)
 
-* `ERRCONTACTSANGLE` (value: `'ErrContactsAngle'`)
+* `ERRCONTACTSANGLE` (value: `'errContactsAngle'`)
 
-* `ERRINCORRENTMATERIALE` (value: `'ErrIncorrentMaterialE'`)
+* `ERRINCORRENTMATERIALE` (value: `'errIncorrentMaterialE'`)
 
-* `ERRINCORRECTMATERIALEGP` (value: `'ErrIncorrectMaterialEGP'`)
+* `ERRINCORRECTMATERIALEGP` (value: `'errIncorrectMaterialEGP'`)
 
-* `ERRPRELOADEDBOLTGRADE` (value: `'ErrPreloadedBoltGrade'`)
+* `ERRPRELOADEDBOLTGRADE` (value: `'errPreloadedBoltGrade'`)
 
-* `ERRVALUEOUTOFRANGE` (value: `'ErrValueOutOfRange'`)
+* `ERRVALUEOUTOFRANGE` (value: `'errValueOutOfRange'`)
 
-* `ERRCURVEZEROPOINT` (value: `'ErrCurveZeroPoint'`)
+* `ERRCURVEZEROPOINT` (value: `'errCurveZeroPoint'`)
 
-* `ERRCURVEFUNCTION` (value: `'ErrCurveFunction'`)
+* `ERRCURVEFUNCTION` (value: `'errCurveFunction'`)
 
-* `ERRCURVEDECREASEFUNCTION` (value: `'ErrCurveDecreaseFunction'`)
+* `ERRCURVEDECREASEFUNCTION` (value: `'errCurveDecreaseFunction'`)
 
-* `ERRCURVEDERIVATION` (value: `'ErrCurveDerivation'`)
+* `ERRCURVEDERIVATION` (value: `'errCurveDerivation'`)
 
-* `ERRCURVENOTSET` (value: `'ErrCurveNotSet'`)
+* `ERRCURVENOTSET` (value: `'errCurveNotSet'`)
 
-* `ERRVALIDPOLYLINE` (value: `'ErrValidPolyline'`)
+* `ERRVALIDPOLYLINE` (value: `'errValidPolyline'`)
 
-* `ERRWARNINGLOAD` (value: `'ErrWarningLoad'`)
+* `ERRWARNINGLOAD` (value: `'errWarningLoad'`)
 
-* `ERRTIMEOUT` (value: `'ErrTimeout'`)
+* `ERRTIMEOUT` (value: `'errTimeout'`)
 
-* `ERRNOINLIBRARY` (value: `'ErrNoInLibrary'`)
+* `ERRNOINLIBRARY` (value: `'errNoInLibrary'`)
 
-* `ERRBADWELDMATERIALPROPERTY` (value: `'ErrBadWeldMaterialProperty'`)
+* `ERRBADWELDMATERIALPROPERTY` (value: `'errBadWeldMaterialProperty'`)
 
-* `ERROPERATION` (value: `'ErrOperation'`)
+* `ERROPERATION` (value: `'errOperation'`)
 
-* `RESERVED` (value: `'Reserved'`)
+* `RESERVED` (value: `'reserved'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

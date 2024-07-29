@@ -3,13 +3,13 @@
 
 ## Enum
 
-* `COMMON` (value: `'Common'`)
+* `COMMON` (value: `'common'`)
 
-* `MAXCAPACITYCALCULATION` (value: `'MaxCapacityCalculation'`)
+* `MAXCAPACITYCALCULATION` (value: `'maxCapacityCalculation'`)
 
-* `MAXCAPACITYCALCULATIONNEGATIVE` (value: `'MaxCapacityCalculationNegative'`)
+* `MAXCAPACITYCALCULATIONNEGATIVE` (value: `'maxCapacityCalculationNegative'`)
 
-* `HORIZONTALTYINGCALCULATION` (value: `'HorizontalTyingCalculation'`)
+* `HORIZONTALTYINGCALCULATION` (value: `'horizontalTyingCalculation'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

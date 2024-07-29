@@ -3,13 +3,13 @@
 
 ## Enum
 
-* `NONE` (value: `'None'`)
+* `NONE` (value: `'none'`)
 
-* `ERROR` (value: `'Error'`)
+* `ERROR` (value: `'error'`)
 
-* `WARNING` (value: `'Warning'`)
+* `WARNING` (value: `'warning'`)
 
-* `INFORMATION` (value: `'Information'`)
+* `INFORMATION` (value: `'information'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

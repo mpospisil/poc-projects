@@ -3,11 +3,11 @@
 
 ## Enum
 
-* `LOADCASE` (value: `'LoadCase'`)
+* `LOADCASE` (value: `'loadCase'`)
 
-* `COMBINATION` (value: `'Combination'`)
+* `COMBINATION` (value: `'combination'`)
 
-* `RESULTCLASS` (value: `'ResultClass'`)
+* `RESULTCLASS` (value: `'resultClass'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

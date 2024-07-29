@@ -3,11 +3,11 @@
 
 ## Enum
 
-* `DIRECT` (value: `'Direct'`)
+* `DIRECT` (value: `'direct'`)
 
-* `MORTAR` (value: `'Mortar'`)
+* `MORTAR` (value: `'mortar'`)
 
-* `GAP` (value: `'Gap'`)
+* `GAP` (value: `'gap'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

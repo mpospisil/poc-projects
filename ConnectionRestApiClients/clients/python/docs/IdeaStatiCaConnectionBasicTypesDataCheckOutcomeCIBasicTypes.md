@@ -3,11 +3,11 @@
 
 ## Enum
 
-* `CHECKSUCCEDED` (value: `'CheckSucceded'`)
+* `CHECKSUCCEDED` (value: `'checkSucceded'`)
 
-* `CHECKFAILED` (value: `'CheckFailed'`)
+* `CHECKFAILED` (value: `'checkFailed'`)
 
-* `NONEEDFORCHECK` (value: `'NoNeedForCheck'`)
+* `NONEEDFORCHECK` (value: `'noNeedForCheck'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

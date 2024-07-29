@@ -3,13 +3,13 @@
 
 ## Enum
 
-* `BOTH` (value: `'Both'`)
+* `BOTH` (value: `'both'`)
 
-* `TENSION` (value: `'Tension'`)
+* `TENSION` (value: `'tension'`)
 
-* `SHEAR` (value: `'Shear'`)
+* `SHEAR` (value: `'shear'`)
 
-* `NONE` (value: `'None'`)
+* `NONE` (value: `'none'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

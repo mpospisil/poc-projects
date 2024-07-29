@@ -3,17 +3,17 @@
 
 ## Enum
 
-* `NX` (value: `'Nx'`)
+* `NX` (value: `'nx'`)
 
-* `VY` (value: `'Vy'`)
+* `VY` (value: `'vy'`)
 
-* `VZ` (value: `'Vz'`)
+* `VZ` (value: `'vz'`)
 
-* `MX` (value: `'Mx'`)
+* `MX` (value: `'mx'`)
 
-* `MY` (value: `'My'`)
+* `MY` (value: `'my'`)
 
-* `MZ` (value: `'Mz'`)
+* `MZ` (value: `'mz'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

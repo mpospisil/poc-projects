@@ -3,25 +3,25 @@
 
 ## Enum
 
-* `NONE` (value: `'None'`)
+* `NONE` (value: `'none'`)
 
-* `ECEN` (value: `'ECEN'`)
+* `ECEN` (value: `'ecen'`)
 
-* `SIA` (value: `'SIA'`)
+* `SIA` (value: `'sia'`)
 
-* `AMERICAN` (value: `'American'`)
+* `AMERICAN` (value: `'american'`)
 
-* `CANADA` (value: `'Canada'`)
+* `CANADA` (value: `'canada'`)
 
-* `AUS` (value: `'AUS'`)
+* `AUS` (value: `'aus'`)
 
-* `RUS` (value: `'RUS'`)
+* `RUS` (value: `'rus'`)
 
-* `CHN` (value: `'CHN'`)
+* `CHN` (value: `'chn'`)
 
-* `INDIA` (value: `'India'`)
+* `INDIA` (value: `'india'`)
 
-* `HKG` (value: `'HKG'`)
+* `HKG` (value: `'hkg'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,15 +3,15 @@
 
 ## Enum
 
-* `CROSSSECTION` (value: `'CrossSection'`)
+* `CROSSSECTION` (value: `'crossSection'`)
 
-* `MATERIAL` (value: `'Material'`)
+* `MATERIAL` (value: `'material'`)
 
-* `PLATETHICKNESS` (value: `'PlateThickness'`)
+* `PLATETHICKNESS` (value: `'plateThickness'`)
 
-* `STEELSTRANDS` (value: `'SteelStrands'`)
+* `STEELSTRANDS` (value: `'steelStrands'`)
 
-* `FASTENER` (value: `'Fastener'`)
+* `FASTENER` (value: `'fastener'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

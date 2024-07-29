@@ -3,27 +3,27 @@
 
 ## Enum
 
-* `NOTHING` (value: `'Nothing'`)
+* `NOTHING` (value: `'nothing'`)
 
-* `PLATE` (value: `'Plate'`)
+* `PLATE` (value: `'plate'`)
 
-* `BOLT` (value: `'Bolt'`)
+* `BOLT` (value: `'bolt'`)
 
-* `BUCKLING` (value: `'Buckling'`)
+* `BUCKLING` (value: `'buckling'`)
 
-* `ANCHORSASD` (value: `'AnchorsASD'`)
+* `ANCHORSASD` (value: `'anchorsASD'`)
 
-* `BASEPLATESHEARLUGASD` (value: `'BasePlateShearLugASD'`)
+* `BASEPLATESHEARLUGASD` (value: `'basePlateShearLugASD'`)
 
-* `CRTBLOCK` (value: `'CrtBlock'`)
+* `CRTBLOCK` (value: `'crtBlock'`)
 
-* `PLATEDEFORMATION` (value: `'PlateDeformation'`)
+* `PLATEDEFORMATION` (value: `'plateDeformation'`)
 
-* `ANCHORAGENOTCALCULATED` (value: `'AnchorageNotCalculated'`)
+* `ANCHORAGENOTCALCULATED` (value: `'anchorageNotCalculated'`)
 
-* `BOLTTIMBER` (value: `'BoltTimber'`)
+* `BOLTTIMBER` (value: `'boltTimber'`)
 
-* `PIN` (value: `'Pin'`)
+* `PIN` (value: `'pin'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

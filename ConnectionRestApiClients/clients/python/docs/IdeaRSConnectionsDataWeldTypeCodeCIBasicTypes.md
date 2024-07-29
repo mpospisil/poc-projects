@@ -3,25 +3,25 @@
 
 ## Enum
 
-* `NOTSPECIFIED` (value: `'NotSpecified'`)
+* `NOTSPECIFIED` (value: `'notSpecified'`)
 
-* `FILLET` (value: `'Fillet'`)
+* `FILLET` (value: `'fillet'`)
 
-* `DOUBLEFILLET` (value: `'DoubleFillet'`)
+* `DOUBLEFILLET` (value: `'doubleFillet'`)
 
-* `BEVEL` (value: `'Bevel'`)
+* `BEVEL` (value: `'bevel'`)
 
-* `PJP` (value: `'PJP'`)
+* `PJP` (value: `'pjp'`)
 
-* `PJPREAR` (value: `'PJPRear'`)
+* `PJPREAR` (value: `'pjpRear'`)
 
-* `LENGTHATHAUNCH` (value: `'LengthAtHaunch'`)
+* `LENGTHATHAUNCH` (value: `'lengthAtHaunch'`)
 
-* `FILLETREAR` (value: `'FilletRear'`)
+* `FILLETREAR` (value: `'filletRear'`)
 
-* `CONTACT` (value: `'Contact'`)
+* `CONTACT` (value: `'contact'`)
 
-* `INTERMITTENT` (value: `'Intermittent'`)
+* `INTERMITTENT` (value: `'intermittent'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

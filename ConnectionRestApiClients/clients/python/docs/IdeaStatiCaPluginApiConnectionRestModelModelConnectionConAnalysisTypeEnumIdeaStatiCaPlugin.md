@@ -3,23 +3,23 @@
 
 ## Enum
 
-* `STRESS_STRAIN` (value: `'Stress_Strain'`)
+* `STRESS_STRAIN` (value: `'stress_Strain'`)
 
-* `STIFFNESS` (value: `'Stiffness'`)
+* `STIFFNESS` (value: `'stiffness'`)
 
-* `CAPACITY_DESIGN` (value: `'Capacity_Design'`)
+* `CAPACITY_DESIGN` (value: `'capacity_Design'`)
 
-* `FATIGUES` (value: `'Fatigues'`)
+* `FATIGUES` (value: `'fatigues'`)
 
-* `TOTAL_DESIGN` (value: `'Total_Design'`)
+* `TOTAL_DESIGN` (value: `'total_Design'`)
 
-* `HORIZONTALTYING` (value: `'HorizontalTying'`)
+* `HORIZONTALTYING` (value: `'horizontalTying'`)
 
-* `CAPACITYLOADLEVELS` (value: `'CapacityLoadLevels'`)
+* `CAPACITYLOADLEVELS` (value: `'capacityLoadLevels'`)
 
-* `FIRERESTANCE` (value: `'FireRestance'`)
+* `FIRERESTANCE` (value: `'fireRestance'`)
 
-* `BUCKLING` (value: `'Buckling'`)
+* `BUCKLING` (value: `'buckling'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

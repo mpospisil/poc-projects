@@ -3,13 +3,13 @@
 
 ## Enum
 
-* `BOUNDINGBOX` (value: `'BoundingBox'`)
+* `BOUNDINGBOX` (value: `'boundingBox'`)
 
-* `SURFACE` (value: `'Surface'`)
+* `SURFACE` (value: `'surface'`)
 
-* `MITRE` (value: `'Mitre'`)
+* `MITRE` (value: `'mitre'`)
 
-* `SURFACEALL` (value: `'SurfaceAll'`)
+* `SURFACEALL` (value: `'surfaceAll'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

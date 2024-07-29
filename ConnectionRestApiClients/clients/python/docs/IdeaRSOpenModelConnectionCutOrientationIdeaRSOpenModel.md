@@ -3,11 +3,11 @@
 
 ## Enum
 
-* `DEFAULT` (value: `'Default'`)
+* `DEFAULT` (value: `'default'`)
 
-* `PARALLEL` (value: `'Parallel'`)
+* `PARALLEL` (value: `'parallel'`)
 
-* `PERPENDICULAR` (value: `'Perpendicular'`)
+* `PERPENDICULAR` (value: `'perpendicular'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

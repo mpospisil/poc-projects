@@ -3,21 +3,21 @@
 
 ## Enum
 
-* `NONE` (value: `'None'`)
+* `NONE` (value: `'none'`)
 
-* `EN` (value: `'EN'`)
+* `EN` (value: `'en'`)
 
 * `LRFD` (value: `'LRFD'`)
 
 * `ASD` (value: `'ASD'`)
 
-* `LRFD10` (value: `'LRFD10'`)
+* `LRFD10` (value: `'lrfD10'`)
 
-* `ASD10` (value: `'ASD10'`)
+* `ASD10` (value: `'asD10'`)
 
-* `LRFD22` (value: `'LRFD22'`)
+* `LRFD22` (value: `'lrfD22'`)
 
-* `ASD22` (value: `'ASD22'`)
+* `ASD22` (value: `'asD22'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

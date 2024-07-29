@@ -3,47 +3,47 @@
 
 ## Enum
 
-* `NONE` (value: `'None'`)
+* `NONE` (value: `'none'`)
 
-* `BOLT2BOLTTOOSMALL` (value: `'Bolt2BoltTooSmall'`)
+* `BOLT2BOLTTOOSMALL` (value: `'bolt2BoltTooSmall'`)
 
-* `BOLT2EGDETOOSMALL` (value: `'Bolt2EgdeTooSmall'`)
+* `BOLT2EGDETOOSMALL` (value: `'bolt2EgdeTooSmall'`)
 
-* `MINIMUMPLATETHICKNESSFORBOLTS` (value: `'MinimumPlateThicknessForBolts'`)
+* `MINIMUMPLATETHICKNESSFORBOLTS` (value: `'minimumPlateThicknessForBolts'`)
 
-* `MAXIMUMPLATETHICKNESSFORBOLTSCONSIDERINGDUCTILITY` (value: `'MaximumPlateThicknessForBoltsConsideringDuctility'`)
+* `MAXIMUMPLATETHICKNESSFORBOLTSCONSIDERINGDUCTILITY` (value: `'maximumPlateThicknessForBoltsConsideringDuctility'`)
 
-* `PRELOADEDBOLTSANDBEARINGBOLTSUSEDTOGETHER` (value: `'PreloadedBoltsAndBearingBoltsUsedTogether'`)
+* `PRELOADEDBOLTSANDBEARINGBOLTSUSEDTOGETHER` (value: `'preloadedBoltsAndBearingBoltsUsedTogether'`)
 
-* `BEARINGBOLTSANDWELDSUSEDTOGETHER` (value: `'BearingBoltsAndWeldsUsedTogether'`)
+* `BEARINGBOLTSANDWELDSUSEDTOGETHER` (value: `'bearingBoltsAndWeldsUsedTogether'`)
 
-* `BOLTGRIPLENGTHTOOBIG` (value: `'BoltGripLengthTooBig'`)
+* `BOLTGRIPLENGTHTOOBIG` (value: `'boltGripLengthTooBig'`)
 
-* `SINGLEBOLTEDGEDISTANCESPACINGRATIOTOOSMALL` (value: `'SingleBoltEdgeDistanceSpacingRatioTooSmall'`)
+* `SINGLEBOLTEDGEDISTANCESPACINGRATIOTOOSMALL` (value: `'singleBoltEdgeDistanceSpacingRatioTooSmall'`)
 
-* `MULTIPLEBOLTSEDGEDISTANCESPACINGRATIOTOOSMALL` (value: `'MultipleBoltsEdgeDistanceSpacingRatioTooSmall'`)
+* `MULTIPLEBOLTSEDGEDISTANCESPACINGRATIOTOOSMALL` (value: `'multipleBoltsEdgeDistanceSpacingRatioTooSmall'`)
 
-* `MULTIPLEBOLTSSPACINGDISTANCESPACINGRATIOTOOSMALL` (value: `'MultipleBoltsSpacingDistanceSpacingRatioTooSmall'`)
+* `MULTIPLEBOLTSSPACINGDISTANCESPACINGRATIOTOOSMALL` (value: `'multipleBoltsSpacingDistanceSpacingRatioTooSmall'`)
 
-* `WELDTOOSMALL` (value: `'WeldTooSmall'`)
+* `WELDTOOSMALL` (value: `'weldTooSmall'`)
 
-* `WELDTOOSMALLRECOMMENDED` (value: `'WeldTooSmallRecommended'`)
+* `WELDTOOSMALLRECOMMENDED` (value: `'weldTooSmallRecommended'`)
 
-* `WELDTOOSMALLCONSIDERINGDUCTILITY` (value: `'WeldTooSmallConsideringDuctility'`)
+* `WELDTOOSMALLCONSIDERINGDUCTILITY` (value: `'weldTooSmallConsideringDuctility'`)
 
-* `WELDTOOBIG` (value: `'WeldTooBig'`)
+* `WELDTOOBIG` (value: `'weldTooBig'`)
 
-* `WELDTOOSHORT` (value: `'WeldTooShort'`)
+* `WELDTOOSHORT` (value: `'weldTooShort'`)
 
-* `MINIMUMPLATETHICKNESSFORWELDS` (value: `'MinimumPlateThicknessForWelds'`)
+* `MINIMUMPLATETHICKNESSFORWELDS` (value: `'minimumPlateThicknessForWelds'`)
 
-* `WELDMAXIMUMULTIMATESTRENGTH` (value: `'WeldMaximumUltimateStrength'`)
+* `WELDMAXIMUMULTIMATESTRENGTH` (value: `'weldMaximumUltimateStrength'`)
 
-* `CHECKNOTEXECUTED` (value: `'CheckNotExecuted'`)
+* `CHECKNOTEXECUTED` (value: `'checkNotExecuted'`)
 
-* `PINMINIMUMCLEAREDGEDISTANCE` (value: `'PinMinimumClearEdgeDistance'`)
+* `PINMINIMUMCLEAREDGEDISTANCE` (value: `'pinMinimumClearEdgeDistance'`)
 
-* `PINMINIMUMCLEARENDDISTANCE` (value: `'PinMinimumClearEndDistance'`)
+* `PINMINIMUMCLEARENDDISTANCE` (value: `'pinMinimumClearEndDistance'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

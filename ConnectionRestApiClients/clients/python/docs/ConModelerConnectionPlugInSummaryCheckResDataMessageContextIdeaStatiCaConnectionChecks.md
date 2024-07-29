@@ -3,25 +3,25 @@
 
 ## Enum
 
-* `ANALYSIS` (value: `'Analysis'`)
+* `ANALYSIS` (value: `'analysis'`)
 
-* `CALCULATED` (value: `'Calculated'`)
+* `CALCULATED` (value: `'calculated'`)
 
-* `NOTCALCULATED` (value: `'NotCalculated'`)
+* `NOTCALCULATED` (value: `'notCalculated'`)
 
-* `SINGULARITY` (value: `'Singularity'`)
+* `SINGULARITY` (value: `'singularity'`)
 
-* `CHECKED` (value: `'Checked'`)
+* `CHECKED` (value: `'checked'`)
 
-* `BUCKLING` (value: `'Buckling'`)
+* `BUCKLING` (value: `'buckling'`)
 
-* `DETAILING` (value: `'Detailing'`)
+* `DETAILING` (value: `'detailing'`)
 
-* `CHECKVALUE` (value: `'CheckValue'`)
+* `CHECKVALUE` (value: `'checkValue'`)
 
-* `STRAIN` (value: `'Strain'`)
+* `STRAIN` (value: `'strain'`)
 
-* `COST` (value: `'Cost'`)
+* `COST` (value: `'cost'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

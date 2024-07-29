@@ -16,3 +16,4 @@ IdeaStatiCa.ConnectionRestApi should listen on the port 5000
 
 
 run _calculate-hss.py_
+run _apply-template.py_

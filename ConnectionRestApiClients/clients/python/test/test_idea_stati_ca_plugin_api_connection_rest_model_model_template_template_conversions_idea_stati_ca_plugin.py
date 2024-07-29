@@ -46,7 +46,7 @@ class TestIdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversion
                             name = '', 
                             table_id = '', 
                             element_id = '', 
-                            container_type = 'crossSection', ), )
+                            container_type = 'notSet', ), )
                     ],
                 country_code = ''
             )

@@ -80,30 +80,30 @@ class ConModelerConnectionPlugInDataContractCostEstimationDataCostEstimationResu
         # override the default output from pydantic by calling `to_dict()` of each item in steel_costs (list)
         _items = []
         if self.steel_costs:
-            for _item in self.steel_costs:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_steel_costs in self.steel_costs:
+                if _item_steel_costs:
+                    _items.append(_item_steel_costs.to_dict())
             _dict['steelCosts'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in fillet_weld_costs (list)
         _items = []
         if self.fillet_weld_costs:
-            for _item in self.fillet_weld_costs:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_fillet_weld_costs in self.fillet_weld_costs:
+                if _item_fillet_weld_costs:
+                    _items.append(_item_fillet_weld_costs.to_dict())
             _dict['filletWeldCosts'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in butt_weld_costs (list)
         _items = []
         if self.butt_weld_costs:
-            for _item in self.butt_weld_costs:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_butt_weld_costs in self.butt_weld_costs:
+                if _item_butt_weld_costs:
+                    _items.append(_item_butt_weld_costs.to_dict())
             _dict['buttWeldCosts'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in bolt_costs (list)
         _items = []
         if self.bolt_costs:
-            for _item in self.bolt_costs:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_bolt_costs in self.bolt_costs:
+                if _item_bolt_costs:
+                    _items.append(_item_bolt_costs.to_dict())
             _dict['boltCosts'] = _items
         # set to None if steel_costs (nullable) is None
         # and model_fields_set contains the field

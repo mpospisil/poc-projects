@@ -88,9 +88,9 @@ class IdeaRSOpenModelConnectionConcreteBlockDataIdeaRSOpenModel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in outline_points (list)
         _items = []
         if self.outline_points:
-            for _item in self.outline_points:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_outline_points in self.outline_points:
+                if _item_outline_points:
+                    _items.append(_item_outline_points.to_dict())
             _dict['outlinePoints'] = _items
         # override the default output from pydantic by calling `to_dict()` of origin
         if self.origin:

@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "24.0.4.0518"
+__version__ = "24.0.4.0528"
 
 # import apis into sdk package
 from connection_restapi_client_poc.api.calculation_api import CalculationApi

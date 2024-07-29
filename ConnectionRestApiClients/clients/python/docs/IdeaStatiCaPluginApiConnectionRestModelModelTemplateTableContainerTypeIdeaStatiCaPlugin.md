@@ -3,6 +3,8 @@
 
 ## Enum
 
+* `NOTSET` (value: `'notSet'`)
+
 * `CROSSSECTION` (value: `'crossSection'`)
 
 * `MATERIAL` (value: `'material'`)

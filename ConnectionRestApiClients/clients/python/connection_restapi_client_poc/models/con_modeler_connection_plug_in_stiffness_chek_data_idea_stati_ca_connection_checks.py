@@ -104,23 +104,23 @@ class ConModelerConnectionPlugInStiffnessChekDataIdeaStatiCaConnectionChecks(Bas
         # override the default output from pydantic by calling `to_dict()` of each item in points (list)
         _items = []
         if self.points:
-            for _item in self.points:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_points in self.points:
+                if _item_points:
+                    _items.append(_item_points.to_dict())
             _dict['points'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in points_shell (list)
         _items = []
         if self.points_shell:
-            for _item in self.points_shell:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_points_shell in self.points_shell:
+                if _item_points_shell:
+                    _items.append(_item_points_shell.to_dict())
             _dict['pointsShell'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in points_linear (list)
         _items = []
         if self.points_linear:
-            for _item in self.points_linear:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_points_linear in self.points_linear:
+                if _item_points_linear:
+                    _items.append(_item_points_linear.to_dict())
             _dict['pointsLinear'] = _items
         # set to None if component (nullable) is None
         # and model_fields_set contains the field

@@ -109,9 +109,9 @@ class IdeaRSOpenModelConnectionBoltGridIdeaRSOpenModel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in positions (list)
         _items = []
         if self.positions:
-            for _item in self.positions:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_positions in self.positions:
+                if _item_positions:
+                    _items.append(_item_positions.to_dict())
             _dict['positions'] = _items
         # set to None if bolt_assembly_ref (nullable) is None
         # and model_fields_set contains the field

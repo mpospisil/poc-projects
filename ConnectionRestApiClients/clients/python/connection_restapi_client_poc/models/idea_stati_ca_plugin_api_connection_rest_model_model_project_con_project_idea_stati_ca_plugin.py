@@ -78,9 +78,9 @@ class IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPl
         # override the default output from pydantic by calling `to_dict()` of each item in connections (list)
         _items = []
         if self.connections:
-            for _item in self.connections:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_connections in self.connections:
+                if _item_connections:
+                    _items.append(_item_connections.to_dict())
             _dict['connections'] = _items
         # set to None if connections (nullable) is None
         # and model_fields_set contains the field

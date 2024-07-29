@@ -44,7 +44,7 @@ class TestIdeaStatiCaPluginApiConnectionRestModelModelTemplateBaseTemplateConver
                     name = '', 
                     table_id = '', 
                     element_id = '', 
-                    container_type = 'crossSection', )
+                    container_type = 'notSet', )
             )
         else:
             return IdeaStatiCaPluginApiConnectionRestModelModelTemplateBaseTemplateConversionIdeaStatiCaPlugin(

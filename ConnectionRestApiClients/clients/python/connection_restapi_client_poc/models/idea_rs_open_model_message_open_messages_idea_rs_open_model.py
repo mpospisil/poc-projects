@@ -72,9 +72,9 @@ class IdeaRSOpenModelMessageOpenMessagesIdeaRSOpenModel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in messages (list)
         _items = []
         if self.messages:
-            for _item in self.messages:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_messages in self.messages:
+                if _item_messages:
+                    _items.append(_item_messages.to_dict())
             _dict['messages'] = _items
         # set to None if messages (nullable) is None
         # and model_fields_set contains the field

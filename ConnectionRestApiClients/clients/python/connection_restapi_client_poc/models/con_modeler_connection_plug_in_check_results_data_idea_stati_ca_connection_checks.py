@@ -123,205 +123,205 @@ class ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(Base
         # override the default output from pydantic by calling `to_dict()` of each value in plates_deformation (dict)
         _field_dict = {}
         if self.plates_deformation:
-            for _key in self.plates_deformation:
-                if self.plates_deformation[_key]:
-                    _field_dict[_key] = self.plates_deformation[_key].to_dict()
+            for _key_plates_deformation in self.plates_deformation:
+                if self.plates_deformation[_key_plates_deformation]:
+                    _field_dict[_key_plates_deformation] = self.plates_deformation[_key_plates_deformation].to_dict()
             _dict['platesDeformation'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in plates (dict)
         _field_dict = {}
         if self.plates:
-            for _key in self.plates:
-                if self.plates[_key]:
-                    _field_dict[_key] = self.plates[_key].to_dict()
+            for _key_plates in self.plates:
+                if self.plates[_key_plates]:
+                    _field_dict[_key_plates] = self.plates[_key_plates].to_dict()
             _dict['plates'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in plates_info (dict)
         _field_dict = {}
         if self.plates_info:
-            for _key in self.plates_info:
-                if self.plates_info[_key]:
-                    _field_dict[_key] = self.plates_info[_key].to_dict()
+            for _key_plates_info in self.plates_info:
+                if self.plates_info[_key_plates_info]:
+                    _field_dict[_key_plates_info] = self.plates_info[_key_plates_info].to_dict()
             _dict['platesInfo'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in bolts (dict)
         _field_dict = {}
         if self.bolts:
-            for _key in self.bolts:
-                if self.bolts[_key]:
-                    _field_dict[_key] = self.bolts[_key].to_dict()
+            for _key_bolts in self.bolts:
+                if self.bolts[_key_bolts]:
+                    _field_dict[_key_bolts] = self.bolts[_key_bolts].to_dict()
             _dict['bolts'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in bolts_info (dict)
         _field_dict = {}
         if self.bolts_info:
-            for _key in self.bolts_info:
-                if self.bolts_info[_key]:
-                    _field_dict[_key] = self.bolts_info[_key].to_dict()
+            for _key_bolts_info in self.bolts_info:
+                if self.bolts_info[_key_bolts_info]:
+                    _field_dict[_key_bolts_info] = self.bolts_info[_key_bolts_info].to_dict()
             _dict['boltsInfo'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in bolts_anchor (dict)
         _field_dict = {}
         if self.bolts_anchor:
-            for _key in self.bolts_anchor:
-                if self.bolts_anchor[_key]:
-                    _field_dict[_key] = self.bolts_anchor[_key].to_dict()
+            for _key_bolts_anchor in self.bolts_anchor:
+                if self.bolts_anchor[_key_bolts_anchor]:
+                    _field_dict[_key_bolts_anchor] = self.bolts_anchor[_key_bolts_anchor].to_dict()
             _dict['boltsAnchor'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in bolts_anchor_compression (dict)
         _field_dict = {}
         if self.bolts_anchor_compression:
-            for _key in self.bolts_anchor_compression:
-                if self.bolts_anchor_compression[_key]:
-                    _field_dict[_key] = self.bolts_anchor_compression[_key].to_dict()
+            for _key_bolts_anchor_compression in self.bolts_anchor_compression:
+                if self.bolts_anchor_compression[_key_bolts_anchor_compression]:
+                    _field_dict[_key_bolts_anchor_compression] = self.bolts_anchor_compression[_key_bolts_anchor_compression].to_dict()
             _dict['boltsAnchorCompression'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in bolts_anchor_info (dict)
         _field_dict = {}
         if self.bolts_anchor_info:
-            for _key in self.bolts_anchor_info:
-                if self.bolts_anchor_info[_key]:
-                    _field_dict[_key] = self.bolts_anchor_info[_key].to_dict()
+            for _key_bolts_anchor_info in self.bolts_anchor_info:
+                if self.bolts_anchor_info[_key_bolts_anchor_info]:
+                    _field_dict[_key_bolts_anchor_info] = self.bolts_anchor_info[_key_bolts_anchor_info].to_dict()
             _dict['boltsAnchorInfo'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in pre_bolts (dict)
         _field_dict = {}
         if self.pre_bolts:
-            for _key in self.pre_bolts:
-                if self.pre_bolts[_key]:
-                    _field_dict[_key] = self.pre_bolts[_key].to_dict()
+            for _key_pre_bolts in self.pre_bolts:
+                if self.pre_bolts[_key_pre_bolts]:
+                    _field_dict[_key_pre_bolts] = self.pre_bolts[_key_pre_bolts].to_dict()
             _dict['preBolts'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in pre_bolts_info (dict)
         _field_dict = {}
         if self.pre_bolts_info:
-            for _key in self.pre_bolts_info:
-                if self.pre_bolts_info[_key]:
-                    _field_dict[_key] = self.pre_bolts_info[_key].to_dict()
+            for _key_pre_bolts_info in self.pre_bolts_info:
+                if self.pre_bolts_info[_key_pre_bolts_info]:
+                    _field_dict[_key_pre_bolts_info] = self.pre_bolts_info[_key_pre_bolts_info].to_dict()
             _dict['preBoltsInfo'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in bolt_check_res_data_timbers (dict)
         _field_dict = {}
         if self.bolt_check_res_data_timbers:
-            for _key in self.bolt_check_res_data_timbers:
-                if self.bolt_check_res_data_timbers[_key]:
-                    _field_dict[_key] = self.bolt_check_res_data_timbers[_key].to_dict()
+            for _key_bolt_check_res_data_timbers in self.bolt_check_res_data_timbers:
+                if self.bolt_check_res_data_timbers[_key_bolt_check_res_data_timbers]:
+                    _field_dict[_key_bolt_check_res_data_timbers] = self.bolt_check_res_data_timbers[_key_bolt_check_res_data_timbers].to_dict()
             _dict['boltCheckResDataTimbers'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in pins (dict)
         _field_dict = {}
         if self.pins:
-            for _key in self.pins:
-                if self.pins[_key]:
-                    _field_dict[_key] = self.pins[_key].to_dict()
+            for _key_pins in self.pins:
+                if self.pins[_key_pins]:
+                    _field_dict[_key_pins] = self.pins[_key_pins].to_dict()
             _dict['pins'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in welds (dict)
         _field_dict = {}
         if self.welds:
-            for _key in self.welds:
-                if self.welds[_key]:
-                    _field_dict[_key] = self.welds[_key].to_dict()
+            for _key_welds in self.welds:
+                if self.welds[_key_welds]:
+                    _field_dict[_key_welds] = self.welds[_key_welds].to_dict()
             _dict['welds'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in welds_info (dict)
         _field_dict = {}
         if self.welds_info:
-            for _key in self.welds_info:
-                if self.welds_info[_key]:
-                    _field_dict[_key] = self.welds_info[_key].to_dict()
+            for _key_welds_info in self.welds_info:
+                if self.welds_info[_key_welds_info]:
+                    _field_dict[_key_welds_info] = self.welds_info[_key_welds_info].to_dict()
             _dict['weldsInfo'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in fatigue_checks (dict)
         _field_dict = {}
         if self.fatigue_checks:
-            for _key in self.fatigue_checks:
-                if self.fatigue_checks[_key]:
-                    _field_dict[_key] = self.fatigue_checks[_key].to_dict()
+            for _key_fatigue_checks in self.fatigue_checks:
+                if self.fatigue_checks[_key_fatigue_checks]:
+                    _field_dict[_key_fatigue_checks] = self.fatigue_checks[_key_fatigue_checks].to_dict()
             _dict['fatigueChecks'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in fatigue_sections_checks (dict)
         _field_dict = {}
         if self.fatigue_sections_checks:
-            for _key in self.fatigue_sections_checks:
-                if self.fatigue_sections_checks[_key]:
-                    _field_dict[_key] = self.fatigue_sections_checks[_key].to_dict()
+            for _key_fatigue_sections_checks in self.fatigue_sections_checks:
+                if self.fatigue_sections_checks[_key_fatigue_sections_checks]:
+                    _field_dict[_key_fatigue_sections_checks] = self.fatigue_sections_checks[_key_fatigue_sections_checks].to_dict()
             _dict['fatigueSectionsChecks'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in fatigue_bolt_checks (dict)
         _field_dict = {}
         if self.fatigue_bolt_checks:
-            for _key in self.fatigue_bolt_checks:
-                if self.fatigue_bolt_checks[_key]:
-                    _field_dict[_key] = self.fatigue_bolt_checks[_key].to_dict()
+            for _key_fatigue_bolt_checks in self.fatigue_bolt_checks:
+                if self.fatigue_bolt_checks[_key_fatigue_bolt_checks]:
+                    _field_dict[_key_fatigue_bolt_checks] = self.fatigue_bolt_checks[_key_fatigue_bolt_checks].to_dict()
             _dict['fatigueBoltChecks'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in fatigue_anchor_checks (dict)
         _field_dict = {}
         if self.fatigue_anchor_checks:
-            for _key in self.fatigue_anchor_checks:
-                if self.fatigue_anchor_checks[_key]:
-                    _field_dict[_key] = self.fatigue_anchor_checks[_key].to_dict()
+            for _key_fatigue_anchor_checks in self.fatigue_anchor_checks:
+                if self.fatigue_anchor_checks[_key_fatigue_anchor_checks]:
+                    _field_dict[_key_fatigue_anchor_checks] = self.fatigue_anchor_checks[_key_fatigue_anchor_checks].to_dict()
             _dict['fatigueAnchorChecks'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in fatigue_welds (dict)
         _field_dict = {}
         if self.fatigue_welds:
-            for _key in self.fatigue_welds:
-                if self.fatigue_welds[_key]:
-                    _field_dict[_key] = self.fatigue_welds[_key].to_dict()
+            for _key_fatigue_welds in self.fatigue_welds:
+                if self.fatigue_welds[_key_fatigue_welds]:
+                    _field_dict[_key_fatigue_welds] = self.fatigue_welds[_key_fatigue_welds].to_dict()
             _dict['fatigueWelds'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in concrete_blocks (dict)
         _field_dict = {}
         if self.concrete_blocks:
-            for _key in self.concrete_blocks:
-                if self.concrete_blocks[_key]:
-                    _field_dict[_key] = self.concrete_blocks[_key].to_dict()
+            for _key_concrete_blocks in self.concrete_blocks:
+                if self.concrete_blocks[_key_concrete_blocks]:
+                    _field_dict[_key_concrete_blocks] = self.concrete_blocks[_key_concrete_blocks].to_dict()
             _dict['concreteBlocks'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in summary (dict)
         _field_dict = {}
         if self.summary:
-            for _key in self.summary:
-                if self.summary[_key]:
-                    _field_dict[_key] = self.summary[_key].to_dict()
+            for _key_summary in self.summary:
+                if self.summary[_key_summary]:
+                    _field_dict[_key_summary] = self.summary[_key_summary].to_dict()
             _dict['summary'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in project_item (dict)
         _field_dict = {}
         if self.project_item:
-            for _key in self.project_item:
-                if self.project_item[_key]:
-                    _field_dict[_key] = self.project_item[_key].to_dict()
+            for _key_project_item in self.project_item:
+                if self.project_item[_key_project_item]:
+                    _field_dict[_key_project_item] = self.project_item[_key_project_item].to_dict()
             _dict['projectItem'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in analysis (dict)
         _field_dict = {}
         if self.analysis:
-            for _key in self.analysis:
-                if self.analysis[_key]:
-                    _field_dict[_key] = self.analysis[_key].to_dict()
+            for _key_analysis in self.analysis:
+                if self.analysis[_key_analysis]:
+                    _field_dict[_key_analysis] = self.analysis[_key_analysis].to_dict()
             _dict['analysis'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in total_capacity (dict)
         _field_dict = {}
         if self.total_capacity:
-            for _key in self.total_capacity:
-                if self.total_capacity[_key]:
-                    _field_dict[_key] = self.total_capacity[_key].to_dict()
+            for _key_total_capacity in self.total_capacity:
+                if self.total_capacity[_key_total_capacity]:
+                    _field_dict[_key_total_capacity] = self.total_capacity[_key_total_capacity].to_dict()
             _dict['totalCapacity'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in base_plate_shear (dict)
         _field_dict = {}
         if self.base_plate_shear:
-            for _key in self.base_plate_shear:
-                if self.base_plate_shear[_key]:
-                    _field_dict[_key] = self.base_plate_shear[_key].to_dict()
+            for _key_base_plate_shear in self.base_plate_shear:
+                if self.base_plate_shear[_key_base_plate_shear]:
+                    _field_dict[_key_base_plate_shear] = self.base_plate_shear[_key_base_plate_shear].to_dict()
             _dict['basePlateShear'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in stiffnesess (dict)
         _field_dict = {}
         if self.stiffnesess:
-            for _key in self.stiffnesess:
-                if self.stiffnesess[_key]:
-                    _field_dict[_key] = self.stiffnesess[_key].to_dict()
+            for _key_stiffnesess in self.stiffnesess:
+                if self.stiffnesess[_key_stiffnesess]:
+                    _field_dict[_key_stiffnesess] = self.stiffnesess[_key_stiffnesess].to_dict()
             _dict['stiffnesess'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in stiffnesess_axial (dict)
         _field_dict = {}
         if self.stiffnesess_axial:
-            for _key in self.stiffnesess_axial:
-                if self.stiffnesess_axial[_key]:
-                    _field_dict[_key] = self.stiffnesess_axial[_key].to_dict()
+            for _key_stiffnesess_axial in self.stiffnesess_axial:
+                if self.stiffnesess_axial[_key_stiffnesess_axial]:
+                    _field_dict[_key_stiffnesess_axial] = self.stiffnesess_axial[_key_stiffnesess_axial].to_dict()
             _dict['stiffnesessAxial'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each value in bucklings (dict)
         _field_dict = {}
         if self.bucklings:
-            for _key in self.bucklings:
-                if self.bucklings[_key]:
-                    _field_dict[_key] = self.bucklings[_key].to_dict()
+            for _key_bucklings in self.bucklings:
+                if self.bucklings[_key_bucklings]:
+                    _field_dict[_key_bucklings] = self.bucklings[_key_bucklings].to_dict()
             _dict['bucklings'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of each item in nonconformity (list)
         _items = []
         if self.nonconformity:
-            for _item in self.nonconformity:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_nonconformity in self.nonconformity:
+                if _item_nonconformity:
+                    _items.append(_item_nonconformity.to_dict())
             _dict['nonconformity'] = _items
         # override the default output from pydantic by calling `to_dict()` of cost_estimation_results
         if self.cost_estimation_results:
@@ -329,9 +329,9 @@ class ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks(Base
         # override the default output from pydantic by calling `to_dict()` of each value in welds_data_load_levels (dict)
         _field_dict = {}
         if self.welds_data_load_levels:
-            for _key in self.welds_data_load_levels:
-                if self.welds_data_load_levels[_key]:
-                    _field_dict[_key] = self.welds_data_load_levels[_key].to_dict()
+            for _key_welds_data_load_levels in self.welds_data_load_levels:
+                if self.welds_data_load_levels[_key_welds_data_load_levels]:
+                    _field_dict[_key_welds_data_load_levels] = self.welds_data_load_levels[_key_welds_data_load_levels].to_dict()
             _dict['weldsDataLoadLevels'] = _field_dict
         # set to None if plates_deformation (nullable) is None
         # and model_fields_set contains the field

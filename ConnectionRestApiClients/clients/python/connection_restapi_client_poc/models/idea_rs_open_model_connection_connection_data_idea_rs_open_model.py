@@ -87,58 +87,58 @@ class IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in beams (list)
         _items = []
         if self.beams:
-            for _item in self.beams:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_beams in self.beams:
+                if _item_beams:
+                    _items.append(_item_beams.to_dict())
             _dict['beams'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in plates (list)
         _items = []
         if self.plates:
-            for _item in self.plates:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_plates in self.plates:
+                if _item_plates:
+                    _items.append(_item_plates.to_dict())
             _dict['plates'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in folded_plates (list)
         _items = []
         if self.folded_plates:
-            for _item in self.folded_plates:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_folded_plates in self.folded_plates:
+                if _item_folded_plates:
+                    _items.append(_item_folded_plates.to_dict())
             _dict['foldedPlates'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in bolt_grids (list)
         _items = []
         if self.bolt_grids:
-            for _item in self.bolt_grids:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_bolt_grids in self.bolt_grids:
+                if _item_bolt_grids:
+                    _items.append(_item_bolt_grids.to_dict())
             _dict['boltGrids'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in anchor_grids (list)
         _items = []
         if self.anchor_grids:
-            for _item in self.anchor_grids:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_anchor_grids in self.anchor_grids:
+                if _item_anchor_grids:
+                    _items.append(_item_anchor_grids.to_dict())
             _dict['anchorGrids'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in welds (list)
         _items = []
         if self.welds:
-            for _item in self.welds:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_welds in self.welds:
+                if _item_welds:
+                    _items.append(_item_welds.to_dict())
             _dict['welds'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in concrete_blocks (list)
         _items = []
         if self.concrete_blocks:
-            for _item in self.concrete_blocks:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_concrete_blocks in self.concrete_blocks:
+                if _item_concrete_blocks:
+                    _items.append(_item_concrete_blocks.to_dict())
             _dict['concreteBlocks'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cut_beam_by_beams (list)
         _items = []
         if self.cut_beam_by_beams:
-            for _item in self.cut_beam_by_beams:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_cut_beam_by_beams in self.cut_beam_by_beams:
+                if _item_cut_beam_by_beams:
+                    _items.append(_item_cut_beam_by_beams.to_dict())
             _dict['cutBeamByBeams'] = _items
         # set to None if beams (nullable) is None
         # and model_fields_set contains the field

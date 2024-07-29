@@ -74,9 +74,9 @@ class CIConnectionsDataAutoDesignShearForcesInShearPlanesCIBasicTypes(BaseModel)
         # override the default output from pydantic by calling `to_dict()` of each item in shear_forces (list)
         _items = []
         if self.shear_forces:
-            for _item in self.shear_forces:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_shear_forces in self.shear_forces:
+                if _item_shear_forces:
+                    _items.append(_item_shear_forces.to_dict())
             _dict['shearForces'] = _items
         # override the default output from pydantic by calling `to_dict()` of bolt_coordinate_system
         if self.bolt_coordinate_system:

@@ -72,9 +72,9 @@ class IdeaRSOpenModelResultOpenModelResultIdeaRSOpenModel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in result_on_members (list)
         _items = []
         if self.result_on_members:
-            for _item in self.result_on_members:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_result_on_members in self.result_on_members:
+                if _item_result_on_members:
+                    _items.append(_item_result_on_members.to_dict())
             _dict['resultOnMembers'] = _items
         # set to None if result_on_members (nullable) is None
         # and model_fields_set contains the field

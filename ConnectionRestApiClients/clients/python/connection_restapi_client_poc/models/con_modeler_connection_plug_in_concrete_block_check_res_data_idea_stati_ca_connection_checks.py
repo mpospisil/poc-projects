@@ -121,9 +121,9 @@ class ConModelerConnectionPlugInConcreteBlockCheckResDataIdeaStatiCaConnectionCh
         # override the default output from pydantic by calling `to_dict()` of each item in supporting_regions (list)
         _items = []
         if self.supporting_regions:
-            for _item in self.supporting_regions:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_supporting_regions in self.supporting_regions:
+                if _item_supporting_regions:
+                    _items.append(_item_supporting_regions.to_dict())
             _dict['supportingRegions'] = _items
         # set to None if supporting_regions (nullable) is None
         # and model_fields_set contains the field

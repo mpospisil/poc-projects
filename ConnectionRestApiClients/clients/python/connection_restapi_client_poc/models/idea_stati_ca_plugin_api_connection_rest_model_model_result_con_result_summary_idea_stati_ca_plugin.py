@@ -74,9 +74,9 @@ class IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStat
         # override the default output from pydantic by calling `to_dict()` of each item in result_summary (list)
         _items = []
         if self.result_summary:
-            for _item in self.result_summary:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_result_summary in self.result_summary:
+                if _item_result_summary:
+                    _items.append(_item_result_summary.to_dict())
             _dict['resultSummary'] = _items
         # set to None if result_summary (nullable) is None
         # and model_fields_set contains the field

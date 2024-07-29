@@ -26,6 +26,7 @@ class IdeaStatiCaPluginApiConnectionRestModelModelTemplateTableContainerTypeIdea
     """
     allowed enum values
     """
+    NOTSET = 'notSet'
     CROSSSECTION = 'crossSection'
     MATERIAL = 'material'
     PLATETHICKNESS = 'plateThickness'

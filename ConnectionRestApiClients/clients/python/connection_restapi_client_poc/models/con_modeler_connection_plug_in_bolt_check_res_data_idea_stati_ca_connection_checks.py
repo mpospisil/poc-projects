@@ -587,9 +587,9 @@ class ConModelerConnectionPlugInBoltCheckResDataIdeaStatiCaConnectionChecks(Base
         # override the default output from pydantic by calling `to_dict()` of each item in thin_plates_validity_en (list)
         _items = []
         if self.thin_plates_validity_en:
-            for _item in self.thin_plates_validity_en:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_thin_plates_validity_en in self.thin_plates_validity_en:
+                if _item_thin_plates_validity_en:
+                    _items.append(_item_thin_plates_validity_en.to_dict())
             _dict['thinPlatesValidityEN'] = _items
         # override the default output from pydantic by calling `to_dict()` of bearing_detailing_errors_snip
         if self.bearing_detailing_errors_snip:

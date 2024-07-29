@@ -197,317 +197,317 @@ class IdeaRSOpenModelOpenModelIdeaRSOpenModel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in point3_d (list)
         _items = []
         if self.point3_d:
-            for _item in self.point3_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_point3_d in self.point3_d:
+                if _item_point3_d:
+                    _items.append(_item_point3_d.to_dict())
             _dict['point3D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in line_segment3_d (list)
         _items = []
         if self.line_segment3_d:
-            for _item in self.line_segment3_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_line_segment3_d in self.line_segment3_d:
+                if _item_line_segment3_d:
+                    _items.append(_item_line_segment3_d.to_dict())
             _dict['lineSegment3D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in arc_segment3_d (list)
         _items = []
         if self.arc_segment3_d:
-            for _item in self.arc_segment3_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_arc_segment3_d in self.arc_segment3_d:
+                if _item_arc_segment3_d:
+                    _items.append(_item_arc_segment3_d.to_dict())
             _dict['arcSegment3D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in poly_line3_d (list)
         _items = []
         if self.poly_line3_d:
-            for _item in self.poly_line3_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_poly_line3_d in self.poly_line3_d:
+                if _item_poly_line3_d:
+                    _items.append(_item_poly_line3_d.to_dict())
             _dict['polyLine3D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in region3_d (list)
         _items = []
         if self.region3_d:
-            for _item in self.region3_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_region3_d in self.region3_d:
+                if _item_region3_d:
+                    _items.append(_item_region3_d.to_dict())
             _dict['region3D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in mat_concrete (list)
         _items = []
         if self.mat_concrete:
-            for _item in self.mat_concrete:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_mat_concrete in self.mat_concrete:
+                if _item_mat_concrete:
+                    _items.append(_item_mat_concrete.to_dict())
             _dict['matConcrete'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in mat_reinforcement (list)
         _items = []
         if self.mat_reinforcement:
-            for _item in self.mat_reinforcement:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_mat_reinforcement in self.mat_reinforcement:
+                if _item_mat_reinforcement:
+                    _items.append(_item_mat_reinforcement.to_dict())
             _dict['matReinforcement'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in mat_steel (list)
         _items = []
         if self.mat_steel:
-            for _item in self.mat_steel:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_mat_steel in self.mat_steel:
+                if _item_mat_steel:
+                    _items.append(_item_mat_steel.to_dict())
             _dict['matSteel'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in mat_prestress_steel (list)
         _items = []
         if self.mat_prestress_steel:
-            for _item in self.mat_prestress_steel:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_mat_prestress_steel in self.mat_prestress_steel:
+                if _item_mat_prestress_steel:
+                    _items.append(_item_mat_prestress_steel.to_dict())
             _dict['matPrestressSteel'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in mat_welding (list)
         _items = []
         if self.mat_welding:
-            for _item in self.mat_welding:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_mat_welding in self.mat_welding:
+                if _item_mat_welding:
+                    _items.append(_item_mat_welding.to_dict())
             _dict['matWelding'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cross_section (list)
         _items = []
         if self.cross_section:
-            for _item in self.cross_section:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_cross_section in self.cross_section:
+                if _item_cross_section:
+                    _items.append(_item_cross_section.to_dict())
             _dict['crossSection'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in reinforced_cross_section (list)
         _items = []
         if self.reinforced_cross_section:
-            for _item in self.reinforced_cross_section:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_reinforced_cross_section in self.reinforced_cross_section:
+                if _item_reinforced_cross_section:
+                    _items.append(_item_reinforced_cross_section.to_dict())
             _dict['reinforcedCrossSection'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in hinge_element1_d (list)
         _items = []
         if self.hinge_element1_d:
-            for _item in self.hinge_element1_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_hinge_element1_d in self.hinge_element1_d:
+                if _item_hinge_element1_d:
+                    _items.append(_item_hinge_element1_d.to_dict())
             _dict['hingeElement1D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in opening (list)
         _items = []
         if self.opening:
-            for _item in self.opening:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_opening in self.opening:
+                if _item_opening:
+                    _items.append(_item_opening.to_dict())
             _dict['opening'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in dapped_end (list)
         _items = []
         if self.dapped_end:
-            for _item in self.dapped_end:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_dapped_end in self.dapped_end:
+                if _item_dapped_end:
+                    _items.append(_item_dapped_end.to_dict())
             _dict['dappedEnd'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in patch_device (list)
         _items = []
         if self.patch_device:
-            for _item in self.patch_device:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_patch_device in self.patch_device:
+                if _item_patch_device:
+                    _items.append(_item_patch_device.to_dict())
             _dict['patchDevice'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in element1_d (list)
         _items = []
         if self.element1_d:
-            for _item in self.element1_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_element1_d in self.element1_d:
+                if _item_element1_d:
+                    _items.append(_item_element1_d.to_dict())
             _dict['element1D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in beam (list)
         _items = []
         if self.beam:
-            for _item in self.beam:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_beam in self.beam:
+                if _item_beam:
+                    _items.append(_item_beam.to_dict())
             _dict['beam'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in member1_d (list)
         _items = []
         if self.member1_d:
-            for _item in self.member1_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_member1_d in self.member1_d:
+                if _item_member1_d:
+                    _items.append(_item_member1_d.to_dict())
             _dict['member1D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in element2_d (list)
         _items = []
         if self.element2_d:
-            for _item in self.element2_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_element2_d in self.element2_d:
+                if _item_element2_d:
+                    _items.append(_item_element2_d.to_dict())
             _dict['element2D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in wall (list)
         _items = []
         if self.wall:
-            for _item in self.wall:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_wall in self.wall:
+                if _item_wall:
+                    _items.append(_item_wall.to_dict())
             _dict['wall'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in member2_d (list)
         _items = []
         if self.member2_d:
-            for _item in self.member2_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_member2_d in self.member2_d:
+                if _item_member2_d:
+                    _items.append(_item_member2_d.to_dict())
             _dict['member2D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in rigid_link (list)
         _items = []
         if self.rigid_link:
-            for _item in self.rigid_link:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_rigid_link in self.rigid_link:
+                if _item_rigid_link:
+                    _items.append(_item_rigid_link.to_dict())
             _dict['rigidLink'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in point_on_line3_d (list)
         _items = []
         if self.point_on_line3_d:
-            for _item in self.point_on_line3_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_point_on_line3_d in self.point_on_line3_d:
+                if _item_point_on_line3_d:
+                    _items.append(_item_point_on_line3_d.to_dict())
             _dict['pointOnLine3D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in point_support_node (list)
         _items = []
         if self.point_support_node:
-            for _item in self.point_support_node:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_point_support_node in self.point_support_node:
+                if _item_point_support_node:
+                    _items.append(_item_point_support_node.to_dict())
             _dict['pointSupportNode'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in line_support_segment (list)
         _items = []
         if self.line_support_segment:
-            for _item in self.line_support_segment:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_line_support_segment in self.line_support_segment:
+                if _item_line_support_segment:
+                    _items.append(_item_line_support_segment.to_dict())
             _dict['lineSupportSegment'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in loads_in_point (list)
         _items = []
         if self.loads_in_point:
-            for _item in self.loads_in_point:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_loads_in_point in self.loads_in_point:
+                if _item_loads_in_point:
+                    _items.append(_item_loads_in_point.to_dict())
             _dict['loadsInPoint'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in loads_on_line (list)
         _items = []
         if self.loads_on_line:
-            for _item in self.loads_on_line:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_loads_on_line in self.loads_on_line:
+                if _item_loads_on_line:
+                    _items.append(_item_loads_on_line.to_dict())
             _dict['loadsOnLine'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in strain_loads_on_line (list)
         _items = []
         if self.strain_loads_on_line:
-            for _item in self.strain_loads_on_line:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_strain_loads_on_line in self.strain_loads_on_line:
+                if _item_strain_loads_on_line:
+                    _items.append(_item_strain_loads_on_line.to_dict())
             _dict['strainLoadsOnLine'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in point_loads_on_line (list)
         _items = []
         if self.point_loads_on_line:
-            for _item in self.point_loads_on_line:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_point_loads_on_line in self.point_loads_on_line:
+                if _item_point_loads_on_line:
+                    _items.append(_item_point_loads_on_line.to_dict())
             _dict['pointLoadsOnLine'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in loads_on_surface (list)
         _items = []
         if self.loads_on_surface:
-            for _item in self.loads_on_surface:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_loads_on_surface in self.loads_on_surface:
+                if _item_loads_on_surface:
+                    _items.append(_item_loads_on_surface.to_dict())
             _dict['loadsOnSurface'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in settlements (list)
         _items = []
         if self.settlements:
-            for _item in self.settlements:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_settlements in self.settlements:
+                if _item_settlements:
+                    _items.append(_item_settlements.to_dict())
             _dict['settlements'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in temperature_loads_on_line (list)
         _items = []
         if self.temperature_loads_on_line:
-            for _item in self.temperature_loads_on_line:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_temperature_loads_on_line in self.temperature_loads_on_line:
+                if _item_temperature_loads_on_line:
+                    _items.append(_item_temperature_loads_on_line.to_dict())
             _dict['temperatureLoadsOnLine'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in load_group (list)
         _items = []
         if self.load_group:
-            for _item in self.load_group:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_load_group in self.load_group:
+                if _item_load_group:
+                    _items.append(_item_load_group.to_dict())
             _dict['loadGroup'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in load_case (list)
         _items = []
         if self.load_case:
-            for _item in self.load_case:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_load_case in self.load_case:
+                if _item_load_case:
+                    _items.append(_item_load_case.to_dict())
             _dict['loadCase'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in combi_input (list)
         _items = []
         if self.combi_input:
-            for _item in self.combi_input:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_combi_input in self.combi_input:
+                if _item_combi_input:
+                    _items.append(_item_combi_input.to_dict())
             _dict['combiInput'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in connection_point (list)
         _items = []
         if self.connection_point:
-            for _item in self.connection_point:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_connection_point in self.connection_point:
+                if _item_connection_point:
+                    _items.append(_item_connection_point.to_dict())
             _dict['connectionPoint'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in connections (list)
         _items = []
         if self.connections:
-            for _item in self.connections:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_connections in self.connections:
+                if _item_connections:
+                    _items.append(_item_connections.to_dict())
             _dict['connections'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in reinforcement (list)
         _items = []
         if self.reinforcement:
-            for _item in self.reinforcement:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_reinforcement in self.reinforcement:
+                if _item_reinforcement:
+                    _items.append(_item_reinforcement.to_dict())
             _dict['reinforcement'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in isd_model (list)
         _items = []
         if self.isd_model:
-            for _item in self.isd_model:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_isd_model in self.isd_model:
+                if _item_isd_model:
+                    _items.append(_item_isd_model.to_dict())
             _dict['isdModel'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in initial_imperfection_of_point (list)
         _items = []
         if self.initial_imperfection_of_point:
-            for _item in self.initial_imperfection_of_point:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_initial_imperfection_of_point in self.initial_imperfection_of_point:
+                if _item_initial_imperfection_of_point:
+                    _items.append(_item_initial_imperfection_of_point.to_dict())
             _dict['initialImperfectionOfPoint'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in tendon (list)
         _items = []
         if self.tendon:
-            for _item in self.tendon:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_tendon in self.tendon:
+                if _item_tendon:
+                    _items.append(_item_tendon.to_dict())
             _dict['tendon'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in result_class (list)
         _items = []
         if self.result_class:
-            for _item in self.result_class:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_result_class in self.result_class:
+                if _item_result_class:
+                    _items.append(_item_result_class.to_dict())
             _dict['resultClass'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in design_member (list)
         _items = []
         if self.design_member:
-            for _item in self.design_member:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_design_member in self.design_member:
+                if _item_design_member:
+                    _items.append(_item_design_member.to_dict())
             _dict['designMember'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in sub_structure (list)
         _items = []
         if self.sub_structure:
-            for _item in self.sub_structure:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_sub_structure in self.sub_structure:
+                if _item_sub_structure:
+                    _items.append(_item_sub_structure.to_dict())
             _dict['subStructure'] = _items
         # override the default output from pydantic by calling `to_dict()` of connection_setup
         if self.connection_setup:
@@ -515,16 +515,16 @@ class IdeaRSOpenModelOpenModelIdeaRSOpenModel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in check_member (list)
         _items = []
         if self.check_member:
-            for _item in self.check_member:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_check_member in self.check_member:
+                if _item_check_member:
+                    _items.append(_item_check_member.to_dict())
             _dict['checkMember'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in concrete_check_section (list)
         _items = []
         if self.concrete_check_section:
-            for _item in self.concrete_check_section:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_concrete_check_section in self.concrete_check_section:
+                if _item_concrete_check_section:
+                    _items.append(_item_concrete_check_section.to_dict())
             _dict['concreteCheckSection'] = _items
         # override the default output from pydantic by calling `to_dict()` of concrete_setup
         if self.concrete_setup:
@@ -532,86 +532,86 @@ class IdeaRSOpenModelOpenModelIdeaRSOpenModel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in rebar_shape (list)
         _items = []
         if self.rebar_shape:
-            for _item in self.rebar_shape:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_rebar_shape in self.rebar_shape:
+                if _item_rebar_shape:
+                    _items.append(_item_rebar_shape.to_dict())
             _dict['rebarShape'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in rebar_general (list)
         _items = []
         if self.rebar_general:
-            for _item in self.rebar_general:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_rebar_general in self.rebar_general:
+                if _item_rebar_general:
+                    _items.append(_item_rebar_general.to_dict())
             _dict['rebarGeneral'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in rebar_single (list)
         _items = []
         if self.rebar_single:
-            for _item in self.rebar_single:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_rebar_single in self.rebar_single:
+                if _item_rebar_single:
+                    _items.append(_item_rebar_single.to_dict())
             _dict['rebarSingle'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in rebar_stirrups (list)
         _items = []
         if self.rebar_stirrups:
-            for _item in self.rebar_stirrups:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_rebar_stirrups in self.rebar_stirrups:
+                if _item_rebar_stirrups:
+                    _items.append(_item_rebar_stirrups.to_dict())
             _dict['rebarStirrups'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in taper (list)
         _items = []
         if self.taper:
-            for _item in self.taper:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_taper in self.taper:
+                if _item_taper:
+                    _items.append(_item_taper.to_dict())
             _dict['taper'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in span (list)
         _items = []
         if self.span:
-            for _item in self.span:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_span in self.span:
+                if _item_span:
+                    _items.append(_item_span.to_dict())
             _dict['span'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in solid_blocks3_d (list)
         _items = []
         if self.solid_blocks3_d:
-            for _item in self.solid_blocks3_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_solid_blocks3_d in self.solid_blocks3_d:
+                if _item_solid_blocks3_d:
+                    _items.append(_item_solid_blocks3_d.to_dict())
             _dict['solidBlocks3D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in surface_supports3_d (list)
         _items = []
         if self.surface_supports3_d:
-            for _item in self.surface_supports3_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_surface_supports3_d in self.surface_supports3_d:
+                if _item_surface_supports3_d:
+                    _items.append(_item_surface_supports3_d.to_dict())
             _dict['surfaceSupports3D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in base_plates3_d (list)
         _items = []
         if self.base_plates3_d:
-            for _item in self.base_plates3_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_base_plates3_d in self.base_plates3_d:
+                if _item_base_plates3_d:
+                    _items.append(_item_base_plates3_d.to_dict())
             _dict['basePlates3D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in anchors3_d (list)
         _items = []
         if self.anchors3_d:
-            for _item in self.anchors3_d:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_anchors3_d in self.anchors3_d:
+                if _item_anchors3_d:
+                    _items.append(_item_anchors3_d.to_dict())
             _dict['anchors3D'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in detail_load_case (list)
         _items = []
         if self.detail_load_case:
-            for _item in self.detail_load_case:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_detail_load_case in self.detail_load_case:
+                if _item_detail_load_case:
+                    _items.append(_item_detail_load_case.to_dict())
             _dict['detailLoadCase'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in detail_combination (list)
         _items = []
         if self.detail_combination:
-            for _item in self.detail_combination:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_detail_combination in self.detail_combination:
+                if _item_detail_combination:
+                    _items.append(_item_detail_combination.to_dict())
             _dict['detailCombination'] = _items
         # set to None if point3_d (nullable) is None
         # and model_fields_set contains the field

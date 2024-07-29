@@ -73,9 +73,9 @@ class IdeaRSConnectionsDataThinPlateValidityCIBasicTypes(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in validity_criteria (list)
         _items = []
         if self.validity_criteria:
-            for _item in self.validity_criteria:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_validity_criteria in self.validity_criteria:
+                if _item_validity_criteria:
+                    _items.append(_item_validity_criteria.to_dict())
             _dict['validityCriteria'] = _items
         # set to None if related_plate_name (nullable) is None
         # and model_fields_set contains the field

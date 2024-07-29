@@ -86,11 +86,14 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             with open(template_file_name, 'r', encoding='utf-16') as file:
                 templateParam.template = file.read()
 
-
+            # get the default mapping for the selected template and connection  
             default_mapping = api_template.api1_projects_project_id_connections_connection_id_apply_mapping_post(project_id, connection1.id, templateParam)
             pprint(default_mapping)
 
+            # TODO
+            # Modify mapping
           
+            # Apply the template to the connection with the modified mapping
             applyTemplateData = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin()
             applyTemplateData.connection_template = templateParam.template
             applyTemplateData.mapping = default_mapping
@@ -98,7 +101,31 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             applyTemplateResult = api_template.api1_projects_project_id_connections_connection_id_apply_template_post(project_id, connection1.id, applyTemplateData)
  
             pprint(applyTemplateResult)
-            
+
+            # get calculation API for the active project
+            api_calculation = connection_restapi_client_poc.CalculationApi(api_client)             
+
+            # run stress-strain CBFEM analysis for the connection id = 1
+            calcParams = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin()
+            calcParams.connection_ids = [connection1.id]
+
+            # run stress-strain analysis for the connection
+            con1_cbfem_results1 = api_calculation.api1_projects_project_id_calculate_post(project_id, calcParams)
+            pprint(con1_cbfem_results1)
+
+            # modify loading
+
+
+
+            # it doesn't work why ? wrong coding ?
+
+            # # download modified ideacon file
+            # projectDataStream = api_project.api1_projects_project_id_download_get(project_id)
+            # updatedProject_file_path = os.path.join(dir_path, '..\..\projects', 'corner-updated.ideaCon')
+            # with open(updatedProject_file_path, 'wb') as file:
+            #     file.write(projectDataStream.read())
+
+
         except Exception as ee:
             print("Exception when calling CalculationApi->api1_projects_project_id_calculate_post: %s\n" % ee)
 

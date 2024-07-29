@@ -95,7 +95,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             applyTemplateData.connection_template = templateParam.template
             applyTemplateData.mapping = default_mapping
 
-            applyTemplateResult = api_template.api1_projects_project_id_connections_connection_id_apply_mapping_post(project_id, connection1.id, applyTemplateData)
+            applyTemplateResult = api_template.api1_projects_project_id_connections_connection_id_apply_template_post(project_id, connection1.id, applyTemplateData)
  
             pprint(applyTemplateResult)
             

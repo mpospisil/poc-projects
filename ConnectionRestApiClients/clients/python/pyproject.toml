@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "connection_restapi_client_poc"
-version = "24.0.4.0528"
+version = "24.0.5.0009"
 description = "Connection Rest API 1.0"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"

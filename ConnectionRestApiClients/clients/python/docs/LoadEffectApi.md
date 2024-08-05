@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **api1_projects_project_id_connections_connection_id_load_effects_get**
-> List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin] api1_projects_project_id_connections_connection_id_load_effects_get(project_id, connection_id, is_percentage=is_percentage)
+> List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] api1_projects_project_id_connections_connection_id_load_effects_get(project_id, connection_id, is_percentage=is_percentage)
 
 
 
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin.md)
+[**List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -149,7 +149,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get**
-> IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get(project_id, connection_id, load_effect_id, is_percentage=is_percentage)
+> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get(project_id, connection_id, load_effect_id, is_percentage=is_percentage)
 
 
 
@@ -158,7 +158,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put**
-> IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put(project_id, connection_id, load_effect_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin)
+> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put(project_id, connection_id, load_effect_id, idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api)
 
 
 
@@ -229,7 +229,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -247,10 +247,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     load_effect_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi |  (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put(project_id, connection_id, load_effect_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin)
+        api_response = api_instance.api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put(project_id, connection_id, load_effect_id, idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api)
         print("The response of LoadEffectApi->api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -267,11 +267,11 @@ Name | Type | Description  | Notes
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
  **load_effect_id** | **int**|  | 
- **idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin** | [**IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin.md)|  | [optional] 
+ **idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)|  | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -291,7 +291,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_load_effects_post**
-> ConModelerConnectionPlugInLoadEffectDataIdeaStatiCaConnectionChecks api1_projects_project_id_connections_connection_id_load_effects_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin)
+> LoadEffectDataIdeaStatiCaConnectionChecks api1_projects_project_id_connections_connection_id_load_effects_post(project_id, connection_id, idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api)
 
 
 
@@ -300,8 +300,8 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_modeler_connection_plug_in_load_effect_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInLoadEffectDataIdeaStatiCaConnectionChecks
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+from connection_restapi_client_poc.models.load_effect_data_idea_stati_ca_connection_checks import LoadEffectDataIdeaStatiCaConnectionChecks
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -318,10 +318,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi |  (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_load_effects_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin)
+        api_response = api_instance.api1_projects_project_id_connections_connection_id_load_effects_post(project_id, connection_id, idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api)
         print("The response of LoadEffectApi->api1_projects_project_id_connections_connection_id_load_effects_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -337,11 +337,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_load_effect_idea_stati_ca_plugin** | [**IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConLoadEffectIdeaStatiCaPlugin.md)|  | [optional] 
+ **idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)|  | [optional] 
 
 ### Return type
 
-[**ConModelerConnectionPlugInLoadEffectDataIdeaStatiCaConnectionChecks**](ConModelerConnectionPlugInLoadEffectDataIdeaStatiCaConnectionChecks.md)
+[**LoadEffectDataIdeaStatiCaConnectionChecks**](LoadEffectDataIdeaStatiCaConnectionChecks.md)
 
 ### Authorization
 

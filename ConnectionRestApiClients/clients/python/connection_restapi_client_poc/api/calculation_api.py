@@ -19,10 +19,10 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from connection_restapi_client_poc.models.con_modeler_connection_plug_in_check_results_data_idea_stati_ca_connection_checks import ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks
-from connection_restapi_client_poc.models.idea_rs_open_model_connection_connection_check_res_idea_rs_open_model import IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_result_con_result_summary_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.check_results_data_idea_stati_ca_connection_checks import CheckResultsDataIdeaStatiCaConnectionChecks
+from connection_restapi_client_poc.models.connection_connection_check_res_idea_rs_open_model import ConnectionConnectionCheckResIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_result_summary_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -46,7 +46,7 @@ class CalculationApi:
     def api1_projects_project_id_calculate_post(
         self,
         project_id: StrictStr,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,14 +59,14 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin]:
+    ) -> List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]:
         """api1_projects_project_id_calculate_post
 
 
         :param project_id: (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -91,7 +91,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_calculate_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -99,7 +99,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -116,7 +116,7 @@ class CalculationApi:
     def api1_projects_project_id_calculate_post_with_http_info(
         self,
         project_id: StrictStr,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -129,14 +129,14 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin]]:
+    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]]:
         """api1_projects_project_id_calculate_post
 
 
         :param project_id: (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -161,7 +161,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_calculate_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -169,7 +169,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -186,7 +186,7 @@ class CalculationApi:
     def api1_projects_project_id_calculate_post_without_preload_content(
         self,
         project_id: StrictStr,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -205,8 +205,8 @@ class CalculationApi:
 
         :param project_id: (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -231,7 +231,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_calculate_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -239,7 +239,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelResultConResultSummaryIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -251,7 +251,7 @@ class CalculationApi:
     def _api1_projects_project_id_calculate_post_serialize(
         self,
         project_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -277,8 +277,8 @@ class CalculationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -335,7 +335,7 @@ class CalculationApi:
     def api1_projects_project_id_rawresults_post(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionReastApi service")],
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Annotated[Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin], Field(description="Type of requested analysis and connection to calculate")] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="Type of requested analysis and connection to calculate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -348,14 +348,14 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks:
+    ) -> CheckResultsDataIdeaStatiCaConnectionChecks:
         """Get raw CBFEM results (an instance of CheckResultsData)
 
 
         :param project_id: The unique identifier of the opened connection in the ConnectionReastApi service (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Type of requested analysis and connection to calculate
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Type of requested analysis and connection to calculate
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -380,7 +380,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_rawresults_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -388,7 +388,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks",
+            '200': "CheckResultsDataIdeaStatiCaConnectionChecks",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -405,7 +405,7 @@ class CalculationApi:
     def api1_projects_project_id_rawresults_post_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionReastApi service")],
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Annotated[Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin], Field(description="Type of requested analysis and connection to calculate")] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="Type of requested analysis and connection to calculate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -418,14 +418,14 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks]:
+    ) -> ApiResponse[CheckResultsDataIdeaStatiCaConnectionChecks]:
         """Get raw CBFEM results (an instance of CheckResultsData)
 
 
         :param project_id: The unique identifier of the opened connection in the ConnectionReastApi service (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Type of requested analysis and connection to calculate
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Type of requested analysis and connection to calculate
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -450,7 +450,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_rawresults_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -458,7 +458,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks",
+            '200': "CheckResultsDataIdeaStatiCaConnectionChecks",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -475,7 +475,7 @@ class CalculationApi:
     def api1_projects_project_id_rawresults_post_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionReastApi service")],
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Annotated[Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin], Field(description="Type of requested analysis and connection to calculate")] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="Type of requested analysis and connection to calculate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -494,8 +494,8 @@ class CalculationApi:
 
         :param project_id: The unique identifier of the opened connection in the ConnectionReastApi service (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Type of requested analysis and connection to calculate
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Type of requested analysis and connection to calculate
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -520,7 +520,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_rawresults_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -528,7 +528,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConModelerConnectionPlugInCheckResultsDataIdeaStatiCaConnectionChecks",
+            '200': "CheckResultsDataIdeaStatiCaConnectionChecks",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -540,7 +540,7 @@ class CalculationApi:
     def _api1_projects_project_id_rawresults_post_serialize(
         self,
         project_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -566,8 +566,8 @@ class CalculationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -624,7 +624,7 @@ class CalculationApi:
     def api1_projects_project_id_rawresults_text_post(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionReastApi service")],
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Annotated[Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin], Field(description="Type of requested analysis and connection to calculate")] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="Type of requested analysis and connection to calculate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -643,8 +643,8 @@ class CalculationApi:
 
         :param project_id: The unique identifier of the opened connection in the ConnectionReastApi service (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Type of requested analysis and connection to calculate
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Type of requested analysis and connection to calculate
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -669,7 +669,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_rawresults_text_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -694,7 +694,7 @@ class CalculationApi:
     def api1_projects_project_id_rawresults_text_post_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionReastApi service")],
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Annotated[Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin], Field(description="Type of requested analysis and connection to calculate")] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="Type of requested analysis and connection to calculate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -713,8 +713,8 @@ class CalculationApi:
 
         :param project_id: The unique identifier of the opened connection in the ConnectionReastApi service (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Type of requested analysis and connection to calculate
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Type of requested analysis and connection to calculate
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -739,7 +739,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_rawresults_text_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -764,7 +764,7 @@ class CalculationApi:
     def api1_projects_project_id_rawresults_text_post_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionReastApi service")],
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Annotated[Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin], Field(description="Type of requested analysis and connection to calculate")] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="Type of requested analysis and connection to calculate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -783,8 +783,8 @@ class CalculationApi:
 
         :param project_id: The unique identifier of the opened connection in the ConnectionReastApi service (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Type of requested analysis and connection to calculate
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Type of requested analysis and connection to calculate
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -809,7 +809,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_rawresults_text_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -829,7 +829,7 @@ class CalculationApi:
     def _api1_projects_project_id_rawresults_text_post_serialize(
         self,
         project_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -855,8 +855,8 @@ class CalculationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -913,7 +913,7 @@ class CalculationApi:
     def api1_projects_project_id_results_post(
         self,
         project_id: StrictStr,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -926,14 +926,14 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel]:
+    ) -> List[ConnectionConnectionCheckResIdeaRSOpenModel]:
         """api1_projects_project_id_results_post
 
 
         :param project_id: (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -958,7 +958,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_results_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -966,7 +966,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel]",
+            '200': "List[ConnectionConnectionCheckResIdeaRSOpenModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -983,7 +983,7 @@ class CalculationApi:
     def api1_projects_project_id_results_post_with_http_info(
         self,
         project_id: StrictStr,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -996,14 +996,14 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel]]:
+    ) -> ApiResponse[List[ConnectionConnectionCheckResIdeaRSOpenModel]]:
         """api1_projects_project_id_results_post
 
 
         :param project_id: (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1028,7 +1028,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_results_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1036,7 +1036,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel]",
+            '200': "List[ConnectionConnectionCheckResIdeaRSOpenModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1053,7 +1053,7 @@ class CalculationApi:
     def api1_projects_project_id_results_post_without_preload_content(
         self,
         project_id: StrictStr,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1072,8 +1072,8 @@ class CalculationApi:
 
         :param project_id: (required)
         :type project_id: str
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1098,7 +1098,7 @@ class CalculationApi:
 
         _param = self._api1_projects_project_id_results_post_serialize(
             project_id=project_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1106,7 +1106,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaRSOpenModelConnectionConnectionCheckResIdeaRSOpenModel]",
+            '200': "List[ConnectionConnectionCheckResIdeaRSOpenModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1118,7 +1118,7 @@ class CalculationApi:
     def _api1_projects_project_id_results_post_serialize(
         self,
         project_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -1144,8 +1144,8 @@ class CalculationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_calculation_parameter_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`

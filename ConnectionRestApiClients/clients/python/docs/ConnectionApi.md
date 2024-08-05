@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **api1_projects_project_id_connections_connection_id_get**
-> IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin api1_projects_project_id_connections_connection_id_get(project_id, connection_id)
+> IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi api1_projects_project_id_connections_connection_id_get(project_id, connection_id)
 
 
 
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_missing_welds_get**
-> List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin] api1_projects_project_id_connections_connection_id_missing_welds_get(project_id, connection_id)
+> List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi] api1_projects_project_id_connections_connection_id_missing_welds_get(project_id, connection_id)
 
 
 
@@ -90,7 +90,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_missing_weld_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_missing_weld_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin.md)
+[**List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_operations_get**
-> List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin] api1_projects_project_id_connections_connection_id_operations_get(project_id, connection_id)
+> List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi] api1_projects_project_id_connections_connection_id_operations_get(project_id, connection_id)
 
 
 
@@ -224,7 +224,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_operation_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_operation_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin.md)
+[**List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_production_cost_get**
-> IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin api1_projects_project_id_connections_connection_id_production_cost_get(project_id, connection_id)
+> IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi api1_projects_project_id_connections_connection_id_production_cost_get(project_id, connection_id)
 
 
 
@@ -291,7 +291,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_production_cost_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_production_cost_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -349,7 +349,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_put**
-> IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin api1_projects_project_id_connections_connection_id_put(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin)
+> IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi api1_projects_project_id_connections_connection_id_put(project_id, connection_id, idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api)
 
 
 
@@ -358,7 +358,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -375,10 +375,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.ConnectionApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi |  (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_put(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin)
+        api_response = api_instance.api1_projects_project_id_connections_connection_id_put(project_id, connection_id, idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api)
         print("The response of ConnectionApi->api1_projects_project_id_connections_connection_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -394,11 +394,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin** | [**IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin.md)|  | [optional] 
+ **idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)|  | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -418,7 +418,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_get**
-> List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin] api1_projects_project_id_connections_get(project_id)
+> List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi] api1_projects_project_id_connections_get(project_id)
 
 
 
@@ -427,7 +427,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin.md)
+[**List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)
 
 ### Authorization
 

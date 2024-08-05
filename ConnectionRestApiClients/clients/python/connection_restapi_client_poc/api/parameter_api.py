@@ -19,8 +19,8 @@ from typing_extensions import Annotated
 from pydantic import StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from connection_restapi_client_poc.models.idea_rs_common_parameters_parameter_data_ci_basic_types import IdeaRSCommonParametersParameterDataCIBasicTypes
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_idea_parameter_idea_stati_ca_api import IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api import IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -362,7 +362,7 @@ class ParameterApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin]:
+    ) -> List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_parameters_get
 
 
@@ -405,7 +405,7 @@ class ParameterApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -436,7 +436,7 @@ class ParameterApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin]]:
+    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]]:
         """api1_projects_project_id_connections_connection_id_parameters_get
 
 
@@ -479,7 +479,7 @@ class ParameterApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -553,7 +553,7 @@ class ParameterApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -636,7 +636,7 @@ class ParameterApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin: Optional[List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin]] = None,
+        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -657,8 +657,8 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin: List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin]
+        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -684,7 +684,7 @@ class ParameterApi:
         _param = self._api1_projects_project_id_connections_connection_id_parameters_put_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -710,7 +710,7 @@ class ParameterApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin: Optional[List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin]] = None,
+        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -731,8 +731,8 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin: List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin]
+        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -758,7 +758,7 @@ class ParameterApi:
         _param = self._api1_projects_project_id_connections_connection_id_parameters_put_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -784,7 +784,7 @@ class ParameterApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin: Optional[List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin]] = None,
+        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -805,8 +805,8 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin: List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin]
+        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -832,7 +832,7 @@ class ParameterApi:
         _param = self._api1_projects_project_id_connections_connection_id_parameters_put_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -853,7 +853,7 @@ class ParameterApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -863,7 +863,7 @@ class ParameterApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin': '',
+            'IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi': '',
         }
 
         _path_params: Dict[str, str] = {}
@@ -882,8 +882,8 @@ class ParameterApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`

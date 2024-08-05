@@ -78,7 +78,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_parameters_get**
-> List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin] api1_projects_project_id_connections_connection_id_parameters_get(project_id, connection_id, include_hidden=include_hidden)
+> List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi] api1_projects_project_id_connections_connection_id_parameters_get(project_id, connection_id, include_hidden=include_hidden)
 
 
 
@@ -87,7 +87,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_idea_parameter_idea_stati_ca_api import IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterIdeaStatiCaPlugin.md)
+[**List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_parameters_put**
-> List[IdeaRSCommonParametersParameterDataCIBasicTypes] api1_projects_project_id_connections_connection_id_parameters_put(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin)
+> List[IdeaRSCommonParametersParameterDataCIBasicTypes] api1_projects_project_id_connections_connection_id_parameters_put(project_id, connection_id, idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api)
 
 
 
@@ -157,7 +157,7 @@ No authorization required
 ```python
 import connection_restapi_client_poc
 from connection_restapi_client_poc.models.idea_rs_common_parameters_parameter_data_ci_basic_types import IdeaRSCommonParametersParameterDataCIBasicTypes
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api import IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -174,10 +174,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.ParameterApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin = [connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin()] # List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin] |  (optional)
+    idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api = [connection_restapi_client_poc.IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi()] # List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi] |  (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_parameters_put(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin)
+        api_response = api_instance.api1_projects_project_id_connections_connection_id_parameters_put(project_id, connection_id, idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api)
         print("The response of ParameterApi->api1_projects_project_id_connections_connection_id_parameters_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_plugin_api_connection_rest_model_model_parameter_idea_parameter_update_idea_stati_ca_plugin** | [**List[IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelParameterIdeaParameterUpdateIdeaStatiCaPlugin.md)|  | [optional] 
+ **idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api** | [**List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi.md)|  | [optional] 
 
 ### Return type
 

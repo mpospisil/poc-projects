@@ -77,7 +77,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_export_iom_connection_data_get**
-> IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel api1_projects_project_id_connections_connection_id_export_iom_connection_data_get(project_id, connection_id)
+> ConnectionConnectionDataIdeaRSOpenModel api1_projects_project_id_connections_connection_id_export_iom_connection_data_get(project_id, connection_id)
 
 
 
@@ -86,7 +86,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_rs_open_model_connection_connection_data_idea_rs_open_model import IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel
+from connection_restapi_client_poc.models.connection_connection_data_idea_rs_open_model import ConnectionConnectionDataIdeaRSOpenModel
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel**](IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel.md)
+[**ConnectionConnectionDataIdeaRSOpenModel**](ConnectionConnectionDataIdeaRSOpenModel.md)
 
 ### Authorization
 

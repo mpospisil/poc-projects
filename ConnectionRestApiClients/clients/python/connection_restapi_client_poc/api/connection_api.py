@@ -18,10 +18,10 @@ from typing_extensions import Annotated
 
 from pydantic import StrictInt, StrictStr
 from typing import List, Optional
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_missing_weld_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_operation_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_production_cost_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_missing_weld_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_operation_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_production_cost_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi
 from connection_restapi_client_poc.models.microsoft_asp_net_core_mvc_ok_object_result_microsoft_asp_net_core_mvc_core import MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
@@ -59,7 +59,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi:
         """api1_projects_project_id_connections_connection_id_get
 
 
@@ -99,7 +99,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -129,7 +129,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_get
 
 
@@ -169,7 +169,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -239,7 +239,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -329,7 +329,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin]:
+    ) -> List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_missing_welds_get
 
 
@@ -369,7 +369,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -399,7 +399,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin]]:
+    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]]:
         """api1_projects_project_id_connections_connection_id_missing_welds_get
 
 
@@ -439,7 +439,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -509,7 +509,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConMissingWeldIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -871,7 +871,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin]:
+    ) -> List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_operations_get
 
 
@@ -911,7 +911,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -941,7 +941,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin]]:
+    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]]:
         """api1_projects_project_id_connections_connection_id_operations_get
 
 
@@ -981,7 +981,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1051,7 +1051,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConOperationIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1141,7 +1141,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi:
         """api1_projects_project_id_connections_connection_id_production_cost_get
 
 
@@ -1181,7 +1181,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1211,7 +1211,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_production_cost_get
 
 
@@ -1251,7 +1251,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1321,7 +1321,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelConnectionConProductionCostIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1399,7 +1399,7 @@ class ConnectionApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1412,7 +1412,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi:
         """api1_projects_project_id_connections_connection_id_put
 
 
@@ -1420,8 +1420,8 @@ class ConnectionApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1447,7 +1447,7 @@ class ConnectionApi:
         _param = self._api1_projects_project_id_connections_connection_id_put_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1455,7 +1455,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1473,7 +1473,7 @@ class ConnectionApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1486,7 +1486,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_put
 
 
@@ -1494,8 +1494,8 @@ class ConnectionApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1521,7 +1521,7 @@ class ConnectionApi:
         _param = self._api1_projects_project_id_connections_connection_id_put_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1529,7 +1529,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1547,7 +1547,7 @@ class ConnectionApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1568,8 +1568,8 @@ class ConnectionApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1595,7 +1595,7 @@ class ConnectionApi:
         _param = self._api1_projects_project_id_connections_connection_id_put_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1603,7 +1603,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1616,7 +1616,7 @@ class ConnectionApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -1644,8 +1644,8 @@ class ConnectionApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_connection_con_connection_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -1714,7 +1714,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin]:
+    ) -> List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]:
         """api1_projects_project_id_connections_get
 
 
@@ -1751,7 +1751,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1780,7 +1780,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin]]:
+    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]]:
         """api1_projects_project_id_connections_get
 
 
@@ -1817,7 +1817,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1883,7 +1883,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelConnectionConConnectionIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,

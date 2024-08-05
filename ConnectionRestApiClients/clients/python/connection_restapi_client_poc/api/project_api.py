@@ -18,10 +18,10 @@ from typing_extensions import Annotated
 
 from pydantic import StrictBool, StrictInt, StrictStr
 from typing import List, Optional
-from connection_restapi_client_poc.models.idea_rs_open_model_connection_setup_idea_rs_open_model import IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
-from connection_restapi_client_poc.models.idea_rs_open_model_open_model_container_idea_rs_open_model import IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_data_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.connection_setup_idea_rs_open_model import ConnectionSetupIdeaRSOpenModel
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_project_data_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_project_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi
+from connection_restapi_client_poc.models.open_model_container_idea_rs_open_model import OpenModelContainerIdeaRSOpenModel
 from connection_restapi_client_poc.models.system_io_memory_stream_system_private_core_lib import SystemIOMemoryStreamSystemPrivateCoreLib
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
@@ -301,7 +301,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin]:
+    ) -> List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]:
         """api1_projects_get
 
 
@@ -335,7 +335,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -363,7 +363,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin]]:
+    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]]:
         """api1_projects_get
 
 
@@ -397,7 +397,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -459,7 +459,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -546,7 +546,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi:
         """Creates an IDEA Connection project based on OpenModelContainer (model and results)
 
 
@@ -583,7 +583,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -612,7 +612,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]:
         """Creates an IDEA Connection project based on OpenModelContainer (model and results)
 
 
@@ -649,7 +649,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -715,7 +715,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -796,7 +796,7 @@ class ProjectApi:
     def api1_projects_import_iom_post(
         self,
         connections_to_create: Optional[List[StrictInt]] = None,
-        idea_rs_open_model_open_model_container_idea_rs_open_model: Optional[IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -809,14 +809,14 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi:
         """Creates an IDEA Connection project based on OpenModelContainer (model and results)
 
 
         :param connections_to_create:
         :type connections_to_create: List[int]
-        :param idea_rs_open_model_open_model_container_idea_rs_open_model: 
-        :type idea_rs_open_model_open_model_container_idea_rs_open_model: IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
+        :param open_model_container_idea_rs_open_model: 
+        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -841,7 +841,7 @@ class ProjectApi:
 
         _param = self._api1_projects_import_iom_post_serialize(
             connections_to_create=connections_to_create,
-            idea_rs_open_model_open_model_container_idea_rs_open_model=idea_rs_open_model_open_model_container_idea_rs_open_model,
+            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -849,7 +849,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -866,7 +866,7 @@ class ProjectApi:
     def api1_projects_import_iom_post_with_http_info(
         self,
         connections_to_create: Optional[List[StrictInt]] = None,
-        idea_rs_open_model_open_model_container_idea_rs_open_model: Optional[IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -879,14 +879,14 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]:
         """Creates an IDEA Connection project based on OpenModelContainer (model and results)
 
 
         :param connections_to_create:
         :type connections_to_create: List[int]
-        :param idea_rs_open_model_open_model_container_idea_rs_open_model: 
-        :type idea_rs_open_model_open_model_container_idea_rs_open_model: IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
+        :param open_model_container_idea_rs_open_model: 
+        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -911,7 +911,7 @@ class ProjectApi:
 
         _param = self._api1_projects_import_iom_post_serialize(
             connections_to_create=connections_to_create,
-            idea_rs_open_model_open_model_container_idea_rs_open_model=idea_rs_open_model_open_model_container_idea_rs_open_model,
+            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -919,7 +919,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -936,7 +936,7 @@ class ProjectApi:
     def api1_projects_import_iom_post_without_preload_content(
         self,
         connections_to_create: Optional[List[StrictInt]] = None,
-        idea_rs_open_model_open_model_container_idea_rs_open_model: Optional[IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -955,8 +955,8 @@ class ProjectApi:
 
         :param connections_to_create:
         :type connections_to_create: List[int]
-        :param idea_rs_open_model_open_model_container_idea_rs_open_model: 
-        :type idea_rs_open_model_open_model_container_idea_rs_open_model: IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
+        :param open_model_container_idea_rs_open_model: 
+        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -981,7 +981,7 @@ class ProjectApi:
 
         _param = self._api1_projects_import_iom_post_serialize(
             connections_to_create=connections_to_create,
-            idea_rs_open_model_open_model_container_idea_rs_open_model=idea_rs_open_model_open_model_container_idea_rs_open_model,
+            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -989,7 +989,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1001,7 +1001,7 @@ class ProjectApi:
     def _api1_projects_import_iom_post_serialize(
         self,
         connections_to_create,
-        idea_rs_open_model_open_model_container_idea_rs_open_model,
+        open_model_container_idea_rs_open_model,
         _request_auth,
         _content_type,
         _headers,
@@ -1030,8 +1030,8 @@ class ProjectApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_rs_open_model_open_model_container_idea_rs_open_model is not None:
-            _body_params = idea_rs_open_model_open_model_container_idea_rs_open_model
+        if open_model_container_idea_rs_open_model is not None:
+            _body_params = open_model_container_idea_rs_open_model
 
 
         # set the HTTP header `Accept`
@@ -1103,7 +1103,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi:
         """api1_projects_open_post
 
 
@@ -1137,7 +1137,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1165,7 +1165,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]:
         """api1_projects_open_post
 
 
@@ -1199,7 +1199,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1261,7 +1261,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1603,7 +1603,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaRSOpenModelConnectionSetupIdeaRSOpenModel:
+    ) -> ConnectionSetupIdeaRSOpenModel:
         """api1_projects_project_id_connection_setup_get
 
 
@@ -1640,7 +1640,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaRSOpenModelConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetupIdeaRSOpenModel",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1669,7 +1669,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaRSOpenModelConnectionSetupIdeaRSOpenModel]:
+    ) -> ApiResponse[ConnectionSetupIdeaRSOpenModel]:
         """api1_projects_project_id_connection_setup_get
 
 
@@ -1706,7 +1706,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaRSOpenModelConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetupIdeaRSOpenModel",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1772,7 +1772,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaRSOpenModelConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetupIdeaRSOpenModel",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1846,7 +1846,7 @@ class ProjectApi:
     def api1_projects_project_id_connection_setup_put(
         self,
         project_id: StrictStr,
-        idea_rs_open_model_connection_setup_idea_rs_open_model: Optional[IdeaRSOpenModelConnectionSetupIdeaRSOpenModel] = None,
+        connection_setup_idea_rs_open_model: Optional[ConnectionSetupIdeaRSOpenModel] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1859,14 +1859,14 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaRSOpenModelConnectionSetupIdeaRSOpenModel:
+    ) -> ConnectionSetupIdeaRSOpenModel:
         """api1_projects_project_id_connection_setup_put
 
 
         :param project_id: (required)
         :type project_id: str
-        :param idea_rs_open_model_connection_setup_idea_rs_open_model:
-        :type idea_rs_open_model_connection_setup_idea_rs_open_model: IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
+        :param connection_setup_idea_rs_open_model:
+        :type connection_setup_idea_rs_open_model: ConnectionSetupIdeaRSOpenModel
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1891,7 +1891,7 @@ class ProjectApi:
 
         _param = self._api1_projects_project_id_connection_setup_put_serialize(
             project_id=project_id,
-            idea_rs_open_model_connection_setup_idea_rs_open_model=idea_rs_open_model_connection_setup_idea_rs_open_model,
+            connection_setup_idea_rs_open_model=connection_setup_idea_rs_open_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1899,7 +1899,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaRSOpenModelConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetupIdeaRSOpenModel",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1916,7 +1916,7 @@ class ProjectApi:
     def api1_projects_project_id_connection_setup_put_with_http_info(
         self,
         project_id: StrictStr,
-        idea_rs_open_model_connection_setup_idea_rs_open_model: Optional[IdeaRSOpenModelConnectionSetupIdeaRSOpenModel] = None,
+        connection_setup_idea_rs_open_model: Optional[ConnectionSetupIdeaRSOpenModel] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1929,14 +1929,14 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaRSOpenModelConnectionSetupIdeaRSOpenModel]:
+    ) -> ApiResponse[ConnectionSetupIdeaRSOpenModel]:
         """api1_projects_project_id_connection_setup_put
 
 
         :param project_id: (required)
         :type project_id: str
-        :param idea_rs_open_model_connection_setup_idea_rs_open_model:
-        :type idea_rs_open_model_connection_setup_idea_rs_open_model: IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
+        :param connection_setup_idea_rs_open_model:
+        :type connection_setup_idea_rs_open_model: ConnectionSetupIdeaRSOpenModel
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1961,7 +1961,7 @@ class ProjectApi:
 
         _param = self._api1_projects_project_id_connection_setup_put_serialize(
             project_id=project_id,
-            idea_rs_open_model_connection_setup_idea_rs_open_model=idea_rs_open_model_connection_setup_idea_rs_open_model,
+            connection_setup_idea_rs_open_model=connection_setup_idea_rs_open_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1969,7 +1969,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaRSOpenModelConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetupIdeaRSOpenModel",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1986,7 +1986,7 @@ class ProjectApi:
     def api1_projects_project_id_connection_setup_put_without_preload_content(
         self,
         project_id: StrictStr,
-        idea_rs_open_model_connection_setup_idea_rs_open_model: Optional[IdeaRSOpenModelConnectionSetupIdeaRSOpenModel] = None,
+        connection_setup_idea_rs_open_model: Optional[ConnectionSetupIdeaRSOpenModel] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2005,8 +2005,8 @@ class ProjectApi:
 
         :param project_id: (required)
         :type project_id: str
-        :param idea_rs_open_model_connection_setup_idea_rs_open_model:
-        :type idea_rs_open_model_connection_setup_idea_rs_open_model: IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
+        :param connection_setup_idea_rs_open_model:
+        :type connection_setup_idea_rs_open_model: ConnectionSetupIdeaRSOpenModel
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2031,7 +2031,7 @@ class ProjectApi:
 
         _param = self._api1_projects_project_id_connection_setup_put_serialize(
             project_id=project_id,
-            idea_rs_open_model_connection_setup_idea_rs_open_model=idea_rs_open_model_connection_setup_idea_rs_open_model,
+            connection_setup_idea_rs_open_model=connection_setup_idea_rs_open_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2039,7 +2039,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaRSOpenModelConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetupIdeaRSOpenModel",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2051,7 +2051,7 @@ class ProjectApi:
     def _api1_projects_project_id_connection_setup_put_serialize(
         self,
         project_id,
-        idea_rs_open_model_connection_setup_idea_rs_open_model,
+        connection_setup_idea_rs_open_model,
         _request_auth,
         _content_type,
         _headers,
@@ -2077,8 +2077,8 @@ class ProjectApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_rs_open_model_connection_setup_idea_rs_open_model is not None:
-            _body_params = idea_rs_open_model_connection_setup_idea_rs_open_model
+        if connection_setup_idea_rs_open_model is not None:
+            _body_params = connection_setup_idea_rs_open_model
 
 
         # set the HTTP header `Accept`
@@ -2406,7 +2406,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi:
         """api1_projects_project_id_project_data_get
 
 
@@ -2443,7 +2443,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2472,7 +2472,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi]:
         """api1_projects_project_id_project_data_get
 
 
@@ -2509,7 +2509,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2575,7 +2575,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2908,7 +2908,7 @@ class ProjectApi:
     def api1_projects_project_id_update_iom_post(
         self,
         project_id: StrictStr,
-        idea_rs_open_model_open_model_container_idea_rs_open_model: Optional[IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2927,8 +2927,8 @@ class ProjectApi:
 
         :param project_id:  (required)
         :type project_id: str
-        :param idea_rs_open_model_open_model_container_idea_rs_open_model: 
-        :type idea_rs_open_model_open_model_container_idea_rs_open_model: IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
+        :param open_model_container_idea_rs_open_model: 
+        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2953,7 +2953,7 @@ class ProjectApi:
 
         _param = self._api1_projects_project_id_update_iom_post_serialize(
             project_id=project_id,
-            idea_rs_open_model_open_model_container_idea_rs_open_model=idea_rs_open_model_open_model_container_idea_rs_open_model,
+            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2978,7 +2978,7 @@ class ProjectApi:
     def api1_projects_project_id_update_iom_post_with_http_info(
         self,
         project_id: StrictStr,
-        idea_rs_open_model_open_model_container_idea_rs_open_model: Optional[IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2997,8 +2997,8 @@ class ProjectApi:
 
         :param project_id:  (required)
         :type project_id: str
-        :param idea_rs_open_model_open_model_container_idea_rs_open_model: 
-        :type idea_rs_open_model_open_model_container_idea_rs_open_model: IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
+        :param open_model_container_idea_rs_open_model: 
+        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3023,7 +3023,7 @@ class ProjectApi:
 
         _param = self._api1_projects_project_id_update_iom_post_serialize(
             project_id=project_id,
-            idea_rs_open_model_open_model_container_idea_rs_open_model=idea_rs_open_model_open_model_container_idea_rs_open_model,
+            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3048,7 +3048,7 @@ class ProjectApi:
     def api1_projects_project_id_update_iom_post_without_preload_content(
         self,
         project_id: StrictStr,
-        idea_rs_open_model_open_model_container_idea_rs_open_model: Optional[IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3067,8 +3067,8 @@ class ProjectApi:
 
         :param project_id:  (required)
         :type project_id: str
-        :param idea_rs_open_model_open_model_container_idea_rs_open_model: 
-        :type idea_rs_open_model_open_model_container_idea_rs_open_model: IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
+        :param open_model_container_idea_rs_open_model: 
+        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3093,7 +3093,7 @@ class ProjectApi:
 
         _param = self._api1_projects_project_id_update_iom_post_serialize(
             project_id=project_id,
-            idea_rs_open_model_open_model_container_idea_rs_open_model=idea_rs_open_model_open_model_container_idea_rs_open_model,
+            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3113,7 +3113,7 @@ class ProjectApi:
     def _api1_projects_project_id_update_iom_post_serialize(
         self,
         project_id,
-        idea_rs_open_model_open_model_container_idea_rs_open_model,
+        open_model_container_idea_rs_open_model,
         _request_auth,
         _content_type,
         _headers,
@@ -3139,8 +3139,8 @@ class ProjectApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_rs_open_model_open_model_container_idea_rs_open_model is not None:
-            _body_params = idea_rs_open_model_open_model_container_idea_rs_open_model
+        if open_model_container_idea_rs_open_model is not None:
+            _body_params = open_model_container_idea_rs_open_model
 
 
         # set the HTTP header `Accept`

@@ -79,7 +79,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_get**
-> List[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin] api1_projects_get()
+> List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi] api1_projects_get()
 
 
 
@@ -88,7 +88,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_project_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -120,7 +120,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin.md)
+[**List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_import_iom_file_post**
-> IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin api1_projects_import_iom_file_post(connections_to_create=connections_to_create)
+> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi api1_projects_import_iom_file_post(connections_to_create=connections_to_create)
 
 Creates an IDEA Connection project based on OpenModelContainer (model and results)
 
@@ -149,7 +149,7 @@ Creates an IDEA Connection project based on OpenModelContainer (model and result
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_project_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_import_iom_post**
-> IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin api1_projects_import_iom_post(connections_to_create=connections_to_create, idea_rs_open_model_open_model_container_idea_rs_open_model=idea_rs_open_model_open_model_container_idea_rs_open_model)
+> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi api1_projects_import_iom_post(connections_to_create=connections_to_create, open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model)
 
 Creates an IDEA Connection project based on OpenModelContainer (model and results)
 
@@ -215,8 +215,8 @@ Creates an IDEA Connection project based on OpenModelContainer (model and result
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_rs_open_model_open_model_container_idea_rs_open_model import IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_project_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi
+from connection_restapi_client_poc.models.open_model_container_idea_rs_open_model import OpenModelContainerIdeaRSOpenModel
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -232,11 +232,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.ProjectApi(api_client)
     connections_to_create = [56] # List[int] |  (optional)
-    idea_rs_open_model_open_model_container_idea_rs_open_model = connection_restapi_client_poc.IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel() # IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel |  (optional)
+    open_model_container_idea_rs_open_model = connection_restapi_client_poc.OpenModelContainerIdeaRSOpenModel() # OpenModelContainerIdeaRSOpenModel |  (optional)
 
     try:
         # Creates an IDEA Connection project based on OpenModelContainer (model and results)
-        api_response = api_instance.api1_projects_import_iom_post(connections_to_create=connections_to_create, idea_rs_open_model_open_model_container_idea_rs_open_model=idea_rs_open_model_open_model_container_idea_rs_open_model)
+        api_response = api_instance.api1_projects_import_iom_post(connections_to_create=connections_to_create, open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model)
         print("The response of ProjectApi->api1_projects_import_iom_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -251,11 +251,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **connections_to_create** | [**List[int]**](int.md)|  | [optional] 
- **idea_rs_open_model_open_model_container_idea_rs_open_model** | [**IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel**](IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel.md)|  | [optional] 
+ **open_model_container_idea_rs_open_model** | [**OpenModelContainerIdeaRSOpenModel**](OpenModelContainerIdeaRSOpenModel.md)|  | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_open_post**
-> IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin api1_projects_open_post()
+> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi api1_projects_open_post()
 
 
 
@@ -284,7 +284,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_project_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -316,7 +316,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -401,7 +401,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connection_setup_get**
-> IdeaRSOpenModelConnectionSetupIdeaRSOpenModel api1_projects_project_id_connection_setup_get(project_id)
+> ConnectionSetupIdeaRSOpenModel api1_projects_project_id_connection_setup_get(project_id)
 
 
 
@@ -410,7 +410,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_rs_open_model_connection_setup_idea_rs_open_model import IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
+from connection_restapi_client_poc.models.connection_setup_idea_rs_open_model import ConnectionSetupIdeaRSOpenModel
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaRSOpenModelConnectionSetupIdeaRSOpenModel**](IdeaRSOpenModelConnectionSetupIdeaRSOpenModel.md)
+[**ConnectionSetupIdeaRSOpenModel**](ConnectionSetupIdeaRSOpenModel.md)
 
 ### Authorization
 
@@ -466,7 +466,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connection_setup_put**
-> IdeaRSOpenModelConnectionSetupIdeaRSOpenModel api1_projects_project_id_connection_setup_put(project_id, idea_rs_open_model_connection_setup_idea_rs_open_model=idea_rs_open_model_connection_setup_idea_rs_open_model)
+> ConnectionSetupIdeaRSOpenModel api1_projects_project_id_connection_setup_put(project_id, connection_setup_idea_rs_open_model=connection_setup_idea_rs_open_model)
 
 
 
@@ -475,7 +475,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_rs_open_model_connection_setup_idea_rs_open_model import IdeaRSOpenModelConnectionSetupIdeaRSOpenModel
+from connection_restapi_client_poc.models.connection_setup_idea_rs_open_model import ConnectionSetupIdeaRSOpenModel
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -491,10 +491,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.ProjectApi(api_client)
     project_id = 'project_id_example' # str | 
-    idea_rs_open_model_connection_setup_idea_rs_open_model = connection_restapi_client_poc.IdeaRSOpenModelConnectionSetupIdeaRSOpenModel() # IdeaRSOpenModelConnectionSetupIdeaRSOpenModel |  (optional)
+    connection_setup_idea_rs_open_model = connection_restapi_client_poc.ConnectionSetupIdeaRSOpenModel() # ConnectionSetupIdeaRSOpenModel |  (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connection_setup_put(project_id, idea_rs_open_model_connection_setup_idea_rs_open_model=idea_rs_open_model_connection_setup_idea_rs_open_model)
+        api_response = api_instance.api1_projects_project_id_connection_setup_put(project_id, connection_setup_idea_rs_open_model=connection_setup_idea_rs_open_model)
         print("The response of ProjectApi->api1_projects_project_id_connection_setup_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -509,11 +509,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
- **idea_rs_open_model_connection_setup_idea_rs_open_model** | [**IdeaRSOpenModelConnectionSetupIdeaRSOpenModel**](IdeaRSOpenModelConnectionSetupIdeaRSOpenModel.md)|  | [optional] 
+ **connection_setup_idea_rs_open_model** | [**ConnectionSetupIdeaRSOpenModel**](ConnectionSetupIdeaRSOpenModel.md)|  | [optional] 
 
 ### Return type
 
-[**IdeaRSOpenModelConnectionSetupIdeaRSOpenModel**](IdeaRSOpenModelConnectionSetupIdeaRSOpenModel.md)
+[**ConnectionSetupIdeaRSOpenModel**](ConnectionSetupIdeaRSOpenModel.md)
 
 ### Authorization
 
@@ -598,7 +598,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_project_data_get**
-> IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin api1_projects_project_id_project_data_get(project_id)
+> IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi api1_projects_project_id_project_data_get(project_id)
 
 
 
@@ -607,7 +607,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_con_project_data_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_project_data_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -643,7 +643,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectConProjectDataIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -728,7 +728,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_update_iom_post**
-> bool api1_projects_project_id_update_iom_post(project_id, idea_rs_open_model_open_model_container_idea_rs_open_model=idea_rs_open_model_open_model_container_idea_rs_open_model)
+> bool api1_projects_project_id_update_iom_post(project_id, open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model)
 
 Update an IDEA Connection project based on OpenModelContainer (model and results)
 
@@ -737,7 +737,7 @@ Update an IDEA Connection project based on OpenModelContainer (model and results
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_rs_open_model_open_model_container_idea_rs_open_model import IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel
+from connection_restapi_client_poc.models.open_model_container_idea_rs_open_model import OpenModelContainerIdeaRSOpenModel
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -753,11 +753,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.ProjectApi(api_client)
     project_id = 'project_id_example' # str | 
-    idea_rs_open_model_open_model_container_idea_rs_open_model = connection_restapi_client_poc.IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel() # IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel |  (optional)
+    open_model_container_idea_rs_open_model = connection_restapi_client_poc.OpenModelContainerIdeaRSOpenModel() # OpenModelContainerIdeaRSOpenModel |  (optional)
 
     try:
         # Update an IDEA Connection project based on OpenModelContainer (model and results)
-        api_response = api_instance.api1_projects_project_id_update_iom_post(project_id, idea_rs_open_model_open_model_container_idea_rs_open_model=idea_rs_open_model_open_model_container_idea_rs_open_model)
+        api_response = api_instance.api1_projects_project_id_update_iom_post(project_id, open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model)
         print("The response of ProjectApi->api1_projects_project_id_update_iom_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -772,7 +772,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
- **idea_rs_open_model_open_model_container_idea_rs_open_model** | [**IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel**](IdeaRSOpenModelOpenModelContainerIdeaRSOpenModel.md)|  | [optional] 
+ **open_model_container_idea_rs_open_model** | [**OpenModelContainerIdeaRSOpenModel**](OpenModelContainerIdeaRSOpenModel.md)|  | [optional] 
 
 ### Return type
 

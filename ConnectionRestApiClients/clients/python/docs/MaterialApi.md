@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get**
-> List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin] api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get(project_id, connection_id)
+> List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi] api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get(project_id, connection_id)
 
 
 
@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin.md)
+[**List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post**
-> IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin)
+> IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post(project_id, connection_id, idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api)
 
 
 
@@ -91,7 +91,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -108,10 +108,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.MaterialApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi |  (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin)
+        api_response = api_instance.api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post(project_id, connection_id, idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api)
         print("The response of MaterialApi->api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -127,11 +127,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin** | [**IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin.md)|  | [optional] 
+ **idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi.md)|  | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_materials_cross_sections_get**
-> List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin] api1_projects_project_id_connections_connection_id_materials_cross_sections_get(project_id, connection_id)
+> List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi] api1_projects_project_id_connections_connection_id_materials_cross_sections_get(project_id, connection_id)
 
 
 
@@ -160,7 +160,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin.md)
+[**List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_materials_cross_sections_post**
-> IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin api1_projects_project_id_connections_connection_id_materials_cross_sections_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin)
+> IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi api1_projects_project_id_connections_connection_id_materials_cross_sections_post(project_id, connection_id, idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api)
 
 
 
@@ -227,7 +227,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -244,10 +244,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.MaterialApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi |  (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_materials_cross_sections_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin)
+        api_response = api_instance.api1_projects_project_id_connections_connection_id_materials_cross_sections_post(project_id, connection_id, idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api)
         print("The response of MaterialApi->api1_projects_project_id_connections_connection_id_materials_cross_sections_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -263,11 +263,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin** | [**IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin.md)|  | [optional] 
+ **idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi.md)|  | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_materials_get**
-> List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin] api1_projects_project_id_connections_connection_id_materials_get(project_id, connection_id, type=type)
+> List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] api1_projects_project_id_connections_connection_id_materials_get(project_id, connection_id, type=type)
 
 
 
@@ -297,7 +297,7 @@ No authorization required
 ```python
 import connection_restapi_client_poc
 from connection_restapi_client_poc.models.idea_rsws_lib_css_service_material_type_ci_basic_types import IdeaRSWsLibCssServiceMaterialTypeCIBasicTypes
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin.md)
+[**List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -357,7 +357,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_materials_pins_get**
-> List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin] api1_projects_project_id_connections_connection_id_materials_pins_get(project_id, connection_id)
+> List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi] api1_projects_project_id_connections_connection_id_materials_pins_get(project_id, connection_id)
 
 
 
@@ -366,7 +366,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_pin_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_pin_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin]**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin.md)
+[**List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -424,7 +424,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_materials_pins_post**
-> IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin api1_projects_project_id_connections_connection_id_materials_pins_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin)
+> IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi api1_projects_project_id_connections_connection_id_materials_pins_post(project_id, connection_id, idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api)
 
 
 
@@ -433,8 +433,8 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_pin_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_pin_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -451,10 +451,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.MaterialApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi |  (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_materials_pins_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin)
+        api_response = api_instance.api1_projects_project_id_connections_connection_id_materials_pins_post(project_id, connection_id, idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api)
         print("The response of MaterialApi->api1_projects_project_id_connections_connection_id_materials_pins_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -470,11 +470,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin** | [**IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin.md)|  | [optional] 
+ **idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi.md)|  | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -494,7 +494,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_materials_post**
-> IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin api1_projects_project_id_connections_connection_id_materials_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin)
+> IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi api1_projects_project_id_connections_connection_id_materials_post(project_id, connection_id, idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api)
 
 
 
@@ -503,7 +503,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -520,10 +520,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.MaterialApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi |  (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_materials_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin)
+        api_response = api_instance.api1_projects_project_id_connections_connection_id_materials_post(project_id, connection_id, idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api)
         print("The response of MaterialApi->api1_projects_project_id_connections_connection_id_materials_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -539,11 +539,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin** | [**IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin.md)|  | [optional] 
+ **idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi.md)|  | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi.md)
 
 ### Authorization
 

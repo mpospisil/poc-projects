@@ -9,19 +9,19 @@ Method | HTTP request | Description
 
 
 # **api1_projects_project_id_connections_connection_id_apply_mapping_post**
-> IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin api1_projects_project_id_connections_connection_id_apply_mapping_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin)
+> IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi api1_projects_project_id_connections_connection_id_apply_mapping_post(project_id, connection_id, idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api)
 
 Get the default mappings for the application of the connection template passed in conTemplateGetParam  on connectionId in the project projectId
 
-The result IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.TemplateConversions can be modified by a user and used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.TemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.ConTemplateApplyParam) method.
+The result IdeaStatiCa.Api.Connection.Model.TemplateConversions can be modified by a user and used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.TemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Api.Connection.Model.ConTemplateApplyParam) method.
 
 ### Example
 
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_template_conversions_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_template_conversions_idea_stati_ca_api import IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -38,11 +38,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.TemplateApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened connection in the ConnectionReastApi service
     connection_id = 56 # int | Id of the connection to apply the template
-    idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin | Data of the template to apply (optional)
+    idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi | Data of the template to apply (optional)
 
     try:
         # Get the default mappings for the application of the connection template passed in conTemplateGetParam  on connectionId in the project projectId
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_apply_mapping_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin)
+        api_response = api_instance.api1_projects_project_id_connections_connection_id_apply_mapping_post(project_id, connection_id, idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api)
         print("The response of TemplateApi->api1_projects_project_id_connections_connection_id_apply_mapping_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -58,11 +58,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened connection in the ConnectionReastApi service | 
  **connection_id** | **int**| Id of the connection to apply the template | 
- **idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin** | [**IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin.md)| Data of the template to apply | [optional] 
+ **idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi.md)| Data of the template to apply | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin.md)
+[**IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api1_projects_project_id_connections_connection_id_apply_template_post**
-> object api1_projects_project_id_connections_connection_id_apply_template_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin)
+> object api1_projects_project_id_connections_connection_id_apply_template_post(project_id, connection_id, idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api)
 
 
 
@@ -91,7 +91,7 @@ No authorization required
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -108,10 +108,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.TemplateApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin() # IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin |  (optional)
+    idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi |  (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_apply_template_post(project_id, connection_id, idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin)
+        api_response = api_instance.api1_projects_project_id_connections_connection_id_apply_template_post(project_id, connection_id, idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api)
         print("The response of TemplateApi->api1_projects_project_id_connections_connection_id_apply_template_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin** | [**IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin**](IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin.md)|  | [optional] 
+ **idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi.md)|  | [optional] 
 
 ### Return type
 

@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import StrictInt, StrictStr
 from typing import Optional
-from connection_restapi_client_poc.models.idea_rs_open_model_connection_connection_data_idea_rs_open_model import IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel
+from connection_restapi_client_poc.models.connection_connection_data_idea_rs_open_model import ConnectionConnectionDataIdeaRSOpenModel
 from connection_restapi_client_poc.models.system_io_memory_stream_system_private_core_lib import SystemIOMemoryStreamSystemPrivateCoreLib
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
@@ -330,7 +330,7 @@ class ExportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel:
+    ) -> ConnectionConnectionDataIdeaRSOpenModel:
         """api1_projects_project_id_connections_connection_id_export_iom_connection_data_get
 
 
@@ -370,7 +370,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel",
+            '200': "ConnectionConnectionDataIdeaRSOpenModel",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -400,7 +400,7 @@ class ExportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel]:
+    ) -> ApiResponse[ConnectionConnectionDataIdeaRSOpenModel]:
         """api1_projects_project_id_connections_connection_id_export_iom_connection_data_get
 
 
@@ -440,7 +440,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel",
+            '200': "ConnectionConnectionDataIdeaRSOpenModel",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -510,7 +510,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaRSOpenModelConnectionConnectionDataIdeaRSOpenModel",
+            '200': "ConnectionConnectionDataIdeaRSOpenModel",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -19,9 +19,9 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Any, Dict, Optional
 from typing_extensions import Annotated
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_template_conversions_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_template_conversions_idea_stati_ca_api import IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -46,7 +46,7 @@ class TemplateApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionReastApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to apply the template")],
-        idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin: Annotated[Optional[IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin], Field(description="Data of the template to apply")] = None,
+        idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi], Field(description="Data of the template to apply")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,17 +59,17 @@ class TemplateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi:
         """Get the default mappings for the application of the connection template passed in conTemplateGetParam  on connectionId in the project projectId
 
-        The result IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.TemplateConversions can be modified by a user and used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.TemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.ConTemplateApplyParam) method.
+        The result IdeaStatiCa.Api.Connection.Model.TemplateConversions can be modified by a user and used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.TemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Api.Connection.Model.ConTemplateApplyParam) method.
 
         :param project_id: The unique identifier of the opened connection in the ConnectionReastApi service (required)
         :type project_id: str
         :param connection_id: Id of the connection to apply the template (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin: Data of the template to apply
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api: Data of the template to apply
+        :type idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -95,7 +95,7 @@ class TemplateApi:
         _param = self._api1_projects_project_id_connections_connection_id_apply_mapping_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -103,7 +103,7 @@ class TemplateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -121,7 +121,7 @@ class TemplateApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionReastApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to apply the template")],
-        idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin: Annotated[Optional[IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin], Field(description="Data of the template to apply")] = None,
+        idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi], Field(description="Data of the template to apply")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,17 +134,17 @@ class TemplateApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi]:
         """Get the default mappings for the application of the connection template passed in conTemplateGetParam  on connectionId in the project projectId
 
-        The result IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.TemplateConversions can be modified by a user and used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.TemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.ConTemplateApplyParam) method.
+        The result IdeaStatiCa.Api.Connection.Model.TemplateConversions can be modified by a user and used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.TemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Api.Connection.Model.ConTemplateApplyParam) method.
 
         :param project_id: The unique identifier of the opened connection in the ConnectionReastApi service (required)
         :type project_id: str
         :param connection_id: Id of the connection to apply the template (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin: Data of the template to apply
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api: Data of the template to apply
+        :type idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -170,7 +170,7 @@ class TemplateApi:
         _param = self._api1_projects_project_id_connections_connection_id_apply_mapping_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -178,7 +178,7 @@ class TemplateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -196,7 +196,7 @@ class TemplateApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionReastApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to apply the template")],
-        idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin: Annotated[Optional[IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin], Field(description="Data of the template to apply")] = None,
+        idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi], Field(description="Data of the template to apply")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -212,14 +212,14 @@ class TemplateApi:
     ) -> RESTResponseType:
         """Get the default mappings for the application of the connection template passed in conTemplateGetParam  on connectionId in the project projectId
 
-        The result IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.TemplateConversions can be modified by a user and used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.TemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Plugin.Api.ConnectionRest.Model.Model_Template.ConTemplateApplyParam) method.
+        The result IdeaStatiCa.Api.Connection.Model.TemplateConversions can be modified by a user and used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.TemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Api.Connection.Model.ConTemplateApplyParam) method.
 
         :param project_id: The unique identifier of the opened connection in the ConnectionReastApi service (required)
         :type project_id: str
         :param connection_id: Id of the connection to apply the template (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin: Data of the template to apply
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api: Data of the template to apply
+        :type idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -245,7 +245,7 @@ class TemplateApi:
         _param = self._api1_projects_project_id_connections_connection_id_apply_mapping_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -253,7 +253,7 @@ class TemplateApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -266,7 +266,7 @@ class TemplateApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -294,8 +294,8 @@ class TemplateApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -353,7 +353,7 @@ class TemplateApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -374,8 +374,8 @@ class TemplateApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -401,7 +401,7 @@ class TemplateApi:
         _param = self._api1_projects_project_id_connections_connection_id_apply_template_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -427,7 +427,7 @@ class TemplateApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -448,8 +448,8 @@ class TemplateApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -475,7 +475,7 @@ class TemplateApi:
         _param = self._api1_projects_project_id_connections_connection_id_apply_template_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -501,7 +501,7 @@ class TemplateApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -522,8 +522,8 @@ class TemplateApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -549,7 +549,7 @@ class TemplateApi:
         _param = self._api1_projects_project_id_connections_connection_id_apply_template_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -570,7 +570,7 @@ class TemplateApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -598,8 +598,8 @@ class TemplateApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`

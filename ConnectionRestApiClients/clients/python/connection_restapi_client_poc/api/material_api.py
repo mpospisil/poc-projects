@@ -19,10 +19,10 @@ from typing_extensions import Annotated
 from pydantic import StrictInt, StrictStr
 from typing import List, Optional
 from connection_restapi_client_poc.models.idea_rsws_lib_css_service_material_type_ci_basic_types import IdeaRSWsLibCssServiceMaterialTypeCIBasicTypes
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_pin_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_pin_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -59,7 +59,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin]:
+    ) -> List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get
 
 
@@ -99,7 +99,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -129,7 +129,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin]]:
+    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]]:
         """api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get
 
 
@@ -169,7 +169,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -239,7 +239,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -317,7 +317,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -330,7 +330,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi:
         """api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post
 
 
@@ -338,8 +338,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -365,7 +365,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -373,7 +373,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -391,7 +391,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -404,7 +404,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post
 
 
@@ -412,8 +412,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -439,7 +439,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -447,7 +447,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -465,7 +465,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -486,8 +486,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -513,7 +513,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -521,7 +521,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjBoltAssemblyIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -534,7 +534,7 @@ class MaterialApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -562,8 +562,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_bolt_assembly_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -633,7 +633,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin]:
+    ) -> List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_materials_cross_sections_get
 
 
@@ -673,7 +673,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -703,7 +703,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin]]:
+    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]]:
         """api1_projects_project_id_connections_connection_id_materials_cross_sections_get
 
 
@@ -743,7 +743,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -813,7 +813,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -891,7 +891,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -904,7 +904,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi:
         """api1_projects_project_id_connections_connection_id_materials_cross_sections_post
 
 
@@ -912,8 +912,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -939,7 +939,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_cross_sections_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -947,7 +947,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -965,7 +965,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -978,7 +978,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_materials_cross_sections_post
 
 
@@ -986,8 +986,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1013,7 +1013,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_cross_sections_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1021,7 +1021,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1039,7 +1039,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1060,8 +1060,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1087,7 +1087,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_cross_sections_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1095,7 +1095,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjCrossSectionIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1108,7 +1108,7 @@ class MaterialApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -1136,8 +1136,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_cross_section_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -1208,7 +1208,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin]:
+    ) -> List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_materials_get
 
 
@@ -1251,7 +1251,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1282,7 +1282,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin]]:
+    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]]:
         """api1_projects_project_id_connections_connection_id_materials_get
 
 
@@ -1325,7 +1325,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1399,7 +1399,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1494,7 +1494,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin]:
+    ) -> List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_materials_pins_get
 
 
@@ -1534,7 +1534,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1564,7 +1564,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin]]:
+    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]]:
         """api1_projects_project_id_connections_connection_id_materials_pins_get
 
 
@@ -1604,7 +1604,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1674,7 +1674,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin]",
+            '200': "List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1752,7 +1752,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1765,7 +1765,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi:
         """api1_projects_project_id_connections_connection_id_materials_pins_post
 
 
@@ -1773,8 +1773,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1800,7 +1800,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_pins_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1808,7 +1808,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1826,7 +1826,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1839,7 +1839,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_materials_pins_post
 
 
@@ -1847,8 +1847,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1874,7 +1874,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_pins_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1882,7 +1882,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1900,7 +1900,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1921,8 +1921,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1948,7 +1948,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_pins_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1956,7 +1956,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjPinIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1969,7 +1969,7 @@ class MaterialApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -1997,8 +1997,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -2056,7 +2056,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2069,7 +2069,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin:
+    ) -> IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi:
         """api1_projects_project_id_connections_connection_id_materials_post
 
 
@@ -2077,8 +2077,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2104,7 +2104,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2112,7 +2112,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2130,7 +2130,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2143,7 +2143,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin]:
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]:
         """api1_projects_project_id_connections_connection_id_materials_post
 
 
@@ -2151,8 +2151,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2178,7 +2178,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2186,7 +2186,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2204,7 +2204,7 @@ class MaterialApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: Optional[IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin] = None,
+        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2225,8 +2225,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id: (required)
         :type connection_id: int
-        :param idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin:
-        :type idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin: IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin
+        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
+        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2252,7 +2252,7 @@ class MaterialApi:
         _param = self._api1_projects_project_id_connections_connection_id_materials_post_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin=idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin,
+            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2260,7 +2260,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaPluginApiConnectionRestModelModelProjectProjMaterialIdeaStatiCaPlugin",
+            '200': "IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2273,7 +2273,7 @@ class MaterialApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin,
+        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -2301,8 +2301,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin is not None:
-            _body_params = idea_stati_ca_plugin_api_connection_rest_model_model_project_proj_material_idea_stati_ca_plugin
+        if idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`

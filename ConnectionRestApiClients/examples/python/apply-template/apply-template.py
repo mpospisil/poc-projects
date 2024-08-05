@@ -5,9 +5,11 @@ import os
 import requests
 from urllib.parse import urljoin
 import json
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_mapping_get_param_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_template_conversions_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateTemplateConversionsIdeaStatiCaPlugin
-from connection_restapi_client_poc.models.idea_stati_ca_plugin_api_connection_rest_model_model_template_con_template_apply_param_idea_stati_ca_plugin import IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_template_conversions_idea_stati_ca_api import IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi
+
+from connection_restapi_client_poc.rest import ApiException
 
 baseUrl = "http://localhost:5000"
 
@@ -80,7 +82,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             
             api_template = connection_restapi_client_poc.TemplateApi(api_client)
 
-            templateParam = IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateMappingGetParamIdeaStatiCaPlugin()
+            templateParam = IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi()
 
             template_file_name = os.path.join(dir_path, '..\..\projects', 'template-I-corner.contemp')
             with open(template_file_name, 'r', encoding='utf-16') as file:
@@ -94,7 +96,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             # Modify mapping
           
             # Apply the template to the connection with the modified mapping
-            applyTemplateData = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelTemplateConTemplateApplyParamIdeaStatiCaPlugin()
+            applyTemplateData = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi()
             applyTemplateData.connection_template = templateParam.template
             applyTemplateData.mapping = default_mapping
 
@@ -103,10 +105,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             pprint(applyTemplateResult)
 
             # get calculation API for the active project
-            api_calculation = connection_restapi_client_poc.CalculationApi(api_client)             
+            api_calculation = connection_restapi_client_poc.CalculationApi(api_client)            
 
             # run stress-strain CBFEM analysis for the connection id = 1
-            calcParams = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin()
+            calcParams =  connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi()
             calcParams.connection_ids = [connection1.id]
 
             # run stress-strain analysis for the connection

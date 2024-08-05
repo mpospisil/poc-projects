@@ -80,7 +80,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             api_calculation = connection_restapi_client_poc.CalculationApi(api_client)
 
             # run stress-strain CBFEM analysis for the connection id = 1
-            calcParams = connection_restapi_client_poc.IdeaStatiCaPluginApiConnectionRestModelModelConnectionConCalculationParameterIdeaStatiCaPlugin()
+            calcParams = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi()
             calcParams.connection_ids = [connection1.id]
 
             # run stress-strain analysis for the connection

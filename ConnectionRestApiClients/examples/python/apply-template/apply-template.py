@@ -133,7 +133,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
         finally:
             # close the active project on the backend
-            closeProjectResult = api_project.api1_projects_project_id_close_get(project_id)
+            closeProjectResult = api_project.close_project(project_id)
 
     except Exception as e:
         print("Exception when calling ProjectApi->api1_connect_client_get: %s\n" % e)

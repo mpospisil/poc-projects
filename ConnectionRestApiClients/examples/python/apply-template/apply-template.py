@@ -32,7 +32,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_project = connection_restapi_client_poc.ProjectApi(api_client)
 
     try:
-        clientId = api_project.api1_connect_client_get()
+        clientId = api_project.connect_client()
         print("The response of ProjectApi->api1_connect_client_get:\n")
         pprint(clientId)
 
@@ -66,14 +66,14 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
         try:
             # Get the project data
-            project_data = api_project.api1_projects_project_id_project_data_get(project_id)
+            project_data = api_project.get_project_data(project_id)
             pprint(project_data)
 
             # Get API for connections in the project
             api_connection = connection_restapi_client_poc.ConnectionApi(api_client)
 
             # Get list of all connections in the project
-            connections_in_project = api_connection.api1_projects_project_id_connections_get(project_id)
+            connections_in_project = api_connection.get_all_connections_data(project_id)
 
             # first connection in the project 
             connection1 = connections_in_project[0]
@@ -89,7 +89,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
                 templateParam.template = file.read()
 
             # get the default mapping for the selected template and connection  
-            default_mapping = api_template.api1_projects_project_id_connections_connection_id_apply_mapping_post(project_id, connection1.id, templateParam)
+            default_mapping = api_template.get_deault_template_mapping(project_id, connection1.id, templateParam)
             pprint(default_mapping)
 
             # TODO
@@ -100,7 +100,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             applyTemplateData.connection_template = templateParam.template
             applyTemplateData.mapping = default_mapping
 
-            applyTemplateResult = api_template.api1_projects_project_id_connections_connection_id_apply_template_post(project_id, connection1.id, applyTemplateData)
+            applyTemplateResult = api_template.apply_template(project_id, connection1.id, applyTemplateData)
  
             pprint(applyTemplateResult)
 
@@ -112,7 +112,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             calcParams.connection_ids = [connection1.id]
 
             # run stress-strain analysis for the connection
-            con1_cbfem_results1 = api_calculation.api1_projects_project_id_calculate_post(project_id, calcParams)
+            con1_cbfem_results1 = api_calculation.calculate(project_id, calcParams)
             pprint(con1_cbfem_results1)
 
             # modify loading

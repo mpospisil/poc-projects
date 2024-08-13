@@ -28,7 +28,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_project = connection_restapi_client_poc.ProjectApi(api_client)
 
     try:
-        clientId = api_project.api1_connect_client_get()
+        clientId = api_project.connect_client()
         print("The response of ProjectApi->api1_connect_client_get:\n")
         pprint(clientId)
 
@@ -62,14 +62,14 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
         try:
             # Get the project data
-            project_data = api_project.api1_projects_project_id_project_data_get(project_id)
+            project_data = api_project.get_project_data(project_id)
             pprint(project_data)
 
             # Get API for connections in the project
             api_connection = connection_restapi_client_poc.ConnectionApi(api_client)
 
             # Get list of all connections in the project
-            connections_in_project = api_connection.api1_projects_project_id_connections_get(project_id)
+            connections_in_project = api_connection.get_all_connections_data(project_id)
 
             # first connection in the project 
             connection1 = connections_in_project[0]
@@ -84,37 +84,37 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             calcParams.connection_ids = [connection1.id]
 
             # run stress-strain analysis for the connection
-            con1_cbfem_results = api_calculation.api1_projects_project_id_calculate_post(project_id, calcParams)
+            con1_cbfem_results = api_calculation.calculate(project_id, calcParams)
             pprint(con1_cbfem_results)
 
             # get detailed results
-            results_text = api_calculation.api1_projects_project_id_rawresults_text_post(project_id, calcParams)
+            results_text = api_calculation.get_raw_json_results(project_id, calcParams)
             #pprint(results_text)
 
             raw_results = json.loads(results_text)
             pprint(raw_results)
 
-            detailed_results = api_calculation.api1_projects_project_id_results_post(project_id, calcParams)
+            detailed_results = api_calculation.get_results(project_id, calcParams)
             pprint(detailed_results)
 
             # get connection setup
-            connection_setup =  api_project.api1_projects_project_id_connection_setup_get(project_id)
+            connection_setup =  api_project.get_setup(project_id)
             pprint(connection_setup)
 
             # modify setup
             connection_setup.hss_limit_plastic_strain = 0.02
-            modifiedSetup = api_project.api1_projects_project_id_connection_setup_put(project_id, connection_setup)
+            modifiedSetup = api_project.update_setup(project_id, connection_setup)
 
             # recalculate connection
-            recalculate_results = api_calculation.api1_projects_project_id_calculate_post(project_id, calcParams)
+            recalculate_results = api_calculation.calculate(project_id, calcParams)
             pprint(recalculate_results)
 
         except Exception as ee:
-            print("Exception when calling CalculationApi->api1_projects_project_id_calculate_post: %s\n" % ee)
+            print("Exception when calling CalculationApi: %s\n" % ee)
 
         finally:
             # close the active project on the backend
-            closeProjectResult = api_project.api1_projects_project_id_close_get(project_id)
+            closeProjectResult = api_project.close_project(project_id)
 
     except Exception as e:
         print("Exception when calling ProjectApi->api1_connect_client_get: %s\n" % e)

@@ -99,7 +99,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ApplyTemplateAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> ApplyTemplateAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Apply the connection template applyTemplateParam on the connection connectionId in the project projectId
@@ -114,7 +114,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApplyTemplateWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApplyTemplateWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
         /// </summary>
@@ -128,7 +128,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDeaultTemplateMappingAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDeaultTemplateMappingAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
@@ -143,7 +143,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>> GetDeaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>> GetDeaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -348,7 +348,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ApplyTemplateAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> ApplyTemplateAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<Object> localVarResponse = await ApplyTemplateWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -364,7 +364,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<Object>> ApplyTemplateWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<Object>> ApplyTemplateWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -503,7 +503,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDeaultTemplateMappingAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDeaultTemplateMappingAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> localVarResponse = await GetDeaultTemplateMappingWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -519,7 +519,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>> GetDeaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>> GetDeaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();

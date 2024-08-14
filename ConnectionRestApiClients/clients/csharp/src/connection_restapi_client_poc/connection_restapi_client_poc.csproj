@@ -12,7 +12,7 @@
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>connection_restapi_client_poc</RootNamespace>
-    <Version>24.0.5.0425</Version>
+    <Version>24.0.5.0470</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\connection_restapi_client_poc.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

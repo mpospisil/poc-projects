@@ -33,7 +33,7 @@ namespace connection_restapi_client_poc.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "24.0.5.0425";
+        public const string Version = "24.0.5.0470";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -113,11 +113,11 @@ namespace connection_restapi_client_poc.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
             Proxy = null;
-            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/24.0.5.0425/csharp");
+            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/24.0.5.0470/csharp");
             BasePath = "http://localhost";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -142,7 +142,7 @@ namespace connection_restapi_client_poc.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration(
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
@@ -540,7 +540,7 @@ namespace connection_restapi_client_poc.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 1.0\n";
-            report += "    SDK Package Version: 24.0.5.0425\n";
+            report += "    SDK Package Version: 24.0.5.0470\n";
 
             return report;
         }

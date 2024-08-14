@@ -81,19 +81,6 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test GetRawResults
-        /// </summary>
-        [Fact]
-        public void GetRawResultsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid projectId = null;
-            //IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = null;
-            //var response = instance.GetRawResults(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
-            //Assert.IsType<CheckResultsDataIdeaStatiCaConnectionChecks>(response);
-        }
-
-        /// <summary>
         /// Test GetResults
         /// </summary>
         [Fact]

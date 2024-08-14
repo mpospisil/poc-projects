@@ -115,7 +115,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SystemIOMemoryStreamSystemPrivateCoreLib</returns>
-        System.Threading.Tasks.Task<SystemIOMemoryStreamSystemPrivateCoreLib> Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SystemIOMemoryStreamSystemPrivateCoreLib> Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -129,7 +129,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SystemIOMemoryStreamSystemPrivateCoreLib)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib>> Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib>> Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -142,7 +142,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConnectionConnectionDataIdeaRSOpenModel</returns>
-        System.Threading.Tasks.Task<ConnectionConnectionDataIdeaRSOpenModel> Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConnectionConnectionDataIdeaRSOpenModel> Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -156,7 +156,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConnectionConnectionDataIdeaRSOpenModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConnectionConnectionDataIdeaRSOpenModel>> Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConnectionConnectionDataIdeaRSOpenModel>> Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -170,7 +170,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetAsync(Guid projectId, int connectionId, string? version = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetAsync(Guid projectId, int connectionId, string? version = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -185,7 +185,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetWithHttpInfoAsync(Guid projectId, int connectionId, string? version = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetWithHttpInfoAsync(Guid projectId, int connectionId, string? version = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -386,7 +386,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SystemIOMemoryStreamSystemPrivateCoreLib</returns>
-        public async System.Threading.Tasks.Task<SystemIOMemoryStreamSystemPrivateCoreLib> Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SystemIOMemoryStreamSystemPrivateCoreLib> Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib> localVarResponse = await Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -401,7 +401,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SystemIOMemoryStreamSystemPrivateCoreLib)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib>> Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib>> Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -528,7 +528,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConnectionConnectionDataIdeaRSOpenModel</returns>
-        public async System.Threading.Tasks.Task<ConnectionConnectionDataIdeaRSOpenModel> Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConnectionConnectionDataIdeaRSOpenModel> Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConnectionConnectionDataIdeaRSOpenModel> localVarResponse = await Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -543,7 +543,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConnectionConnectionDataIdeaRSOpenModel)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConnectionConnectionDataIdeaRSOpenModel>> Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConnectionConnectionDataIdeaRSOpenModel>> Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -671,7 +671,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetAsync(Guid projectId, int connectionId, string? version = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetAsync(Guid projectId, int connectionId, string? version = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetWithHttpInfoAsync(projectId, connectionId, version, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -686,7 +686,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<Object>> Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetWithHttpInfoAsync(Guid projectId, int connectionId, string? version = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<Object>> Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetWithHttpInfoAsync(Guid projectId, int connectionId, string? version = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();

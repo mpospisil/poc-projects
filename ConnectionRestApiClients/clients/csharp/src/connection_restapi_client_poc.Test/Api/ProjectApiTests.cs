@@ -197,5 +197,17 @@ namespace connection_restapi_client_poc.Test.Api
             //var response = instance.UpdateSetup(projectId, connectionSetupIdeaRSOpenModel);
             //Assert.IsType<ConnectionSetupIdeaRSOpenModel>(response);
         }
+
+        /// <summary>
+        /// Test UploadIdeaCon
+        /// </summary>
+        [Fact]
+        public void UploadIdeaConTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream? ideaConFile = null;
+            //var response = instance.UploadIdeaCon(ideaConFile);
+            //Assert.IsType<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>(response);
+        }
     }
 }

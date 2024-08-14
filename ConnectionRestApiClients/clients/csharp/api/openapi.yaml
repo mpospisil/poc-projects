@@ -1387,6 +1387,27 @@ paths:
         TODO - should be the parameter of the method"
       tags:
       - Project
+  /api/1/projects/upload-ideacon:
+    post:
+      operationId: UploadIdeaCon
+      requestBody:
+        content:
+          multipart/form-data:
+            encoding:
+              ideaConFile:
+                style: form
+            schema:
+              $ref: '#/components/schemas/UploadIdeaCon_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
+          description: Success
+      summary: Uploads two files to the server.
+      tags:
+      - Project
   /api/1/projects/{projectId}/close:
     get:
       operationId: CloseProject
@@ -4714,4 +4735,10 @@ components:
       - forceResultant
       - applyPlasticWelds
       type: string
+    UploadIdeaCon_request:
+      properties:
+        ideaConFile:
+          format: binary
+          type: string
+      type: object
 

@@ -16,6 +16,7 @@ All URIs are relative to *http://localhost*
 | [**UpdateFromIOM**](ProjectApi.md#updatefromiom) | **POST** /api/1/projects/{projectId}/update-iom-file | Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request. |
 | [**UpdateFromIOMContainer**](ProjectApi.md#updatefromiomcontainer) | **POST** /api/1/projects/{projectId}/update-iom | Update an IDEA Connection project by model (model and results) |
 | [**UpdateSetup**](ProjectApi.md#updatesetup) | **PUT** /api/1/projects/{projectId}/connection-setup | Update setup of the project |
+| [**UploadIdeaCon**](ProjectApi.md#uploadideacon) | **POST** /api/1/projects/upload-ideacon | Uploads two files to the server. |
 
 <a id="closeproject"></a>
 # **CloseProject**
@@ -1066,6 +1067,95 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="uploadideacon"></a>
+# **UploadIdeaCon**
+> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi UploadIdeaCon (System.IO.Stream? ideaConFile = null)
+
+Uploads two files to the server.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using connection_restapi_client_poc.Api;
+using connection_restapi_client_poc.Client;
+using connection_restapi_client_poc.Model;
+
+namespace Example
+{
+    public class UploadIdeaConExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            var apiInstance = new ProjectApi(config);
+            var ideaConFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
+
+            try
+            {
+                // Uploads two files to the server.
+                IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi result = apiInstance.UploadIdeaCon(ideaConFile);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectApi.UploadIdeaCon: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UploadIdeaConWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Uploads two files to the server.
+    ApiResponse<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> response = apiInstance.UploadIdeaConWithHttpInfo(ideaConFile);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.UploadIdeaConWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **ideaConFile** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
+
+### Return type
+
+[**IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 

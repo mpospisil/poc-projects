@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**update_from_iom**](ProjectApi.md#update_from_iom) | **POST** /api/1/projects/{projectId}/update-iom-file | Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
 [**update_from_iom_container**](ProjectApi.md#update_from_iom_container) | **POST** /api/1/projects/{projectId}/update-iom | Update an IDEA Connection project by model (model and results)
 [**update_setup**](ProjectApi.md#update_setup) | **PUT** /api/1/projects/{projectId}/connection-setup | Update setup of the project
+[**upload_idea_con**](ProjectApi.md#upload_idea_con) | **POST** /api/1/projects/upload-ideacon | Uploads two files to the server.
 
 
 # **close_project**
@@ -792,6 +793,72 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_idea_con**
+> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi upload_idea_con(idea_con_file=idea_con_file)
+
+Uploads two files to the server.
+
+### Example
+
+
+```python
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_project_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi
+from connection_restapi_client_poc.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = connection_restapi_client_poc.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = connection_restapi_client_poc.ProjectApi(api_client)
+    idea_con_file = None # bytearray |  (optional)
+
+    try:
+        # Uploads two files to the server.
+        api_response = api_instance.upload_idea_con(idea_con_file=idea_con_file)
+        print("The response of ProjectApi->upload_idea_con:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProjectApi->upload_idea_con: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **idea_con_file** | **bytearray**|  | [optional] 
+
+### Return type
+
+[**IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details

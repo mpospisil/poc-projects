@@ -266,6 +266,26 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConnectionSetupIdeaRSOpenModel</returns>
         ApiResponse<ConnectionSetupIdeaRSOpenModel> UpdateSetupWithHttpInfo(Guid projectId, ConnectionSetupIdeaRSOpenModel? connectionSetupIdeaRSOpenModel = default(ConnectionSetupIdeaRSOpenModel?), int operationIndex = 0);
+        /// <summary>
+        /// Uploads two files to the server.
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ideaConFile"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi</returns>
+        IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi UploadIdeaCon(System.IO.Stream? ideaConFile = default(System.IO.Stream?), int operationIndex = 0);
+
+        /// <summary>
+        /// Uploads two files to the server.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ideaConFile"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi</returns>
+        ApiResponse<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> UploadIdeaConWithHttpInfo(System.IO.Stream? ideaConFile = default(System.IO.Stream?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -575,6 +595,31 @@ namespace connection_restapi_client_poc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConnectionSetupIdeaRSOpenModel)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConnectionSetupIdeaRSOpenModel>> UpdateSetupWithHttpInfoAsync(Guid projectId, ConnectionSetupIdeaRSOpenModel? connectionSetupIdeaRSOpenModel = default(ConnectionSetupIdeaRSOpenModel?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Uploads two files to the server.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ideaConFile"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi</returns>
+        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> UploadIdeaConAsync(System.IO.Stream? ideaConFile = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Uploads two files to the server.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ideaConFile"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi)</returns>
+        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>> UploadIdeaConWithHttpInfoAsync(System.IO.Stream? ideaConFile = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2400,6 +2445,146 @@ namespace connection_restapi_client_poc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateSetup", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Uploads two files to the server. 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ideaConFile"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi</returns>
+        public IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi UploadIdeaCon(System.IO.Stream? ideaConFile = default(System.IO.Stream?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> localVarResponse = UploadIdeaConWithHttpInfo(ideaConFile);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Uploads two files to the server. 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ideaConFile"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> UploadIdeaConWithHttpInfo(System.IO.Stream? ideaConFile = default(System.IO.Stream?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (ideaConFile != null)
+            {
+                localVarRequestOptions.FileParameters.Add("ideaConFile", ideaConFile);
+            }
+
+            localVarRequestOptions.Operation = "ProjectApi.UploadIdeaCon";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>("/api/1/projects/upload-ideacon", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UploadIdeaCon", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Uploads two files to the server. 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ideaConFile"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi</returns>
+        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> UploadIdeaConAsync(System.IO.Stream? ideaConFile = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> localVarResponse = await UploadIdeaConWithHttpInfoAsync(ideaConFile, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Uploads two files to the server. 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ideaConFile"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>> UploadIdeaConWithHttpInfoAsync(System.IO.Stream? ideaConFile = default(System.IO.Stream?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (ideaConFile != null)
+            {
+                localVarRequestOptions.FileParameters.Add("ideaConFile", ideaConFile);
+            }
+
+            localVarRequestOptions.Operation = "ProjectApi.UploadIdeaCon";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>("/api/1/projects/upload-ideacon", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UploadIdeaCon", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

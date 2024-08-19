@@ -19,9 +19,9 @@ from typing_extensions import Annotated
 from pydantic import StrictBytes, StrictStr
 from typing import List, Optional, Union
 
-from webserviceapi-client.api_client import ApiClient, RequestSerialized
-from webserviceapi-client.api_response import ApiResponse
-from webserviceapi-client.rest import RESTResponseType
+from webserviceapi_client.api_client import ApiClient, RequestSerialized
+from webserviceapi_client.api_response import ApiResponse
+from webserviceapi_client.rest import RESTResponseType
 
 
 class ServiceApiApi:

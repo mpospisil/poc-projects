@@ -14,7 +14,7 @@
 
 import unittest
 
-from webserviceapi-client.models.problem_details import ProblemDetails
+from webserviceapi_client.models.problem_details import ProblemDetails
 
 class TestProblemDetails(unittest.TestCase):
     """ProblemDetails unit test stubs"""

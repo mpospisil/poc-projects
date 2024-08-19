@@ -14,4 +14,4 @@
 
 
 # import models into model package
-from webserviceapi-client.models.problem_details import ProblemDetails
+from webserviceapi_client.models.problem_details import ProblemDetails

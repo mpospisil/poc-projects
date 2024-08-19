@@ -1,4 +1,4 @@
-# webserviceapi-client.ServiceApiApi
+# webserviceapi_client.ServiceApiApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,21 +17,21 @@ Method | HTTP request | Description
 
 
 ```python
-import webserviceapi-client
-from webserviceapi-client.rest import ApiException
+import webserviceapi_client
+from webserviceapi_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = webserviceapi-client.Configuration(
+configuration = webserviceapi_client.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with webserviceapi-client.ApiClient(configuration) as api_client:
+with webserviceapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = webserviceapi-client.ServiceApiApi(api_client)
+    api_instance = webserviceapi_client.ServiceApiApi(api_client)
 
     try:
         api_response = api_instance.api_service_api_get()
@@ -77,21 +77,21 @@ No authorization required
 
 
 ```python
-import webserviceapi-client
-from webserviceapi-client.rest import ApiException
+import webserviceapi_client
+from webserviceapi_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = webserviceapi-client.Configuration(
+configuration = webserviceapi_client.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with webserviceapi-client.ApiClient(configuration) as api_client:
+with webserviceapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = webserviceapi-client.ServiceApiApi(api_client)
+    api_instance = webserviceapi_client.ServiceApiApi(api_client)
     file = None # bytearray |  (optional)
 
     try:

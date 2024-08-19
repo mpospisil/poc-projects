@@ -14,7 +14,7 @@
 
 import unittest
 
-from webserviceapi-client.api.service_api_api import ServiceApiApi
+from webserviceapi_client.api.service_api_api import ServiceApiApi
 
 
 class TestServiceApiApi(unittest.TestCase):

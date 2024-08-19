@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from webserviceapi-client.models.problem_details import ProblemDetails
+from webserviceapi_client.models.problem_details import ProblemDetails
 
 # TODO update the JSON string below
 json = "{}"

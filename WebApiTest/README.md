@@ -1,4 +1,9 @@
 # Build python client from Open API 
 
-docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i /local/swagger.json -g python -o /local/clients/python --additional-properties=packageName=webserviceapi-client,packageVersion=1.0.0
+docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i /local/swagger.json -g python -o /local/clients/python --additional-properties=packageName=webserviceapi_client,packageVersion=1.2.0
 
+
+# Install connection_restapi_client_poc from directory
+
+Open directory _.\clients\python_ in the cmd.exe
+run _pip install ._

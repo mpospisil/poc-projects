@@ -22,11 +22,10 @@ with open(project_file_path, 'rb') as file:
 with webserviceapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webserviceapi_client.ServiceApiApi(api_client)
-    file = None # bytearray |  (optional)
 
     try:
         res = api_instance.api_service_api_upload_post(file=byte_array)
         print(res)
-        
+
     except Exception as e:
         print("Exception when calling ServiceApiApi->api_service_api_upload_post: %s\n" % e)

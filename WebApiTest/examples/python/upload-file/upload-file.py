@@ -24,8 +24,7 @@ with webserviceapi_client.ApiClient(configuration) as api_client:
     api_instance = webserviceapi_client.ServiceApiApi(api_client)
 
     try:
-        res = api_instance.api_service_api_upload_post(file=byte_array)
-        print(res)
+        api_instance.api_service_api_upload_post(file=byte_array)
 
     except Exception as e:
         print("Exception when calling ServiceApiApi->api_service_api_upload_post: %s\n" % e)

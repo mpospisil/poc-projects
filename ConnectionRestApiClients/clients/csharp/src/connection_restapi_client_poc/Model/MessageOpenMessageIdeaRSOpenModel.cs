@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// MessageOpenMessageIdeaRSOpenModel
+    /// Open message base class
     /// </summary>
     [DataContract(Name = "Message_OpenMessage-IdeaRS_OpenModel")]
     public partial class MessageOpenMessageIdeaRSOpenModel : IValidatableObject
@@ -41,7 +41,7 @@ namespace connection_restapi_client_poc.Model
         /// Initializes a new instance of the <see cref="MessageOpenMessageIdeaRSOpenModel" /> class.
         /// </summary>
         /// <param name="number">number.</param>
-        /// <param name="description">description.</param>
+        /// <param name="description">Description of message.</param>
         public MessageOpenMessageIdeaRSOpenModel(MessageMessageNumberIdeaRSOpenModel? number = default(MessageMessageNumberIdeaRSOpenModel?), string description = default(string))
         {
             this.Number = number;
@@ -49,8 +49,9 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Description of message
         /// </summary>
+        /// <value>Description of message</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 

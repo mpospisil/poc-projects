@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class ConnectionWeldTypeIdeaRSOpenModel(str, Enum):
     """
-    ConnectionWeldTypeIdeaRSOpenModel
+    enum of weld types
     """
 
     """

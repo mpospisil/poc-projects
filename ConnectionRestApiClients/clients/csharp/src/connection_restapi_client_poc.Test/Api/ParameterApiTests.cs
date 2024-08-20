@@ -55,44 +55,44 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdEvaluateExpressionPost
+        /// Test EvaluateExpression
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdEvaluateExpressionPostTest()
+        public void EvaluateExpressionTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
             //string? body = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdEvaluateExpressionPost(projectId, connectionId, body);
+            //var response = instance.EvaluateExpression(projectId, connectionId, body);
             //Assert.IsType<string>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdParametersGet
+        /// Test GetParameters
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdParametersGetTest()
+        public void GetParametersTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
             //bool? includeHidden = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdParametersGet(projectId, connectionId, includeHidden);
+            //var response = instance.GetParameters(projectId, connectionId, includeHidden);
             //Assert.IsType<List<IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi>>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdParametersPut
+        /// Test UpdateParameters
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdParametersPutTest()
+        public void UpdateParametersTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
             //List<IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi>? ideaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdParametersPut(projectId, connectionId, ideaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi);
+            //var response = instance.UpdateParameters(projectId, connectionId, ideaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi);
             //Assert.IsType<List<IdeaRSCommonParametersParameterDataCIBasicTypes>>(response);
         }
     }

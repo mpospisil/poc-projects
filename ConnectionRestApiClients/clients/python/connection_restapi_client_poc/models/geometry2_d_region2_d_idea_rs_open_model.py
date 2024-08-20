@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from connection_restapi_client_poc.models.geometry2_d_poly_line2_d_idea_rs_open_model import Geometry2DPolyLine2DIdeaRSOpenModel
 from typing import Optional, Set
@@ -25,10 +25,10 @@ from typing_extensions import Self
 
 class Geometry2DRegion2DIdeaRSOpenModel(BaseModel):
     """
-    Geometry2DRegion2DIdeaRSOpenModel
+    Represents a region in two-dimensional space included outline (border) and openings.
     """ # noqa: E501
     outline: Optional[Geometry2DPolyLine2DIdeaRSOpenModel] = None
-    openings: Optional[List[Geometry2DPolyLine2DIdeaRSOpenModel]] = None
+    openings: Optional[List[Geometry2DPolyLine2DIdeaRSOpenModel]] = Field(default=None, description="Gets or sets the list of openings in the Region2D.")
     __properties: ClassVar[List[str]] = ["outline", "openings"]
 
     model_config = ConfigDict(

@@ -32,18 +32,18 @@ from typing_extensions import Self
 
 class ConnectionConnectionCheckResIdeaRSOpenModel(BaseModel):
     """
-    ConnectionConnectionCheckResIdeaRSOpenModel
+    Results for connection in project
     """ # noqa: E501
-    check_res_summary: Optional[List[ConnectionCheckResSummaryIdeaRSOpenModel]] = Field(default=None, alias="checkResSummary")
-    check_res_plate: Optional[List[ConnectionCheckResPlateIdeaRSOpenModel]] = Field(default=None, alias="checkResPlate")
-    check_res_weld: Optional[List[ConnectionCheckResWeldIdeaRSOpenModel]] = Field(default=None, alias="checkResWeld")
-    check_res_bolt: Optional[List[ConnectionCheckResBoltIdeaRSOpenModel]] = Field(default=None, alias="checkResBolt")
-    check_res_anchor: Optional[List[ConnectionCheckResAnchorIdeaRSOpenModel]] = Field(default=None, alias="checkResAnchor")
-    check_res_concrete_block: Optional[List[ConnectionCheckResConcreteBlockIdeaRSOpenModel]] = Field(default=None, alias="checkResConcreteBlock")
-    buckling_results: Optional[List[ConnectionBucklingResIdeaRSOpenModel]] = Field(default=None, alias="bucklingResults")
-    name: Optional[StrictStr] = None
-    connection_id: Optional[StrictStr] = Field(default=None, alias="connectionID")
-    id: Optional[StrictInt] = None
+    check_res_summary: Optional[List[ConnectionCheckResSummaryIdeaRSOpenModel]] = Field(default=None, description="List of CheckResSummary", alias="checkResSummary")
+    check_res_plate: Optional[List[ConnectionCheckResPlateIdeaRSOpenModel]] = Field(default=None, description="List of check results for plates", alias="checkResPlate")
+    check_res_weld: Optional[List[ConnectionCheckResWeldIdeaRSOpenModel]] = Field(default=None, description="List of check results for welds", alias="checkResWeld")
+    check_res_bolt: Optional[List[ConnectionCheckResBoltIdeaRSOpenModel]] = Field(default=None, description="List of check results for bolts", alias="checkResBolt")
+    check_res_anchor: Optional[List[ConnectionCheckResAnchorIdeaRSOpenModel]] = Field(default=None, description="List of check results for anchors", alias="checkResAnchor")
+    check_res_concrete_block: Optional[List[ConnectionCheckResConcreteBlockIdeaRSOpenModel]] = Field(default=None, description="List of check results for concrete blocks", alias="checkResConcreteBlock")
+    buckling_results: Optional[List[ConnectionBucklingResIdeaRSOpenModel]] = Field(default=None, description="List of results of buckling analysis", alias="bucklingResults")
+    name: Optional[StrictStr] = Field(default=None, description="Name of connection")
+    connection_id: Optional[StrictStr] = Field(default=None, description="Guid of connection", alias="connectionID")
+    id: Optional[StrictInt] = Field(default=None, description="Integer Id of connection")
     messages: Optional[MessageOpenMessagesIdeaRSOpenModel] = None
     __properties: ClassVar[List[str]] = ["checkResSummary", "checkResPlate", "checkResWeld", "checkResBolt", "checkResAnchor", "checkResConcreteBlock", "bucklingResults", "name", "connectionID", "id", "messages"]
 

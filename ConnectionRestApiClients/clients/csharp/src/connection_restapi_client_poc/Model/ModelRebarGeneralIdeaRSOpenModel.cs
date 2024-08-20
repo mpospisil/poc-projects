@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ModelRebarGeneralIdeaRSOpenModel
+    /// Represents a single main rebar in 3D space.  Holds data from generated rebar or rebar imported from Tekla.  the rebarShape is in global coordinates and it is not possible to prject it along Member1D, Polyline, ... (referenceLine)
     /// </summary>
     [DataContract(Name = "Model_RebarGeneral-IdeaRS_OpenModel")]
     public partial class ModelRebarGeneralIdeaRSOpenModel : IValidatableObject
@@ -34,15 +34,16 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelRebarGeneralIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">Element Id.</param>
         public ModelRebarGeneralIdeaRSOpenModel(int id = default(int))
         {
             this.Id = id;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Element Id
         /// </summary>
+        /// <value>Element Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

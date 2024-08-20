@@ -24,11 +24,11 @@ from typing_extensions import Self
 
 class ConnectionBucklingResIdeaRSOpenModel(BaseModel):
     """
-    ConnectionBucklingResIdeaRSOpenModel
+    Results of the buckling analysis
     """ # noqa: E501
     load_case_id: Optional[StrictInt] = Field(default=None, alias="loadCaseId")
-    shape: Optional[StrictInt] = None
-    factor: Optional[Union[StrictFloat, StrictInt]] = None
+    shape: Optional[StrictInt] = Field(default=None, description="Shape lc calculated by solver")
+    factor: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Buckling factor")
     __properties: ClassVar[List[str]] = ["loadCaseId", "shape", "factor"]
 
     model_config = ConfigDict(

@@ -55,6 +55,231 @@ namespace connection_restapi_client_poc.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Diameter'
+        /// </summary>
+        [Fact]
+        public void DiameterTest()
+        {
+            // TODO unit test for the property 'Diameter'
+        }
+
+        /// <summary>
+        /// Test the property 'Area'
+        /// </summary>
+        [Fact]
+        public void AreaTest()
+        {
+            // TODO unit test for the property 'Area'
+        }
+
+        /// <summary>
+        /// Test the property 'NumberOfWires'
+        /// </summary>
+        [Fact]
+        public void NumberOfWiresTest()
+        {
+            // TODO unit test for the property 'NumberOfWires'
+        }
+
+        /// <summary>
+        /// Test the property 'EquivalentDiameter'
+        /// </summary>
+        [Fact]
+        public void EquivalentDiameterTest()
+        {
+            // TODO unit test for the property 'EquivalentDiameter'
+        }
+
+        /// <summary>
+        /// Test the property 'Name'
+        /// </summary>
+        [Fact]
+        public void NameTest()
+        {
+            // TODO unit test for the property 'Name'
+        }
+
+        /// <summary>
+        /// Test the property 'LoadFromLibrary'
+        /// </summary>
+        [Fact]
+        public void LoadFromLibraryTest()
+        {
+            // TODO unit test for the property 'LoadFromLibrary'
+        }
+
+        /// <summary>
+        /// Test the property 'E'
+        /// </summary>
+        [Fact]
+        public void ETest()
+        {
+            // TODO unit test for the property 'E'
+        }
+
+        /// <summary>
+        /// Test the property 'G'
+        /// </summary>
+        [Fact]
+        public void GTest()
+        {
+            // TODO unit test for the property 'G'
+        }
+
+        /// <summary>
+        /// Test the property 'Poisson'
+        /// </summary>
+        [Fact]
+        public void PoissonTest()
+        {
+            // TODO unit test for the property 'Poisson'
+        }
+
+        /// <summary>
+        /// Test the property 'UnitMass'
+        /// </summary>
+        [Fact]
+        public void UnitMassTest()
+        {
+            // TODO unit test for the property 'UnitMass'
+        }
+
+        /// <summary>
+        /// Test the property 'SpecificHeat'
+        /// </summary>
+        [Fact]
+        public void SpecificHeatTest()
+        {
+            // TODO unit test for the property 'SpecificHeat'
+        }
+
+        /// <summary>
+        /// Test the property 'ThermalExpansion'
+        /// </summary>
+        [Fact]
+        public void ThermalExpansionTest()
+        {
+            // TODO unit test for the property 'ThermalExpansion'
+        }
+
+        /// <summary>
+        /// Test the property 'ThermalConductivity'
+        /// </summary>
+        [Fact]
+        public void ThermalConductivityTest()
+        {
+            // TODO unit test for the property 'ThermalConductivity'
+        }
+
+        /// <summary>
+        /// Test the property 'IsDefaultMaterial'
+        /// </summary>
+        [Fact]
+        public void IsDefaultMaterialTest()
+        {
+            // TODO unit test for the property 'IsDefaultMaterial'
+        }
+
+        /// <summary>
+        /// Test the property 'OrderInCode'
+        /// </summary>
+        [Fact]
+        public void OrderInCodeTest()
+        {
+            // TODO unit test for the property 'OrderInCode'
+        }
+
+        /// <summary>
+        /// Test the property 'StateOfThermalExpansion'
+        /// </summary>
+        [Fact]
+        public void StateOfThermalExpansionTest()
+        {
+            // TODO unit test for the property 'StateOfThermalExpansion'
+        }
+
+        /// <summary>
+        /// Test the property 'StateOfThermalConductivity'
+        /// </summary>
+        [Fact]
+        public void StateOfThermalConductivityTest()
+        {
+            // TODO unit test for the property 'StateOfThermalConductivity'
+        }
+
+        /// <summary>
+        /// Test the property 'StateOfThermalSpecificHeat'
+        /// </summary>
+        [Fact]
+        public void StateOfThermalSpecificHeatTest()
+        {
+            // TODO unit test for the property 'StateOfThermalSpecificHeat'
+        }
+
+        /// <summary>
+        /// Test the property 'StateOfThermalStressStrain'
+        /// </summary>
+        [Fact]
+        public void StateOfThermalStressStrainTest()
+        {
+            // TODO unit test for the property 'StateOfThermalStressStrain'
+        }
+
+        /// <summary>
+        /// Test the property 'StateOfThermalStrain'
+        /// </summary>
+        [Fact]
+        public void StateOfThermalStrainTest()
+        {
+            // TODO unit test for the property 'StateOfThermalStrain'
+        }
+
+        /// <summary>
+        /// Test the property 'UserThermalSpecificHeatCurvature'
+        /// </summary>
+        [Fact]
+        public void UserThermalSpecificHeatCurvatureTest()
+        {
+            // TODO unit test for the property 'UserThermalSpecificHeatCurvature'
+        }
+
+        /// <summary>
+        /// Test the property 'UserThermalConductivityCurvature'
+        /// </summary>
+        [Fact]
+        public void UserThermalConductivityCurvatureTest()
+        {
+            // TODO unit test for the property 'UserThermalConductivityCurvature'
+        }
+
+        /// <summary>
+        /// Test the property 'UserThermalExpansionCurvature'
+        /// </summary>
+        [Fact]
+        public void UserThermalExpansionCurvatureTest()
+        {
+            // TODO unit test for the property 'UserThermalExpansionCurvature'
+        }
+
+        /// <summary>
+        /// Test the property 'UserThermalStrainCurvature'
+        /// </summary>
+        [Fact]
+        public void UserThermalStrainCurvatureTest()
+        {
+            // TODO unit test for the property 'UserThermalStrainCurvature'
+        }
+
+        /// <summary>
+        /// Test the property 'UserThermalStressStrainCurvature'
+        /// </summary>
+        [Fact]
+        public void UserThermalStressStrainCurvatureTest()
+        {
+            // TODO unit test for the property 'UserThermalStressStrainCurvature'
+        }
+
+        /// <summary>
         /// Test the property 'Id'
         /// </summary>
         [Fact]

@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class WeldEvaluationIdeaRSOpenModel(str, Enum):
     """
-    WeldEvaluationIdeaRSOpenModel
+    WeldEvaluation
     """
 
     """

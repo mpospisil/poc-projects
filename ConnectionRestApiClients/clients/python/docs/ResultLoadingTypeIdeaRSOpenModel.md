@@ -1,5 +1,6 @@
 # ResultLoadingTypeIdeaRSOpenModel
 
+Type of loading
 
 ## Enum
 

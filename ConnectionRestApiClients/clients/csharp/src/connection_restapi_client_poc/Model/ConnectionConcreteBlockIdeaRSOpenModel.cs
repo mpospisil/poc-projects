@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionConcreteBlockIdeaRSOpenModel
+    /// Data of concrete block
     /// </summary>
     [DataContract(Name = "Connection_ConcreteBlock-IdeaRS_OpenModel")]
     public partial class ConnectionConcreteBlockIdeaRSOpenModel : IValidatableObject
@@ -34,10 +34,10 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionConcreteBlockIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="lenght">lenght.</param>
-        /// <param name="width">width.</param>
-        /// <param name="height">height.</param>
-        /// <param name="material">material.</param>
+        /// <param name="lenght">Lenght of ConcreteBlock.</param>
+        /// <param name="width">Width of ConcreteBlock.</param>
+        /// <param name="height">Height of ConcreteBlock.</param>
+        /// <param name="material">Material of ConcreteBlock.</param>
         public ConnectionConcreteBlockIdeaRSOpenModel(double lenght = default(double), double width = default(double), double height = default(double), string material = default(string))
         {
             this.Lenght = lenght;
@@ -47,26 +47,30 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Lenght
+        /// Lenght of ConcreteBlock
         /// </summary>
+        /// <value>Lenght of ConcreteBlock</value>
         [DataMember(Name = "lenght", EmitDefaultValue = false)]
         public double Lenght { get; set; }
 
         /// <summary>
-        /// Gets or Sets Width
+        /// Width of ConcreteBlock
         /// </summary>
+        /// <value>Width of ConcreteBlock</value>
         [DataMember(Name = "width", EmitDefaultValue = false)]
         public double Width { get; set; }
 
         /// <summary>
-        /// Gets or Sets Height
+        /// Height of ConcreteBlock
         /// </summary>
+        /// <value>Height of ConcreteBlock</value>
         [DataMember(Name = "height", EmitDefaultValue = false)]
         public double Height { get; set; }
 
         /// <summary>
-        /// Gets or Sets Material
+        /// Material of ConcreteBlock
         /// </summary>
+        /// <value>Material of ConcreteBlock</value>
         [DataMember(Name = "material", EmitDefaultValue = true)]
         public string Material { get; set; }
 

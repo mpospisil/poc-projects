@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class ResultMemberTypeIdeaRSOpenModel(str, Enum):
     """
-    ResultMemberTypeIdeaRSOpenModel
+    Type of member
     """
 
     """

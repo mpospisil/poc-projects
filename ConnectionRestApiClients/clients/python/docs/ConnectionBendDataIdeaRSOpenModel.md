@@ -1,13 +1,14 @@
 # ConnectionBendDataIdeaRSOpenModel
 
+Provides data of bend
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**plate1_id** | **int** |  | [optional] 
-**plate2_id** | **int** |  | [optional] 
-**radius** | **float** |  | [optional] 
+**plate1_id** | **int** | First plate | [optional] 
+**plate2_id** | **int** | Second plate | [optional] 
+**radius** | **float** | Radius of bend | [optional] 
 **point1_of_side_boundary1** | [**Geometry3DPoint3DIdeaRSOpenModel**](Geometry3DPoint3DIdeaRSOpenModel.md) |  | [optional] 
 **point2_of_side_boundary1** | [**Geometry3DPoint3DIdeaRSOpenModel**](Geometry3DPoint3DIdeaRSOpenModel.md) |  | [optional] 
 **end_face_normal1** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 

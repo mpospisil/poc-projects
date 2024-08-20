@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from connection_restapi_client_poc.models.message_message_number_idea_rs_open_model import MessageMessageNumberIdeaRSOpenModel
 from typing import Optional, Set
@@ -25,10 +25,10 @@ from typing_extensions import Self
 
 class MessageOpenMessageIdeaRSOpenModel(BaseModel):
     """
-    MessageOpenMessageIdeaRSOpenModel
+    Open message base class
     """ # noqa: E501
     number: Optional[MessageMessageNumberIdeaRSOpenModel] = None
-    description: Optional[StrictStr] = None
+    description: Optional[StrictStr] = Field(default=None, description="Description of message")
     __properties: ClassVar[List[str]] = ["number", "description"]
 
     model_config = ConfigDict(

@@ -17,16 +17,16 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
 class Geometry3DRegion3DIdeaRSOpenModel(BaseModel):
     """
-    Geometry3DRegion3DIdeaRSOpenModel
+    Represents a region in three-dimensional space included outline (border) and openings.
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: Optional[StrictInt] = Field(default=None, description="Element Id")
     __properties: ClassVar[List[str]] = ["id"]
 
     model_config = ConfigDict(

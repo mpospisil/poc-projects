@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Api1ProjectsProjectIdConnectionsConnectionIdMembersGet**](MemberApi.md#api1projectsprojectidconnectionsconnectionidmembersget) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members |  |
-| [**Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGet**](MemberApi.md#api1projectsprojectidconnectionsconnectionidmembersmemberidget) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} |  |
-| [**Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPut**](MemberApi.md#api1projectsprojectidconnectionsconnectionidmembersmemberidput) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} |  |
+| [**GetAllMemberData**](MemberApi.md#getallmemberdata) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members | Get information about all members in the connection |
+| [**GetMemberData**](MemberApi.md#getmemberdata) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} | Get information about the requires member in the connection |
+| [**UpdateMember**](MemberApi.md#updatemember) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} | Update the member in the connection by newMemberData |
 
-<a id="api1projectsprojectidconnectionsconnectionidmembersget"></a>
-# **Api1ProjectsProjectIdConnectionsConnectionIdMembersGet**
-> List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt; Api1ProjectsProjectIdConnectionsConnectionIdMembersGet (Guid projectId, int connectionId)
+<a id="getallmemberdata"></a>
+# **GetAllMemberData**
+> List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt; GetAllMemberData (Guid projectId, int connectionId)
 
-
+Get information about all members in the connection
 
 ### Example
 ```csharp
@@ -24,24 +24,25 @@ using connection_restapi_client_poc.Model;
 
 namespace Example
 {
-    public class Api1ProjectsProjectIdConnectionsConnectionIdMembersGetExample
+    public class GetAllMemberDataExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new MemberApi(config);
-            var projectId = "projectId_example";  // Guid | 
-            var connectionId = 56;  // int | 
+            var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
+            var connectionId = 56;  // int | Id of the connection to get its members
 
             try
             {
-                List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> result = apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdMembersGet(projectId, connectionId);
+                // Get information about all members in the connection
+                List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> result = apiInstance.GetAllMemberData(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MemberApi.Api1ProjectsProjectIdConnectionsConnectionIdMembersGet: " + e.Message);
+                Debug.Print("Exception when calling MemberApi.GetAllMemberData: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -50,20 +51,21 @@ namespace Example
 }
 ```
 
-#### Using the Api1ProjectsProjectIdConnectionsConnectionIdMembersGetWithHttpInfo variant
+#### Using the GetAllMemberDataWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> response = apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdMembersGetWithHttpInfo(projectId, connectionId);
+    // Get information about all members in the connection
+    ApiResponse<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> response = apiInstance.GetAllMemberDataWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MemberApi.Api1ProjectsProjectIdConnectionsConnectionIdMembersGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MemberApi.GetAllMemberDataWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -73,8 +75,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **Guid** |  |  |
-| **connectionId** | **int** |  |  |
+| **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
+| **connectionId** | **int** | Id of the connection to get its members |  |
 
 ### Return type
 
@@ -97,11 +99,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="api1projectsprojectidconnectionsconnectionidmembersmemberidget"></a>
-# **Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGet**
-> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGet (Guid projectId, int connectionId, int memberId)
+<a id="getmemberdata"></a>
+# **GetMemberData**
+> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi GetMemberData (Guid projectId, int connectionId, int memberId)
 
-
+Get information about the requires member in the connection
 
 ### Example
 ```csharp
@@ -113,25 +115,26 @@ using connection_restapi_client_poc.Model;
 
 namespace Example
 {
-    public class Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGetExample
+    public class GetMemberDataExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new MemberApi(config);
-            var projectId = "projectId_example";  // Guid | 
-            var connectionId = 56;  // int | 
-            var memberId = 56;  // int | 
+            var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
+            var connectionId = 56;  // int | Id of the connection to get its member
+            var memberId = 56;  // int | Id of the requested member in the connection
 
             try
             {
-                IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi result = apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGet(projectId, connectionId, memberId);
+                // Get information about the requires member in the connection
+                IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi result = apiInstance.GetMemberData(projectId, connectionId, memberId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MemberApi.Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGet: " + e.Message);
+                Debug.Print("Exception when calling MemberApi.GetMemberData: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -140,20 +143,21 @@ namespace Example
 }
 ```
 
-#### Using the Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGetWithHttpInfo variant
+#### Using the GetMemberDataWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> response = apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGetWithHttpInfo(projectId, connectionId, memberId);
+    // Get information about the requires member in the connection
+    ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> response = apiInstance.GetMemberDataWithHttpInfo(projectId, connectionId, memberId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MemberApi.Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MemberApi.GetMemberDataWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -163,9 +167,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **Guid** |  |  |
-| **connectionId** | **int** |  |  |
-| **memberId** | **int** |  |  |
+| **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
+| **connectionId** | **int** | Id of the connection to get its member |  |
+| **memberId** | **int** | Id of the requested member in the connection |  |
 
 ### Return type
 
@@ -188,11 +192,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="api1projectsprojectidconnectionsconnectionidmembersmemberidput"></a>
-# **Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPut**
-> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPut (Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = null)
+<a id="updatemember"></a>
+# **UpdateMember**
+> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi UpdateMember (Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = null)
 
-
+Update the member in the connection by newMemberData
 
 ### Example
 ```csharp
@@ -204,26 +208,27 @@ using connection_restapi_client_poc.Model;
 
 namespace Example
 {
-    public class Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPutExample
+    public class UpdateMemberExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new MemberApi(config);
-            var projectId = "projectId_example";  // Guid | 
-            var connectionId = 56;  // int | 
-            var memberId = 56;  // int | 
-            var ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? |  (optional) 
+            var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
+            var connectionId = 56;  // int | Id of the connection to to update is membar memberId
+            var memberId = 56;  // int | Id of the member to be ubdated in the connection
+            var ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? | New mwmbwr data (optional) 
 
             try
             {
-                IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi result = apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPut(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi);
+                // Update the member in the connection by newMemberData
+                IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi result = apiInstance.UpdateMember(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MemberApi.Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPut: " + e.Message);
+                Debug.Print("Exception when calling MemberApi.UpdateMember: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -232,20 +237,21 @@ namespace Example
 }
 ```
 
-#### Using the Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPutWithHttpInfo variant
+#### Using the UpdateMemberWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> response = apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPutWithHttpInfo(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi);
+    // Update the member in the connection by newMemberData
+    ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> response = apiInstance.UpdateMemberWithHttpInfo(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MemberApi.Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPutWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MemberApi.UpdateMemberWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -255,10 +261,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **Guid** |  |  |
-| **connectionId** | **int** |  |  |
-| **memberId** | **int** |  |  |
-| **ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?.md) |  | [optional]  |
+| **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
+| **connectionId** | **int** | Id of the connection to to update is membar memberId |  |
+| **memberId** | **int** | Id of the member to be ubdated in the connection |  |
+| **ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?.md) | New mwmbwr data | [optional]  |
 
 ### Return type
 

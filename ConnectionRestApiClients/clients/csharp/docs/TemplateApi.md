@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**ApplyTemplate**](TemplateApi.md#applytemplate) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/apply-template | Apply the connection template applyTemplateParam on the connection connectionId in the project projectId |
-| [**GetDeaultTemplateMapping**](TemplateApi.md#getdeaulttemplatemapping) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/apply-mapping | Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId |
+| [**GetDefaultTemplateMapping**](TemplateApi.md#getdefaulttemplatemapping) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping | Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId |
 
 <a id="applytemplate"></a>
 # **ApplyTemplate**
@@ -100,9 +100,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getdeaulttemplatemapping"></a>
-# **GetDeaultTemplateMapping**
-> IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi GetDeaultTemplateMapping (Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = null)
+<a id="getdefaulttemplatemapping"></a>
+# **GetDefaultTemplateMapping**
+> IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi GetDefaultTemplateMapping (Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = null)
 
 Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
 
@@ -118,7 +118,7 @@ using connection_restapi_client_poc.Model;
 
 namespace Example
 {
-    public class GetDeaultTemplateMappingExample
+    public class GetDefaultTemplateMappingExample
     {
         public static void Main()
         {
@@ -132,12 +132,12 @@ namespace Example
             try
             {
                 // Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
-                IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi result = apiInstance.GetDeaultTemplateMapping(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi);
+                IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi result = apiInstance.GetDefaultTemplateMapping(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TemplateApi.GetDeaultTemplateMapping: " + e.Message);
+                Debug.Print("Exception when calling TemplateApi.GetDefaultTemplateMapping: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -146,21 +146,21 @@ namespace Example
 }
 ```
 
-#### Using the GetDeaultTemplateMappingWithHttpInfo variant
+#### Using the GetDefaultTemplateMappingWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
-    ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> response = apiInstance.GetDeaultTemplateMappingWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi);
+    ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> response = apiInstance.GetDefaultTemplateMappingWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TemplateApi.GetDeaultTemplateMappingWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TemplateApi.GetDefaultTemplateMappingWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

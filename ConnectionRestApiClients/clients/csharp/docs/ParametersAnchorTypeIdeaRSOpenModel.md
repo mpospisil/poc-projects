@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.ParametersAnchorTypeIdeaRSOpenModel
+Defines a type of anchor end.
 
 ## Properties
 

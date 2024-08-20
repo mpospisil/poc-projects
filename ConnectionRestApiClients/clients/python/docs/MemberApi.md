@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api1_projects_project_id_connections_connection_id_members_get**](MemberApi.md#api1_projects_project_id_connections_connection_id_members_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members | 
-[**api1_projects_project_id_connections_connection_id_members_member_id_get**](MemberApi.md#api1_projects_project_id_connections_connection_id_members_member_id_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} | 
-[**api1_projects_project_id_connections_connection_id_members_member_id_put**](MemberApi.md#api1_projects_project_id_connections_connection_id_members_member_id_put) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} | 
+[**get_all_member_data**](MemberApi.md#get_all_member_data) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members | Get information about all members in the connection
+[**get_member_data**](MemberApi.md#get_member_data) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} | Get information about the requires member in the connection
+[**update_member**](MemberApi.md#update_member) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} | Update the member in the connection by newMemberData
 
 
-# **api1_projects_project_id_connections_connection_id_members_get**
-> List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi] api1_projects_project_id_connections_connection_id_members_get(project_id, connection_id)
+# **get_all_member_data**
+> List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi] get_all_member_data(project_id, connection_id)
 
-
+Get information about all members in the connection
 
 ### Example
 
@@ -34,15 +34,16 @@ configuration = connection_restapi_client_poc.Configuration(
 with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.MemberApi(api_client)
-    project_id = 'project_id_example' # str | 
-    connection_id = 56 # int | 
+    project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
+    connection_id = 56 # int | Id of the connection to get its members
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_members_get(project_id, connection_id)
-        print("The response of MemberApi->api1_projects_project_id_connections_connection_id_members_get:\n")
+        # Get information about all members in the connection
+        api_response = api_instance.get_all_member_data(project_id, connection_id)
+        print("The response of MemberApi->get_all_member_data:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MemberApi->api1_projects_project_id_connections_connection_id_members_get: %s\n" % e)
+        print("Exception when calling MemberApi->get_all_member_data: %s\n" % e)
 ```
 
 
@@ -52,8 +53,8 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**|  | 
- **connection_id** | **int**|  | 
+ **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
+ **connection_id** | **int**| Id of the connection to get its members | 
 
 ### Return type
 
@@ -76,10 +77,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api1_projects_project_id_connections_connection_id_members_member_id_get**
-> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi api1_projects_project_id_connections_connection_id_members_member_id_get(project_id, connection_id, member_id)
+# **get_member_data**
+> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi get_member_data(project_id, connection_id, member_id)
 
-
+Get information about the requires member in the connection
 
 ### Example
 
@@ -101,16 +102,17 @@ configuration = connection_restapi_client_poc.Configuration(
 with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.MemberApi(api_client)
-    project_id = 'project_id_example' # str | 
-    connection_id = 56 # int | 
-    member_id = 56 # int | 
+    project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
+    connection_id = 56 # int | Id of the connection to get its member
+    member_id = 56 # int | Id of the requested member in the connection
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_members_member_id_get(project_id, connection_id, member_id)
-        print("The response of MemberApi->api1_projects_project_id_connections_connection_id_members_member_id_get:\n")
+        # Get information about the requires member in the connection
+        api_response = api_instance.get_member_data(project_id, connection_id, member_id)
+        print("The response of MemberApi->get_member_data:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MemberApi->api1_projects_project_id_connections_connection_id_members_member_id_get: %s\n" % e)
+        print("Exception when calling MemberApi->get_member_data: %s\n" % e)
 ```
 
 
@@ -120,9 +122,9 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**|  | 
- **connection_id** | **int**|  | 
- **member_id** | **int**|  | 
+ **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
+ **connection_id** | **int**| Id of the connection to get its member | 
+ **member_id** | **int**| Id of the requested member in the connection | 
 
 ### Return type
 
@@ -145,10 +147,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api1_projects_project_id_connections_connection_id_members_member_id_put**
-> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi api1_projects_project_id_connections_connection_id_members_member_id_put(project_id, connection_id, member_id, idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api)
+# **update_member**
+> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi update_member(project_id, connection_id, member_id, idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api)
 
-
+Update the member in the connection by newMemberData
 
 ### Example
 
@@ -170,17 +172,18 @@ configuration = connection_restapi_client_poc.Configuration(
 with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.MemberApi(api_client)
-    project_id = 'project_id_example' # str | 
-    connection_id = 56 # int | 
-    member_id = 56 # int | 
-    idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi |  (optional)
+    project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
+    connection_id = 56 # int | Id of the connection to to update is membar memberId
+    member_id = 56 # int | Id of the member to be ubdated in the connection
+    idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi | New mwmbwr data (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_members_member_id_put(project_id, connection_id, member_id, idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api)
-        print("The response of MemberApi->api1_projects_project_id_connections_connection_id_members_member_id_put:\n")
+        # Update the member in the connection by newMemberData
+        api_response = api_instance.update_member(project_id, connection_id, member_id, idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api)
+        print("The response of MemberApi->update_member:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MemberApi->api1_projects_project_id_connections_connection_id_members_member_id_put: %s\n" % e)
+        print("Exception when calling MemberApi->update_member: %s\n" % e)
 ```
 
 
@@ -190,10 +193,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**|  | 
- **connection_id** | **int**|  | 
- **member_id** | **int**|  | 
- **idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi.md)|  | [optional] 
+ **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
+ **connection_id** | **int**| Id of the connection to to update is membar memberId | 
+ **member_id** | **int**| Id of the member to be ubdated in the connection | 
+ **idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi.md)| New mwmbwr data | [optional] 
 
 ### Return type
 

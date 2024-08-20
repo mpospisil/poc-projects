@@ -16,13 +16,11 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import StrictInt, StrictStr
-from typing import List, Optional
-from connection_restapi_client_poc.models.idea_rsws_lib_css_service_material_type_ci_basic_types import IdeaRSWsLibCssServiceMaterialTypeCIBasicTypes
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_proj_pin_idea_stati_ca_api import IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi
+from pydantic import Field, StrictInt, StrictStr
+from typing import Any, List, Optional
+from typing_extensions import Annotated
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api import IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api import IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -43,10 +41,11 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get(
+    def add_bolt_assembly(
         self,
-        project_id: StrictStr,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,14 +58,16 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get
+    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi:
+        """Add bolt assembly to the project
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new bolt assemby to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -89,9 +90,10 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get_serialize(
+        _param = self._add_bolt_assembly_serialize(
             project_id=project_id,
             connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -99,7 +101,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]",
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -113,10 +115,11 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get_with_http_info(
+    def add_bolt_assembly_with_http_info(
         self,
-        project_id: StrictStr,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -129,14 +132,16 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]]:
-        """api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi]:
+        """Add bolt assembly to the project
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new bolt assemby to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -159,9 +164,10 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get_serialize(
+        _param = self._add_bolt_assembly_serialize(
             project_id=project_id,
             connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -169,7 +175,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]",
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -183,10 +189,11 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get_without_preload_content(
+    def add_bolt_assembly_without_preload_content(
         self,
-        project_id: StrictStr,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -200,13 +207,15 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get
+        """Add bolt assembly to the project
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new bolt assemby to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -229,9 +238,10 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get_serialize(
+        _param = self._add_bolt_assembly_serialize(
             project_id=project_id,
             connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -239,7 +249,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]",
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -248,10 +258,11 @@ class MaterialApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_get_serialize(
+    def _add_bolt_assembly_serialize(
         self,
         project_id,
         connection_id,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -279,291 +290,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-assemblies',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi:
-        """api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post_with_http_info(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post_without_preload_content(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _api1_projects_project_id_connections_connection_id_materials_bolt_assemblies_post_serialize(
-        self,
-        project_id,
-        connection_id,
-        idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if project_id is not None:
-            _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_proj_bolt_assembly_idea_stati_ca_api
+        if idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -617,10 +345,11 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_cross_sections_get(
+    def add_cross_section(
         self,
-        project_id: StrictStr,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi], Field(description="Definition of a new cross-section to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -633,14 +362,16 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_materials_cross_sections_get
+    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi:
+        """Add cross section to the project
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Definition of a new cross-section to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -663,9 +394,10 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_cross_sections_get_serialize(
+        _param = self._add_cross_section_serialize(
             project_id=project_id,
             connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -673,7 +405,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]",
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -687,10 +419,11 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_cross_sections_get_with_http_info(
+    def add_cross_section_with_http_info(
         self,
-        project_id: StrictStr,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi], Field(description="Definition of a new cross-section to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -703,14 +436,16 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]]:
-        """api1_projects_project_id_connections_connection_id_materials_cross_sections_get
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi]:
+        """Add cross section to the project
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Definition of a new cross-section to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -733,9 +468,10 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_cross_sections_get_serialize(
+        _param = self._add_cross_section_serialize(
             project_id=project_id,
             connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -743,7 +479,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]",
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -757,10 +493,11 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_cross_sections_get_without_preload_content(
+    def add_cross_section_without_preload_content(
         self,
-        project_id: StrictStr,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi], Field(description="Definition of a new cross-section to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -774,13 +511,15 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_materials_cross_sections_get
+        """Add cross section to the project
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Definition of a new cross-section to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -803,9 +542,10 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_cross_sections_get_serialize(
+        _param = self._add_cross_section_serialize(
             project_id=project_id,
             connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -813,7 +553,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]",
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -822,10 +562,11 @@ class MaterialApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_materials_cross_sections_get_serialize(
+    def _add_cross_section_serialize(
         self,
         project_id,
         connection_id,
+        idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -853,291 +594,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/cross-sections',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_cross_sections_post(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi:
-        """api1_projects_project_id_connections_connection_id_materials_cross_sections_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_materials_cross_sections_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_cross_sections_post_with_http_info(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_materials_cross_sections_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_materials_cross_sections_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_cross_sections_post_without_preload_content(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_materials_cross_sections_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_materials_cross_sections_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _api1_projects_project_id_connections_connection_id_materials_cross_sections_post_serialize(
-        self,
-        project_id,
-        connection_id,
-        idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if project_id is not None:
-            _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_proj_cross_section_idea_stati_ca_api
+        if idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -1191,11 +649,11 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_get(
+    def add_material_bolt_grade(
         self,
-        project_id: StrictStr,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        type: Optional[IdeaRSWsLibCssServiceMaterialTypeCIBasicTypes] = None,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1208,16 +666,16 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_materials_get
+    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi:
+        """Add material to the project
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param type:
-        :type type: IdeaRSWsLibCssServiceMaterialTypeCIBasicTypes
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1240,10 +698,10 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_get_serialize(
+        _param = self._add_material_bolt_grade_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            type=type,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1251,7 +709,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]",
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1265,11 +723,11 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_get_with_http_info(
+    def add_material_bolt_grade_with_http_info(
         self,
-        project_id: StrictStr,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        type: Optional[IdeaRSWsLibCssServiceMaterialTypeCIBasicTypes] = None,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1282,16 +740,16 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]]:
-        """api1_projects_project_id_connections_connection_id_materials_get
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi]:
+        """Add material to the project
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param type:
-        :type type: IdeaRSWsLibCssServiceMaterialTypeCIBasicTypes
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1314,10 +772,10 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_get_serialize(
+        _param = self._add_material_bolt_grade_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            type=type,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1325,7 +783,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]",
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1339,11 +797,11 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_get_without_preload_content(
+    def add_material_bolt_grade_without_preload_content(
         self,
-        project_id: StrictStr,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        type: Optional[IdeaRSWsLibCssServiceMaterialTypeCIBasicTypes] = None,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1357,15 +815,15 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_materials_get
+        """Add material to the project
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param type:
-        :type type: IdeaRSWsLibCssServiceMaterialTypeCIBasicTypes
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1388,10 +846,10 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_get_serialize(
+        _param = self._add_material_bolt_grade_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            type=type,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1399,7 +857,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]",
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1408,11 +866,11 @@ class MaterialApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_materials_get_serialize(
+    def _add_material_bolt_grade_serialize(
         self,
         project_id,
         connection_id,
-        type,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -1437,10 +895,1209 @@ class MaterialApi:
         if connection_id is not None:
             _path_params['connectionId'] = connection_id
         # process the query parameters
-        if type is not None:
-            
-            _query_params.append(('type', type.value))
-            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/xml', 
+                        'text/xml', 
+                        'application/*+xml', 
+                        'application/json-patch+json', 
+                        'application/json', 
+                        'text/json', 
+                        'application/*+json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def add_material_concrete(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi:
+        """Add material to the project
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_material_concrete_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def add_material_concrete_with_http_info(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi]:
+        """Add material to the project
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_material_concrete_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def add_material_concrete_without_preload_content(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Add material to the project
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_material_concrete_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _add_material_concrete_serialize(
+        self,
+        project_id,
+        connection_id,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if project_id is not None:
+            _path_params['projectId'] = project_id
+        if connection_id is not None:
+            _path_params['connectionId'] = connection_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/xml', 
+                        'text/xml', 
+                        'application/*+xml', 
+                        'application/json-patch+json', 
+                        'application/json', 
+                        'text/json', 
+                        'application/*+json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/concrete',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def add_material_steel(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi:
+        """Add material to the project
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_material_steel_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def add_material_steel_with_http_info(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi]:
+        """Add material to the project
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_material_steel_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def add_material_steel_without_preload_content(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Add material to the project
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_material_steel_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _add_material_steel_serialize(
+        self,
+        project_id,
+        connection_id,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if project_id is not None:
+            _path_params['projectId'] = project_id
+        if connection_id is not None:
+            _path_params['connectionId'] = connection_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/xml', 
+                        'text/xml', 
+                        'application/*+xml', 
+                        'application/json-patch+json', 
+                        'application/json', 
+                        'text/json', 
+                        'application/*+json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/steel',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def add_material_weld(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi:
+        """Add material to the project
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_material_weld_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def add_material_weld_with_http_info(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi]:
+        """Add material to the project
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_material_weld_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def add_material_weld_without_preload_content(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Add material to the project
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
+        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_material_weld_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _add_material_weld_serialize(
+        self,
+        project_id,
+        connection_id,
+        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if project_id is not None:
+            _path_params['projectId'] = project_id
+        if connection_id is not None:
+            _path_params['connectionId'] = connection_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/xml', 
+                        'text/xml', 
+                        'application/*+xml', 
+                        'application/json-patch+json', 
+                        'application/json', 
+                        'text/json', 
+                        'application/*+json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/welding',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_all_materials(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> List[object]:
+        """Get materials which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its materials (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_all_materials_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_all_materials_with_http_info(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[List[object]]:
+        """Get materials which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its materials (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_all_materials_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_all_materials_without_preload_content(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get materials which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its materials (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_all_materials_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_all_materials_serialize(
+        self,
+        project_id,
+        connection_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if project_id is not None:
+            _path_params['projectId'] = project_id
+        if connection_id is not None:
+            _path_params['connectionId'] = connection_id
+        # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1478,10 +2135,10 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_pins_get(
+    def get_blot_grade_materials(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1494,13 +2151,13 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_materials_pins_get
+    ) -> List[object]:
+        """Get materials which are used in the connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its materials (required)
         :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1524,7 +2181,7 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_pins_get_serialize(
+        _param = self._get_blot_grade_materials_serialize(
             project_id=project_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
@@ -1534,7 +2191,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]",
+            '200': "List[object]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1548,10 +2205,10 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_pins_get_with_http_info(
+    def get_blot_grade_materials_with_http_info(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1564,13 +2221,13 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]]:
-        """api1_projects_project_id_connections_connection_id_materials_pins_get
+    ) -> ApiResponse[List[object]]:
+        """Get materials which are used in the connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its materials (required)
         :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1594,7 +2251,7 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_pins_get_serialize(
+        _param = self._get_blot_grade_materials_serialize(
             project_id=project_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
@@ -1604,7 +2261,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]",
+            '200': "List[object]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1618,10 +2275,10 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_pins_get_without_preload_content(
+    def get_blot_grade_materials_without_preload_content(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1635,12 +2292,12 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_materials_pins_get
+        """Get materials which are used in the connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its materials (required)
         :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1664,7 +2321,7 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_pins_get_serialize(
+        _param = self._get_blot_grade_materials_serialize(
             project_id=project_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
@@ -1674,7 +2331,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]",
+            '200': "List[object]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1683,7 +2340,7 @@ class MaterialApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_materials_pins_get_serialize(
+    def _get_blot_grade_materials_serialize(
         self,
         project_id,
         connection_id,
@@ -1731,7 +2388,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/pins',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1748,11 +2405,10 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_pins_post(
+    def get_bolt_assemblies(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its bolt assemblies")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1765,16 +2421,14 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi:
-        """api1_projects_project_id_connections_connection_id_materials_pins_post
+    ) -> List[object]:
+        """Get bolt assemblies which are used in the connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its bolt assemblies (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1797,10 +2451,9 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_pins_post_serialize(
+        _param = self._get_bolt_assemblies_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1808,7 +2461,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi",
+            '200': "List[object]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1822,11 +2475,10 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_pins_post_with_http_info(
+    def get_bolt_assemblies_with_http_info(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its bolt assemblies")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1839,16 +2491,14 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_materials_pins_post
+    ) -> ApiResponse[List[object]]:
+        """Get bolt assemblies which are used in the connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its bolt assemblies (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1871,10 +2521,9 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_pins_post_serialize(
+        _param = self._get_bolt_assemblies_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1882,7 +2531,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi",
+            '200': "List[object]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1896,11 +2545,10 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_pins_post_without_preload_content(
+    def get_bolt_assemblies_without_preload_content(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its bolt assemblies")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1914,15 +2562,13 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_materials_pins_post
+        """Get bolt assemblies which are used in the connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its bolt assemblies (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1945,10 +2591,9 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_pins_post_serialize(
+        _param = self._get_bolt_assemblies_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1956,7 +2601,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi",
+            '200': "List[object]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1965,11 +2610,10 @@ class MaterialApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_materials_pins_post_serialize(
+    def _get_bolt_assemblies_serialize(
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -1997,8 +2641,6 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -2009,33 +2651,14 @@ class MaterialApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
         ]
 
         return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/pins',
+            method='GET',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/bolt-assemblies',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2052,11 +2675,10 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_post(
+    def get_concrete_materials(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2069,16 +2691,14 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi:
-        """api1_projects_project_id_connections_connection_id_materials_post
+    ) -> List[object]:
+        """Get materials which are used in the connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its materials (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2101,10 +2721,9 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_post_serialize(
+        _param = self._get_concrete_materials_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2112,7 +2731,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi",
+            '200': "List[object]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2126,11 +2745,10 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_post_with_http_info(
+    def get_concrete_materials_with_http_info(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2143,16 +2761,14 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_materials_post
+    ) -> ApiResponse[List[object]]:
+        """Get materials which are used in the connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its materials (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2175,10 +2791,9 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_post_serialize(
+        _param = self._get_concrete_materials_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2186,7 +2801,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi",
+            '200': "List[object]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2200,11 +2815,10 @@ class MaterialApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_materials_post_without_preload_content(
+    def get_concrete_materials_without_preload_content(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2218,15 +2832,13 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_materials_post
+        """Get materials which are used in the connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its materials (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api: IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2249,10 +2861,9 @@ class MaterialApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_materials_post_serialize(
+        _param = self._get_concrete_materials_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api=idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2260,7 +2871,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi",
+            '200': "List[object]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2269,11 +2880,10 @@ class MaterialApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_materials_post_serialize(
+    def _get_concrete_materials_serialize(
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api,
         _request_auth,
         _content_type,
         _headers,
@@ -2301,8 +2911,6 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_proj_material_idea_stati_ca_api
 
 
         # set the HTTP header `Accept`
@@ -2313,33 +2921,824 @@ class MaterialApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
         ]
 
         return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials',
+            method='GET',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/concrete',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_cross_sections(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its cross-sections")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> List[object]:
+        """Get cross sections which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its cross-sections (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_cross_sections_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_cross_sections_with_http_info(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its cross-sections")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[List[object]]:
+        """Get cross sections which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its cross-sections (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_cross_sections_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_cross_sections_without_preload_content(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its cross-sections")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get cross sections which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its cross-sections (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_cross_sections_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_cross_sections_serialize(
+        self,
+        project_id,
+        connection_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if project_id is not None:
+            _path_params['projectId'] = project_id
+        if connection_id is not None:
+            _path_params['connectionId'] = connection_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/cross-sections',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_steel_materials(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> List[object]:
+        """Get materials which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its materials (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_steel_materials_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_steel_materials_with_http_info(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[List[object]]:
+        """Get materials which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its materials (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_steel_materials_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_steel_materials_without_preload_content(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get materials which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its materials (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_steel_materials_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_steel_materials_serialize(
+        self,
+        project_id,
+        connection_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if project_id is not None:
+            _path_params['projectId'] = project_id
+        if connection_id is not None:
+            _path_params['connectionId'] = connection_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/steel',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_welding_materials(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> List[object]:
+        """Get materials which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its materials (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_welding_materials_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_welding_materials_with_http_info(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[List[object]]:
+        """Get materials which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its materials (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_welding_materials_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_welding_materials_without_preload_content(
+        self,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get materials which are used in the connectionId
+
+
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
+        :type project_id: str
+        :param connection_id: Id of the connection to get its materials (required)
+        :type connection_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_welding_materials_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "List[object]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_welding_materials_serialize(
+        self,
+        project_id,
+        connection_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if project_id is not None:
+            _path_params['projectId'] = project_id
+        if connection_id is not None:
+            _path_params['connectionId'] = connection_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/welding',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

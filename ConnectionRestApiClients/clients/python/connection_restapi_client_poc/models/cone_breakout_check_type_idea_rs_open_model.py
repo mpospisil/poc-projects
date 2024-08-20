@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class ConeBreakoutCheckTypeIdeaRSOpenModel(str, Enum):
     """
-    ConeBreakoutCheckTypeIdeaRSOpenModel
+    Types of cone breakout checks
     """
 
     """

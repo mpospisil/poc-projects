@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionConnectionDataIdeaRSOpenModel
+    /// Provides data of the connection
     /// </summary>
     [DataContract(Name = "Connection_ConnectionData-IdeaRS_OpenModel")]
     public partial class ConnectionConnectionDataIdeaRSOpenModel : IValidatableObject
@@ -34,15 +34,15 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionConnectionDataIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="conenctionPointId">conenctionPointId.</param>
-        /// <param name="beams">beams.</param>
-        /// <param name="plates">plates.</param>
-        /// <param name="foldedPlates">foldedPlates.</param>
-        /// <param name="boltGrids">boltGrids.</param>
-        /// <param name="anchorGrids">anchorGrids.</param>
-        /// <param name="welds">welds.</param>
-        /// <param name="concreteBlocks">concreteBlocks.</param>
-        /// <param name="cutBeamByBeams">cutBeamByBeams.</param>
+        /// <param name="conenctionPointId">Connection Point Id.</param>
+        /// <param name="beams">Connected beams.</param>
+        /// <param name="plates">Plates of the connection.</param>
+        /// <param name="foldedPlates">Folded plate of the connection.</param>
+        /// <param name="boltGrids">Bolt grids which belongs to the connection.</param>
+        /// <param name="anchorGrids">Anchor grids which belongs to the connection.</param>
+        /// <param name="welds">Welds of the connection.</param>
+        /// <param name="concreteBlocks">ConcreteBlocksof the connection.</param>
+        /// <param name="cutBeamByBeams">cut beam by beams.</param>
         public ConnectionConnectionDataIdeaRSOpenModel(int conenctionPointId = default(int), List<ConnectionBeamDataIdeaRSOpenModel> beams = default(List<ConnectionBeamDataIdeaRSOpenModel>), List<ConnectionPlateDataIdeaRSOpenModel> plates = default(List<ConnectionPlateDataIdeaRSOpenModel>), List<ConnectionFoldedPlateDataIdeaRSOpenModel> foldedPlates = default(List<ConnectionFoldedPlateDataIdeaRSOpenModel>), List<ConnectionBoltGridIdeaRSOpenModel> boltGrids = default(List<ConnectionBoltGridIdeaRSOpenModel>), List<ConnectionAnchorGridIdeaRSOpenModel> anchorGrids = default(List<ConnectionAnchorGridIdeaRSOpenModel>), List<ConnectionWeldDataIdeaRSOpenModel> welds = default(List<ConnectionWeldDataIdeaRSOpenModel>), List<ConnectionConcreteBlockDataIdeaRSOpenModel> concreteBlocks = default(List<ConnectionConcreteBlockDataIdeaRSOpenModel>), List<ConnectionCutBeamByBeamDataIdeaRSOpenModel> cutBeamByBeams = default(List<ConnectionCutBeamByBeamDataIdeaRSOpenModel>))
         {
             this.ConenctionPointId = conenctionPointId;
@@ -57,56 +57,65 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets ConenctionPointId
+        /// Connection Point Id
         /// </summary>
+        /// <value>Connection Point Id</value>
         [DataMember(Name = "conenctionPointId", EmitDefaultValue = false)]
         public int ConenctionPointId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Beams
+        /// Connected beams
         /// </summary>
+        /// <value>Connected beams</value>
         [DataMember(Name = "beams", EmitDefaultValue = true)]
         public List<ConnectionBeamDataIdeaRSOpenModel> Beams { get; set; }
 
         /// <summary>
-        /// Gets or Sets Plates
+        /// Plates of the connection
         /// </summary>
+        /// <value>Plates of the connection</value>
         [DataMember(Name = "plates", EmitDefaultValue = true)]
         public List<ConnectionPlateDataIdeaRSOpenModel> Plates { get; set; }
 
         /// <summary>
-        /// Gets or Sets FoldedPlates
+        /// Folded plate of the connection
         /// </summary>
+        /// <value>Folded plate of the connection</value>
         [DataMember(Name = "foldedPlates", EmitDefaultValue = true)]
         public List<ConnectionFoldedPlateDataIdeaRSOpenModel> FoldedPlates { get; set; }
 
         /// <summary>
-        /// Gets or Sets BoltGrids
+        /// Bolt grids which belongs to the connection
         /// </summary>
+        /// <value>Bolt grids which belongs to the connection</value>
         [DataMember(Name = "boltGrids", EmitDefaultValue = true)]
         public List<ConnectionBoltGridIdeaRSOpenModel> BoltGrids { get; set; }
 
         /// <summary>
-        /// Gets or Sets AnchorGrids
+        /// Anchor grids which belongs to the connection
         /// </summary>
+        /// <value>Anchor grids which belongs to the connection</value>
         [DataMember(Name = "anchorGrids", EmitDefaultValue = true)]
         public List<ConnectionAnchorGridIdeaRSOpenModel> AnchorGrids { get; set; }
 
         /// <summary>
-        /// Gets or Sets Welds
+        /// Welds of the connection
         /// </summary>
+        /// <value>Welds of the connection</value>
         [DataMember(Name = "welds", EmitDefaultValue = true)]
         public List<ConnectionWeldDataIdeaRSOpenModel> Welds { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConcreteBlocks
+        /// ConcreteBlocksof the connection
         /// </summary>
+        /// <value>ConcreteBlocksof the connection</value>
         [DataMember(Name = "concreteBlocks", EmitDefaultValue = true)]
         public List<ConnectionConcreteBlockDataIdeaRSOpenModel> ConcreteBlocks { get; set; }
 
         /// <summary>
-        /// Gets or Sets CutBeamByBeams
+        /// cut beam by beams
         /// </summary>
+        /// <value>cut beam by beams</value>
         [DataMember(Name = "cutBeamByBeams", EmitDefaultValue = true)]
         public List<ConnectionCutBeamByBeamDataIdeaRSOpenModel> CutBeamByBeams { get; set; }
 

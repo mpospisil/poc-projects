@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ModelRebarStirrupsIdeaRSOpenModel
+    /// Represents a rebar grouping in 3D space.
     /// </summary>
     [DataContract(Name = "Model_RebarStirrups-IdeaRS_OpenModel")]
     public partial class ModelRebarStirrupsIdeaRSOpenModel : IValidatableObject
@@ -34,15 +34,16 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelRebarStirrupsIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">Element Id.</param>
         public ModelRebarStirrupsIdeaRSOpenModel(int id = default(int))
         {
             this.Id = id;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Element Id
         /// </summary>
+        /// <value>Element Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

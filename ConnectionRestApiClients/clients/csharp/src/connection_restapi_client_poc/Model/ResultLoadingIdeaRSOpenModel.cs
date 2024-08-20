@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ResultLoadingIdeaRSOpenModel
+    /// Loading identification
     /// </summary>
     [DataContract(Name = "Result_Loading-IdeaRS_OpenModel")]
     public partial class ResultLoadingIdeaRSOpenModel : IValidatableObject
@@ -41,7 +41,7 @@ namespace connection_restapi_client_poc.Model
         /// Initializes a new instance of the <see cref="ResultLoadingIdeaRSOpenModel" /> class.
         /// </summary>
         /// <param name="loadingType">loadingType.</param>
-        /// <param name="id">id.</param>
+        /// <param name="id">Id of loading.</param>
         public ResultLoadingIdeaRSOpenModel(ResultLoadingTypeIdeaRSOpenModel? loadingType = default(ResultLoadingTypeIdeaRSOpenModel?), int id = default(int))
         {
             this.LoadingType = loadingType;
@@ -49,8 +49,9 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Id of loading
         /// </summary>
+        /// <value>Id of loading</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

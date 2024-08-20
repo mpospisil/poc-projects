@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Geometry2DPoint2DIdeaRSOpenModel
+    /// Represents an x- and y-coordinate pair in two-dimensional space.
     /// </summary>
     [DataContract(Name = "Geometry2D_Point2D-IdeaRS_OpenModel")]
     public partial class Geometry2DPoint2DIdeaRSOpenModel : IValidatableObject
@@ -34,8 +34,8 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Geometry2DPoint2DIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="x">x.</param>
-        /// <param name="y">y.</param>
+        /// <param name="x">Gets or sets the X-coordinate value.</param>
+        /// <param name="y">Gets or sets the Y-coordinate value.</param>
         public Geometry2DPoint2DIdeaRSOpenModel(double x = default(double), double y = default(double))
         {
             this.X = x;
@@ -43,14 +43,16 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets X
+        /// Gets or sets the X-coordinate value
         /// </summary>
+        /// <value>Gets or sets the X-coordinate value</value>
         [DataMember(Name = "x", EmitDefaultValue = false)]
         public double X { get; set; }
 
         /// <summary>
-        /// Gets or Sets Y
+        /// Gets or sets the Y-coordinate value
         /// </summary>
+        /// <value>Gets or sets the Y-coordinate value</value>
         [DataMember(Name = "y", EmitDefaultValue = false)]
         public double Y { get; set; }
 

@@ -1,12 +1,13 @@
 # Geometry2DRegion2DIdeaRSOpenModel
 
+Represents a region in two-dimensional space included outline (border) and openings.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **outline** | [**Geometry2DPolyLine2DIdeaRSOpenModel**](Geometry2DPolyLine2DIdeaRSOpenModel.md) |  | [optional] 
-**openings** | [**List[Geometry2DPolyLine2DIdeaRSOpenModel]**](Geometry2DPolyLine2DIdeaRSOpenModel.md) |  | [optional] 
+**openings** | [**List[Geometry2DPolyLine2DIdeaRSOpenModel]**](Geometry2DPolyLine2DIdeaRSOpenModel.md) | Gets or sets the list of openings in the Region2D. | [optional] 
 
 ## Example
 

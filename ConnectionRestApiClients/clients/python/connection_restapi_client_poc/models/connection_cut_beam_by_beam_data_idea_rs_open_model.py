@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from connection_restapi_client_poc.models.connection_cut_method_idea_rs_open_model import ConnectionCutMethodIdeaRSOpenModel
 from connection_restapi_client_poc.models.connection_cut_orientation_idea_rs_open_model import ConnectionCutOrientationIdeaRSOpenModel
@@ -30,19 +30,21 @@ from typing_extensions import Self
 
 class ConnectionCutBeamByBeamDataIdeaRSOpenModel(BaseModel):
     """
-    ConnectionCutBeamByBeamDataIdeaRSOpenModel
+    Provides data of the cut objec by object
     """ # noqa: E501
+    name: Optional[StrictStr] = Field(default=None, description="Name of the cut")
     modified_object: Optional[ReferenceElementIdeaRSOpenModel] = Field(default=None, alias="modifiedObject")
     cutting_object: Optional[ReferenceElementIdeaRSOpenModel] = Field(default=None, alias="cuttingObject")
-    is_weld: Optional[StrictBool] = Field(default=None, alias="isWeld")
-    weld_thickness: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="weldThickness")
+    is_weld: Optional[StrictBool] = Field(default=None, description="is cut welded", alias="isWeld")
+    weld_thickness: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Thickness of the weld - value 0 = recommended size", alias="weldThickness")
     weld_type: Optional[ConnectionWeldTypeIdeaRSOpenModel] = Field(default=None, alias="weldType")
-    offset: Optional[Union[StrictFloat, StrictInt]] = None
+    offset: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Offset")
     method: Optional[ConnectionCutMethodIdeaRSOpenModel] = None
     orientation: Optional[ConnectionCutOrientationIdeaRSOpenModel] = None
     plane_on_cutting_object: Optional[ConnectionDistanceComparisonIdeaRSOpenModel] = Field(default=None, alias="planeOnCuttingObject")
     cut_part: Optional[ConnectionCutPartIdeaRSOpenModel] = Field(default=None, alias="cutPart")
-    __properties: ClassVar[List[str]] = ["modifiedObject", "cuttingObject", "isWeld", "weldThickness", "weldType", "offset", "method", "orientation", "planeOnCuttingObject", "cutPart"]
+    extend_before_cut: Optional[StrictBool] = Field(default=None, description="Extend before cut - for cuts where user can decide if modified beam will be extended or not", alias="extendBeforeCut")
+    __properties: ClassVar[List[str]] = ["name", "modifiedObject", "cuttingObject", "isWeld", "weldThickness", "weldType", "offset", "method", "orientation", "planeOnCuttingObject", "cutPart", "extendBeforeCut"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +91,11 @@ class ConnectionCutBeamByBeamDataIdeaRSOpenModel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of cutting_object
         if self.cutting_object:
             _dict['cuttingObject'] = self.cutting_object.to_dict()
+        # set to None if name (nullable) is None
+        # and model_fields_set contains the field
+        if self.name is None and "name" in self.model_fields_set:
+            _dict['name'] = None
+
         return _dict
 
     @classmethod
@@ -101,6 +108,7 @@ class ConnectionCutBeamByBeamDataIdeaRSOpenModel(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "name": obj.get("name"),
             "modifiedObject": ReferenceElementIdeaRSOpenModel.from_dict(obj["modifiedObject"]) if obj.get("modifiedObject") is not None else None,
             "cuttingObject": ReferenceElementIdeaRSOpenModel.from_dict(obj["cuttingObject"]) if obj.get("cuttingObject") is not None else None,
             "isWeld": obj.get("isWeld"),
@@ -110,7 +118,8 @@ class ConnectionCutBeamByBeamDataIdeaRSOpenModel(BaseModel):
             "method": obj.get("method"),
             "orientation": obj.get("orientation"),
             "planeOnCuttingObject": obj.get("planeOnCuttingObject"),
-            "cutPart": obj.get("cutPart")
+            "cutPart": obj.get("cutPart"),
+            "extendBeforeCut": obj.get("extendBeforeCut")
         })
         return _obj
 

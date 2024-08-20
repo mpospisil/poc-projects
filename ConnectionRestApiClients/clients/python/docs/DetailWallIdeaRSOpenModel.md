@@ -1,11 +1,12 @@
 # DetailWallIdeaRSOpenModel
 
+Representation of Wall in IDEA StatiCa Detail
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

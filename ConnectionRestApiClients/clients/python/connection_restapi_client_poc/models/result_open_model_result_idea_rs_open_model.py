@@ -25,9 +25,9 @@ from typing_extensions import Self
 
 class ResultOpenModelResultIdeaRSOpenModel(BaseModel):
     """
-    ResultOpenModelResultIdeaRSOpenModel
+    Results of open model
     """ # noqa: E501
-    result_on_members: Optional[List[ResultResultOnMembersIdeaRSOpenModel]] = Field(default=None, alias="resultOnMembers")
+    result_on_members: Optional[List[ResultResultOnMembersIdeaRSOpenModel]] = Field(default=None, description="Results on members", alias="resultOnMembers")
     __properties: ClassVar[List[str]] = ["resultOnMembers"]
 
     model_config = ConfigDict(

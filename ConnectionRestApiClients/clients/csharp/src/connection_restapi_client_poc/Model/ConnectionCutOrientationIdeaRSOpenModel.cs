@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines Connection_CutOrientation-IdeaRS_OpenModel
+    /// Represents the type of the cut
     /// </summary>
+    /// <value>Represents the type of the cut</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ConnectionCutOrientationIdeaRSOpenModel
     {

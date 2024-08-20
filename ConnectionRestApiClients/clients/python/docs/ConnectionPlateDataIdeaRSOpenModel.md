@@ -1,23 +1,24 @@
 # ConnectionPlateDataIdeaRSOpenModel
 
+Provides data of the single plate
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | [optional] 
-**thickness** | **float** |  | [optional] 
-**material** | **str** |  | [optional] 
-**outline_points** | [**List[Geometry2DPoint2DIdeaRSOpenModel]**](Geometry2DPoint2DIdeaRSOpenModel.md) |  | [optional] 
+**name** | **str** | Name of the plate | [optional] 
+**thickness** | **float** | Thickness of the plate | [optional] 
+**material** | **str** | Name of the material | [optional] 
+**outline_points** | [**List[Geometry2DPoint2DIdeaRSOpenModel]**](Geometry2DPoint2DIdeaRSOpenModel.md) | Outline points | [optional] 
 **origin** | [**Geometry3DPoint3DIdeaRSOpenModel**](Geometry3DPoint3DIdeaRSOpenModel.md) |  | [optional] 
 **axis_x** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 
 **axis_y** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 
 **axis_z** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 
-**region** | **str** |  | [optional] 
+**region** | **str** | Geometry of the plate in svg format. In next version will be mark as OBSOLETE! New use property Geometry | [optional] 
 **geometry** | [**Geometry2DRegion2DIdeaRSOpenModel**](Geometry2DRegion2DIdeaRSOpenModel.md) |  | [optional] 
-**original_model_id** | **str** |  | [optional] 
-**is_negative_object** | **bool** |  | [optional] 
-**id** | **int** |  | [optional] 
+**original_model_id** | **str** | Get or set the identification in the original model  In the case of the imported connection from another application | [optional] 
+**is_negative_object** | **bool** | Is negative object | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

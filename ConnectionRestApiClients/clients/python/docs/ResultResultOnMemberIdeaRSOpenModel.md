@@ -1,5 +1,6 @@
 # ResultResultOnMemberIdeaRSOpenModel
 
+Result of the member
 
 ## Properties
 
@@ -8,7 +9,7 @@ Name | Type | Description | Notes
 **member** | [**ResultMemberIdeaRSOpenModel**](ResultMemberIdeaRSOpenModel.md) |  | [optional] 
 **result_type** | [**ResultResultTypeIdeaRSOpenModel**](ResultResultTypeIdeaRSOpenModel.md) |  | [optional] 
 **local_system_type** | [**ResultResultLocalSystemTypeIdeaRSOpenModel**](ResultResultLocalSystemTypeIdeaRSOpenModel.md) |  | [optional] 
-**results** | **List[object]** |  | [optional] 
+**results** | **List[object]** | List of result | [optional] 
 
 ## Example
 

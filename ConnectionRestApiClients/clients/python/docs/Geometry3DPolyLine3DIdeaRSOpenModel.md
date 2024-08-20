@@ -1,11 +1,12 @@
 # Geometry3DPolyLine3DIdeaRSOpenModel
 
+Represents a polyline in three-dimensional space.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

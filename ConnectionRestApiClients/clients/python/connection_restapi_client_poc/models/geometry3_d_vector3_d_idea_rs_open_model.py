@@ -17,18 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
 class Geometry3DVector3DIdeaRSOpenModel(BaseModel):
     """
-    Geometry3DVector3DIdeaRSOpenModel
+    Represents a vector in three-dimensional space.
     """ # noqa: E501
-    x: Optional[Union[StrictFloat, StrictInt]] = None
-    y: Optional[Union[StrictFloat, StrictInt]] = None
-    z: Optional[Union[StrictFloat, StrictInt]] = None
+    x: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the X-dirrection value")
+    y: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the Y-dirrection value")
+    z: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the Z-dirrection value")
     __properties: ClassVar[List[str]] = ["x", "y", "z"]
 
     model_config = ConfigDict(

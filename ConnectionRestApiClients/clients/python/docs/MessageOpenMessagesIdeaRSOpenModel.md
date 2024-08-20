@@ -1,11 +1,12 @@
 # MessageOpenMessagesIdeaRSOpenModel
 
+Open messages collection
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**messages** | [**List[MessageOpenMessageIdeaRSOpenModel]**](MessageOpenMessageIdeaRSOpenModel.md) |  | [optional] 
+**messages** | [**List[MessageOpenMessageIdeaRSOpenModel]**](MessageOpenMessageIdeaRSOpenModel.md) | List of messages | [optional] 
 
 ## Example
 

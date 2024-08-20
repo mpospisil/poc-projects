@@ -55,6 +55,60 @@ namespace connection_restapi_client_poc.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Name'
+        /// </summary>
+        [Fact]
+        public void NameTest()
+        {
+            // TODO unit test for the property 'Name'
+        }
+
+        /// <summary>
+        /// Test the property 'CrossSection'
+        /// </summary>
+        [Fact]
+        public void CrossSectionTest()
+        {
+            // TODO unit test for the property 'CrossSection'
+        }
+
+        /// <summary>
+        /// Test the property 'Bars'
+        /// </summary>
+        [Fact]
+        public void BarsTest()
+        {
+            // TODO unit test for the property 'Bars'
+        }
+
+        /// <summary>
+        /// Test the property 'Stirrups'
+        /// </summary>
+        [Fact]
+        public void StirrupsTest()
+        {
+            // TODO unit test for the property 'Stirrups'
+        }
+
+        /// <summary>
+        /// Test the property 'TendonBars'
+        /// </summary>
+        [Fact]
+        public void TendonBarsTest()
+        {
+            // TODO unit test for the property 'TendonBars'
+        }
+
+        /// <summary>
+        /// Test the property 'TendonDucts'
+        /// </summary>
+        [Fact]
+        public void TendonDuctsTest()
+        {
+            // TODO unit test for the property 'TendonDucts'
+        }
+
+        /// <summary>
         /// Test the property 'Id'
         /// </summary>
         [Fact]

@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionCutBeamByBeamDataIdeaRSOpenModel
+    /// Provides data of the cut objec by object
     /// </summary>
     [DataContract(Name = "Connection_CutBeamByBeamData-IdeaRS_OpenModel")]
     public partial class ConnectionCutBeamByBeamDataIdeaRSOpenModel : IValidatableObject
@@ -64,18 +64,21 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionCutBeamByBeamDataIdeaRSOpenModel" /> class.
         /// </summary>
+        /// <param name="name">Name of the cut.</param>
         /// <param name="modifiedObject">modifiedObject.</param>
         /// <param name="cuttingObject">cuttingObject.</param>
-        /// <param name="isWeld">isWeld.</param>
-        /// <param name="weldThickness">weldThickness.</param>
+        /// <param name="isWeld">is cut welded.</param>
+        /// <param name="weldThickness">Thickness of the weld - value 0 &#x3D; recommended size.</param>
         /// <param name="weldType">weldType.</param>
-        /// <param name="offset">offset.</param>
+        /// <param name="offset">Offset.</param>
         /// <param name="method">method.</param>
         /// <param name="orientation">orientation.</param>
         /// <param name="planeOnCuttingObject">planeOnCuttingObject.</param>
         /// <param name="cutPart">cutPart.</param>
-        public ConnectionCutBeamByBeamDataIdeaRSOpenModel(ReferenceElementIdeaRSOpenModel modifiedObject = default(ReferenceElementIdeaRSOpenModel), ReferenceElementIdeaRSOpenModel cuttingObject = default(ReferenceElementIdeaRSOpenModel), bool isWeld = default(bool), double weldThickness = default(double), ConnectionWeldTypeIdeaRSOpenModel? weldType = default(ConnectionWeldTypeIdeaRSOpenModel?), double offset = default(double), ConnectionCutMethodIdeaRSOpenModel? method = default(ConnectionCutMethodIdeaRSOpenModel?), ConnectionCutOrientationIdeaRSOpenModel? orientation = default(ConnectionCutOrientationIdeaRSOpenModel?), ConnectionDistanceComparisonIdeaRSOpenModel? planeOnCuttingObject = default(ConnectionDistanceComparisonIdeaRSOpenModel?), ConnectionCutPartIdeaRSOpenModel? cutPart = default(ConnectionCutPartIdeaRSOpenModel?))
+        /// <param name="extendBeforeCut">Extend before cut - for cuts where user can decide if modified beam will be extended or not.</param>
+        public ConnectionCutBeamByBeamDataIdeaRSOpenModel(string name = default(string), ReferenceElementIdeaRSOpenModel modifiedObject = default(ReferenceElementIdeaRSOpenModel), ReferenceElementIdeaRSOpenModel cuttingObject = default(ReferenceElementIdeaRSOpenModel), bool isWeld = default(bool), double weldThickness = default(double), ConnectionWeldTypeIdeaRSOpenModel? weldType = default(ConnectionWeldTypeIdeaRSOpenModel?), double offset = default(double), ConnectionCutMethodIdeaRSOpenModel? method = default(ConnectionCutMethodIdeaRSOpenModel?), ConnectionCutOrientationIdeaRSOpenModel? orientation = default(ConnectionCutOrientationIdeaRSOpenModel?), ConnectionDistanceComparisonIdeaRSOpenModel? planeOnCuttingObject = default(ConnectionDistanceComparisonIdeaRSOpenModel?), ConnectionCutPartIdeaRSOpenModel? cutPart = default(ConnectionCutPartIdeaRSOpenModel?), bool extendBeforeCut = default(bool))
         {
+            this.Name = name;
             this.ModifiedObject = modifiedObject;
             this.CuttingObject = cuttingObject;
             this.IsWeld = isWeld;
@@ -86,7 +89,15 @@ namespace connection_restapi_client_poc.Model
             this.Orientation = orientation;
             this.PlaneOnCuttingObject = planeOnCuttingObject;
             this.CutPart = cutPart;
+            this.ExtendBeforeCut = extendBeforeCut;
         }
+
+        /// <summary>
+        /// Name of the cut
+        /// </summary>
+        /// <value>Name of the cut</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets ModifiedObject
@@ -101,22 +112,32 @@ namespace connection_restapi_client_poc.Model
         public ReferenceElementIdeaRSOpenModel CuttingObject { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsWeld
+        /// is cut welded
         /// </summary>
+        /// <value>is cut welded</value>
         [DataMember(Name = "isWeld", EmitDefaultValue = true)]
         public bool IsWeld { get; set; }
 
         /// <summary>
-        /// Gets or Sets WeldThickness
+        /// Thickness of the weld - value 0 &#x3D; recommended size
         /// </summary>
+        /// <value>Thickness of the weld - value 0 &#x3D; recommended size</value>
         [DataMember(Name = "weldThickness", EmitDefaultValue = false)]
         public double WeldThickness { get; set; }
 
         /// <summary>
-        /// Gets or Sets Offset
+        /// Offset
         /// </summary>
+        /// <value>Offset</value>
         [DataMember(Name = "offset", EmitDefaultValue = false)]
         public double Offset { get; set; }
+
+        /// <summary>
+        /// Extend before cut - for cuts where user can decide if modified beam will be extended or not
+        /// </summary>
+        /// <value>Extend before cut - for cuts where user can decide if modified beam will be extended or not</value>
+        [DataMember(Name = "extendBeforeCut", EmitDefaultValue = true)]
+        public bool ExtendBeforeCut { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -126,6 +147,7 @@ namespace connection_restapi_client_poc.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ConnectionCutBeamByBeamDataIdeaRSOpenModel {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ModifiedObject: ").Append(ModifiedObject).Append("\n");
             sb.Append("  CuttingObject: ").Append(CuttingObject).Append("\n");
             sb.Append("  IsWeld: ").Append(IsWeld).Append("\n");
@@ -136,6 +158,7 @@ namespace connection_restapi_client_poc.Model
             sb.Append("  Orientation: ").Append(Orientation).Append("\n");
             sb.Append("  PlaneOnCuttingObject: ").Append(PlaneOnCuttingObject).Append("\n");
             sb.Append("  CutPart: ").Append(CutPart).Append("\n");
+            sb.Append("  ExtendBeforeCut: ").Append(ExtendBeforeCut).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

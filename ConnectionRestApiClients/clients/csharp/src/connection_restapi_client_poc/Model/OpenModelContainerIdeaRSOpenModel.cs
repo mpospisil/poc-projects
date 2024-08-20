@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// OpenModelContainerIdeaRSOpenModel
+    /// OpenModelContainer is used to keep structural data and results of a finite element analysis in one place.  The main reason is easier moving (passing) pass the instance of OpenModel and corresponding instace of OpenModelResults.
     /// </summary>
     [DataContract(Name = "OpenModelContainer-IdeaRS_OpenModel")]
     public partial class OpenModelContainerIdeaRSOpenModel : IValidatableObject

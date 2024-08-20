@@ -1,5 +1,6 @@
 # ResultMemberTypeIdeaRSOpenModel
 
+Type of member
 
 ## Enum
 

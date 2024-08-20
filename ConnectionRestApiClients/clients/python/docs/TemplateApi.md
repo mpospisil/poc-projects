@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apply_template**](TemplateApi.md#apply_template) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/apply-template | Apply the connection template applyTemplateParam on the connection connectionId in the project projectId
-[**get_deault_template_mapping**](TemplateApi.md#get_deault_template_mapping) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/apply-mapping | Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
+[**get_default_template_mapping**](TemplateApi.md#get_default_template_mapping) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping | Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
 
 
 # **apply_template**
@@ -78,8 +78,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_deault_template_mapping**
-> IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi get_deault_template_mapping(project_id, connection_id, idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api)
+# **get_default_template_mapping**
+> IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi get_default_template_mapping(project_id, connection_id, idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api)
 
 Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
 
@@ -112,11 +112,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
     try:
         # Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
-        api_response = api_instance.get_deault_template_mapping(project_id, connection_id, idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api)
-        print("The response of TemplateApi->get_deault_template_mapping:\n")
+        api_response = api_instance.get_default_template_mapping(project_id, connection_id, idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api)
+        print("The response of TemplateApi->get_default_template_mapping:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TemplateApi->get_deault_template_mapping: %s\n" % e)
+        print("Exception when calling TemplateApi->get_default_template_mapping: %s\n" % e)
 ```
 
 

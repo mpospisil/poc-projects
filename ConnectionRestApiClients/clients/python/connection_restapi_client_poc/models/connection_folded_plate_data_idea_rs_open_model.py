@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from connection_restapi_client_poc.models.connection_bend_data_idea_rs_open_model import ConnectionBendDataIdeaRSOpenModel
 from connection_restapi_client_poc.models.connection_plate_data_idea_rs_open_model import ConnectionPlateDataIdeaRSOpenModel
@@ -26,10 +26,10 @@ from typing_extensions import Self
 
 class ConnectionFoldedPlateDataIdeaRSOpenModel(BaseModel):
     """
-    ConnectionFoldedPlateDataIdeaRSOpenModel
+    Provides data of the folded plate
     """ # noqa: E501
-    plates: Optional[List[ConnectionPlateDataIdeaRSOpenModel]] = None
-    bends: Optional[List[ConnectionBendDataIdeaRSOpenModel]] = None
+    plates: Optional[List[ConnectionPlateDataIdeaRSOpenModel]] = Field(default=None, description="List of plates belong to folded plate")
+    bends: Optional[List[ConnectionBendDataIdeaRSOpenModel]] = Field(default=None, description="List of bends connected plates of foldedplate")
     __properties: ClassVar[List[str]] = ["plates", "bends"]
 
     model_config = ConfigDict(

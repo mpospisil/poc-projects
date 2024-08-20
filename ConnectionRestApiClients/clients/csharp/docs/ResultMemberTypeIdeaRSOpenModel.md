@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.ResultMemberTypeIdeaRSOpenModel
+Type of member
 
 ## Properties
 

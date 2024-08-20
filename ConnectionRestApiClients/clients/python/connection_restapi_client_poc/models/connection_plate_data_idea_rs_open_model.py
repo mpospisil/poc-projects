@@ -28,21 +28,21 @@ from typing_extensions import Self
 
 class ConnectionPlateDataIdeaRSOpenModel(BaseModel):
     """
-    ConnectionPlateDataIdeaRSOpenModel
+    Provides data of the single plate
     """ # noqa: E501
-    name: Optional[StrictStr] = None
-    thickness: Optional[Union[StrictFloat, StrictInt]] = None
-    material: Optional[StrictStr] = None
-    outline_points: Optional[List[Geometry2DPoint2DIdeaRSOpenModel]] = Field(default=None, alias="outlinePoints")
+    name: Optional[StrictStr] = Field(default=None, description="Name of the plate")
+    thickness: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Thickness of the plate")
+    material: Optional[StrictStr] = Field(default=None, description="Name of the material")
+    outline_points: Optional[List[Geometry2DPoint2DIdeaRSOpenModel]] = Field(default=None, description="Outline points", alias="outlinePoints")
     origin: Optional[Geometry3DPoint3DIdeaRSOpenModel] = None
     axis_x: Optional[Geometry3DVector3DIdeaRSOpenModel] = Field(default=None, alias="axisX")
     axis_y: Optional[Geometry3DVector3DIdeaRSOpenModel] = Field(default=None, alias="axisY")
     axis_z: Optional[Geometry3DVector3DIdeaRSOpenModel] = Field(default=None, alias="axisZ")
-    region: Optional[StrictStr] = None
+    region: Optional[StrictStr] = Field(default=None, description="Geometry of the plate in svg format. In next version will be mark as OBSOLETE! New use property Geometry")
     geometry: Optional[Geometry2DRegion2DIdeaRSOpenModel] = None
-    original_model_id: Optional[StrictStr] = Field(default=None, alias="originalModelId")
-    is_negative_object: Optional[StrictBool] = Field(default=None, alias="isNegativeObject")
-    id: Optional[StrictInt] = None
+    original_model_id: Optional[StrictStr] = Field(default=None, description="Get or set the identification in the original model  In the case of the imported connection from another application", alias="originalModelId")
+    is_negative_object: Optional[StrictBool] = Field(default=None, description="Is negative object", alias="isNegativeObject")
+    id: Optional[StrictInt] = Field(default=None, description="Element Id")
     __properties: ClassVar[List[str]] = ["name", "thickness", "material", "outlinePoints", "origin", "axisX", "axisY", "axisZ", "region", "geometry", "originalModelId", "isNegativeObject", "id"]
 
     model_config = ConfigDict(

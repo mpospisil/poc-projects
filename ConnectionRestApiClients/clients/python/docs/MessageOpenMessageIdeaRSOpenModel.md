@@ -1,12 +1,13 @@
 # MessageOpenMessageIdeaRSOpenModel
 
+Open message base class
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **number** | [**MessageMessageNumberIdeaRSOpenModel**](MessageMessageNumberIdeaRSOpenModel.md) |  | [optional] 
-**description** | **str** |  | [optional] 
+**description** | **str** | Description of message | [optional] 
 
 ## Example
 

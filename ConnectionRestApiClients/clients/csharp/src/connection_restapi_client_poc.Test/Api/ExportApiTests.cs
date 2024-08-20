@@ -55,42 +55,42 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGet
+        /// Test ExportConnectionData
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetTest()
+        public void ExportConnectionDataTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGet(projectId, connectionId);
-            //Assert.IsType<SystemIOMemoryStreamSystemPrivateCoreLib>(response);
-        }
-
-        /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGet
-        /// </summary>
-        [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGet(projectId, connectionId);
+            //var response = instance.ExportConnectionData(projectId, connectionId);
             //Assert.IsType<ConnectionConnectionDataIdeaRSOpenModel>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdExportIomGet
+        /// Test ExportConnectionIFC
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetTest()
+        public void ExportConnectionIFCTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //var response = instance.ExportConnectionIFC(projectId, connectionId);
+            //Assert.IsType<SystemIOMemoryStreamSystemPrivateCoreLib>(response);
+        }
+
+        /// <summary>
+        /// Test ExportIomXml
+        /// </summary>
+        [Fact]
+        public void ExportIomXmlTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
             //string? version = null;
-            //instance.Api1ProjectsProjectIdConnectionsConnectionIdExportIomGet(projectId, connectionId, version);
+            //instance.ExportIomXml(projectId, connectionId, version);
         }
     }
 }

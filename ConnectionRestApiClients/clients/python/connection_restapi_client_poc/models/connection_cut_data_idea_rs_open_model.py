@@ -27,12 +27,12 @@ from typing_extensions import Self
 
 class ConnectionCutDataIdeaRSOpenModel(BaseModel):
     """
-    ConnectionCutDataIdeaRSOpenModel
+    Provides data of the cut beam
     """ # noqa: E501
     plane_point: Optional[Geometry3DPoint3DIdeaRSOpenModel] = Field(default=None, alias="planePoint")
     normal_vector: Optional[Geometry3DVector3DIdeaRSOpenModel] = Field(default=None, alias="normalVector")
     direction: Optional[ConnectionCutOrientationIdeaRSOpenModel] = None
-    offset: Optional[Union[StrictFloat, StrictInt]] = None
+    offset: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Offset - shift of cut")
     __properties: ClassVar[List[str]] = ["planePoint", "normalVector", "direction", "offset"]
 
     model_config = ConfigDict(

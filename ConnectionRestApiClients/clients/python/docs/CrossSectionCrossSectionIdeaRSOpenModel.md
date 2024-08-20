@@ -1,11 +1,15 @@
 # CrossSectionCrossSectionIdeaRSOpenModel
 
+Cross-section
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**name** | **str** | Name of cross-section | [optional] 
+**cross_section_rotation** | **float** | Rotation of Cross - Section | [optional] 
+**is_in_principal** | **bool** | Specifies that the cross-section is in its principal axis. | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

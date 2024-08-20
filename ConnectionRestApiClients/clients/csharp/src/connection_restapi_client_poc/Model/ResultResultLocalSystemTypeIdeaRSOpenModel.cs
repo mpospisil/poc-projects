@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines Result_ResultLocalSystemType-IdeaRS_OpenModel
+    /// Type of local system of result
     /// </summary>
+    /// <value>Type of local system of result</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ResultResultLocalSystemTypeIdeaRSOpenModel
     {

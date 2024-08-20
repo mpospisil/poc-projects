@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.CrtCompCheckISIdeaRSOpenModel
+CRT IS check
 
 ## Properties
 

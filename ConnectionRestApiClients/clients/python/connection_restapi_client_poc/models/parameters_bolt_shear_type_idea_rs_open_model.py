@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class ParametersBoltShearTypeIdeaRSOpenModel(str, Enum):
     """
-    ParametersBoltShearTypeIdeaRSOpenModel
+    Defines a transfer of shear force in bolts.
     """
 
     """

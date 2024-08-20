@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionBucklingResIdeaRSOpenModel
+    /// Results of the buckling analysis
     /// </summary>
     [DataContract(Name = "Connection_BucklingRes-IdeaRS_OpenModel")]
     public partial class ConnectionBucklingResIdeaRSOpenModel : IValidatableObject
@@ -35,8 +35,8 @@ namespace connection_restapi_client_poc.Model
         /// Initializes a new instance of the <see cref="ConnectionBucklingResIdeaRSOpenModel" /> class.
         /// </summary>
         /// <param name="loadCaseId">loadCaseId.</param>
-        /// <param name="shape">shape.</param>
-        /// <param name="factor">factor.</param>
+        /// <param name="shape">Shape lc calculated by solver.</param>
+        /// <param name="factor">Buckling factor.</param>
         public ConnectionBucklingResIdeaRSOpenModel(int loadCaseId = default(int), int shape = default(int), double factor = default(double))
         {
             this.LoadCaseId = loadCaseId;
@@ -51,14 +51,16 @@ namespace connection_restapi_client_poc.Model
         public int LoadCaseId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Shape
+        /// Shape lc calculated by solver
         /// </summary>
+        /// <value>Shape lc calculated by solver</value>
         [DataMember(Name = "shape", EmitDefaultValue = false)]
         public int Shape { get; set; }
 
         /// <summary>
-        /// Gets or Sets Factor
+        /// Buckling factor
         /// </summary>
+        /// <value>Buckling factor</value>
         [DataMember(Name = "factor", EmitDefaultValue = false)]
         public double Factor { get; set; }
 

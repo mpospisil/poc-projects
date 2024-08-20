@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines Material_ThermalExpansionState-IdeaRS_OpenModel
+    /// Type of curvature -  thermal expansion
     /// </summary>
+    /// <value>Type of curvature -  thermal expansion</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum MaterialThermalExpansionStateIdeaRSOpenModel
     {

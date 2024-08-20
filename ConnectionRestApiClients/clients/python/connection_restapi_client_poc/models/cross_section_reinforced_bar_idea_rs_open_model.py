@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from connection_restapi_client_poc.models.geometry2_d_point2_d_idea_rs_open_model import Geometry2DPoint2DIdeaRSOpenModel
 from connection_restapi_client_poc.models.reference_element_idea_rs_open_model import ReferenceElementIdeaRSOpenModel
@@ -26,10 +26,10 @@ from typing_extensions import Self
 
 class CrossSectionReinforcedBarIdeaRSOpenModel(BaseModel):
     """
-    CrossSectionReinforcedBarIdeaRSOpenModel
+    Reinforced bar
     """ # noqa: E501
     point: Optional[Geometry2DPoint2DIdeaRSOpenModel] = None
-    diameter: Optional[Union[StrictFloat, StrictInt]] = None
+    diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Diameter")
     material: Optional[ReferenceElementIdeaRSOpenModel] = None
     __properties: ClassVar[List[str]] = ["point", "diameter", "material"]
 

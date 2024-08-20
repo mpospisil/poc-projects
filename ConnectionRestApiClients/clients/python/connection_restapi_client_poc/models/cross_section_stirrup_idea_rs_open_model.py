@@ -26,17 +26,17 @@ from typing_extensions import Self
 
 class CrossSectionStirrupIdeaRSOpenModel(BaseModel):
     """
-    CrossSectionStirrupIdeaRSOpenModel
+    Stirrup
     """ # noqa: E501
     geometry: Optional[Geometry2DPolyLine2DIdeaRSOpenModel] = None
-    diameter: Optional[Union[StrictFloat, StrictInt]] = None
+    diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Diameter")
     material: Optional[ReferenceElementIdeaRSOpenModel] = None
-    anchorage_lenght: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="anchorageLenght")
-    diameter_of_mandrel: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="diameterOfMandrel")
-    is_closed: Optional[StrictBool] = Field(default=None, alias="isClosed")
-    distance: Optional[Union[StrictFloat, StrictInt]] = None
-    shear_check: Optional[StrictBool] = Field(default=None, alias="shearCheck")
-    torsion_check: Optional[StrictBool] = Field(default=None, alias="torsionCheck")
+    anchorage_lenght: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Anchorage Lenght", alias="anchorageLenght")
+    diameter_of_mandrel: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Radius of stirrup mandrel - refering to stirrup axis", alias="diameterOfMandrel")
+    is_closed: Optional[StrictBool] = Field(default=None, description="Open / Closed stirrup", alias="isClosed")
+    distance: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Longitudinal distance between stirrups")
+    shear_check: Optional[StrictBool] = Field(default=None, description="Status of shear check, not possible for detailing stirrup", alias="shearCheck")
+    torsion_check: Optional[StrictBool] = Field(default=None, description="Status of torsion check, not possible for detailing stirrup", alias="torsionCheck")
     __properties: ClassVar[List[str]] = ["geometry", "diameter", "material", "anchorageLenght", "diameterOfMandrel", "isClosed", "distance", "shearCheck", "torsionCheck"]
 
     model_config = ConfigDict(

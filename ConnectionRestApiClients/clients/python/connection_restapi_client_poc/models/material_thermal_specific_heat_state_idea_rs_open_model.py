@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class MaterialThermalSpecificHeatStateIdeaRSOpenModel(str, Enum):
     """
-    MaterialThermalSpecificHeatStateIdeaRSOpenModel
+    Type of curvature - thermal specific heat
     """
 
     """

@@ -1,12 +1,13 @@
 # Geometry2DPolyLine2DIdeaRSOpenModel
 
+Represents a polyline in two-dimensional space.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **start_point** | [**Geometry2DPoint2DIdeaRSOpenModel**](Geometry2DPoint2DIdeaRSOpenModel.md) |  | [optional] 
-**segments** | [**List[Geometry2DSegment2DIdeaRSOpenModel]**](Geometry2DSegment2DIdeaRSOpenModel.md) |  | [optional] 
+**segments** | [**List[Geometry2DSegment2DIdeaRSOpenModel]**](Geometry2DSegment2DIdeaRSOpenModel.md) | Gets segments of &#x60;PolyLine2D&#x60;. | [optional] 
 
 ## Example
 

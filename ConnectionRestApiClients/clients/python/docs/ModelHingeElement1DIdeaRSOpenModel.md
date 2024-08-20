@@ -1,11 +1,12 @@
 # ModelHingeElement1DIdeaRSOpenModel
 
+Representation of hinge element 1D
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

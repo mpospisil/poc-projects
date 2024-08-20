@@ -1,5 +1,6 @@
 # ConnectionDistanceComparisonIdeaRSOpenModel
 
+Represents the result of comparison of distances of two object from the same point
 
 ## Enum
 

@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class CrossSectionTendonBarTypeIdeaRSOpenModel(str, Enum):
     """
-    CrossSectionTendonBarTypeIdeaRSOpenModel
+    Tendon bar type
     """
 
     """

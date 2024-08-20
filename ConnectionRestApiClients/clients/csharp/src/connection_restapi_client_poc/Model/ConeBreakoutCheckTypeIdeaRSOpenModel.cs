@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines ConeBreakoutCheckType-IdeaRS_OpenModel
+    /// Types of cone breakout checks
     /// </summary>
+    /// <value>Types of cone breakout checks</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ConeBreakoutCheckTypeIdeaRSOpenModel
     {

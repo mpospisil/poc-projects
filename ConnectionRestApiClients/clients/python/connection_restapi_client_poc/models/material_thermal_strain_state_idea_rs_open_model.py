@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class MaterialThermalStrainStateIdeaRSOpenModel(str, Enum):
     """
-    MaterialThermalStrainStateIdeaRSOpenModel
+    Type of curvature - thermal strain curvature
     """
 
     """

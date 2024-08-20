@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.MaterialThermalSpecificHeatStateIdeaRSOpenModel
+Type of curvature - thermal specific heat
 
 ## Properties
 

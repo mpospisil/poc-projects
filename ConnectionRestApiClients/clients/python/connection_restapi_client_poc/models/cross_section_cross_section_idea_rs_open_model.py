@@ -24,12 +24,12 @@ from typing_extensions import Self
 
 class CrossSectionCrossSectionIdeaRSOpenModel(BaseModel):
     """
-    CrossSectionCrossSectionIdeaRSOpenModel
+    Cross-section
     """ # noqa: E501
-    name: Optional[StrictStr] = None
-    cross_section_rotation: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="crossSectionRotation")
-    is_in_principal: Optional[StrictBool] = Field(default=None, alias="isInPrincipal")
-    id: Optional[StrictInt] = None
+    name: Optional[StrictStr] = Field(default=None, description="Name of cross-section")
+    cross_section_rotation: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Rotation of Cross - Section", alias="crossSectionRotation")
+    is_in_principal: Optional[StrictBool] = Field(default=None, description="Specifies that the cross-section is in its principal axis.", alias="isInPrincipal")
+    id: Optional[StrictInt] = Field(default=None, description="Element Id")
     __properties: ClassVar[List[str]] = ["name", "crossSectionRotation", "isInPrincipal", "id"]
 
     model_config = ConfigDict(

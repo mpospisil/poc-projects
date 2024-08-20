@@ -1,20 +1,23 @@
 # ConnectionCutBeamByBeamDataIdeaRSOpenModel
 
+Provides data of the cut objec by object
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **str** | Name of the cut | [optional] 
 **modified_object** | [**ReferenceElementIdeaRSOpenModel**](ReferenceElementIdeaRSOpenModel.md) |  | [optional] 
 **cutting_object** | [**ReferenceElementIdeaRSOpenModel**](ReferenceElementIdeaRSOpenModel.md) |  | [optional] 
-**is_weld** | **bool** |  | [optional] 
-**weld_thickness** | **float** |  | [optional] 
+**is_weld** | **bool** | is cut welded | [optional] 
+**weld_thickness** | **float** | Thickness of the weld - value 0 &#x3D; recommended size | [optional] 
 **weld_type** | [**ConnectionWeldTypeIdeaRSOpenModel**](ConnectionWeldTypeIdeaRSOpenModel.md) |  | [optional] 
-**offset** | **float** |  | [optional] 
+**offset** | **float** | Offset | [optional] 
 **method** | [**ConnectionCutMethodIdeaRSOpenModel**](ConnectionCutMethodIdeaRSOpenModel.md) |  | [optional] 
 **orientation** | [**ConnectionCutOrientationIdeaRSOpenModel**](ConnectionCutOrientationIdeaRSOpenModel.md) |  | [optional] 
 **plane_on_cutting_object** | [**ConnectionDistanceComparisonIdeaRSOpenModel**](ConnectionDistanceComparisonIdeaRSOpenModel.md) |  | [optional] 
 **cut_part** | [**ConnectionCutPartIdeaRSOpenModel**](ConnectionCutPartIdeaRSOpenModel.md) |  | [optional] 
+**extend_before_cut** | **bool** | Extend before cut - for cuts where user can decide if modified beam will be extended or not | [optional] 
 
 ## Example
 

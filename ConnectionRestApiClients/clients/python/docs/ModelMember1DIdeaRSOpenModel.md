@@ -1,11 +1,12 @@
 # ModelMember1DIdeaRSOpenModel
 
+Representation of member1D
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

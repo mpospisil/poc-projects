@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Geometry2DRegion2DIdeaRSOpenModel
+    /// Represents a region in two-dimensional space included outline (border) and openings.
     /// </summary>
     [DataContract(Name = "Geometry2D_Region2D-IdeaRS_OpenModel")]
     public partial class Geometry2DRegion2DIdeaRSOpenModel : IValidatableObject
@@ -35,7 +35,7 @@ namespace connection_restapi_client_poc.Model
         /// Initializes a new instance of the <see cref="Geometry2DRegion2DIdeaRSOpenModel" /> class.
         /// </summary>
         /// <param name="outline">outline.</param>
-        /// <param name="openings">openings.</param>
+        /// <param name="openings">Gets or sets the list of openings in the Region2D..</param>
         public Geometry2DRegion2DIdeaRSOpenModel(Geometry2DPolyLine2DIdeaRSOpenModel outline = default(Geometry2DPolyLine2DIdeaRSOpenModel), List<Geometry2DPolyLine2DIdeaRSOpenModel> openings = default(List<Geometry2DPolyLine2DIdeaRSOpenModel>))
         {
             this.Outline = outline;
@@ -49,8 +49,9 @@ namespace connection_restapi_client_poc.Model
         public Geometry2DPolyLine2DIdeaRSOpenModel Outline { get; set; }
 
         /// <summary>
-        /// Gets or Sets Openings
+        /// Gets or sets the list of openings in the Region2D.
         /// </summary>
+        /// <value>Gets or sets the list of openings in the Region2D.</value>
         [DataMember(Name = "openings", EmitDefaultValue = true)]
         public List<Geometry2DPolyLine2DIdeaRSOpenModel> Openings { get; set; }
 

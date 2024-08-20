@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines CrossSection_MaterialDuct-IdeaRS_OpenModel
+    /// Tendon ducts material type
     /// </summary>
+    /// <value>Tendon ducts material type</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum CrossSectionMaterialDuctIdeaRSOpenModel
     {

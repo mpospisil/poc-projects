@@ -1,12 +1,13 @@
 # CrossSectionReinforcedBarIdeaRSOpenModel
 
+Reinforced bar
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **point** | [**Geometry2DPoint2DIdeaRSOpenModel**](Geometry2DPoint2DIdeaRSOpenModel.md) |  | [optional] 
-**diameter** | **float** |  | [optional] 
+**diameter** | **float** | Diameter | [optional] 
 **material** | [**ReferenceElementIdeaRSOpenModel**](ReferenceElementIdeaRSOpenModel.md) |  | [optional] 
 
 ## Example

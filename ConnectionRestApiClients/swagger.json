@@ -2824,7 +2824,7 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/connections/{connectionId}/apply-mapping": {
+    "/api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping": {
       "post": {
         "tags": [
           "Template"
@@ -2975,6 +2975,26 @@
           }
         }
       }
+    },
+    "/api/1/version": {
+      "get": {
+        "tags": [
+          "Version"
+        ],
+        "operationId": "GetVersion",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -2984,24 +3004,29 @@
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Check section base class"
       },
       "Concrete_ConcreteSetup-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Concrete setup base class"
       },
       "Concrete_ProjectDataConcrete-IdeaRS_OpenModel": {
         "type": "object",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Project data concrete"
       },
       "ConeBreakoutCheckType-IdeaRS_OpenModel": {
         "enum": [
@@ -3010,7 +3035,8 @@
           "shear",
           "none"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Types of cone breakout checks"
       },
       "ConnectionSetup-IdeaRS_OpenModel": {
         "type": "object",
@@ -3022,187 +3048,235 @@
             "$ref": "#/components/schemas/Concrete_ConcreteSetup-IdeaRS_OpenModel"
           },
           "stopAtLimitStrain": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Stop analysis when the limit strain is reached."
           },
           "weldEvaluationData": {
             "$ref": "#/components/schemas/WeldEvaluation-IdeaRS_OpenModel"
           },
           "checkDetailing": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Perform check of bolt positions"
           },
           "applyConeBreakoutCheck": {
             "$ref": "#/components/schemas/ConeBreakoutCheckType-IdeaRS_OpenModel"
           },
           "pretensionForceFpc": {
             "type": "number",
+            "description": "Pretension force fpc = k * fub * As",
             "format": "double"
           },
           "gammaInst": {
             "type": "number",
+            "description": "Partial safety factor of instalation safety",
             "format": "double"
           },
           "gammaC": {
             "type": "number",
+            "description": "Partial safety factor of concrete",
             "format": "double"
           },
           "gammaM3": {
             "type": "number",
+            "description": "Preloaded bolts safety factor",
             "format": "double"
           },
           "anchorLengthForStiffness": {
             "type": "integer",
+            "description": "Length of anchor to define the anchor stiffness in analysis model, as a multiple of anchor diameter (E A /n * [d])",
             "format": "int32"
           },
           "jointBetaFactor": {
             "type": "number",
+            "description": "Joint coefficient βj - Used for Fjd calculation",
             "format": "double"
           },
           "effectiveAreaStressCoeff": {
             "type": "number",
+            "description": "Effective area is taken from intersection of stress area and area of joined items according to EN1993-1-8 art. 6.2.5",
             "format": "double"
           },
           "effectiveAreaStressCoeffAISC": {
             "type": "number",
+            "description": "Effective area stress coefficient - Concrete loaded area: Stress cut-off is set for AISC",
             "format": "double"
           },
           "frictionCoefficient": {
             "type": "number",
+            "description": "Coefficient of friction between base plate and concrete block",
             "format": "double"
           },
           "limitPlasticStrain": {
             "type": "number",
+            "description": "Limit of plastic strain used in 2D plate element check",
             "format": "double"
           },
           "limitDeformation": {
             "type": "number",
+            "description": "Limit deformation on closed sections",
             "format": "double"
           },
           "limitDeformationCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Limit deformation on closed sections check or not"
           },
           "analysisGNL": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Analysis with GNL"
           },
           "analysisAllGNL": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Analysis with All GNL"
           },
           "warnPlasticStrain": {
             "type": "number",
+            "description": "Warning plastic strain",
             "format": "double"
           },
           "warnCheckLevel": {
             "type": "number",
+            "description": "Warning check level",
             "format": "double"
           },
           "optimalCheckLevel": {
             "type": "number",
+            "description": "Optimal check level",
             "format": "double"
           },
           "distanceBetweenBolts": {
             "type": "number",
+            "description": "Limit distance between bolts as a multiple of bolt diameter",
             "format": "double"
           },
           "distanceDiameterBetweenBP": {
             "type": "number",
+            "description": "Anchor pitch",
             "format": "double"
           },
           "distanceBetweenBoltsEdge": {
             "type": "number",
+            "description": "Limit distance between bolt and plate edge as a multiple of bolt diameter",
             "format": "double"
           },
           "bearingAngle": {
             "type": "number",
+            "description": "Load distribution angle of concrete block in calculation of factor Kj",
             "format": "double"
           },
           "decreasingFtrd": {
             "type": "number",
+            "description": "Decreasing Ftrd of anchors. Worse quality influence",
             "format": "double"
           },
           "bracedSystem": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Consider the frame system as braced for stiffness calculation. Braced system reduces horizontal displacements."
           },
           "bearingCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Apply bearing check including αb"
           },
           "applyBetapInfluence": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Apply βp influence in bolt shear resistance. ΕΝ 1993-1-8 chapter 3.6.1 (12)"
           },
           "memberLengthRatio": {
             "type": "number",
+            "description": "A multiple of cross-section height to determine the default length of member",
             "format": "double"
           },
           "divisionOfSurfaceOfCHS": {
             "type": "integer",
+            "description": "Number of straight lines to substitute circle of circular tube in analysis model",
             "format": "int32"
           },
           "divisionOfArcsOfRHS": {
             "type": "integer",
+            "description": "Number of straight lines to substitute corner arc of rectangular tubes in analysis model",
             "format": "int32"
           },
           "numElement": {
             "type": "integer",
+            "description": "Ratio of length of decisive plate edge and Elements on edge count determines the average size of mesh element",
             "format": "int32"
           },
           "numberIterations": {
             "type": "integer",
+            "description": "More iterations helps to find better solutions in contact elements but increases calculation time",
             "format": "int32"
           },
           "mdiv": {
             "type": "integer",
+            "description": "Number of iteration steps to evaluate analysis divergence",
             "format": "int32"
           },
           "minSize": {
             "type": "number",
+            "description": "Minimal size of generated finite mesh element",
             "format": "double"
           },
           "maxSize": {
             "type": "number",
+            "description": "Maximal size of generated finite mesh element",
             "format": "double"
           },
           "numElementRhs": {
             "type": "integer",
+            "description": "Number of mesh elements in RHS height",
             "format": "int32"
           },
           "numElementPlate": {
             "type": "integer",
+            "description": "Number of mesh elements on plates",
             "format": "int32"
           },
           "rigidBP": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if rigid base plate is considered"
           },
           "alphaCC": {
             "type": "number",
+            "description": "Long-term effect on fcd",
             "format": "double"
           },
           "crackedConcrete": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if cracked concrete is considered"
           },
           "developedFillers": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if developed fillers is considered"
           },
           "deformationBoltHole": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if bolt hole deformation is considered"
           },
           "extensionLengthRationOpenSections": {
             "type": "number",
+            "description": "ExtensionLengthRationOpenSections",
             "format": "double"
           },
           "extensionLengthRationCloseSections": {
             "type": "number",
+            "description": "ExtensionLengthRationCloseSections",
             "format": "double"
           },
           "factorPreloadBolt": {
             "type": "number",
+            "description": "FactorPreloadBolt",
             "format": "double"
           },
           "baseMetalCapacity": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "BaseMetalCapacity"
           },
           "applyBearingCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "ApplyBearingCheck"
           },
           "frictionCoefficientPbolt": {
             "type": "number",
+            "description": "Friction factor of slip-resistant joint",
             "format": "double"
           },
           "crtCompCheckIS": {
@@ -3210,26 +3284,32 @@
           },
           "boltMaxGripLengthCoeff": {
             "type": "number",
+            "description": "Max value of bolt grip",
             "format": "double"
           },
           "fatigueSectionOffset": {
             "type": "number",
+            "description": "Fatigue section Offset = FatigueSectionOffset x Legsize",
             "format": "double"
           },
           "condensedElementLengthFactor": {
             "type": "number",
+            "description": "Condensed element length factor (CEF). Condensed beam legth = maxCssSize * CEF",
             "format": "double"
           },
           "gammaMu": {
             "type": "number",
+            "description": "Partial safety factor for Horizontal tying",
             "format": "double"
           },
           "hssLimitPlasticStrain": {
             "type": "number",
+            "description": "Limit plastic strain for high strength steel",
             "format": "double"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "ConnectionSetup"
       },
       "Connection_AnchorGrid-IdeaRS_OpenModel": {
         "type": "object",
@@ -3242,6 +3322,7 @@
           },
           "washerSize": {
             "type": "number",
+            "description": "Washer Size used if AnchorType is washer",
             "format": "double"
           },
           "boltAssemblyRef": {
@@ -3250,57 +3331,71 @@
           },
           "id": {
             "type": "integer",
+            "description": "Unique Id of the bolt grid",
             "format": "int32"
           },
           "isAnchor": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is Anchor"
           },
           "anchorLen": {
             "type": "number",
+            "description": "Anchor lenght",
             "format": "double"
           },
           "holeDiameter": {
             "type": "number",
+            "description": "The diameter of the hole",
             "format": "double"
           },
           "diameter": {
             "type": "number",
+            "description": "The diameter of bolt",
             "format": "double"
           },
           "headDiameter": {
             "type": "number",
+            "description": "The head diameter of bolt",
             "format": "double"
           },
           "diagonalHeadDiameter": {
             "type": "number",
+            "description": "The Diagonal Head Diameter of bolt",
             "format": "double"
           },
           "headHeight": {
             "type": "number",
+            "description": "The Head Height of bolt",
             "format": "double"
           },
           "boreHole": {
             "type": "number",
+            "description": "The BoreHole of bolt",
             "format": "double"
           },
           "tensileStressArea": {
             "type": "number",
+            "description": "The Tensile Stress Area of bolt",
             "format": "double"
           },
           "nutThickness": {
             "type": "number",
+            "description": "The Nut Thickness of bolt",
             "format": "double"
           },
           "boltAssemblyName": {
             "type": "string",
+            "description": "The description of the bolt assembly",
             "nullable": true
           },
           "standard": {
             "type": "string",
+            "description": "The standard of the bolt assembly",
             "nullable": true
           },
           "material": {
             "type": "string",
+            "description": "The material of the bolt assembly",
             "nullable": true
           },
           "origin": {
@@ -3320,6 +3415,7 @@
             "items": {
               "$ref": "#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel"
             },
+            "description": "Positions of holes in the local coodinate system of the bolt grid",
             "nullable": true
           },
           "connectedPlates": {
@@ -3328,6 +3424,7 @@
               "type": "integer",
               "format": "int32"
             },
+            "description": "Identifiers of the connected plates",
             "nullable": true
           },
           "connectedPartIds": {
@@ -3335,22 +3432,26 @@
             "items": {
               "type": "string"
             },
+            "description": "Id of the weld",
             "nullable": true
           },
           "shearInThread": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates, whether a shear plane is in the thread of a bolt."
           },
           "boltInteraction": {
             "$ref": "#/components/schemas/Parameters_BoltShearType-IdeaRS_OpenModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Data of the anchor grid"
       },
       "Connection_BeamData-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name of the beam",
             "nullable": true
           },
           "plates": {
@@ -3358,18 +3459,22 @@
             "items": {
               "$ref": "#/components/schemas/Connection_PlateData-IdeaRS_OpenModel"
             },
+            "description": "Plates of the beam",
             "nullable": true
           },
           "crossSectionType": {
             "type": "string",
+            "description": "Type of cross section",
             "nullable": true
           },
           "mprlName": {
             "type": "string",
+            "description": "MPRL name of beam",
             "nullable": true
           },
           "originalModelId": {
             "type": "string",
+            "description": "Get or set the identification in the original model\r\nIn the case of the imported connection from another application",
             "nullable": true
           },
           "cuts": {
@@ -3377,53 +3482,66 @@
             "items": {
               "$ref": "#/components/schemas/Connection_CutData-IdeaRS_OpenModel"
             },
+            "description": "Cuts on the beam",
             "nullable": true
           },
           "isAdded": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is added beam"
           },
           "addedMemberLength": {
             "type": "number",
+            "description": "Added beam lenght",
             "format": "double"
           },
           "isNegativeObject": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is negative object"
           },
           "addedMember": {
             "$ref": "#/components/schemas/ReferenceElement-IdeaRS_OpenModel"
           },
           "mirrorY": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Mirror by Y"
           },
           "refLineInCenterOfGravity": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The reference line of the member is in the center of gravity of the cross-section"
           },
           "isBearingMember": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is beam bearing member"
           },
           "autoAddCutByWorkplane": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Automaticali add cut by workplane if it not defined"
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Provides data of the connected beam"
       },
       "Connection_BendData-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "plate1Id": {
             "type": "integer",
+            "description": "First plate",
             "format": "int32"
           },
           "plate2Id": {
             "type": "integer",
+            "description": "Second plate",
             "format": "int32"
           },
           "radius": {
             "type": "number",
+            "description": "Radius of bend",
             "format": "double"
           },
           "point1OfSideBoundary1": {
@@ -3442,7 +3560,8 @@
             "$ref": "#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Provides data of bend"
       },
       "Connection_BoltGrid-IdeaRS_OpenModel": {
         "type": "object",
@@ -3453,57 +3572,71 @@
           },
           "id": {
             "type": "integer",
+            "description": "Unique Id of the bolt grid",
             "format": "int32"
           },
           "isAnchor": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is Anchor"
           },
           "anchorLen": {
             "type": "number",
+            "description": "Anchor lenght",
             "format": "double"
           },
           "holeDiameter": {
             "type": "number",
+            "description": "The diameter of the hole",
             "format": "double"
           },
           "diameter": {
             "type": "number",
+            "description": "The diameter of bolt",
             "format": "double"
           },
           "headDiameter": {
             "type": "number",
+            "description": "The head diameter of bolt",
             "format": "double"
           },
           "diagonalHeadDiameter": {
             "type": "number",
+            "description": "The Diagonal Head Diameter of bolt",
             "format": "double"
           },
           "headHeight": {
             "type": "number",
+            "description": "The Head Height of bolt",
             "format": "double"
           },
           "boreHole": {
             "type": "number",
+            "description": "The BoreHole of bolt",
             "format": "double"
           },
           "tensileStressArea": {
             "type": "number",
+            "description": "The Tensile Stress Area of bolt",
             "format": "double"
           },
           "nutThickness": {
             "type": "number",
+            "description": "The Nut Thickness of bolt",
             "format": "double"
           },
           "boltAssemblyName": {
             "type": "string",
+            "description": "The description of the bolt assembly",
             "nullable": true
           },
           "standard": {
             "type": "string",
+            "description": "The standard of the bolt assembly",
             "nullable": true
           },
           "material": {
             "type": "string",
+            "description": "The material of the bolt assembly",
             "nullable": true
           },
           "origin": {
@@ -3523,6 +3656,7 @@
             "items": {
               "$ref": "#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel"
             },
+            "description": "Positions of holes in the local coodinate system of the bolt grid",
             "nullable": true
           },
           "connectedPlates": {
@@ -3531,6 +3665,7 @@
               "type": "integer",
               "format": "int32"
             },
+            "description": "Identifiers of the connected plates",
             "nullable": true
           },
           "connectedPartIds": {
@@ -3538,16 +3673,19 @@
             "items": {
               "type": "string"
             },
+            "description": "Id of the weld",
             "nullable": true
           },
           "shearInThread": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates, whether a shear plane is in the thread of a bolt."
           },
           "boltInteraction": {
             "$ref": "#/components/schemas/Parameters_BoltShearType-IdeaRS_OpenModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Data of the bolt grid"
       },
       "Connection_BucklingRes-IdeaRS_OpenModel": {
         "type": "object",
@@ -3558,90 +3696,111 @@
           },
           "shape": {
             "type": "integer",
+            "description": "Shape lc calculated by solver",
             "format": "int32"
           },
           "factor": {
             "type": "number",
+            "description": "Buckling factor",
             "format": "double"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Results of the buckling analysis"
       },
       "Connection_CheckResAnchor-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name",
             "nullable": true
           },
           "unityCheck": {
             "type": "number",
+            "description": "Unity Check",
             "format": "double"
           },
           "checkStatus": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Status of the Check"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Check value for Anchor"
       },
       "Connection_CheckResBolt-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name",
             "nullable": true
           },
           "unityCheck": {
             "type": "number",
+            "description": "Unity Check",
             "format": "double"
           },
           "checkStatus": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Status of the Check"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Check value for Bolts"
       },
       "Connection_CheckResConcreteBlock-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name of Concrete Block",
             "nullable": true
           },
           "unityCheck": {
             "type": "number",
+            "description": "Unity Check",
             "format": "double"
           },
           "checkStatus": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Status of the Check"
           },
           "loadCaseId": {
             "type": "integer",
+            "description": "Id of Load Case",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Check value for Concrete Block"
       },
       "Connection_CheckResPlate-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name of Plate",
             "nullable": true
           },
           "checkStatus": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Status of the Check"
           },
           "loadCaseId": {
             "type": "integer",
+            "description": "Id of Load Case",
             "format": "int32"
           },
           "maxStrain": {
             "type": "number",
+            "description": "Max Strain",
             "format": "double"
           },
           "maxStress": {
             "type": "number",
+            "description": "Max Stress",
             "format": "double"
           },
           "items": {
@@ -3650,59 +3809,73 @@
               "type": "integer",
               "format": "int32"
             },
+            "description": "In case of presentation of groups plates (uncoiled beams)",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Check value for Plate"
       },
       "Connection_CheckResSummary-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "checkValue": {
             "type": "number",
+            "description": "Check value",
             "format": "double"
           },
           "checkStatus": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Status of check"
           },
           "loadCaseId": {
             "type": "integer",
+            "description": "Id of Load Case",
             "format": "int32"
           },
           "name": {
             "type": "string",
+            "description": "Name",
             "nullable": true
           },
           "unityCheckMessage": {
             "type": "string",
+            "description": "Detail message about overall check",
             "nullable": true
           },
           "skipped": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the check was calculated or not.\r\nIf true, the check was not calculated and IdeaRS.OpenModel.Connection.CheckResSummary.CheckValue should be ignored, otherwise false."
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Check summary"
       },
       "Connection_CheckResWeld-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name of Weld",
             "nullable": true
           },
           "id": {
             "type": "integer",
+            "description": "Unique id of weld",
             "format": "int32"
           },
           "unityCheck": {
             "type": "number",
+            "description": "Unity Check Stress",
             "format": "double"
           },
           "checkStatus": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Status of the Check"
           },
           "loadCaseId": {
             "type": "integer",
+            "description": "Id of Load Case",
             "format": "int32"
           },
           "items": {
@@ -3711,50 +3884,61 @@
               "type": "integer",
               "format": "int32"
             },
+            "description": "In case of presentation of groups plates (uncoiled beams)",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Check value for Weld"
       },
       "Connection_ConcreteBlock-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "lenght": {
             "type": "number",
+            "description": "Lenght of ConcreteBlock",
             "format": "double"
           },
           "width": {
             "type": "number",
+            "description": "Width of ConcreteBlock",
             "format": "double"
           },
           "height": {
             "type": "number",
+            "description": "Height of ConcreteBlock",
             "format": "double"
           },
           "material": {
             "type": "string",
+            "description": "Material of ConcreteBlock",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Data of concrete block"
       },
       "Connection_ConcreteBlockData-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Plate unique ID",
             "format": "int32"
           },
           "name": {
             "type": "string",
+            "description": "Name of the concrete block",
             "nullable": true
           },
           "depth": {
             "type": "number",
+            "description": "Depth of the concrete block",
             "format": "double"
           },
           "material": {
             "type": "string",
+            "description": "Name of the material",
             "nullable": true
           },
           "center": {
@@ -3765,6 +3949,7 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel"
             },
+            "description": "Outline points",
             "nullable": true
           },
           "origin": {
@@ -3781,14 +3966,17 @@
           },
           "region": {
             "type": "string",
+            "description": "Geometry of the concrete block in svg format",
             "nullable": true
           },
           "originalModelId": {
             "type": "string",
+            "description": "Get or set the identification in the original model\r\nIn the case of the imported connection from another application",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Provides data of the single concrete block"
       },
       "Connection_ConnectionCheckRes-IdeaRS_OpenModel": {
         "type": "object",
@@ -3798,6 +3986,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_CheckResSummary-IdeaRS_OpenModel"
             },
+            "description": "List of CheckResSummary",
             "nullable": true
           },
           "checkResPlate": {
@@ -3805,6 +3994,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_CheckResPlate-IdeaRS_OpenModel"
             },
+            "description": "List of check results for plates",
             "nullable": true
           },
           "checkResWeld": {
@@ -3812,6 +4002,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_CheckResWeld-IdeaRS_OpenModel"
             },
+            "description": "List of check results for welds",
             "nullable": true
           },
           "checkResBolt": {
@@ -3819,6 +4010,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_CheckResBolt-IdeaRS_OpenModel"
             },
+            "description": "List of check results for bolts",
             "nullable": true
           },
           "checkResAnchor": {
@@ -3826,6 +4018,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_CheckResAnchor-IdeaRS_OpenModel"
             },
+            "description": "List of check results for anchors",
             "nullable": true
           },
           "checkResConcreteBlock": {
@@ -3833,6 +4026,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_CheckResConcreteBlock-IdeaRS_OpenModel"
             },
+            "description": "List of check results for concrete blocks",
             "nullable": true
           },
           "bucklingResults": {
@@ -3840,31 +4034,37 @@
             "items": {
               "$ref": "#/components/schemas/Connection_BucklingRes-IdeaRS_OpenModel"
             },
+            "description": "List of results of buckling analysis",
             "nullable": true
           },
           "name": {
             "type": "string",
+            "description": "Name of connection",
             "nullable": true
           },
           "connectionID": {
             "type": "string",
+            "description": "Guid of connection",
             "format": "uuid"
           },
           "id": {
             "type": "integer",
+            "description": "Integer Id of connection",
             "format": "int32"
           },
           "messages": {
             "$ref": "#/components/schemas/Message_OpenMessages-IdeaRS_OpenModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Results for connection in project"
       },
       "Connection_ConnectionData-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "conenctionPointId": {
             "type": "integer",
+            "description": "Connection Point Id",
             "format": "int32"
           },
           "beams": {
@@ -3872,6 +4072,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_BeamData-IdeaRS_OpenModel"
             },
+            "description": "Connected beams",
             "nullable": true
           },
           "plates": {
@@ -3879,6 +4080,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_PlateData-IdeaRS_OpenModel"
             },
+            "description": "Plates of the connection",
             "nullable": true
           },
           "foldedPlates": {
@@ -3886,6 +4088,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_FoldedPlateData-IdeaRS_OpenModel"
             },
+            "description": "Folded plate of the connection",
             "nullable": true
           },
           "boltGrids": {
@@ -3893,6 +4096,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_BoltGrid-IdeaRS_OpenModel"
             },
+            "description": "Bolt grids which belongs to the connection",
             "nullable": true
           },
           "anchorGrids": {
@@ -3900,6 +4104,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_AnchorGrid-IdeaRS_OpenModel"
             },
+            "description": "Anchor grids which belongs to the connection",
             "nullable": true
           },
           "welds": {
@@ -3907,6 +4112,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_WeldData-IdeaRS_OpenModel"
             },
+            "description": "Welds of the connection",
             "nullable": true
           },
           "concreteBlocks": {
@@ -3914,6 +4120,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_ConcreteBlockData-IdeaRS_OpenModel"
             },
+            "description": "ConcreteBlocksof the connection",
             "nullable": true
           },
           "cutBeamByBeams": {
@@ -3921,24 +4128,33 @@
             "items": {
               "$ref": "#/components/schemas/Connection_CutBeamByBeamData-IdeaRS_OpenModel"
             },
+            "description": "cut beam by beams",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Provides data of the connection"
       },
       "Connection_ConnectionPoint-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "ConnectedDesignMemeber"
       },
       "Connection_CutBeamByBeamData-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the cut",
+            "nullable": true
+          },
           "modifiedObject": {
             "$ref": "#/components/schemas/ReferenceElement-IdeaRS_OpenModel"
           },
@@ -3946,10 +4162,12 @@
             "$ref": "#/components/schemas/ReferenceElement-IdeaRS_OpenModel"
           },
           "isWeld": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "is cut welded"
           },
           "weldThickness": {
             "type": "number",
+            "description": "Thickness of the weld - value 0 = recommended size",
             "format": "double"
           },
           "weldType": {
@@ -3957,6 +4175,7 @@
           },
           "offset": {
             "type": "number",
+            "description": "Offset",
             "format": "double"
           },
           "method": {
@@ -3970,9 +4189,14 @@
           },
           "cutPart": {
             "$ref": "#/components/schemas/Connection_CutPart-IdeaRS_OpenModel"
+          },
+          "extendBeforeCut": {
+            "type": "boolean",
+            "description": "Extend before cut - for cuts where user can decide if modified beam will be extended or not"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Provides data of the cut objec by object"
       },
       "Connection_CutData-IdeaRS_OpenModel": {
         "type": "object",
@@ -3988,10 +4212,12 @@
           },
           "offset": {
             "type": "number",
+            "description": "Offset - shift of cut",
             "format": "double"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Provides data of the cut beam"
       },
       "Connection_CutMethod-IdeaRS_OpenModel": {
         "enum": [
@@ -4000,7 +4226,8 @@
           "mitre",
           "surfaceAll"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Cut method"
       },
       "Connection_CutOrientation-IdeaRS_OpenModel": {
         "enum": [
@@ -4008,7 +4235,8 @@
           "parallel",
           "perpendicular"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Represents the type of the cut"
       },
       "Connection_CutPart-IdeaRS_OpenModel": {
         "enum": [
@@ -4023,7 +4251,8 @@
           "farther",
           "same"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Represents the result of comparison of distances of two object from the same point"
       },
       "Connection_FoldedPlateData-IdeaRS_OpenModel": {
         "type": "object",
@@ -4033,6 +4262,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_PlateData-IdeaRS_OpenModel"
             },
+            "description": "List of plates belong to folded plate",
             "nullable": true
           },
           "bends": {
@@ -4040,24 +4270,29 @@
             "items": {
               "$ref": "#/components/schemas/Connection_BendData-IdeaRS_OpenModel"
             },
+            "description": "List of bends connected plates of foldedplate",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Provides data of the folded plate"
       },
       "Connection_PlateData-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name of the plate",
             "nullable": true
           },
           "thickness": {
             "type": "number",
+            "description": "Thickness of the plate",
             "format": "double"
           },
           "material": {
             "type": "string",
+            "description": "Name of the material",
             "nullable": true
           },
           "outlinePoints": {
@@ -4065,6 +4300,7 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel"
             },
+            "description": "Outline points",
             "nullable": true
           },
           "origin": {
@@ -4081,6 +4317,7 @@
           },
           "region": {
             "type": "string",
+            "description": "Geometry of the plate in svg format. In next version will be mark as OBSOLETE! New use property Geometry",
             "nullable": true
           },
           "geometry": {
@@ -4088,35 +4325,43 @@
           },
           "originalModelId": {
             "type": "string",
+            "description": "Get or set the identification in the original model\r\nIn the case of the imported connection from another application",
             "nullable": true
           },
           "isNegativeObject": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is negative object"
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Provides data of the single plate"
       },
       "Connection_WeldData-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Id of the weld",
             "format": "int32"
           },
           "name": {
             "type": "string",
+            "description": "Name of the weld",
             "nullable": true
           },
           "thickness": {
             "type": "number",
+            "description": "Thickness of the weld",
             "format": "double"
           },
           "material": {
             "type": "string",
+            "description": "Name of the material",
             "nullable": true
           },
           "weldMaterial": {
@@ -4130,6 +4375,7 @@
             "items": {
               "type": "string"
             },
+            "description": "Id of the weld",
             "nullable": true
           },
           "start": {
@@ -4139,7 +4385,8 @@
             "$ref": "#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Provides data of the single weld"
       },
       "Connection_WeldType-IdeaRS_OpenModel": {
         "enum": [
@@ -4154,28 +4401,34 @@
           "contact",
           "intermittent"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "enum of weld types"
       },
       "CrossSection_CrossSection-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name of cross-section",
             "nullable": true
           },
           "crossSectionRotation": {
             "type": "number",
+            "description": "Rotation of Cross - Section",
             "format": "double"
           },
           "isInPrincipal": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies that the cross-section is in its principal axis."
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Cross-section"
       },
       "CrossSection_FatigueTypeOfPrestressingSteel-IdeaRS_OpenModel": {
         "enum": [
@@ -4186,14 +4439,16 @@
           "preTensioning",
           "externalTendon"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Posttensioned reinforcement type"
       },
       "CrossSection_MaterialDuct-IdeaRS_OpenModel": {
         "enum": [
           "metal",
           "plastic"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Tendon ducts material type"
       },
       "CrossSection_ReinforcedBar-IdeaRS_OpenModel": {
         "type": "object",
@@ -4203,19 +4458,22 @@
           },
           "diameter": {
             "type": "number",
+            "description": "Diameter",
             "format": "double"
           },
           "material": {
             "$ref": "#/components/schemas/ReferenceElement-IdeaRS_OpenModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Reinforced bar"
       },
       "CrossSection_ReinforcedCrossSection-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name of cross-section",
             "nullable": true
           },
           "crossSection": {
@@ -4226,6 +4484,7 @@
             "items": {
               "$ref": "#/components/schemas/CrossSection_ReinforcedBar-IdeaRS_OpenModel"
             },
+            "description": "Reinforced bars",
             "nullable": true
           },
           "stirrups": {
@@ -4233,6 +4492,7 @@
             "items": {
               "$ref": "#/components/schemas/CrossSection_Stirrup-IdeaRS_OpenModel"
             },
+            "description": "Stirrups",
             "nullable": true
           },
           "tendonBars": {
@@ -4240,6 +4500,7 @@
             "items": {
               "$ref": "#/components/schemas/CrossSection_TendonBar-IdeaRS_OpenModel"
             },
+            "description": "Tendon bars",
             "nullable": true
           },
           "tendonDucts": {
@@ -4247,14 +4508,17 @@
             "items": {
               "$ref": "#/components/schemas/CrossSection_TendonDuct-IdeaRS_OpenModel"
             },
+            "description": "Tendon ducts",
             "nullable": true
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Reinforced cross-section"
       },
       "CrossSection_Stirrup-IdeaRS_OpenModel": {
         "type": "object",
@@ -4264,6 +4528,7 @@
           },
           "diameter": {
             "type": "number",
+            "description": "Diameter",
             "format": "double"
           },
           "material": {
@@ -4271,33 +4536,41 @@
           },
           "anchorageLenght": {
             "type": "number",
+            "description": "Anchorage Lenght",
             "format": "double"
           },
           "diameterOfMandrel": {
             "type": "number",
+            "description": "Radius of stirrup mandrel - refering to stirrup axis",
             "format": "double"
           },
           "isClosed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Open / Closed stirrup"
           },
           "distance": {
             "type": "number",
+            "description": "Longitudinal distance between stirrups",
             "format": "double"
           },
           "shearCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Status of shear check, not possible for detailing stirrup"
           },
           "torsionCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Status of torsion check, not possible for detailing stirrup"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Stirrup"
       },
       "CrossSection_TendonBar-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Tendon Id",
             "format": "int32"
           },
           "tendonType": {
@@ -4311,10 +4584,12 @@
           },
           "prestressingOrder": {
             "type": "integer",
+            "description": "order of tendon prestessing",
             "format": "int32"
           },
           "numStrandsInTendon": {
             "type": "integer",
+            "description": "number of ropes in tendon",
             "format": "int32"
           },
           "prestressReinforcementType": {
@@ -4322,26 +4597,30 @@
           },
           "phase": {
             "type": "integer",
+            "description": "Phase",
             "format": "int32"
           },
           "tendonDuct": {
             "$ref": "#/components/schemas/CrossSection_TendonDuct-IdeaRS_OpenModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Tendon bar"
       },
       "CrossSection_TendonBarType-IdeaRS_OpenModel": {
         "enum": [
           "posttensioned",
           "pretensioned"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Tendon bar type"
       },
       "CrossSection_TendonDuct-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Tendon duct Id",
             "format": "int32"
           },
           "point": {
@@ -4351,21 +4630,25 @@
             "$ref": "#/components/schemas/CrossSection_MaterialDuct-IdeaRS_OpenModel"
           },
           "isDebondingTube": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "rue for debonding tubes, false for tendon ducts"
           },
           "diameter": {
             "type": "number",
+            "description": "Diameter",
             "format": "double"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Tendon duct"
       },
       "CrtCompCheckIS-IdeaRS_OpenModel": {
         "enum": [
           "iS800_Cl_7_4",
           "iS456_Cl_34_4"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "CRT IS check"
       },
       "Data_ePurpose-IdeaRS_Connections": {
         "enum": [
@@ -4381,144 +4664,173 @@
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of Anchor 3D in IDEA StatiCa Detail"
       },
       "Detail_BasePlate3D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of Base Plate 3D in IDEA StatiCa Detail"
       },
       "Detail_Beam-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of 1D member in IDEA StatiCa Detail"
       },
       "Detail_DappedEnd-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of dapped end in IDEA StatiCa Detail"
       },
       "Detail_ISDModel-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Model of IDEA StatiCa Detail"
       },
       "Detail_Loading_DetailCombination-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Load case"
       },
       "Detail_Loading_DetailLoadCase-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Load case"
       },
       "Detail_Opening-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of opening in IDEA StatiCa Detail"
       },
       "Detail_PatchDevice-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Abstract class of patch support/load"
       },
       "Detail_Reinforcement-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Base class representing reinforcement in IDEA StatiCa Detail"
       },
       "Detail_SolidBlock3D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of Solid Block in IDEA StatiCa Detail"
       },
       "Detail_SurfaceSupport3D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of Surface Support 3D in IDEA StatiCa Detail"
       },
       "Detail_Wall-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of Wall in IDEA StatiCa Detail"
       },
       "Geometry2D_Point2D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "x": {
             "type": "number",
+            "description": "Gets or sets the X-coordinate value",
             "format": "double"
           },
           "y": {
             "type": "number",
+            "description": "Gets or sets the Y-coordinate value",
             "format": "double"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents an x- and y-coordinate pair in two-dimensional space."
       },
       "Geometry2D_PolyLine2D-IdeaRS_OpenModel": {
         "type": "object",
@@ -4531,10 +4843,12 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_Segment2D-IdeaRS_OpenModel"
             },
+            "description": "Gets segments of `PolyLine2D`.",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a polyline in two-dimensional space."
       },
       "Geometry2D_Polygon2D-IdeaRS_OpenModel": {
         "type": "object",
@@ -4544,10 +4858,12 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel"
             },
+            "description": "List of polygon points",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a polygon in two-dimensional space."
       },
       "Geometry2D_Region2D-IdeaRS_OpenModel": {
         "type": "object",
@@ -4560,10 +4876,12 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_PolyLine2D-IdeaRS_OpenModel"
             },
+            "description": "Gets or sets the list of openings in the Region2D.",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a region in two-dimensional space included outline (border) and openings."
       },
       "Geometry2D_Segment2D-IdeaRS_OpenModel": {
         "type": "object",
@@ -4572,7 +4890,8 @@
             "$ref": "#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a segment in two-dimensional space."
       },
       "Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel": {
         "type": "object",
@@ -4582,100 +4901,121 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel"
             },
+            "description": "List of polygon points",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Reperesents a thermal curve."
       },
       "Geometry3D_ArcSegment3D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents an arc segment in three-dimensional space."
       },
       "Geometry3D_LineSegment3D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a line segment in three-dimensional space."
       },
       "Geometry3D_Point3D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "x": {
             "type": "number",
+            "description": "Gets or sets the X-coordinate value",
             "format": "double"
           },
           "y": {
             "type": "number",
+            "description": "Gets or sets the Y-coordinate value",
             "format": "double"
           },
           "z": {
             "type": "number",
+            "description": "Gets or sets the Z-coordinate value",
             "format": "double"
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents an x- , y- an z-coordinates in three-dimensional space."
       },
       "Geometry3D_PointOnLine3D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a Point dependent on the line in three-dimensional space."
       },
       "Geometry3D_PolyLine3D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a polyline in three-dimensional space."
       },
       "Geometry3D_Region3D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a region in three-dimensional space included outline (border) and openings."
       },
       "Geometry3D_Vector3D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "x": {
             "type": "number",
+            "description": "Gets or sets the X-dirrection value",
             "format": "double"
           },
           "y": {
             "type": "number",
+            "description": "Gets or sets the Y-dirrection value",
             "format": "double"
           },
           "z": {
             "type": "number",
+            "description": "Gets or sets the Z-dirrection value",
             "format": "double"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a vector in three-dimensional space."
       },
       "IdeaRS_Common_Parameters_ParameterData-CI_BasicTypes": {
         "type": "object",
@@ -5291,154 +5631,187 @@
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Basic class combination"
       },
       "Loading_LoadCase-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Load case in the model"
       },
       "Loading_LoadGroup-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Load group"
       },
       "Loading_LoadInPoint-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Concentrated load"
       },
       "Loading_LoadOnLine-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Load on line"
       },
       "Loading_LoadOnSurface-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Load on surface"
       },
       "Loading_PointLoadOnLine-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Load in specific point on line"
       },
       "Loading_ResultClass-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "ResultClass object"
       },
       "Loading_Settlement-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Settlement of point support"
       },
       "Loading_StrainLoadOnLine-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Linearly distributed generalized strain load along a line.\r\nStrain load is in local coordinate system and there are no possible eccentricities."
       },
       "Loading_TemperatureLoadOnLine-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Temperature load on line"
       },
       "Material_MatConcrete-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name of material",
             "nullable": true
           },
           "loadFromLibrary": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Load from library - try override properties from library find material by name"
           },
           "e": {
             "type": "number",
+            "description": "Young's modulus",
             "format": "double"
           },
           "g": {
             "type": "number",
+            "description": "Shear modulus",
             "format": "double"
           },
           "poisson": {
             "type": "number",
+            "description": "Poisson's ratio",
             "format": "double"
           },
           "unitMass": {
             "type": "number",
+            "description": "Unit weight",
             "format": "double"
           },
           "specificHeat": {
             "type": "number",
+            "description": "Specific heat capacity",
             "format": "double"
           },
           "thermalExpansion": {
             "type": "number",
+            "description": "Thermal expansion",
             "format": "double"
           },
           "thermalConductivity": {
             "type": "number",
+            "description": "Thermal conductivity",
             "format": "double"
           },
           "isDefaultMaterial": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if material is default material from the code"
           },
           "orderInCode": {
             "type": "integer",
+            "description": "Order of this material in the code",
             "format": "int32"
           },
           "stateOfThermalExpansion": {
@@ -5473,74 +5846,92 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel"
             },
+            "description": "User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}",
             "nullable": true
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Material concrete base class"
       },
       "Material_MatPrestressSteel-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "diameter": {
             "type": "number",
+            "description": "Diameter",
             "format": "double"
           },
           "area": {
             "type": "number",
+            "description": "Area",
             "format": "double"
           },
           "numberOfWires": {
             "type": "integer",
+            "description": "number of wires in strand",
             "format": "int32"
           },
           "equivalentDiameter": {
             "type": "number",
+            "description": "Equivalent diameter",
             "format": "double"
           },
           "name": {
             "type": "string",
+            "description": "Name of material",
             "nullable": true
           },
           "loadFromLibrary": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Load from library - try override properties from library find material by name"
           },
           "e": {
             "type": "number",
+            "description": "Young's modulus",
             "format": "double"
           },
           "g": {
             "type": "number",
+            "description": "Shear modulus",
             "format": "double"
           },
           "poisson": {
             "type": "number",
+            "description": "Poisson's ratio",
             "format": "double"
           },
           "unitMass": {
             "type": "number",
+            "description": "Unit weight",
             "format": "double"
           },
           "specificHeat": {
             "type": "number",
+            "description": "Specific heat capacity",
             "format": "double"
           },
           "thermalExpansion": {
             "type": "number",
+            "description": "Thermal expansion",
             "format": "double"
           },
           "thermalConductivity": {
             "type": "number",
+            "description": "Thermal conductivity",
             "format": "double"
           },
           "isDefaultMaterial": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if material is default material from the code"
           },
           "orderInCode": {
             "type": "integer",
+            "description": "Order of this material in the code",
             "format": "int32"
           },
           "stateOfThermalExpansion": {
@@ -5575,14 +5966,17 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel"
             },
+            "description": "User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}",
             "nullable": true
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Material prestressing steel base class"
       },
       "Material_MatReinforcement-IdeaRS_OpenModel": {
         "type": "object",
@@ -5592,44 +5986,55 @@
           },
           "name": {
             "type": "string",
+            "description": "Name of material",
             "nullable": true
           },
           "loadFromLibrary": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Load from library - try override properties from library find material by name"
           },
           "e": {
             "type": "number",
+            "description": "Young's modulus",
             "format": "double"
           },
           "g": {
             "type": "number",
+            "description": "Shear modulus",
             "format": "double"
           },
           "poisson": {
             "type": "number",
+            "description": "Poisson's ratio",
             "format": "double"
           },
           "unitMass": {
             "type": "number",
+            "description": "Unit weight",
             "format": "double"
           },
           "specificHeat": {
             "type": "number",
+            "description": "Specific heat capacity",
             "format": "double"
           },
           "thermalExpansion": {
             "type": "number",
+            "description": "Thermal expansion",
             "format": "double"
           },
           "thermalConductivity": {
             "type": "number",
+            "description": "Thermal conductivity",
             "format": "double"
           },
           "isDefaultMaterial": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if material is default material from the code"
           },
           "orderInCode": {
             "type": "integer",
+            "description": "Order of this material in the code",
             "format": "int32"
           },
           "stateOfThermalExpansion": {
@@ -5664,58 +6069,72 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel"
             },
+            "description": "User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}",
             "nullable": true
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Material reinforcement base class"
       },
       "Material_MatSteel-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name of material",
             "nullable": true
           },
           "loadFromLibrary": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Load from library - try override properties from library find material by name"
           },
           "e": {
             "type": "number",
+            "description": "Young's modulus",
             "format": "double"
           },
           "g": {
             "type": "number",
+            "description": "Shear modulus",
             "format": "double"
           },
           "poisson": {
             "type": "number",
+            "description": "Poisson's ratio",
             "format": "double"
           },
           "unitMass": {
             "type": "number",
+            "description": "Unit weight",
             "format": "double"
           },
           "specificHeat": {
             "type": "number",
+            "description": "Specific heat capacity",
             "format": "double"
           },
           "thermalExpansion": {
             "type": "number",
+            "description": "Thermal expansion",
             "format": "double"
           },
           "thermalConductivity": {
             "type": "number",
+            "description": "Thermal conductivity",
             "format": "double"
           },
           "isDefaultMaterial": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if material is default material from the code"
           },
           "orderInCode": {
             "type": "integer",
+            "description": "Order of this material in the code",
             "format": "int32"
           },
           "stateOfThermalExpansion": {
@@ -5750,58 +6169,72 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel"
             },
+            "description": "User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}",
             "nullable": true
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Material steel base class"
       },
       "Material_MatWelding-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
+            "description": "Name of material",
             "nullable": true
           },
           "loadFromLibrary": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Load from library - try override properties from library find material by name"
           },
           "e": {
             "type": "number",
+            "description": "Young's modulus",
             "format": "double"
           },
           "g": {
             "type": "number",
+            "description": "Shear modulus",
             "format": "double"
           },
           "poisson": {
             "type": "number",
+            "description": "Poisson's ratio",
             "format": "double"
           },
           "unitMass": {
             "type": "number",
+            "description": "Unit weight",
             "format": "double"
           },
           "specificHeat": {
             "type": "number",
+            "description": "Specific heat capacity",
             "format": "double"
           },
           "thermalExpansion": {
             "type": "number",
+            "description": "Thermal expansion",
             "format": "double"
           },
           "thermalConductivity": {
             "type": "number",
+            "description": "Thermal conductivity",
             "format": "double"
           },
           "isDefaultMaterial": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if material is default material from the code"
           },
           "orderInCode": {
             "type": "integer",
+            "description": "Order of this material in the code",
             "format": "int32"
           },
           "stateOfThermalExpansion": {
@@ -5836,21 +6269,25 @@
             "items": {
               "$ref": "#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel"
             },
+            "description": "User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}",
             "nullable": true
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Welding material base class"
       },
       "Material_ReinfBarSurface-IdeaRS_OpenModel": {
         "enum": [
           "smooth",
           "ribbed"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Reinforcement bar surface"
       },
       "Material_ThermalConductivityState-IdeaRS_OpenModel": {
         "enum": [
@@ -5858,7 +6295,8 @@
           "code",
           "user"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Type of curvature - thermal conductivity"
       },
       "Material_ThermalExpansionState-IdeaRS_OpenModel": {
         "enum": [
@@ -5866,7 +6304,8 @@
           "code",
           "user"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Type of curvature -  thermal expansion"
       },
       "Material_ThermalSpecificHeatState-IdeaRS_OpenModel": {
         "enum": [
@@ -5874,7 +6313,8 @@
           "code",
           "user"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Type of curvature - thermal specific heat"
       },
       "Material_ThermalStrainState-IdeaRS_OpenModel": {
         "enum": [
@@ -5882,7 +6322,8 @@
           "code",
           "user"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Type of curvature - thermal strain curvature"
       },
       "Material_ThermalStressStrainState-IdeaRS_OpenModel": {
         "enum": [
@@ -5890,7 +6331,8 @@
           "code",
           "user"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Type of curvature - thermal stress-strain curvature"
       },
       "Message_MessageNumber-IdeaRS_OpenModel": {
         "enum": [
@@ -5928,7 +6370,8 @@
           "errOperation",
           "reserved"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Message numbers"
       },
       "Message_OpenMessage-IdeaRS_OpenModel": {
         "type": "object",
@@ -5938,10 +6381,12 @@
           },
           "description": {
             "type": "string",
+            "description": "Description of message",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Open message base class"
       },
       "Message_OpenMessages-IdeaRS_OpenModel": {
         "type": "object",
@@ -5951,10 +6396,12 @@
             "items": {
               "$ref": "#/components/schemas/Message_OpenMessage-IdeaRS_OpenModel"
             },
+            "description": "List of messages",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Open messages collection"
       },
       "Microsoft_AspNetCore_Mvc_Formatters_IOutputFormatter-Microsoft_AspNetCore_Mvc_Abstractions": {
         "type": "object",
@@ -5997,210 +6444,252 @@
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Check member base class"
       },
       "Model_DesignMember-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "DesignMember"
       },
       "Model_Element1D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of element1D"
       },
       "Model_Element2D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of element2D"
       },
       "Model_HingeElement1D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of hinge element 1D"
       },
       "Model_InitialImperfectionOfPoint-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Initial deformation of point - geometry nonlinear calculation"
       },
       "Model_LineSupportSegment-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Line support on segment"
       },
       "Model_Member1D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of member1D"
       },
       "Model_Member2D-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representation of member2D"
       },
       "Model_PointSupportNode-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Point support in point"
       },
       "Model_RebarGeneral-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a single main rebar in 3D space.\r\nHolds data from generated rebar or rebar imported from Tekla.\r\nthe rebarShape is in global coordinates and it is not possible to prject it along Member1D, Polyline, ... (referenceLine)"
       },
       "Model_RebarShape-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a geometrical shape for Rebar in 3D space."
       },
       "Model_RebarSingle-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a single main rebar in 3D space."
       },
       "Model_RebarStirrups-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents a rebar grouping in 3D space."
       },
       "Model_RigidLink-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Rigid link between nodes"
       },
       "Model_Span-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Span allows specifying haunched member.\r\n\r\nBoth cross-section must be of the same type. Spans must not overlap."
       },
       "Model_SubStructure-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "SubStructure"
       },
       "Model_Taper-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Defines haunches (variyng cross-sections) along the member.\r\n\r\nOne IdeaRS.OpenModel.Model.Taper may be assigned to multiple <see cref=\"T:IdeaRS.OpenModel.Model.Member1D\">Members</see>.\r\nSections of the member not covered by a span will use the member's cross-section."
       },
       "Model_Tendon-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Tendon base class"
       },
       "OpenAttribute-IdeaRS_OpenModel": {
         "type": "object",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Open attribute base class"
       },
       "OpenElementId-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Open element base class\r\nPOS - class can not be abstract -it causes problems with serialization"
       },
       "OpenModel-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "version": {
             "type": "integer",
+            "description": "Data format version",
             "format": "int32"
           },
           "originSettings": {
@@ -6211,6 +6700,7 @@
             "items": {
               "$ref": "#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel"
             },
+            "description": "List of Point3D",
             "nullable": true
           },
           "lineSegment3D": {
@@ -6218,6 +6708,7 @@
             "items": {
               "$ref": "#/components/schemas/Geometry3D_LineSegment3D-IdeaRS_OpenModel"
             },
+            "description": "List of LineSegment3D",
             "nullable": true
           },
           "arcSegment3D": {
@@ -6225,6 +6716,7 @@
             "items": {
               "$ref": "#/components/schemas/Geometry3D_ArcSegment3D-IdeaRS_OpenModel"
             },
+            "description": "List of ArcSegment3D",
             "nullable": true
           },
           "polyLine3D": {
@@ -6232,6 +6724,7 @@
             "items": {
               "$ref": "#/components/schemas/Geometry3D_PolyLine3D-IdeaRS_OpenModel"
             },
+            "description": "List of PolyLine3D",
             "nullable": true
           },
           "region3D": {
@@ -6239,6 +6732,7 @@
             "items": {
               "$ref": "#/components/schemas/Geometry3D_Region3D-IdeaRS_OpenModel"
             },
+            "description": "List of Region3D",
             "nullable": true
           },
           "matConcrete": {
@@ -6246,6 +6740,7 @@
             "items": {
               "$ref": "#/components/schemas/Material_MatConcrete-IdeaRS_OpenModel"
             },
+            "description": "List of MatConcrete",
             "nullable": true
           },
           "matReinforcement": {
@@ -6253,6 +6748,7 @@
             "items": {
               "$ref": "#/components/schemas/Material_MatReinforcement-IdeaRS_OpenModel"
             },
+            "description": "List of MatReinforcement",
             "nullable": true
           },
           "matSteel": {
@@ -6260,6 +6756,7 @@
             "items": {
               "$ref": "#/components/schemas/Material_MatSteel-IdeaRS_OpenModel"
             },
+            "description": "List of MatSteel",
             "nullable": true
           },
           "matPrestressSteel": {
@@ -6267,6 +6764,7 @@
             "items": {
               "$ref": "#/components/schemas/Material_MatPrestressSteel-IdeaRS_OpenModel"
             },
+            "description": "List of MatPrestressSteel",
             "nullable": true
           },
           "matWelding": {
@@ -6274,6 +6772,7 @@
             "items": {
               "$ref": "#/components/schemas/Material_MatWelding-IdeaRS_OpenModel"
             },
+            "description": "List of MatWelding",
             "nullable": true
           },
           "crossSection": {
@@ -6281,6 +6780,7 @@
             "items": {
               "$ref": "#/components/schemas/CrossSection_CrossSection-IdeaRS_OpenModel"
             },
+            "description": "List of CrossSection",
             "nullable": true
           },
           "reinforcedCrossSection": {
@@ -6288,6 +6788,7 @@
             "items": {
               "$ref": "#/components/schemas/CrossSection_ReinforcedCrossSection-IdeaRS_OpenModel"
             },
+            "description": "List of Reinforced CrossSection",
             "nullable": true
           },
           "hingeElement1D": {
@@ -6295,6 +6796,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_HingeElement1D-IdeaRS_OpenModel"
             },
+            "description": "List of hinge elements 1D",
             "nullable": true
           },
           "opening": {
@@ -6302,6 +6804,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_Opening-IdeaRS_OpenModel"
             },
+            "description": "List of openings for Detail",
             "nullable": true
           },
           "dappedEnd": {
@@ -6309,6 +6812,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_DappedEnd-IdeaRS_OpenModel"
             },
+            "description": "List of dapped ends in Detail",
             "nullable": true
           },
           "patchDevice": {
@@ -6316,6 +6820,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_PatchDevice-IdeaRS_OpenModel"
             },
+            "description": "List of dapped ends in Detail",
             "nullable": true
           },
           "element1D": {
@@ -6323,6 +6828,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_Element1D-IdeaRS_OpenModel"
             },
+            "description": "List of Elements 1D",
             "nullable": true
           },
           "beam": {
@@ -6330,6 +6836,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_Beam-IdeaRS_OpenModel"
             },
+            "description": "List of Elements 1D",
             "nullable": true
           },
           "member1D": {
@@ -6337,6 +6844,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_Member1D-IdeaRS_OpenModel"
             },
+            "description": "List of Member 1D",
             "nullable": true
           },
           "element2D": {
@@ -6344,6 +6852,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_Element2D-IdeaRS_OpenModel"
             },
+            "description": "List of Elements 2D",
             "nullable": true
           },
           "wall": {
@@ -6351,6 +6860,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_Wall-IdeaRS_OpenModel"
             },
+            "description": "List of Elements 2D",
             "nullable": true
           },
           "member2D": {
@@ -6358,6 +6868,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_Member2D-IdeaRS_OpenModel"
             },
+            "description": "List of Member 2D",
             "nullable": true
           },
           "rigidLink": {
@@ -6365,6 +6876,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_RigidLink-IdeaRS_OpenModel"
             },
+            "description": "List of Rigid link",
             "nullable": true
           },
           "pointOnLine3D": {
@@ -6372,6 +6884,7 @@
             "items": {
               "$ref": "#/components/schemas/Geometry3D_PointOnLine3D-IdeaRS_OpenModel"
             },
+            "description": "List of Point on line 3D",
             "nullable": true
           },
           "pointSupportNode": {
@@ -6379,6 +6892,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_PointSupportNode-IdeaRS_OpenModel"
             },
+            "description": "List of Point support in node",
             "nullable": true
           },
           "lineSupportSegment": {
@@ -6386,6 +6900,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_LineSupportSegment-IdeaRS_OpenModel"
             },
+            "description": "List of Line support on segment",
             "nullable": true
           },
           "loadsInPoint": {
@@ -6393,6 +6908,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_LoadInPoint-IdeaRS_OpenModel"
             },
+            "description": "List of point load impulses in this load case",
             "nullable": true
           },
           "loadsOnLine": {
@@ -6400,6 +6916,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_LoadOnLine-IdeaRS_OpenModel"
             },
+            "description": "List of line load impulses in this load case",
             "nullable": true
           },
           "strainLoadsOnLine": {
@@ -6407,6 +6924,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_StrainLoadOnLine-IdeaRS_OpenModel"
             },
+            "description": "List of generalized strain load impulses along the line in this load case.",
             "nullable": true
           },
           "pointLoadsOnLine": {
@@ -6414,6 +6932,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_PointLoadOnLine-IdeaRS_OpenModel"
             },
+            "description": "List of point load impulses in this load case",
             "nullable": true
           },
           "loadsOnSurface": {
@@ -6421,6 +6940,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_LoadOnSurface-IdeaRS_OpenModel"
             },
+            "description": "List surafce load in this load case",
             "nullable": true
           },
           "settlements": {
@@ -6428,6 +6948,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_Settlement-IdeaRS_OpenModel"
             },
+            "description": "Settlements in this load case",
             "nullable": true
           },
           "temperatureLoadsOnLine": {
@@ -6435,6 +6956,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_TemperatureLoadOnLine-IdeaRS_OpenModel"
             },
+            "description": "List of temperature load in this load case",
             "nullable": true
           },
           "loadGroup": {
@@ -6442,6 +6964,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_LoadGroup-IdeaRS_OpenModel"
             },
+            "description": "List of Load groups",
             "nullable": true
           },
           "loadCase": {
@@ -6449,6 +6972,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_LoadCase-IdeaRS_OpenModel"
             },
+            "description": "List of Load cases",
             "nullable": true
           },
           "combiInput": {
@@ -6456,6 +6980,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_CombiInput-IdeaRS_OpenModel"
             },
+            "description": "List of Combinations",
             "nullable": true
           },
           "attribute": {
@@ -6463,6 +6988,7 @@
             "items": {
               "$ref": "#/components/schemas/OpenAttribute-IdeaRS_OpenModel"
             },
+            "description": "List of attributes",
             "nullable": true
           },
           "connectionPoint": {
@@ -6470,6 +6996,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_ConnectionPoint-IdeaRS_OpenModel"
             },
+            "description": "List of Connection Points",
             "nullable": true
           },
           "connections": {
@@ -6477,6 +7004,7 @@
             "items": {
               "$ref": "#/components/schemas/Connection_ConnectionData-IdeaRS_OpenModel"
             },
+            "description": "List of Connection data",
             "nullable": true
           },
           "reinforcement": {
@@ -6484,6 +7012,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_Reinforcement-IdeaRS_OpenModel"
             },
+            "description": "List of reinforcement in IDEA StatiCa Detail",
             "nullable": true
           },
           "isdModel": {
@@ -6491,6 +7020,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_ISDModel-IdeaRS_OpenModel"
             },
+            "description": "List of Details",
             "nullable": true
           },
           "initialImperfectionOfPoint": {
@@ -6498,6 +7028,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_InitialImperfectionOfPoint-IdeaRS_OpenModel"
             },
+            "description": "List of InitialmperfectionOfPoint",
             "nullable": true
           },
           "tendon": {
@@ -6505,6 +7036,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_Tendon-IdeaRS_OpenModel"
             },
+            "description": "Tendon",
             "nullable": true
           },
           "resultClass": {
@@ -6512,6 +7044,7 @@
             "items": {
               "$ref": "#/components/schemas/Loading_ResultClass-IdeaRS_OpenModel"
             },
+            "description": "Result Class",
             "nullable": true
           },
           "designMember": {
@@ -6519,6 +7052,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_DesignMember-IdeaRS_OpenModel"
             },
+            "description": "Design Member",
             "nullable": true
           },
           "subStructure": {
@@ -6526,6 +7060,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_SubStructure-IdeaRS_OpenModel"
             },
+            "description": "Design Member",
             "nullable": true
           },
           "connectionSetup": {
@@ -6539,6 +7074,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_CheckMember-IdeaRS_OpenModel"
             },
+            "description": "List of the Check members",
             "nullable": true
           },
           "concreteCheckSection": {
@@ -6546,6 +7082,7 @@
             "items": {
               "$ref": "#/components/schemas/Concrete_CheckSection-IdeaRS_OpenModel"
             },
+            "description": "List of the concrete check section",
             "nullable": true
           },
           "concreteSetup": {
@@ -6559,6 +7096,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_RebarShape-IdeaRS_OpenModel"
             },
+            "description": "Gets or sets the rebars shapes",
             "nullable": true
           },
           "rebarGeneral": {
@@ -6566,6 +7104,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_RebarGeneral-IdeaRS_OpenModel"
             },
+            "description": "Gets or sets the rebar General collection",
             "nullable": true
           },
           "rebarSingle": {
@@ -6573,6 +7112,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_RebarSingle-IdeaRS_OpenModel"
             },
+            "description": "Gets or sets the rebar single collection",
             "nullable": true
           },
           "rebarStirrups": {
@@ -6580,6 +7120,7 @@
             "items": {
               "$ref": "#/components/schemas/Model_RebarStirrups-IdeaRS_OpenModel"
             },
+            "description": "Gets or sets the rebar group (stirrups) collection",
             "nullable": true
           },
           "taper": {
@@ -6601,6 +7142,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_SolidBlock3D-IdeaRS_OpenModel"
             },
+            "description": "List of Solid Blocks 3D",
             "nullable": true
           },
           "surfaceSupports3D": {
@@ -6608,6 +7150,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_SurfaceSupport3D-IdeaRS_OpenModel"
             },
+            "description": "List of Surface Supports 3D",
             "nullable": true
           },
           "basePlates3D": {
@@ -6615,6 +7158,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_BasePlate3D-IdeaRS_OpenModel"
             },
+            "description": "List of Base Plates 3D",
             "nullable": true
           },
           "anchors3D": {
@@ -6622,6 +7166,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_Anchor3D-IdeaRS_OpenModel"
             },
+            "description": "List of Anchors 3D",
             "nullable": true
           },
           "detailLoadCase": {
@@ -6629,6 +7174,7 @@
             "items": {
               "$ref": "#/components/schemas/Detail_Loading_DetailLoadCase-IdeaRS_OpenModel"
             },
+            "description": "List of Load cases",
             "nullable": true
           },
           "detailCombination": {
@@ -6636,10 +7182,12 @@
             "items": {
               "$ref": "#/components/schemas/Detail_Loading_DetailCombination-IdeaRS_OpenModel"
             },
+            "description": "List of Combinations",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Open model"
       },
       "OpenModelContainer-IdeaRS_OpenModel": {
         "type": "object",
@@ -6651,11 +7199,13 @@
             "$ref": "#/components/schemas/Result_OpenModelResult-IdeaRS_OpenModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "OpenModelContainer is used to keep structural data and results of a finite element analysis in one place.\r\nThe main reason is easier moving (passing) pass the instance of OpenModel and corresponding instace of OpenModelResults."
       },
       "OriginSettings-IdeaRS_OpenModel": {
         "type": "object",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "OriginProject"
       },
       "Parameters_AnchorType-IdeaRS_OpenModel": {
         "enum": [
@@ -6663,7 +7213,8 @@
           "washerPlateCircular",
           "washerPlateRectangular"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Defines a type of anchor end."
       },
       "Parameters_BoltShearType-IdeaRS_OpenModel": {
         "enum": [
@@ -6671,28 +7222,33 @@
           "interaction",
           "friction"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Defines a transfer of shear force in bolts."
       },
       "ProjectData-IdeaRS_OpenModel": {
         "type": "object",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Defines certain data about user project."
       },
       "ReferenceElement-IdeaRS_OpenModel": {
         "type": "object",
         "properties": {
           "typeName": {
             "type": "string",
+            "description": "Element type name",
             "nullable": true
           },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
           },
           "element": {
             "$ref": "#/components/schemas/OpenElementId-IdeaRS_OpenModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Reference element class"
       },
       "Result_Loading-IdeaRS_OpenModel": {
         "type": "object",
@@ -6702,10 +7258,12 @@
           },
           "id": {
             "type": "integer",
+            "description": "Id of loading",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Loading identification"
       },
       "Result_LoadingType-IdeaRS_OpenModel": {
         "enum": [
@@ -6713,7 +7271,8 @@
           "combination",
           "resultClass"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Type of loading"
       },
       "Result_Member-IdeaRS_OpenModel": {
         "type": "object",
@@ -6723,17 +7282,20 @@
           },
           "id": {
             "type": "integer",
+            "description": "Id of member",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Member identification"
       },
       "Result_MemberType-IdeaRS_OpenModel": {
         "enum": [
           "member1D",
           "element1D"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Type of member"
       },
       "Result_OpenModelResult-IdeaRS_OpenModel": {
         "type": "object",
@@ -6743,14 +7305,17 @@
             "items": {
               "$ref": "#/components/schemas/Result_ResultOnMembers-IdeaRS_OpenModel"
             },
+            "description": "Results on members",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Results of open model"
       },
       "Result_ResultBase-IdeaRS_OpenModel": {
         "type": "object",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Result base abstract class"
       },
       "Result_ResultLocalSystemType-IdeaRS_OpenModel": {
         "enum": [
@@ -6758,7 +7323,8 @@
           "global",
           "principle"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Type of local system of result"
       },
       "Result_ResultOnMember-IdeaRS_OpenModel": {
         "type": "object",
@@ -6777,10 +7343,12 @@
             "items": {
               "$ref": "#/components/schemas/Result_ResultBase-IdeaRS_OpenModel"
             },
+            "description": "List of result",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Result of the member"
       },
       "Result_ResultOnMembers-IdeaRS_OpenModel": {
         "type": "object",
@@ -6793,10 +7361,12 @@
             "items": {
               "$ref": "#/components/schemas/Result_ResultOnMember-IdeaRS_OpenModel"
             },
+            "description": "List of result of members",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Result of the member"
       },
       "Result_ResultType-IdeaRS_OpenModel": {
         "enum": [
@@ -6807,11 +7377,13 @@
           "interactionDiagram",
           "crossSectionMesh"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "Type of results"
       },
       "SteelSetup-IdeaRS_OpenModel": {
         "type": "object",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "ISteelSetup"
       },
       "System_IO_MemoryStream-System_Private_CoreLib": {
         "type": "object",
@@ -6862,7 +7434,8 @@
           "forceResultant",
           "applyPlasticWelds"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "WeldEvaluation"
       }
     }
   }

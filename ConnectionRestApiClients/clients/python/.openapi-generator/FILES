@@ -15,6 +15,7 @@ connection_restapi_client_poc/api/member_api.py
 connection_restapi_client_poc/api/parameter_api.py
 connection_restapi_client_poc/api/project_api.py
 connection_restapi_client_poc/api/template_api.py
+connection_restapi_client_poc/api/version_api.py
 connection_restapi_client_poc/api_client.py
 connection_restapi_client_poc/api_response.py
 connection_restapi_client_poc/configuration.py
@@ -344,6 +345,7 @@ docs/ResultResultOnMembersIdeaRSOpenModel.md
 docs/ResultResultTypeIdeaRSOpenModel.md
 docs/SystemIOMemoryStreamSystemPrivateCoreLib.md
 docs/TemplateApi.md
+docs/VersionApi.md
 docs/WeldEvaluationIdeaRSOpenModel.md
 git_push.sh
 pyproject.toml
@@ -517,5 +519,6 @@ test/test_result_result_on_members_idea_rs_open_model.py
 test/test_result_result_type_idea_rs_open_model.py
 test/test_system_io_memory_stream_system_private_core_lib.py
 test/test_template_api.py
+test/test_version_api.py
 test/test_weld_evaluation_idea_rs_open_model.py
 tox.ini

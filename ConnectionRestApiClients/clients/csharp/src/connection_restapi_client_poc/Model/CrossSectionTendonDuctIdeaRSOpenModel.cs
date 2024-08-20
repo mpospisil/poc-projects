@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// CrossSectionTendonDuctIdeaRSOpenModel
+    /// Tendon duct
     /// </summary>
     [DataContract(Name = "CrossSection_TendonDuct-IdeaRS_OpenModel")]
     public partial class CrossSectionTendonDuctIdeaRSOpenModel : IValidatableObject
@@ -40,11 +40,11 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CrossSectionTendonDuctIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">Tendon duct Id.</param>
         /// <param name="point">point.</param>
         /// <param name="materialDuct">materialDuct.</param>
-        /// <param name="isDebondingTube">isDebondingTube.</param>
-        /// <param name="diameter">diameter.</param>
+        /// <param name="isDebondingTube">rue for debonding tubes, false for tendon ducts.</param>
+        /// <param name="diameter">Diameter.</param>
         public CrossSectionTendonDuctIdeaRSOpenModel(int id = default(int), Geometry2DPoint2DIdeaRSOpenModel point = default(Geometry2DPoint2DIdeaRSOpenModel), CrossSectionMaterialDuctIdeaRSOpenModel? materialDuct = default(CrossSectionMaterialDuctIdeaRSOpenModel?), bool isDebondingTube = default(bool), double diameter = default(double))
         {
             this.Id = id;
@@ -55,8 +55,9 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Tendon duct Id
         /// </summary>
+        /// <value>Tendon duct Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
@@ -67,14 +68,16 @@ namespace connection_restapi_client_poc.Model
         public Geometry2DPoint2DIdeaRSOpenModel Point { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDebondingTube
+        /// rue for debonding tubes, false for tendon ducts
         /// </summary>
+        /// <value>rue for debonding tubes, false for tendon ducts</value>
         [DataMember(Name = "isDebondingTube", EmitDefaultValue = true)]
         public bool IsDebondingTube { get; set; }
 
         /// <summary>
-        /// Gets or Sets Diameter
+        /// Diameter
         /// </summary>
+        /// <value>Diameter</value>
         [DataMember(Name = "diameter", EmitDefaultValue = false)]
         public double Diameter { get; set; }
 

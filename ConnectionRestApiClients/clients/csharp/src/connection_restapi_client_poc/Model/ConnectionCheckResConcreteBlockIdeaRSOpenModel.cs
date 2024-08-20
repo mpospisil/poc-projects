@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionCheckResConcreteBlockIdeaRSOpenModel
+    /// Check value for Concrete Block
     /// </summary>
     [DataContract(Name = "Connection_CheckResConcreteBlock-IdeaRS_OpenModel")]
     public partial class ConnectionCheckResConcreteBlockIdeaRSOpenModel : IValidatableObject
@@ -34,10 +34,10 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionCheckResConcreteBlockIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="unityCheck">unityCheck.</param>
-        /// <param name="checkStatus">checkStatus.</param>
-        /// <param name="loadCaseId">loadCaseId.</param>
+        /// <param name="name">Name of Concrete Block.</param>
+        /// <param name="unityCheck">Unity Check.</param>
+        /// <param name="checkStatus">Status of the Check.</param>
+        /// <param name="loadCaseId">Id of Load Case.</param>
         public ConnectionCheckResConcreteBlockIdeaRSOpenModel(string name = default(string), double unityCheck = default(double), bool checkStatus = default(bool), int loadCaseId = default(int))
         {
             this.Name = name;
@@ -47,26 +47,30 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of Concrete Block
         /// </summary>
+        /// <value>Name of Concrete Block</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets UnityCheck
+        /// Unity Check
         /// </summary>
+        /// <value>Unity Check</value>
         [DataMember(Name = "unityCheck", EmitDefaultValue = false)]
         public double UnityCheck { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckStatus
+        /// Status of the Check
         /// </summary>
+        /// <value>Status of the Check</value>
         [DataMember(Name = "checkStatus", EmitDefaultValue = true)]
         public bool CheckStatus { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadCaseId
+        /// Id of Load Case
         /// </summary>
+        /// <value>Id of Load Case</value>
         [DataMember(Name = "loadCaseId", EmitDefaultValue = false)]
         public int LoadCaseId { get; set; }
 

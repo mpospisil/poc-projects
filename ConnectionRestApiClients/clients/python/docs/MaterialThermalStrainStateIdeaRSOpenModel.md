@@ -1,5 +1,6 @@
 # MaterialThermalStrainStateIdeaRSOpenModel
 
+Type of curvature - thermal strain curvature
 
 ## Enum
 

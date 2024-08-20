@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class Geometry2DSegment2DIdeaRSOpenModel(BaseModel):
     """
-    Geometry2DSegment2DIdeaRSOpenModel
+    Represents a segment in two-dimensional space.
     """ # noqa: E501
     end_point: Optional[Geometry2DPoint2DIdeaRSOpenModel] = Field(default=None, alias="endPoint")
     __properties: ClassVar[List[str]] = ["endPoint"]

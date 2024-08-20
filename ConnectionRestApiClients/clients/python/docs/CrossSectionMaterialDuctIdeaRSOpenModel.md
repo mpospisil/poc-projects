@@ -1,5 +1,6 @@
 # CrossSectionMaterialDuctIdeaRSOpenModel
 
+Tendon ducts material type
 
 ## Enum
 

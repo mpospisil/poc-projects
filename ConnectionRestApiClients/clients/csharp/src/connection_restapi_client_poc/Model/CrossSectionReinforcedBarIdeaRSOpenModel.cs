@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// CrossSectionReinforcedBarIdeaRSOpenModel
+    /// Reinforced bar
     /// </summary>
     [DataContract(Name = "CrossSection_ReinforcedBar-IdeaRS_OpenModel")]
     public partial class CrossSectionReinforcedBarIdeaRSOpenModel : IValidatableObject
@@ -35,7 +35,7 @@ namespace connection_restapi_client_poc.Model
         /// Initializes a new instance of the <see cref="CrossSectionReinforcedBarIdeaRSOpenModel" /> class.
         /// </summary>
         /// <param name="point">point.</param>
-        /// <param name="diameter">diameter.</param>
+        /// <param name="diameter">Diameter.</param>
         /// <param name="material">material.</param>
         public CrossSectionReinforcedBarIdeaRSOpenModel(Geometry2DPoint2DIdeaRSOpenModel point = default(Geometry2DPoint2DIdeaRSOpenModel), double diameter = default(double), ReferenceElementIdeaRSOpenModel material = default(ReferenceElementIdeaRSOpenModel))
         {
@@ -51,8 +51,9 @@ namespace connection_restapi_client_poc.Model
         public Geometry2DPoint2DIdeaRSOpenModel Point { get; set; }
 
         /// <summary>
-        /// Gets or Sets Diameter
+        /// Diameter
         /// </summary>
+        /// <value>Diameter</value>
         [DataMember(Name = "diameter", EmitDefaultValue = false)]
         public double Diameter { get; set; }
 

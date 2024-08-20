@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Geometry3DVector3DIdeaRSOpenModel
+    /// Represents a vector in three-dimensional space.
     /// </summary>
     [DataContract(Name = "Geometry3D_Vector3D-IdeaRS_OpenModel")]
     public partial class Geometry3DVector3DIdeaRSOpenModel : IValidatableObject
@@ -34,9 +34,9 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Geometry3DVector3DIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="x">x.</param>
-        /// <param name="y">y.</param>
-        /// <param name="z">z.</param>
+        /// <param name="x">Gets or sets the X-dirrection value.</param>
+        /// <param name="y">Gets or sets the Y-dirrection value.</param>
+        /// <param name="z">Gets or sets the Z-dirrection value.</param>
         public Geometry3DVector3DIdeaRSOpenModel(double x = default(double), double y = default(double), double z = default(double))
         {
             this.X = x;
@@ -45,20 +45,23 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets X
+        /// Gets or sets the X-dirrection value
         /// </summary>
+        /// <value>Gets or sets the X-dirrection value</value>
         [DataMember(Name = "x", EmitDefaultValue = false)]
         public double X { get; set; }
 
         /// <summary>
-        /// Gets or Sets Y
+        /// Gets or sets the Y-dirrection value
         /// </summary>
+        /// <value>Gets or sets the Y-dirrection value</value>
         [DataMember(Name = "y", EmitDefaultValue = false)]
         public double Y { get; set; }
 
         /// <summary>
-        /// Gets or Sets Z
+        /// Gets or sets the Z-dirrection value
         /// </summary>
+        /// <value>Gets or sets the Z-dirrection value</value>
         [DataMember(Name = "z", EmitDefaultValue = false)]
         public double Z { get; set; }
 

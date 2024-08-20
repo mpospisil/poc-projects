@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionCheckResSummaryIdeaRSOpenModel
+    /// Check summary
     /// </summary>
     [DataContract(Name = "Connection_CheckResSummary-IdeaRS_OpenModel")]
     public partial class ConnectionCheckResSummaryIdeaRSOpenModel : IValidatableObject
@@ -34,12 +34,12 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionCheckResSummaryIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="checkValue">checkValue.</param>
-        /// <param name="checkStatus">checkStatus.</param>
-        /// <param name="loadCaseId">loadCaseId.</param>
-        /// <param name="name">name.</param>
-        /// <param name="unityCheckMessage">unityCheckMessage.</param>
-        /// <param name="skipped">skipped.</param>
+        /// <param name="checkValue">Check value.</param>
+        /// <param name="checkStatus">Status of check.</param>
+        /// <param name="loadCaseId">Id of Load Case.</param>
+        /// <param name="name">Name.</param>
+        /// <param name="unityCheckMessage">Detail message about overall check.</param>
+        /// <param name="skipped">Whether the check was calculated or not.  If true, the check was not calculated and IdeaRS.OpenModel.Connection.CheckResSummary.CheckValue should be ignored, otherwise false..</param>
         public ConnectionCheckResSummaryIdeaRSOpenModel(double checkValue = default(double), bool checkStatus = default(bool), int loadCaseId = default(int), string name = default(string), string unityCheckMessage = default(string), bool skipped = default(bool))
         {
             this.CheckValue = checkValue;
@@ -51,38 +51,44 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets CheckValue
+        /// Check value
         /// </summary>
+        /// <value>Check value</value>
         [DataMember(Name = "checkValue", EmitDefaultValue = false)]
         public double CheckValue { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckStatus
+        /// Status of check
         /// </summary>
+        /// <value>Status of check</value>
         [DataMember(Name = "checkStatus", EmitDefaultValue = true)]
         public bool CheckStatus { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadCaseId
+        /// Id of Load Case
         /// </summary>
+        /// <value>Id of Load Case</value>
         [DataMember(Name = "loadCaseId", EmitDefaultValue = false)]
         public int LoadCaseId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name
         /// </summary>
+        /// <value>Name</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets UnityCheckMessage
+        /// Detail message about overall check
         /// </summary>
+        /// <value>Detail message about overall check</value>
         [DataMember(Name = "unityCheckMessage", EmitDefaultValue = true)]
         public string UnityCheckMessage { get; set; }
 
         /// <summary>
-        /// Gets or Sets Skipped
+        /// Whether the check was calculated or not.  If true, the check was not calculated and IdeaRS.OpenModel.Connection.CheckResSummary.CheckValue should be ignored, otherwise false.
         /// </summary>
+        /// <value>Whether the check was calculated or not.  If true, the check was not calculated and IdeaRS.OpenModel.Connection.CheckResSummary.CheckValue should be ignored, otherwise false.</value>
         [DataMember(Name = "skipped", EmitDefaultValue = true)]
         public bool Skipped { get; set; }
 

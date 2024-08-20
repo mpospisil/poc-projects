@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class CrossSectionFatigueTypeOfPrestressingSteelIdeaRSOpenModel(str, Enum):
     """
-    CrossSectionFatigueTypeOfPrestressingSteelIdeaRSOpenModel
+    Posttensioned reinforcement type
     """
 
     """

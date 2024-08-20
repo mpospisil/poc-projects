@@ -1,11 +1,12 @@
 # Geometry3DLineSegment3DIdeaRSOpenModel
 
+Represents a line segment in three-dimensional space.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

@@ -17,17 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
 class Geometry2DPoint2DIdeaRSOpenModel(BaseModel):
     """
-    Geometry2DPoint2DIdeaRSOpenModel
+    Represents an x- and y-coordinate pair in two-dimensional space.
     """ # noqa: E501
-    x: Optional[Union[StrictFloat, StrictInt]] = None
-    y: Optional[Union[StrictFloat, StrictInt]] = None
+    x: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the X-coordinate value")
+    y: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the Y-coordinate value")
     __properties: ClassVar[List[str]] = ["x", "y"]
 
     model_config = ConfigDict(

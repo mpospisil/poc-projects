@@ -480,7 +480,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/apply-mapping", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetDefaultTemplateMapping", localVarResponse);
@@ -560,7 +560,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/apply-mapping", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

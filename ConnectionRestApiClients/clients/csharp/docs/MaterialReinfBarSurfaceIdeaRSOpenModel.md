@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.MaterialReinfBarSurfaceIdeaRSOpenModel
+Reinforcement bar surface
 
 ## Properties
 

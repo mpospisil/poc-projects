@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// MaterialMatReinforcementIdeaRSOpenModel
+    /// Material reinforcement base class
     /// </summary>
     [DataContract(Name = "Material_MatReinforcement-IdeaRS_OpenModel")]
     public partial class MaterialMatReinforcementIdeaRSOpenModel : IValidatableObject
@@ -71,17 +71,17 @@ namespace connection_restapi_client_poc.Model
         /// Initializes a new instance of the <see cref="MaterialMatReinforcementIdeaRSOpenModel" /> class.
         /// </summary>
         /// <param name="barSurface">barSurface.</param>
-        /// <param name="name">name.</param>
-        /// <param name="loadFromLibrary">loadFromLibrary.</param>
-        /// <param name="e">e.</param>
-        /// <param name="g">g.</param>
-        /// <param name="poisson">poisson.</param>
-        /// <param name="unitMass">unitMass.</param>
-        /// <param name="specificHeat">specificHeat.</param>
-        /// <param name="thermalExpansion">thermalExpansion.</param>
-        /// <param name="thermalConductivity">thermalConductivity.</param>
-        /// <param name="isDefaultMaterial">isDefaultMaterial.</param>
-        /// <param name="orderInCode">orderInCode.</param>
+        /// <param name="name">Name of material.</param>
+        /// <param name="loadFromLibrary">Load from library - try override properties from library find material by name.</param>
+        /// <param name="e">Young&#39;s modulus.</param>
+        /// <param name="g">Shear modulus.</param>
+        /// <param name="poisson">Poisson&#39;s ratio.</param>
+        /// <param name="unitMass">Unit weight.</param>
+        /// <param name="specificHeat">Specific heat capacity.</param>
+        /// <param name="thermalExpansion">Thermal expansion.</param>
+        /// <param name="thermalConductivity">Thermal conductivity.</param>
+        /// <param name="isDefaultMaterial">True if material is default material from the code.</param>
+        /// <param name="orderInCode">Order of this material in the code.</param>
         /// <param name="stateOfThermalExpansion">stateOfThermalExpansion.</param>
         /// <param name="stateOfThermalConductivity">stateOfThermalConductivity.</param>
         /// <param name="stateOfThermalSpecificHeat">stateOfThermalSpecificHeat.</param>
@@ -91,8 +91,8 @@ namespace connection_restapi_client_poc.Model
         /// <param name="userThermalConductivityCurvature">userThermalConductivityCurvature.</param>
         /// <param name="userThermalExpansionCurvature">userThermalExpansionCurvature.</param>
         /// <param name="userThermalStrainCurvature">userThermalStrainCurvature.</param>
-        /// <param name="userThermalStressStrainCurvature">userThermalStressStrainCurvature.</param>
-        /// <param name="id">id.</param>
+        /// <param name="userThermalStressStrainCurvature">User-defined curvature for thermal stress,strain { Temperature &#x3D; Θ[K], {x &#x3D; ε[-], y &#x3D; σ[Pa]}}.</param>
+        /// <param name="id">Element Id.</param>
         public MaterialMatReinforcementIdeaRSOpenModel(MaterialReinfBarSurfaceIdeaRSOpenModel? barSurface = default(MaterialReinfBarSurfaceIdeaRSOpenModel?), string name = default(string), bool loadFromLibrary = default(bool), double e = default(double), double g = default(double), double poisson = default(double), double unitMass = default(double), double specificHeat = default(double), double thermalExpansion = default(double), double thermalConductivity = default(double), bool isDefaultMaterial = default(bool), int orderInCode = default(int), MaterialThermalExpansionStateIdeaRSOpenModel? stateOfThermalExpansion = default(MaterialThermalExpansionStateIdeaRSOpenModel?), MaterialThermalConductivityStateIdeaRSOpenModel? stateOfThermalConductivity = default(MaterialThermalConductivityStateIdeaRSOpenModel?), MaterialThermalSpecificHeatStateIdeaRSOpenModel? stateOfThermalSpecificHeat = default(MaterialThermalSpecificHeatStateIdeaRSOpenModel?), MaterialThermalStressStrainStateIdeaRSOpenModel? stateOfThermalStressStrain = default(MaterialThermalStressStrainStateIdeaRSOpenModel?), MaterialThermalStrainStateIdeaRSOpenModel? stateOfThermalStrain = default(MaterialThermalStrainStateIdeaRSOpenModel?), Geometry2DPolygon2DIdeaRSOpenModel userThermalSpecificHeatCurvature = default(Geometry2DPolygon2DIdeaRSOpenModel), Geometry2DPolygon2DIdeaRSOpenModel userThermalConductivityCurvature = default(Geometry2DPolygon2DIdeaRSOpenModel), Geometry2DPolygon2DIdeaRSOpenModel userThermalExpansionCurvature = default(Geometry2DPolygon2DIdeaRSOpenModel), Geometry2DPolygon2DIdeaRSOpenModel userThermalStrainCurvature = default(Geometry2DPolygon2DIdeaRSOpenModel), List<Geometry2DTemperatureCurve2DIdeaRSOpenModel> userThermalStressStrainCurvature = default(List<Geometry2DTemperatureCurve2DIdeaRSOpenModel>), int id = default(int))
         {
             this.BarSurface = barSurface;
@@ -121,68 +121,79 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of material
         /// </summary>
+        /// <value>Name of material</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadFromLibrary
+        /// Load from library - try override properties from library find material by name
         /// </summary>
+        /// <value>Load from library - try override properties from library find material by name</value>
         [DataMember(Name = "loadFromLibrary", EmitDefaultValue = true)]
         public bool LoadFromLibrary { get; set; }
 
         /// <summary>
-        /// Gets or Sets E
+        /// Young&#39;s modulus
         /// </summary>
+        /// <value>Young&#39;s modulus</value>
         [DataMember(Name = "e", EmitDefaultValue = false)]
         public double E { get; set; }
 
         /// <summary>
-        /// Gets or Sets G
+        /// Shear modulus
         /// </summary>
+        /// <value>Shear modulus</value>
         [DataMember(Name = "g", EmitDefaultValue = false)]
         public double G { get; set; }
 
         /// <summary>
-        /// Gets or Sets Poisson
+        /// Poisson&#39;s ratio
         /// </summary>
+        /// <value>Poisson&#39;s ratio</value>
         [DataMember(Name = "poisson", EmitDefaultValue = false)]
         public double Poisson { get; set; }
 
         /// <summary>
-        /// Gets or Sets UnitMass
+        /// Unit weight
         /// </summary>
+        /// <value>Unit weight</value>
         [DataMember(Name = "unitMass", EmitDefaultValue = false)]
         public double UnitMass { get; set; }
 
         /// <summary>
-        /// Gets or Sets SpecificHeat
+        /// Specific heat capacity
         /// </summary>
+        /// <value>Specific heat capacity</value>
         [DataMember(Name = "specificHeat", EmitDefaultValue = false)]
         public double SpecificHeat { get; set; }
 
         /// <summary>
-        /// Gets or Sets ThermalExpansion
+        /// Thermal expansion
         /// </summary>
+        /// <value>Thermal expansion</value>
         [DataMember(Name = "thermalExpansion", EmitDefaultValue = false)]
         public double ThermalExpansion { get; set; }
 
         /// <summary>
-        /// Gets or Sets ThermalConductivity
+        /// Thermal conductivity
         /// </summary>
+        /// <value>Thermal conductivity</value>
         [DataMember(Name = "thermalConductivity", EmitDefaultValue = false)]
         public double ThermalConductivity { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsDefaultMaterial
+        /// True if material is default material from the code
         /// </summary>
+        /// <value>True if material is default material from the code</value>
         [DataMember(Name = "isDefaultMaterial", EmitDefaultValue = true)]
         public bool IsDefaultMaterial { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderInCode
+        /// Order of this material in the code
         /// </summary>
+        /// <value>Order of this material in the code</value>
         [DataMember(Name = "orderInCode", EmitDefaultValue = false)]
         public int OrderInCode { get; set; }
 
@@ -211,14 +222,16 @@ namespace connection_restapi_client_poc.Model
         public Geometry2DPolygon2DIdeaRSOpenModel UserThermalStrainCurvature { get; set; }
 
         /// <summary>
-        /// Gets or Sets UserThermalStressStrainCurvature
+        /// User-defined curvature for thermal stress,strain { Temperature &#x3D; Θ[K], {x &#x3D; ε[-], y &#x3D; σ[Pa]}}
         /// </summary>
+        /// <value>User-defined curvature for thermal stress,strain { Temperature &#x3D; Θ[K], {x &#x3D; ε[-], y &#x3D; σ[Pa]}}</value>
         [DataMember(Name = "userThermalStressStrainCurvature", EmitDefaultValue = true)]
         public List<Geometry2DTemperatureCurve2DIdeaRSOpenModel> UserThermalStressStrainCurvature { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Element Id
         /// </summary>
+        /// <value>Element Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

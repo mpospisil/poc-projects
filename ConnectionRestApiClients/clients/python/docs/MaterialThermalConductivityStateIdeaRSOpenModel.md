@@ -1,5 +1,6 @@
 # MaterialThermalConductivityStateIdeaRSOpenModel
 
+Type of curvature - thermal conductivity
 
 ## Enum
 

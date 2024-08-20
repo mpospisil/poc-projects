@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.MaterialThermalConductivityStateIdeaRSOpenModel
+Type of curvature - thermal conductivity
 
 ## Properties
 

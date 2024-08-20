@@ -1,18 +1,19 @@
 # CrossSectionTendonBarIdeaRSOpenModel
 
+Tendon bar
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Tendon Id | [optional] 
 **tendon_type** | [**CrossSectionTendonBarTypeIdeaRSOpenModel**](CrossSectionTendonBarTypeIdeaRSOpenModel.md) |  | [optional] 
 **point** | [**Geometry2DPoint2DIdeaRSOpenModel**](Geometry2DPoint2DIdeaRSOpenModel.md) |  | [optional] 
 **material** | [**ReferenceElementIdeaRSOpenModel**](ReferenceElementIdeaRSOpenModel.md) |  | [optional] 
-**prestressing_order** | **int** |  | [optional] 
-**num_strands_in_tendon** | **int** |  | [optional] 
+**prestressing_order** | **int** | order of tendon prestessing | [optional] 
+**num_strands_in_tendon** | **int** | number of ropes in tendon | [optional] 
 **prestress_reinforcement_type** | [**CrossSectionFatigueTypeOfPrestressingSteelIdeaRSOpenModel**](CrossSectionFatigueTypeOfPrestressingSteelIdeaRSOpenModel.md) |  | [optional] 
-**phase** | **int** |  | [optional] 
+**phase** | **int** | Phase | [optional] 
 **tendon_duct** | [**CrossSectionTendonDuctIdeaRSOpenModel**](CrossSectionTendonDuctIdeaRSOpenModel.md) |  | [optional] 
 
 ## Example

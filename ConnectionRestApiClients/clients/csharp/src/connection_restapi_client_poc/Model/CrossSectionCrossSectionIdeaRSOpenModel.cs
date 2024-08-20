@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// CrossSectionCrossSectionIdeaRSOpenModel
+    /// Cross-section
     /// </summary>
     [DataContract(Name = "CrossSection_CrossSection-IdeaRS_OpenModel")]
     public partial class CrossSectionCrossSectionIdeaRSOpenModel : IValidatableObject
@@ -34,10 +34,10 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CrossSectionCrossSectionIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="crossSectionRotation">crossSectionRotation.</param>
-        /// <param name="isInPrincipal">isInPrincipal.</param>
-        /// <param name="id">id.</param>
+        /// <param name="name">Name of cross-section.</param>
+        /// <param name="crossSectionRotation">Rotation of Cross - Section.</param>
+        /// <param name="isInPrincipal">Specifies that the cross-section is in its principal axis..</param>
+        /// <param name="id">Element Id.</param>
         public CrossSectionCrossSectionIdeaRSOpenModel(string name = default(string), double crossSectionRotation = default(double), bool isInPrincipal = default(bool), int id = default(int))
         {
             this.Name = name;
@@ -47,26 +47,30 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of cross-section
         /// </summary>
+        /// <value>Name of cross-section</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets CrossSectionRotation
+        /// Rotation of Cross - Section
         /// </summary>
+        /// <value>Rotation of Cross - Section</value>
         [DataMember(Name = "crossSectionRotation", EmitDefaultValue = false)]
         public double CrossSectionRotation { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsInPrincipal
+        /// Specifies that the cross-section is in its principal axis.
         /// </summary>
+        /// <value>Specifies that the cross-section is in its principal axis.</value>
         [DataMember(Name = "isInPrincipal", EmitDefaultValue = true)]
         public bool IsInPrincipal { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Element Id
         /// </summary>
+        /// <value>Element Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

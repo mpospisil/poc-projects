@@ -1,5 +1,6 @@
 # MaterialThermalSpecificHeatStateIdeaRSOpenModel
 
+Type of curvature - thermal specific heat
 
 ## Enum
 

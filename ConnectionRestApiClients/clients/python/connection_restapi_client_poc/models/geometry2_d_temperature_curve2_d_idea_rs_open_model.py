@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from connection_restapi_client_poc.models.geometry2_d_point2_d_idea_rs_open_model import Geometry2DPoint2DIdeaRSOpenModel
 from typing import Optional, Set
@@ -25,9 +25,9 @@ from typing_extensions import Self
 
 class Geometry2DTemperatureCurve2DIdeaRSOpenModel(BaseModel):
     """
-    Geometry2DTemperatureCurve2DIdeaRSOpenModel
+    Reperesents a thermal curve.
     """ # noqa: E501
-    points: Optional[List[Geometry2DPoint2DIdeaRSOpenModel]] = None
+    points: Optional[List[Geometry2DPoint2DIdeaRSOpenModel]] = Field(default=None, description="List of polygon points")
     __properties: ClassVar[List[str]] = ["points"]
 
     model_config = ConfigDict(

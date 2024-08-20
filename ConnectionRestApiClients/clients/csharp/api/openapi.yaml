@@ -2034,7 +2034,7 @@ paths:
       summary: Update setup of the project
       tags:
       - Project
-  /api/1/projects/{projectId}/connections/{connectionId}/apply-mapping:
+  /api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping:
     post:
       description: "The result IdeaStatiCa.Api.Connection.Model.TemplateConversionsDefault\
         \ mapping to apply the passed template.\r\nIt can be modified by a user and\
@@ -2145,28 +2145,46 @@ paths:
         connectionId in the project projectId
       tags:
       - Template
+  /api/1/version:
+    get:
+      operationId: GetVersion
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Success
+      tags:
+      - Version
 components:
   schemas:
     Concrete_CheckSection-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Check section base class
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Concrete_ConcreteSetup-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Concrete setup base class
       example:
         id: 0
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Concrete_ProjectDataConcrete-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Project data concrete
       type: object
     ConeBreakoutCheckType-IdeaRS_OpenModel:
+      description: Types of cone breakout checks
       enum:
       - both
       - tension
@@ -2175,6 +2193,7 @@ components:
       type: string
     ConnectionSetup-IdeaRS_OpenModel:
       additionalProperties: false
+      description: ConnectionSetup
       example:
         fatigueSectionOffset: 7.143538047012306
         numElementRhs: 1
@@ -2238,213 +2257,296 @@ components:
       properties:
         steelSetup:
           additionalProperties: false
+          description: ISteelSetup
           type: object
         concreteSetup:
           $ref: '#/components/schemas/Concrete_ConcreteSetup-IdeaRS_OpenModel'
         stopAtLimitStrain:
+          description: Stop analysis when the limit strain is reached.
           type: boolean
         weldEvaluationData:
           $ref: '#/components/schemas/WeldEvaluation-IdeaRS_OpenModel'
         checkDetailing:
+          description: Perform check of bolt positions
           type: boolean
         applyConeBreakoutCheck:
           $ref: '#/components/schemas/ConeBreakoutCheckType-IdeaRS_OpenModel'
         pretensionForceFpc:
+          description: Pretension force fpc = k * fub * As
           format: double
           type: number
         gammaInst:
+          description: Partial safety factor of instalation safety
           format: double
           type: number
         gammaC:
+          description: Partial safety factor of concrete
           format: double
           type: number
         gammaM3:
+          description: Preloaded bolts safety factor
           format: double
           type: number
         anchorLengthForStiffness:
+          description: "Length of anchor to define the anchor stiffness in analysis\
+            \ model, as a multiple of anchor diameter (E A /n * [d])"
           format: int32
           type: integer
         jointBetaFactor:
+          description: Joint coefficient βj - Used for Fjd calculation
           format: double
           type: number
         effectiveAreaStressCoeff:
+          description: Effective area is taken from intersection of stress area and
+            area of joined items according to EN1993-1-8 art. 6.2.5
           format: double
           type: number
         effectiveAreaStressCoeffAISC:
+          description: "Effective area stress coefficient - Concrete loaded area:\
+            \ Stress cut-off is set for AISC"
           format: double
           type: number
         frictionCoefficient:
+          description: Coefficient of friction between base plate and concrete block
           format: double
           type: number
         limitPlasticStrain:
+          description: Limit of plastic strain used in 2D plate element check
           format: double
           type: number
         limitDeformation:
+          description: Limit deformation on closed sections
           format: double
           type: number
         limitDeformationCheck:
+          description: Limit deformation on closed sections check or not
           type: boolean
         analysisGNL:
+          description: Analysis with GNL
           type: boolean
         analysisAllGNL:
+          description: Analysis with All GNL
           type: boolean
         warnPlasticStrain:
+          description: Warning plastic strain
           format: double
           type: number
         warnCheckLevel:
+          description: Warning check level
           format: double
           type: number
         optimalCheckLevel:
+          description: Optimal check level
           format: double
           type: number
         distanceBetweenBolts:
+          description: Limit distance between bolts as a multiple of bolt diameter
           format: double
           type: number
         distanceDiameterBetweenBP:
+          description: Anchor pitch
           format: double
           type: number
         distanceBetweenBoltsEdge:
+          description: Limit distance between bolt and plate edge as a multiple of
+            bolt diameter
           format: double
           type: number
         bearingAngle:
+          description: Load distribution angle of concrete block in calculation of
+            factor Kj
           format: double
           type: number
         decreasingFtrd:
+          description: Decreasing Ftrd of anchors. Worse quality influence
           format: double
           type: number
         bracedSystem:
+          description: Consider the frame system as braced for stiffness calculation.
+            Braced system reduces horizontal displacements.
           type: boolean
         bearingCheck:
+          description: Apply bearing check including αb
           type: boolean
         applyBetapInfluence:
+          description: Apply βp influence in bolt shear resistance. ΕΝ 1993-1-8 chapter
+            3.6.1 (12)
           type: boolean
         memberLengthRatio:
+          description: A multiple of cross-section height to determine the default
+            length of member
           format: double
           type: number
         divisionOfSurfaceOfCHS:
+          description: Number of straight lines to substitute circle of circular tube
+            in analysis model
           format: int32
           type: integer
         divisionOfArcsOfRHS:
+          description: Number of straight lines to substitute corner arc of rectangular
+            tubes in analysis model
           format: int32
           type: integer
         numElement:
+          description: Ratio of length of decisive plate edge and Elements on edge
+            count determines the average size of mesh element
           format: int32
           type: integer
         numberIterations:
+          description: More iterations helps to find better solutions in contact elements
+            but increases calculation time
           format: int32
           type: integer
         mdiv:
+          description: Number of iteration steps to evaluate analysis divergence
           format: int32
           type: integer
         minSize:
+          description: Minimal size of generated finite mesh element
           format: double
           type: number
         maxSize:
+          description: Maximal size of generated finite mesh element
           format: double
           type: number
         numElementRhs:
+          description: Number of mesh elements in RHS height
           format: int32
           type: integer
         numElementPlate:
+          description: Number of mesh elements on plates
           format: int32
           type: integer
         rigidBP:
+          description: True if rigid base plate is considered
           type: boolean
         alphaCC:
+          description: Long-term effect on fcd
           format: double
           type: number
         crackedConcrete:
+          description: True if cracked concrete is considered
           type: boolean
         developedFillers:
+          description: True if developed fillers is considered
           type: boolean
         deformationBoltHole:
+          description: True if bolt hole deformation is considered
           type: boolean
         extensionLengthRationOpenSections:
+          description: ExtensionLengthRationOpenSections
           format: double
           type: number
         extensionLengthRationCloseSections:
+          description: ExtensionLengthRationCloseSections
           format: double
           type: number
         factorPreloadBolt:
+          description: FactorPreloadBolt
           format: double
           type: number
         baseMetalCapacity:
+          description: BaseMetalCapacity
           type: boolean
         applyBearingCheck:
+          description: ApplyBearingCheck
           type: boolean
         frictionCoefficientPbolt:
+          description: Friction factor of slip-resistant joint
           format: double
           type: number
         crtCompCheckIS:
           $ref: '#/components/schemas/CrtCompCheckIS-IdeaRS_OpenModel'
         boltMaxGripLengthCoeff:
+          description: Max value of bolt grip
           format: double
           type: number
         fatigueSectionOffset:
+          description: Fatigue section Offset = FatigueSectionOffset x Legsize
           format: double
           type: number
         condensedElementLengthFactor:
+          description: Condensed element length factor (CEF). Condensed beam legth
+            = maxCssSize * CEF
           format: double
           type: number
         gammaMu:
+          description: Partial safety factor for Horizontal tying
           format: double
           type: number
         hssLimitPlasticStrain:
+          description: Limit plastic strain for high strength steel
           format: double
           type: number
       type: object
     Connection_AnchorGrid-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Data of the anchor grid
       properties:
         concreteBlock:
           $ref: '#/components/schemas/Connection_ConcreteBlock-IdeaRS_OpenModel'
         anchorType:
           $ref: '#/components/schemas/Parameters_AnchorType-IdeaRS_OpenModel'
         washerSize:
+          description: Washer Size used if AnchorType is washer
           format: double
           type: number
         boltAssemblyRef:
           nullable: true
           type: string
         id:
+          description: Unique Id of the bolt grid
           format: int32
           type: integer
         isAnchor:
+          description: Is Anchor
           type: boolean
         anchorLen:
+          description: Anchor lenght
           format: double
           type: number
         holeDiameter:
+          description: The diameter of the hole
           format: double
           type: number
         diameter:
+          description: The diameter of bolt
           format: double
           type: number
         headDiameter:
+          description: The head diameter of bolt
           format: double
           type: number
         diagonalHeadDiameter:
+          description: The Diagonal Head Diameter of bolt
           format: double
           type: number
         headHeight:
+          description: The Head Height of bolt
           format: double
           type: number
         boreHole:
+          description: The BoreHole of bolt
           format: double
           type: number
         tensileStressArea:
+          description: The Tensile Stress Area of bolt
           format: double
           type: number
         nutThickness:
+          description: The Nut Thickness of bolt
           format: double
           type: number
         boltAssemblyName:
+          description: The description of the bolt assembly
           nullable: true
           type: string
         standard:
+          description: The standard of the bolt assembly
           nullable: true
           type: string
         material:
+          description: The material of the bolt assembly
           nullable: true
           type: string
         origin:
@@ -2456,82 +2558,108 @@ components:
         axisZ:
           $ref: '#/components/schemas/Geometry3D_Vector3D-IdeaRS_OpenModel'
         positions:
+          description: Positions of holes in the local coodinate system of the bolt
+            grid
           items:
             $ref: '#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         connectedPlates:
+          description: Identifiers of the connected plates
           items:
             format: int32
             type: integer
           nullable: true
           type: array
         connectedPartIds:
+          description: Id of the weld
           items:
             type: string
           nullable: true
           type: array
         shearInThread:
+          description: "Indicates, whether a shear plane is in the thread of a bolt."
           type: boolean
         boltInteraction:
           $ref: '#/components/schemas/Parameters_BoltShearType-IdeaRS_OpenModel'
       type: object
     Connection_BeamData-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Provides data of the connected beam
       properties:
         name:
+          description: Name of the beam
           nullable: true
           type: string
         plates:
+          description: Plates of the beam
           items:
             $ref: '#/components/schemas/Connection_PlateData-IdeaRS_OpenModel'
           nullable: true
           type: array
         crossSectionType:
+          description: Type of cross section
           nullable: true
           type: string
         mprlName:
+          description: MPRL name of beam
           nullable: true
           type: string
         originalModelId:
+          description: "Get or set the identification in the original model\r\nIn\
+            \ the case of the imported connection from another application"
           nullable: true
           type: string
         cuts:
+          description: Cuts on the beam
           items:
             $ref: '#/components/schemas/Connection_CutData-IdeaRS_OpenModel'
           nullable: true
           type: array
         isAdded:
+          description: Is added beam
           type: boolean
         addedMemberLength:
+          description: Added beam lenght
           format: double
           type: number
         isNegativeObject:
+          description: Is negative object
           type: boolean
         addedMember:
           $ref: '#/components/schemas/ReferenceElement-IdeaRS_OpenModel'
         mirrorY:
+          description: Mirror by Y
           type: boolean
         refLineInCenterOfGravity:
+          description: The reference line of the member is in the center of gravity
+            of the cross-section
           type: boolean
         isBearingMember:
+          description: Is beam bearing member
           type: boolean
         autoAddCutByWorkplane:
+          description: Automaticali add cut by workplane if it not defined
           type: boolean
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Connection_BendData-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Provides data of bend
       properties:
         plate1Id:
+          description: First plate
           format: int32
           type: integer
         plate2Id:
+          description: Second plate
           format: int32
           type: integer
         radius:
+          description: Radius of bend
           format: double
           type: number
         point1OfSideBoundary1:
@@ -2547,49 +2675,64 @@ components:
       type: object
     Connection_BoltGrid-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Data of the bolt grid
       properties:
         boltAssemblyRef:
           nullable: true
           type: string
         id:
+          description: Unique Id of the bolt grid
           format: int32
           type: integer
         isAnchor:
+          description: Is Anchor
           type: boolean
         anchorLen:
+          description: Anchor lenght
           format: double
           type: number
         holeDiameter:
+          description: The diameter of the hole
           format: double
           type: number
         diameter:
+          description: The diameter of bolt
           format: double
           type: number
         headDiameter:
+          description: The head diameter of bolt
           format: double
           type: number
         diagonalHeadDiameter:
+          description: The Diagonal Head Diameter of bolt
           format: double
           type: number
         headHeight:
+          description: The Head Height of bolt
           format: double
           type: number
         boreHole:
+          description: The BoreHole of bolt
           format: double
           type: number
         tensileStressArea:
+          description: The Tensile Stress Area of bolt
           format: double
           type: number
         nutThickness:
+          description: The Nut Thickness of bolt
           format: double
           type: number
         boltAssemblyName:
+          description: The description of the bolt assembly
           nullable: true
           type: string
         standard:
+          description: The standard of the bolt assembly
           nullable: true
           type: string
         material:
+          description: The material of the bolt assembly
           nullable: true
           type: string
         origin:
@@ -2601,28 +2744,34 @@ components:
         axisZ:
           $ref: '#/components/schemas/Geometry3D_Vector3D-IdeaRS_OpenModel'
         positions:
+          description: Positions of holes in the local coodinate system of the bolt
+            grid
           items:
             $ref: '#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         connectedPlates:
+          description: Identifiers of the connected plates
           items:
             format: int32
             type: integer
           nullable: true
           type: array
         connectedPartIds:
+          description: Id of the weld
           items:
             type: string
           nullable: true
           type: array
         shearInThread:
+          description: "Indicates, whether a shear plane is in the thread of a bolt."
           type: boolean
         boltInteraction:
           $ref: '#/components/schemas/Parameters_BoltShearType-IdeaRS_OpenModel'
       type: object
     Connection_BucklingRes-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Results of the buckling analysis
       example:
         shape: 1
         loadCaseId: 1
@@ -2632,46 +2781,57 @@ components:
           format: int32
           type: integer
         shape:
+          description: Shape lc calculated by solver
           format: int32
           type: integer
         factor:
+          description: Buckling factor
           format: double
           type: number
       type: object
     Connection_CheckResAnchor-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Check value for Anchor
       example:
         unityCheck: 2.027123023002322
         checkStatus: true
         name: name
       properties:
         name:
+          description: Name
           nullable: true
           type: string
         unityCheck:
+          description: Unity Check
           format: double
           type: number
         checkStatus:
+          description: Status of the Check
           type: boolean
       type: object
     Connection_CheckResBolt-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Check value for Bolts
       example:
         unityCheck: 3.616076749251911
         checkStatus: true
         name: name
       properties:
         name:
+          description: Name
           nullable: true
           type: string
         unityCheck:
+          description: Unity Check
           format: double
           type: number
         checkStatus:
+          description: Status of the Check
           type: boolean
       type: object
     Connection_CheckResConcreteBlock-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Check value for Concrete Block
       example:
         unityCheck: 4.145608029883936
         checkStatus: true
@@ -2679,19 +2839,24 @@ components:
         loadCaseId: 7
       properties:
         name:
+          description: Name of Concrete Block
           nullable: true
           type: string
         unityCheck:
+          description: Unity Check
           format: double
           type: number
         checkStatus:
+          description: Status of the Check
           type: boolean
         loadCaseId:
+          description: Id of Load Case
           format: int32
           type: integer
       type: object
     Connection_CheckResPlate-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Check value for Plate
       example:
         checkStatus: true
         maxStrain: 6.027456183070403
@@ -2703,20 +2868,26 @@ components:
         - 5
       properties:
         name:
+          description: Name of Plate
           nullable: true
           type: string
         checkStatus:
+          description: Status of the Check
           type: boolean
         loadCaseId:
+          description: Id of Load Case
           format: int32
           type: integer
         maxStrain:
+          description: Max Strain
           format: double
           type: number
         maxStress:
+          description: Max Stress
           format: double
           type: number
         items:
+          description: In case of presentation of groups plates (uncoiled beams)
           items:
             format: int32
             type: integer
@@ -2725,6 +2896,7 @@ components:
       type: object
     Connection_CheckResSummary-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Check summary
       example:
         unityCheckMessage: unityCheckMessage
         checkStatus: true
@@ -2734,24 +2906,33 @@ components:
         skipped: true
       properties:
         checkValue:
+          description: Check value
           format: double
           type: number
         checkStatus:
+          description: Status of check
           type: boolean
         loadCaseId:
+          description: Id of Load Case
           format: int32
           type: integer
         name:
+          description: Name
           nullable: true
           type: string
         unityCheckMessage:
+          description: Detail message about overall check
           nullable: true
           type: string
         skipped:
+          description: "Whether the check was calculated or not.\r\nIf true, the check\
+            \ was not calculated and IdeaRS.OpenModel.Connection.CheckResSummary.CheckValue\
+            \ should be ignored, otherwise false."
           type: boolean
       type: object
     Connection_CheckResWeld-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Check value for Weld
       example:
         unityCheck: 2.3021358869347655
         checkStatus: true
@@ -2763,20 +2944,26 @@ components:
         - 9
       properties:
         name:
+          description: Name of Weld
           nullable: true
           type: string
         id:
+          description: Unique id of weld
           format: int32
           type: integer
         unityCheck:
+          description: Unity Check Stress
           format: double
           type: number
         checkStatus:
+          description: Status of the Check
           type: boolean
         loadCaseId:
+          description: Id of Load Case
           format: int32
           type: integer
         items:
+          description: In case of presentation of groups plates (uncoiled beams)
           items:
             format: int32
             type: integer
@@ -2785,38 +2972,49 @@ components:
       type: object
     Connection_ConcreteBlock-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Data of concrete block
       properties:
         lenght:
+          description: Lenght of ConcreteBlock
           format: double
           type: number
         width:
+          description: Width of ConcreteBlock
           format: double
           type: number
         height:
+          description: Height of ConcreteBlock
           format: double
           type: number
         material:
+          description: Material of ConcreteBlock
           nullable: true
           type: string
       type: object
     Connection_ConcreteBlockData-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Provides data of the single concrete block
       properties:
         id:
+          description: Plate unique ID
           format: int32
           type: integer
         name:
+          description: Name of the concrete block
           nullable: true
           type: string
         depth:
+          description: Depth of the concrete block
           format: double
           type: number
         material:
+          description: Name of the material
           nullable: true
           type: string
         center:
           $ref: '#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel'
         outlinePoints:
+          description: Outline points
           items:
             $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
           nullable: true
@@ -2830,14 +3028,18 @@ components:
         axisZ:
           $ref: '#/components/schemas/Geometry3D_Vector3D-IdeaRS_OpenModel'
         region:
+          description: Geometry of the concrete block in svg format
           nullable: true
           type: string
         originalModelId:
+          description: "Get or set the identification in the original model\r\nIn\
+            \ the case of the imported connection from another application"
           nullable: true
           type: string
       type: object
     Connection_ConnectionCheckRes-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Results for connection in project
       example:
         checkResPlate:
         - checkStatus: true
@@ -2927,47 +3129,57 @@ components:
         id: 6
       properties:
         checkResSummary:
+          description: List of CheckResSummary
           items:
             $ref: '#/components/schemas/Connection_CheckResSummary-IdeaRS_OpenModel'
           nullable: true
           type: array
         checkResPlate:
+          description: List of check results for plates
           items:
             $ref: '#/components/schemas/Connection_CheckResPlate-IdeaRS_OpenModel'
           nullable: true
           type: array
         checkResWeld:
+          description: List of check results for welds
           items:
             $ref: '#/components/schemas/Connection_CheckResWeld-IdeaRS_OpenModel'
           nullable: true
           type: array
         checkResBolt:
+          description: List of check results for bolts
           items:
             $ref: '#/components/schemas/Connection_CheckResBolt-IdeaRS_OpenModel'
           nullable: true
           type: array
         checkResAnchor:
+          description: List of check results for anchors
           items:
             $ref: '#/components/schemas/Connection_CheckResAnchor-IdeaRS_OpenModel'
           nullable: true
           type: array
         checkResConcreteBlock:
+          description: List of check results for concrete blocks
           items:
             $ref: '#/components/schemas/Connection_CheckResConcreteBlock-IdeaRS_OpenModel'
           nullable: true
           type: array
         bucklingResults:
+          description: List of results of buckling analysis
           items:
             $ref: '#/components/schemas/Connection_BucklingRes-IdeaRS_OpenModel'
           nullable: true
           type: array
         name:
+          description: Name of connection
           nullable: true
           type: string
         connectionID:
+          description: Guid of connection
           format: uuid
           type: string
         id:
+          description: Integer Id of connection
           format: int32
           type: integer
         messages:
@@ -2975,46 +3187,56 @@ components:
       type: object
     Connection_ConnectionData-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Provides data of the connection
       properties:
         conenctionPointId:
+          description: Connection Point Id
           format: int32
           type: integer
         beams:
+          description: Connected beams
           items:
             $ref: '#/components/schemas/Connection_BeamData-IdeaRS_OpenModel'
           nullable: true
           type: array
         plates:
+          description: Plates of the connection
           items:
             $ref: '#/components/schemas/Connection_PlateData-IdeaRS_OpenModel'
           nullable: true
           type: array
         foldedPlates:
+          description: Folded plate of the connection
           items:
             $ref: '#/components/schemas/Connection_FoldedPlateData-IdeaRS_OpenModel'
           nullable: true
           type: array
         boltGrids:
+          description: Bolt grids which belongs to the connection
           items:
             $ref: '#/components/schemas/Connection_BoltGrid-IdeaRS_OpenModel'
           nullable: true
           type: array
         anchorGrids:
+          description: Anchor grids which belongs to the connection
           items:
             $ref: '#/components/schemas/Connection_AnchorGrid-IdeaRS_OpenModel'
           nullable: true
           type: array
         welds:
+          description: Welds of the connection
           items:
             $ref: '#/components/schemas/Connection_WeldData-IdeaRS_OpenModel'
           nullable: true
           type: array
         concreteBlocks:
+          description: ConcreteBlocksof the connection
           items:
             $ref: '#/components/schemas/Connection_ConcreteBlockData-IdeaRS_OpenModel'
           nullable: true
           type: array
         cutBeamByBeams:
+          description: cut beam by beams
           items:
             $ref: '#/components/schemas/Connection_CutBeamByBeamData-IdeaRS_OpenModel'
           nullable: true
@@ -3022,26 +3244,36 @@ components:
       type: object
     Connection_ConnectionPoint-IdeaRS_OpenModel:
       additionalProperties: false
+      description: ConnectedDesignMemeber
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Connection_CutBeamByBeamData-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Provides data of the cut objec by object
       properties:
+        name:
+          description: Name of the cut
+          nullable: true
+          type: string
         modifiedObject:
           $ref: '#/components/schemas/ReferenceElement-IdeaRS_OpenModel'
         cuttingObject:
           $ref: '#/components/schemas/ReferenceElement-IdeaRS_OpenModel'
         isWeld:
+          description: is cut welded
           type: boolean
         weldThickness:
+          description: Thickness of the weld - value 0 = recommended size
           format: double
           type: number
         weldType:
           $ref: '#/components/schemas/Connection_WeldType-IdeaRS_OpenModel'
         offset:
+          description: Offset
           format: double
           type: number
         method:
@@ -3052,9 +3284,14 @@ components:
           $ref: '#/components/schemas/Connection_DistanceComparison-IdeaRS_OpenModel'
         cutPart:
           $ref: '#/components/schemas/Connection_CutPart-IdeaRS_OpenModel'
+        extendBeforeCut:
+          description: Extend before cut - for cuts where user can decide if modified
+            beam will be extended or not
+          type: boolean
       type: object
     Connection_CutData-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Provides data of the cut beam
       properties:
         planePoint:
           $ref: '#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel'
@@ -3063,10 +3300,12 @@ components:
         direction:
           $ref: '#/components/schemas/Connection_CutOrientation-IdeaRS_OpenModel'
         offset:
+          description: Offset - shift of cut
           format: double
           type: number
       type: object
     Connection_CutMethod-IdeaRS_OpenModel:
+      description: Cut method
       enum:
       - boundingBox
       - surface
@@ -3074,6 +3313,7 @@ components:
       - surfaceAll
       type: string
     Connection_CutOrientation-IdeaRS_OpenModel:
+      description: Represents the type of the cut
       enum:
       - default
       - parallel
@@ -3085,6 +3325,8 @@ components:
       - end
       type: string
     Connection_DistanceComparison-IdeaRS_OpenModel:
+      description: Represents the result of comparison of distances of two object
+        from the same point
       enum:
       - closer
       - farther
@@ -3092,13 +3334,16 @@ components:
       type: string
     Connection_FoldedPlateData-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Provides data of the folded plate
       properties:
         plates:
+          description: List of plates belong to folded plate
           items:
             $ref: '#/components/schemas/Connection_PlateData-IdeaRS_OpenModel'
           nullable: true
           type: array
         bends:
+          description: List of bends connected plates of foldedplate
           items:
             $ref: '#/components/schemas/Connection_BendData-IdeaRS_OpenModel'
           nullable: true
@@ -3106,17 +3351,22 @@ components:
       type: object
     Connection_PlateData-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Provides data of the single plate
       properties:
         name:
+          description: Name of the plate
           nullable: true
           type: string
         thickness:
+          description: Thickness of the plate
           format: double
           type: number
         material:
+          description: Name of the material
           nullable: true
           type: string
         outlinePoints:
+          description: Outline points
           items:
             $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
           nullable: true
@@ -3130,32 +3380,43 @@ components:
         axisZ:
           $ref: '#/components/schemas/Geometry3D_Vector3D-IdeaRS_OpenModel'
         region:
+          description: Geometry of the plate in svg format. In next version will be
+            mark as OBSOLETE! New use property Geometry
           nullable: true
           type: string
         geometry:
           $ref: '#/components/schemas/Geometry2D_Region2D-IdeaRS_OpenModel'
         originalModelId:
+          description: "Get or set the identification in the original model\r\nIn\
+            \ the case of the imported connection from another application"
           nullable: true
           type: string
         isNegativeObject:
+          description: Is negative object
           type: boolean
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Connection_WeldData-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Provides data of the single weld
       properties:
         id:
+          description: Id of the weld
           format: int32
           type: integer
         name:
+          description: Name of the weld
           nullable: true
           type: string
         thickness:
+          description: Thickness of the weld
           format: double
           type: number
         material:
+          description: Name of the material
           nullable: true
           type: string
         weldMaterial:
@@ -3163,6 +3424,7 @@ components:
         weldType:
           $ref: '#/components/schemas/Connection_WeldType-IdeaRS_OpenModel'
         connectedPartIds:
+          description: Id of the weld
           items:
             type: string
           nullable: true
@@ -3173,6 +3435,7 @@ components:
           $ref: '#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel'
       type: object
     Connection_WeldType-IdeaRS_OpenModel:
+      description: enum of weld types
       enum:
       - notSpecified
       - fillet
@@ -3187,20 +3450,26 @@ components:
       type: string
     CrossSection_CrossSection-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Cross-section
       properties:
         name:
+          description: Name of cross-section
           nullable: true
           type: string
         crossSectionRotation:
+          description: Rotation of Cross - Section
           format: double
           type: number
         isInPrincipal:
+          description: Specifies that the cross-section is in its principal axis.
           type: boolean
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     CrossSection_FatigueTypeOfPrestressingSteel-IdeaRS_OpenModel:
+      description: Posttensioned reinforcement type
       enum:
       - postTensioningSingleStrandsInPlasticDucts
       - postTensioningStraightTendonsOrCurvedTendonsInPlasticDucts
@@ -3210,16 +3479,19 @@ components:
       - externalTendon
       type: string
     CrossSection_MaterialDuct-IdeaRS_OpenModel:
+      description: Tendon ducts material type
       enum:
       - metal
       - plastic
       type: string
     CrossSection_ReinforcedBar-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Reinforced bar
       properties:
         point:
           $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
         diameter:
+          description: Diameter
           format: double
           type: number
         material:
@@ -3227,66 +3499,83 @@ components:
       type: object
     CrossSection_ReinforcedCrossSection-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Reinforced cross-section
       properties:
         name:
+          description: Name of cross-section
           nullable: true
           type: string
         crossSection:
           $ref: '#/components/schemas/ReferenceElement-IdeaRS_OpenModel'
         bars:
+          description: Reinforced bars
           items:
             $ref: '#/components/schemas/CrossSection_ReinforcedBar-IdeaRS_OpenModel'
           nullable: true
           type: array
         stirrups:
+          description: Stirrups
           items:
             $ref: '#/components/schemas/CrossSection_Stirrup-IdeaRS_OpenModel'
           nullable: true
           type: array
         tendonBars:
+          description: Tendon bars
           items:
             $ref: '#/components/schemas/CrossSection_TendonBar-IdeaRS_OpenModel'
           nullable: true
           type: array
         tendonDucts:
+          description: Tendon ducts
           items:
             $ref: '#/components/schemas/CrossSection_TendonDuct-IdeaRS_OpenModel'
           nullable: true
           type: array
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     CrossSection_Stirrup-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Stirrup
       properties:
         geometry:
           $ref: '#/components/schemas/Geometry2D_PolyLine2D-IdeaRS_OpenModel'
         diameter:
+          description: Diameter
           format: double
           type: number
         material:
           $ref: '#/components/schemas/ReferenceElement-IdeaRS_OpenModel'
         anchorageLenght:
+          description: Anchorage Lenght
           format: double
           type: number
         diameterOfMandrel:
+          description: Radius of stirrup mandrel - refering to stirrup axis
           format: double
           type: number
         isClosed:
+          description: Open / Closed stirrup
           type: boolean
         distance:
+          description: Longitudinal distance between stirrups
           format: double
           type: number
         shearCheck:
+          description: "Status of shear check, not possible for detailing stirrup"
           type: boolean
         torsionCheck:
+          description: "Status of torsion check, not possible for detailing stirrup"
           type: boolean
       type: object
     CrossSection_TendonBar-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Tendon bar
       properties:
         id:
+          description: Tendon Id
           format: int32
           type: integer
         tendonType:
@@ -3296,28 +3585,34 @@ components:
         material:
           $ref: '#/components/schemas/ReferenceElement-IdeaRS_OpenModel'
         prestressingOrder:
+          description: order of tendon prestessing
           format: int32
           type: integer
         numStrandsInTendon:
+          description: number of ropes in tendon
           format: int32
           type: integer
         prestressReinforcementType:
           $ref: '#/components/schemas/CrossSection_FatigueTypeOfPrestressingSteel-IdeaRS_OpenModel'
         phase:
+          description: Phase
           format: int32
           type: integer
         tendonDuct:
           $ref: '#/components/schemas/CrossSection_TendonDuct-IdeaRS_OpenModel'
       type: object
     CrossSection_TendonBarType-IdeaRS_OpenModel:
+      description: Tendon bar type
       enum:
       - posttensioned
       - pretensioned
       type: string
     CrossSection_TendonDuct-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Tendon duct
       properties:
         id:
+          description: Tendon duct Id
           format: int32
           type: integer
         point:
@@ -3325,12 +3620,15 @@ components:
         materialDuct:
           $ref: '#/components/schemas/CrossSection_MaterialDuct-IdeaRS_OpenModel'
         isDebondingTube:
+          description: "rue for debonding tubes, false for tendon ducts"
           type: boolean
         diameter:
+          description: Diameter
           format: double
           type: number
       type: object
     CrtCompCheckIS-IdeaRS_OpenModel:
+      description: CRT IS check
       enum:
       - iS800_Cl_7_4
       - iS456_Cl_34_4
@@ -3344,111 +3642,142 @@ components:
       type: string
     Detail_Anchor3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of Anchor 3D in IDEA StatiCa Detail
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_BasePlate3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of Base Plate 3D in IDEA StatiCa Detail
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_Beam-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of 1D member in IDEA StatiCa Detail
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_DappedEnd-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of dapped end in IDEA StatiCa Detail
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_ISDModel-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Model of IDEA StatiCa Detail
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_Loading_DetailCombination-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Load case
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_Loading_DetailLoadCase-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Load case
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_Opening-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of opening in IDEA StatiCa Detail
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_PatchDevice-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Abstract class of patch support/load
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_Reinforcement-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Base class representing reinforcement in IDEA StatiCa Detail
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_SolidBlock3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of Solid Block in IDEA StatiCa Detail
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_SurfaceSupport3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of Surface Support 3D in IDEA StatiCa Detail
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Detail_Wall-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of Wall in IDEA StatiCa Detail
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Geometry2D_Point2D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents an x- and y-coordinate pair in two-dimensional space.
       properties:
         x:
+          description: Gets or sets the X-coordinate value
           format: double
           type: number
         "y":
+          description: Gets or sets the Y-coordinate value
           format: double
           type: number
       type: object
     Geometry2D_PolyLine2D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a polyline in two-dimensional space.
       properties:
         startPoint:
           $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
         segments:
+          description: Gets segments of `PolyLine2D`.
           items:
             $ref: '#/components/schemas/Geometry2D_Segment2D-IdeaRS_OpenModel'
           nullable: true
@@ -3456,8 +3785,10 @@ components:
       type: object
     Geometry2D_Polygon2D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a polygon in two-dimensional space.
       properties:
         points:
+          description: List of polygon points
           items:
             $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
           nullable: true
@@ -3465,10 +3796,13 @@ components:
       type: object
     Geometry2D_Region2D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a region in two-dimensional space included outline (border)
+        and openings.
       properties:
         outline:
           $ref: '#/components/schemas/Geometry2D_PolyLine2D-IdeaRS_OpenModel'
         openings:
+          description: Gets or sets the list of openings in the Region2D.
           items:
             $ref: '#/components/schemas/Geometry2D_PolyLine2D-IdeaRS_OpenModel'
           nullable: true
@@ -3476,14 +3810,17 @@ components:
       type: object
     Geometry2D_Segment2D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a segment in two-dimensional space.
       properties:
         endPoint:
           $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
       type: object
     Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Reperesents a thermal curve.
       properties:
         points:
+          description: List of polygon points
           items:
             $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
           nullable: true
@@ -3491,65 +3828,85 @@ components:
       type: object
     Geometry3D_ArcSegment3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents an arc segment in three-dimensional space.
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Geometry3D_LineSegment3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a line segment in three-dimensional space.
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Geometry3D_Point3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: "Represents an x- , y- an z-coordinates in three-dimensional space."
       properties:
         x:
+          description: Gets or sets the X-coordinate value
           format: double
           type: number
         "y":
+          description: Gets or sets the Y-coordinate value
           format: double
           type: number
         z:
+          description: Gets or sets the Z-coordinate value
           format: double
           type: number
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Geometry3D_PointOnLine3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a Point dependent on the line in three-dimensional space.
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Geometry3D_PolyLine3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a polyline in three-dimensional space.
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Geometry3D_Region3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a region in three-dimensional space included outline
+        (border) and openings.
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Geometry3D_Vector3D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a vector in three-dimensional space.
       properties:
         x:
+          description: Gets or sets the X-dirrection value
           format: double
           type: number
         "y":
+          description: Gets or sets the Y-dirrection value
           format: double
           type: number
         z:
+          description: Gets or sets the Z-dirrection value
           format: double
           type: number
       type: object
@@ -4204,113 +4561,149 @@ components:
       type: object
     Loading_CombiInput-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Basic class combination
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Loading_LoadCase-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Load case in the model
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Loading_LoadGroup-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Load group
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Loading_LoadInPoint-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Concentrated load
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Loading_LoadOnLine-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Load on line
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Loading_LoadOnSurface-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Load on surface
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Loading_PointLoadOnLine-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Load in specific point on line
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Loading_ResultClass-IdeaRS_OpenModel:
       additionalProperties: false
+      description: ResultClass object
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Loading_Settlement-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Settlement of point support
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Loading_StrainLoadOnLine-IdeaRS_OpenModel:
       additionalProperties: false
+      description: "Linearly distributed generalized strain load along a line.\r\n\
+        Strain load is in local coordinate system and there are no possible eccentricities."
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Loading_TemperatureLoadOnLine-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Temperature load on line
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Material_MatConcrete-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Material concrete base class
       properties:
         name:
+          description: Name of material
           nullable: true
           type: string
         loadFromLibrary:
+          description: Load from library - try override properties from library find
+            material by name
           type: boolean
         e:
+          description: Young's modulus
           format: double
           type: number
         g:
+          description: Shear modulus
           format: double
           type: number
         poisson:
+          description: Poisson's ratio
           format: double
           type: number
         unitMass:
+          description: Unit weight
           format: double
           type: number
         specificHeat:
+          description: Specific heat capacity
           format: double
           type: number
         thermalExpansion:
+          description: Thermal expansion
           format: double
           type: number
         thermalConductivity:
+          description: Thermal conductivity
           format: double
           type: number
         isDefaultMaterial:
+          description: True if material is default material from the code
           type: boolean
         orderInCode:
+          description: Order of this material in the code
           format: int32
           type: integer
         stateOfThermalExpansion:
@@ -4332,58 +4725,78 @@ components:
         userThermalStrainCurvature:
           $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
         userThermalStressStrainCurvature:
+          description: "User-defined curvature for thermal stress,strain { Temperature\
+            \ = Θ[K], {x = ε[-], y = σ[Pa]}}"
           items:
             $ref: '#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel'
           nullable: true
           type: array
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Material_MatPrestressSteel-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Material prestressing steel base class
       properties:
         diameter:
+          description: Diameter
           format: double
           type: number
         area:
+          description: Area
           format: double
           type: number
         numberOfWires:
+          description: number of wires in strand
           format: int32
           type: integer
         equivalentDiameter:
+          description: Equivalent diameter
           format: double
           type: number
         name:
+          description: Name of material
           nullable: true
           type: string
         loadFromLibrary:
+          description: Load from library - try override properties from library find
+            material by name
           type: boolean
         e:
+          description: Young's modulus
           format: double
           type: number
         g:
+          description: Shear modulus
           format: double
           type: number
         poisson:
+          description: Poisson's ratio
           format: double
           type: number
         unitMass:
+          description: Unit weight
           format: double
           type: number
         specificHeat:
+          description: Specific heat capacity
           format: double
           type: number
         thermalExpansion:
+          description: Thermal expansion
           format: double
           type: number
         thermalConductivity:
+          description: Thermal conductivity
           format: double
           type: number
         isDefaultMaterial:
+          description: True if material is default material from the code
           type: boolean
         orderInCode:
+          description: Order of this material in the code
           format: int32
           type: integer
         stateOfThermalExpansion:
@@ -4405,48 +4818,64 @@ components:
         userThermalStrainCurvature:
           $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
         userThermalStressStrainCurvature:
+          description: "User-defined curvature for thermal stress,strain { Temperature\
+            \ = Θ[K], {x = ε[-], y = σ[Pa]}}"
           items:
             $ref: '#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel'
           nullable: true
           type: array
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Material_MatReinforcement-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Material reinforcement base class
       properties:
         barSurface:
           $ref: '#/components/schemas/Material_ReinfBarSurface-IdeaRS_OpenModel'
         name:
+          description: Name of material
           nullable: true
           type: string
         loadFromLibrary:
+          description: Load from library - try override properties from library find
+            material by name
           type: boolean
         e:
+          description: Young's modulus
           format: double
           type: number
         g:
+          description: Shear modulus
           format: double
           type: number
         poisson:
+          description: Poisson's ratio
           format: double
           type: number
         unitMass:
+          description: Unit weight
           format: double
           type: number
         specificHeat:
+          description: Specific heat capacity
           format: double
           type: number
         thermalExpansion:
+          description: Thermal expansion
           format: double
           type: number
         thermalConductivity:
+          description: Thermal conductivity
           format: double
           type: number
         isDefaultMaterial:
+          description: True if material is default material from the code
           type: boolean
         orderInCode:
+          description: Order of this material in the code
           format: int32
           type: integer
         stateOfThermalExpansion:
@@ -4468,46 +4897,62 @@ components:
         userThermalStrainCurvature:
           $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
         userThermalStressStrainCurvature:
+          description: "User-defined curvature for thermal stress,strain { Temperature\
+            \ = Θ[K], {x = ε[-], y = σ[Pa]}}"
           items:
             $ref: '#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel'
           nullable: true
           type: array
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Material_MatSteel-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Material steel base class
       properties:
         name:
+          description: Name of material
           nullable: true
           type: string
         loadFromLibrary:
+          description: Load from library - try override properties from library find
+            material by name
           type: boolean
         e:
+          description: Young's modulus
           format: double
           type: number
         g:
+          description: Shear modulus
           format: double
           type: number
         poisson:
+          description: Poisson's ratio
           format: double
           type: number
         unitMass:
+          description: Unit weight
           format: double
           type: number
         specificHeat:
+          description: Specific heat capacity
           format: double
           type: number
         thermalExpansion:
+          description: Thermal expansion
           format: double
           type: number
         thermalConductivity:
+          description: Thermal conductivity
           format: double
           type: number
         isDefaultMaterial:
+          description: True if material is default material from the code
           type: boolean
         orderInCode:
+          description: Order of this material in the code
           format: int32
           type: integer
         stateOfThermalExpansion:
@@ -4529,46 +4974,62 @@ components:
         userThermalStrainCurvature:
           $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
         userThermalStressStrainCurvature:
+          description: "User-defined curvature for thermal stress,strain { Temperature\
+            \ = Θ[K], {x = ε[-], y = σ[Pa]}}"
           items:
             $ref: '#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel'
           nullable: true
           type: array
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Material_MatWelding-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Welding material base class
       properties:
         name:
+          description: Name of material
           nullable: true
           type: string
         loadFromLibrary:
+          description: Load from library - try override properties from library find
+            material by name
           type: boolean
         e:
+          description: Young's modulus
           format: double
           type: number
         g:
+          description: Shear modulus
           format: double
           type: number
         poisson:
+          description: Poisson's ratio
           format: double
           type: number
         unitMass:
+          description: Unit weight
           format: double
           type: number
         specificHeat:
+          description: Specific heat capacity
           format: double
           type: number
         thermalExpansion:
+          description: Thermal expansion
           format: double
           type: number
         thermalConductivity:
+          description: Thermal conductivity
           format: double
           type: number
         isDefaultMaterial:
+          description: True if material is default material from the code
           type: boolean
         orderInCode:
+          description: Order of this material in the code
           format: int32
           type: integer
         stateOfThermalExpansion:
@@ -4590,50 +5051,60 @@ components:
         userThermalStrainCurvature:
           $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
         userThermalStressStrainCurvature:
+          description: "User-defined curvature for thermal stress,strain { Temperature\
+            \ = Θ[K], {x = ε[-], y = σ[Pa]}}"
           items:
             $ref: '#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel'
           nullable: true
           type: array
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Material_ReinfBarSurface-IdeaRS_OpenModel:
+      description: Reinforcement bar surface
       enum:
       - smooth
       - ribbed
       type: string
     Material_ThermalConductivityState-IdeaRS_OpenModel:
+      description: Type of curvature - thermal conductivity
       enum:
       - none
       - code
       - user
       type: string
     Material_ThermalExpansionState-IdeaRS_OpenModel:
+      description: Type of curvature -  thermal expansion
       enum:
       - none
       - code
       - user
       type: string
     Material_ThermalSpecificHeatState-IdeaRS_OpenModel:
+      description: Type of curvature - thermal specific heat
       enum:
       - none
       - code
       - user
       type: string
     Material_ThermalStrainState-IdeaRS_OpenModel:
+      description: Type of curvature - thermal strain curvature
       enum:
       - none
       - code
       - user
       type: string
     Material_ThermalStressStrainState-IdeaRS_OpenModel:
+      description: Type of curvature - thermal stress-strain curvature
       enum:
       - none
       - code
       - user
       type: string
     Message_MessageNumber-IdeaRS_OpenModel:
+      description: Message numbers
       enum:
       - unspecified
       - information
@@ -4671,6 +5142,7 @@ components:
       type: string
     Message_OpenMessage-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Open message base class
       example:
         number: unspecified
         description: description
@@ -4678,11 +5150,13 @@ components:
         number:
           $ref: '#/components/schemas/Message_MessageNumber-IdeaRS_OpenModel'
         description:
+          description: Description of message
           nullable: true
           type: string
       type: object
     Message_OpenMessages-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Open messages collection
       example:
         messages:
         - number: unspecified
@@ -4691,6 +5165,7 @@ components:
           description: description
       properties:
         messages:
+          description: List of messages
           items:
             $ref: '#/components/schemas/Message_OpenMessage-IdeaRS_OpenModel'
           nullable: true
@@ -4734,382 +5209,481 @@ components:
       type: object
     Model_CheckMember-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Check member base class
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_DesignMember-IdeaRS_OpenModel:
       additionalProperties: false
+      description: DesignMember
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_Element1D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of element1D
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_Element2D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of element2D
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_HingeElement1D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of hinge element 1D
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_InitialImperfectionOfPoint-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Initial deformation of point - geometry nonlinear calculation
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_LineSupportSegment-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Line support on segment
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_Member1D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of member1D
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_Member2D-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Representation of member2D
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_PointSupportNode-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Point support in point
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_RebarGeneral-IdeaRS_OpenModel:
       additionalProperties: false
+      description: "Represents a single main rebar in 3D space.\r\nHolds data from\
+        \ generated rebar or rebar imported from Tekla.\r\nthe rebarShape is in global\
+        \ coordinates and it is not possible to prject it along Member1D, Polyline,\
+        \ ... (referenceLine)"
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_RebarShape-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a geometrical shape for Rebar in 3D space.
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_RebarSingle-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a single main rebar in 3D space.
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_RebarStirrups-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Represents a rebar grouping in 3D space.
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_RigidLink-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Rigid link between nodes
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_Span-IdeaRS_OpenModel:
       additionalProperties: false
+      description: "Span allows specifying haunched member.\r\n\r\nBoth cross-section\
+        \ must be of the same type. Spans must not overlap."
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_SubStructure-IdeaRS_OpenModel:
       additionalProperties: false
+      description: SubStructure
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_Taper-IdeaRS_OpenModel:
       additionalProperties: false
+      description: "Defines haunches (variyng cross-sections) along the member.\r\n\
+        \r\nOne IdeaRS.OpenModel.Model.Taper may be assigned to multiple <see cref=\"\
+        T:IdeaRS.OpenModel.Model.Member1D\">Members</see>.\r\nSections of the member\
+        \ not covered by a span will use the member's cross-section."
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     Model_Tendon-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Tendon base class
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     OpenAttribute-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Open attribute base class
       type: object
     OpenElementId-IdeaRS_OpenModel:
       additionalProperties: false
+      description: "Open element base class\r\nPOS - class can not be abstract -it\
+        \ causes problems with serialization"
       properties:
         id:
+          description: Element Id
           format: int32
           type: integer
       type: object
     OpenModel-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Open model
       properties:
         version:
+          description: Data format version
           format: int32
           type: integer
         originSettings:
           additionalProperties: false
+          description: OriginProject
           type: object
         point3D:
+          description: List of Point3D
           items:
             $ref: '#/components/schemas/Geometry3D_Point3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         lineSegment3D:
+          description: List of LineSegment3D
           items:
             $ref: '#/components/schemas/Geometry3D_LineSegment3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         arcSegment3D:
+          description: List of ArcSegment3D
           items:
             $ref: '#/components/schemas/Geometry3D_ArcSegment3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         polyLine3D:
+          description: List of PolyLine3D
           items:
             $ref: '#/components/schemas/Geometry3D_PolyLine3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         region3D:
+          description: List of Region3D
           items:
             $ref: '#/components/schemas/Geometry3D_Region3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         matConcrete:
+          description: List of MatConcrete
           items:
             $ref: '#/components/schemas/Material_MatConcrete-IdeaRS_OpenModel'
           nullable: true
           type: array
         matReinforcement:
+          description: List of MatReinforcement
           items:
             $ref: '#/components/schemas/Material_MatReinforcement-IdeaRS_OpenModel'
           nullable: true
           type: array
         matSteel:
+          description: List of MatSteel
           items:
             $ref: '#/components/schemas/Material_MatSteel-IdeaRS_OpenModel'
           nullable: true
           type: array
         matPrestressSteel:
+          description: List of MatPrestressSteel
           items:
             $ref: '#/components/schemas/Material_MatPrestressSteel-IdeaRS_OpenModel'
           nullable: true
           type: array
         matWelding:
+          description: List of MatWelding
           items:
             $ref: '#/components/schemas/Material_MatWelding-IdeaRS_OpenModel'
           nullable: true
           type: array
         crossSection:
+          description: List of CrossSection
           items:
             $ref: '#/components/schemas/CrossSection_CrossSection-IdeaRS_OpenModel'
           nullable: true
           type: array
         reinforcedCrossSection:
+          description: List of Reinforced CrossSection
           items:
             $ref: '#/components/schemas/CrossSection_ReinforcedCrossSection-IdeaRS_OpenModel'
           nullable: true
           type: array
         hingeElement1D:
+          description: List of hinge elements 1D
           items:
             $ref: '#/components/schemas/Model_HingeElement1D-IdeaRS_OpenModel'
           nullable: true
           type: array
         opening:
+          description: List of openings for Detail
           items:
             $ref: '#/components/schemas/Detail_Opening-IdeaRS_OpenModel'
           nullable: true
           type: array
         dappedEnd:
+          description: List of dapped ends in Detail
           items:
             $ref: '#/components/schemas/Detail_DappedEnd-IdeaRS_OpenModel'
           nullable: true
           type: array
         patchDevice:
+          description: List of dapped ends in Detail
           items:
             $ref: '#/components/schemas/Detail_PatchDevice-IdeaRS_OpenModel'
           nullable: true
           type: array
         element1D:
+          description: List of Elements 1D
           items:
             $ref: '#/components/schemas/Model_Element1D-IdeaRS_OpenModel'
           nullable: true
           type: array
         beam:
+          description: List of Elements 1D
           items:
             $ref: '#/components/schemas/Detail_Beam-IdeaRS_OpenModel'
           nullable: true
           type: array
         member1D:
+          description: List of Member 1D
           items:
             $ref: '#/components/schemas/Model_Member1D-IdeaRS_OpenModel'
           nullable: true
           type: array
         element2D:
+          description: List of Elements 2D
           items:
             $ref: '#/components/schemas/Model_Element2D-IdeaRS_OpenModel'
           nullable: true
           type: array
         wall:
+          description: List of Elements 2D
           items:
             $ref: '#/components/schemas/Detail_Wall-IdeaRS_OpenModel'
           nullable: true
           type: array
         member2D:
+          description: List of Member 2D
           items:
             $ref: '#/components/schemas/Model_Member2D-IdeaRS_OpenModel'
           nullable: true
           type: array
         rigidLink:
+          description: List of Rigid link
           items:
             $ref: '#/components/schemas/Model_RigidLink-IdeaRS_OpenModel'
           nullable: true
           type: array
         pointOnLine3D:
+          description: List of Point on line 3D
           items:
             $ref: '#/components/schemas/Geometry3D_PointOnLine3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         pointSupportNode:
+          description: List of Point support in node
           items:
             $ref: '#/components/schemas/Model_PointSupportNode-IdeaRS_OpenModel'
           nullable: true
           type: array
         lineSupportSegment:
+          description: List of Line support on segment
           items:
             $ref: '#/components/schemas/Model_LineSupportSegment-IdeaRS_OpenModel'
           nullable: true
           type: array
         loadsInPoint:
+          description: List of point load impulses in this load case
           items:
             $ref: '#/components/schemas/Loading_LoadInPoint-IdeaRS_OpenModel'
           nullable: true
           type: array
         loadsOnLine:
+          description: List of line load impulses in this load case
           items:
             $ref: '#/components/schemas/Loading_LoadOnLine-IdeaRS_OpenModel'
           nullable: true
           type: array
         strainLoadsOnLine:
+          description: List of generalized strain load impulses along the line in
+            this load case.
           items:
             $ref: '#/components/schemas/Loading_StrainLoadOnLine-IdeaRS_OpenModel'
           nullable: true
           type: array
         pointLoadsOnLine:
+          description: List of point load impulses in this load case
           items:
             $ref: '#/components/schemas/Loading_PointLoadOnLine-IdeaRS_OpenModel'
           nullable: true
           type: array
         loadsOnSurface:
+          description: List surafce load in this load case
           items:
             $ref: '#/components/schemas/Loading_LoadOnSurface-IdeaRS_OpenModel'
           nullable: true
           type: array
         settlements:
+          description: Settlements in this load case
           items:
             $ref: '#/components/schemas/Loading_Settlement-IdeaRS_OpenModel'
           nullable: true
           type: array
         temperatureLoadsOnLine:
+          description: List of temperature load in this load case
           items:
             $ref: '#/components/schemas/Loading_TemperatureLoadOnLine-IdeaRS_OpenModel'
           nullable: true
           type: array
         loadGroup:
+          description: List of Load groups
           items:
             $ref: '#/components/schemas/Loading_LoadGroup-IdeaRS_OpenModel'
           nullable: true
           type: array
         loadCase:
+          description: List of Load cases
           items:
             $ref: '#/components/schemas/Loading_LoadCase-IdeaRS_OpenModel'
           nullable: true
           type: array
         combiInput:
+          description: List of Combinations
           items:
             $ref: '#/components/schemas/Loading_CombiInput-IdeaRS_OpenModel'
           nullable: true
           type: array
         attribute:
+          description: List of attributes
           items:
             $ref: '#/components/schemas/OpenAttribute-IdeaRS_OpenModel'
           nullable: true
           type: array
         connectionPoint:
+          description: List of Connection Points
           items:
             $ref: '#/components/schemas/Connection_ConnectionPoint-IdeaRS_OpenModel'
           nullable: true
           type: array
         connections:
+          description: List of Connection data
           items:
             $ref: '#/components/schemas/Connection_ConnectionData-IdeaRS_OpenModel'
           nullable: true
           type: array
         reinforcement:
+          description: List of reinforcement in IDEA StatiCa Detail
           items:
             $ref: '#/components/schemas/Detail_Reinforcement-IdeaRS_OpenModel'
           nullable: true
           type: array
         isdModel:
+          description: List of Details
           items:
             $ref: '#/components/schemas/Detail_ISDModel-IdeaRS_OpenModel'
           nullable: true
           type: array
         initialImperfectionOfPoint:
+          description: List of InitialmperfectionOfPoint
           items:
             $ref: '#/components/schemas/Model_InitialImperfectionOfPoint-IdeaRS_OpenModel'
           nullable: true
           type: array
         tendon:
+          description: Tendon
           items:
             $ref: '#/components/schemas/Model_Tendon-IdeaRS_OpenModel'
           nullable: true
           type: array
         resultClass:
+          description: Result Class
           items:
             $ref: '#/components/schemas/Loading_ResultClass-IdeaRS_OpenModel'
           nullable: true
           type: array
         designMember:
+          description: Design Member
           items:
             $ref: '#/components/schemas/Model_DesignMember-IdeaRS_OpenModel'
           nullable: true
           type: array
         subStructure:
+          description: Design Member
           items:
             $ref: '#/components/schemas/Model_SubStructure-IdeaRS_OpenModel'
           nullable: true
@@ -5118,13 +5692,16 @@ components:
           $ref: '#/components/schemas/ConnectionSetup-IdeaRS_OpenModel'
         projectData:
           additionalProperties: false
+          description: Defines certain data about user project.
           type: object
         checkMember:
+          description: List of the Check members
           items:
             $ref: '#/components/schemas/Model_CheckMember-IdeaRS_OpenModel'
           nullable: true
           type: array
         concreteCheckSection:
+          description: List of the concrete check section
           items:
             $ref: '#/components/schemas/Concrete_CheckSection-IdeaRS_OpenModel'
           nullable: true
@@ -5133,23 +5710,28 @@ components:
           $ref: '#/components/schemas/Concrete_ConcreteSetup-IdeaRS_OpenModel'
         projectDataConcrete:
           additionalProperties: false
+          description: Project data concrete
           type: object
         rebarShape:
+          description: Gets or sets the rebars shapes
           items:
             $ref: '#/components/schemas/Model_RebarShape-IdeaRS_OpenModel'
           nullable: true
           type: array
         rebarGeneral:
+          description: Gets or sets the rebar General collection
           items:
             $ref: '#/components/schemas/Model_RebarGeneral-IdeaRS_OpenModel'
           nullable: true
           type: array
         rebarSingle:
+          description: Gets or sets the rebar single collection
           items:
             $ref: '#/components/schemas/Model_RebarSingle-IdeaRS_OpenModel'
           nullable: true
           type: array
         rebarStirrups:
+          description: Gets or sets the rebar group (stirrups) collection
           items:
             $ref: '#/components/schemas/Model_RebarStirrups-IdeaRS_OpenModel'
           nullable: true
@@ -5165,31 +5747,37 @@ components:
           nullable: true
           type: array
         solidBlocks3D:
+          description: List of Solid Blocks 3D
           items:
             $ref: '#/components/schemas/Detail_SolidBlock3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         surfaceSupports3D:
+          description: List of Surface Supports 3D
           items:
             $ref: '#/components/schemas/Detail_SurfaceSupport3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         basePlates3D:
+          description: List of Base Plates 3D
           items:
             $ref: '#/components/schemas/Detail_BasePlate3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         anchors3D:
+          description: List of Anchors 3D
           items:
             $ref: '#/components/schemas/Detail_Anchor3D-IdeaRS_OpenModel'
           nullable: true
           type: array
         detailLoadCase:
+          description: List of Load cases
           items:
             $ref: '#/components/schemas/Detail_Loading_DetailLoadCase-IdeaRS_OpenModel'
           nullable: true
           type: array
         detailCombination:
+          description: List of Combinations
           items:
             $ref: '#/components/schemas/Detail_Loading_DetailCombination-IdeaRS_OpenModel'
           nullable: true
@@ -5197,6 +5785,10 @@ components:
       type: object
     OpenModelContainer-IdeaRS_OpenModel:
       additionalProperties: false
+      description: "OpenModelContainer is used to keep structural data and results\
+        \ of a finite element analysis in one place.\r\nThe main reason is easier\
+        \ moving (passing) pass the instance of OpenModel and corresponding instace\
+        \ of OpenModelResults."
       properties:
         openModel:
           $ref: '#/components/schemas/OpenModel-IdeaRS_OpenModel'
@@ -5205,14 +5797,17 @@ components:
       type: object
     OriginSettings-IdeaRS_OpenModel:
       additionalProperties: false
+      description: OriginProject
       type: object
     Parameters_AnchorType-IdeaRS_OpenModel:
+      description: Defines a type of anchor end.
       enum:
       - straight
       - washerPlateCircular
       - washerPlateRectangular
       type: string
     Parameters_BoltShearType-IdeaRS_OpenModel:
+      description: Defines a transfer of shear force in bolts.
       enum:
       - bearing
       - interaction
@@ -5220,14 +5815,18 @@ components:
       type: string
     ProjectData-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Defines certain data about user project.
       type: object
     ReferenceElement-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Reference element class
       properties:
         typeName:
+          description: Element type name
           nullable: true
           type: string
         id:
+          description: Element Id
           format: int32
           type: integer
         element:
@@ -5235,14 +5834,17 @@ components:
       type: object
     Result_Loading-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Loading identification
       properties:
         loadingType:
           $ref: '#/components/schemas/Result_LoadingType-IdeaRS_OpenModel'
         id:
+          description: Id of loading
           format: int32
           type: integer
       type: object
     Result_LoadingType-IdeaRS_OpenModel:
+      description: Type of loading
       enum:
       - loadCase
       - combination
@@ -5250,22 +5852,27 @@ components:
       type: string
     Result_Member-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Member identification
       properties:
         memberType:
           $ref: '#/components/schemas/Result_MemberType-IdeaRS_OpenModel'
         id:
+          description: Id of member
           format: int32
           type: integer
       type: object
     Result_MemberType-IdeaRS_OpenModel:
+      description: Type of member
       enum:
       - member1D
       - element1D
       type: string
     Result_OpenModelResult-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Results of open model
       properties:
         resultOnMembers:
+          description: Results on members
           items:
             $ref: '#/components/schemas/Result_ResultOnMembers-IdeaRS_OpenModel'
           nullable: true
@@ -5273,8 +5880,10 @@ components:
       type: object
     Result_ResultBase-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Result base abstract class
       type: object
     Result_ResultLocalSystemType-IdeaRS_OpenModel:
+      description: Type of local system of result
       enum:
       - local
       - global
@@ -5282,6 +5891,7 @@ components:
       type: string
     Result_ResultOnMember-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Result of the member
       properties:
         member:
           $ref: '#/components/schemas/Result_Member-IdeaRS_OpenModel'
@@ -5290,6 +5900,7 @@ components:
         localSystemType:
           $ref: '#/components/schemas/Result_ResultLocalSystemType-IdeaRS_OpenModel'
         results:
+          description: List of result
           items:
             $ref: '#/components/schemas/Result_ResultBase-IdeaRS_OpenModel'
           nullable: true
@@ -5297,16 +5908,19 @@ components:
       type: object
     Result_ResultOnMembers-IdeaRS_OpenModel:
       additionalProperties: false
+      description: Result of the member
       properties:
         loading:
           $ref: '#/components/schemas/Result_Loading-IdeaRS_OpenModel'
         members:
+          description: List of result of members
           items:
             $ref: '#/components/schemas/Result_ResultOnMember-IdeaRS_OpenModel'
           nullable: true
           type: array
       type: object
     Result_ResultType-IdeaRS_OpenModel:
+      description: Type of results
       enum:
       - internalForces
       - deformation
@@ -5317,6 +5931,7 @@ components:
       type: string
     SteelSetup-IdeaRS_OpenModel:
       additionalProperties: false
+      description: ISteelSetup
       type: object
     System_IO_MemoryStream-System_Private_CoreLib:
       additionalProperties: false
@@ -5361,6 +5976,7 @@ components:
           type: integer
       type: object
     WeldEvaluation-IdeaRS_OpenModel:
+      description: WeldEvaluation
       enum:
       - maxForceElement
       - forceResultant

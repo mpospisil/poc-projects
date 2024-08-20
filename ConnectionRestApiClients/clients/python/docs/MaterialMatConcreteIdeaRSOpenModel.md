@@ -1,21 +1,22 @@
 # MaterialMatConcreteIdeaRSOpenModel
 
+Material concrete base class
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | [optional] 
-**load_from_library** | **bool** |  | [optional] 
-**e** | **float** |  | [optional] 
-**g** | **float** |  | [optional] 
-**poisson** | **float** |  | [optional] 
-**unit_mass** | **float** |  | [optional] 
-**specific_heat** | **float** |  | [optional] 
-**thermal_expansion** | **float** |  | [optional] 
-**thermal_conductivity** | **float** |  | [optional] 
-**is_default_material** | **bool** |  | [optional] 
-**order_in_code** | **int** |  | [optional] 
+**name** | **str** | Name of material | [optional] 
+**load_from_library** | **bool** | Load from library - try override properties from library find material by name | [optional] 
+**e** | **float** | Young&#39;s modulus | [optional] 
+**g** | **float** | Shear modulus | [optional] 
+**poisson** | **float** | Poisson&#39;s ratio | [optional] 
+**unit_mass** | **float** | Unit weight | [optional] 
+**specific_heat** | **float** | Specific heat capacity | [optional] 
+**thermal_expansion** | **float** | Thermal expansion | [optional] 
+**thermal_conductivity** | **float** | Thermal conductivity | [optional] 
+**is_default_material** | **bool** | True if material is default material from the code | [optional] 
+**order_in_code** | **int** | Order of this material in the code | [optional] 
 **state_of_thermal_expansion** | [**MaterialThermalExpansionStateIdeaRSOpenModel**](MaterialThermalExpansionStateIdeaRSOpenModel.md) |  | [optional] 
 **state_of_thermal_conductivity** | [**MaterialThermalConductivityStateIdeaRSOpenModel**](MaterialThermalConductivityStateIdeaRSOpenModel.md) |  | [optional] 
 **state_of_thermal_specific_heat** | [**MaterialThermalSpecificHeatStateIdeaRSOpenModel**](MaterialThermalSpecificHeatStateIdeaRSOpenModel.md) |  | [optional] 
@@ -25,8 +26,8 @@ Name | Type | Description | Notes
 **user_thermal_conductivity_curvature** | [**Geometry2DPolygon2DIdeaRSOpenModel**](Geometry2DPolygon2DIdeaRSOpenModel.md) |  | [optional] 
 **user_thermal_expansion_curvature** | [**Geometry2DPolygon2DIdeaRSOpenModel**](Geometry2DPolygon2DIdeaRSOpenModel.md) |  | [optional] 
 **user_thermal_strain_curvature** | [**Geometry2DPolygon2DIdeaRSOpenModel**](Geometry2DPolygon2DIdeaRSOpenModel.md) |  | [optional] 
-**user_thermal_stress_strain_curvature** | [**List[Geometry2DTemperatureCurve2DIdeaRSOpenModel]**](Geometry2DTemperatureCurve2DIdeaRSOpenModel.md) |  | [optional] 
-**id** | **int** |  | [optional] 
+**user_thermal_stress_strain_curvature** | [**List[Geometry2DTemperatureCurve2DIdeaRSOpenModel]**](Geometry2DTemperatureCurve2DIdeaRSOpenModel.md) | User-defined curvature for thermal stress,strain { Temperature &#x3D; Θ[K], {x &#x3D; ε[-], y &#x3D; σ[Pa]}} | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

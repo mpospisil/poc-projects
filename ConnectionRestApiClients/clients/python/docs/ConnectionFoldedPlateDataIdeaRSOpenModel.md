@@ -1,12 +1,13 @@
 # ConnectionFoldedPlateDataIdeaRSOpenModel
 
+Provides data of the folded plate
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**plates** | [**List[ConnectionPlateDataIdeaRSOpenModel]**](ConnectionPlateDataIdeaRSOpenModel.md) |  | [optional] 
-**bends** | [**List[ConnectionBendDataIdeaRSOpenModel]**](ConnectionBendDataIdeaRSOpenModel.md) |  | [optional] 
+**plates** | [**List[ConnectionPlateDataIdeaRSOpenModel]**](ConnectionPlateDataIdeaRSOpenModel.md) | List of plates belong to folded plate | [optional] 
+**bends** | [**List[ConnectionBendDataIdeaRSOpenModel]**](ConnectionBendDataIdeaRSOpenModel.md) | List of bends connected plates of foldedplate | [optional] 
 
 ## Example
 

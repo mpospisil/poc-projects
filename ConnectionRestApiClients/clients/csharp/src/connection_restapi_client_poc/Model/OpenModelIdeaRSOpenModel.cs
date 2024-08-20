@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// OpenModelIdeaRSOpenModel
+    /// Open model
     /// </summary>
     [DataContract(Name = "OpenModel-IdeaRS_OpenModel")]
     public partial class OpenModelIdeaRSOpenModel : IValidatableObject
@@ -34,72 +34,72 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OpenModelIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="varVersion">varVersion.</param>
-        /// <param name="originSettings">originSettings.</param>
-        /// <param name="point3D">point3D.</param>
-        /// <param name="lineSegment3D">lineSegment3D.</param>
-        /// <param name="arcSegment3D">arcSegment3D.</param>
-        /// <param name="polyLine3D">polyLine3D.</param>
-        /// <param name="region3D">region3D.</param>
-        /// <param name="matConcrete">matConcrete.</param>
-        /// <param name="matReinforcement">matReinforcement.</param>
-        /// <param name="matSteel">matSteel.</param>
-        /// <param name="matPrestressSteel">matPrestressSteel.</param>
-        /// <param name="matWelding">matWelding.</param>
-        /// <param name="crossSection">crossSection.</param>
-        /// <param name="reinforcedCrossSection">reinforcedCrossSection.</param>
-        /// <param name="hingeElement1D">hingeElement1D.</param>
-        /// <param name="opening">opening.</param>
-        /// <param name="dappedEnd">dappedEnd.</param>
-        /// <param name="patchDevice">patchDevice.</param>
-        /// <param name="element1D">element1D.</param>
-        /// <param name="beam">beam.</param>
-        /// <param name="member1D">member1D.</param>
-        /// <param name="element2D">element2D.</param>
-        /// <param name="wall">wall.</param>
-        /// <param name="member2D">member2D.</param>
-        /// <param name="rigidLink">rigidLink.</param>
-        /// <param name="pointOnLine3D">pointOnLine3D.</param>
-        /// <param name="pointSupportNode">pointSupportNode.</param>
-        /// <param name="lineSupportSegment">lineSupportSegment.</param>
-        /// <param name="loadsInPoint">loadsInPoint.</param>
-        /// <param name="loadsOnLine">loadsOnLine.</param>
-        /// <param name="strainLoadsOnLine">strainLoadsOnLine.</param>
-        /// <param name="pointLoadsOnLine">pointLoadsOnLine.</param>
-        /// <param name="loadsOnSurface">loadsOnSurface.</param>
-        /// <param name="settlements">settlements.</param>
-        /// <param name="temperatureLoadsOnLine">temperatureLoadsOnLine.</param>
-        /// <param name="loadGroup">loadGroup.</param>
-        /// <param name="loadCase">loadCase.</param>
-        /// <param name="combiInput">combiInput.</param>
-        /// <param name="attribute">attribute.</param>
-        /// <param name="connectionPoint">connectionPoint.</param>
-        /// <param name="connections">connections.</param>
-        /// <param name="reinforcement">reinforcement.</param>
-        /// <param name="isdModel">isdModel.</param>
-        /// <param name="initialImperfectionOfPoint">initialImperfectionOfPoint.</param>
-        /// <param name="tendon">tendon.</param>
-        /// <param name="resultClass">resultClass.</param>
-        /// <param name="designMember">designMember.</param>
-        /// <param name="subStructure">subStructure.</param>
+        /// <param name="varVersion">Data format version.</param>
+        /// <param name="originSettings">OriginProject.</param>
+        /// <param name="point3D">List of Point3D.</param>
+        /// <param name="lineSegment3D">List of LineSegment3D.</param>
+        /// <param name="arcSegment3D">List of ArcSegment3D.</param>
+        /// <param name="polyLine3D">List of PolyLine3D.</param>
+        /// <param name="region3D">List of Region3D.</param>
+        /// <param name="matConcrete">List of MatConcrete.</param>
+        /// <param name="matReinforcement">List of MatReinforcement.</param>
+        /// <param name="matSteel">List of MatSteel.</param>
+        /// <param name="matPrestressSteel">List of MatPrestressSteel.</param>
+        /// <param name="matWelding">List of MatWelding.</param>
+        /// <param name="crossSection">List of CrossSection.</param>
+        /// <param name="reinforcedCrossSection">List of Reinforced CrossSection.</param>
+        /// <param name="hingeElement1D">List of hinge elements 1D.</param>
+        /// <param name="opening">List of openings for Detail.</param>
+        /// <param name="dappedEnd">List of dapped ends in Detail.</param>
+        /// <param name="patchDevice">List of dapped ends in Detail.</param>
+        /// <param name="element1D">List of Elements 1D.</param>
+        /// <param name="beam">List of Elements 1D.</param>
+        /// <param name="member1D">List of Member 1D.</param>
+        /// <param name="element2D">List of Elements 2D.</param>
+        /// <param name="wall">List of Elements 2D.</param>
+        /// <param name="member2D">List of Member 2D.</param>
+        /// <param name="rigidLink">List of Rigid link.</param>
+        /// <param name="pointOnLine3D">List of Point on line 3D.</param>
+        /// <param name="pointSupportNode">List of Point support in node.</param>
+        /// <param name="lineSupportSegment">List of Line support on segment.</param>
+        /// <param name="loadsInPoint">List of point load impulses in this load case.</param>
+        /// <param name="loadsOnLine">List of line load impulses in this load case.</param>
+        /// <param name="strainLoadsOnLine">List of generalized strain load impulses along the line in this load case..</param>
+        /// <param name="pointLoadsOnLine">List of point load impulses in this load case.</param>
+        /// <param name="loadsOnSurface">List surafce load in this load case.</param>
+        /// <param name="settlements">Settlements in this load case.</param>
+        /// <param name="temperatureLoadsOnLine">List of temperature load in this load case.</param>
+        /// <param name="loadGroup">List of Load groups.</param>
+        /// <param name="loadCase">List of Load cases.</param>
+        /// <param name="combiInput">List of Combinations.</param>
+        /// <param name="attribute">List of attributes.</param>
+        /// <param name="connectionPoint">List of Connection Points.</param>
+        /// <param name="connections">List of Connection data.</param>
+        /// <param name="reinforcement">List of reinforcement in IDEA StatiCa Detail.</param>
+        /// <param name="isdModel">List of Details.</param>
+        /// <param name="initialImperfectionOfPoint">List of InitialmperfectionOfPoint.</param>
+        /// <param name="tendon">Tendon.</param>
+        /// <param name="resultClass">Result Class.</param>
+        /// <param name="designMember">Design Member.</param>
+        /// <param name="subStructure">Design Member.</param>
         /// <param name="connectionSetup">connectionSetup.</param>
-        /// <param name="projectData">projectData.</param>
-        /// <param name="checkMember">checkMember.</param>
-        /// <param name="concreteCheckSection">concreteCheckSection.</param>
+        /// <param name="projectData">Defines certain data about user project..</param>
+        /// <param name="checkMember">List of the Check members.</param>
+        /// <param name="concreteCheckSection">List of the concrete check section.</param>
         /// <param name="concreteSetup">concreteSetup.</param>
-        /// <param name="projectDataConcrete">projectDataConcrete.</param>
-        /// <param name="rebarShape">rebarShape.</param>
-        /// <param name="rebarGeneral">rebarGeneral.</param>
-        /// <param name="rebarSingle">rebarSingle.</param>
-        /// <param name="rebarStirrups">rebarStirrups.</param>
+        /// <param name="projectDataConcrete">Project data concrete.</param>
+        /// <param name="rebarShape">Gets or sets the rebars shapes.</param>
+        /// <param name="rebarGeneral">Gets or sets the rebar General collection.</param>
+        /// <param name="rebarSingle">Gets or sets the rebar single collection.</param>
+        /// <param name="rebarStirrups">Gets or sets the rebar group (stirrups) collection.</param>
         /// <param name="taper">taper.</param>
         /// <param name="span">span.</param>
-        /// <param name="solidBlocks3D">solidBlocks3D.</param>
-        /// <param name="surfaceSupports3D">surfaceSupports3D.</param>
-        /// <param name="basePlates3D">basePlates3D.</param>
-        /// <param name="anchors3D">anchors3D.</param>
-        /// <param name="detailLoadCase">detailLoadCase.</param>
-        /// <param name="detailCombination">detailCombination.</param>
+        /// <param name="solidBlocks3D">List of Solid Blocks 3D.</param>
+        /// <param name="surfaceSupports3D">List of Surface Supports 3D.</param>
+        /// <param name="basePlates3D">List of Base Plates 3D.</param>
+        /// <param name="anchors3D">List of Anchors 3D.</param>
+        /// <param name="detailLoadCase">List of Load cases.</param>
+        /// <param name="detailCombination">List of Combinations.</param>
         public OpenModelIdeaRSOpenModel(int varVersion = default(int), Object originSettings = default(Object), List<Geometry3DPoint3DIdeaRSOpenModel> point3D = default(List<Geometry3DPoint3DIdeaRSOpenModel>), List<Geometry3DLineSegment3DIdeaRSOpenModel> lineSegment3D = default(List<Geometry3DLineSegment3DIdeaRSOpenModel>), List<Geometry3DArcSegment3DIdeaRSOpenModel> arcSegment3D = default(List<Geometry3DArcSegment3DIdeaRSOpenModel>), List<Geometry3DPolyLine3DIdeaRSOpenModel> polyLine3D = default(List<Geometry3DPolyLine3DIdeaRSOpenModel>), List<Geometry3DRegion3DIdeaRSOpenModel> region3D = default(List<Geometry3DRegion3DIdeaRSOpenModel>), List<MaterialMatConcreteIdeaRSOpenModel> matConcrete = default(List<MaterialMatConcreteIdeaRSOpenModel>), List<MaterialMatReinforcementIdeaRSOpenModel> matReinforcement = default(List<MaterialMatReinforcementIdeaRSOpenModel>), List<MaterialMatSteelIdeaRSOpenModel> matSteel = default(List<MaterialMatSteelIdeaRSOpenModel>), List<MaterialMatPrestressSteelIdeaRSOpenModel> matPrestressSteel = default(List<MaterialMatPrestressSteelIdeaRSOpenModel>), List<MaterialMatWeldingIdeaRSOpenModel> matWelding = default(List<MaterialMatWeldingIdeaRSOpenModel>), List<CrossSectionCrossSectionIdeaRSOpenModel> crossSection = default(List<CrossSectionCrossSectionIdeaRSOpenModel>), List<CrossSectionReinforcedCrossSectionIdeaRSOpenModel> reinforcedCrossSection = default(List<CrossSectionReinforcedCrossSectionIdeaRSOpenModel>), List<ModelHingeElement1DIdeaRSOpenModel> hingeElement1D = default(List<ModelHingeElement1DIdeaRSOpenModel>), List<DetailOpeningIdeaRSOpenModel> opening = default(List<DetailOpeningIdeaRSOpenModel>), List<DetailDappedEndIdeaRSOpenModel> dappedEnd = default(List<DetailDappedEndIdeaRSOpenModel>), List<DetailPatchDeviceIdeaRSOpenModel> patchDevice = default(List<DetailPatchDeviceIdeaRSOpenModel>), List<ModelElement1DIdeaRSOpenModel> element1D = default(List<ModelElement1DIdeaRSOpenModel>), List<DetailBeamIdeaRSOpenModel> beam = default(List<DetailBeamIdeaRSOpenModel>), List<ModelMember1DIdeaRSOpenModel> member1D = default(List<ModelMember1DIdeaRSOpenModel>), List<ModelElement2DIdeaRSOpenModel> element2D = default(List<ModelElement2DIdeaRSOpenModel>), List<DetailWallIdeaRSOpenModel> wall = default(List<DetailWallIdeaRSOpenModel>), List<ModelMember2DIdeaRSOpenModel> member2D = default(List<ModelMember2DIdeaRSOpenModel>), List<ModelRigidLinkIdeaRSOpenModel> rigidLink = default(List<ModelRigidLinkIdeaRSOpenModel>), List<Geometry3DPointOnLine3DIdeaRSOpenModel> pointOnLine3D = default(List<Geometry3DPointOnLine3DIdeaRSOpenModel>), List<ModelPointSupportNodeIdeaRSOpenModel> pointSupportNode = default(List<ModelPointSupportNodeIdeaRSOpenModel>), List<ModelLineSupportSegmentIdeaRSOpenModel> lineSupportSegment = default(List<ModelLineSupportSegmentIdeaRSOpenModel>), List<LoadingLoadInPointIdeaRSOpenModel> loadsInPoint = default(List<LoadingLoadInPointIdeaRSOpenModel>), List<LoadingLoadOnLineIdeaRSOpenModel> loadsOnLine = default(List<LoadingLoadOnLineIdeaRSOpenModel>), List<LoadingStrainLoadOnLineIdeaRSOpenModel> strainLoadsOnLine = default(List<LoadingStrainLoadOnLineIdeaRSOpenModel>), List<LoadingPointLoadOnLineIdeaRSOpenModel> pointLoadsOnLine = default(List<LoadingPointLoadOnLineIdeaRSOpenModel>), List<LoadingLoadOnSurfaceIdeaRSOpenModel> loadsOnSurface = default(List<LoadingLoadOnSurfaceIdeaRSOpenModel>), List<LoadingSettlementIdeaRSOpenModel> settlements = default(List<LoadingSettlementIdeaRSOpenModel>), List<LoadingTemperatureLoadOnLineIdeaRSOpenModel> temperatureLoadsOnLine = default(List<LoadingTemperatureLoadOnLineIdeaRSOpenModel>), List<LoadingLoadGroupIdeaRSOpenModel> loadGroup = default(List<LoadingLoadGroupIdeaRSOpenModel>), List<LoadingLoadCaseIdeaRSOpenModel> loadCase = default(List<LoadingLoadCaseIdeaRSOpenModel>), List<LoadingCombiInputIdeaRSOpenModel> combiInput = default(List<LoadingCombiInputIdeaRSOpenModel>), List<Object> attribute = default(List<Object>), List<ConnectionConnectionPointIdeaRSOpenModel> connectionPoint = default(List<ConnectionConnectionPointIdeaRSOpenModel>), List<ConnectionConnectionDataIdeaRSOpenModel> connections = default(List<ConnectionConnectionDataIdeaRSOpenModel>), List<DetailReinforcementIdeaRSOpenModel> reinforcement = default(List<DetailReinforcementIdeaRSOpenModel>), List<DetailISDModelIdeaRSOpenModel> isdModel = default(List<DetailISDModelIdeaRSOpenModel>), List<ModelInitialImperfectionOfPointIdeaRSOpenModel> initialImperfectionOfPoint = default(List<ModelInitialImperfectionOfPointIdeaRSOpenModel>), List<ModelTendonIdeaRSOpenModel> tendon = default(List<ModelTendonIdeaRSOpenModel>), List<LoadingResultClassIdeaRSOpenModel> resultClass = default(List<LoadingResultClassIdeaRSOpenModel>), List<ModelDesignMemberIdeaRSOpenModel> designMember = default(List<ModelDesignMemberIdeaRSOpenModel>), List<ModelSubStructureIdeaRSOpenModel> subStructure = default(List<ModelSubStructureIdeaRSOpenModel>), ConnectionSetupIdeaRSOpenModel connectionSetup = default(ConnectionSetupIdeaRSOpenModel), Object projectData = default(Object), List<ModelCheckMemberIdeaRSOpenModel> checkMember = default(List<ModelCheckMemberIdeaRSOpenModel>), List<ConcreteCheckSectionIdeaRSOpenModel> concreteCheckSection = default(List<ConcreteCheckSectionIdeaRSOpenModel>), ConcreteConcreteSetupIdeaRSOpenModel concreteSetup = default(ConcreteConcreteSetupIdeaRSOpenModel), Object projectDataConcrete = default(Object), List<ModelRebarShapeIdeaRSOpenModel> rebarShape = default(List<ModelRebarShapeIdeaRSOpenModel>), List<ModelRebarGeneralIdeaRSOpenModel> rebarGeneral = default(List<ModelRebarGeneralIdeaRSOpenModel>), List<ModelRebarSingleIdeaRSOpenModel> rebarSingle = default(List<ModelRebarSingleIdeaRSOpenModel>), List<ModelRebarStirrupsIdeaRSOpenModel> rebarStirrups = default(List<ModelRebarStirrupsIdeaRSOpenModel>), List<ModelTaperIdeaRSOpenModel> taper = default(List<ModelTaperIdeaRSOpenModel>), List<ModelSpanIdeaRSOpenModel> span = default(List<ModelSpanIdeaRSOpenModel>), List<DetailSolidBlock3DIdeaRSOpenModel> solidBlocks3D = default(List<DetailSolidBlock3DIdeaRSOpenModel>), List<DetailSurfaceSupport3DIdeaRSOpenModel> surfaceSupports3D = default(List<DetailSurfaceSupport3DIdeaRSOpenModel>), List<DetailBasePlate3DIdeaRSOpenModel> basePlates3D = default(List<DetailBasePlate3DIdeaRSOpenModel>), List<DetailAnchor3DIdeaRSOpenModel> anchors3D = default(List<DetailAnchor3DIdeaRSOpenModel>), List<DetailLoadingDetailLoadCaseIdeaRSOpenModel> detailLoadCase = default(List<DetailLoadingDetailLoadCaseIdeaRSOpenModel>), List<DetailLoadingDetailCombinationIdeaRSOpenModel> detailCombination = default(List<DetailLoadingDetailCombinationIdeaRSOpenModel>))
         {
             this.VarVersion = varVersion;
@@ -171,290 +171,338 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets VarVersion
+        /// Data format version
         /// </summary>
+        /// <value>Data format version</value>
         [DataMember(Name = "version", EmitDefaultValue = false)]
         public int VarVersion { get; set; }
 
         /// <summary>
-        /// Gets or Sets OriginSettings
+        /// OriginProject
         /// </summary>
+        /// <value>OriginProject</value>
         [DataMember(Name = "originSettings", EmitDefaultValue = false)]
         public Object OriginSettings { get; set; }
 
         /// <summary>
-        /// Gets or Sets Point3D
+        /// List of Point3D
         /// </summary>
+        /// <value>List of Point3D</value>
         [DataMember(Name = "point3D", EmitDefaultValue = true)]
         public List<Geometry3DPoint3DIdeaRSOpenModel> Point3D { get; set; }
 
         /// <summary>
-        /// Gets or Sets LineSegment3D
+        /// List of LineSegment3D
         /// </summary>
+        /// <value>List of LineSegment3D</value>
         [DataMember(Name = "lineSegment3D", EmitDefaultValue = true)]
         public List<Geometry3DLineSegment3DIdeaRSOpenModel> LineSegment3D { get; set; }
 
         /// <summary>
-        /// Gets or Sets ArcSegment3D
+        /// List of ArcSegment3D
         /// </summary>
+        /// <value>List of ArcSegment3D</value>
         [DataMember(Name = "arcSegment3D", EmitDefaultValue = true)]
         public List<Geometry3DArcSegment3DIdeaRSOpenModel> ArcSegment3D { get; set; }
 
         /// <summary>
-        /// Gets or Sets PolyLine3D
+        /// List of PolyLine3D
         /// </summary>
+        /// <value>List of PolyLine3D</value>
         [DataMember(Name = "polyLine3D", EmitDefaultValue = true)]
         public List<Geometry3DPolyLine3DIdeaRSOpenModel> PolyLine3D { get; set; }
 
         /// <summary>
-        /// Gets or Sets Region3D
+        /// List of Region3D
         /// </summary>
+        /// <value>List of Region3D</value>
         [DataMember(Name = "region3D", EmitDefaultValue = true)]
         public List<Geometry3DRegion3DIdeaRSOpenModel> Region3D { get; set; }
 
         /// <summary>
-        /// Gets or Sets MatConcrete
+        /// List of MatConcrete
         /// </summary>
+        /// <value>List of MatConcrete</value>
         [DataMember(Name = "matConcrete", EmitDefaultValue = true)]
         public List<MaterialMatConcreteIdeaRSOpenModel> MatConcrete { get; set; }
 
         /// <summary>
-        /// Gets or Sets MatReinforcement
+        /// List of MatReinforcement
         /// </summary>
+        /// <value>List of MatReinforcement</value>
         [DataMember(Name = "matReinforcement", EmitDefaultValue = true)]
         public List<MaterialMatReinforcementIdeaRSOpenModel> MatReinforcement { get; set; }
 
         /// <summary>
-        /// Gets or Sets MatSteel
+        /// List of MatSteel
         /// </summary>
+        /// <value>List of MatSteel</value>
         [DataMember(Name = "matSteel", EmitDefaultValue = true)]
         public List<MaterialMatSteelIdeaRSOpenModel> MatSteel { get; set; }
 
         /// <summary>
-        /// Gets or Sets MatPrestressSteel
+        /// List of MatPrestressSteel
         /// </summary>
+        /// <value>List of MatPrestressSteel</value>
         [DataMember(Name = "matPrestressSteel", EmitDefaultValue = true)]
         public List<MaterialMatPrestressSteelIdeaRSOpenModel> MatPrestressSteel { get; set; }
 
         /// <summary>
-        /// Gets or Sets MatWelding
+        /// List of MatWelding
         /// </summary>
+        /// <value>List of MatWelding</value>
         [DataMember(Name = "matWelding", EmitDefaultValue = true)]
         public List<MaterialMatWeldingIdeaRSOpenModel> MatWelding { get; set; }
 
         /// <summary>
-        /// Gets or Sets CrossSection
+        /// List of CrossSection
         /// </summary>
+        /// <value>List of CrossSection</value>
         [DataMember(Name = "crossSection", EmitDefaultValue = true)]
         public List<CrossSectionCrossSectionIdeaRSOpenModel> CrossSection { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReinforcedCrossSection
+        /// List of Reinforced CrossSection
         /// </summary>
+        /// <value>List of Reinforced CrossSection</value>
         [DataMember(Name = "reinforcedCrossSection", EmitDefaultValue = true)]
         public List<CrossSectionReinforcedCrossSectionIdeaRSOpenModel> ReinforcedCrossSection { get; set; }
 
         /// <summary>
-        /// Gets or Sets HingeElement1D
+        /// List of hinge elements 1D
         /// </summary>
+        /// <value>List of hinge elements 1D</value>
         [DataMember(Name = "hingeElement1D", EmitDefaultValue = true)]
         public List<ModelHingeElement1DIdeaRSOpenModel> HingeElement1D { get; set; }
 
         /// <summary>
-        /// Gets or Sets Opening
+        /// List of openings for Detail
         /// </summary>
+        /// <value>List of openings for Detail</value>
         [DataMember(Name = "opening", EmitDefaultValue = true)]
         public List<DetailOpeningIdeaRSOpenModel> Opening { get; set; }
 
         /// <summary>
-        /// Gets or Sets DappedEnd
+        /// List of dapped ends in Detail
         /// </summary>
+        /// <value>List of dapped ends in Detail</value>
         [DataMember(Name = "dappedEnd", EmitDefaultValue = true)]
         public List<DetailDappedEndIdeaRSOpenModel> DappedEnd { get; set; }
 
         /// <summary>
-        /// Gets or Sets PatchDevice
+        /// List of dapped ends in Detail
         /// </summary>
+        /// <value>List of dapped ends in Detail</value>
         [DataMember(Name = "patchDevice", EmitDefaultValue = true)]
         public List<DetailPatchDeviceIdeaRSOpenModel> PatchDevice { get; set; }
 
         /// <summary>
-        /// Gets or Sets Element1D
+        /// List of Elements 1D
         /// </summary>
+        /// <value>List of Elements 1D</value>
         [DataMember(Name = "element1D", EmitDefaultValue = true)]
         public List<ModelElement1DIdeaRSOpenModel> Element1D { get; set; }
 
         /// <summary>
-        /// Gets or Sets Beam
+        /// List of Elements 1D
         /// </summary>
+        /// <value>List of Elements 1D</value>
         [DataMember(Name = "beam", EmitDefaultValue = true)]
         public List<DetailBeamIdeaRSOpenModel> Beam { get; set; }
 
         /// <summary>
-        /// Gets or Sets Member1D
+        /// List of Member 1D
         /// </summary>
+        /// <value>List of Member 1D</value>
         [DataMember(Name = "member1D", EmitDefaultValue = true)]
         public List<ModelMember1DIdeaRSOpenModel> Member1D { get; set; }
 
         /// <summary>
-        /// Gets or Sets Element2D
+        /// List of Elements 2D
         /// </summary>
+        /// <value>List of Elements 2D</value>
         [DataMember(Name = "element2D", EmitDefaultValue = true)]
         public List<ModelElement2DIdeaRSOpenModel> Element2D { get; set; }
 
         /// <summary>
-        /// Gets or Sets Wall
+        /// List of Elements 2D
         /// </summary>
+        /// <value>List of Elements 2D</value>
         [DataMember(Name = "wall", EmitDefaultValue = true)]
         public List<DetailWallIdeaRSOpenModel> Wall { get; set; }
 
         /// <summary>
-        /// Gets or Sets Member2D
+        /// List of Member 2D
         /// </summary>
+        /// <value>List of Member 2D</value>
         [DataMember(Name = "member2D", EmitDefaultValue = true)]
         public List<ModelMember2DIdeaRSOpenModel> Member2D { get; set; }
 
         /// <summary>
-        /// Gets or Sets RigidLink
+        /// List of Rigid link
         /// </summary>
+        /// <value>List of Rigid link</value>
         [DataMember(Name = "rigidLink", EmitDefaultValue = true)]
         public List<ModelRigidLinkIdeaRSOpenModel> RigidLink { get; set; }
 
         /// <summary>
-        /// Gets or Sets PointOnLine3D
+        /// List of Point on line 3D
         /// </summary>
+        /// <value>List of Point on line 3D</value>
         [DataMember(Name = "pointOnLine3D", EmitDefaultValue = true)]
         public List<Geometry3DPointOnLine3DIdeaRSOpenModel> PointOnLine3D { get; set; }
 
         /// <summary>
-        /// Gets or Sets PointSupportNode
+        /// List of Point support in node
         /// </summary>
+        /// <value>List of Point support in node</value>
         [DataMember(Name = "pointSupportNode", EmitDefaultValue = true)]
         public List<ModelPointSupportNodeIdeaRSOpenModel> PointSupportNode { get; set; }
 
         /// <summary>
-        /// Gets or Sets LineSupportSegment
+        /// List of Line support on segment
         /// </summary>
+        /// <value>List of Line support on segment</value>
         [DataMember(Name = "lineSupportSegment", EmitDefaultValue = true)]
         public List<ModelLineSupportSegmentIdeaRSOpenModel> LineSupportSegment { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadsInPoint
+        /// List of point load impulses in this load case
         /// </summary>
+        /// <value>List of point load impulses in this load case</value>
         [DataMember(Name = "loadsInPoint", EmitDefaultValue = true)]
         public List<LoadingLoadInPointIdeaRSOpenModel> LoadsInPoint { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadsOnLine
+        /// List of line load impulses in this load case
         /// </summary>
+        /// <value>List of line load impulses in this load case</value>
         [DataMember(Name = "loadsOnLine", EmitDefaultValue = true)]
         public List<LoadingLoadOnLineIdeaRSOpenModel> LoadsOnLine { get; set; }
 
         /// <summary>
-        /// Gets or Sets StrainLoadsOnLine
+        /// List of generalized strain load impulses along the line in this load case.
         /// </summary>
+        /// <value>List of generalized strain load impulses along the line in this load case.</value>
         [DataMember(Name = "strainLoadsOnLine", EmitDefaultValue = true)]
         public List<LoadingStrainLoadOnLineIdeaRSOpenModel> StrainLoadsOnLine { get; set; }
 
         /// <summary>
-        /// Gets or Sets PointLoadsOnLine
+        /// List of point load impulses in this load case
         /// </summary>
+        /// <value>List of point load impulses in this load case</value>
         [DataMember(Name = "pointLoadsOnLine", EmitDefaultValue = true)]
         public List<LoadingPointLoadOnLineIdeaRSOpenModel> PointLoadsOnLine { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadsOnSurface
+        /// List surafce load in this load case
         /// </summary>
+        /// <value>List surafce load in this load case</value>
         [DataMember(Name = "loadsOnSurface", EmitDefaultValue = true)]
         public List<LoadingLoadOnSurfaceIdeaRSOpenModel> LoadsOnSurface { get; set; }
 
         /// <summary>
-        /// Gets or Sets Settlements
+        /// Settlements in this load case
         /// </summary>
+        /// <value>Settlements in this load case</value>
         [DataMember(Name = "settlements", EmitDefaultValue = true)]
         public List<LoadingSettlementIdeaRSOpenModel> Settlements { get; set; }
 
         /// <summary>
-        /// Gets or Sets TemperatureLoadsOnLine
+        /// List of temperature load in this load case
         /// </summary>
+        /// <value>List of temperature load in this load case</value>
         [DataMember(Name = "temperatureLoadsOnLine", EmitDefaultValue = true)]
         public List<LoadingTemperatureLoadOnLineIdeaRSOpenModel> TemperatureLoadsOnLine { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadGroup
+        /// List of Load groups
         /// </summary>
+        /// <value>List of Load groups</value>
         [DataMember(Name = "loadGroup", EmitDefaultValue = true)]
         public List<LoadingLoadGroupIdeaRSOpenModel> LoadGroup { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadCase
+        /// List of Load cases
         /// </summary>
+        /// <value>List of Load cases</value>
         [DataMember(Name = "loadCase", EmitDefaultValue = true)]
         public List<LoadingLoadCaseIdeaRSOpenModel> LoadCase { get; set; }
 
         /// <summary>
-        /// Gets or Sets CombiInput
+        /// List of Combinations
         /// </summary>
+        /// <value>List of Combinations</value>
         [DataMember(Name = "combiInput", EmitDefaultValue = true)]
         public List<LoadingCombiInputIdeaRSOpenModel> CombiInput { get; set; }
 
         /// <summary>
-        /// Gets or Sets Attribute
+        /// List of attributes
         /// </summary>
+        /// <value>List of attributes</value>
         [DataMember(Name = "attribute", EmitDefaultValue = true)]
         public List<Object> Attribute { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConnectionPoint
+        /// List of Connection Points
         /// </summary>
+        /// <value>List of Connection Points</value>
         [DataMember(Name = "connectionPoint", EmitDefaultValue = true)]
         public List<ConnectionConnectionPointIdeaRSOpenModel> ConnectionPoint { get; set; }
 
         /// <summary>
-        /// Gets or Sets Connections
+        /// List of Connection data
         /// </summary>
+        /// <value>List of Connection data</value>
         [DataMember(Name = "connections", EmitDefaultValue = true)]
         public List<ConnectionConnectionDataIdeaRSOpenModel> Connections { get; set; }
 
         /// <summary>
-        /// Gets or Sets Reinforcement
+        /// List of reinforcement in IDEA StatiCa Detail
         /// </summary>
+        /// <value>List of reinforcement in IDEA StatiCa Detail</value>
         [DataMember(Name = "reinforcement", EmitDefaultValue = true)]
         public List<DetailReinforcementIdeaRSOpenModel> Reinforcement { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsdModel
+        /// List of Details
         /// </summary>
+        /// <value>List of Details</value>
         [DataMember(Name = "isdModel", EmitDefaultValue = true)]
         public List<DetailISDModelIdeaRSOpenModel> IsdModel { get; set; }
 
         /// <summary>
-        /// Gets or Sets InitialImperfectionOfPoint
+        /// List of InitialmperfectionOfPoint
         /// </summary>
+        /// <value>List of InitialmperfectionOfPoint</value>
         [DataMember(Name = "initialImperfectionOfPoint", EmitDefaultValue = true)]
         public List<ModelInitialImperfectionOfPointIdeaRSOpenModel> InitialImperfectionOfPoint { get; set; }
 
         /// <summary>
-        /// Gets or Sets Tendon
+        /// Tendon
         /// </summary>
+        /// <value>Tendon</value>
         [DataMember(Name = "tendon", EmitDefaultValue = true)]
         public List<ModelTendonIdeaRSOpenModel> Tendon { get; set; }
 
         /// <summary>
-        /// Gets or Sets ResultClass
+        /// Result Class
         /// </summary>
+        /// <value>Result Class</value>
         [DataMember(Name = "resultClass", EmitDefaultValue = true)]
         public List<LoadingResultClassIdeaRSOpenModel> ResultClass { get; set; }
 
         /// <summary>
-        /// Gets or Sets DesignMember
+        /// Design Member
         /// </summary>
+        /// <value>Design Member</value>
         [DataMember(Name = "designMember", EmitDefaultValue = true)]
         public List<ModelDesignMemberIdeaRSOpenModel> DesignMember { get; set; }
 
         /// <summary>
-        /// Gets or Sets SubStructure
+        /// Design Member
         /// </summary>
+        /// <value>Design Member</value>
         [DataMember(Name = "subStructure", EmitDefaultValue = true)]
         public List<ModelSubStructureIdeaRSOpenModel> SubStructure { get; set; }
 
@@ -465,20 +513,23 @@ namespace connection_restapi_client_poc.Model
         public ConnectionSetupIdeaRSOpenModel ConnectionSetup { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProjectData
+        /// Defines certain data about user project.
         /// </summary>
+        /// <value>Defines certain data about user project.</value>
         [DataMember(Name = "projectData", EmitDefaultValue = false)]
         public Object ProjectData { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckMember
+        /// List of the Check members
         /// </summary>
+        /// <value>List of the Check members</value>
         [DataMember(Name = "checkMember", EmitDefaultValue = true)]
         public List<ModelCheckMemberIdeaRSOpenModel> CheckMember { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConcreteCheckSection
+        /// List of the concrete check section
         /// </summary>
+        /// <value>List of the concrete check section</value>
         [DataMember(Name = "concreteCheckSection", EmitDefaultValue = true)]
         public List<ConcreteCheckSectionIdeaRSOpenModel> ConcreteCheckSection { get; set; }
 
@@ -489,32 +540,37 @@ namespace connection_restapi_client_poc.Model
         public ConcreteConcreteSetupIdeaRSOpenModel ConcreteSetup { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProjectDataConcrete
+        /// Project data concrete
         /// </summary>
+        /// <value>Project data concrete</value>
         [DataMember(Name = "projectDataConcrete", EmitDefaultValue = false)]
         public Object ProjectDataConcrete { get; set; }
 
         /// <summary>
-        /// Gets or Sets RebarShape
+        /// Gets or sets the rebars shapes
         /// </summary>
+        /// <value>Gets or sets the rebars shapes</value>
         [DataMember(Name = "rebarShape", EmitDefaultValue = true)]
         public List<ModelRebarShapeIdeaRSOpenModel> RebarShape { get; set; }
 
         /// <summary>
-        /// Gets or Sets RebarGeneral
+        /// Gets or sets the rebar General collection
         /// </summary>
+        /// <value>Gets or sets the rebar General collection</value>
         [DataMember(Name = "rebarGeneral", EmitDefaultValue = true)]
         public List<ModelRebarGeneralIdeaRSOpenModel> RebarGeneral { get; set; }
 
         /// <summary>
-        /// Gets or Sets RebarSingle
+        /// Gets or sets the rebar single collection
         /// </summary>
+        /// <value>Gets or sets the rebar single collection</value>
         [DataMember(Name = "rebarSingle", EmitDefaultValue = true)]
         public List<ModelRebarSingleIdeaRSOpenModel> RebarSingle { get; set; }
 
         /// <summary>
-        /// Gets or Sets RebarStirrups
+        /// Gets or sets the rebar group (stirrups) collection
         /// </summary>
+        /// <value>Gets or sets the rebar group (stirrups) collection</value>
         [DataMember(Name = "rebarStirrups", EmitDefaultValue = true)]
         public List<ModelRebarStirrupsIdeaRSOpenModel> RebarStirrups { get; set; }
 
@@ -531,38 +587,44 @@ namespace connection_restapi_client_poc.Model
         public List<ModelSpanIdeaRSOpenModel> Span { get; set; }
 
         /// <summary>
-        /// Gets or Sets SolidBlocks3D
+        /// List of Solid Blocks 3D
         /// </summary>
+        /// <value>List of Solid Blocks 3D</value>
         [DataMember(Name = "solidBlocks3D", EmitDefaultValue = true)]
         public List<DetailSolidBlock3DIdeaRSOpenModel> SolidBlocks3D { get; set; }
 
         /// <summary>
-        /// Gets or Sets SurfaceSupports3D
+        /// List of Surface Supports 3D
         /// </summary>
+        /// <value>List of Surface Supports 3D</value>
         [DataMember(Name = "surfaceSupports3D", EmitDefaultValue = true)]
         public List<DetailSurfaceSupport3DIdeaRSOpenModel> SurfaceSupports3D { get; set; }
 
         /// <summary>
-        /// Gets or Sets BasePlates3D
+        /// List of Base Plates 3D
         /// </summary>
+        /// <value>List of Base Plates 3D</value>
         [DataMember(Name = "basePlates3D", EmitDefaultValue = true)]
         public List<DetailBasePlate3DIdeaRSOpenModel> BasePlates3D { get; set; }
 
         /// <summary>
-        /// Gets or Sets Anchors3D
+        /// List of Anchors 3D
         /// </summary>
+        /// <value>List of Anchors 3D</value>
         [DataMember(Name = "anchors3D", EmitDefaultValue = true)]
         public List<DetailAnchor3DIdeaRSOpenModel> Anchors3D { get; set; }
 
         /// <summary>
-        /// Gets or Sets DetailLoadCase
+        /// List of Load cases
         /// </summary>
+        /// <value>List of Load cases</value>
         [DataMember(Name = "detailLoadCase", EmitDefaultValue = true)]
         public List<DetailLoadingDetailLoadCaseIdeaRSOpenModel> DetailLoadCase { get; set; }
 
         /// <summary>
-        /// Gets or Sets DetailCombination
+        /// List of Combinations
         /// </summary>
+        /// <value>List of Combinations</value>
         [DataMember(Name = "detailCombination", EmitDefaultValue = true)]
         public List<DetailLoadingDetailCombinationIdeaRSOpenModel> DetailCombination { get; set; }
 

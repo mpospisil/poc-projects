@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class ConnectionDistanceComparisonIdeaRSOpenModel(str, Enum):
     """
-    ConnectionDistanceComparisonIdeaRSOpenModel
+    Represents the result of comparison of distances of two object from the same point
     """
 
     """

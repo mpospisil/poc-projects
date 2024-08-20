@@ -1,19 +1,20 @@
 # ConnectionConnectionDataIdeaRSOpenModel
 
+Provides data of the connection
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**conenction_point_id** | **int** |  | [optional] 
-**beams** | [**List[ConnectionBeamDataIdeaRSOpenModel]**](ConnectionBeamDataIdeaRSOpenModel.md) |  | [optional] 
-**plates** | [**List[ConnectionPlateDataIdeaRSOpenModel]**](ConnectionPlateDataIdeaRSOpenModel.md) |  | [optional] 
-**folded_plates** | [**List[ConnectionFoldedPlateDataIdeaRSOpenModel]**](ConnectionFoldedPlateDataIdeaRSOpenModel.md) |  | [optional] 
-**bolt_grids** | [**List[ConnectionBoltGridIdeaRSOpenModel]**](ConnectionBoltGridIdeaRSOpenModel.md) |  | [optional] 
-**anchor_grids** | [**List[ConnectionAnchorGridIdeaRSOpenModel]**](ConnectionAnchorGridIdeaRSOpenModel.md) |  | [optional] 
-**welds** | [**List[ConnectionWeldDataIdeaRSOpenModel]**](ConnectionWeldDataIdeaRSOpenModel.md) |  | [optional] 
-**concrete_blocks** | [**List[ConnectionConcreteBlockDataIdeaRSOpenModel]**](ConnectionConcreteBlockDataIdeaRSOpenModel.md) |  | [optional] 
-**cut_beam_by_beams** | [**List[ConnectionCutBeamByBeamDataIdeaRSOpenModel]**](ConnectionCutBeamByBeamDataIdeaRSOpenModel.md) |  | [optional] 
+**conenction_point_id** | **int** | Connection Point Id | [optional] 
+**beams** | [**List[ConnectionBeamDataIdeaRSOpenModel]**](ConnectionBeamDataIdeaRSOpenModel.md) | Connected beams | [optional] 
+**plates** | [**List[ConnectionPlateDataIdeaRSOpenModel]**](ConnectionPlateDataIdeaRSOpenModel.md) | Plates of the connection | [optional] 
+**folded_plates** | [**List[ConnectionFoldedPlateDataIdeaRSOpenModel]**](ConnectionFoldedPlateDataIdeaRSOpenModel.md) | Folded plate of the connection | [optional] 
+**bolt_grids** | [**List[ConnectionBoltGridIdeaRSOpenModel]**](ConnectionBoltGridIdeaRSOpenModel.md) | Bolt grids which belongs to the connection | [optional] 
+**anchor_grids** | [**List[ConnectionAnchorGridIdeaRSOpenModel]**](ConnectionAnchorGridIdeaRSOpenModel.md) | Anchor grids which belongs to the connection | [optional] 
+**welds** | [**List[ConnectionWeldDataIdeaRSOpenModel]**](ConnectionWeldDataIdeaRSOpenModel.md) | Welds of the connection | [optional] 
+**concrete_blocks** | [**List[ConnectionConcreteBlockDataIdeaRSOpenModel]**](ConnectionConcreteBlockDataIdeaRSOpenModel.md) | ConcreteBlocksof the connection | [optional] 
+**cut_beam_by_beams** | [**List[ConnectionCutBeamByBeamDataIdeaRSOpenModel]**](ConnectionCutBeamByBeamDataIdeaRSOpenModel.md) | cut beam by beams | [optional] 
 
 ## Example
 

@@ -29,15 +29,15 @@ from typing_extensions import Self
 
 class CrossSectionReinforcedCrossSectionIdeaRSOpenModel(BaseModel):
     """
-    CrossSectionReinforcedCrossSectionIdeaRSOpenModel
+    Reinforced cross-section
     """ # noqa: E501
-    name: Optional[StrictStr] = None
+    name: Optional[StrictStr] = Field(default=None, description="Name of cross-section")
     cross_section: Optional[ReferenceElementIdeaRSOpenModel] = Field(default=None, alias="crossSection")
-    bars: Optional[List[CrossSectionReinforcedBarIdeaRSOpenModel]] = None
-    stirrups: Optional[List[CrossSectionStirrupIdeaRSOpenModel]] = None
-    tendon_bars: Optional[List[CrossSectionTendonBarIdeaRSOpenModel]] = Field(default=None, alias="tendonBars")
-    tendon_ducts: Optional[List[CrossSectionTendonDuctIdeaRSOpenModel]] = Field(default=None, alias="tendonDucts")
-    id: Optional[StrictInt] = None
+    bars: Optional[List[CrossSectionReinforcedBarIdeaRSOpenModel]] = Field(default=None, description="Reinforced bars")
+    stirrups: Optional[List[CrossSectionStirrupIdeaRSOpenModel]] = Field(default=None, description="Stirrups")
+    tendon_bars: Optional[List[CrossSectionTendonBarIdeaRSOpenModel]] = Field(default=None, description="Tendon bars", alias="tendonBars")
+    tendon_ducts: Optional[List[CrossSectionTendonDuctIdeaRSOpenModel]] = Field(default=None, description="Tendon ducts", alias="tendonDucts")
+    id: Optional[StrictInt] = Field(default=None, description="Element Id")
     __properties: ClassVar[List[str]] = ["name", "crossSection", "bars", "stirrups", "tendonBars", "tendonDucts", "id"]
 
     model_config = ConfigDict(

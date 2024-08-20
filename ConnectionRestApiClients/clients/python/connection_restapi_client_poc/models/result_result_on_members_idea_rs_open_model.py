@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from connection_restapi_client_poc.models.result_loading_idea_rs_open_model import ResultLoadingIdeaRSOpenModel
 from connection_restapi_client_poc.models.result_result_on_member_idea_rs_open_model import ResultResultOnMemberIdeaRSOpenModel
@@ -26,10 +26,10 @@ from typing_extensions import Self
 
 class ResultResultOnMembersIdeaRSOpenModel(BaseModel):
     """
-    ResultResultOnMembersIdeaRSOpenModel
+    Result of the member
     """ # noqa: E501
     loading: Optional[ResultLoadingIdeaRSOpenModel] = None
-    members: Optional[List[ResultResultOnMemberIdeaRSOpenModel]] = None
+    members: Optional[List[ResultResultOnMemberIdeaRSOpenModel]] = Field(default=None, description="List of result of members")
     __properties: ClassVar[List[str]] = ["loading", "members"]
 
     model_config = ConfigDict(

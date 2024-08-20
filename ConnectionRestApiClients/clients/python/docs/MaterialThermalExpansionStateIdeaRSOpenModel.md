@@ -1,5 +1,6 @@
 # MaterialThermalExpansionStateIdeaRSOpenModel
 
+Type of curvature -  thermal expansion
 
 ## Enum
 

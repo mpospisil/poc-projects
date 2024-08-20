@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines CrossSection_FatigueTypeOfPrestressingSteel-IdeaRS_OpenModel
+    /// Posttensioned reinforcement type
     /// </summary>
+    /// <value>Posttensioned reinforcement type</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum CrossSectionFatigueTypeOfPrestressingSteelIdeaRSOpenModel
     {

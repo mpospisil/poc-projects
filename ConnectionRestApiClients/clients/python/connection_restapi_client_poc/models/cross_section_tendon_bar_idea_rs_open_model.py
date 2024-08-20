@@ -29,16 +29,16 @@ from typing_extensions import Self
 
 class CrossSectionTendonBarIdeaRSOpenModel(BaseModel):
     """
-    CrossSectionTendonBarIdeaRSOpenModel
+    Tendon bar
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: Optional[StrictInt] = Field(default=None, description="Tendon Id")
     tendon_type: Optional[CrossSectionTendonBarTypeIdeaRSOpenModel] = Field(default=None, alias="tendonType")
     point: Optional[Geometry2DPoint2DIdeaRSOpenModel] = None
     material: Optional[ReferenceElementIdeaRSOpenModel] = None
-    prestressing_order: Optional[StrictInt] = Field(default=None, alias="prestressingOrder")
-    num_strands_in_tendon: Optional[StrictInt] = Field(default=None, alias="numStrandsInTendon")
+    prestressing_order: Optional[StrictInt] = Field(default=None, description="order of tendon prestessing", alias="prestressingOrder")
+    num_strands_in_tendon: Optional[StrictInt] = Field(default=None, description="number of ropes in tendon", alias="numStrandsInTendon")
     prestress_reinforcement_type: Optional[CrossSectionFatigueTypeOfPrestressingSteelIdeaRSOpenModel] = Field(default=None, alias="prestressReinforcementType")
-    phase: Optional[StrictInt] = None
+    phase: Optional[StrictInt] = Field(default=None, description="Phase")
     tendon_duct: Optional[CrossSectionTendonDuctIdeaRSOpenModel] = Field(default=None, alias="tendonDuct")
     __properties: ClassVar[List[str]] = ["id", "tendonType", "point", "material", "prestressingOrder", "numStrandsInTendon", "prestressReinforcementType", "phase", "tendonDuct"]
 

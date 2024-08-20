@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class ParametersAnchorTypeIdeaRSOpenModel(str, Enum):
     """
-    ParametersAnchorTypeIdeaRSOpenModel
+    Defines a type of anchor end.
     """
 
     """

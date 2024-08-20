@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines Material_ReinfBarSurface-IdeaRS_OpenModel
+    /// Reinforcement bar surface
     /// </summary>
+    /// <value>Reinforcement bar surface</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum MaterialReinfBarSurfaceIdeaRSOpenModel
     {

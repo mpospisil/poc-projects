@@ -25,10 +25,10 @@ from typing_extensions import Self
 
 class ReferenceElementIdeaRSOpenModel(BaseModel):
     """
-    ReferenceElementIdeaRSOpenModel
+    Reference element class
     """ # noqa: E501
-    type_name: Optional[StrictStr] = Field(default=None, alias="typeName")
-    id: Optional[StrictInt] = None
+    type_name: Optional[StrictStr] = Field(default=None, description="Element type name", alias="typeName")
+    id: Optional[StrictInt] = Field(default=None, description="Element Id")
     element: Optional[OpenElementIdIdeaRSOpenModel] = None
     __properties: ClassVar[List[str]] = ["typeName", "id", "element"]
 

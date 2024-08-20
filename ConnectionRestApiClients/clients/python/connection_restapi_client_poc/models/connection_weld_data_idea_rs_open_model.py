@@ -27,15 +27,15 @@ from typing_extensions import Self
 
 class ConnectionWeldDataIdeaRSOpenModel(BaseModel):
     """
-    ConnectionWeldDataIdeaRSOpenModel
+    Provides data of the single weld
     """ # noqa: E501
-    id: Optional[StrictInt] = None
-    name: Optional[StrictStr] = None
-    thickness: Optional[Union[StrictFloat, StrictInt]] = None
-    material: Optional[StrictStr] = None
+    id: Optional[StrictInt] = Field(default=None, description="Id of the weld")
+    name: Optional[StrictStr] = Field(default=None, description="Name of the weld")
+    thickness: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Thickness of the weld")
+    material: Optional[StrictStr] = Field(default=None, description="Name of the material")
     weld_material: Optional[ReferenceElementIdeaRSOpenModel] = Field(default=None, alias="weldMaterial")
     weld_type: Optional[ConnectionWeldTypeIdeaRSOpenModel] = Field(default=None, alias="weldType")
-    connected_part_ids: Optional[List[StrictStr]] = Field(default=None, alias="connectedPartIds")
+    connected_part_ids: Optional[List[StrictStr]] = Field(default=None, description="Id of the weld", alias="connectedPartIds")
     start: Optional[Geometry3DPoint3DIdeaRSOpenModel] = None
     end: Optional[Geometry3DPoint3DIdeaRSOpenModel] = None
     __properties: ClassVar[List[str]] = ["id", "name", "thickness", "material", "weldMaterial", "weldType", "connectedPartIds", "start", "end"]

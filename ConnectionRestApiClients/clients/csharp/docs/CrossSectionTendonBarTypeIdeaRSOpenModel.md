@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.CrossSectionTendonBarTypeIdeaRSOpenModel
+Tendon bar type
 
 ## Properties
 

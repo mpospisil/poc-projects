@@ -26,7 +26,7 @@ from typing_extensions import Self
 
 class OpenModelContainerIdeaRSOpenModel(BaseModel):
     """
-    OpenModelContainerIdeaRSOpenModel
+    OpenModelContainer is used to keep structural data and results of a finite element analysis in one place.  The main reason is easier moving (passing) pass the instance of OpenModel and corresponding instace of OpenModelResults.
     """ # noqa: E501
     open_model: Optional[OpenModelIdeaRSOpenModel] = Field(default=None, alias="openModel")
     open_model_result: Optional[ResultOpenModelResultIdeaRSOpenModel] = Field(default=None, alias="openModelResult")

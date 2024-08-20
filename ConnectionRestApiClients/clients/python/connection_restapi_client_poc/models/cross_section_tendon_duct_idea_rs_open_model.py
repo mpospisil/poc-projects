@@ -26,13 +26,13 @@ from typing_extensions import Self
 
 class CrossSectionTendonDuctIdeaRSOpenModel(BaseModel):
     """
-    CrossSectionTendonDuctIdeaRSOpenModel
+    Tendon duct
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: Optional[StrictInt] = Field(default=None, description="Tendon duct Id")
     point: Optional[Geometry2DPoint2DIdeaRSOpenModel] = None
     material_duct: Optional[CrossSectionMaterialDuctIdeaRSOpenModel] = Field(default=None, alias="materialDuct")
-    is_debonding_tube: Optional[StrictBool] = Field(default=None, alias="isDebondingTube")
-    diameter: Optional[Union[StrictFloat, StrictInt]] = None
+    is_debonding_tube: Optional[StrictBool] = Field(default=None, description="rue for debonding tubes, false for tendon ducts", alias="isDebondingTube")
+    diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Diameter")
     __properties: ClassVar[List[str]] = ["id", "point", "materialDuct", "isDebondingTube", "diameter"]
 
     model_config = ConfigDict(

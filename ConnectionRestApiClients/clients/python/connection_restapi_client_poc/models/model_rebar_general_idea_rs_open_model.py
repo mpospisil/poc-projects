@@ -17,16 +17,16 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
 class ModelRebarGeneralIdeaRSOpenModel(BaseModel):
     """
-    ModelRebarGeneralIdeaRSOpenModel
+    Represents a single main rebar in 3D space.  Holds data from generated rebar or rebar imported from Tekla.  the rebarShape is in global coordinates and it is not possible to prject it along Member1D, Polyline, ... (referenceLine)
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: Optional[StrictInt] = Field(default=None, description="Element Id")
     __properties: ClassVar[List[str]] = ["id"]
 
     model_config = ConfigDict(

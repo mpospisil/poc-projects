@@ -1,15 +1,16 @@
 # CrossSectionTendonDuctIdeaRSOpenModel
 
+Tendon duct
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Tendon duct Id | [optional] 
 **point** | [**Geometry2DPoint2DIdeaRSOpenModel**](Geometry2DPoint2DIdeaRSOpenModel.md) |  | [optional] 
 **material_duct** | [**CrossSectionMaterialDuctIdeaRSOpenModel**](CrossSectionMaterialDuctIdeaRSOpenModel.md) |  | [optional] 
-**is_debonding_tube** | **bool** |  | [optional] 
-**diameter** | **float** |  | [optional] 
+**is_debonding_tube** | **bool** | rue for debonding tubes, false for tendon ducts | [optional] 
+**diameter** | **float** | Diameter | [optional] 
 
 ## Example
 

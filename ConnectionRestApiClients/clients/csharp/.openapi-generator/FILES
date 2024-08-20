@@ -169,6 +169,7 @@ docs/ResultResultOnMembersIdeaRSOpenModel.md
 docs/ResultResultTypeIdeaRSOpenModel.md
 docs/SystemIOMemoryStreamSystemPrivateCoreLib.md
 docs/TemplateApi.md
+docs/VersionApi.md
 docs/WeldEvaluationIdeaRSOpenModel.md
 git_push.sh
 src/connection_restapi_client_poc.Test/Api/CalculationApiTests.cs
@@ -180,6 +181,7 @@ src/connection_restapi_client_poc.Test/Api/MemberApiTests.cs
 src/connection_restapi_client_poc.Test/Api/ParameterApiTests.cs
 src/connection_restapi_client_poc.Test/Api/ProjectApiTests.cs
 src/connection_restapi_client_poc.Test/Api/TemplateApiTests.cs
+src/connection_restapi_client_poc.Test/Api/VersionApiTests.cs
 src/connection_restapi_client_poc.Test/Model/ConcreteCheckSectionIdeaRSOpenModelTests.cs
 src/connection_restapi_client_poc.Test/Model/ConcreteConcreteSetupIdeaRSOpenModelTests.cs
 src/connection_restapi_client_poc.Test/Model/ConeBreakoutCheckTypeIdeaRSOpenModelTests.cs
@@ -347,6 +349,7 @@ src/connection_restapi_client_poc/Api/MemberApi.cs
 src/connection_restapi_client_poc/Api/ParameterApi.cs
 src/connection_restapi_client_poc/Api/ProjectApi.cs
 src/connection_restapi_client_poc/Api/TemplateApi.cs
+src/connection_restapi_client_poc/Api/VersionApi.cs
 src/connection_restapi_client_poc/Client/ApiClient.cs
 src/connection_restapi_client_poc/Client/ApiException.cs
 src/connection_restapi_client_poc/Client/ApiResponse.cs

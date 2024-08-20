@@ -1,11 +1,12 @@
 # ModelInitialImperfectionOfPointIdeaRSOpenModel
 
+Initial deformation of point - geometry nonlinear calculation
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

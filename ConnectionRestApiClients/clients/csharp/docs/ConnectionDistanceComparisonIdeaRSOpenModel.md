@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.ConnectionDistanceComparisonIdeaRSOpenModel
+Represents the result of comparison of distances of two object from the same point
 
 ## Properties
 

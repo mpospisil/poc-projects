@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class MaterialReinfBarSurfaceIdeaRSOpenModel(str, Enum):
     """
-    MaterialReinfBarSurfaceIdeaRSOpenModel
+    Reinforcement bar surface
     """
 
     """

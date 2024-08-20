@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.MaterialThermalExpansionStateIdeaRSOpenModel
+Type of curvature -  thermal expansion
 
 ## Properties
 

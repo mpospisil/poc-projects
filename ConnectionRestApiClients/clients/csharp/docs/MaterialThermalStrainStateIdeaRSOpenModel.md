@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.MaterialThermalStrainStateIdeaRSOpenModel
+Type of curvature - thermal strain curvature
 
 ## Properties
 

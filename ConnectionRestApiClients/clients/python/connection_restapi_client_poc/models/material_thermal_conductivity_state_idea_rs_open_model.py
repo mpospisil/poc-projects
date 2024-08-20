@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class MaterialThermalConductivityStateIdeaRSOpenModel(str, Enum):
     """
-    MaterialThermalConductivityStateIdeaRSOpenModel
+    Type of curvature - thermal conductivity
     """
 
     """

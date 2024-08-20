@@ -1,5 +1,6 @@
 # MaterialReinfBarSurfaceIdeaRSOpenModel
 
+Reinforcement bar surface
 
 ## Enum
 

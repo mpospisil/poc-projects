@@ -1,5 +1,6 @@
 # CrossSectionFatigueTypeOfPrestressingSteelIdeaRSOpenModel
 
+Posttensioned reinforcement type
 
 ## Enum
 

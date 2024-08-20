@@ -1,12 +1,13 @@
 # ResultMemberIdeaRSOpenModel
 
+Member identification
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **member_type** | [**ResultMemberTypeIdeaRSOpenModel**](ResultMemberTypeIdeaRSOpenModel.md) |  | [optional] 
-**id** | **int** |  | [optional] 
+**id** | **int** | Id of member | [optional] 
 
 ## Example
 

@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// CrossSectionStirrupIdeaRSOpenModel
+    /// Stirrup
     /// </summary>
     [DataContract(Name = "CrossSection_Stirrup-IdeaRS_OpenModel")]
     public partial class CrossSectionStirrupIdeaRSOpenModel : IValidatableObject
@@ -35,14 +35,14 @@ namespace connection_restapi_client_poc.Model
         /// Initializes a new instance of the <see cref="CrossSectionStirrupIdeaRSOpenModel" /> class.
         /// </summary>
         /// <param name="geometry">geometry.</param>
-        /// <param name="diameter">diameter.</param>
+        /// <param name="diameter">Diameter.</param>
         /// <param name="material">material.</param>
-        /// <param name="anchorageLenght">anchorageLenght.</param>
-        /// <param name="diameterOfMandrel">diameterOfMandrel.</param>
-        /// <param name="isClosed">isClosed.</param>
-        /// <param name="distance">distance.</param>
-        /// <param name="shearCheck">shearCheck.</param>
-        /// <param name="torsionCheck">torsionCheck.</param>
+        /// <param name="anchorageLenght">Anchorage Lenght.</param>
+        /// <param name="diameterOfMandrel">Radius of stirrup mandrel - refering to stirrup axis.</param>
+        /// <param name="isClosed">Open / Closed stirrup.</param>
+        /// <param name="distance">Longitudinal distance between stirrups.</param>
+        /// <param name="shearCheck">Status of shear check, not possible for detailing stirrup.</param>
+        /// <param name="torsionCheck">Status of torsion check, not possible for detailing stirrup.</param>
         public CrossSectionStirrupIdeaRSOpenModel(Geometry2DPolyLine2DIdeaRSOpenModel geometry = default(Geometry2DPolyLine2DIdeaRSOpenModel), double diameter = default(double), ReferenceElementIdeaRSOpenModel material = default(ReferenceElementIdeaRSOpenModel), double anchorageLenght = default(double), double diameterOfMandrel = default(double), bool isClosed = default(bool), double distance = default(double), bool shearCheck = default(bool), bool torsionCheck = default(bool))
         {
             this.Geometry = geometry;
@@ -63,8 +63,9 @@ namespace connection_restapi_client_poc.Model
         public Geometry2DPolyLine2DIdeaRSOpenModel Geometry { get; set; }
 
         /// <summary>
-        /// Gets or Sets Diameter
+        /// Diameter
         /// </summary>
+        /// <value>Diameter</value>
         [DataMember(Name = "diameter", EmitDefaultValue = false)]
         public double Diameter { get; set; }
 
@@ -75,38 +76,44 @@ namespace connection_restapi_client_poc.Model
         public ReferenceElementIdeaRSOpenModel Material { get; set; }
 
         /// <summary>
-        /// Gets or Sets AnchorageLenght
+        /// Anchorage Lenght
         /// </summary>
+        /// <value>Anchorage Lenght</value>
         [DataMember(Name = "anchorageLenght", EmitDefaultValue = false)]
         public double AnchorageLenght { get; set; }
 
         /// <summary>
-        /// Gets or Sets DiameterOfMandrel
+        /// Radius of stirrup mandrel - refering to stirrup axis
         /// </summary>
+        /// <value>Radius of stirrup mandrel - refering to stirrup axis</value>
         [DataMember(Name = "diameterOfMandrel", EmitDefaultValue = false)]
         public double DiameterOfMandrel { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsClosed
+        /// Open / Closed stirrup
         /// </summary>
+        /// <value>Open / Closed stirrup</value>
         [DataMember(Name = "isClosed", EmitDefaultValue = true)]
         public bool IsClosed { get; set; }
 
         /// <summary>
-        /// Gets or Sets Distance
+        /// Longitudinal distance between stirrups
         /// </summary>
+        /// <value>Longitudinal distance between stirrups</value>
         [DataMember(Name = "distance", EmitDefaultValue = false)]
         public double Distance { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShearCheck
+        /// Status of shear check, not possible for detailing stirrup
         /// </summary>
+        /// <value>Status of shear check, not possible for detailing stirrup</value>
         [DataMember(Name = "shearCheck", EmitDefaultValue = true)]
         public bool ShearCheck { get; set; }
 
         /// <summary>
-        /// Gets or Sets TorsionCheck
+        /// Status of torsion check, not possible for detailing stirrup
         /// </summary>
+        /// <value>Status of torsion check, not possible for detailing stirrup</value>
         [DataMember(Name = "torsionCheck", EmitDefaultValue = true)]
         public bool TorsionCheck { get; set; }
 

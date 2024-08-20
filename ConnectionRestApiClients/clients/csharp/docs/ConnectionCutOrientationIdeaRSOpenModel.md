@@ -1,4 +1,5 @@
 # connection_restapi_client_poc.Model.ConnectionCutOrientationIdeaRSOpenModel
+Represents the type of the cut
 
 ## Properties
 

@@ -1,5 +1,6 @@
 # ConnectionAnchorGridIdeaRSOpenModel
 
+Data of the anchor grid
 
 ## Properties
 
@@ -7,30 +8,30 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **concrete_block** | [**ConnectionConcreteBlockIdeaRSOpenModel**](ConnectionConcreteBlockIdeaRSOpenModel.md) |  | [optional] 
 **anchor_type** | [**ParametersAnchorTypeIdeaRSOpenModel**](ParametersAnchorTypeIdeaRSOpenModel.md) |  | [optional] 
-**washer_size** | **float** |  | [optional] 
+**washer_size** | **float** | Washer Size used if AnchorType is washer | [optional] 
 **bolt_assembly_ref** | **str** |  | [optional] 
-**id** | **int** |  | [optional] 
-**is_anchor** | **bool** |  | [optional] 
-**anchor_len** | **float** |  | [optional] 
-**hole_diameter** | **float** |  | [optional] 
-**diameter** | **float** |  | [optional] 
-**head_diameter** | **float** |  | [optional] 
-**diagonal_head_diameter** | **float** |  | [optional] 
-**head_height** | **float** |  | [optional] 
-**bore_hole** | **float** |  | [optional] 
-**tensile_stress_area** | **float** |  | [optional] 
-**nut_thickness** | **float** |  | [optional] 
-**bolt_assembly_name** | **str** |  | [optional] 
-**standard** | **str** |  | [optional] 
-**material** | **str** |  | [optional] 
+**id** | **int** | Unique Id of the bolt grid | [optional] 
+**is_anchor** | **bool** | Is Anchor | [optional] 
+**anchor_len** | **float** | Anchor lenght | [optional] 
+**hole_diameter** | **float** | The diameter of the hole | [optional] 
+**diameter** | **float** | The diameter of bolt | [optional] 
+**head_diameter** | **float** | The head diameter of bolt | [optional] 
+**diagonal_head_diameter** | **float** | The Diagonal Head Diameter of bolt | [optional] 
+**head_height** | **float** | The Head Height of bolt | [optional] 
+**bore_hole** | **float** | The BoreHole of bolt | [optional] 
+**tensile_stress_area** | **float** | The Tensile Stress Area of bolt | [optional] 
+**nut_thickness** | **float** | The Nut Thickness of bolt | [optional] 
+**bolt_assembly_name** | **str** | The description of the bolt assembly | [optional] 
+**standard** | **str** | The standard of the bolt assembly | [optional] 
+**material** | **str** | The material of the bolt assembly | [optional] 
 **origin** | [**Geometry3DPoint3DIdeaRSOpenModel**](Geometry3DPoint3DIdeaRSOpenModel.md) |  | [optional] 
 **axis_x** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 
 **axis_y** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 
 **axis_z** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 
-**positions** | [**List[Geometry3DPoint3DIdeaRSOpenModel]**](Geometry3DPoint3DIdeaRSOpenModel.md) |  | [optional] 
-**connected_plates** | **List[int]** |  | [optional] 
-**connected_part_ids** | **List[str]** |  | [optional] 
-**shear_in_thread** | **bool** |  | [optional] 
+**positions** | [**List[Geometry3DPoint3DIdeaRSOpenModel]**](Geometry3DPoint3DIdeaRSOpenModel.md) | Positions of holes in the local coodinate system of the bolt grid | [optional] 
+**connected_plates** | **List[int]** | Identifiers of the connected plates | [optional] 
+**connected_part_ids** | **List[str]** | Id of the weld | [optional] 
+**shear_in_thread** | **bool** | Indicates, whether a shear plane is in the thread of a bolt. | [optional] 
 **bolt_interaction** | [**ParametersBoltShearTypeIdeaRSOpenModel**](ParametersBoltShearTypeIdeaRSOpenModel.md) |  | [optional] 
 
 ## Example

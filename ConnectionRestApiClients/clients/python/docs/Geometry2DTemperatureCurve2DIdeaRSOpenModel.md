@@ -1,11 +1,12 @@
 # Geometry2DTemperatureCurve2DIdeaRSOpenModel
 
+Reperesents a thermal curve.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**points** | [**List[Geometry2DPoint2DIdeaRSOpenModel]**](Geometry2DPoint2DIdeaRSOpenModel.md) |  | [optional] 
+**points** | [**List[Geometry2DPoint2DIdeaRSOpenModel]**](Geometry2DPoint2DIdeaRSOpenModel.md) | List of polygon points | [optional] 
 
 ## Example
 

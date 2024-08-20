@@ -1,11 +1,12 @@
 # Geometry2DPolygon2DIdeaRSOpenModel
 
+Represents a polygon in two-dimensional space.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**points** | [**List[Geometry2DPoint2DIdeaRSOpenModel]**](Geometry2DPoint2DIdeaRSOpenModel.md) |  | [optional] 
+**points** | [**List[Geometry2DPoint2DIdeaRSOpenModel]**](Geometry2DPoint2DIdeaRSOpenModel.md) | List of polygon points | [optional] 
 
 ## Example
 

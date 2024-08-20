@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionCheckResBoltIdeaRSOpenModel
+    /// Check value for Bolts
     /// </summary>
     [DataContract(Name = "Connection_CheckResBolt-IdeaRS_OpenModel")]
     public partial class ConnectionCheckResBoltIdeaRSOpenModel : IValidatableObject
@@ -34,9 +34,9 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionCheckResBoltIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="unityCheck">unityCheck.</param>
-        /// <param name="checkStatus">checkStatus.</param>
+        /// <param name="name">Name.</param>
+        /// <param name="unityCheck">Unity Check.</param>
+        /// <param name="checkStatus">Status of the Check.</param>
         public ConnectionCheckResBoltIdeaRSOpenModel(string name = default(string), double unityCheck = default(double), bool checkStatus = default(bool))
         {
             this.Name = name;
@@ -45,20 +45,23 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name
         /// </summary>
+        /// <value>Name</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets UnityCheck
+        /// Unity Check
         /// </summary>
+        /// <value>Unity Check</value>
         [DataMember(Name = "unityCheck", EmitDefaultValue = false)]
         public double UnityCheck { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckStatus
+        /// Status of the Check
         /// </summary>
+        /// <value>Status of the Check</value>
         [DataMember(Name = "checkStatus", EmitDefaultValue = true)]
         public bool CheckStatus { get; set; }
 

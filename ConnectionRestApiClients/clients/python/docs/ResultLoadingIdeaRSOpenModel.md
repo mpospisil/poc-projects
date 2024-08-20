@@ -1,12 +1,13 @@
 # ResultLoadingIdeaRSOpenModel
 
+Loading identification
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **loading_type** | [**ResultLoadingTypeIdeaRSOpenModel**](ResultLoadingTypeIdeaRSOpenModel.md) |  | [optional] 
-**id** | **int** |  | [optional] 
+**id** | **int** | Id of loading | [optional] 
 
 ## Example
 

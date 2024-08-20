@@ -1,17 +1,18 @@
 # CrossSectionReinforcedCrossSectionIdeaRSOpenModel
 
+Reinforced cross-section
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | [optional] 
+**name** | **str** | Name of cross-section | [optional] 
 **cross_section** | [**ReferenceElementIdeaRSOpenModel**](ReferenceElementIdeaRSOpenModel.md) |  | [optional] 
-**bars** | [**List[CrossSectionReinforcedBarIdeaRSOpenModel]**](CrossSectionReinforcedBarIdeaRSOpenModel.md) |  | [optional] 
-**stirrups** | [**List[CrossSectionStirrupIdeaRSOpenModel]**](CrossSectionStirrupIdeaRSOpenModel.md) |  | [optional] 
-**tendon_bars** | [**List[CrossSectionTendonBarIdeaRSOpenModel]**](CrossSectionTendonBarIdeaRSOpenModel.md) |  | [optional] 
-**tendon_ducts** | [**List[CrossSectionTendonDuctIdeaRSOpenModel]**](CrossSectionTendonDuctIdeaRSOpenModel.md) |  | [optional] 
-**id** | **int** |  | [optional] 
+**bars** | [**List[CrossSectionReinforcedBarIdeaRSOpenModel]**](CrossSectionReinforcedBarIdeaRSOpenModel.md) | Reinforced bars | [optional] 
+**stirrups** | [**List[CrossSectionStirrupIdeaRSOpenModel]**](CrossSectionStirrupIdeaRSOpenModel.md) | Stirrups | [optional] 
+**tendon_bars** | [**List[CrossSectionTendonBarIdeaRSOpenModel]**](CrossSectionTendonBarIdeaRSOpenModel.md) | Tendon bars | [optional] 
+**tendon_ducts** | [**List[CrossSectionTendonDuctIdeaRSOpenModel]**](CrossSectionTendonDuctIdeaRSOpenModel.md) | Tendon ducts | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

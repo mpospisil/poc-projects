@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines Material_ThermalStressStrainState-IdeaRS_OpenModel
+    /// Type of curvature - thermal stress-strain curvature
     /// </summary>
+    /// <value>Type of curvature - thermal stress-strain curvature</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum MaterialThermalStressStrainStateIdeaRSOpenModel
     {

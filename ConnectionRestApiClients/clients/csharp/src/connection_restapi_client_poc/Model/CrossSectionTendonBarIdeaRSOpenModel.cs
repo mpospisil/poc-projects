@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// CrossSectionTendonBarIdeaRSOpenModel
+    /// Tendon bar
     /// </summary>
     [DataContract(Name = "CrossSection_TendonBar-IdeaRS_OpenModel")]
     public partial class CrossSectionTendonBarIdeaRSOpenModel : IValidatableObject
@@ -46,14 +46,14 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CrossSectionTendonBarIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">Tendon Id.</param>
         /// <param name="tendonType">tendonType.</param>
         /// <param name="point">point.</param>
         /// <param name="material">material.</param>
-        /// <param name="prestressingOrder">prestressingOrder.</param>
-        /// <param name="numStrandsInTendon">numStrandsInTendon.</param>
+        /// <param name="prestressingOrder">order of tendon prestessing.</param>
+        /// <param name="numStrandsInTendon">number of ropes in tendon.</param>
         /// <param name="prestressReinforcementType">prestressReinforcementType.</param>
-        /// <param name="phase">phase.</param>
+        /// <param name="phase">Phase.</param>
         /// <param name="tendonDuct">tendonDuct.</param>
         public CrossSectionTendonBarIdeaRSOpenModel(int id = default(int), CrossSectionTendonBarTypeIdeaRSOpenModel? tendonType = default(CrossSectionTendonBarTypeIdeaRSOpenModel?), Geometry2DPoint2DIdeaRSOpenModel point = default(Geometry2DPoint2DIdeaRSOpenModel), ReferenceElementIdeaRSOpenModel material = default(ReferenceElementIdeaRSOpenModel), int prestressingOrder = default(int), int numStrandsInTendon = default(int), CrossSectionFatigueTypeOfPrestressingSteelIdeaRSOpenModel? prestressReinforcementType = default(CrossSectionFatigueTypeOfPrestressingSteelIdeaRSOpenModel?), int phase = default(int), CrossSectionTendonDuctIdeaRSOpenModel tendonDuct = default(CrossSectionTendonDuctIdeaRSOpenModel))
         {
@@ -69,8 +69,9 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Tendon Id
         /// </summary>
+        /// <value>Tendon Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
@@ -87,20 +88,23 @@ namespace connection_restapi_client_poc.Model
         public ReferenceElementIdeaRSOpenModel Material { get; set; }
 
         /// <summary>
-        /// Gets or Sets PrestressingOrder
+        /// order of tendon prestessing
         /// </summary>
+        /// <value>order of tendon prestessing</value>
         [DataMember(Name = "prestressingOrder", EmitDefaultValue = false)]
         public int PrestressingOrder { get; set; }
 
         /// <summary>
-        /// Gets or Sets NumStrandsInTendon
+        /// number of ropes in tendon
         /// </summary>
+        /// <value>number of ropes in tendon</value>
         [DataMember(Name = "numStrandsInTendon", EmitDefaultValue = false)]
         public int NumStrandsInTendon { get; set; }
 
         /// <summary>
-        /// Gets or Sets Phase
+        /// Phase
         /// </summary>
+        /// <value>Phase</value>
         [DataMember(Name = "phase", EmitDefaultValue = false)]
         public int Phase { get; set; }
 

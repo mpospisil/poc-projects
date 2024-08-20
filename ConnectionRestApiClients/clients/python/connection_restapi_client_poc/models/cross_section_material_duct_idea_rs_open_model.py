@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class CrossSectionMaterialDuctIdeaRSOpenModel(str, Enum):
     """
-    CrossSectionMaterialDuctIdeaRSOpenModel
+    Tendon ducts material type
     """
 
     """

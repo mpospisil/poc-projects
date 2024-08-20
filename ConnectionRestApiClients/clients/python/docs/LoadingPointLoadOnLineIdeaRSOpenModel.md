@@ -1,11 +1,12 @@
 # LoadingPointLoadOnLineIdeaRSOpenModel
 
+Load in specific point on line
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

@@ -1,11 +1,12 @@
 # ModelRebarSingleIdeaRSOpenModel
 
+Represents a single main rebar in 3D space.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

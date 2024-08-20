@@ -1,5 +1,6 @@
 # CrossSectionTendonBarTypeIdeaRSOpenModel
 
+Tendon bar type
 
 ## Enum
 

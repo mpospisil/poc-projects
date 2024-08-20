@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class CrtCompCheckISIdeaRSOpenModel(str, Enum):
     """
-    CrtCompCheckISIdeaRSOpenModel
+    CRT IS check
     """
 
     """

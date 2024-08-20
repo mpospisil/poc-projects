@@ -25,10 +25,10 @@ from typing_extensions import Self
 
 class ResultLoadingIdeaRSOpenModel(BaseModel):
     """
-    ResultLoadingIdeaRSOpenModel
+    Loading identification
     """ # noqa: E501
     loading_type: Optional[ResultLoadingTypeIdeaRSOpenModel] = Field(default=None, alias="loadingType")
-    id: Optional[StrictInt] = None
+    id: Optional[StrictInt] = Field(default=None, description="Id of loading")
     __properties: ClassVar[List[str]] = ["loadingType", "id"]
 
     model_config = ConfigDict(

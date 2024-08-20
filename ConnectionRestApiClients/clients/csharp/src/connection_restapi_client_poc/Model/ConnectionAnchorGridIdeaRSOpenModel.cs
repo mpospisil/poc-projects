@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionAnchorGridIdeaRSOpenModel
+    /// Data of the anchor grid
     /// </summary>
     [DataContract(Name = "Connection_AnchorGrid-IdeaRS_OpenModel")]
     public partial class ConnectionAnchorGridIdeaRSOpenModel : IValidatableObject
@@ -48,30 +48,30 @@ namespace connection_restapi_client_poc.Model
         /// </summary>
         /// <param name="concreteBlock">concreteBlock.</param>
         /// <param name="anchorType">anchorType.</param>
-        /// <param name="washerSize">washerSize.</param>
+        /// <param name="washerSize">Washer Size used if AnchorType is washer.</param>
         /// <param name="boltAssemblyRef">boltAssemblyRef.</param>
-        /// <param name="id">id.</param>
-        /// <param name="isAnchor">isAnchor.</param>
-        /// <param name="anchorLen">anchorLen.</param>
-        /// <param name="holeDiameter">holeDiameter.</param>
-        /// <param name="diameter">diameter.</param>
-        /// <param name="headDiameter">headDiameter.</param>
-        /// <param name="diagonalHeadDiameter">diagonalHeadDiameter.</param>
-        /// <param name="headHeight">headHeight.</param>
-        /// <param name="boreHole">boreHole.</param>
-        /// <param name="tensileStressArea">tensileStressArea.</param>
-        /// <param name="nutThickness">nutThickness.</param>
-        /// <param name="boltAssemblyName">boltAssemblyName.</param>
-        /// <param name="standard">standard.</param>
-        /// <param name="material">material.</param>
+        /// <param name="id">Unique Id of the bolt grid.</param>
+        /// <param name="isAnchor">Is Anchor.</param>
+        /// <param name="anchorLen">Anchor lenght.</param>
+        /// <param name="holeDiameter">The diameter of the hole.</param>
+        /// <param name="diameter">The diameter of bolt.</param>
+        /// <param name="headDiameter">The head diameter of bolt.</param>
+        /// <param name="diagonalHeadDiameter">The Diagonal Head Diameter of bolt.</param>
+        /// <param name="headHeight">The Head Height of bolt.</param>
+        /// <param name="boreHole">The BoreHole of bolt.</param>
+        /// <param name="tensileStressArea">The Tensile Stress Area of bolt.</param>
+        /// <param name="nutThickness">The Nut Thickness of bolt.</param>
+        /// <param name="boltAssemblyName">The description of the bolt assembly.</param>
+        /// <param name="standard">The standard of the bolt assembly.</param>
+        /// <param name="material">The material of the bolt assembly.</param>
         /// <param name="origin">origin.</param>
         /// <param name="axisX">axisX.</param>
         /// <param name="axisY">axisY.</param>
         /// <param name="axisZ">axisZ.</param>
-        /// <param name="positions">positions.</param>
-        /// <param name="connectedPlates">connectedPlates.</param>
-        /// <param name="connectedPartIds">connectedPartIds.</param>
-        /// <param name="shearInThread">shearInThread.</param>
+        /// <param name="positions">Positions of holes in the local coodinate system of the bolt grid.</param>
+        /// <param name="connectedPlates">Identifiers of the connected plates.</param>
+        /// <param name="connectedPartIds">Id of the weld.</param>
+        /// <param name="shearInThread">Indicates, whether a shear plane is in the thread of a bolt..</param>
         /// <param name="boltInteraction">boltInteraction.</param>
         public ConnectionAnchorGridIdeaRSOpenModel(ConnectionConcreteBlockIdeaRSOpenModel concreteBlock = default(ConnectionConcreteBlockIdeaRSOpenModel), ParametersAnchorTypeIdeaRSOpenModel? anchorType = default(ParametersAnchorTypeIdeaRSOpenModel?), double washerSize = default(double), string boltAssemblyRef = default(string), int id = default(int), bool isAnchor = default(bool), double anchorLen = default(double), double holeDiameter = default(double), double diameter = default(double), double headDiameter = default(double), double diagonalHeadDiameter = default(double), double headHeight = default(double), double boreHole = default(double), double tensileStressArea = default(double), double nutThickness = default(double), string boltAssemblyName = default(string), string standard = default(string), string material = default(string), Geometry3DPoint3DIdeaRSOpenModel origin = default(Geometry3DPoint3DIdeaRSOpenModel), Geometry3DVector3DIdeaRSOpenModel axisX = default(Geometry3DVector3DIdeaRSOpenModel), Geometry3DVector3DIdeaRSOpenModel axisY = default(Geometry3DVector3DIdeaRSOpenModel), Geometry3DVector3DIdeaRSOpenModel axisZ = default(Geometry3DVector3DIdeaRSOpenModel), List<Geometry3DPoint3DIdeaRSOpenModel> positions = default(List<Geometry3DPoint3DIdeaRSOpenModel>), List<int> connectedPlates = default(List<int>), List<string> connectedPartIds = default(List<string>), bool shearInThread = default(bool), ParametersBoltShearTypeIdeaRSOpenModel? boltInteraction = default(ParametersBoltShearTypeIdeaRSOpenModel?))
         {
@@ -111,8 +111,9 @@ namespace connection_restapi_client_poc.Model
         public ConnectionConcreteBlockIdeaRSOpenModel ConcreteBlock { get; set; }
 
         /// <summary>
-        /// Gets or Sets WasherSize
+        /// Washer Size used if AnchorType is washer
         /// </summary>
+        /// <value>Washer Size used if AnchorType is washer</value>
         [DataMember(Name = "washerSize", EmitDefaultValue = false)]
         public double WasherSize { get; set; }
 
@@ -123,86 +124,100 @@ namespace connection_restapi_client_poc.Model
         public string BoltAssemblyRef { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique Id of the bolt grid
         /// </summary>
+        /// <value>Unique Id of the bolt grid</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsAnchor
+        /// Is Anchor
         /// </summary>
+        /// <value>Is Anchor</value>
         [DataMember(Name = "isAnchor", EmitDefaultValue = true)]
         public bool IsAnchor { get; set; }
 
         /// <summary>
-        /// Gets or Sets AnchorLen
+        /// Anchor lenght
         /// </summary>
+        /// <value>Anchor lenght</value>
         [DataMember(Name = "anchorLen", EmitDefaultValue = false)]
         public double AnchorLen { get; set; }
 
         /// <summary>
-        /// Gets or Sets HoleDiameter
+        /// The diameter of the hole
         /// </summary>
+        /// <value>The diameter of the hole</value>
         [DataMember(Name = "holeDiameter", EmitDefaultValue = false)]
         public double HoleDiameter { get; set; }
 
         /// <summary>
-        /// Gets or Sets Diameter
+        /// The diameter of bolt
         /// </summary>
+        /// <value>The diameter of bolt</value>
         [DataMember(Name = "diameter", EmitDefaultValue = false)]
         public double Diameter { get; set; }
 
         /// <summary>
-        /// Gets or Sets HeadDiameter
+        /// The head diameter of bolt
         /// </summary>
+        /// <value>The head diameter of bolt</value>
         [DataMember(Name = "headDiameter", EmitDefaultValue = false)]
         public double HeadDiameter { get; set; }
 
         /// <summary>
-        /// Gets or Sets DiagonalHeadDiameter
+        /// The Diagonal Head Diameter of bolt
         /// </summary>
+        /// <value>The Diagonal Head Diameter of bolt</value>
         [DataMember(Name = "diagonalHeadDiameter", EmitDefaultValue = false)]
         public double DiagonalHeadDiameter { get; set; }
 
         /// <summary>
-        /// Gets or Sets HeadHeight
+        /// The Head Height of bolt
         /// </summary>
+        /// <value>The Head Height of bolt</value>
         [DataMember(Name = "headHeight", EmitDefaultValue = false)]
         public double HeadHeight { get; set; }
 
         /// <summary>
-        /// Gets or Sets BoreHole
+        /// The BoreHole of bolt
         /// </summary>
+        /// <value>The BoreHole of bolt</value>
         [DataMember(Name = "boreHole", EmitDefaultValue = false)]
         public double BoreHole { get; set; }
 
         /// <summary>
-        /// Gets or Sets TensileStressArea
+        /// The Tensile Stress Area of bolt
         /// </summary>
+        /// <value>The Tensile Stress Area of bolt</value>
         [DataMember(Name = "tensileStressArea", EmitDefaultValue = false)]
         public double TensileStressArea { get; set; }
 
         /// <summary>
-        /// Gets or Sets NutThickness
+        /// The Nut Thickness of bolt
         /// </summary>
+        /// <value>The Nut Thickness of bolt</value>
         [DataMember(Name = "nutThickness", EmitDefaultValue = false)]
         public double NutThickness { get; set; }
 
         /// <summary>
-        /// Gets or Sets BoltAssemblyName
+        /// The description of the bolt assembly
         /// </summary>
+        /// <value>The description of the bolt assembly</value>
         [DataMember(Name = "boltAssemblyName", EmitDefaultValue = true)]
         public string BoltAssemblyName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Standard
+        /// The standard of the bolt assembly
         /// </summary>
+        /// <value>The standard of the bolt assembly</value>
         [DataMember(Name = "standard", EmitDefaultValue = true)]
         public string Standard { get; set; }
 
         /// <summary>
-        /// Gets or Sets Material
+        /// The material of the bolt assembly
         /// </summary>
+        /// <value>The material of the bolt assembly</value>
         [DataMember(Name = "material", EmitDefaultValue = true)]
         public string Material { get; set; }
 
@@ -231,26 +246,30 @@ namespace connection_restapi_client_poc.Model
         public Geometry3DVector3DIdeaRSOpenModel AxisZ { get; set; }
 
         /// <summary>
-        /// Gets or Sets Positions
+        /// Positions of holes in the local coodinate system of the bolt grid
         /// </summary>
+        /// <value>Positions of holes in the local coodinate system of the bolt grid</value>
         [DataMember(Name = "positions", EmitDefaultValue = true)]
         public List<Geometry3DPoint3DIdeaRSOpenModel> Positions { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConnectedPlates
+        /// Identifiers of the connected plates
         /// </summary>
+        /// <value>Identifiers of the connected plates</value>
         [DataMember(Name = "connectedPlates", EmitDefaultValue = true)]
         public List<int> ConnectedPlates { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConnectedPartIds
+        /// Id of the weld
         /// </summary>
+        /// <value>Id of the weld</value>
         [DataMember(Name = "connectedPartIds", EmitDefaultValue = true)]
         public List<string> ConnectedPartIds { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShearInThread
+        /// Indicates, whether a shear plane is in the thread of a bolt.
         /// </summary>
+        /// <value>Indicates, whether a shear plane is in the thread of a bolt.</value>
         [DataMember(Name = "shearInThread", EmitDefaultValue = true)]
         public bool ShearInThread { get; set; }
 

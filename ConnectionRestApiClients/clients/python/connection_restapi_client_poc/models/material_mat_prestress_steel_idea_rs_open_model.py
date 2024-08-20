@@ -31,23 +31,23 @@ from typing_extensions import Self
 
 class MaterialMatPrestressSteelIdeaRSOpenModel(BaseModel):
     """
-    MaterialMatPrestressSteelIdeaRSOpenModel
+    Material prestressing steel base class
     """ # noqa: E501
-    diameter: Optional[Union[StrictFloat, StrictInt]] = None
-    area: Optional[Union[StrictFloat, StrictInt]] = None
-    number_of_wires: Optional[StrictInt] = Field(default=None, alias="numberOfWires")
-    equivalent_diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="equivalentDiameter")
-    name: Optional[StrictStr] = None
-    load_from_library: Optional[StrictBool] = Field(default=None, alias="loadFromLibrary")
-    e: Optional[Union[StrictFloat, StrictInt]] = None
-    g: Optional[Union[StrictFloat, StrictInt]] = None
-    poisson: Optional[Union[StrictFloat, StrictInt]] = None
-    unit_mass: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="unitMass")
-    specific_heat: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="specificHeat")
-    thermal_expansion: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="thermalExpansion")
-    thermal_conductivity: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="thermalConductivity")
-    is_default_material: Optional[StrictBool] = Field(default=None, alias="isDefaultMaterial")
-    order_in_code: Optional[StrictInt] = Field(default=None, alias="orderInCode")
+    diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Diameter")
+    area: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Area")
+    number_of_wires: Optional[StrictInt] = Field(default=None, description="number of wires in strand", alias="numberOfWires")
+    equivalent_diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Equivalent diameter", alias="equivalentDiameter")
+    name: Optional[StrictStr] = Field(default=None, description="Name of material")
+    load_from_library: Optional[StrictBool] = Field(default=None, description="Load from library - try override properties from library find material by name", alias="loadFromLibrary")
+    e: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Young's modulus")
+    g: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Shear modulus")
+    poisson: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Poisson's ratio")
+    unit_mass: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Unit weight", alias="unitMass")
+    specific_heat: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Specific heat capacity", alias="specificHeat")
+    thermal_expansion: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Thermal expansion", alias="thermalExpansion")
+    thermal_conductivity: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Thermal conductivity", alias="thermalConductivity")
+    is_default_material: Optional[StrictBool] = Field(default=None, description="True if material is default material from the code", alias="isDefaultMaterial")
+    order_in_code: Optional[StrictInt] = Field(default=None, description="Order of this material in the code", alias="orderInCode")
     state_of_thermal_expansion: Optional[MaterialThermalExpansionStateIdeaRSOpenModel] = Field(default=None, alias="stateOfThermalExpansion")
     state_of_thermal_conductivity: Optional[MaterialThermalConductivityStateIdeaRSOpenModel] = Field(default=None, alias="stateOfThermalConductivity")
     state_of_thermal_specific_heat: Optional[MaterialThermalSpecificHeatStateIdeaRSOpenModel] = Field(default=None, alias="stateOfThermalSpecificHeat")
@@ -57,8 +57,8 @@ class MaterialMatPrestressSteelIdeaRSOpenModel(BaseModel):
     user_thermal_conductivity_curvature: Optional[Geometry2DPolygon2DIdeaRSOpenModel] = Field(default=None, alias="userThermalConductivityCurvature")
     user_thermal_expansion_curvature: Optional[Geometry2DPolygon2DIdeaRSOpenModel] = Field(default=None, alias="userThermalExpansionCurvature")
     user_thermal_strain_curvature: Optional[Geometry2DPolygon2DIdeaRSOpenModel] = Field(default=None, alias="userThermalStrainCurvature")
-    user_thermal_stress_strain_curvature: Optional[List[Geometry2DTemperatureCurve2DIdeaRSOpenModel]] = Field(default=None, alias="userThermalStressStrainCurvature")
-    id: Optional[StrictInt] = None
+    user_thermal_stress_strain_curvature: Optional[List[Geometry2DTemperatureCurve2DIdeaRSOpenModel]] = Field(default=None, description="User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}", alias="userThermalStressStrainCurvature")
+    id: Optional[StrictInt] = Field(default=None, description="Element Id")
     __properties: ClassVar[List[str]] = ["diameter", "area", "numberOfWires", "equivalentDiameter", "name", "loadFromLibrary", "e", "g", "poisson", "unitMass", "specificHeat", "thermalExpansion", "thermalConductivity", "isDefaultMaterial", "orderInCode", "stateOfThermalExpansion", "stateOfThermalConductivity", "stateOfThermalSpecificHeat", "stateOfThermalStressStrain", "stateOfThermalStrain", "userThermalSpecificHeatCurvature", "userThermalConductivityCurvature", "userThermalExpansionCurvature", "userThermalStrainCurvature", "userThermalStressStrainCurvature", "id"]
 
     model_config = ConfigDict(

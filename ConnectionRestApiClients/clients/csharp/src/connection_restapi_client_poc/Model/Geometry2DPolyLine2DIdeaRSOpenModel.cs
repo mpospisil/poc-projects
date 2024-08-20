@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Geometry2DPolyLine2DIdeaRSOpenModel
+    /// Represents a polyline in two-dimensional space.
     /// </summary>
     [DataContract(Name = "Geometry2D_PolyLine2D-IdeaRS_OpenModel")]
     public partial class Geometry2DPolyLine2DIdeaRSOpenModel : IValidatableObject
@@ -35,7 +35,7 @@ namespace connection_restapi_client_poc.Model
         /// Initializes a new instance of the <see cref="Geometry2DPolyLine2DIdeaRSOpenModel" /> class.
         /// </summary>
         /// <param name="startPoint">startPoint.</param>
-        /// <param name="segments">segments.</param>
+        /// <param name="segments">Gets segments of &#x60;PolyLine2D&#x60;..</param>
         public Geometry2DPolyLine2DIdeaRSOpenModel(Geometry2DPoint2DIdeaRSOpenModel startPoint = default(Geometry2DPoint2DIdeaRSOpenModel), List<Geometry2DSegment2DIdeaRSOpenModel> segments = default(List<Geometry2DSegment2DIdeaRSOpenModel>))
         {
             this.StartPoint = startPoint;
@@ -49,8 +49,9 @@ namespace connection_restapi_client_poc.Model
         public Geometry2DPoint2DIdeaRSOpenModel StartPoint { get; set; }
 
         /// <summary>
-        /// Gets or Sets Segments
+        /// Gets segments of &#x60;PolyLine2D&#x60;.
         /// </summary>
+        /// <value>Gets segments of &#x60;PolyLine2D&#x60;.</value>
         [DataMember(Name = "segments", EmitDefaultValue = true)]
         public List<Geometry2DSegment2DIdeaRSOpenModel> Segments { get; set; }
 

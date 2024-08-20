@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Geometry2DPolygon2DIdeaRSOpenModel
+    /// Represents a polygon in two-dimensional space.
     /// </summary>
     [DataContract(Name = "Geometry2D_Polygon2D-IdeaRS_OpenModel")]
     public partial class Geometry2DPolygon2DIdeaRSOpenModel : IValidatableObject
@@ -34,15 +34,16 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Geometry2DPolygon2DIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="points">points.</param>
+        /// <param name="points">List of polygon points.</param>
         public Geometry2DPolygon2DIdeaRSOpenModel(List<Geometry2DPoint2DIdeaRSOpenModel> points = default(List<Geometry2DPoint2DIdeaRSOpenModel>))
         {
             this.Points = points;
         }
 
         /// <summary>
-        /// Gets or Sets Points
+        /// List of polygon points
         /// </summary>
+        /// <value>List of polygon points</value>
         [DataMember(Name = "points", EmitDefaultValue = true)]
         public List<Geometry2DPoint2DIdeaRSOpenModel> Points { get; set; }
 

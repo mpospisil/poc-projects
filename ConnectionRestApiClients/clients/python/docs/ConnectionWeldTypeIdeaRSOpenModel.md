@@ -1,5 +1,6 @@
 # ConnectionWeldTypeIdeaRSOpenModel
 
+enum of weld types
 
 ## Enum
 

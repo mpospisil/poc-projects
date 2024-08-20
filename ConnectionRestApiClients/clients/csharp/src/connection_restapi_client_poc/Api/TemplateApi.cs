@@ -62,7 +62,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi GetDeaultTemplateMapping(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0);
+        IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi GetDefaultTemplateMapping(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0);
 
         /// <summary>
         /// Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
@@ -76,7 +76,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDeaultTemplateMappingWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0);
+        ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDefaultTemplateMappingWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -128,7 +128,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDeaultTemplateMappingAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDefaultTemplateMappingAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
@@ -143,7 +143,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>> GetDeaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>> GetDefaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -425,9 +425,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi GetDeaultTemplateMapping(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0)
+        public IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi GetDefaultTemplateMapping(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> localVarResponse = GetDeaultTemplateMappingWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> localVarResponse = GetDefaultTemplateMappingWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi);
             return localVarResponse.Data;
         }
 
@@ -440,7 +440,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDeaultTemplateMappingWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDefaultTemplateMappingWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -475,7 +475,7 @@ namespace connection_restapi_client_poc.Api
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
             localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi;
 
-            localVarRequestOptions.Operation = "TemplateApi.GetDeaultTemplateMapping";
+            localVarRequestOptions.Operation = "TemplateApi.GetDefaultTemplateMapping";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
@@ -483,7 +483,7 @@ namespace connection_restapi_client_poc.Api
             var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/apply-mapping", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetDeaultTemplateMapping", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetDefaultTemplateMapping", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -503,9 +503,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDeaultTemplateMappingAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDefaultTemplateMappingAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> localVarResponse = await GetDeaultTemplateMappingWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> localVarResponse = await GetDefaultTemplateMappingWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -519,7 +519,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>> GetDeaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>> GetDefaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -555,7 +555,7 @@ namespace connection_restapi_client_poc.Api
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
             localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi;
 
-            localVarRequestOptions.Operation = "TemplateApi.GetDeaultTemplateMapping";
+            localVarRequestOptions.Operation = "TemplateApi.GetDefaultTemplateMapping";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
@@ -564,7 +564,7 @@ namespace connection_restapi_client_poc.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetDeaultTemplateMapping", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetDefaultTemplateMapping", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

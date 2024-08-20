@@ -69,16 +69,16 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test GetDeaultTemplateMapping
+        /// Test GetDefaultTemplateMapping
         /// </summary>
         [Fact]
-        public void GetDeaultTemplateMappingTest()
+        public void GetDefaultTemplateMappingTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
             //IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = null;
-            //var response = instance.GetDeaultTemplateMapping(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi);
+            //var response = instance.GetDefaultTemplateMapping(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi);
             //Assert.IsType<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>(response);
         }
     }

@@ -5,6 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **str** |  | [optional] 
+**cross_section** | [**ReferenceElementIdeaRSOpenModel**](ReferenceElementIdeaRSOpenModel.md) |  | [optional] 
+**bars** | [**List[CrossSectionReinforcedBarIdeaRSOpenModel]**](CrossSectionReinforcedBarIdeaRSOpenModel.md) |  | [optional] 
+**stirrups** | [**List[CrossSectionStirrupIdeaRSOpenModel]**](CrossSectionStirrupIdeaRSOpenModel.md) |  | [optional] 
+**tendon_bars** | [**List[CrossSectionTendonBarIdeaRSOpenModel]**](CrossSectionTendonBarIdeaRSOpenModel.md) |  | [optional] 
+**tendon_ducts** | [**List[CrossSectionTendonDuctIdeaRSOpenModel]**](CrossSectionTendonDuctIdeaRSOpenModel.md) |  | [optional] 
 **id** | **int** |  | [optional] 
 
 ## Example

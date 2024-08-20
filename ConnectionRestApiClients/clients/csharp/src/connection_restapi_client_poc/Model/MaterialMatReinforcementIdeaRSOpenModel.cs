@@ -31,14 +31,190 @@ namespace connection_restapi_client_poc.Model
     [DataContract(Name = "Material_MatReinforcement-IdeaRS_OpenModel")]
     public partial class MaterialMatReinforcementIdeaRSOpenModel : IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets BarSurface
+        /// </summary>
+        [DataMember(Name = "barSurface", EmitDefaultValue = false)]
+        public MaterialReinfBarSurfaceIdeaRSOpenModel? BarSurface { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StateOfThermalExpansion
+        /// </summary>
+        [DataMember(Name = "stateOfThermalExpansion", EmitDefaultValue = false)]
+        public MaterialThermalExpansionStateIdeaRSOpenModel? StateOfThermalExpansion { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StateOfThermalConductivity
+        /// </summary>
+        [DataMember(Name = "stateOfThermalConductivity", EmitDefaultValue = false)]
+        public MaterialThermalConductivityStateIdeaRSOpenModel? StateOfThermalConductivity { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StateOfThermalSpecificHeat
+        /// </summary>
+        [DataMember(Name = "stateOfThermalSpecificHeat", EmitDefaultValue = false)]
+        public MaterialThermalSpecificHeatStateIdeaRSOpenModel? StateOfThermalSpecificHeat { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StateOfThermalStressStrain
+        /// </summary>
+        [DataMember(Name = "stateOfThermalStressStrain", EmitDefaultValue = false)]
+        public MaterialThermalStressStrainStateIdeaRSOpenModel? StateOfThermalStressStrain { get; set; }
+
+        /// <summary>
+        /// Gets or Sets StateOfThermalStrain
+        /// </summary>
+        [DataMember(Name = "stateOfThermalStrain", EmitDefaultValue = false)]
+        public MaterialThermalStrainStateIdeaRSOpenModel? StateOfThermalStrain { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="MaterialMatReinforcementIdeaRSOpenModel" /> class.
         /// </summary>
+        /// <param name="barSurface">barSurface.</param>
+        /// <param name="name">name.</param>
+        /// <param name="loadFromLibrary">loadFromLibrary.</param>
+        /// <param name="e">e.</param>
+        /// <param name="g">g.</param>
+        /// <param name="poisson">poisson.</param>
+        /// <param name="unitMass">unitMass.</param>
+        /// <param name="specificHeat">specificHeat.</param>
+        /// <param name="thermalExpansion">thermalExpansion.</param>
+        /// <param name="thermalConductivity">thermalConductivity.</param>
+        /// <param name="isDefaultMaterial">isDefaultMaterial.</param>
+        /// <param name="orderInCode">orderInCode.</param>
+        /// <param name="stateOfThermalExpansion">stateOfThermalExpansion.</param>
+        /// <param name="stateOfThermalConductivity">stateOfThermalConductivity.</param>
+        /// <param name="stateOfThermalSpecificHeat">stateOfThermalSpecificHeat.</param>
+        /// <param name="stateOfThermalStressStrain">stateOfThermalStressStrain.</param>
+        /// <param name="stateOfThermalStrain">stateOfThermalStrain.</param>
+        /// <param name="userThermalSpecificHeatCurvature">userThermalSpecificHeatCurvature.</param>
+        /// <param name="userThermalConductivityCurvature">userThermalConductivityCurvature.</param>
+        /// <param name="userThermalExpansionCurvature">userThermalExpansionCurvature.</param>
+        /// <param name="userThermalStrainCurvature">userThermalStrainCurvature.</param>
+        /// <param name="userThermalStressStrainCurvature">userThermalStressStrainCurvature.</param>
         /// <param name="id">id.</param>
-        public MaterialMatReinforcementIdeaRSOpenModel(int id = default(int))
+        public MaterialMatReinforcementIdeaRSOpenModel(MaterialReinfBarSurfaceIdeaRSOpenModel? barSurface = default(MaterialReinfBarSurfaceIdeaRSOpenModel?), string name = default(string), bool loadFromLibrary = default(bool), double e = default(double), double g = default(double), double poisson = default(double), double unitMass = default(double), double specificHeat = default(double), double thermalExpansion = default(double), double thermalConductivity = default(double), bool isDefaultMaterial = default(bool), int orderInCode = default(int), MaterialThermalExpansionStateIdeaRSOpenModel? stateOfThermalExpansion = default(MaterialThermalExpansionStateIdeaRSOpenModel?), MaterialThermalConductivityStateIdeaRSOpenModel? stateOfThermalConductivity = default(MaterialThermalConductivityStateIdeaRSOpenModel?), MaterialThermalSpecificHeatStateIdeaRSOpenModel? stateOfThermalSpecificHeat = default(MaterialThermalSpecificHeatStateIdeaRSOpenModel?), MaterialThermalStressStrainStateIdeaRSOpenModel? stateOfThermalStressStrain = default(MaterialThermalStressStrainStateIdeaRSOpenModel?), MaterialThermalStrainStateIdeaRSOpenModel? stateOfThermalStrain = default(MaterialThermalStrainStateIdeaRSOpenModel?), Geometry2DPolygon2DIdeaRSOpenModel userThermalSpecificHeatCurvature = default(Geometry2DPolygon2DIdeaRSOpenModel), Geometry2DPolygon2DIdeaRSOpenModel userThermalConductivityCurvature = default(Geometry2DPolygon2DIdeaRSOpenModel), Geometry2DPolygon2DIdeaRSOpenModel userThermalExpansionCurvature = default(Geometry2DPolygon2DIdeaRSOpenModel), Geometry2DPolygon2DIdeaRSOpenModel userThermalStrainCurvature = default(Geometry2DPolygon2DIdeaRSOpenModel), List<Geometry2DTemperatureCurve2DIdeaRSOpenModel> userThermalStressStrainCurvature = default(List<Geometry2DTemperatureCurve2DIdeaRSOpenModel>), int id = default(int))
         {
+            this.BarSurface = barSurface;
+            this.Name = name;
+            this.LoadFromLibrary = loadFromLibrary;
+            this.E = e;
+            this.G = g;
+            this.Poisson = poisson;
+            this.UnitMass = unitMass;
+            this.SpecificHeat = specificHeat;
+            this.ThermalExpansion = thermalExpansion;
+            this.ThermalConductivity = thermalConductivity;
+            this.IsDefaultMaterial = isDefaultMaterial;
+            this.OrderInCode = orderInCode;
+            this.StateOfThermalExpansion = stateOfThermalExpansion;
+            this.StateOfThermalConductivity = stateOfThermalConductivity;
+            this.StateOfThermalSpecificHeat = stateOfThermalSpecificHeat;
+            this.StateOfThermalStressStrain = stateOfThermalStressStrain;
+            this.StateOfThermalStrain = stateOfThermalStrain;
+            this.UserThermalSpecificHeatCurvature = userThermalSpecificHeatCurvature;
+            this.UserThermalConductivityCurvature = userThermalConductivityCurvature;
+            this.UserThermalExpansionCurvature = userThermalExpansionCurvature;
+            this.UserThermalStrainCurvature = userThermalStrainCurvature;
+            this.UserThermalStressStrainCurvature = userThermalStressStrainCurvature;
             this.Id = id;
         }
+
+        /// <summary>
+        /// Gets or Sets Name
+        /// </summary>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LoadFromLibrary
+        /// </summary>
+        [DataMember(Name = "loadFromLibrary", EmitDefaultValue = true)]
+        public bool LoadFromLibrary { get; set; }
+
+        /// <summary>
+        /// Gets or Sets E
+        /// </summary>
+        [DataMember(Name = "e", EmitDefaultValue = false)]
+        public double E { get; set; }
+
+        /// <summary>
+        /// Gets or Sets G
+        /// </summary>
+        [DataMember(Name = "g", EmitDefaultValue = false)]
+        public double G { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Poisson
+        /// </summary>
+        [DataMember(Name = "poisson", EmitDefaultValue = false)]
+        public double Poisson { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UnitMass
+        /// </summary>
+        [DataMember(Name = "unitMass", EmitDefaultValue = false)]
+        public double UnitMass { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SpecificHeat
+        /// </summary>
+        [DataMember(Name = "specificHeat", EmitDefaultValue = false)]
+        public double SpecificHeat { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ThermalExpansion
+        /// </summary>
+        [DataMember(Name = "thermalExpansion", EmitDefaultValue = false)]
+        public double ThermalExpansion { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ThermalConductivity
+        /// </summary>
+        [DataMember(Name = "thermalConductivity", EmitDefaultValue = false)]
+        public double ThermalConductivity { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDefaultMaterial
+        /// </summary>
+        [DataMember(Name = "isDefaultMaterial", EmitDefaultValue = true)]
+        public bool IsDefaultMaterial { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OrderInCode
+        /// </summary>
+        [DataMember(Name = "orderInCode", EmitDefaultValue = false)]
+        public int OrderInCode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UserThermalSpecificHeatCurvature
+        /// </summary>
+        [DataMember(Name = "userThermalSpecificHeatCurvature", EmitDefaultValue = false)]
+        public Geometry2DPolygon2DIdeaRSOpenModel UserThermalSpecificHeatCurvature { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UserThermalConductivityCurvature
+        /// </summary>
+        [DataMember(Name = "userThermalConductivityCurvature", EmitDefaultValue = false)]
+        public Geometry2DPolygon2DIdeaRSOpenModel UserThermalConductivityCurvature { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UserThermalExpansionCurvature
+        /// </summary>
+        [DataMember(Name = "userThermalExpansionCurvature", EmitDefaultValue = false)]
+        public Geometry2DPolygon2DIdeaRSOpenModel UserThermalExpansionCurvature { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UserThermalStrainCurvature
+        /// </summary>
+        [DataMember(Name = "userThermalStrainCurvature", EmitDefaultValue = false)]
+        public Geometry2DPolygon2DIdeaRSOpenModel UserThermalStrainCurvature { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UserThermalStressStrainCurvature
+        /// </summary>
+        [DataMember(Name = "userThermalStressStrainCurvature", EmitDefaultValue = true)]
+        public List<Geometry2DTemperatureCurve2DIdeaRSOpenModel> UserThermalStressStrainCurvature { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -54,6 +230,28 @@ namespace connection_restapi_client_poc.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class MaterialMatReinforcementIdeaRSOpenModel {\n");
+            sb.Append("  BarSurface: ").Append(BarSurface).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  LoadFromLibrary: ").Append(LoadFromLibrary).Append("\n");
+            sb.Append("  E: ").Append(E).Append("\n");
+            sb.Append("  G: ").Append(G).Append("\n");
+            sb.Append("  Poisson: ").Append(Poisson).Append("\n");
+            sb.Append("  UnitMass: ").Append(UnitMass).Append("\n");
+            sb.Append("  SpecificHeat: ").Append(SpecificHeat).Append("\n");
+            sb.Append("  ThermalExpansion: ").Append(ThermalExpansion).Append("\n");
+            sb.Append("  ThermalConductivity: ").Append(ThermalConductivity).Append("\n");
+            sb.Append("  IsDefaultMaterial: ").Append(IsDefaultMaterial).Append("\n");
+            sb.Append("  OrderInCode: ").Append(OrderInCode).Append("\n");
+            sb.Append("  StateOfThermalExpansion: ").Append(StateOfThermalExpansion).Append("\n");
+            sb.Append("  StateOfThermalConductivity: ").Append(StateOfThermalConductivity).Append("\n");
+            sb.Append("  StateOfThermalSpecificHeat: ").Append(StateOfThermalSpecificHeat).Append("\n");
+            sb.Append("  StateOfThermalStressStrain: ").Append(StateOfThermalStressStrain).Append("\n");
+            sb.Append("  StateOfThermalStrain: ").Append(StateOfThermalStrain).Append("\n");
+            sb.Append("  UserThermalSpecificHeatCurvature: ").Append(UserThermalSpecificHeatCurvature).Append("\n");
+            sb.Append("  UserThermalConductivityCurvature: ").Append(UserThermalConductivityCurvature).Append("\n");
+            sb.Append("  UserThermalExpansionCurvature: ").Append(UserThermalExpansionCurvature).Append("\n");
+            sb.Append("  UserThermalStrainCurvature: ").Append(UserThermalStrainCurvature).Append("\n");
+            sb.Append("  UserThermalStressStrainCurvature: ").Append(UserThermalStressStrainCurvature).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

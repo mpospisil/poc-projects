@@ -34,11 +34,35 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CrossSectionCrossSectionIdeaRSOpenModel" /> class.
         /// </summary>
+        /// <param name="name">name.</param>
+        /// <param name="crossSectionRotation">crossSectionRotation.</param>
+        /// <param name="isInPrincipal">isInPrincipal.</param>
         /// <param name="id">id.</param>
-        public CrossSectionCrossSectionIdeaRSOpenModel(int id = default(int))
+        public CrossSectionCrossSectionIdeaRSOpenModel(string name = default(string), double crossSectionRotation = default(double), bool isInPrincipal = default(bool), int id = default(int))
         {
+            this.Name = name;
+            this.CrossSectionRotation = crossSectionRotation;
+            this.IsInPrincipal = isInPrincipal;
             this.Id = id;
         }
+
+        /// <summary>
+        /// Gets or Sets Name
+        /// </summary>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CrossSectionRotation
+        /// </summary>
+        [DataMember(Name = "crossSectionRotation", EmitDefaultValue = false)]
+        public double CrossSectionRotation { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsInPrincipal
+        /// </summary>
+        [DataMember(Name = "isInPrincipal", EmitDefaultValue = true)]
+        public bool IsInPrincipal { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -54,6 +78,9 @@ namespace connection_restapi_client_poc.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CrossSectionCrossSectionIdeaRSOpenModel {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  CrossSectionRotation: ").Append(CrossSectionRotation).Append("\n");
+            sb.Append("  IsInPrincipal: ").Append(IsInPrincipal).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

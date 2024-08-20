@@ -16,8 +16,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import StrictInt, StrictStr
+from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
+from typing_extensions import Annotated
 from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
@@ -39,10 +40,10 @@ class MemberApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_members_get(
+    def get_all_member_data(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its members")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -56,12 +57,12 @@ class MemberApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_members_get
+        """Get information about all members in the connection
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its members (required)
         :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -85,7 +86,7 @@ class MemberApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_members_get_serialize(
+        _param = self._get_all_member_data_serialize(
             project_id=project_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
@@ -109,10 +110,10 @@ class MemberApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_members_get_with_http_info(
+    def get_all_member_data_with_http_info(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its members")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -126,12 +127,12 @@ class MemberApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]]:
-        """api1_projects_project_id_connections_connection_id_members_get
+        """Get information about all members in the connection
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its members (required)
         :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -155,7 +156,7 @@ class MemberApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_members_get_serialize(
+        _param = self._get_all_member_data_serialize(
             project_id=project_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
@@ -179,10 +180,10 @@ class MemberApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_members_get_without_preload_content(
+    def get_all_member_data_without_preload_content(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its members")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -196,12 +197,12 @@ class MemberApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_members_get
+        """Get information about all members in the connection
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its members (required)
         :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -225,7 +226,7 @@ class MemberApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_members_get_serialize(
+        _param = self._get_all_member_data_serialize(
             project_id=project_id,
             connection_id=connection_id,
             _request_auth=_request_auth,
@@ -244,7 +245,7 @@ class MemberApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_members_get_serialize(
+    def _get_all_member_data_serialize(
         self,
         project_id,
         connection_id,
@@ -309,11 +310,11 @@ class MemberApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_members_member_id_get(
+    def get_member_data(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        member_id: StrictInt,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its member")],
+        member_id: Annotated[StrictInt, Field(description="Id of the requested member in the connection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -327,14 +328,14 @@ class MemberApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi:
-        """api1_projects_project_id_connections_connection_id_members_member_id_get
+        """Get information about the requires member in the connection
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its member (required)
         :type connection_id: int
-        :param member_id: (required)
+        :param member_id: Id of the requested member in the connection (required)
         :type member_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -358,7 +359,7 @@ class MemberApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_members_member_id_get_serialize(
+        _param = self._get_member_data_serialize(
             project_id=project_id,
             connection_id=connection_id,
             member_id=member_id,
@@ -383,11 +384,11 @@ class MemberApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_members_member_id_get_with_http_info(
+    def get_member_data_with_http_info(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        member_id: StrictInt,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its member")],
+        member_id: Annotated[StrictInt, Field(description="Id of the requested member in the connection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -401,14 +402,14 @@ class MemberApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_members_member_id_get
+        """Get information about the requires member in the connection
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its member (required)
         :type connection_id: int
-        :param member_id: (required)
+        :param member_id: Id of the requested member in the connection (required)
         :type member_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -432,7 +433,7 @@ class MemberApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_members_member_id_get_serialize(
+        _param = self._get_member_data_serialize(
             project_id=project_id,
             connection_id=connection_id,
             member_id=member_id,
@@ -457,11 +458,11 @@ class MemberApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_members_member_id_get_without_preload_content(
+    def get_member_data_without_preload_content(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        member_id: StrictInt,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its member")],
+        member_id: Annotated[StrictInt, Field(description="Id of the requested member in the connection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -475,14 +476,14 @@ class MemberApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_members_member_id_get
+        """Get information about the requires member in the connection
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its member (required)
         :type connection_id: int
-        :param member_id: (required)
+        :param member_id: Id of the requested member in the connection (required)
         :type member_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -506,7 +507,7 @@ class MemberApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_members_member_id_get_serialize(
+        _param = self._get_member_data_serialize(
             project_id=project_id,
             connection_id=connection_id,
             member_id=member_id,
@@ -526,7 +527,7 @@ class MemberApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_members_member_id_get_serialize(
+    def _get_member_data_serialize(
         self,
         project_id,
         connection_id,
@@ -594,12 +595,12 @@ class MemberApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_members_member_id_put(
+    def update_member(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        member_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is membar memberId")],
+        member_id: Annotated[StrictInt, Field(description="Id of the member to be ubdated in the connection")],
+        idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi], Field(description="New mwmbwr data")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -613,16 +614,16 @@ class MemberApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi:
-        """api1_projects_project_id_connections_connection_id_members_member_id_put
+        """Update the member in the connection by newMemberData
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to to update is membar memberId (required)
         :type connection_id: int
-        :param member_id: (required)
+        :param member_id: Id of the member to be ubdated in the connection (required)
         :type member_id: int
-        :param idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api:
+        :param idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: New mwmbwr data
         :type idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -646,7 +647,7 @@ class MemberApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_members_member_id_put_serialize(
+        _param = self._update_member_serialize(
             project_id=project_id,
             connection_id=connection_id,
             member_id=member_id,
@@ -672,12 +673,12 @@ class MemberApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_members_member_id_put_with_http_info(
+    def update_member_with_http_info(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        member_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is membar memberId")],
+        member_id: Annotated[StrictInt, Field(description="Id of the member to be ubdated in the connection")],
+        idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi], Field(description="New mwmbwr data")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -691,16 +692,16 @@ class MemberApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_members_member_id_put
+        """Update the member in the connection by newMemberData
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to to update is membar memberId (required)
         :type connection_id: int
-        :param member_id: (required)
+        :param member_id: Id of the member to be ubdated in the connection (required)
         :type member_id: int
-        :param idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api:
+        :param idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: New mwmbwr data
         :type idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -724,7 +725,7 @@ class MemberApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_members_member_id_put_serialize(
+        _param = self._update_member_serialize(
             project_id=project_id,
             connection_id=connection_id,
             member_id=member_id,
@@ -750,12 +751,12 @@ class MemberApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_members_member_id_put_without_preload_content(
+    def update_member_without_preload_content(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        member_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is membar memberId")],
+        member_id: Annotated[StrictInt, Field(description="Id of the member to be ubdated in the connection")],
+        idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi], Field(description="New mwmbwr data")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -769,16 +770,16 @@ class MemberApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_members_member_id_put
+        """Update the member in the connection by newMemberData
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to to update is membar memberId (required)
         :type connection_id: int
-        :param member_id: (required)
+        :param member_id: Id of the member to be ubdated in the connection (required)
         :type member_id: int
-        :param idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api:
+        :param idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: New mwmbwr data
         :type idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -802,7 +803,7 @@ class MemberApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_members_member_id_put_serialize(
+        _param = self._update_member_serialize(
             project_id=project_id,
             connection_id=connection_id,
             member_id=member_id,
@@ -823,7 +824,7 @@ class MemberApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_members_member_id_put_serialize(
+    def _update_member_serialize(
         self,
         project_id,
         connection_id,

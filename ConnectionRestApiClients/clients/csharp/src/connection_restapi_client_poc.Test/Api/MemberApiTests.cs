@@ -55,44 +55,44 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMembersGet
+        /// Test GetAllMemberData
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMembersGetTest()
+        public void GetAllMemberDataTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMembersGet(projectId, connectionId);
+            //var response = instance.GetAllMemberData(projectId, connectionId);
             //Assert.IsType<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGet
+        /// Test GetMemberData
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGetTest()
+        public void GetMemberDataTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
             //int memberId = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdGet(projectId, connectionId, memberId);
+            //var response = instance.GetMemberData(projectId, connectionId, memberId);
             //Assert.IsType<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPut
+        /// Test UpdateMember
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPutTest()
+        public void UpdateMemberTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
             //int memberId = null;
             //IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMembersMemberIdPut(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi);
+            //var response = instance.UpdateMember(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi);
             //Assert.IsType<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>(response);
         }
     }

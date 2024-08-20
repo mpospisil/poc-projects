@@ -5,6 +5,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bar_surface** | [**MaterialReinfBarSurfaceIdeaRSOpenModel**](MaterialReinfBarSurfaceIdeaRSOpenModel.md) |  | [optional] 
+**name** | **str** |  | [optional] 
+**load_from_library** | **bool** |  | [optional] 
+**e** | **float** |  | [optional] 
+**g** | **float** |  | [optional] 
+**poisson** | **float** |  | [optional] 
+**unit_mass** | **float** |  | [optional] 
+**specific_heat** | **float** |  | [optional] 
+**thermal_expansion** | **float** |  | [optional] 
+**thermal_conductivity** | **float** |  | [optional] 
+**is_default_material** | **bool** |  | [optional] 
+**order_in_code** | **int** |  | [optional] 
+**state_of_thermal_expansion** | [**MaterialThermalExpansionStateIdeaRSOpenModel**](MaterialThermalExpansionStateIdeaRSOpenModel.md) |  | [optional] 
+**state_of_thermal_conductivity** | [**MaterialThermalConductivityStateIdeaRSOpenModel**](MaterialThermalConductivityStateIdeaRSOpenModel.md) |  | [optional] 
+**state_of_thermal_specific_heat** | [**MaterialThermalSpecificHeatStateIdeaRSOpenModel**](MaterialThermalSpecificHeatStateIdeaRSOpenModel.md) |  | [optional] 
+**state_of_thermal_stress_strain** | [**MaterialThermalStressStrainStateIdeaRSOpenModel**](MaterialThermalStressStrainStateIdeaRSOpenModel.md) |  | [optional] 
+**state_of_thermal_strain** | [**MaterialThermalStrainStateIdeaRSOpenModel**](MaterialThermalStrainStateIdeaRSOpenModel.md) |  | [optional] 
+**user_thermal_specific_heat_curvature** | [**Geometry2DPolygon2DIdeaRSOpenModel**](Geometry2DPolygon2DIdeaRSOpenModel.md) |  | [optional] 
+**user_thermal_conductivity_curvature** | [**Geometry2DPolygon2DIdeaRSOpenModel**](Geometry2DPolygon2DIdeaRSOpenModel.md) |  | [optional] 
+**user_thermal_expansion_curvature** | [**Geometry2DPolygon2DIdeaRSOpenModel**](Geometry2DPolygon2DIdeaRSOpenModel.md) |  | [optional] 
+**user_thermal_strain_curvature** | [**Geometry2DPolygon2DIdeaRSOpenModel**](Geometry2DPolygon2DIdeaRSOpenModel.md) |  | [optional] 
+**user_thermal_stress_strain_curvature** | [**List[Geometry2DTemperatureCurve2DIdeaRSOpenModel]**](Geometry2DTemperatureCurve2DIdeaRSOpenModel.md) |  | [optional] 
 **id** | **int** |  | [optional] 
 
 ## Example

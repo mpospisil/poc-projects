@@ -412,8 +412,10 @@ paths:
       - Connection
   /api/1/projects/{projectId}/connections/{connectionId}/export-iom:
     get:
+      operationId: ExportIomXml
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: projectId
         required: true
@@ -421,7 +423,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -429,7 +432,8 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: version
         required: false
@@ -439,12 +443,15 @@ paths:
       responses:
         "200":
           description: Success
+      summary: Export connection to XML which includes https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs
       tags:
       - Export
   /api/1/projects/{projectId}/connections/{connectionId}/export-iom-connection-data:
     get:
+      operationId: ExportConnectionData
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: projectId
         required: true
@@ -452,7 +459,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -467,12 +475,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/Connection_ConnectionData-IdeaRS_OpenModel'
           description: Success
+      summary: Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs
+        for required connection
       tags:
       - Export
   /api/1/projects/{projectId}/connections/{connectionId}/export-ifc:
     get:
+      operationId: ExportConnectionIFC
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: projectId
         required: true
@@ -480,7 +492,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -507,12 +520,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/System_IO_MemoryStream-System_Private_CoreLib'
           description: Success
+      summary: Export connection to IFC format
       tags:
       - Export
   /api/1/projects/{projectId}/connections/{connectionId}/load-effects:
     get:
+      operationId: GetLoadEffects
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: projectId
         required: true
@@ -520,7 +536,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -528,7 +545,8 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: isPercentage
         required: false
@@ -544,11 +562,14 @@ paths:
                   $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConLoadEffect-IdeaStatiCa_Api'
                 type: array
           description: Success
+      summary: Get all load effects which are defined in connectionId
       tags:
       - LoadEffect
     post:
+      operationId: AddLoadEffect
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: projectId
         required: true
@@ -556,7 +577,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -578,6 +600,7 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConLoadEffect-IdeaStatiCa_Api'
+        description: ""
       responses:
         "200":
           content:
@@ -585,12 +608,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/LoadEffectData-IdeaStatiCa_ConnectionChecks'
           description: Success
+      summary: Add new load effect to the connection
       tags:
       - LoadEffect
   /api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}:
     delete:
+      operationId: DeleteLoadEffect
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: projectId
         required: true
@@ -598,7 +624,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -606,7 +633,8 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: loadEffectId
         required: true
@@ -622,11 +650,14 @@ paths:
                 format: int32
                 type: integer
           description: Success
+      summary: Delete load effect loadEffectId
       tags:
       - LoadEffect
     get:
+      operationId: GetLoadEffect
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: projectId
         required: true
@@ -634,7 +665,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -642,7 +674,8 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: loadEffectId
         required: true
@@ -650,7 +683,8 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: true
+      - description: ""
+        explode: true
         in: query
         name: isPercentage
         required: false
@@ -664,11 +698,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConLoadEffect-IdeaStatiCa_Api'
           description: Success
+      summary: Get load impulses from loadEffectId
       tags:
       - LoadEffect
     put:
+      operationId: UpdateLoadEffect
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: projectId
         required: true
@@ -676,7 +713,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -684,7 +722,8 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: loadEffectId
         required: true
@@ -706,6 +745,7 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConLoadEffect-IdeaStatiCa_Api'
+        description: ""
       responses:
         "200":
           content:
@@ -713,12 +753,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConLoadEffect-IdeaStatiCa_Api'
           description: Success
+      summary: Update load impulses in loadEffectId
       tags:
       - LoadEffect
   /api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium:
     post:
+      operationId: SetLoadsInEquilibrium
       parameters:
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: projectId
         required: true
@@ -726,7 +769,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -734,7 +778,8 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: true
+      - description: Value to be set
+        explode: true
         in: query
         name: loadsInEquilibrium
         required: false
@@ -748,12 +793,16 @@ paths:
               schema:
                 type: boolean
           description: Success
+      summary: Update the option 'LoadsInEquilibrium' for connectionId
       tags:
       - LoadEffect
   /api/1/projects/{projectId}/connections/{connectionId}/materials:
     get:
+      operationId: GetAllMaterials
       parameters:
-      - explode: false
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
         in: path
         name: projectId
         required: true
@@ -761,7 +810,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: Id of the connection to get its materials
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -769,27 +819,24 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: true
-        in: query
-        name: type
-        required: false
-        schema:
-          $ref: '#/components/schemas/IdeaRS_WsLibCssService_MaterialType-CI_BasicTypes'
-        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
-                items:
-                  $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
+                items: {}
                 type: array
           description: Success
+      summary: Get materials which are used in the connectionId
       tags:
       - Material
-    post:
+  /api/1/projects/{projectId}/connections/{connectionId}/materials/steel:
+    get:
+      operationId: GetSteelMaterials
       parameters:
-      - explode: false
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
         in: path
         name: projectId
         required: true
@@ -797,7 +844,41 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: Id of the connection to get its materials
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items: {}
+                type: array
+          description: Success
+      summary: Get materials which are used in the connectionId
+      tags:
+      - Material
+    post:
+      operationId: AddMaterialSteel
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -809,67 +890,381 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           text/xml:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           application/*+xml:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           application/json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           text/json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           application/*+json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+        description: Definition of a new material to be added to the project
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
+                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           description: Success
+      summary: Add material to the project
+      tags:
+      - Material
+  /api/1/projects/{projectId}/connections/{connectionId}/materials/concrete:
+    get:
+      operationId: GetConcreteMaterials
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: Id of the connection to get its materials
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items: {}
+                type: array
+          description: Success
+      summary: Get materials which are used in the connectionId
+      tags:
+      - Material
+    post:
+      operationId: AddMaterialConcrete
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/*+xml:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+        description: Definition of a new material to be added to the project
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          description: Success
+      summary: Add material to the project
+      tags:
+      - Material
+  /api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade:
+    get:
+      operationId: GetBlotGradeMaterials
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: Id of the connection to get its materials
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items: {}
+                type: array
+          description: Success
+      summary: Get materials which are used in the connectionId
+      tags:
+      - Material
+    post:
+      operationId: AddMaterialBoltGrade
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/*+xml:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+        description: Definition of a new material to be added to the project
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          description: Success
+      summary: Add material to the project
+      tags:
+      - Material
+  /api/1/projects/{projectId}/connections/{connectionId}/materials/welding:
+    get:
+      operationId: GetWeldingMaterials
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: Id of the connection to get its materials
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items: {}
+                type: array
+          description: Success
+      summary: Get materials which are used in the connectionId
+      tags:
+      - Material
+    post:
+      operationId: AddMaterialWeld
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/*+xml:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+        description: Definition of a new material to be added to the project
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+          description: Success
+      summary: Add material to the project
+      tags:
+      - Material
+  /api/1/projects/{projectId}/connections/{connectionId}/cross-sections:
+    get:
+      operationId: GetCrossSections
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: Id of the connection to get its cross-sections
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items: {}
+                type: array
+          description: Success
+      summary: Get cross sections which are used in the connectionId
+      tags:
+      - Material
+  /api/1/projects/{projectId}/connections/{connectionId}/bolt-assemblies:
+    get:
+      operationId: GetBoltAssemblies
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: Id of the connection to get its bolt assemblies
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items: {}
+                type: array
+          description: Success
+      summary: Get bolt assemblies which are used in the connectionId
       tags:
       - Material
   /api/1/projects/{projectId}/connections/{connectionId}/materials/cross-sections:
-    get:
-      parameters:
-      - explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: uuid
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjCrossSection-IdeaStatiCa_Api'
-                type: array
-          description: Success
-      tags:
-      - Material
     post:
+      operationId: AddCrossSection
       parameters:
-      - explode: false
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
         in: path
         name: projectId
         required: true
@@ -877,7 +1272,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -889,67 +1285,43 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjCrossSection-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlCrossSection-IdeaStatiCa_Api'
           text/xml:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjCrossSection-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlCrossSection-IdeaStatiCa_Api'
           application/*+xml:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjCrossSection-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlCrossSection-IdeaStatiCa_Api'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjCrossSection-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlCrossSection-IdeaStatiCa_Api'
           application/json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjCrossSection-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlCrossSection-IdeaStatiCa_Api'
           text/json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjCrossSection-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlCrossSection-IdeaStatiCa_Api'
           application/*+json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjCrossSection-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlCrossSection-IdeaStatiCa_Api'
+        description: Definition of a new cross-section to be added to the project
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjCrossSection-IdeaStatiCa_Api'
+                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlCrossSection-IdeaStatiCa_Api'
           description: Success
+      summary: Add cross section to the project
       tags:
       - Material
   /api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-assemblies:
-    get:
-      parameters:
-      - explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: uuid
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjBoltAssembly-IdeaStatiCa_Api'
-                type: array
-          description: Success
-      tags:
-      - Material
     post:
+      operationId: AddBoltAssembly
       parameters:
-      - explode: false
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
         in: path
         name: projectId
         required: true
@@ -957,7 +1329,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: ""
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -969,118 +1342,43 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjBoltAssembly-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           text/xml:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjBoltAssembly-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           application/*+xml:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjBoltAssembly-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjBoltAssembly-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           application/json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjBoltAssembly-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           text/json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjBoltAssembly-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           application/*+json:
             schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjBoltAssembly-IdeaStatiCa_Api'
+              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
+        description: Definition of a new bolt assemby to be added to the project
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjBoltAssembly-IdeaStatiCa_Api'
+                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api'
           description: Success
-      tags:
-      - Material
-  /api/1/projects/{projectId}/connections/{connectionId}/materials/pins:
-    get:
-      parameters:
-      - explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: uuid
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjPin-IdeaStatiCa_Api'
-                type: array
-          description: Success
-      tags:
-      - Material
-    post:
-      parameters:
-      - explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: uuid
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      requestBody:
-        content:
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
-          text/xml:
-            schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
-          application/*+xml:
-            schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
-          application/json:
-            schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ProjPin-IdeaStatiCa_Api'
-          description: Success
+      summary: Add bolt assembly to the project
       tags:
       - Material
   /api/1/projects/{projectId}/connections/{connectionId}/members:
     get:
+      operationId: GetAllMemberData
       parameters:
-      - explode: false
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
         in: path
         name: projectId
         required: true
@@ -1088,7 +1386,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: Id of the connection to get its members
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -1105,12 +1404,16 @@ paths:
                   $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConMember-IdeaStatiCa_Api'
                 type: array
           description: Success
+      summary: Get information about all members in the connection
       tags:
       - Member
   /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}:
     get:
+      operationId: GetMemberData
       parameters:
-      - explode: false
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
         in: path
         name: projectId
         required: true
@@ -1118,7 +1421,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: Id of the connection to get its member
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -1126,7 +1430,8 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: false
+      - description: Id of the requested member in the connection
+        explode: false
         in: path
         name: memberId
         required: true
@@ -1141,11 +1446,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConMember-IdeaStatiCa_Api'
           description: Success
+      summary: Get information about the requires member in the connection
       tags:
       - Member
     put:
+      operationId: UpdateMember
       parameters:
-      - explode: false
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
         in: path
         name: projectId
         required: true
@@ -1153,7 +1462,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: Id of the connection to to update is membar memberId
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -1161,7 +1471,8 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: false
+      - description: Id of the member to be ubdated in the connection
+        explode: false
         in: path
         name: memberId
         required: true
@@ -1183,6 +1494,7 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConMember-IdeaStatiCa_Api'
+        description: New mwmbwr data
       responses:
         "200":
           content:
@@ -1190,12 +1502,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConMember-IdeaStatiCa_Api'
           description: Success
+      summary: Update the member in the connection by newMemberData
       tags:
       - Member
   /api/1/projects/{projectId}/connections/{connectionId}/parameters:
     get:
+      operationId: GetParameters
       parameters:
-      - explode: false
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
         in: path
         name: projectId
         required: true
@@ -1203,7 +1519,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: Id of the connection to get its parameters
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -1211,7 +1528,8 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: true
+      - description: Iclude also hdden parameters
+        explode: true
         in: query
         name: includeHidden
         required: false
@@ -1228,11 +1546,15 @@ paths:
                   $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_IdeaParameter-IdeaStatiCa_Api'
                 type: array
           description: Success
+      summary: Get all parameters which are defined for projectId and connectionId
       tags:
       - Parameter
     put:
+      operationId: UpdateParameters
       parameters:
-      - explode: false
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
         in: path
         name: projectId
         required: true
@@ -1240,7 +1562,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: Id of the connection to apply template
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -1285,6 +1608,7 @@ paths:
               items:
                 $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_IdeaParameterUpdate-IdeaStatiCa_Api'
               type: array
+        description: New values of parameters
       responses:
         "200":
           content:
@@ -1294,12 +1618,17 @@ paths:
                   $ref: '#/components/schemas/IdeaRS_Common_Parameters_ParameterData-CI_BasicTypes'
                 type: array
           description: Success
+      summary: Update parameters for the connection connectionId in the project projectId
+        by values passed in parameters
       tags:
       - Parameter
   /api/1/projects/{projectId}/connections/{connectionId}/evaluate-expression:
     post:
+      operationId: EvaluateExpression
       parameters:
-      - explode: false
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
         in: path
         name: projectId
         required: true
@@ -1307,7 +1636,8 @@ paths:
           format: uuid
           type: string
         style: simple
-      - explode: false
+      - description: Id of the connection to use for evaluation expression
+        explode: false
         in: path
         name: connectionId
         required: true
@@ -1338,6 +1668,7 @@ paths:
           application/*+json:
             schema:
               type: string
+        description: Expreession to evaluate
       responses:
         "200":
           content:
@@ -1345,6 +1676,7 @@ paths:
               schema:
                 type: string
           description: Success
+      summary: Evaluate the expression and return the result
       tags:
       - Parameter
   /api/1/connect-client:
@@ -1402,19 +1734,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                type: string
-            application/xml:
-              schema:
-                type: string
-            text/xml:
-              schema:
-                type: string
             application/json:
-              schema:
-                type: string
-            text/json:
               schema:
                 type: string
           description: Success
@@ -1427,27 +1747,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                items:
-                  $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
-                type: array
-            application/xml:
-              schema:
-                items:
-                  $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
-                type: array
-            text/xml:
-              schema:
-                items:
-                  $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
-                type: array
             application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
-                type: array
-            text/json:
               schema:
                 items:
                   $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
@@ -1534,19 +1834,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
-            text/xml:
-              schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
             application/json:
-              schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
-            text/json:
               schema:
                 $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
           description: Success
@@ -1595,19 +1883,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
-            text/xml:
-              schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
             application/json:
-              schema:
-                $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
-            text/json:
               schema:
                 $ref: '#/components/schemas/IdeaStatiCa_Api_Connection_Model_ConProject-IdeaStatiCa_Api'
           description: Success
@@ -1631,19 +1907,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                type: boolean
-            application/xml:
-              schema:
-                type: boolean
-            text/xml:
-              schema:
-                type: boolean
             application/json:
-              schema:
-                type: boolean
-            text/json:
               schema:
                 type: boolean
           description: Success
@@ -1692,19 +1956,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                type: boolean
-            application/xml:
-              schema:
-                type: boolean
-            text/xml:
-              schema:
-                type: boolean
             application/json:
-              schema:
-                type: boolean
-            text/json:
               schema:
                 type: boolean
           description: Success
@@ -1788,7 +2040,7 @@ paths:
         \ mapping to apply the passed template.\r\nIt can be modified by a user and\
         \ used for the application of a template M:IdeaStatiCa.ConnectionRestApi.Controllers.TemplateController.ApplyConnectionTemplateAsync(System.Guid,System.Int32,IdeaStatiCa.Api.Connection.Model.ConTemplateApplyParam)\
         \ method."
-      operationId: GetDeaultTemplateMapping
+      operationId: GetDefaultTemplateMapping
       parameters:
       - description: The unique identifier of the opened project in the ConnectionRestApi
           service
@@ -2936,16 +3188,147 @@ components:
     CrossSection_CrossSection-IdeaRS_OpenModel:
       additionalProperties: false
       properties:
+        name:
+          nullable: true
+          type: string
+        crossSectionRotation:
+          format: double
+          type: number
+        isInPrincipal:
+          type: boolean
         id:
           format: int32
           type: integer
       type: object
+    CrossSection_FatigueTypeOfPrestressingSteel-IdeaRS_OpenModel:
+      enum:
+      - postTensioningSingleStrandsInPlasticDucts
+      - postTensioningStraightTendonsOrCurvedTendonsInPlasticDucts
+      - postTensioningCurvedTendonsInSteelDucts
+      - postTensioningSplicingDevices
+      - preTensioning
+      - externalTendon
+      type: string
+    CrossSection_MaterialDuct-IdeaRS_OpenModel:
+      enum:
+      - metal
+      - plastic
+      type: string
+    CrossSection_ReinforcedBar-IdeaRS_OpenModel:
+      additionalProperties: false
+      properties:
+        point:
+          $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
+        diameter:
+          format: double
+          type: number
+        material:
+          $ref: '#/components/schemas/ReferenceElement-IdeaRS_OpenModel'
+      type: object
     CrossSection_ReinforcedCrossSection-IdeaRS_OpenModel:
+      additionalProperties: false
+      properties:
+        name:
+          nullable: true
+          type: string
+        crossSection:
+          $ref: '#/components/schemas/ReferenceElement-IdeaRS_OpenModel'
+        bars:
+          items:
+            $ref: '#/components/schemas/CrossSection_ReinforcedBar-IdeaRS_OpenModel'
+          nullable: true
+          type: array
+        stirrups:
+          items:
+            $ref: '#/components/schemas/CrossSection_Stirrup-IdeaRS_OpenModel'
+          nullable: true
+          type: array
+        tendonBars:
+          items:
+            $ref: '#/components/schemas/CrossSection_TendonBar-IdeaRS_OpenModel'
+          nullable: true
+          type: array
+        tendonDucts:
+          items:
+            $ref: '#/components/schemas/CrossSection_TendonDuct-IdeaRS_OpenModel'
+          nullable: true
+          type: array
+        id:
+          format: int32
+          type: integer
+      type: object
+    CrossSection_Stirrup-IdeaRS_OpenModel:
+      additionalProperties: false
+      properties:
+        geometry:
+          $ref: '#/components/schemas/Geometry2D_PolyLine2D-IdeaRS_OpenModel'
+        diameter:
+          format: double
+          type: number
+        material:
+          $ref: '#/components/schemas/ReferenceElement-IdeaRS_OpenModel'
+        anchorageLenght:
+          format: double
+          type: number
+        diameterOfMandrel:
+          format: double
+          type: number
+        isClosed:
+          type: boolean
+        distance:
+          format: double
+          type: number
+        shearCheck:
+          type: boolean
+        torsionCheck:
+          type: boolean
+      type: object
+    CrossSection_TendonBar-IdeaRS_OpenModel:
       additionalProperties: false
       properties:
         id:
           format: int32
           type: integer
+        tendonType:
+          $ref: '#/components/schemas/CrossSection_TendonBarType-IdeaRS_OpenModel'
+        point:
+          $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
+        material:
+          $ref: '#/components/schemas/ReferenceElement-IdeaRS_OpenModel'
+        prestressingOrder:
+          format: int32
+          type: integer
+        numStrandsInTendon:
+          format: int32
+          type: integer
+        prestressReinforcementType:
+          $ref: '#/components/schemas/CrossSection_FatigueTypeOfPrestressingSteel-IdeaRS_OpenModel'
+        phase:
+          format: int32
+          type: integer
+        tendonDuct:
+          $ref: '#/components/schemas/CrossSection_TendonDuct-IdeaRS_OpenModel'
+      type: object
+    CrossSection_TendonBarType-IdeaRS_OpenModel:
+      enum:
+      - posttensioned
+      - pretensioned
+      type: string
+    CrossSection_TendonDuct-IdeaRS_OpenModel:
+      additionalProperties: false
+      properties:
+        id:
+          format: int32
+          type: integer
+        point:
+          $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
+        materialDuct:
+          $ref: '#/components/schemas/CrossSection_MaterialDuct-IdeaRS_OpenModel'
+        isDebondingTube:
+          type: boolean
+        diameter:
+          format: double
+          type: number
       type: object
     CrtCompCheckIS-IdeaRS_OpenModel:
       enum:
@@ -3071,6 +3454,15 @@ components:
           nullable: true
           type: array
       type: object
+    Geometry2D_Polygon2D-IdeaRS_OpenModel:
+      additionalProperties: false
+      properties:
+        points:
+          items:
+            $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
+          nullable: true
+          type: array
+      type: object
     Geometry2D_Region2D-IdeaRS_OpenModel:
       additionalProperties: false
       properties:
@@ -3087,6 +3479,15 @@ components:
       properties:
         endPoint:
           $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
+      type: object
+    Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel:
+      additionalProperties: false
+      properties:
+        points:
+          items:
+            $ref: '#/components/schemas/Geometry2D_Point2D-IdeaRS_OpenModel'
+          nullable: true
+          type: array
       type: object
     Geometry3D_ArcSegment3D-IdeaRS_OpenModel:
       additionalProperties: false
@@ -3207,18 +3608,6 @@ components:
       enum:
       - warning
       - restricted
-      type: string
-    IdeaRS_WsLibCssService_MaterialType-CI_BasicTypes:
-      enum:
-      - nothing
-      - concrete
-      - steel
-      - reinforcement
-      - prestress
-      - boltGrade
-      - weldingMaterial
-      - timber
-      - all
       type: string
     IdeaStatiCa_Api_Connection_Model_BaseTemplateConversion-IdeaStatiCa_Api:
       additionalProperties: false
@@ -3693,81 +4082,25 @@ components:
           nullable: true
           type: string
       type: object
-    IdeaStatiCa_Api_Connection_Model_ProjBoltAssembly-IdeaStatiCa_Api:
+    IdeaStatiCa_Api_Connection_Model_Material_ConMprlCrossSection-IdeaStatiCa_Api:
       additionalProperties: false
       example:
-        name: name
-        id: 0
+        materialName: materialName
+        mprlName: mprlName
       properties:
-        id:
-          format: int32
-          type: integer
-        name:
+        materialName:
+          nullable: true
+          type: string
+        mprlName:
           nullable: true
           type: string
       type: object
-    IdeaStatiCa_Api_Connection_Model_ProjCrossSection-IdeaStatiCa_Api:
+    IdeaStatiCa_Api_Connection_Model_Material_ConMprlElement-IdeaStatiCa_Api:
       additionalProperties: false
       example:
-        crossSectionType: crossSectionType
-        isFromDatabase: true
-        databaseName: databaseName
-        material: material
-        name: name
-        id: 0
+        mprlName: mprlName
       properties:
-        crossSectionType:
-          nullable: true
-          type: string
-        isFromDatabase:
-          type: boolean
-        databaseName:
-          nullable: true
-          type: string
-        material:
-          nullable: true
-          type: string
-        id:
-          format: int32
-          type: integer
-        name:
-          nullable: true
-          type: string
-      type: object
-    IdeaStatiCa_Api_Connection_Model_ProjMaterial-IdeaStatiCa_Api:
-      additionalProperties: false
-      example:
-        materialType: materialType
-        canEdit: true
-        name: name
-        isFromMrplDatabase: isFromMrplDatabase
-        id: 0
-      properties:
-        materialType:
-          nullable: true
-          type: string
-        isFromMrplDatabase:
-          nullable: true
-          type: string
-        canEdit:
-          type: boolean
-        id:
-          format: int32
-          type: integer
-        name:
-          nullable: true
-          type: string
-      type: object
-    IdeaStatiCa_Api_Connection_Model_ProjPin-IdeaStatiCa_Api:
-      additionalProperties: false
-      example:
-        name: name
-        id: 0
-      properties:
-        id:
-          format: int32
-          type: integer
-        name:
+        mprlName:
           nullable: true
           type: string
       type: object
@@ -3949,6 +4282,60 @@ components:
     Material_MatConcrete-IdeaRS_OpenModel:
       additionalProperties: false
       properties:
+        name:
+          nullable: true
+          type: string
+        loadFromLibrary:
+          type: boolean
+        e:
+          format: double
+          type: number
+        g:
+          format: double
+          type: number
+        poisson:
+          format: double
+          type: number
+        unitMass:
+          format: double
+          type: number
+        specificHeat:
+          format: double
+          type: number
+        thermalExpansion:
+          format: double
+          type: number
+        thermalConductivity:
+          format: double
+          type: number
+        isDefaultMaterial:
+          type: boolean
+        orderInCode:
+          format: int32
+          type: integer
+        stateOfThermalExpansion:
+          $ref: '#/components/schemas/Material_ThermalExpansionState-IdeaRS_OpenModel'
+        stateOfThermalConductivity:
+          $ref: '#/components/schemas/Material_ThermalConductivityState-IdeaRS_OpenModel'
+        stateOfThermalSpecificHeat:
+          $ref: '#/components/schemas/Material_ThermalSpecificHeatState-IdeaRS_OpenModel'
+        stateOfThermalStressStrain:
+          $ref: '#/components/schemas/Material_ThermalStressStrainState-IdeaRS_OpenModel'
+        stateOfThermalStrain:
+          $ref: '#/components/schemas/Material_ThermalStrainState-IdeaRS_OpenModel'
+        userThermalSpecificHeatCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalConductivityCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalExpansionCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalStrainCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalStressStrainCurvature:
+          items:
+            $ref: '#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel'
+          nullable: true
+          type: array
         id:
           format: int32
           type: integer
@@ -3956,6 +4343,72 @@ components:
     Material_MatPrestressSteel-IdeaRS_OpenModel:
       additionalProperties: false
       properties:
+        diameter:
+          format: double
+          type: number
+        area:
+          format: double
+          type: number
+        numberOfWires:
+          format: int32
+          type: integer
+        equivalentDiameter:
+          format: double
+          type: number
+        name:
+          nullable: true
+          type: string
+        loadFromLibrary:
+          type: boolean
+        e:
+          format: double
+          type: number
+        g:
+          format: double
+          type: number
+        poisson:
+          format: double
+          type: number
+        unitMass:
+          format: double
+          type: number
+        specificHeat:
+          format: double
+          type: number
+        thermalExpansion:
+          format: double
+          type: number
+        thermalConductivity:
+          format: double
+          type: number
+        isDefaultMaterial:
+          type: boolean
+        orderInCode:
+          format: int32
+          type: integer
+        stateOfThermalExpansion:
+          $ref: '#/components/schemas/Material_ThermalExpansionState-IdeaRS_OpenModel'
+        stateOfThermalConductivity:
+          $ref: '#/components/schemas/Material_ThermalConductivityState-IdeaRS_OpenModel'
+        stateOfThermalSpecificHeat:
+          $ref: '#/components/schemas/Material_ThermalSpecificHeatState-IdeaRS_OpenModel'
+        stateOfThermalStressStrain:
+          $ref: '#/components/schemas/Material_ThermalStressStrainState-IdeaRS_OpenModel'
+        stateOfThermalStrain:
+          $ref: '#/components/schemas/Material_ThermalStrainState-IdeaRS_OpenModel'
+        userThermalSpecificHeatCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalConductivityCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalExpansionCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalStrainCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalStressStrainCurvature:
+          items:
+            $ref: '#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel'
+          nullable: true
+          type: array
         id:
           format: int32
           type: integer
@@ -3963,6 +4416,62 @@ components:
     Material_MatReinforcement-IdeaRS_OpenModel:
       additionalProperties: false
       properties:
+        barSurface:
+          $ref: '#/components/schemas/Material_ReinfBarSurface-IdeaRS_OpenModel'
+        name:
+          nullable: true
+          type: string
+        loadFromLibrary:
+          type: boolean
+        e:
+          format: double
+          type: number
+        g:
+          format: double
+          type: number
+        poisson:
+          format: double
+          type: number
+        unitMass:
+          format: double
+          type: number
+        specificHeat:
+          format: double
+          type: number
+        thermalExpansion:
+          format: double
+          type: number
+        thermalConductivity:
+          format: double
+          type: number
+        isDefaultMaterial:
+          type: boolean
+        orderInCode:
+          format: int32
+          type: integer
+        stateOfThermalExpansion:
+          $ref: '#/components/schemas/Material_ThermalExpansionState-IdeaRS_OpenModel'
+        stateOfThermalConductivity:
+          $ref: '#/components/schemas/Material_ThermalConductivityState-IdeaRS_OpenModel'
+        stateOfThermalSpecificHeat:
+          $ref: '#/components/schemas/Material_ThermalSpecificHeatState-IdeaRS_OpenModel'
+        stateOfThermalStressStrain:
+          $ref: '#/components/schemas/Material_ThermalStressStrainState-IdeaRS_OpenModel'
+        stateOfThermalStrain:
+          $ref: '#/components/schemas/Material_ThermalStrainState-IdeaRS_OpenModel'
+        userThermalSpecificHeatCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalConductivityCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalExpansionCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalStrainCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalStressStrainCurvature:
+          items:
+            $ref: '#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel'
+          nullable: true
+          type: array
         id:
           format: int32
           type: integer
@@ -3970,6 +4479,60 @@ components:
     Material_MatSteel-IdeaRS_OpenModel:
       additionalProperties: false
       properties:
+        name:
+          nullable: true
+          type: string
+        loadFromLibrary:
+          type: boolean
+        e:
+          format: double
+          type: number
+        g:
+          format: double
+          type: number
+        poisson:
+          format: double
+          type: number
+        unitMass:
+          format: double
+          type: number
+        specificHeat:
+          format: double
+          type: number
+        thermalExpansion:
+          format: double
+          type: number
+        thermalConductivity:
+          format: double
+          type: number
+        isDefaultMaterial:
+          type: boolean
+        orderInCode:
+          format: int32
+          type: integer
+        stateOfThermalExpansion:
+          $ref: '#/components/schemas/Material_ThermalExpansionState-IdeaRS_OpenModel'
+        stateOfThermalConductivity:
+          $ref: '#/components/schemas/Material_ThermalConductivityState-IdeaRS_OpenModel'
+        stateOfThermalSpecificHeat:
+          $ref: '#/components/schemas/Material_ThermalSpecificHeatState-IdeaRS_OpenModel'
+        stateOfThermalStressStrain:
+          $ref: '#/components/schemas/Material_ThermalStressStrainState-IdeaRS_OpenModel'
+        stateOfThermalStrain:
+          $ref: '#/components/schemas/Material_ThermalStrainState-IdeaRS_OpenModel'
+        userThermalSpecificHeatCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalConductivityCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalExpansionCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalStrainCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalStressStrainCurvature:
+          items:
+            $ref: '#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel'
+          nullable: true
+          type: array
         id:
           format: int32
           type: integer
@@ -3977,10 +4540,99 @@ components:
     Material_MatWelding-IdeaRS_OpenModel:
       additionalProperties: false
       properties:
+        name:
+          nullable: true
+          type: string
+        loadFromLibrary:
+          type: boolean
+        e:
+          format: double
+          type: number
+        g:
+          format: double
+          type: number
+        poisson:
+          format: double
+          type: number
+        unitMass:
+          format: double
+          type: number
+        specificHeat:
+          format: double
+          type: number
+        thermalExpansion:
+          format: double
+          type: number
+        thermalConductivity:
+          format: double
+          type: number
+        isDefaultMaterial:
+          type: boolean
+        orderInCode:
+          format: int32
+          type: integer
+        stateOfThermalExpansion:
+          $ref: '#/components/schemas/Material_ThermalExpansionState-IdeaRS_OpenModel'
+        stateOfThermalConductivity:
+          $ref: '#/components/schemas/Material_ThermalConductivityState-IdeaRS_OpenModel'
+        stateOfThermalSpecificHeat:
+          $ref: '#/components/schemas/Material_ThermalSpecificHeatState-IdeaRS_OpenModel'
+        stateOfThermalStressStrain:
+          $ref: '#/components/schemas/Material_ThermalStressStrainState-IdeaRS_OpenModel'
+        stateOfThermalStrain:
+          $ref: '#/components/schemas/Material_ThermalStrainState-IdeaRS_OpenModel'
+        userThermalSpecificHeatCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalConductivityCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalExpansionCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalStrainCurvature:
+          $ref: '#/components/schemas/Geometry2D_Polygon2D-IdeaRS_OpenModel'
+        userThermalStressStrainCurvature:
+          items:
+            $ref: '#/components/schemas/Geometry2D_TemperatureCurve2D-IdeaRS_OpenModel'
+          nullable: true
+          type: array
         id:
           format: int32
           type: integer
       type: object
+    Material_ReinfBarSurface-IdeaRS_OpenModel:
+      enum:
+      - smooth
+      - ribbed
+      type: string
+    Material_ThermalConductivityState-IdeaRS_OpenModel:
+      enum:
+      - none
+      - code
+      - user
+      type: string
+    Material_ThermalExpansionState-IdeaRS_OpenModel:
+      enum:
+      - none
+      - code
+      - user
+      type: string
+    Material_ThermalSpecificHeatState-IdeaRS_OpenModel:
+      enum:
+      - none
+      - code
+      - user
+      type: string
+    Material_ThermalStrainState-IdeaRS_OpenModel:
+      enum:
+      - none
+      - code
+      - user
+      type: string
+    Material_ThermalStressStrainState-IdeaRS_OpenModel:
+      enum:
+      - none
+      - code
+      - user
+      type: string
     Message_MessageNumber-IdeaRS_OpenModel:
       enum:
       - unspecified

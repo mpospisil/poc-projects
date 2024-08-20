@@ -5,6 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **str** |  | [optional] 
+**cross_section_rotation** | **float** |  | [optional] 
+**is_in_principal** | **bool** |  | [optional] 
 **id** | **int** |  | [optional] 
 
 ## Example

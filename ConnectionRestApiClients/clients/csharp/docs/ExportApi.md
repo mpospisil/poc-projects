@@ -4,104 +4,15 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGet**](ExportApi.md#api1projectsprojectidconnectionsconnectionidexportifcget) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/export-ifc |  |
-| [**Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGet**](ExportApi.md#api1projectsprojectidconnectionsconnectionidexportiomconnectiondataget) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/export-iom-connection-data |  |
-| [**Api1ProjectsProjectIdConnectionsConnectionIdExportIomGet**](ExportApi.md#api1projectsprojectidconnectionsconnectionidexportiomget) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/export-iom |  |
+| [**ExportConnectionData**](ExportApi.md#exportconnectiondata) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/export-iom-connection-data | Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection |
+| [**ExportConnectionIFC**](ExportApi.md#exportconnectionifc) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/export-ifc | Export connection to IFC format |
+| [**ExportIomXml**](ExportApi.md#exportiomxml) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/export-iom | Export connection to XML which includes https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs |
 
-<a id="api1projectsprojectidconnectionsconnectionidexportifcget"></a>
-# **Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGet**
-> SystemIOMemoryStreamSystemPrivateCoreLib Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGet (Guid projectId, int connectionId)
+<a id="exportconnectiondata"></a>
+# **ExportConnectionData**
+> ConnectionConnectionDataIdeaRSOpenModel ExportConnectionData (Guid projectId, int connectionId)
 
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
-
-namespace Example
-{
-    public class Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            var apiInstance = new ExportApi(config);
-            var projectId = "projectId_example";  // Guid | 
-            var connectionId = 56;  // int | 
-
-            try
-            {
-                SystemIOMemoryStreamSystemPrivateCoreLib result = apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGet(projectId, connectionId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ExportApi.Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGet: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib> response = apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetWithHttpInfo(projectId, connectionId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ExportApi.Api1ProjectsProjectIdConnectionsConnectionIdExportIfcGetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **projectId** | **Guid** |  |  |
-| **connectionId** | **int** |  |  |
-
-### Return type
-
-[**SystemIOMemoryStreamSystemPrivateCoreLib**](SystemIOMemoryStreamSystemPrivateCoreLib.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="api1projectsprojectidconnectionsconnectionidexportiomconnectiondataget"></a>
-# **Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGet**
-> ConnectionConnectionDataIdeaRSOpenModel Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGet (Guid projectId, int connectionId)
-
-
+Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
 
 ### Example
 ```csharp
@@ -113,7 +24,7 @@ using connection_restapi_client_poc.Model;
 
 namespace Example
 {
-    public class Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetExample
+    public class ExportConnectionDataExample
     {
         public static void Main()
         {
@@ -125,12 +36,13 @@ namespace Example
 
             try
             {
-                ConnectionConnectionDataIdeaRSOpenModel result = apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGet(projectId, connectionId);
+                // Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
+                ConnectionConnectionDataIdeaRSOpenModel result = apiInstance.ExportConnectionData(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ExportApi.Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGet: " + e.Message);
+                Debug.Print("Exception when calling ExportApi.ExportConnectionData: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -139,20 +51,21 @@ namespace Example
 }
 ```
 
-#### Using the Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetWithHttpInfo variant
+#### Using the ExportConnectionDataWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<ConnectionConnectionDataIdeaRSOpenModel> response = apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetWithHttpInfo(projectId, connectionId);
+    // Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
+    ApiResponse<ConnectionConnectionDataIdeaRSOpenModel> response = apiInstance.ExportConnectionDataWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ExportApi.Api1ProjectsProjectIdConnectionsConnectionIdExportIomConnectionDataGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ExportApi.ExportConnectionDataWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -186,11 +99,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="api1projectsprojectidconnectionsconnectionidexportiomget"></a>
-# **Api1ProjectsProjectIdConnectionsConnectionIdExportIomGet**
-> void Api1ProjectsProjectIdConnectionsConnectionIdExportIomGet (Guid projectId, int connectionId, string? version = null)
+<a id="exportconnectionifc"></a>
+# **ExportConnectionIFC**
+> SystemIOMemoryStreamSystemPrivateCoreLib ExportConnectionIFC (Guid projectId, int connectionId)
 
-
+Export connection to IFC format
 
 ### Example
 ```csharp
@@ -202,7 +115,98 @@ using connection_restapi_client_poc.Model;
 
 namespace Example
 {
-    public class Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetExample
+    public class ExportConnectionIFCExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            var apiInstance = new ExportApi(config);
+            var projectId = "projectId_example";  // Guid | 
+            var connectionId = 56;  // int | 
+
+            try
+            {
+                // Export connection to IFC format
+                SystemIOMemoryStreamSystemPrivateCoreLib result = apiInstance.ExportConnectionIFC(projectId, connectionId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ExportApi.ExportConnectionIFC: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ExportConnectionIFCWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Export connection to IFC format
+    ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib> response = apiInstance.ExportConnectionIFCWithHttpInfo(projectId, connectionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ExportApi.ExportConnectionIFCWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **Guid** |  |  |
+| **connectionId** | **int** |  |  |
+
+### Return type
+
+[**SystemIOMemoryStreamSystemPrivateCoreLib**](SystemIOMemoryStreamSystemPrivateCoreLib.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="exportiomxml"></a>
+# **ExportIomXml**
+> void ExportIomXml (Guid projectId, int connectionId, string? version = null)
+
+Export connection to XML which includes https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using connection_restapi_client_poc.Api;
+using connection_restapi_client_poc.Client;
+using connection_restapi_client_poc.Model;
+
+namespace Example
+{
+    public class ExportIomXmlExample
     {
         public static void Main()
         {
@@ -215,11 +219,12 @@ namespace Example
 
             try
             {
-                apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdExportIomGet(projectId, connectionId, version);
+                // Export connection to XML which includes https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs
+                apiInstance.ExportIomXml(projectId, connectionId, version);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ExportApi.Api1ProjectsProjectIdConnectionsConnectionIdExportIomGet: " + e.Message);
+                Debug.Print("Exception when calling ExportApi.ExportIomXml: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -228,17 +233,18 @@ namespace Example
 }
 ```
 
-#### Using the Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetWithHttpInfo variant
+#### Using the ExportIomXmlWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetWithHttpInfo(projectId, connectionId, version);
+    // Export connection to XML which includes https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs
+    apiInstance.ExportIomXmlWithHttpInfo(projectId, connectionId, version);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ExportApi.Api1ProjectsProjectIdConnectionsConnectionIdExportIomGetWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ExportApi.ExportIomXmlWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

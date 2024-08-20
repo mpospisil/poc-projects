@@ -34,11 +34,59 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CrossSectionReinforcedCrossSectionIdeaRSOpenModel" /> class.
         /// </summary>
+        /// <param name="name">name.</param>
+        /// <param name="crossSection">crossSection.</param>
+        /// <param name="bars">bars.</param>
+        /// <param name="stirrups">stirrups.</param>
+        /// <param name="tendonBars">tendonBars.</param>
+        /// <param name="tendonDucts">tendonDucts.</param>
         /// <param name="id">id.</param>
-        public CrossSectionReinforcedCrossSectionIdeaRSOpenModel(int id = default(int))
+        public CrossSectionReinforcedCrossSectionIdeaRSOpenModel(string name = default(string), ReferenceElementIdeaRSOpenModel crossSection = default(ReferenceElementIdeaRSOpenModel), List<CrossSectionReinforcedBarIdeaRSOpenModel> bars = default(List<CrossSectionReinforcedBarIdeaRSOpenModel>), List<CrossSectionStirrupIdeaRSOpenModel> stirrups = default(List<CrossSectionStirrupIdeaRSOpenModel>), List<CrossSectionTendonBarIdeaRSOpenModel> tendonBars = default(List<CrossSectionTendonBarIdeaRSOpenModel>), List<CrossSectionTendonDuctIdeaRSOpenModel> tendonDucts = default(List<CrossSectionTendonDuctIdeaRSOpenModel>), int id = default(int))
         {
+            this.Name = name;
+            this.CrossSection = crossSection;
+            this.Bars = bars;
+            this.Stirrups = stirrups;
+            this.TendonBars = tendonBars;
+            this.TendonDucts = tendonDucts;
             this.Id = id;
         }
+
+        /// <summary>
+        /// Gets or Sets Name
+        /// </summary>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CrossSection
+        /// </summary>
+        [DataMember(Name = "crossSection", EmitDefaultValue = false)]
+        public ReferenceElementIdeaRSOpenModel CrossSection { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Bars
+        /// </summary>
+        [DataMember(Name = "bars", EmitDefaultValue = true)]
+        public List<CrossSectionReinforcedBarIdeaRSOpenModel> Bars { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Stirrups
+        /// </summary>
+        [DataMember(Name = "stirrups", EmitDefaultValue = true)]
+        public List<CrossSectionStirrupIdeaRSOpenModel> Stirrups { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TendonBars
+        /// </summary>
+        [DataMember(Name = "tendonBars", EmitDefaultValue = true)]
+        public List<CrossSectionTendonBarIdeaRSOpenModel> TendonBars { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TendonDucts
+        /// </summary>
+        [DataMember(Name = "tendonDucts", EmitDefaultValue = true)]
+        public List<CrossSectionTendonDuctIdeaRSOpenModel> TendonDucts { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -54,6 +102,12 @@ namespace connection_restapi_client_poc.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CrossSectionReinforcedCrossSectionIdeaRSOpenModel {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  CrossSection: ").Append(CrossSection).Append("\n");
+            sb.Append("  Bars: ").Append(Bars).Append("\n");
+            sb.Append("  Stirrups: ").Append(Stirrups).Append("\n");
+            sb.Append("  TendonBars: ").Append(TendonBars).Append("\n");
+            sb.Append("  TendonDucts: ").Append(TendonDucts).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

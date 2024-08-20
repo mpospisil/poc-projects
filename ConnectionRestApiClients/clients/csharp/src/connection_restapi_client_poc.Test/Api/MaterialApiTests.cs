@@ -55,112 +55,178 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMaterialsBoltAssembliesGet
+        /// Test AddBoltAssembly
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMaterialsBoltAssembliesGetTest()
+        public void AddBoltAssemblyTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMaterialsBoltAssembliesGet(projectId, connectionId);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi>>(response);
+            //IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null;
+            //var response = instance.AddBoltAssembly(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMaterialsBoltAssembliesPost
+        /// Test AddCrossSection
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMaterialsBoltAssembliesPostTest()
+        public void AddCrossSectionTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi? ideaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMaterialsBoltAssembliesPost(projectId, connectionId, ideaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelProjBoltAssemblyIdeaStatiCaApi>(response);
+            //IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = null;
+            //var response = instance.AddCrossSection(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi);
+            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMaterialsCrossSectionsGet
+        /// Test AddMaterialBoltGrade
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMaterialsCrossSectionsGetTest()
+        public void AddMaterialBoltGradeTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMaterialsCrossSectionsGet(projectId, connectionId);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi>>(response);
+            //IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null;
+            //var response = instance.AddMaterialBoltGrade(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMaterialsCrossSectionsPost
+        /// Test AddMaterialConcrete
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMaterialsCrossSectionsPostTest()
+        public void AddMaterialConcreteTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMaterialsCrossSectionsPost(projectId, connectionId, ideaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelProjCrossSectionIdeaStatiCaApi>(response);
+            //IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null;
+            //var response = instance.AddMaterialConcrete(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMaterialsGet
+        /// Test AddMaterialSteel
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMaterialsGetTest()
+        public void AddMaterialSteelTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaRSWsLibCssServiceMaterialTypeCIBasicTypes? type = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMaterialsGet(projectId, connectionId, type);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi>>(response);
+            //IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null;
+            //var response = instance.AddMaterialSteel(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMaterialsPinsGet
+        /// Test AddMaterialWeld
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMaterialsPinsGetTest()
+        public void AddMaterialWeldTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMaterialsPinsGet(projectId, connectionId);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi>>(response);
+            //IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null;
+            //var response = instance.AddMaterialWeld(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMaterialsPinsPost
+        /// Test GetAllMaterials
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMaterialsPinsPostTest()
+        public void GetAllMaterialsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi? ideaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMaterialsPinsPost(projectId, connectionId, ideaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelProjPinIdeaStatiCaApi>(response);
+            //var response = instance.GetAllMaterials(projectId, connectionId);
+            //Assert.IsType<List<Object>>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdMaterialsPost
+        /// Test GetBlotGradeMaterials
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdMaterialsPostTest()
+        public void GetBlotGradeMaterialsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi? ideaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdMaterialsPost(projectId, connectionId, ideaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelProjMaterialIdeaStatiCaApi>(response);
+            //var response = instance.GetBlotGradeMaterials(projectId, connectionId);
+            //Assert.IsType<List<Object>>(response);
+        }
+
+        /// <summary>
+        /// Test GetBoltAssemblies
+        /// </summary>
+        [Fact]
+        public void GetBoltAssembliesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //var response = instance.GetBoltAssemblies(projectId, connectionId);
+            //Assert.IsType<List<Object>>(response);
+        }
+
+        /// <summary>
+        /// Test GetConcreteMaterials
+        /// </summary>
+        [Fact]
+        public void GetConcreteMaterialsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //var response = instance.GetConcreteMaterials(projectId, connectionId);
+            //Assert.IsType<List<Object>>(response);
+        }
+
+        /// <summary>
+        /// Test GetCrossSections
+        /// </summary>
+        [Fact]
+        public void GetCrossSectionsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //var response = instance.GetCrossSections(projectId, connectionId);
+            //Assert.IsType<List<Object>>(response);
+        }
+
+        /// <summary>
+        /// Test GetSteelMaterials
+        /// </summary>
+        [Fact]
+        public void GetSteelMaterialsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //var response = instance.GetSteelMaterials(projectId, connectionId);
+            //Assert.IsType<List<Object>>(response);
+        }
+
+        /// <summary>
+        /// Test GetWeldingMaterials
+        /// </summary>
+        [Fact]
+        public void GetWeldingMaterialsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //var response = instance.GetWeldingMaterials(projectId, connectionId);
+            //Assert.IsType<List<Object>>(response);
         }
     }
 }

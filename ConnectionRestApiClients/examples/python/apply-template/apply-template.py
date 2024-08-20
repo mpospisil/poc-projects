@@ -89,7 +89,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
                 templateParam.template = file.read()
 
             # get the default mapping for the selected template and connection  
-            default_mapping = api_template.get_deault_template_mapping(project_id, connection1.id, templateParam)
+            default_mapping = api_template.get_default_template_mapping(project_id, connection1.id, templateParam)
             pprint(default_mapping)
 
             # TODO
@@ -114,18 +114,6 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             # run stress-strain analysis for the connection
             con1_cbfem_results1 = api_calculation.calculate(project_id, calcParams)
             pprint(con1_cbfem_results1)
-
-            # modify loading
-
-
-
-            # it doesn't work why ? wrong coding ?
-
-            # # download modified ideacon file
-            # projectDataStream = api_project.api1_projects_project_id_download_get(project_id)
-            # updatedProject_file_path = os.path.join(dir_path, '..\..\projects', 'corner-updated.ideaCon')
-            # with open(updatedProject_file_path, 'wb') as file:
-            #     file.write(projectDataStream.read())
 
 
         except Exception as ee:

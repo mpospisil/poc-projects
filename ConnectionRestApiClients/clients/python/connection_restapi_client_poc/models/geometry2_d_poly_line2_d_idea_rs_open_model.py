@@ -26,10 +26,10 @@ from typing_extensions import Self
 
 class Geometry2DPolyLine2DIdeaRSOpenModel(BaseModel):
     """
-    Geometry2DPolyLine2DIdeaRSOpenModel
+    Represents a polyline in two-dimensional space.
     """ # noqa: E501
     start_point: Optional[Geometry2DPoint2DIdeaRSOpenModel] = Field(default=None, alias="startPoint")
-    segments: Optional[List[Geometry2DSegment2DIdeaRSOpenModel]] = None
+    segments: Optional[List[Geometry2DSegment2DIdeaRSOpenModel]] = Field(default=None, description="Gets segments of `PolyLine2D`.")
     __properties: ClassVar[List[str]] = ["startPoint", "segments"]
 
     model_config = ConfigDict(

@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api1_projects_project_id_connections_connection_id_evaluate_expression_post**](ParameterApi.md#api1_projects_project_id_connections_connection_id_evaluate_expression_post) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/evaluate-expression | 
-[**api1_projects_project_id_connections_connection_id_parameters_get**](ParameterApi.md#api1_projects_project_id_connections_connection_id_parameters_get) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/parameters | 
-[**api1_projects_project_id_connections_connection_id_parameters_put**](ParameterApi.md#api1_projects_project_id_connections_connection_id_parameters_put) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/parameters | 
+[**evaluate_expression**](ParameterApi.md#evaluate_expression) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/evaluate-expression | Evaluate the expression and return the result
+[**get_parameters**](ParameterApi.md#get_parameters) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/parameters | Get all parameters which are defined for projectId and connectionId
+[**update_parameters**](ParameterApi.md#update_parameters) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/parameters | Update parameters for the connection connectionId in the project projectId by values passed in parameters
 
 
-# **api1_projects_project_id_connections_connection_id_evaluate_expression_post**
-> str api1_projects_project_id_connections_connection_id_evaluate_expression_post(project_id, connection_id, body=body)
+# **evaluate_expression**
+> str evaluate_expression(project_id, connection_id, body=body)
 
-
+Evaluate the expression and return the result
 
 ### Example
 
@@ -33,16 +33,17 @@ configuration = connection_restapi_client_poc.Configuration(
 with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.ParameterApi(api_client)
-    project_id = 'project_id_example' # str | 
-    connection_id = 56 # int | 
-    body = 'body_example' # str |  (optional)
+    project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
+    connection_id = 56 # int | Id of the connection to use for evaluation expression
+    body = 'body_example' # str | Expreession to evaluate (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_evaluate_expression_post(project_id, connection_id, body=body)
-        print("The response of ParameterApi->api1_projects_project_id_connections_connection_id_evaluate_expression_post:\n")
+        # Evaluate the expression and return the result
+        api_response = api_instance.evaluate_expression(project_id, connection_id, body=body)
+        print("The response of ParameterApi->evaluate_expression:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ParameterApi->api1_projects_project_id_connections_connection_id_evaluate_expression_post: %s\n" % e)
+        print("Exception when calling ParameterApi->evaluate_expression: %s\n" % e)
 ```
 
 
@@ -52,9 +53,9 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**|  | 
- **connection_id** | **int**|  | 
- **body** | **str**|  | [optional] 
+ **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
+ **connection_id** | **int**| Id of the connection to use for evaluation expression | 
+ **body** | **str**| Expreession to evaluate | [optional] 
 
 ### Return type
 
@@ -77,10 +78,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api1_projects_project_id_connections_connection_id_parameters_get**
-> List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi] api1_projects_project_id_connections_connection_id_parameters_get(project_id, connection_id, include_hidden=include_hidden)
+# **get_parameters**
+> List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi] get_parameters(project_id, connection_id, include_hidden=include_hidden)
 
-
+Get all parameters which are defined for projectId and connectionId
 
 ### Example
 
@@ -102,16 +103,17 @@ configuration = connection_restapi_client_poc.Configuration(
 with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.ParameterApi(api_client)
-    project_id = 'project_id_example' # str | 
-    connection_id = 56 # int | 
-    include_hidden = False # bool |  (optional) (default to False)
+    project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
+    connection_id = 56 # int | Id of the connection to get its parameters
+    include_hidden = False # bool | Iclude also hdden parameters (optional) (default to False)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_parameters_get(project_id, connection_id, include_hidden=include_hidden)
-        print("The response of ParameterApi->api1_projects_project_id_connections_connection_id_parameters_get:\n")
+        # Get all parameters which are defined for projectId and connectionId
+        api_response = api_instance.get_parameters(project_id, connection_id, include_hidden=include_hidden)
+        print("The response of ParameterApi->get_parameters:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ParameterApi->api1_projects_project_id_connections_connection_id_parameters_get: %s\n" % e)
+        print("Exception when calling ParameterApi->get_parameters: %s\n" % e)
 ```
 
 
@@ -121,9 +123,9 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**|  | 
- **connection_id** | **int**|  | 
- **include_hidden** | **bool**|  | [optional] [default to False]
+ **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
+ **connection_id** | **int**| Id of the connection to get its parameters | 
+ **include_hidden** | **bool**| Iclude also hdden parameters | [optional] [default to False]
 
 ### Return type
 
@@ -146,10 +148,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api1_projects_project_id_connections_connection_id_parameters_put**
-> List[IdeaRSCommonParametersParameterDataCIBasicTypes] api1_projects_project_id_connections_connection_id_parameters_put(project_id, connection_id, idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api)
+# **update_parameters**
+> List[IdeaRSCommonParametersParameterDataCIBasicTypes] update_parameters(project_id, connection_id, idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api)
 
-
+Update parameters for the connection connectionId in the project projectId by values passed in parameters
 
 ### Example
 
@@ -172,16 +174,17 @@ configuration = connection_restapi_client_poc.Configuration(
 with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.ParameterApi(api_client)
-    project_id = 'project_id_example' # str | 
-    connection_id = 56 # int | 
-    idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api = [connection_restapi_client_poc.IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi()] # List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi] |  (optional)
+    project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
+    connection_id = 56 # int | Id of the connection to apply template
+    idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api = [connection_restapi_client_poc.IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi()] # List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi] | New values of parameters (optional)
 
     try:
-        api_response = api_instance.api1_projects_project_id_connections_connection_id_parameters_put(project_id, connection_id, idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api)
-        print("The response of ParameterApi->api1_projects_project_id_connections_connection_id_parameters_put:\n")
+        # Update parameters for the connection connectionId in the project projectId by values passed in parameters
+        api_response = api_instance.update_parameters(project_id, connection_id, idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api)
+        print("The response of ParameterApi->update_parameters:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ParameterApi->api1_projects_project_id_connections_connection_id_parameters_put: %s\n" % e)
+        print("Exception when calling ParameterApi->update_parameters: %s\n" % e)
 ```
 
 
@@ -191,9 +194,9 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**|  | 
- **connection_id** | **int**|  | 
- **idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api** | [**List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi.md)|  | [optional] 
+ **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
+ **connection_id** | **int**| Id of the connection to apply template | 
+ **idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api** | [**List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi.md)| New values of parameters | [optional] 
 
 ### Return type
 

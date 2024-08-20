@@ -1,5 +1,6 @@
 # ResultResultTypeIdeaRSOpenModel
 
+Type of results
 
 ## Enum
 

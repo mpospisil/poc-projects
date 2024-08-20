@@ -1,22 +1,23 @@
 # ConnectionConcreteBlockDataIdeaRSOpenModel
 
+Provides data of the single concrete block
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
-**name** | **str** |  | [optional] 
-**depth** | **float** |  | [optional] 
-**material** | **str** |  | [optional] 
+**id** | **int** | Plate unique ID | [optional] 
+**name** | **str** | Name of the concrete block | [optional] 
+**depth** | **float** | Depth of the concrete block | [optional] 
+**material** | **str** | Name of the material | [optional] 
 **center** | [**Geometry3DPoint3DIdeaRSOpenModel**](Geometry3DPoint3DIdeaRSOpenModel.md) |  | [optional] 
-**outline_points** | [**List[Geometry2DPoint2DIdeaRSOpenModel]**](Geometry2DPoint2DIdeaRSOpenModel.md) |  | [optional] 
+**outline_points** | [**List[Geometry2DPoint2DIdeaRSOpenModel]**](Geometry2DPoint2DIdeaRSOpenModel.md) | Outline points | [optional] 
 **origin** | [**Geometry3DPoint3DIdeaRSOpenModel**](Geometry3DPoint3DIdeaRSOpenModel.md) |  | [optional] 
 **axis_x** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 
 **axis_y** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 
 **axis_z** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 
-**region** | **str** |  | [optional] 
-**original_model_id** | **str** |  | [optional] 
+**region** | **str** | Geometry of the concrete block in svg format | [optional] 
+**original_model_id** | **str** | Get or set the identification in the original model  In the case of the imported connection from another application | [optional] 
 
 ## Example
 

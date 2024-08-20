@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines Connection_WeldType-IdeaRS_OpenModel
+    /// enum of weld types
     /// </summary>
+    /// <value>enum of weld types</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ConnectionWeldTypeIdeaRSOpenModel
     {

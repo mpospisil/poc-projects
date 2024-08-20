@@ -16,8 +16,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import StrictBool, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
+from typing_extensions import Annotated
 from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
 from connection_restapi_client_poc.models.load_effect_data_idea_stati_ca_connection_checks import LoadEffectDataIdeaStatiCaConnectionChecks
 
@@ -40,10 +41,597 @@ class LoadEffectApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_get(
+    def add_load_effect(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> LoadEffectDataIdeaStatiCaConnectionChecks:
+        """Add new load effect to the connection
+
+
+        :param project_id:  (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
+        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_load_effect_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "LoadEffectDataIdeaStatiCaConnectionChecks",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def add_load_effect_with_http_info(
+        self,
+        project_id: StrictStr,
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[LoadEffectDataIdeaStatiCaConnectionChecks]:
+        """Add new load effect to the connection
+
+
+        :param project_id:  (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
+        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_load_effect_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "LoadEffectDataIdeaStatiCaConnectionChecks",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def add_load_effect_without_preload_content(
+        self,
+        project_id: StrictStr,
+        connection_id: StrictInt,
+        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Add new load effect to the connection
+
+
+        :param project_id:  (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
+        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_load_effect_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "LoadEffectDataIdeaStatiCaConnectionChecks",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _add_load_effect_serialize(
+        self,
+        project_id,
+        connection_id,
+        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if project_id is not None:
+            _path_params['projectId'] = project_id
+        if connection_id is not None:
+            _path_params['connectionId'] = connection_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api is not None:
+            _body_params = idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json-patch+json', 
+                        'application/json', 
+                        'text/json', 
+                        'application/*+json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/load-effects',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_load_effect(
+        self,
+        project_id: StrictStr,
+        connection_id: StrictInt,
+        load_effect_id: StrictInt,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> int:
+        """Delete load effect loadEffectId
+
+
+        :param project_id:  (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param load_effect_id:  (required)
+        :type load_effect_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_load_effect_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            load_effect_id=load_effect_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "int",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_load_effect_with_http_info(
+        self,
+        project_id: StrictStr,
+        connection_id: StrictInt,
+        load_effect_id: StrictInt,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[int]:
+        """Delete load effect loadEffectId
+
+
+        :param project_id:  (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param load_effect_id:  (required)
+        :type load_effect_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_load_effect_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            load_effect_id=load_effect_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "int",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_load_effect_without_preload_content(
+        self,
+        project_id: StrictStr,
+        connection_id: StrictInt,
+        load_effect_id: StrictInt,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete load effect loadEffectId
+
+
+        :param project_id:  (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param load_effect_id:  (required)
+        :type load_effect_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_load_effect_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            load_effect_id=load_effect_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "int",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_load_effect_serialize(
+        self,
+        project_id,
+        connection_id,
+        load_effect_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if project_id is not None:
+            _path_params['projectId'] = project_id
+        if connection_id is not None:
+            _path_params['connectionId'] = connection_id
+        if load_effect_id is not None:
+            _path_params['loadEffectId'] = load_effect_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_load_effect(
+        self,
+        project_id: StrictStr,
+        connection_id: StrictInt,
+        load_effect_id: StrictInt,
         is_percentage: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -57,15 +645,17 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_load_effects_get
+    ) -> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi:
+        """Get load impulses from loadEffectId
 
 
-        :param project_id: (required)
+        :param project_id:  (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param is_percentage:
+        :param load_effect_id:  (required)
+        :type load_effect_id: int
+        :param is_percentage: 
         :type is_percentage: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -89,7 +679,306 @@ class LoadEffectApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_get_serialize(
+        _param = self._get_load_effect_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            load_effect_id=load_effect_id,
+            is_percentage=is_percentage,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_load_effect_with_http_info(
+        self,
+        project_id: StrictStr,
+        connection_id: StrictInt,
+        load_effect_id: StrictInt,
+        is_percentage: Optional[StrictBool] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]:
+        """Get load impulses from loadEffectId
+
+
+        :param project_id:  (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param load_effect_id:  (required)
+        :type load_effect_id: int
+        :param is_percentage: 
+        :type is_percentage: bool
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_load_effect_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            load_effect_id=load_effect_id,
+            is_percentage=is_percentage,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_load_effect_without_preload_content(
+        self,
+        project_id: StrictStr,
+        connection_id: StrictInt,
+        load_effect_id: StrictInt,
+        is_percentage: Optional[StrictBool] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get load impulses from loadEffectId
+
+
+        :param project_id:  (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param load_effect_id:  (required)
+        :type load_effect_id: int
+        :param is_percentage: 
+        :type is_percentage: bool
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_load_effect_serialize(
+            project_id=project_id,
+            connection_id=connection_id,
+            load_effect_id=load_effect_id,
+            is_percentage=is_percentage,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_load_effect_serialize(
+        self,
+        project_id,
+        connection_id,
+        load_effect_id,
+        is_percentage,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if project_id is not None:
+            _path_params['projectId'] = project_id
+        if connection_id is not None:
+            _path_params['connectionId'] = connection_id
+        if load_effect_id is not None:
+            _path_params['loadEffectId'] = load_effect_id
+        # process the query parameters
+        if is_percentage is not None:
+            
+            _query_params.append(('isPercentage', is_percentage))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_load_effects(
+        self,
+        project_id: StrictStr,
+        connection_id: StrictInt,
+        is_percentage: Optional[StrictBool] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]:
+        """Get all load effects which are defined in connectionId
+
+
+        :param project_id:  (required)
+        :type project_id: str
+        :param connection_id:  (required)
+        :type connection_id: int
+        :param is_percentage: 
+        :type is_percentage: bool
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_load_effects_serialize(
             project_id=project_id,
             connection_id=connection_id,
             is_percentage=is_percentage,
@@ -114,7 +1003,7 @@ class LoadEffectApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_get_with_http_info(
+    def get_load_effects_with_http_info(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
@@ -132,14 +1021,14 @@ class LoadEffectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]]:
-        """api1_projects_project_id_connections_connection_id_load_effects_get
+        """Get all load effects which are defined in connectionId
 
 
-        :param project_id: (required)
+        :param project_id:  (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param is_percentage:
+        :param is_percentage: 
         :type is_percentage: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -163,7 +1052,7 @@ class LoadEffectApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_get_serialize(
+        _param = self._get_load_effects_serialize(
             project_id=project_id,
             connection_id=connection_id,
             is_percentage=is_percentage,
@@ -188,7 +1077,7 @@ class LoadEffectApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_get_without_preload_content(
+    def get_load_effects_without_preload_content(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
@@ -206,14 +1095,14 @@ class LoadEffectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_load_effects_get
+        """Get all load effects which are defined in connectionId
 
 
-        :param project_id: (required)
+        :param project_id:  (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param is_percentage:
+        :param is_percentage: 
         :type is_percentage: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -237,7 +1126,7 @@ class LoadEffectApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_get_serialize(
+        _param = self._get_load_effects_serialize(
             project_id=project_id,
             connection_id=connection_id,
             is_percentage=is_percentage,
@@ -257,7 +1146,7 @@ class LoadEffectApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_load_effects_get_serialize(
+    def _get_load_effects_serialize(
         self,
         project_id,
         connection_id,
@@ -327,11 +1216,11 @@ class LoadEffectApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete(
+    def set_loads_in_equilibrium(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        load_effect_id: StrictInt,
+        loads_in_equilibrium: Annotated[Optional[StrictBool], Field(description="Value to be set")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -344,16 +1233,16 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> int:
-        """api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete
+    ) -> bool:
+        """Update the option 'LoadsInEquilibrium' for connectionId
 
 
-        :param project_id: (required)
+        :param project_id:  (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param load_effect_id: (required)
-        :type load_effect_id: int
+        :param loads_in_equilibrium: Value to be set
+        :type loads_in_equilibrium: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -376,10 +1265,10 @@ class LoadEffectApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete_serialize(
+        _param = self._set_loads_in_equilibrium_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            load_effect_id=load_effect_id,
+            loads_in_equilibrium=loads_in_equilibrium,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -387,7 +1276,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
+            '200': "bool",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -401,11 +1290,11 @@ class LoadEffectApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete_with_http_info(
+    def set_loads_in_equilibrium_with_http_info(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        load_effect_id: StrictInt,
+        loads_in_equilibrium: Annotated[Optional[StrictBool], Field(description="Value to be set")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -418,16 +1307,16 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[int]:
-        """api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete
+    ) -> ApiResponse[bool]:
+        """Update the option 'LoadsInEquilibrium' for connectionId
 
 
-        :param project_id: (required)
+        :param project_id:  (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param load_effect_id: (required)
-        :type load_effect_id: int
+        :param loads_in_equilibrium: Value to be set
+        :type loads_in_equilibrium: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -450,10 +1339,10 @@ class LoadEffectApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete_serialize(
+        _param = self._set_loads_in_equilibrium_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            load_effect_id=load_effect_id,
+            loads_in_equilibrium=loads_in_equilibrium,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -461,7 +1350,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
+            '200': "bool",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -475,11 +1364,11 @@ class LoadEffectApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete_without_preload_content(
+    def set_loads_in_equilibrium_without_preload_content(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        load_effect_id: StrictInt,
+        loads_in_equilibrium: Annotated[Optional[StrictBool], Field(description="Value to be set")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -493,15 +1382,15 @@ class LoadEffectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete
+        """Update the option 'LoadsInEquilibrium' for connectionId
 
 
-        :param project_id: (required)
+        :param project_id:  (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param load_effect_id: (required)
-        :type load_effect_id: int
+        :param loads_in_equilibrium: Value to be set
+        :type loads_in_equilibrium: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -524,10 +1413,10 @@ class LoadEffectApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete_serialize(
+        _param = self._set_loads_in_equilibrium_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            load_effect_id=load_effect_id,
+            loads_in_equilibrium=loads_in_equilibrium,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -535,7 +1424,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
+            '200': "bool",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -544,11 +1433,11 @@ class LoadEffectApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_delete_serialize(
+    def _set_loads_in_equilibrium_serialize(
         self,
         project_id,
         connection_id,
-        load_effect_id,
+        loads_in_equilibrium,
         _request_auth,
         _content_type,
         _headers,
@@ -572,310 +1461,10 @@ class LoadEffectApi:
             _path_params['projectId'] = project_id
         if connection_id is not None:
             _path_params['connectionId'] = connection_id
-        if load_effect_id is not None:
-            _path_params['loadEffectId'] = load_effect_id
         # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        load_effect_id: StrictInt,
-        is_percentage: Optional[StrictBool] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi:
-        """api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param load_effect_id: (required)
-        :type load_effect_id: int
-        :param is_percentage:
-        :type is_percentage: bool
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            load_effect_id=load_effect_id,
-            is_percentage=is_percentage,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get_with_http_info(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        load_effect_id: StrictInt,
-        is_percentage: Optional[StrictBool] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param load_effect_id: (required)
-        :type load_effect_id: int
-        :param is_percentage:
-        :type is_percentage: bool
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            load_effect_id=load_effect_id,
-            is_percentage=is_percentage,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get_without_preload_content(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        load_effect_id: StrictInt,
-        is_percentage: Optional[StrictBool] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param load_effect_id: (required)
-        :type load_effect_id: int
-        :param is_percentage:
-        :type is_percentage: bool
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            load_effect_id=load_effect_id,
-            is_percentage=is_percentage,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_get_serialize(
-        self,
-        project_id,
-        connection_id,
-        load_effect_id,
-        is_percentage,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if project_id is not None:
-            _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
-        if load_effect_id is not None:
-            _path_params['loadEffectId'] = load_effect_id
-        # process the query parameters
-        if is_percentage is not None:
+        if loads_in_equilibrium is not None:
             
-            _query_params.append(('isPercentage', is_percentage))
+            _query_params.append(('loadsInEquilibrium', loads_in_equilibrium))
             
         # process the header parameters
         # process the form parameters
@@ -896,8 +1485,8 @@ class LoadEffectApi:
         ]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}',
+            method='POST',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -914,7 +1503,7 @@ class LoadEffectApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put(
+    def update_load_effect(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
@@ -933,16 +1522,16 @@ class LoadEffectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi:
-        """api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put
+        """Update load impulses in loadEffectId
 
 
-        :param project_id: (required)
+        :param project_id:  (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param load_effect_id: (required)
+        :param load_effect_id:  (required)
         :type load_effect_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api:
+        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
         :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -966,7 +1555,7 @@ class LoadEffectApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put_serialize(
+        _param = self._update_load_effect_serialize(
             project_id=project_id,
             connection_id=connection_id,
             load_effect_id=load_effect_id,
@@ -992,7 +1581,7 @@ class LoadEffectApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put_with_http_info(
+    def update_load_effect_with_http_info(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
@@ -1011,16 +1600,16 @@ class LoadEffectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put
+        """Update load impulses in loadEffectId
 
 
-        :param project_id: (required)
+        :param project_id:  (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param load_effect_id: (required)
+        :param load_effect_id:  (required)
         :type load_effect_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api:
+        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
         :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1044,7 +1633,7 @@ class LoadEffectApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put_serialize(
+        _param = self._update_load_effect_serialize(
             project_id=project_id,
             connection_id=connection_id,
             load_effect_id=load_effect_id,
@@ -1070,7 +1659,7 @@ class LoadEffectApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put_without_preload_content(
+    def update_load_effect_without_preload_content(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
@@ -1089,16 +1678,16 @@ class LoadEffectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put
+        """Update load impulses in loadEffectId
 
 
-        :param project_id: (required)
+        :param project_id:  (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id:  (required)
         :type connection_id: int
-        :param load_effect_id: (required)
+        :param load_effect_id:  (required)
         :type load_effect_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api:
+        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
         :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1122,7 +1711,7 @@ class LoadEffectApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put_serialize(
+        _param = self._update_load_effect_serialize(
             project_id=project_id,
             connection_id=connection_id,
             load_effect_id=load_effect_id,
@@ -1143,7 +1732,7 @@ class LoadEffectApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_load_effects_load_effect_id_put_serialize(
+    def _update_load_effect_serialize(
         self,
         project_id,
         connection_id,
@@ -1214,594 +1803,6 @@ class LoadEffectApi:
         return self.api_client.param_serialize(
             method='PUT',
             resource_path='/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_post(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> LoadEffectDataIdeaStatiCaConnectionChecks:
-        """api1_projects_project_id_connections_connection_id_load_effects_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LoadEffectDataIdeaStatiCaConnectionChecks",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_post_with_http_info(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[LoadEffectDataIdeaStatiCaConnectionChecks]:
-        """api1_projects_project_id_connections_connection_id_load_effects_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LoadEffectDataIdeaStatiCaConnectionChecks",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_post_without_preload_content(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_load_effects_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api:
-        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LoadEffectDataIdeaStatiCaConnectionChecks",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _api1_projects_project_id_connections_connection_id_load_effects_post_serialize(
-        self,
-        project_id,
-        connection_id,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if project_id is not None:
-            _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/load-effects',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_set_equilibrium_post(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        loads_in_equilibrium: Optional[StrictBool] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> bool:
-        """api1_projects_project_id_connections_connection_id_load_effects_set_equilibrium_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param loads_in_equilibrium:
-        :type loads_in_equilibrium: bool
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_set_equilibrium_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            loads_in_equilibrium=loads_in_equilibrium,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bool",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_set_equilibrium_post_with_http_info(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        loads_in_equilibrium: Optional[StrictBool] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[bool]:
-        """api1_projects_project_id_connections_connection_id_load_effects_set_equilibrium_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param loads_in_equilibrium:
-        :type loads_in_equilibrium: bool
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_set_equilibrium_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            loads_in_equilibrium=loads_in_equilibrium,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bool",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def api1_projects_project_id_connections_connection_id_load_effects_set_equilibrium_post_without_preload_content(
-        self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        loads_in_equilibrium: Optional[StrictBool] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_load_effects_set_equilibrium_post
-
-
-        :param project_id: (required)
-        :type project_id: str
-        :param connection_id: (required)
-        :type connection_id: int
-        :param loads_in_equilibrium:
-        :type loads_in_equilibrium: bool
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._api1_projects_project_id_connections_connection_id_load_effects_set_equilibrium_post_serialize(
-            project_id=project_id,
-            connection_id=connection_id,
-            loads_in_equilibrium=loads_in_equilibrium,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bool",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _api1_projects_project_id_connections_connection_id_load_effects_set_equilibrium_post_serialize(
-        self,
-        project_id,
-        connection_id,
-        loads_in_equilibrium,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if project_id is not None:
-            _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
-        # process the query parameters
-        if loads_in_equilibrium is not None:
-            
-            _query_params.append(('loadsInEquilibrium', loads_in_equilibrium))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

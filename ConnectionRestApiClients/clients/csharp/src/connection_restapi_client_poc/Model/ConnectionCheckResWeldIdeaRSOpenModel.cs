@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionCheckResWeldIdeaRSOpenModel
+    /// Check value for Weld
     /// </summary>
     [DataContract(Name = "Connection_CheckResWeld-IdeaRS_OpenModel")]
     public partial class ConnectionCheckResWeldIdeaRSOpenModel : IValidatableObject
@@ -34,12 +34,12 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionCheckResWeldIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="id">id.</param>
-        /// <param name="unityCheck">unityCheck.</param>
-        /// <param name="checkStatus">checkStatus.</param>
-        /// <param name="loadCaseId">loadCaseId.</param>
-        /// <param name="items">items.</param>
+        /// <param name="name">Name of Weld.</param>
+        /// <param name="id">Unique id of weld.</param>
+        /// <param name="unityCheck">Unity Check Stress.</param>
+        /// <param name="checkStatus">Status of the Check.</param>
+        /// <param name="loadCaseId">Id of Load Case.</param>
+        /// <param name="items">In case of presentation of groups plates (uncoiled beams).</param>
         public ConnectionCheckResWeldIdeaRSOpenModel(string name = default(string), int id = default(int), double unityCheck = default(double), bool checkStatus = default(bool), int loadCaseId = default(int), List<int> items = default(List<int>))
         {
             this.Name = name;
@@ -51,38 +51,44 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of Weld
         /// </summary>
+        /// <value>Name of Weld</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique id of weld
         /// </summary>
+        /// <value>Unique id of weld</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets UnityCheck
+        /// Unity Check Stress
         /// </summary>
+        /// <value>Unity Check Stress</value>
         [DataMember(Name = "unityCheck", EmitDefaultValue = false)]
         public double UnityCheck { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckStatus
+        /// Status of the Check
         /// </summary>
+        /// <value>Status of the Check</value>
         [DataMember(Name = "checkStatus", EmitDefaultValue = true)]
         public bool CheckStatus { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadCaseId
+        /// Id of Load Case
         /// </summary>
+        /// <value>Id of Load Case</value>
         [DataMember(Name = "loadCaseId", EmitDefaultValue = false)]
         public int LoadCaseId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// In case of presentation of groups plates (uncoiled beams)
         /// </summary>
+        /// <value>In case of presentation of groups plates (uncoiled beams)</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<int> Items { get; set; }
 

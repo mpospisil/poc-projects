@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionBendDataIdeaRSOpenModel
+    /// Provides data of bend
     /// </summary>
     [DataContract(Name = "Connection_BendData-IdeaRS_OpenModel")]
     public partial class ConnectionBendDataIdeaRSOpenModel : IValidatableObject
@@ -34,9 +34,9 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionBendDataIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="plate1Id">plate1Id.</param>
-        /// <param name="plate2Id">plate2Id.</param>
-        /// <param name="radius">radius.</param>
+        /// <param name="plate1Id">First plate.</param>
+        /// <param name="plate2Id">Second plate.</param>
+        /// <param name="radius">Radius of bend.</param>
         /// <param name="point1OfSideBoundary1">point1OfSideBoundary1.</param>
         /// <param name="point2OfSideBoundary1">point2OfSideBoundary1.</param>
         /// <param name="endFaceNormal1">endFaceNormal1.</param>
@@ -55,20 +55,23 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Plate1Id
+        /// First plate
         /// </summary>
+        /// <value>First plate</value>
         [DataMember(Name = "plate1Id", EmitDefaultValue = false)]
         public int Plate1Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Plate2Id
+        /// Second plate
         /// </summary>
+        /// <value>Second plate</value>
         [DataMember(Name = "plate2Id", EmitDefaultValue = false)]
         public int Plate2Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Radius
+        /// Radius of bend
         /// </summary>
+        /// <value>Radius of bend</value>
         [DataMember(Name = "radius", EmitDefaultValue = false)]
         public double Radius { get; set; }
 

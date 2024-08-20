@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines Parameters_BoltShearType-IdeaRS_OpenModel
+    /// Defines a transfer of shear force in bolts.
     /// </summary>
+    /// <value>Defines a transfer of shear force in bolts.</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ParametersBoltShearTypeIdeaRSOpenModel
     {

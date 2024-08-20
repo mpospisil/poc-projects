@@ -1,11 +1,12 @@
 # LoadingLoadCaseIdeaRSOpenModel
 
+Load case in the model
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

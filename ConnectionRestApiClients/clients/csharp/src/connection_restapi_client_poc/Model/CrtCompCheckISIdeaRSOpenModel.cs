@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines CrtCompCheckIS-IdeaRS_OpenModel
+    /// CRT IS check
     /// </summary>
+    /// <value>CRT IS check</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum CrtCompCheckISIdeaRSOpenModel
     {

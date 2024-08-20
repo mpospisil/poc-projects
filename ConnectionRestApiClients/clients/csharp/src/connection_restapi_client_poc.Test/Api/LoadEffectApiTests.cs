@@ -55,89 +55,89 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGet
+        /// Test AddLoadEffect
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid projectId = null;
-            //int connectionId = null;
-            //bool? isPercentage = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGet(projectId, connectionId, isPercentage);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>(response);
-        }
-
-        /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDelete
-        /// </summary>
-        [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDeleteTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid projectId = null;
-            //int connectionId = null;
-            //int loadEffectId = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDelete(projectId, connectionId, loadEffectId);
-            //Assert.IsType<int>(response);
-        }
-
-        /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGet
-        /// </summary>
-        [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGetTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid projectId = null;
-            //int connectionId = null;
-            //int loadEffectId = null;
-            //bool? isPercentage = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGet(projectId, connectionId, loadEffectId, isPercentage);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>(response);
-        }
-
-        /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPut
-        /// </summary>
-        [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPutTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid projectId = null;
-            //int connectionId = null;
-            //int loadEffectId = null;
-            //IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPut(projectId, connectionId, loadEffectId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>(response);
-        }
-
-        /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPost
-        /// </summary>
-        [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPostTest()
+        public void AddLoadEffectTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
             //IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPost(projectId, connectionId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
+            //var response = instance.AddLoadEffect(projectId, connectionId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
             //Assert.IsType<LoadEffectDataIdeaStatiCaConnectionChecks>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPost
+        /// Test DeleteLoadEffect
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPostTest()
+        public void DeleteLoadEffectTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //int loadEffectId = null;
+            //var response = instance.DeleteLoadEffect(projectId, connectionId, loadEffectId);
+            //Assert.IsType<int>(response);
+        }
+
+        /// <summary>
+        /// Test GetLoadEffect
+        /// </summary>
+        [Fact]
+        public void GetLoadEffectTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //int loadEffectId = null;
+            //bool? isPercentage = null;
+            //var response = instance.GetLoadEffect(projectId, connectionId, loadEffectId, isPercentage);
+            //Assert.IsType<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>(response);
+        }
+
+        /// <summary>
+        /// Test GetLoadEffects
+        /// </summary>
+        [Fact]
+        public void GetLoadEffectsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //bool? isPercentage = null;
+            //var response = instance.GetLoadEffects(projectId, connectionId, isPercentage);
+            //Assert.IsType<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>(response);
+        }
+
+        /// <summary>
+        /// Test SetLoadsInEquilibrium
+        /// </summary>
+        [Fact]
+        public void SetLoadsInEquilibriumTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
             //bool? loadsInEquilibrium = null;
-            //var response = instance.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPost(projectId, connectionId, loadsInEquilibrium);
+            //var response = instance.SetLoadsInEquilibrium(projectId, connectionId, loadsInEquilibrium);
             //Assert.IsType<bool>(response);
+        }
+
+        /// <summary>
+        /// Test UpdateLoadEffect
+        /// </summary>
+        [Fact]
+        public void UpdateLoadEffectTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //int loadEffectId = null;
+            //IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = null;
+            //var response = instance.UpdateLoadEffect(projectId, connectionId, loadEffectId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
+            //Assert.IsType<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>(response);
         }
     }
 }

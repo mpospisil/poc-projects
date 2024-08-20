@@ -32,17 +32,17 @@ from typing_extensions import Self
 
 class ConnectionConnectionDataIdeaRSOpenModel(BaseModel):
     """
-    ConnectionConnectionDataIdeaRSOpenModel
+    Provides data of the connection
     """ # noqa: E501
-    conenction_point_id: Optional[StrictInt] = Field(default=None, alias="conenctionPointId")
-    beams: Optional[List[ConnectionBeamDataIdeaRSOpenModel]] = None
-    plates: Optional[List[ConnectionPlateDataIdeaRSOpenModel]] = None
-    folded_plates: Optional[List[ConnectionFoldedPlateDataIdeaRSOpenModel]] = Field(default=None, alias="foldedPlates")
-    bolt_grids: Optional[List[ConnectionBoltGridIdeaRSOpenModel]] = Field(default=None, alias="boltGrids")
-    anchor_grids: Optional[List[ConnectionAnchorGridIdeaRSOpenModel]] = Field(default=None, alias="anchorGrids")
-    welds: Optional[List[ConnectionWeldDataIdeaRSOpenModel]] = None
-    concrete_blocks: Optional[List[ConnectionConcreteBlockDataIdeaRSOpenModel]] = Field(default=None, alias="concreteBlocks")
-    cut_beam_by_beams: Optional[List[ConnectionCutBeamByBeamDataIdeaRSOpenModel]] = Field(default=None, alias="cutBeamByBeams")
+    conenction_point_id: Optional[StrictInt] = Field(default=None, description="Connection Point Id", alias="conenctionPointId")
+    beams: Optional[List[ConnectionBeamDataIdeaRSOpenModel]] = Field(default=None, description="Connected beams")
+    plates: Optional[List[ConnectionPlateDataIdeaRSOpenModel]] = Field(default=None, description="Plates of the connection")
+    folded_plates: Optional[List[ConnectionFoldedPlateDataIdeaRSOpenModel]] = Field(default=None, description="Folded plate of the connection", alias="foldedPlates")
+    bolt_grids: Optional[List[ConnectionBoltGridIdeaRSOpenModel]] = Field(default=None, description="Bolt grids which belongs to the connection", alias="boltGrids")
+    anchor_grids: Optional[List[ConnectionAnchorGridIdeaRSOpenModel]] = Field(default=None, description="Anchor grids which belongs to the connection", alias="anchorGrids")
+    welds: Optional[List[ConnectionWeldDataIdeaRSOpenModel]] = Field(default=None, description="Welds of the connection")
+    concrete_blocks: Optional[List[ConnectionConcreteBlockDataIdeaRSOpenModel]] = Field(default=None, description="ConcreteBlocksof the connection", alias="concreteBlocks")
+    cut_beam_by_beams: Optional[List[ConnectionCutBeamByBeamDataIdeaRSOpenModel]] = Field(default=None, description="cut beam by beams", alias="cutBeamByBeams")
     __properties: ClassVar[List[str]] = ["conenctionPointId", "beams", "plates", "foldedPlates", "boltGrids", "anchorGrids", "welds", "concreteBlocks", "cutBeamByBeams"]
 
     model_config = ConfigDict(

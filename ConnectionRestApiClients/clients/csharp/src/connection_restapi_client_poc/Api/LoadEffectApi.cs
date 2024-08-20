@@ -27,107 +27,7 @@ namespace connection_restapi_client_poc.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
-        List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGet(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
-        ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGetWithHttpInfo(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>int</returns>
-        int Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDelete(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of int</returns>
-        ApiResponse<int> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDeleteWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGet(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGetWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPut(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPutWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0);
-        /// <summary>
-        /// 
+        /// Add new load effect to the connection
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
@@ -135,10 +35,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadEffectDataIdeaStatiCaConnectionChecks</returns>
-        LoadEffectDataIdeaStatiCaConnectionChecks Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPost(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0);
+        LoadEffectDataIdeaStatiCaConnectionChecks AddLoadEffect(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Add new load effect to the connection
         /// </summary>
         /// <remarks>
         /// 
@@ -149,20 +49,20 @@ namespace connection_restapi_client_poc.Api
         /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadEffectDataIdeaStatiCaConnectionChecks</returns>
-        ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPostWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0);
+        ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks> AddLoadEffectWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0);
         /// <summary>
-        /// 
+        /// Delete load effect loadEffectId
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium"> (optional)</param>
+        /// <param name="loadEffectId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>bool</returns>
-        bool Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPost(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0);
+        /// <returns>int</returns>
+        int DeleteLoadEffect(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0);
 
         /// <summary>
-        /// 
+        /// Delete load effect loadEffectId
         /// </summary>
         /// <remarks>
         /// 
@@ -170,10 +70,110 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium"> (optional)</param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of int</returns>
+        ApiResponse<int> DeleteLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0);
+        /// <summary>
+        /// Get load impulses from loadEffectId
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi GetLoadEffect(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0);
+
+        /// <summary>
+        /// Get load impulses from loadEffectId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> GetLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0);
+        /// <summary>
+        /// Get all load effects which are defined in connectionId
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
+        List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> GetLoadEffects(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0);
+
+        /// <summary>
+        /// Get all load effects which are defined in connectionId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
+        ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> GetLoadEffectsWithHttpInfo(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0);
+        /// <summary>
+        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>bool</returns>
+        bool SetLoadsInEquilibrium(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0);
+
+        /// <summary>
+        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of bool</returns>
-        ApiResponse<bool> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPostWithHttpInfo(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0);
+        ApiResponse<bool> SetLoadsInEquilibriumWithHttpInfo(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0);
+        /// <summary>
+        /// Update load impulses in loadEffectId
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi UpdateLoadEffect(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0);
+
+        /// <summary>
+        /// Update load impulses in loadEffectId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> UpdateLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -184,127 +184,7 @@ namespace connection_restapi_client_poc.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
-        System.Threading.Tasks.Task<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGetAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGetWithHttpInfoAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of int</returns>
-        System.Threading.Tasks.Task<int> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDeleteAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (int)</returns>
-        System.Threading.Tasks.Task<ApiResponse<int>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDeleteWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGetAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGetWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPutAsync(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPutWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
-        /// 
+        /// Add new load effect to the connection
         /// </summary>
         /// <remarks>
         /// 
@@ -316,10 +196,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LoadEffectDataIdeaStatiCaConnectionChecks</returns>
-        System.Threading.Tasks.Task<LoadEffectDataIdeaStatiCaConnectionChecks> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPostAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<LoadEffectDataIdeaStatiCaConnectionChecks> AddLoadEffectAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Add new load effect to the connection
         /// </summary>
         /// <remarks>
         /// 
@@ -331,9 +211,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadEffectDataIdeaStatiCaConnectionChecks)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPostWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks>> AddLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Delete load effect loadEffectId
         /// </summary>
         /// <remarks>
         /// 
@@ -341,14 +221,103 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium"> (optional)</param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        System.Threading.Tasks.Task<int> DeleteLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete load effect loadEffectId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        System.Threading.Tasks.Task<ApiResponse<int>> DeleteLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Get load impulses from loadEffectId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> GetLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get load impulses from loadEffectId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi)</returns>
+        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> GetLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Get all load effects which are defined in connectionId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
+        System.Threading.Tasks.Task<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> GetLoadEffectsAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get all load effects which are defined in connectionId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>> GetLoadEffectsWithHttpInfoAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
-        System.Threading.Tasks.Task<bool> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPostAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<bool> SetLoadsInEquilibriumAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId
         /// </summary>
         /// <remarks>
         /// 
@@ -356,11 +325,42 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium"> (optional)</param>
+        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
-        System.Threading.Tasks.Task<ApiResponse<bool>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPostWithHttpInfoAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<bool>> SetLoadsInEquilibriumWithHttpInfoAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Update load impulses in loadEffectId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> UpdateLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Update load impulses in loadEffectId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi)</returns>
+        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> UpdateLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -482,615 +482,7 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
-        public List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGet(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0)
-        {
-            connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> localVarResponse = Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGetWithHttpInfo(projectId, connectionId, isPercentage);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGetWithHttpInfo(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0)
-        {
-            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            if (isPercentage != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "isPercentage", isPercentage));
-            }
-
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
-        public async System.Threading.Tasks.Task<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGetAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> localVarResponse = await Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGetWithHttpInfoAsync(projectId, connectionId, isPercentage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGetWithHttpInfoAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            if (isPercentage != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "isPercentage", isPercentage));
-            }
-
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>int</returns>
-        public int Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDelete(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0)
-        {
-            connection_restapi_client_poc.Client.ApiResponse<int> localVarResponse = Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDeleteWithHttpInfo(projectId, connectionId, loadEffectId);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of int</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<int> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDeleteWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0)
-        {
-            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
-
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDelete";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Delete<int>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDelete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of int</returns>
-        public async System.Threading.Tasks.Task<int> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDeleteAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            connection_restapi_client_poc.Client.ApiResponse<int> localVarResponse = await Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDeleteWithHttpInfoAsync(projectId, connectionId, loadEffectId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (int)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<int>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDeleteWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
-
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDelete";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<int>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdDelete", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGet(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0)
-        {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> localVarResponse = Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGetWithHttpInfo(projectId, connectionId, loadEffectId, isPercentage);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGetWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0)
-        {
-            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
-            if (isPercentage != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "isPercentage", isPercentage));
-            }
-
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGetAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> localVarResponse = await Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGetWithHttpInfoAsync(projectId, connectionId, loadEffectId, isPercentage, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="isPercentage"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGetWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
-            if (isPercentage != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "isPercentage", isPercentage));
-            }
-
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGet";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdGet", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPut(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0)
-        {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> localVarResponse = Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPutWithHttpInfo(projectId, connectionId, loadEffectId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPutWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0)
-        {
-            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi;
-
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPut";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Put<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPut", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPutAsync(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> localVarResponse = await Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPutWithHttpInfoAsync(projectId, connectionId, loadEffectId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPutWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi;
-
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPut";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsLoadEffectIdPut", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
+        /// Add new load effect to the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
@@ -1098,14 +490,14 @@ namespace connection_restapi_client_poc.Api
         /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadEffectDataIdeaStatiCaConnectionChecks</returns>
-        public LoadEffectDataIdeaStatiCaConnectionChecks Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPost(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0)
+        public LoadEffectDataIdeaStatiCaConnectionChecks AddLoadEffect(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks> localVarResponse = Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPostWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks> localVarResponse = AddLoadEffectWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Add new load effect to the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
@@ -1113,7 +505,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadEffectDataIdeaStatiCaConnectionChecks</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPostWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks> AddLoadEffectWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1145,7 +537,7 @@ namespace connection_restapi_client_poc.Api
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
             localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi;
 
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPost";
+            localVarRequestOptions.Operation = "LoadEffectApi.AddLoadEffect";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
@@ -1153,7 +545,7 @@ namespace connection_restapi_client_poc.Api
             var localVarResponse = this.Client.Post<LoadEffectDataIdeaStatiCaConnectionChecks>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AddLoadEffect", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1164,7 +556,7 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        ///  
+        /// Add new load effect to the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
@@ -1173,14 +565,14 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LoadEffectDataIdeaStatiCaConnectionChecks</returns>
-        public async System.Threading.Tasks.Task<LoadEffectDataIdeaStatiCaConnectionChecks> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPostAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LoadEffectDataIdeaStatiCaConnectionChecks> AddLoadEffectAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks> localVarResponse = await Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPostWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks> localVarResponse = await AddLoadEffectWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Add new load effect to the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
@@ -1189,7 +581,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadEffectDataIdeaStatiCaConnectionChecks)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPostWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks>> AddLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1222,7 +614,7 @@ namespace connection_restapi_client_poc.Api
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
             localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi;
 
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPost";
+            localVarRequestOptions.Operation = "LoadEffectApi.AddLoadEffect";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
@@ -1231,7 +623,7 @@ namespace connection_restapi_client_poc.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AddLoadEffect", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1242,30 +634,480 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        ///  
+        /// Delete load effect loadEffectId 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium"> (optional)</param>
+        /// <param name="loadEffectId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>bool</returns>
-        public bool Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPost(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0)
+        /// <returns>int</returns>
+        public int DeleteLoadEffect(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<bool> localVarResponse = Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPostWithHttpInfo(projectId, connectionId, loadsInEquilibrium);
+            connection_restapi_client_poc.Client.ApiResponse<int> localVarResponse = DeleteLoadEffectWithHttpInfo(projectId, connectionId, loadEffectId);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Delete load effect loadEffectId 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium"> (optional)</param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of int</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<int> DeleteLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
+
+            localVarRequestOptions.Operation = "LoadEffectApi.DeleteLoadEffect";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<int>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteLoadEffect", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete load effect loadEffectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of int</returns>
+        public async System.Threading.Tasks.Task<int> DeleteLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            connection_restapi_client_poc.Client.ApiResponse<int> localVarResponse = await DeleteLoadEffectWithHttpInfoAsync(projectId, connectionId, loadEffectId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete load effect loadEffectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (int)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<int>> DeleteLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
+
+            localVarRequestOptions.Operation = "LoadEffectApi.DeleteLoadEffect";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<int>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteLoadEffect", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get load impulses from loadEffectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        public IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi GetLoadEffect(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> localVarResponse = GetLoadEffectWithHttpInfo(projectId, connectionId, loadEffectId, isPercentage);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get load impulses from loadEffectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> GetLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
+            if (isPercentage != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "isPercentage", isPercentage));
+            }
+
+            localVarRequestOptions.Operation = "LoadEffectApi.GetLoadEffect";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLoadEffect", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get load impulses from loadEffectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> GetLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> localVarResponse = await GetLoadEffectWithHttpInfoAsync(projectId, connectionId, loadEffectId, isPercentage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get load impulses from loadEffectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> GetLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
+            if (isPercentage != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "isPercentage", isPercentage));
+            }
+
+            localVarRequestOptions.Operation = "LoadEffectApi.GetLoadEffect";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLoadEffect", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all load effects which are defined in connectionId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
+        public List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> GetLoadEffects(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> localVarResponse = GetLoadEffectsWithHttpInfo(projectId, connectionId, isPercentage);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all load effects which are defined in connectionId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> GetLoadEffectsWithHttpInfo(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+            if (isPercentage != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "isPercentage", isPercentage));
+            }
+
+            localVarRequestOptions.Operation = "LoadEffectApi.GetLoadEffects";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLoadEffects", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get all load effects which are defined in connectionId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;</returns>
+        public async System.Threading.Tasks.Task<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> GetLoadEffectsAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> localVarResponse = await GetLoadEffectsWithHttpInfoAsync(projectId, connectionId, isPercentage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all load effects which are defined in connectionId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="isPercentage"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>> GetLoadEffectsWithHttpInfoAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+            if (isPercentage != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "isPercentage", isPercentage));
+            }
+
+            localVarRequestOptions.Operation = "LoadEffectApi.GetLoadEffects";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLoadEffects", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>bool</returns>
+        public bool SetLoadsInEquilibrium(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.ApiResponse<bool> localVarResponse = SetLoadsInEquilibriumWithHttpInfo(projectId, connectionId, loadsInEquilibrium);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of bool</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<bool> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPostWithHttpInfo(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<bool> SetLoadsInEquilibriumWithHttpInfo(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1296,7 +1138,7 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "loadsInEquilibrium", loadsInEquilibrium));
             }
 
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPost";
+            localVarRequestOptions.Operation = "LoadEffectApi.SetLoadsInEquilibrium";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
@@ -1304,7 +1146,7 @@ namespace connection_restapi_client_poc.Api
             var localVarResponse = this.Client.Post<bool>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetLoadsInEquilibrium", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1315,32 +1157,32 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        ///  
+        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium"> (optional)</param>
+        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of bool</returns>
-        public async System.Threading.Tasks.Task<bool> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPostAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<bool> SetLoadsInEquilibriumAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<bool> localVarResponse = await Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPostWithHttpInfoAsync(projectId, connectionId, loadsInEquilibrium, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<bool> localVarResponse = await SetLoadsInEquilibriumWithHttpInfoAsync(projectId, connectionId, loadsInEquilibrium, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  
+        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium"> (optional)</param>
+        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (bool)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<bool>> Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPostWithHttpInfoAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<bool>> SetLoadsInEquilibriumWithHttpInfoAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1372,7 +1214,7 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "loadsInEquilibrium", loadsInEquilibrium));
             }
 
-            localVarRequestOptions.Operation = "LoadEffectApi.Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPost";
+            localVarRequestOptions.Operation = "LoadEffectApi.SetLoadsInEquilibrium";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
@@ -1381,7 +1223,165 @@ namespace connection_restapi_client_poc.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Api1ProjectsProjectIdConnectionsConnectionIdLoadEffectsSetEquilibriumPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetLoadsInEquilibrium", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update load impulses in loadEffectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        public IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi UpdateLoadEffect(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> localVarResponse = UpdateLoadEffectWithHttpInfo(projectId, connectionId, loadEffectId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update load impulses in loadEffectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> UpdateLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
+            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi;
+
+            localVarRequestOptions.Operation = "LoadEffectApi.UpdateLoadEffect";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateLoadEffect", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update load impulses in loadEffectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi</returns>
+        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> UpdateLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> localVarResponse = await UpdateLoadEffectWithHttpInfoAsync(projectId, connectionId, loadEffectId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update load impulses in loadEffectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="loadEffectId"></param>
+        /// <param name="ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> UpdateLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("loadEffectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(loadEffectId)); // path parameter
+            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi;
+
+            localVarRequestOptions.Operation = "LoadEffectApi.UpdateLoadEffect";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateLoadEffect", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

@@ -1,20 +1,21 @@
 # ConnectionConnectionCheckResIdeaRSOpenModel
 
+Results for connection in project
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**check_res_summary** | [**List[ConnectionCheckResSummaryIdeaRSOpenModel]**](ConnectionCheckResSummaryIdeaRSOpenModel.md) |  | [optional] 
-**check_res_plate** | [**List[ConnectionCheckResPlateIdeaRSOpenModel]**](ConnectionCheckResPlateIdeaRSOpenModel.md) |  | [optional] 
-**check_res_weld** | [**List[ConnectionCheckResWeldIdeaRSOpenModel]**](ConnectionCheckResWeldIdeaRSOpenModel.md) |  | [optional] 
-**check_res_bolt** | [**List[ConnectionCheckResBoltIdeaRSOpenModel]**](ConnectionCheckResBoltIdeaRSOpenModel.md) |  | [optional] 
-**check_res_anchor** | [**List[ConnectionCheckResAnchorIdeaRSOpenModel]**](ConnectionCheckResAnchorIdeaRSOpenModel.md) |  | [optional] 
-**check_res_concrete_block** | [**List[ConnectionCheckResConcreteBlockIdeaRSOpenModel]**](ConnectionCheckResConcreteBlockIdeaRSOpenModel.md) |  | [optional] 
-**buckling_results** | [**List[ConnectionBucklingResIdeaRSOpenModel]**](ConnectionBucklingResIdeaRSOpenModel.md) |  | [optional] 
-**name** | **str** |  | [optional] 
-**connection_id** | **str** |  | [optional] 
-**id** | **int** |  | [optional] 
+**check_res_summary** | [**List[ConnectionCheckResSummaryIdeaRSOpenModel]**](ConnectionCheckResSummaryIdeaRSOpenModel.md) | List of CheckResSummary | [optional] 
+**check_res_plate** | [**List[ConnectionCheckResPlateIdeaRSOpenModel]**](ConnectionCheckResPlateIdeaRSOpenModel.md) | List of check results for plates | [optional] 
+**check_res_weld** | [**List[ConnectionCheckResWeldIdeaRSOpenModel]**](ConnectionCheckResWeldIdeaRSOpenModel.md) | List of check results for welds | [optional] 
+**check_res_bolt** | [**List[ConnectionCheckResBoltIdeaRSOpenModel]**](ConnectionCheckResBoltIdeaRSOpenModel.md) | List of check results for bolts | [optional] 
+**check_res_anchor** | [**List[ConnectionCheckResAnchorIdeaRSOpenModel]**](ConnectionCheckResAnchorIdeaRSOpenModel.md) | List of check results for anchors | [optional] 
+**check_res_concrete_block** | [**List[ConnectionCheckResConcreteBlockIdeaRSOpenModel]**](ConnectionCheckResConcreteBlockIdeaRSOpenModel.md) | List of check results for concrete blocks | [optional] 
+**buckling_results** | [**List[ConnectionBucklingResIdeaRSOpenModel]**](ConnectionBucklingResIdeaRSOpenModel.md) | List of results of buckling analysis | [optional] 
+**name** | **str** | Name of connection | [optional] 
+**connection_id** | **str** | Guid of connection | [optional] 
+**id** | **int** | Integer Id of connection | [optional] 
 **messages** | [**MessageOpenMessagesIdeaRSOpenModel**](MessageOpenMessagesIdeaRSOpenModel.md) |  | [optional] 
 
 ## Example

@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class ResultResultLocalSystemTypeIdeaRSOpenModel(str, Enum):
     """
-    ResultResultLocalSystemTypeIdeaRSOpenModel
+    Type of local system of result
     """
 
     """

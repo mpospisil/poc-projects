@@ -74,7 +74,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -263,7 +263,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -461,7 +461,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -530,7 +530,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -657,7 +657,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -725,7 +725,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 

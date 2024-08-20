@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionFoldedPlateDataIdeaRSOpenModel
+    /// Provides data of the folded plate
     /// </summary>
     [DataContract(Name = "Connection_FoldedPlateData-IdeaRS_OpenModel")]
     public partial class ConnectionFoldedPlateDataIdeaRSOpenModel : IValidatableObject
@@ -34,8 +34,8 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionFoldedPlateDataIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="plates">plates.</param>
-        /// <param name="bends">bends.</param>
+        /// <param name="plates">List of plates belong to folded plate.</param>
+        /// <param name="bends">List of bends connected plates of foldedplate.</param>
         public ConnectionFoldedPlateDataIdeaRSOpenModel(List<ConnectionPlateDataIdeaRSOpenModel> plates = default(List<ConnectionPlateDataIdeaRSOpenModel>), List<ConnectionBendDataIdeaRSOpenModel> bends = default(List<ConnectionBendDataIdeaRSOpenModel>))
         {
             this.Plates = plates;
@@ -43,14 +43,16 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Plates
+        /// List of plates belong to folded plate
         /// </summary>
+        /// <value>List of plates belong to folded plate</value>
         [DataMember(Name = "plates", EmitDefaultValue = true)]
         public List<ConnectionPlateDataIdeaRSOpenModel> Plates { get; set; }
 
         /// <summary>
-        /// Gets or Sets Bends
+        /// List of bends connected plates of foldedplate
         /// </summary>
+        /// <value>List of bends connected plates of foldedplate</value>
         [DataMember(Name = "bends", EmitDefaultValue = true)]
         public List<ConnectionBendDataIdeaRSOpenModel> Bends { get; set; }
 

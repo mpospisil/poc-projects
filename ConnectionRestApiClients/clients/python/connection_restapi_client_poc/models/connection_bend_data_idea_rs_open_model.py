@@ -26,11 +26,11 @@ from typing_extensions import Self
 
 class ConnectionBendDataIdeaRSOpenModel(BaseModel):
     """
-    ConnectionBendDataIdeaRSOpenModel
+    Provides data of bend
     """ # noqa: E501
-    plate1_id: Optional[StrictInt] = Field(default=None, alias="plate1Id")
-    plate2_id: Optional[StrictInt] = Field(default=None, alias="plate2Id")
-    radius: Optional[Union[StrictFloat, StrictInt]] = None
+    plate1_id: Optional[StrictInt] = Field(default=None, description="First plate", alias="plate1Id")
+    plate2_id: Optional[StrictInt] = Field(default=None, description="Second plate", alias="plate2Id")
+    radius: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Radius of bend")
     point1_of_side_boundary1: Optional[Geometry3DPoint3DIdeaRSOpenModel] = Field(default=None, alias="point1OfSideBoundary1")
     point2_of_side_boundary1: Optional[Geometry3DPoint3DIdeaRSOpenModel] = Field(default=None, alias="point2OfSideBoundary1")
     end_face_normal1: Optional[Geometry3DVector3DIdeaRSOpenModel] = Field(default=None, alias="endFaceNormal1")

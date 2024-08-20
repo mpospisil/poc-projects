@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionSetupIdeaRSOpenModel
+    /// ConnectionSetup
     /// </summary>
     [DataContract(Name = "ConnectionSetup-IdeaRS_OpenModel")]
     public partial class ConnectionSetupIdeaRSOpenModel : IValidatableObject
@@ -52,64 +52,64 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionSetupIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="steelSetup">steelSetup.</param>
+        /// <param name="steelSetup">ISteelSetup.</param>
         /// <param name="concreteSetup">concreteSetup.</param>
-        /// <param name="stopAtLimitStrain">stopAtLimitStrain.</param>
+        /// <param name="stopAtLimitStrain">Stop analysis when the limit strain is reached..</param>
         /// <param name="weldEvaluationData">weldEvaluationData.</param>
-        /// <param name="checkDetailing">checkDetailing.</param>
+        /// <param name="checkDetailing">Perform check of bolt positions.</param>
         /// <param name="applyConeBreakoutCheck">applyConeBreakoutCheck.</param>
-        /// <param name="pretensionForceFpc">pretensionForceFpc.</param>
-        /// <param name="gammaInst">gammaInst.</param>
-        /// <param name="gammaC">gammaC.</param>
-        /// <param name="gammaM3">gammaM3.</param>
-        /// <param name="anchorLengthForStiffness">anchorLengthForStiffness.</param>
-        /// <param name="jointBetaFactor">jointBetaFactor.</param>
-        /// <param name="effectiveAreaStressCoeff">effectiveAreaStressCoeff.</param>
-        /// <param name="effectiveAreaStressCoeffAISC">effectiveAreaStressCoeffAISC.</param>
-        /// <param name="frictionCoefficient">frictionCoefficient.</param>
-        /// <param name="limitPlasticStrain">limitPlasticStrain.</param>
-        /// <param name="limitDeformation">limitDeformation.</param>
-        /// <param name="limitDeformationCheck">limitDeformationCheck.</param>
-        /// <param name="analysisGNL">analysisGNL.</param>
-        /// <param name="analysisAllGNL">analysisAllGNL.</param>
-        /// <param name="warnPlasticStrain">warnPlasticStrain.</param>
-        /// <param name="warnCheckLevel">warnCheckLevel.</param>
-        /// <param name="optimalCheckLevel">optimalCheckLevel.</param>
-        /// <param name="distanceBetweenBolts">distanceBetweenBolts.</param>
-        /// <param name="distanceDiameterBetweenBP">distanceDiameterBetweenBP.</param>
-        /// <param name="distanceBetweenBoltsEdge">distanceBetweenBoltsEdge.</param>
-        /// <param name="bearingAngle">bearingAngle.</param>
-        /// <param name="decreasingFtrd">decreasingFtrd.</param>
-        /// <param name="bracedSystem">bracedSystem.</param>
-        /// <param name="bearingCheck">bearingCheck.</param>
-        /// <param name="applyBetapInfluence">applyBetapInfluence.</param>
-        /// <param name="memberLengthRatio">memberLengthRatio.</param>
-        /// <param name="divisionOfSurfaceOfCHS">divisionOfSurfaceOfCHS.</param>
-        /// <param name="divisionOfArcsOfRHS">divisionOfArcsOfRHS.</param>
-        /// <param name="numElement">numElement.</param>
-        /// <param name="numberIterations">numberIterations.</param>
-        /// <param name="mdiv">mdiv.</param>
-        /// <param name="minSize">minSize.</param>
-        /// <param name="maxSize">maxSize.</param>
-        /// <param name="numElementRhs">numElementRhs.</param>
-        /// <param name="numElementPlate">numElementPlate.</param>
-        /// <param name="rigidBP">rigidBP.</param>
-        /// <param name="alphaCC">alphaCC.</param>
-        /// <param name="crackedConcrete">crackedConcrete.</param>
-        /// <param name="developedFillers">developedFillers.</param>
-        /// <param name="deformationBoltHole">deformationBoltHole.</param>
-        /// <param name="extensionLengthRationOpenSections">extensionLengthRationOpenSections.</param>
-        /// <param name="extensionLengthRationCloseSections">extensionLengthRationCloseSections.</param>
-        /// <param name="factorPreloadBolt">factorPreloadBolt.</param>
-        /// <param name="baseMetalCapacity">baseMetalCapacity.</param>
-        /// <param name="applyBearingCheck">applyBearingCheck.</param>
-        /// <param name="frictionCoefficientPbolt">frictionCoefficientPbolt.</param>
+        /// <param name="pretensionForceFpc">Pretension force fpc &#x3D; k * fub * As.</param>
+        /// <param name="gammaInst">Partial safety factor of instalation safety.</param>
+        /// <param name="gammaC">Partial safety factor of concrete.</param>
+        /// <param name="gammaM3">Preloaded bolts safety factor.</param>
+        /// <param name="anchorLengthForStiffness">Length of anchor to define the anchor stiffness in analysis model, as a multiple of anchor diameter (E A /n * [d]).</param>
+        /// <param name="jointBetaFactor">Joint coefficient βj - Used for Fjd calculation.</param>
+        /// <param name="effectiveAreaStressCoeff">Effective area is taken from intersection of stress area and area of joined items according to EN1993-1-8 art. 6.2.5.</param>
+        /// <param name="effectiveAreaStressCoeffAISC">Effective area stress coefficient - Concrete loaded area: Stress cut-off is set for AISC.</param>
+        /// <param name="frictionCoefficient">Coefficient of friction between base plate and concrete block.</param>
+        /// <param name="limitPlasticStrain">Limit of plastic strain used in 2D plate element check.</param>
+        /// <param name="limitDeformation">Limit deformation on closed sections.</param>
+        /// <param name="limitDeformationCheck">Limit deformation on closed sections check or not.</param>
+        /// <param name="analysisGNL">Analysis with GNL.</param>
+        /// <param name="analysisAllGNL">Analysis with All GNL.</param>
+        /// <param name="warnPlasticStrain">Warning plastic strain.</param>
+        /// <param name="warnCheckLevel">Warning check level.</param>
+        /// <param name="optimalCheckLevel">Optimal check level.</param>
+        /// <param name="distanceBetweenBolts">Limit distance between bolts as a multiple of bolt diameter.</param>
+        /// <param name="distanceDiameterBetweenBP">Anchor pitch.</param>
+        /// <param name="distanceBetweenBoltsEdge">Limit distance between bolt and plate edge as a multiple of bolt diameter.</param>
+        /// <param name="bearingAngle">Load distribution angle of concrete block in calculation of factor Kj.</param>
+        /// <param name="decreasingFtrd">Decreasing Ftrd of anchors. Worse quality influence.</param>
+        /// <param name="bracedSystem">Consider the frame system as braced for stiffness calculation. Braced system reduces horizontal displacements..</param>
+        /// <param name="bearingCheck">Apply bearing check including αb.</param>
+        /// <param name="applyBetapInfluence">Apply βp influence in bolt shear resistance. ΕΝ 1993-1-8 chapter 3.6.1 (12).</param>
+        /// <param name="memberLengthRatio">A multiple of cross-section height to determine the default length of member.</param>
+        /// <param name="divisionOfSurfaceOfCHS">Number of straight lines to substitute circle of circular tube in analysis model.</param>
+        /// <param name="divisionOfArcsOfRHS">Number of straight lines to substitute corner arc of rectangular tubes in analysis model.</param>
+        /// <param name="numElement">Ratio of length of decisive plate edge and Elements on edge count determines the average size of mesh element.</param>
+        /// <param name="numberIterations">More iterations helps to find better solutions in contact elements but increases calculation time.</param>
+        /// <param name="mdiv">Number of iteration steps to evaluate analysis divergence.</param>
+        /// <param name="minSize">Minimal size of generated finite mesh element.</param>
+        /// <param name="maxSize">Maximal size of generated finite mesh element.</param>
+        /// <param name="numElementRhs">Number of mesh elements in RHS height.</param>
+        /// <param name="numElementPlate">Number of mesh elements on plates.</param>
+        /// <param name="rigidBP">True if rigid base plate is considered.</param>
+        /// <param name="alphaCC">Long-term effect on fcd.</param>
+        /// <param name="crackedConcrete">True if cracked concrete is considered.</param>
+        /// <param name="developedFillers">True if developed fillers is considered.</param>
+        /// <param name="deformationBoltHole">True if bolt hole deformation is considered.</param>
+        /// <param name="extensionLengthRationOpenSections">ExtensionLengthRationOpenSections.</param>
+        /// <param name="extensionLengthRationCloseSections">ExtensionLengthRationCloseSections.</param>
+        /// <param name="factorPreloadBolt">FactorPreloadBolt.</param>
+        /// <param name="baseMetalCapacity">BaseMetalCapacity.</param>
+        /// <param name="applyBearingCheck">ApplyBearingCheck.</param>
+        /// <param name="frictionCoefficientPbolt">Friction factor of slip-resistant joint.</param>
         /// <param name="crtCompCheckIS">crtCompCheckIS.</param>
-        /// <param name="boltMaxGripLengthCoeff">boltMaxGripLengthCoeff.</param>
-        /// <param name="fatigueSectionOffset">fatigueSectionOffset.</param>
-        /// <param name="condensedElementLengthFactor">condensedElementLengthFactor.</param>
-        /// <param name="gammaMu">gammaMu.</param>
-        /// <param name="hssLimitPlasticStrain">hssLimitPlasticStrain.</param>
+        /// <param name="boltMaxGripLengthCoeff">Max value of bolt grip.</param>
+        /// <param name="fatigueSectionOffset">Fatigue section Offset &#x3D; FatigueSectionOffset x Legsize.</param>
+        /// <param name="condensedElementLengthFactor">Condensed element length factor (CEF). Condensed beam legth &#x3D; maxCssSize * CEF.</param>
+        /// <param name="gammaMu">Partial safety factor for Horizontal tying.</param>
+        /// <param name="hssLimitPlasticStrain">Limit plastic strain for high strength steel.</param>
         public ConnectionSetupIdeaRSOpenModel(Object steelSetup = default(Object), ConcreteConcreteSetupIdeaRSOpenModel concreteSetup = default(ConcreteConcreteSetupIdeaRSOpenModel), bool stopAtLimitStrain = default(bool), WeldEvaluationIdeaRSOpenModel? weldEvaluationData = default(WeldEvaluationIdeaRSOpenModel?), bool checkDetailing = default(bool), ConeBreakoutCheckTypeIdeaRSOpenModel? applyConeBreakoutCheck = default(ConeBreakoutCheckTypeIdeaRSOpenModel?), double pretensionForceFpc = default(double), double gammaInst = default(double), double gammaC = default(double), double gammaM3 = default(double), int anchorLengthForStiffness = default(int), double jointBetaFactor = default(double), double effectiveAreaStressCoeff = default(double), double effectiveAreaStressCoeffAISC = default(double), double frictionCoefficient = default(double), double limitPlasticStrain = default(double), double limitDeformation = default(double), bool limitDeformationCheck = default(bool), bool analysisGNL = default(bool), bool analysisAllGNL = default(bool), double warnPlasticStrain = default(double), double warnCheckLevel = default(double), double optimalCheckLevel = default(double), double distanceBetweenBolts = default(double), double distanceDiameterBetweenBP = default(double), double distanceBetweenBoltsEdge = default(double), double bearingAngle = default(double), double decreasingFtrd = default(double), bool bracedSystem = default(bool), bool bearingCheck = default(bool), bool applyBetapInfluence = default(bool), double memberLengthRatio = default(double), int divisionOfSurfaceOfCHS = default(int), int divisionOfArcsOfRHS = default(int), int numElement = default(int), int numberIterations = default(int), int mdiv = default(int), double minSize = default(double), double maxSize = default(double), int numElementRhs = default(int), int numElementPlate = default(int), bool rigidBP = default(bool), double alphaCC = default(double), bool crackedConcrete = default(bool), bool developedFillers = default(bool), bool deformationBoltHole = default(bool), double extensionLengthRationOpenSections = default(double), double extensionLengthRationCloseSections = default(double), double factorPreloadBolt = default(double), bool baseMetalCapacity = default(bool), bool applyBearingCheck = default(bool), double frictionCoefficientPbolt = default(double), CrtCompCheckISIdeaRSOpenModel? crtCompCheckIS = default(CrtCompCheckISIdeaRSOpenModel?), double boltMaxGripLengthCoeff = default(double), double fatigueSectionOffset = default(double), double condensedElementLengthFactor = default(double), double gammaMu = default(double), double hssLimitPlasticStrain = default(double))
         {
             this.SteelSetup = steelSetup;
@@ -173,8 +173,9 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets SteelSetup
+        /// ISteelSetup
         /// </summary>
+        /// <value>ISteelSetup</value>
         [DataMember(Name = "steelSetup", EmitDefaultValue = false)]
         public Object SteelSetup { get; set; }
 
@@ -185,320 +186,373 @@ namespace connection_restapi_client_poc.Model
         public ConcreteConcreteSetupIdeaRSOpenModel ConcreteSetup { get; set; }
 
         /// <summary>
-        /// Gets or Sets StopAtLimitStrain
+        /// Stop analysis when the limit strain is reached.
         /// </summary>
+        /// <value>Stop analysis when the limit strain is reached.</value>
         [DataMember(Name = "stopAtLimitStrain", EmitDefaultValue = true)]
         public bool StopAtLimitStrain { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckDetailing
+        /// Perform check of bolt positions
         /// </summary>
+        /// <value>Perform check of bolt positions</value>
         [DataMember(Name = "checkDetailing", EmitDefaultValue = true)]
         public bool CheckDetailing { get; set; }
 
         /// <summary>
-        /// Gets or Sets PretensionForceFpc
+        /// Pretension force fpc &#x3D; k * fub * As
         /// </summary>
+        /// <value>Pretension force fpc &#x3D; k * fub * As</value>
         [DataMember(Name = "pretensionForceFpc", EmitDefaultValue = false)]
         public double PretensionForceFpc { get; set; }
 
         /// <summary>
-        /// Gets or Sets GammaInst
+        /// Partial safety factor of instalation safety
         /// </summary>
+        /// <value>Partial safety factor of instalation safety</value>
         [DataMember(Name = "gammaInst", EmitDefaultValue = false)]
         public double GammaInst { get; set; }
 
         /// <summary>
-        /// Gets or Sets GammaC
+        /// Partial safety factor of concrete
         /// </summary>
+        /// <value>Partial safety factor of concrete</value>
         [DataMember(Name = "gammaC", EmitDefaultValue = false)]
         public double GammaC { get; set; }
 
         /// <summary>
-        /// Gets or Sets GammaM3
+        /// Preloaded bolts safety factor
         /// </summary>
+        /// <value>Preloaded bolts safety factor</value>
         [DataMember(Name = "gammaM3", EmitDefaultValue = false)]
         public double GammaM3 { get; set; }
 
         /// <summary>
-        /// Gets or Sets AnchorLengthForStiffness
+        /// Length of anchor to define the anchor stiffness in analysis model, as a multiple of anchor diameter (E A /n * [d])
         /// </summary>
+        /// <value>Length of anchor to define the anchor stiffness in analysis model, as a multiple of anchor diameter (E A /n * [d])</value>
         [DataMember(Name = "anchorLengthForStiffness", EmitDefaultValue = false)]
         public int AnchorLengthForStiffness { get; set; }
 
         /// <summary>
-        /// Gets or Sets JointBetaFactor
+        /// Joint coefficient βj - Used for Fjd calculation
         /// </summary>
+        /// <value>Joint coefficient βj - Used for Fjd calculation</value>
         [DataMember(Name = "jointBetaFactor", EmitDefaultValue = false)]
         public double JointBetaFactor { get; set; }
 
         /// <summary>
-        /// Gets or Sets EffectiveAreaStressCoeff
+        /// Effective area is taken from intersection of stress area and area of joined items according to EN1993-1-8 art. 6.2.5
         /// </summary>
+        /// <value>Effective area is taken from intersection of stress area and area of joined items according to EN1993-1-8 art. 6.2.5</value>
         [DataMember(Name = "effectiveAreaStressCoeff", EmitDefaultValue = false)]
         public double EffectiveAreaStressCoeff { get; set; }
 
         /// <summary>
-        /// Gets or Sets EffectiveAreaStressCoeffAISC
+        /// Effective area stress coefficient - Concrete loaded area: Stress cut-off is set for AISC
         /// </summary>
+        /// <value>Effective area stress coefficient - Concrete loaded area: Stress cut-off is set for AISC</value>
         [DataMember(Name = "effectiveAreaStressCoeffAISC", EmitDefaultValue = false)]
         public double EffectiveAreaStressCoeffAISC { get; set; }
 
         /// <summary>
-        /// Gets or Sets FrictionCoefficient
+        /// Coefficient of friction between base plate and concrete block
         /// </summary>
+        /// <value>Coefficient of friction between base plate and concrete block</value>
         [DataMember(Name = "frictionCoefficient", EmitDefaultValue = false)]
         public double FrictionCoefficient { get; set; }
 
         /// <summary>
-        /// Gets or Sets LimitPlasticStrain
+        /// Limit of plastic strain used in 2D plate element check
         /// </summary>
+        /// <value>Limit of plastic strain used in 2D plate element check</value>
         [DataMember(Name = "limitPlasticStrain", EmitDefaultValue = false)]
         public double LimitPlasticStrain { get; set; }
 
         /// <summary>
-        /// Gets or Sets LimitDeformation
+        /// Limit deformation on closed sections
         /// </summary>
+        /// <value>Limit deformation on closed sections</value>
         [DataMember(Name = "limitDeformation", EmitDefaultValue = false)]
         public double LimitDeformation { get; set; }
 
         /// <summary>
-        /// Gets or Sets LimitDeformationCheck
+        /// Limit deformation on closed sections check or not
         /// </summary>
+        /// <value>Limit deformation on closed sections check or not</value>
         [DataMember(Name = "limitDeformationCheck", EmitDefaultValue = true)]
         public bool LimitDeformationCheck { get; set; }
 
         /// <summary>
-        /// Gets or Sets AnalysisGNL
+        /// Analysis with GNL
         /// </summary>
+        /// <value>Analysis with GNL</value>
         [DataMember(Name = "analysisGNL", EmitDefaultValue = true)]
         public bool AnalysisGNL { get; set; }
 
         /// <summary>
-        /// Gets or Sets AnalysisAllGNL
+        /// Analysis with All GNL
         /// </summary>
+        /// <value>Analysis with All GNL</value>
         [DataMember(Name = "analysisAllGNL", EmitDefaultValue = true)]
         public bool AnalysisAllGNL { get; set; }
 
         /// <summary>
-        /// Gets or Sets WarnPlasticStrain
+        /// Warning plastic strain
         /// </summary>
+        /// <value>Warning plastic strain</value>
         [DataMember(Name = "warnPlasticStrain", EmitDefaultValue = false)]
         public double WarnPlasticStrain { get; set; }
 
         /// <summary>
-        /// Gets or Sets WarnCheckLevel
+        /// Warning check level
         /// </summary>
+        /// <value>Warning check level</value>
         [DataMember(Name = "warnCheckLevel", EmitDefaultValue = false)]
         public double WarnCheckLevel { get; set; }
 
         /// <summary>
-        /// Gets or Sets OptimalCheckLevel
+        /// Optimal check level
         /// </summary>
+        /// <value>Optimal check level</value>
         [DataMember(Name = "optimalCheckLevel", EmitDefaultValue = false)]
         public double OptimalCheckLevel { get; set; }
 
         /// <summary>
-        /// Gets or Sets DistanceBetweenBolts
+        /// Limit distance between bolts as a multiple of bolt diameter
         /// </summary>
+        /// <value>Limit distance between bolts as a multiple of bolt diameter</value>
         [DataMember(Name = "distanceBetweenBolts", EmitDefaultValue = false)]
         public double DistanceBetweenBolts { get; set; }
 
         /// <summary>
-        /// Gets or Sets DistanceDiameterBetweenBP
+        /// Anchor pitch
         /// </summary>
+        /// <value>Anchor pitch</value>
         [DataMember(Name = "distanceDiameterBetweenBP", EmitDefaultValue = false)]
         public double DistanceDiameterBetweenBP { get; set; }
 
         /// <summary>
-        /// Gets or Sets DistanceBetweenBoltsEdge
+        /// Limit distance between bolt and plate edge as a multiple of bolt diameter
         /// </summary>
+        /// <value>Limit distance between bolt and plate edge as a multiple of bolt diameter</value>
         [DataMember(Name = "distanceBetweenBoltsEdge", EmitDefaultValue = false)]
         public double DistanceBetweenBoltsEdge { get; set; }
 
         /// <summary>
-        /// Gets or Sets BearingAngle
+        /// Load distribution angle of concrete block in calculation of factor Kj
         /// </summary>
+        /// <value>Load distribution angle of concrete block in calculation of factor Kj</value>
         [DataMember(Name = "bearingAngle", EmitDefaultValue = false)]
         public double BearingAngle { get; set; }
 
         /// <summary>
-        /// Gets or Sets DecreasingFtrd
+        /// Decreasing Ftrd of anchors. Worse quality influence
         /// </summary>
+        /// <value>Decreasing Ftrd of anchors. Worse quality influence</value>
         [DataMember(Name = "decreasingFtrd", EmitDefaultValue = false)]
         public double DecreasingFtrd { get; set; }
 
         /// <summary>
-        /// Gets or Sets BracedSystem
+        /// Consider the frame system as braced for stiffness calculation. Braced system reduces horizontal displacements.
         /// </summary>
+        /// <value>Consider the frame system as braced for stiffness calculation. Braced system reduces horizontal displacements.</value>
         [DataMember(Name = "bracedSystem", EmitDefaultValue = true)]
         public bool BracedSystem { get; set; }
 
         /// <summary>
-        /// Gets or Sets BearingCheck
+        /// Apply bearing check including αb
         /// </summary>
+        /// <value>Apply bearing check including αb</value>
         [DataMember(Name = "bearingCheck", EmitDefaultValue = true)]
         public bool BearingCheck { get; set; }
 
         /// <summary>
-        /// Gets or Sets ApplyBetapInfluence
+        /// Apply βp influence in bolt shear resistance. ΕΝ 1993-1-8 chapter 3.6.1 (12)
         /// </summary>
+        /// <value>Apply βp influence in bolt shear resistance. ΕΝ 1993-1-8 chapter 3.6.1 (12)</value>
         [DataMember(Name = "applyBetapInfluence", EmitDefaultValue = true)]
         public bool ApplyBetapInfluence { get; set; }
 
         /// <summary>
-        /// Gets or Sets MemberLengthRatio
+        /// A multiple of cross-section height to determine the default length of member
         /// </summary>
+        /// <value>A multiple of cross-section height to determine the default length of member</value>
         [DataMember(Name = "memberLengthRatio", EmitDefaultValue = false)]
         public double MemberLengthRatio { get; set; }
 
         /// <summary>
-        /// Gets or Sets DivisionOfSurfaceOfCHS
+        /// Number of straight lines to substitute circle of circular tube in analysis model
         /// </summary>
+        /// <value>Number of straight lines to substitute circle of circular tube in analysis model</value>
         [DataMember(Name = "divisionOfSurfaceOfCHS", EmitDefaultValue = false)]
         public int DivisionOfSurfaceOfCHS { get; set; }
 
         /// <summary>
-        /// Gets or Sets DivisionOfArcsOfRHS
+        /// Number of straight lines to substitute corner arc of rectangular tubes in analysis model
         /// </summary>
+        /// <value>Number of straight lines to substitute corner arc of rectangular tubes in analysis model</value>
         [DataMember(Name = "divisionOfArcsOfRHS", EmitDefaultValue = false)]
         public int DivisionOfArcsOfRHS { get; set; }
 
         /// <summary>
-        /// Gets or Sets NumElement
+        /// Ratio of length of decisive plate edge and Elements on edge count determines the average size of mesh element
         /// </summary>
+        /// <value>Ratio of length of decisive plate edge and Elements on edge count determines the average size of mesh element</value>
         [DataMember(Name = "numElement", EmitDefaultValue = false)]
         public int NumElement { get; set; }
 
         /// <summary>
-        /// Gets or Sets NumberIterations
+        /// More iterations helps to find better solutions in contact elements but increases calculation time
         /// </summary>
+        /// <value>More iterations helps to find better solutions in contact elements but increases calculation time</value>
         [DataMember(Name = "numberIterations", EmitDefaultValue = false)]
         public int NumberIterations { get; set; }
 
         /// <summary>
-        /// Gets or Sets Mdiv
+        /// Number of iteration steps to evaluate analysis divergence
         /// </summary>
+        /// <value>Number of iteration steps to evaluate analysis divergence</value>
         [DataMember(Name = "mdiv", EmitDefaultValue = false)]
         public int Mdiv { get; set; }
 
         /// <summary>
-        /// Gets or Sets MinSize
+        /// Minimal size of generated finite mesh element
         /// </summary>
+        /// <value>Minimal size of generated finite mesh element</value>
         [DataMember(Name = "minSize", EmitDefaultValue = false)]
         public double MinSize { get; set; }
 
         /// <summary>
-        /// Gets or Sets MaxSize
+        /// Maximal size of generated finite mesh element
         /// </summary>
+        /// <value>Maximal size of generated finite mesh element</value>
         [DataMember(Name = "maxSize", EmitDefaultValue = false)]
         public double MaxSize { get; set; }
 
         /// <summary>
-        /// Gets or Sets NumElementRhs
+        /// Number of mesh elements in RHS height
         /// </summary>
+        /// <value>Number of mesh elements in RHS height</value>
         [DataMember(Name = "numElementRhs", EmitDefaultValue = false)]
         public int NumElementRhs { get; set; }
 
         /// <summary>
-        /// Gets or Sets NumElementPlate
+        /// Number of mesh elements on plates
         /// </summary>
+        /// <value>Number of mesh elements on plates</value>
         [DataMember(Name = "numElementPlate", EmitDefaultValue = false)]
         public int NumElementPlate { get; set; }
 
         /// <summary>
-        /// Gets or Sets RigidBP
+        /// True if rigid base plate is considered
         /// </summary>
+        /// <value>True if rigid base plate is considered</value>
         [DataMember(Name = "rigidBP", EmitDefaultValue = true)]
         public bool RigidBP { get; set; }
 
         /// <summary>
-        /// Gets or Sets AlphaCC
+        /// Long-term effect on fcd
         /// </summary>
+        /// <value>Long-term effect on fcd</value>
         [DataMember(Name = "alphaCC", EmitDefaultValue = false)]
         public double AlphaCC { get; set; }
 
         /// <summary>
-        /// Gets or Sets CrackedConcrete
+        /// True if cracked concrete is considered
         /// </summary>
+        /// <value>True if cracked concrete is considered</value>
         [DataMember(Name = "crackedConcrete", EmitDefaultValue = true)]
         public bool CrackedConcrete { get; set; }
 
         /// <summary>
-        /// Gets or Sets DevelopedFillers
+        /// True if developed fillers is considered
         /// </summary>
+        /// <value>True if developed fillers is considered</value>
         [DataMember(Name = "developedFillers", EmitDefaultValue = true)]
         public bool DevelopedFillers { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeformationBoltHole
+        /// True if bolt hole deformation is considered
         /// </summary>
+        /// <value>True if bolt hole deformation is considered</value>
         [DataMember(Name = "deformationBoltHole", EmitDefaultValue = true)]
         public bool DeformationBoltHole { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExtensionLengthRationOpenSections
+        /// ExtensionLengthRationOpenSections
         /// </summary>
+        /// <value>ExtensionLengthRationOpenSections</value>
         [DataMember(Name = "extensionLengthRationOpenSections", EmitDefaultValue = false)]
         public double ExtensionLengthRationOpenSections { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExtensionLengthRationCloseSections
+        /// ExtensionLengthRationCloseSections
         /// </summary>
+        /// <value>ExtensionLengthRationCloseSections</value>
         [DataMember(Name = "extensionLengthRationCloseSections", EmitDefaultValue = false)]
         public double ExtensionLengthRationCloseSections { get; set; }
 
         /// <summary>
-        /// Gets or Sets FactorPreloadBolt
+        /// FactorPreloadBolt
         /// </summary>
+        /// <value>FactorPreloadBolt</value>
         [DataMember(Name = "factorPreloadBolt", EmitDefaultValue = false)]
         public double FactorPreloadBolt { get; set; }
 
         /// <summary>
-        /// Gets or Sets BaseMetalCapacity
+        /// BaseMetalCapacity
         /// </summary>
+        /// <value>BaseMetalCapacity</value>
         [DataMember(Name = "baseMetalCapacity", EmitDefaultValue = true)]
         public bool BaseMetalCapacity { get; set; }
 
         /// <summary>
-        /// Gets or Sets ApplyBearingCheck
+        /// ApplyBearingCheck
         /// </summary>
+        /// <value>ApplyBearingCheck</value>
         [DataMember(Name = "applyBearingCheck", EmitDefaultValue = true)]
         public bool ApplyBearingCheck { get; set; }
 
         /// <summary>
-        /// Gets or Sets FrictionCoefficientPbolt
+        /// Friction factor of slip-resistant joint
         /// </summary>
+        /// <value>Friction factor of slip-resistant joint</value>
         [DataMember(Name = "frictionCoefficientPbolt", EmitDefaultValue = false)]
         public double FrictionCoefficientPbolt { get; set; }
 
         /// <summary>
-        /// Gets or Sets BoltMaxGripLengthCoeff
+        /// Max value of bolt grip
         /// </summary>
+        /// <value>Max value of bolt grip</value>
         [DataMember(Name = "boltMaxGripLengthCoeff", EmitDefaultValue = false)]
         public double BoltMaxGripLengthCoeff { get; set; }
 
         /// <summary>
-        /// Gets or Sets FatigueSectionOffset
+        /// Fatigue section Offset &#x3D; FatigueSectionOffset x Legsize
         /// </summary>
+        /// <value>Fatigue section Offset &#x3D; FatigueSectionOffset x Legsize</value>
         [DataMember(Name = "fatigueSectionOffset", EmitDefaultValue = false)]
         public double FatigueSectionOffset { get; set; }
 
         /// <summary>
-        /// Gets or Sets CondensedElementLengthFactor
+        /// Condensed element length factor (CEF). Condensed beam legth &#x3D; maxCssSize * CEF
         /// </summary>
+        /// <value>Condensed element length factor (CEF). Condensed beam legth &#x3D; maxCssSize * CEF</value>
         [DataMember(Name = "condensedElementLengthFactor", EmitDefaultValue = false)]
         public double CondensedElementLengthFactor { get; set; }
 
         /// <summary>
-        /// Gets or Sets GammaMu
+        /// Partial safety factor for Horizontal tying
         /// </summary>
+        /// <value>Partial safety factor for Horizontal tying</value>
         [DataMember(Name = "gammaMu", EmitDefaultValue = false)]
         public double GammaMu { get; set; }
 
         /// <summary>
-        /// Gets or Sets HssLimitPlasticStrain
+        /// Limit plastic strain for high strength steel
         /// </summary>
+        /// <value>Limit plastic strain for high strength steel</value>
         [DataMember(Name = "hssLimitPlasticStrain", EmitDefaultValue = false)]
         public double HssLimitPlasticStrain { get; set; }
 

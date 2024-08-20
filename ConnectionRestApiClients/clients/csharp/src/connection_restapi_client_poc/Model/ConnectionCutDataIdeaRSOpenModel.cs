@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionCutDataIdeaRSOpenModel
+    /// Provides data of the cut beam
     /// </summary>
     [DataContract(Name = "Connection_CutData-IdeaRS_OpenModel")]
     public partial class ConnectionCutDataIdeaRSOpenModel : IValidatableObject
@@ -43,7 +43,7 @@ namespace connection_restapi_client_poc.Model
         /// <param name="planePoint">planePoint.</param>
         /// <param name="normalVector">normalVector.</param>
         /// <param name="direction">direction.</param>
-        /// <param name="offset">offset.</param>
+        /// <param name="offset">Offset - shift of cut.</param>
         public ConnectionCutDataIdeaRSOpenModel(Geometry3DPoint3DIdeaRSOpenModel planePoint = default(Geometry3DPoint3DIdeaRSOpenModel), Geometry3DVector3DIdeaRSOpenModel normalVector = default(Geometry3DVector3DIdeaRSOpenModel), ConnectionCutOrientationIdeaRSOpenModel? direction = default(ConnectionCutOrientationIdeaRSOpenModel?), double offset = default(double))
         {
             this.PlanePoint = planePoint;
@@ -65,8 +65,9 @@ namespace connection_restapi_client_poc.Model
         public Geometry3DVector3DIdeaRSOpenModel NormalVector { get; set; }
 
         /// <summary>
-        /// Gets or Sets Offset
+        /// Offset - shift of cut
         /// </summary>
+        /// <value>Offset - shift of cut</value>
         [DataMember(Name = "offset", EmitDefaultValue = false)]
         public double Offset { get; set; }
 

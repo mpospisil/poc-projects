@@ -1,11 +1,12 @@
 # LoadingSettlementIdeaRSOpenModel
 
+Settlement of point support
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

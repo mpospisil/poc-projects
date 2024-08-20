@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// LoadingStrainLoadOnLineIdeaRSOpenModel
+    /// Linearly distributed generalized strain load along a line.  Strain load is in local coordinate system and there are no possible eccentricities.
     /// </summary>
     [DataContract(Name = "Loading_StrainLoadOnLine-IdeaRS_OpenModel")]
     public partial class LoadingStrainLoadOnLineIdeaRSOpenModel : IValidatableObject
@@ -34,15 +34,16 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LoadingStrainLoadOnLineIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">Element Id.</param>
         public LoadingStrainLoadOnLineIdeaRSOpenModel(int id = default(int))
         {
             this.Id = id;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Element Id
         /// </summary>
+        /// <value>Element Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

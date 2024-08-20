@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionConnectionCheckResIdeaRSOpenModel
+    /// Results for connection in project
     /// </summary>
     [DataContract(Name = "Connection_ConnectionCheckRes-IdeaRS_OpenModel")]
     public partial class ConnectionConnectionCheckResIdeaRSOpenModel : IValidatableObject
@@ -34,16 +34,16 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionConnectionCheckResIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="checkResSummary">checkResSummary.</param>
-        /// <param name="checkResPlate">checkResPlate.</param>
-        /// <param name="checkResWeld">checkResWeld.</param>
-        /// <param name="checkResBolt">checkResBolt.</param>
-        /// <param name="checkResAnchor">checkResAnchor.</param>
-        /// <param name="checkResConcreteBlock">checkResConcreteBlock.</param>
-        /// <param name="bucklingResults">bucklingResults.</param>
-        /// <param name="name">name.</param>
-        /// <param name="connectionID">connectionID.</param>
-        /// <param name="id">id.</param>
+        /// <param name="checkResSummary">List of CheckResSummary.</param>
+        /// <param name="checkResPlate">List of check results for plates.</param>
+        /// <param name="checkResWeld">List of check results for welds.</param>
+        /// <param name="checkResBolt">List of check results for bolts.</param>
+        /// <param name="checkResAnchor">List of check results for anchors.</param>
+        /// <param name="checkResConcreteBlock">List of check results for concrete blocks.</param>
+        /// <param name="bucklingResults">List of results of buckling analysis.</param>
+        /// <param name="name">Name of connection.</param>
+        /// <param name="connectionID">Guid of connection.</param>
+        /// <param name="id">Integer Id of connection.</param>
         /// <param name="messages">messages.</param>
         public ConnectionConnectionCheckResIdeaRSOpenModel(List<ConnectionCheckResSummaryIdeaRSOpenModel> checkResSummary = default(List<ConnectionCheckResSummaryIdeaRSOpenModel>), List<ConnectionCheckResPlateIdeaRSOpenModel> checkResPlate = default(List<ConnectionCheckResPlateIdeaRSOpenModel>), List<ConnectionCheckResWeldIdeaRSOpenModel> checkResWeld = default(List<ConnectionCheckResWeldIdeaRSOpenModel>), List<ConnectionCheckResBoltIdeaRSOpenModel> checkResBolt = default(List<ConnectionCheckResBoltIdeaRSOpenModel>), List<ConnectionCheckResAnchorIdeaRSOpenModel> checkResAnchor = default(List<ConnectionCheckResAnchorIdeaRSOpenModel>), List<ConnectionCheckResConcreteBlockIdeaRSOpenModel> checkResConcreteBlock = default(List<ConnectionCheckResConcreteBlockIdeaRSOpenModel>), List<ConnectionBucklingResIdeaRSOpenModel> bucklingResults = default(List<ConnectionBucklingResIdeaRSOpenModel>), string name = default(string), Guid connectionID = default(Guid), int id = default(int), MessageOpenMessagesIdeaRSOpenModel messages = default(MessageOpenMessagesIdeaRSOpenModel))
         {
@@ -61,62 +61,72 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets CheckResSummary
+        /// List of CheckResSummary
         /// </summary>
+        /// <value>List of CheckResSummary</value>
         [DataMember(Name = "checkResSummary", EmitDefaultValue = true)]
         public List<ConnectionCheckResSummaryIdeaRSOpenModel> CheckResSummary { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckResPlate
+        /// List of check results for plates
         /// </summary>
+        /// <value>List of check results for plates</value>
         [DataMember(Name = "checkResPlate", EmitDefaultValue = true)]
         public List<ConnectionCheckResPlateIdeaRSOpenModel> CheckResPlate { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckResWeld
+        /// List of check results for welds
         /// </summary>
+        /// <value>List of check results for welds</value>
         [DataMember(Name = "checkResWeld", EmitDefaultValue = true)]
         public List<ConnectionCheckResWeldIdeaRSOpenModel> CheckResWeld { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckResBolt
+        /// List of check results for bolts
         /// </summary>
+        /// <value>List of check results for bolts</value>
         [DataMember(Name = "checkResBolt", EmitDefaultValue = true)]
         public List<ConnectionCheckResBoltIdeaRSOpenModel> CheckResBolt { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckResAnchor
+        /// List of check results for anchors
         /// </summary>
+        /// <value>List of check results for anchors</value>
         [DataMember(Name = "checkResAnchor", EmitDefaultValue = true)]
         public List<ConnectionCheckResAnchorIdeaRSOpenModel> CheckResAnchor { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckResConcreteBlock
+        /// List of check results for concrete blocks
         /// </summary>
+        /// <value>List of check results for concrete blocks</value>
         [DataMember(Name = "checkResConcreteBlock", EmitDefaultValue = true)]
         public List<ConnectionCheckResConcreteBlockIdeaRSOpenModel> CheckResConcreteBlock { get; set; }
 
         /// <summary>
-        /// Gets or Sets BucklingResults
+        /// List of results of buckling analysis
         /// </summary>
+        /// <value>List of results of buckling analysis</value>
         [DataMember(Name = "bucklingResults", EmitDefaultValue = true)]
         public List<ConnectionBucklingResIdeaRSOpenModel> BucklingResults { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of connection
         /// </summary>
+        /// <value>Name of connection</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConnectionID
+        /// Guid of connection
         /// </summary>
+        /// <value>Guid of connection</value>
         [DataMember(Name = "connectionID", EmitDefaultValue = false)]
         public Guid ConnectionID { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Integer Id of connection
         /// </summary>
+        /// <value>Integer Id of connection</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

@@ -17,16 +17,16 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
 class ModelTaperIdeaRSOpenModel(BaseModel):
     """
-    ModelTaperIdeaRSOpenModel
+    Defines haunches (variyng cross-sections) along the member.    One IdeaRS.OpenModel.Model.Taper may be assigned to multiple <see cref=\"T:IdeaRS.OpenModel.Model.Member1D\">Members</see>.  Sections of the member not covered by a span will use the member's cross-section.
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: Optional[StrictInt] = Field(default=None, description="Element Id")
     __properties: ClassVar[List[str]] = ["id"]
 
     model_config = ConfigDict(

@@ -55,6 +55,15 @@ namespace connection_restapi_client_poc.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Name'
+        /// </summary>
+        [Fact]
+        public void NameTest()
+        {
+            // TODO unit test for the property 'Name'
+        }
+
+        /// <summary>
         /// Test the property 'ModifiedObject'
         /// </summary>
         [Fact]
@@ -142,6 +151,15 @@ namespace connection_restapi_client_poc.Test.Model
         public void CutPartTest()
         {
             // TODO unit test for the property 'CutPart'
+        }
+
+        /// <summary>
+        /// Test the property 'ExtendBeforeCut'
+        /// </summary>
+        [Fact]
+        public void ExtendBeforeCutTest()
+        {
+            // TODO unit test for the property 'ExtendBeforeCut'
         }
     }
 }

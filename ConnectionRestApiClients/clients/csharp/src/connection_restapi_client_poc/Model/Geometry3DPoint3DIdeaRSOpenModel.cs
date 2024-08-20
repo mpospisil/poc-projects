@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Geometry3DPoint3DIdeaRSOpenModel
+    /// Represents an x- , y- an z-coordinates in three-dimensional space.
     /// </summary>
     [DataContract(Name = "Geometry3D_Point3D-IdeaRS_OpenModel")]
     public partial class Geometry3DPoint3DIdeaRSOpenModel : IValidatableObject
@@ -34,10 +34,10 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Geometry3DPoint3DIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="x">x.</param>
-        /// <param name="y">y.</param>
-        /// <param name="z">z.</param>
-        /// <param name="id">id.</param>
+        /// <param name="x">Gets or sets the X-coordinate value.</param>
+        /// <param name="y">Gets or sets the Y-coordinate value.</param>
+        /// <param name="z">Gets or sets the Z-coordinate value.</param>
+        /// <param name="id">Element Id.</param>
         public Geometry3DPoint3DIdeaRSOpenModel(double x = default(double), double y = default(double), double z = default(double), int id = default(int))
         {
             this.X = x;
@@ -47,26 +47,30 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets X
+        /// Gets or sets the X-coordinate value
         /// </summary>
+        /// <value>Gets or sets the X-coordinate value</value>
         [DataMember(Name = "x", EmitDefaultValue = false)]
         public double X { get; set; }
 
         /// <summary>
-        /// Gets or Sets Y
+        /// Gets or sets the Y-coordinate value
         /// </summary>
+        /// <value>Gets or sets the Y-coordinate value</value>
         [DataMember(Name = "y", EmitDefaultValue = false)]
         public double Y { get; set; }
 
         /// <summary>
-        /// Gets or Sets Z
+        /// Gets or sets the Z-coordinate value
         /// </summary>
+        /// <value>Gets or sets the Z-coordinate value</value>
         [DataMember(Name = "z", EmitDefaultValue = false)]
         public double Z { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Element Id
         /// </summary>
+        /// <value>Element Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

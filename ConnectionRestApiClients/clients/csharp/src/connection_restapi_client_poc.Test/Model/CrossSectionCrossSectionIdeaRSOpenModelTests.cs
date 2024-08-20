@@ -55,6 +55,33 @@ namespace connection_restapi_client_poc.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Name'
+        /// </summary>
+        [Fact]
+        public void NameTest()
+        {
+            // TODO unit test for the property 'Name'
+        }
+
+        /// <summary>
+        /// Test the property 'CrossSectionRotation'
+        /// </summary>
+        [Fact]
+        public void CrossSectionRotationTest()
+        {
+            // TODO unit test for the property 'CrossSectionRotation'
+        }
+
+        /// <summary>
+        /// Test the property 'IsInPrincipal'
+        /// </summary>
+        [Fact]
+        public void IsInPrincipalTest()
+        {
+            // TODO unit test for the property 'IsInPrincipal'
+        }
+
+        /// <summary>
         /// Test the property 'Id'
         /// </summary>
         [Fact]

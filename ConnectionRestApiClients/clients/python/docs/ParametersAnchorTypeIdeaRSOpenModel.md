@@ -1,5 +1,6 @@
 # ParametersAnchorTypeIdeaRSOpenModel
 
+Defines a type of anchor end.
 
 ## Enum
 

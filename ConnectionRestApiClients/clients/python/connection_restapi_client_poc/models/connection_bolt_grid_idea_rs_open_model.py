@@ -27,31 +27,31 @@ from typing_extensions import Self
 
 class ConnectionBoltGridIdeaRSOpenModel(BaseModel):
     """
-    ConnectionBoltGridIdeaRSOpenModel
+    Data of the bolt grid
     """ # noqa: E501
     bolt_assembly_ref: Optional[StrictStr] = Field(default=None, alias="boltAssemblyRef")
-    id: Optional[StrictInt] = None
-    is_anchor: Optional[StrictBool] = Field(default=None, alias="isAnchor")
-    anchor_len: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="anchorLen")
-    hole_diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="holeDiameter")
-    diameter: Optional[Union[StrictFloat, StrictInt]] = None
-    head_diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="headDiameter")
-    diagonal_head_diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="diagonalHeadDiameter")
-    head_height: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="headHeight")
-    bore_hole: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="boreHole")
-    tensile_stress_area: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="tensileStressArea")
-    nut_thickness: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="nutThickness")
-    bolt_assembly_name: Optional[StrictStr] = Field(default=None, alias="boltAssemblyName")
-    standard: Optional[StrictStr] = None
-    material: Optional[StrictStr] = None
+    id: Optional[StrictInt] = Field(default=None, description="Unique Id of the bolt grid")
+    is_anchor: Optional[StrictBool] = Field(default=None, description="Is Anchor", alias="isAnchor")
+    anchor_len: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Anchor lenght", alias="anchorLen")
+    hole_diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The diameter of the hole", alias="holeDiameter")
+    diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The diameter of bolt")
+    head_diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The head diameter of bolt", alias="headDiameter")
+    diagonal_head_diameter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The Diagonal Head Diameter of bolt", alias="diagonalHeadDiameter")
+    head_height: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The Head Height of bolt", alias="headHeight")
+    bore_hole: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The BoreHole of bolt", alias="boreHole")
+    tensile_stress_area: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The Tensile Stress Area of bolt", alias="tensileStressArea")
+    nut_thickness: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The Nut Thickness of bolt", alias="nutThickness")
+    bolt_assembly_name: Optional[StrictStr] = Field(default=None, description="The description of the bolt assembly", alias="boltAssemblyName")
+    standard: Optional[StrictStr] = Field(default=None, description="The standard of the bolt assembly")
+    material: Optional[StrictStr] = Field(default=None, description="The material of the bolt assembly")
     origin: Optional[Geometry3DPoint3DIdeaRSOpenModel] = None
     axis_x: Optional[Geometry3DVector3DIdeaRSOpenModel] = Field(default=None, alias="axisX")
     axis_y: Optional[Geometry3DVector3DIdeaRSOpenModel] = Field(default=None, alias="axisY")
     axis_z: Optional[Geometry3DVector3DIdeaRSOpenModel] = Field(default=None, alias="axisZ")
-    positions: Optional[List[Geometry3DPoint3DIdeaRSOpenModel]] = None
-    connected_plates: Optional[List[StrictInt]] = Field(default=None, alias="connectedPlates")
-    connected_part_ids: Optional[List[StrictStr]] = Field(default=None, alias="connectedPartIds")
-    shear_in_thread: Optional[StrictBool] = Field(default=None, alias="shearInThread")
+    positions: Optional[List[Geometry3DPoint3DIdeaRSOpenModel]] = Field(default=None, description="Positions of holes in the local coodinate system of the bolt grid")
+    connected_plates: Optional[List[StrictInt]] = Field(default=None, description="Identifiers of the connected plates", alias="connectedPlates")
+    connected_part_ids: Optional[List[StrictStr]] = Field(default=None, description="Id of the weld", alias="connectedPartIds")
+    shear_in_thread: Optional[StrictBool] = Field(default=None, description="Indicates, whether a shear plane is in the thread of a bolt.", alias="shearInThread")
     bolt_interaction: Optional[ParametersBoltShearTypeIdeaRSOpenModel] = Field(default=None, alias="boltInteraction")
     __properties: ClassVar[List[str]] = ["boltAssemblyRef", "id", "isAnchor", "anchorLen", "holeDiameter", "diameter", "headDiameter", "diagonalHeadDiameter", "headHeight", "boreHole", "tensileStressArea", "nutThickness", "boltAssemblyName", "standard", "material", "origin", "axisX", "axisY", "axisZ", "positions", "connectedPlates", "connectedPartIds", "shearInThread", "boltInteraction"]
 

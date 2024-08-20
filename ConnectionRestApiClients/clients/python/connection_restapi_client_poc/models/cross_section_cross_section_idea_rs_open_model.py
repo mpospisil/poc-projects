@@ -17,17 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
 class CrossSectionCrossSectionIdeaRSOpenModel(BaseModel):
     """
-    CrossSectionCrossSectionIdeaRSOpenModel
+    Cross-section
     """ # noqa: E501
-    id: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["id"]
+    name: Optional[StrictStr] = Field(default=None, description="Name of cross-section")
+    cross_section_rotation: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Rotation of Cross - Section", alias="crossSectionRotation")
+    is_in_principal: Optional[StrictBool] = Field(default=None, description="Specifies that the cross-section is in its principal axis.", alias="isInPrincipal")
+    id: Optional[StrictInt] = Field(default=None, description="Element Id")
+    __properties: ClassVar[List[str]] = ["name", "crossSectionRotation", "isInPrincipal", "id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -68,6 +71,11 @@ class CrossSectionCrossSectionIdeaRSOpenModel(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if name (nullable) is None
+        # and model_fields_set contains the field
+        if self.name is None and "name" in self.model_fields_set:
+            _dict['name'] = None
+
         return _dict
 
     @classmethod
@@ -80,6 +88,9 @@ class CrossSectionCrossSectionIdeaRSOpenModel(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "name": obj.get("name"),
+            "crossSectionRotation": obj.get("crossSectionRotation"),
+            "isInPrincipal": obj.get("isInPrincipal"),
             "id": obj.get("id")
         })
         return _obj

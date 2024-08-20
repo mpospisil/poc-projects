@@ -1,11 +1,12 @@
 # ModelRebarGeneralIdeaRSOpenModel
 
+Represents a single main rebar in 3D space.  Holds data from generated rebar or rebar imported from Tekla.  the rebarShape is in global coordinates and it is not possible to prject it along Member1D, Polyline, ... (referenceLine)
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

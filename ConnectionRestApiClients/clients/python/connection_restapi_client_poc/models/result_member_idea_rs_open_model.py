@@ -25,10 +25,10 @@ from typing_extensions import Self
 
 class ResultMemberIdeaRSOpenModel(BaseModel):
     """
-    ResultMemberIdeaRSOpenModel
+    Member identification
     """ # noqa: E501
     member_type: Optional[ResultMemberTypeIdeaRSOpenModel] = Field(default=None, alias="memberType")
-    id: Optional[StrictInt] = None
+    id: Optional[StrictInt] = Field(default=None, description="Id of member")
     __properties: ClassVar[List[str]] = ["memberType", "id"]
 
     model_config = ConfigDict(

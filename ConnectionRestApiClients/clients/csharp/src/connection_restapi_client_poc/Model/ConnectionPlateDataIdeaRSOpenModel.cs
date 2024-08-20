@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionPlateDataIdeaRSOpenModel
+    /// Provides data of the single plate
     /// </summary>
     [DataContract(Name = "Connection_PlateData-IdeaRS_OpenModel")]
     public partial class ConnectionPlateDataIdeaRSOpenModel : IValidatableObject
@@ -34,19 +34,19 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionPlateDataIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="thickness">thickness.</param>
-        /// <param name="material">material.</param>
-        /// <param name="outlinePoints">outlinePoints.</param>
+        /// <param name="name">Name of the plate.</param>
+        /// <param name="thickness">Thickness of the plate.</param>
+        /// <param name="material">Name of the material.</param>
+        /// <param name="outlinePoints">Outline points.</param>
         /// <param name="origin">origin.</param>
         /// <param name="axisX">axisX.</param>
         /// <param name="axisY">axisY.</param>
         /// <param name="axisZ">axisZ.</param>
-        /// <param name="region">region.</param>
+        /// <param name="region">Geometry of the plate in svg format. In next version will be mark as OBSOLETE! New use property Geometry.</param>
         /// <param name="geometry">geometry.</param>
-        /// <param name="originalModelId">originalModelId.</param>
-        /// <param name="isNegativeObject">isNegativeObject.</param>
-        /// <param name="id">id.</param>
+        /// <param name="originalModelId">Get or set the identification in the original model  In the case of the imported connection from another application.</param>
+        /// <param name="isNegativeObject">Is negative object.</param>
+        /// <param name="id">Element Id.</param>
         public ConnectionPlateDataIdeaRSOpenModel(string name = default(string), double thickness = default(double), string material = default(string), List<Geometry2DPoint2DIdeaRSOpenModel> outlinePoints = default(List<Geometry2DPoint2DIdeaRSOpenModel>), Geometry3DPoint3DIdeaRSOpenModel origin = default(Geometry3DPoint3DIdeaRSOpenModel), Geometry3DVector3DIdeaRSOpenModel axisX = default(Geometry3DVector3DIdeaRSOpenModel), Geometry3DVector3DIdeaRSOpenModel axisY = default(Geometry3DVector3DIdeaRSOpenModel), Geometry3DVector3DIdeaRSOpenModel axisZ = default(Geometry3DVector3DIdeaRSOpenModel), string region = default(string), Geometry2DRegion2DIdeaRSOpenModel geometry = default(Geometry2DRegion2DIdeaRSOpenModel), string originalModelId = default(string), bool isNegativeObject = default(bool), int id = default(int))
         {
             this.Name = name;
@@ -65,26 +65,30 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the plate
         /// </summary>
+        /// <value>Name of the plate</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Thickness
+        /// Thickness of the plate
         /// </summary>
+        /// <value>Thickness of the plate</value>
         [DataMember(Name = "thickness", EmitDefaultValue = false)]
         public double Thickness { get; set; }
 
         /// <summary>
-        /// Gets or Sets Material
+        /// Name of the material
         /// </summary>
+        /// <value>Name of the material</value>
         [DataMember(Name = "material", EmitDefaultValue = true)]
         public string Material { get; set; }
 
         /// <summary>
-        /// Gets or Sets OutlinePoints
+        /// Outline points
         /// </summary>
+        /// <value>Outline points</value>
         [DataMember(Name = "outlinePoints", EmitDefaultValue = true)]
         public List<Geometry2DPoint2DIdeaRSOpenModel> OutlinePoints { get; set; }
 
@@ -113,8 +117,9 @@ namespace connection_restapi_client_poc.Model
         public Geometry3DVector3DIdeaRSOpenModel AxisZ { get; set; }
 
         /// <summary>
-        /// Gets or Sets Region
+        /// Geometry of the plate in svg format. In next version will be mark as OBSOLETE! New use property Geometry
         /// </summary>
+        /// <value>Geometry of the plate in svg format. In next version will be mark as OBSOLETE! New use property Geometry</value>
         [DataMember(Name = "region", EmitDefaultValue = true)]
         public string Region { get; set; }
 
@@ -125,20 +130,23 @@ namespace connection_restapi_client_poc.Model
         public Geometry2DRegion2DIdeaRSOpenModel Geometry { get; set; }
 
         /// <summary>
-        /// Gets or Sets OriginalModelId
+        /// Get or set the identification in the original model  In the case of the imported connection from another application
         /// </summary>
+        /// <value>Get or set the identification in the original model  In the case of the imported connection from another application</value>
         [DataMember(Name = "originalModelId", EmitDefaultValue = true)]
         public string OriginalModelId { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsNegativeObject
+        /// Is negative object
         /// </summary>
+        /// <value>Is negative object</value>
         [DataMember(Name = "isNegativeObject", EmitDefaultValue = true)]
         public bool IsNegativeObject { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Element Id
         /// </summary>
+        /// <value>Element Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionCheckResPlateIdeaRSOpenModel
+    /// Check value for Plate
     /// </summary>
     [DataContract(Name = "Connection_CheckResPlate-IdeaRS_OpenModel")]
     public partial class ConnectionCheckResPlateIdeaRSOpenModel : IValidatableObject
@@ -34,12 +34,12 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionCheckResPlateIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="checkStatus">checkStatus.</param>
-        /// <param name="loadCaseId">loadCaseId.</param>
-        /// <param name="maxStrain">maxStrain.</param>
-        /// <param name="maxStress">maxStress.</param>
-        /// <param name="items">items.</param>
+        /// <param name="name">Name of Plate.</param>
+        /// <param name="checkStatus">Status of the Check.</param>
+        /// <param name="loadCaseId">Id of Load Case.</param>
+        /// <param name="maxStrain">Max Strain.</param>
+        /// <param name="maxStress">Max Stress.</param>
+        /// <param name="items">In case of presentation of groups plates (uncoiled beams).</param>
         public ConnectionCheckResPlateIdeaRSOpenModel(string name = default(string), bool checkStatus = default(bool), int loadCaseId = default(int), double maxStrain = default(double), double maxStress = default(double), List<int> items = default(List<int>))
         {
             this.Name = name;
@@ -51,38 +51,44 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of Plate
         /// </summary>
+        /// <value>Name of Plate</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets CheckStatus
+        /// Status of the Check
         /// </summary>
+        /// <value>Status of the Check</value>
         [DataMember(Name = "checkStatus", EmitDefaultValue = true)]
         public bool CheckStatus { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoadCaseId
+        /// Id of Load Case
         /// </summary>
+        /// <value>Id of Load Case</value>
         [DataMember(Name = "loadCaseId", EmitDefaultValue = false)]
         public int LoadCaseId { get; set; }
 
         /// <summary>
-        /// Gets or Sets MaxStrain
+        /// Max Strain
         /// </summary>
+        /// <value>Max Strain</value>
         [DataMember(Name = "maxStrain", EmitDefaultValue = false)]
         public double MaxStrain { get; set; }
 
         /// <summary>
-        /// Gets or Sets MaxStress
+        /// Max Stress
         /// </summary>
+        /// <value>Max Stress</value>
         [DataMember(Name = "maxStress", EmitDefaultValue = false)]
         public double MaxStress { get; set; }
 
         /// <summary>
-        /// Gets or Sets Items
+        /// In case of presentation of groups plates (uncoiled beams)
         /// </summary>
+        /// <value>In case of presentation of groups plates (uncoiled beams)</value>
         [DataMember(Name = "items", EmitDefaultValue = true)]
         public List<int> Items { get; set; }
 

@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines Message_MessageNumber-IdeaRS_OpenModel
+    /// Message numbers
     /// </summary>
+    /// <value>Message numbers</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum MessageMessageNumberIdeaRSOpenModel
     {

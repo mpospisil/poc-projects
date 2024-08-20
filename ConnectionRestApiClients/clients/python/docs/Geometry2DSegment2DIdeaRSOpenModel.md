@@ -1,5 +1,6 @@
 # Geometry2DSegment2DIdeaRSOpenModel
 
+Represents a segment in two-dimensional space.
 
 ## Properties
 

@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionBeamDataIdeaRSOpenModel
+    /// Provides data of the connected beam
     /// </summary>
     [DataContract(Name = "Connection_BeamData-IdeaRS_OpenModel")]
     public partial class ConnectionBeamDataIdeaRSOpenModel : IValidatableObject
@@ -34,21 +34,21 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionBeamDataIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="plates">plates.</param>
-        /// <param name="crossSectionType">crossSectionType.</param>
-        /// <param name="mprlName">mprlName.</param>
-        /// <param name="originalModelId">originalModelId.</param>
-        /// <param name="cuts">cuts.</param>
-        /// <param name="isAdded">isAdded.</param>
-        /// <param name="addedMemberLength">addedMemberLength.</param>
-        /// <param name="isNegativeObject">isNegativeObject.</param>
+        /// <param name="name">Name of the beam.</param>
+        /// <param name="plates">Plates of the beam.</param>
+        /// <param name="crossSectionType">Type of cross section.</param>
+        /// <param name="mprlName">MPRL name of beam.</param>
+        /// <param name="originalModelId">Get or set the identification in the original model  In the case of the imported connection from another application.</param>
+        /// <param name="cuts">Cuts on the beam.</param>
+        /// <param name="isAdded">Is added beam.</param>
+        /// <param name="addedMemberLength">Added beam lenght.</param>
+        /// <param name="isNegativeObject">Is negative object.</param>
         /// <param name="addedMember">addedMember.</param>
-        /// <param name="mirrorY">mirrorY.</param>
-        /// <param name="refLineInCenterOfGravity">refLineInCenterOfGravity.</param>
-        /// <param name="isBearingMember">isBearingMember.</param>
-        /// <param name="autoAddCutByWorkplane">autoAddCutByWorkplane.</param>
-        /// <param name="id">id.</param>
+        /// <param name="mirrorY">Mirror by Y.</param>
+        /// <param name="refLineInCenterOfGravity">The reference line of the member is in the center of gravity of the cross-section.</param>
+        /// <param name="isBearingMember">Is beam bearing member.</param>
+        /// <param name="autoAddCutByWorkplane">Automaticali add cut by workplane if it not defined.</param>
+        /// <param name="id">Element Id.</param>
         public ConnectionBeamDataIdeaRSOpenModel(string name = default(string), List<ConnectionPlateDataIdeaRSOpenModel> plates = default(List<ConnectionPlateDataIdeaRSOpenModel>), string crossSectionType = default(string), string mprlName = default(string), string originalModelId = default(string), List<ConnectionCutDataIdeaRSOpenModel> cuts = default(List<ConnectionCutDataIdeaRSOpenModel>), bool isAdded = default(bool), double addedMemberLength = default(double), bool isNegativeObject = default(bool), ReferenceElementIdeaRSOpenModel addedMember = default(ReferenceElementIdeaRSOpenModel), bool mirrorY = default(bool), bool refLineInCenterOfGravity = default(bool), bool isBearingMember = default(bool), bool autoAddCutByWorkplane = default(bool), int id = default(int))
         {
             this.Name = name;
@@ -69,56 +69,65 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the beam
         /// </summary>
+        /// <value>Name of the beam</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Plates
+        /// Plates of the beam
         /// </summary>
+        /// <value>Plates of the beam</value>
         [DataMember(Name = "plates", EmitDefaultValue = true)]
         public List<ConnectionPlateDataIdeaRSOpenModel> Plates { get; set; }
 
         /// <summary>
-        /// Gets or Sets CrossSectionType
+        /// Type of cross section
         /// </summary>
+        /// <value>Type of cross section</value>
         [DataMember(Name = "crossSectionType", EmitDefaultValue = true)]
         public string CrossSectionType { get; set; }
 
         /// <summary>
-        /// Gets or Sets MprlName
+        /// MPRL name of beam
         /// </summary>
+        /// <value>MPRL name of beam</value>
         [DataMember(Name = "mprlName", EmitDefaultValue = true)]
         public string MprlName { get; set; }
 
         /// <summary>
-        /// Gets or Sets OriginalModelId
+        /// Get or set the identification in the original model  In the case of the imported connection from another application
         /// </summary>
+        /// <value>Get or set the identification in the original model  In the case of the imported connection from another application</value>
         [DataMember(Name = "originalModelId", EmitDefaultValue = true)]
         public string OriginalModelId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Cuts
+        /// Cuts on the beam
         /// </summary>
+        /// <value>Cuts on the beam</value>
         [DataMember(Name = "cuts", EmitDefaultValue = true)]
         public List<ConnectionCutDataIdeaRSOpenModel> Cuts { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsAdded
+        /// Is added beam
         /// </summary>
+        /// <value>Is added beam</value>
         [DataMember(Name = "isAdded", EmitDefaultValue = true)]
         public bool IsAdded { get; set; }
 
         /// <summary>
-        /// Gets or Sets AddedMemberLength
+        /// Added beam lenght
         /// </summary>
+        /// <value>Added beam lenght</value>
         [DataMember(Name = "addedMemberLength", EmitDefaultValue = false)]
         public double AddedMemberLength { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsNegativeObject
+        /// Is negative object
         /// </summary>
+        /// <value>Is negative object</value>
         [DataMember(Name = "isNegativeObject", EmitDefaultValue = true)]
         public bool IsNegativeObject { get; set; }
 
@@ -129,32 +138,37 @@ namespace connection_restapi_client_poc.Model
         public ReferenceElementIdeaRSOpenModel AddedMember { get; set; }
 
         /// <summary>
-        /// Gets or Sets MirrorY
+        /// Mirror by Y
         /// </summary>
+        /// <value>Mirror by Y</value>
         [DataMember(Name = "mirrorY", EmitDefaultValue = true)]
         public bool MirrorY { get; set; }
 
         /// <summary>
-        /// Gets or Sets RefLineInCenterOfGravity
+        /// The reference line of the member is in the center of gravity of the cross-section
         /// </summary>
+        /// <value>The reference line of the member is in the center of gravity of the cross-section</value>
         [DataMember(Name = "refLineInCenterOfGravity", EmitDefaultValue = true)]
         public bool RefLineInCenterOfGravity { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsBearingMember
+        /// Is beam bearing member
         /// </summary>
+        /// <value>Is beam bearing member</value>
         [DataMember(Name = "isBearingMember", EmitDefaultValue = true)]
         public bool IsBearingMember { get; set; }
 
         /// <summary>
-        /// Gets or Sets AutoAddCutByWorkplane
+        /// Automaticali add cut by workplane if it not defined
         /// </summary>
+        /// <value>Automaticali add cut by workplane if it not defined</value>
         [DataMember(Name = "autoAddCutByWorkplane", EmitDefaultValue = true)]
         public bool AutoAddCutByWorkplane { get; set; }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Element Id
         /// </summary>
+        /// <value>Element Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

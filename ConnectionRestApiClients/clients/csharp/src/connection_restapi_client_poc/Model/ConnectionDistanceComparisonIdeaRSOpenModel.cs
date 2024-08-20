@@ -26,8 +26,9 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Defines Connection_DistanceComparison-IdeaRS_OpenModel
+    /// Represents the result of comparison of distances of two object from the same point
     /// </summary>
+    /// <value>Represents the result of comparison of distances of two object from the same point</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ConnectionDistanceComparisonIdeaRSOpenModel
     {

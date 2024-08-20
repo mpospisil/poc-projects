@@ -27,12 +27,12 @@ from typing_extensions import Self
 
 class ResultResultOnMemberIdeaRSOpenModel(BaseModel):
     """
-    ResultResultOnMemberIdeaRSOpenModel
+    Result of the member
     """ # noqa: E501
     member: Optional[ResultMemberIdeaRSOpenModel] = None
     result_type: Optional[ResultResultTypeIdeaRSOpenModel] = Field(default=None, alias="resultType")
     local_system_type: Optional[ResultResultLocalSystemTypeIdeaRSOpenModel] = Field(default=None, alias="localSystemType")
-    results: Optional[List[Dict[str, Any]]] = None
+    results: Optional[List[Dict[str, Any]]] = Field(default=None, description="List of result")
     __properties: ClassVar[List[str]] = ["member", "resultType", "localSystemType", "results"]
 
     model_config = ConfigDict(

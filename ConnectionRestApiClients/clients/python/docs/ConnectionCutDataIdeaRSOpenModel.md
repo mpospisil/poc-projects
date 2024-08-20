@@ -1,5 +1,6 @@
 # ConnectionCutDataIdeaRSOpenModel
 
+Provides data of the cut beam
 
 ## Properties
 
@@ -8,7 +9,7 @@ Name | Type | Description | Notes
 **plane_point** | [**Geometry3DPoint3DIdeaRSOpenModel**](Geometry3DPoint3DIdeaRSOpenModel.md) |  | [optional] 
 **normal_vector** | [**Geometry3DVector3DIdeaRSOpenModel**](Geometry3DVector3DIdeaRSOpenModel.md) |  | [optional] 
 **direction** | [**ConnectionCutOrientationIdeaRSOpenModel**](ConnectionCutOrientationIdeaRSOpenModel.md) |  | [optional] 
-**offset** | **float** |  | [optional] 
+**offset** | **float** | Offset - shift of cut | [optional] 
 
 ## Example
 

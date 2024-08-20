@@ -1,13 +1,14 @@
 # ConnectionCheckResBoltIdeaRSOpenModel
 
+Check value for Bolts
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | [optional] 
-**unity_check** | **float** |  | [optional] 
-**check_status** | **bool** |  | [optional] 
+**name** | **str** | Name | [optional] 
+**unity_check** | **float** | Unity Check | [optional] 
+**check_status** | **bool** | Status of the Check | [optional] 
 
 ## Example
 

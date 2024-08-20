@@ -1,5 +1,6 @@
 # ConnectionCutMethodIdeaRSOpenModel
 
+Cut method
 
 ## Enum
 

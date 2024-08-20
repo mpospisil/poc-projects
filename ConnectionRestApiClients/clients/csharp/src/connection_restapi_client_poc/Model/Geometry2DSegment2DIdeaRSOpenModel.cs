@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// Geometry2DSegment2DIdeaRSOpenModel
+    /// Represents a segment in two-dimensional space.
     /// </summary>
     [DataContract(Name = "Geometry2D_Segment2D-IdeaRS_OpenModel")]
     public partial class Geometry2DSegment2DIdeaRSOpenModel : IValidatableObject

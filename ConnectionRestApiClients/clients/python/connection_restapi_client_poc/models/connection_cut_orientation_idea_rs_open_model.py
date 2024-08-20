@@ -20,7 +20,7 @@ from typing_extensions import Self
 
 class ConnectionCutOrientationIdeaRSOpenModel(str, Enum):
     """
-    ConnectionCutOrientationIdeaRSOpenModel
+    Represents the type of the cut
     """
 
     """

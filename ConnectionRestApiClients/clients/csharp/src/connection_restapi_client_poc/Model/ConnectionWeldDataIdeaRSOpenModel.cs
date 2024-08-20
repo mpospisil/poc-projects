@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionWeldDataIdeaRSOpenModel
+    /// Provides data of the single weld
     /// </summary>
     [DataContract(Name = "Connection_WeldData-IdeaRS_OpenModel")]
     public partial class ConnectionWeldDataIdeaRSOpenModel : IValidatableObject
@@ -40,13 +40,13 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionWeldDataIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="thickness">thickness.</param>
-        /// <param name="material">material.</param>
+        /// <param name="id">Id of the weld.</param>
+        /// <param name="name">Name of the weld.</param>
+        /// <param name="thickness">Thickness of the weld.</param>
+        /// <param name="material">Name of the material.</param>
         /// <param name="weldMaterial">weldMaterial.</param>
         /// <param name="weldType">weldType.</param>
-        /// <param name="connectedPartIds">connectedPartIds.</param>
+        /// <param name="connectedPartIds">Id of the weld.</param>
         /// <param name="start">start.</param>
         /// <param name="end">end.</param>
         public ConnectionWeldDataIdeaRSOpenModel(int id = default(int), string name = default(string), double thickness = default(double), string material = default(string), ReferenceElementIdeaRSOpenModel weldMaterial = default(ReferenceElementIdeaRSOpenModel), ConnectionWeldTypeIdeaRSOpenModel? weldType = default(ConnectionWeldTypeIdeaRSOpenModel?), List<string> connectedPartIds = default(List<string>), Geometry3DPoint3DIdeaRSOpenModel start = default(Geometry3DPoint3DIdeaRSOpenModel), Geometry3DPoint3DIdeaRSOpenModel end = default(Geometry3DPoint3DIdeaRSOpenModel))
@@ -63,26 +63,30 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Id of the weld
         /// </summary>
+        /// <value>Id of the weld</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the weld
         /// </summary>
+        /// <value>Name of the weld</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Thickness
+        /// Thickness of the weld
         /// </summary>
+        /// <value>Thickness of the weld</value>
         [DataMember(Name = "thickness", EmitDefaultValue = false)]
         public double Thickness { get; set; }
 
         /// <summary>
-        /// Gets or Sets Material
+        /// Name of the material
         /// </summary>
+        /// <value>Name of the material</value>
         [DataMember(Name = "material", EmitDefaultValue = true)]
         public string Material { get; set; }
 
@@ -93,8 +97,9 @@ namespace connection_restapi_client_poc.Model
         public ReferenceElementIdeaRSOpenModel WeldMaterial { get; set; }
 
         /// <summary>
-        /// Gets or Sets ConnectedPartIds
+        /// Id of the weld
         /// </summary>
+        /// <value>Id of the weld</value>
         [DataMember(Name = "connectedPartIds", EmitDefaultValue = true)]
         public List<string> ConnectedPartIds { get; set; }
 

@@ -1,12 +1,13 @@
 # ResultResultOnMembersIdeaRSOpenModel
 
+Result of the member
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **loading** | [**ResultLoadingIdeaRSOpenModel**](ResultLoadingIdeaRSOpenModel.md) |  | [optional] 
-**members** | [**List[ResultResultOnMemberIdeaRSOpenModel]**](ResultResultOnMemberIdeaRSOpenModel.md) |  | [optional] 
+**members** | [**List[ResultResultOnMemberIdeaRSOpenModel]**](ResultResultOnMemberIdeaRSOpenModel.md) | List of result of members | [optional] 
 
 ## Example
 

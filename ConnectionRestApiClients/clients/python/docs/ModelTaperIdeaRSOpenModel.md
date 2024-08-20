@@ -1,11 +1,12 @@
 # ModelTaperIdeaRSOpenModel
 
+Defines haunches (variyng cross-sections) along the member.    One IdeaRS.OpenModel.Model.Taper may be assigned to multiple <see cref=\"T:IdeaRS.OpenModel.Model.Member1D\">Members</see>.  Sections of the member not covered by a span will use the member's cross-section.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

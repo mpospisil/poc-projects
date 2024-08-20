@@ -1,11 +1,12 @@
 # Geometry3DRegion3DIdeaRSOpenModel
 
+Represents a region in three-dimensional space included outline (border) and openings.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

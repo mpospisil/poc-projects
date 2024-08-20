@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConnectionConcreteBlockDataIdeaRSOpenModel
+    /// Provides data of the single concrete block
     /// </summary>
     [DataContract(Name = "Connection_ConcreteBlockData-IdeaRS_OpenModel")]
     public partial class ConnectionConcreteBlockDataIdeaRSOpenModel : IValidatableObject
@@ -34,18 +34,18 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectionConcreteBlockDataIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        /// <param name="depth">depth.</param>
-        /// <param name="material">material.</param>
+        /// <param name="id">Plate unique ID.</param>
+        /// <param name="name">Name of the concrete block.</param>
+        /// <param name="depth">Depth of the concrete block.</param>
+        /// <param name="material">Name of the material.</param>
         /// <param name="center">center.</param>
-        /// <param name="outlinePoints">outlinePoints.</param>
+        /// <param name="outlinePoints">Outline points.</param>
         /// <param name="origin">origin.</param>
         /// <param name="axisX">axisX.</param>
         /// <param name="axisY">axisY.</param>
         /// <param name="axisZ">axisZ.</param>
-        /// <param name="region">region.</param>
-        /// <param name="originalModelId">originalModelId.</param>
+        /// <param name="region">Geometry of the concrete block in svg format.</param>
+        /// <param name="originalModelId">Get or set the identification in the original model  In the case of the imported connection from another application.</param>
         public ConnectionConcreteBlockDataIdeaRSOpenModel(int id = default(int), string name = default(string), double depth = default(double), string material = default(string), Geometry3DPoint3DIdeaRSOpenModel center = default(Geometry3DPoint3DIdeaRSOpenModel), List<Geometry2DPoint2DIdeaRSOpenModel> outlinePoints = default(List<Geometry2DPoint2DIdeaRSOpenModel>), Geometry3DPoint3DIdeaRSOpenModel origin = default(Geometry3DPoint3DIdeaRSOpenModel), Geometry3DVector3DIdeaRSOpenModel axisX = default(Geometry3DVector3DIdeaRSOpenModel), Geometry3DVector3DIdeaRSOpenModel axisY = default(Geometry3DVector3DIdeaRSOpenModel), Geometry3DVector3DIdeaRSOpenModel axisZ = default(Geometry3DVector3DIdeaRSOpenModel), string region = default(string), string originalModelId = default(string))
         {
             this.Id = id;
@@ -63,26 +63,30 @@ namespace connection_restapi_client_poc.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Plate unique ID
         /// </summary>
+        /// <value>Plate unique ID</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the concrete block
         /// </summary>
+        /// <value>Name of the concrete block</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Depth
+        /// Depth of the concrete block
         /// </summary>
+        /// <value>Depth of the concrete block</value>
         [DataMember(Name = "depth", EmitDefaultValue = false)]
         public double Depth { get; set; }
 
         /// <summary>
-        /// Gets or Sets Material
+        /// Name of the material
         /// </summary>
+        /// <value>Name of the material</value>
         [DataMember(Name = "material", EmitDefaultValue = true)]
         public string Material { get; set; }
 
@@ -93,8 +97,9 @@ namespace connection_restapi_client_poc.Model
         public Geometry3DPoint3DIdeaRSOpenModel Center { get; set; }
 
         /// <summary>
-        /// Gets or Sets OutlinePoints
+        /// Outline points
         /// </summary>
+        /// <value>Outline points</value>
         [DataMember(Name = "outlinePoints", EmitDefaultValue = true)]
         public List<Geometry2DPoint2DIdeaRSOpenModel> OutlinePoints { get; set; }
 
@@ -123,14 +128,16 @@ namespace connection_restapi_client_poc.Model
         public Geometry3DVector3DIdeaRSOpenModel AxisZ { get; set; }
 
         /// <summary>
-        /// Gets or Sets Region
+        /// Geometry of the concrete block in svg format
         /// </summary>
+        /// <value>Geometry of the concrete block in svg format</value>
         [DataMember(Name = "region", EmitDefaultValue = true)]
         public string Region { get; set; }
 
         /// <summary>
-        /// Gets or Sets OriginalModelId
+        /// Get or set the identification in the original model  In the case of the imported connection from another application
         /// </summary>
+        /// <value>Get or set the identification in the original model  In the case of the imported connection from another application</value>
         [DataMember(Name = "originalModelId", EmitDefaultValue = true)]
         public string OriginalModelId { get; set; }
 

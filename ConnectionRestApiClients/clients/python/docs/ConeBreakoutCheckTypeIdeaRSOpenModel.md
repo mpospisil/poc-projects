@@ -1,5 +1,6 @@
 # ConeBreakoutCheckTypeIdeaRSOpenModel
 
+Types of cone breakout checks
 
 ## Enum
 

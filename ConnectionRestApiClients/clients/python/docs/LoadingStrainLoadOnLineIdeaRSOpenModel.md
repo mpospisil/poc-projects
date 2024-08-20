@@ -1,11 +1,12 @@
 # LoadingStrainLoadOnLineIdeaRSOpenModel
 
+Linearly distributed generalized strain load along a line.  Strain load is in local coordinate system and there are no possible eccentricities.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

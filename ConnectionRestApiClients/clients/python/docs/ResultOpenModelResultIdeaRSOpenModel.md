@@ -1,11 +1,12 @@
 # ResultOpenModelResultIdeaRSOpenModel
 
+Results of open model
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**result_on_members** | [**List[ResultResultOnMembersIdeaRSOpenModel]**](ResultResultOnMembersIdeaRSOpenModel.md) |  | [optional] 
+**result_on_members** | [**List[ResultResultOnMembersIdeaRSOpenModel]**](ResultResultOnMembersIdeaRSOpenModel.md) | Results on members | [optional] 
 
 ## Example
 

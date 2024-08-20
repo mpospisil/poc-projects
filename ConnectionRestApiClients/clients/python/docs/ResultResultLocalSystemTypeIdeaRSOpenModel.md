@@ -1,5 +1,6 @@
 # ResultResultLocalSystemTypeIdeaRSOpenModel
 
+Type of local system of result
 
 ## Enum
 

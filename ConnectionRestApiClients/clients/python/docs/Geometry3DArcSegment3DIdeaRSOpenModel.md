@@ -1,11 +1,12 @@
 # Geometry3DArcSegment3DIdeaRSOpenModel
 
+Represents an arc segment in three-dimensional space.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

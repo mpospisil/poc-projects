@@ -1,16 +1,17 @@
 # connection_restapi_client_poc.Model.ConnectionWeldDataIdeaRSOpenModel
+Provides data of the single weld
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**Thickness** | **double** |  | [optional] 
-**Material** | **string** |  | [optional] 
+**Id** | **int** | Id of the weld | [optional] 
+**Name** | **string** | Name of the weld | [optional] 
+**Thickness** | **double** | Thickness of the weld | [optional] 
+**Material** | **string** | Name of the material | [optional] 
 **WeldMaterial** | [**ReferenceElementIdeaRSOpenModel**](ReferenceElementIdeaRSOpenModel.md) |  | [optional] 
 **WeldType** | **ConnectionWeldTypeIdeaRSOpenModel** |  | [optional] 
-**ConnectedPartIds** | **List&lt;string&gt;** |  | [optional] 
+**ConnectedPartIds** | **List&lt;string&gt;** | Id of the weld | [optional] 
 **Start** | [**Geometry3DPoint3DIdeaRSOpenModel**](Geometry3DPoint3DIdeaRSOpenModel.md) |  | [optional] 
 **End** | [**Geometry3DPoint3DIdeaRSOpenModel**](Geometry3DPoint3DIdeaRSOpenModel.md) |  | [optional] 
 

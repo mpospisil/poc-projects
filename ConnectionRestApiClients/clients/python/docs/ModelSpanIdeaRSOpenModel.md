@@ -1,11 +1,12 @@
 # ModelSpanIdeaRSOpenModel
 
+Span allows specifying haunched member.    Both cross-section must be of the same type. Spans must not overlap.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | Element Id | [optional] 
 
 ## Example
 

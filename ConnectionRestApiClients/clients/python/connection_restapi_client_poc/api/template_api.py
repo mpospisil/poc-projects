@@ -343,7 +343,7 @@ class TemplateApi:
 
 
     @validate_call
-    def get_deault_template_mapping(
+    def get_default_template_mapping(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to get default mapping")],
@@ -393,7 +393,7 @@ class TemplateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_deault_template_mapping_serialize(
+        _param = self._get_default_template_mapping_serialize(
             project_id=project_id,
             connection_id=connection_id,
             idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api,
@@ -418,7 +418,7 @@ class TemplateApi:
 
 
     @validate_call
-    def get_deault_template_mapping_with_http_info(
+    def get_default_template_mapping_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to get default mapping")],
@@ -468,7 +468,7 @@ class TemplateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_deault_template_mapping_serialize(
+        _param = self._get_default_template_mapping_serialize(
             project_id=project_id,
             connection_id=connection_id,
             idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api,
@@ -493,7 +493,7 @@ class TemplateApi:
 
 
     @validate_call
-    def get_deault_template_mapping_without_preload_content(
+    def get_default_template_mapping_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to get default mapping")],
@@ -543,7 +543,7 @@ class TemplateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_deault_template_mapping_serialize(
+        _param = self._get_default_template_mapping_serialize(
             project_id=project_id,
             connection_id=connection_id,
             idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api,
@@ -563,7 +563,7 @@ class TemplateApi:
         return response_data.response
 
 
-    def _get_deault_template_mapping_serialize(
+    def _get_default_template_mapping_serialize(
         self,
         project_id,
         connection_id,
@@ -633,7 +633,7 @@ class TemplateApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/apply-mapping',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

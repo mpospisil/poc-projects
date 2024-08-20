@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// OpenElementIdIdeaRSOpenModel
+    /// Open element base class  POS - class can not be abstract -it causes problems with serialization
     /// </summary>
     [DataContract(Name = "OpenElementId-IdeaRS_OpenModel")]
     public partial class OpenElementIdIdeaRSOpenModel : IValidatableObject
@@ -34,15 +34,16 @@ namespace connection_restapi_client_poc.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OpenElementIdIdeaRSOpenModel" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        /// <param name="id">Element Id.</param>
         public OpenElementIdIdeaRSOpenModel(int id = default(int))
         {
             this.Id = id;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Element Id
         /// </summary>
+        /// <value>Element Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public int Id { get; set; }
 

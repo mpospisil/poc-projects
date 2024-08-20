@@ -16,8 +16,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import StrictBool, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
+from typing_extensions import Annotated
 from connection_restapi_client_poc.models.idea_rs_common_parameters_parameter_data_ci_basic_types import IdeaRSCommonParametersParameterDataCIBasicTypes
 from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_idea_parameter_idea_stati_ca_api import IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi
 from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api import IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi
@@ -41,11 +42,11 @@ class ParameterApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_evaluate_expression_post(
+    def evaluate_expression(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        body: Optional[StrictStr] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to use for evaluation expression")],
+        body: Annotated[Optional[StrictStr], Field(description="Expreession to evaluate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,14 +60,14 @@ class ParameterApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> str:
-        """api1_projects_project_id_connections_connection_id_evaluate_expression_post
+        """Evaluate the expression and return the result
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to use for evaluation expression (required)
         :type connection_id: int
-        :param body:
+        :param body: Expreession to evaluate
         :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -90,7 +91,7 @@ class ParameterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_evaluate_expression_post_serialize(
+        _param = self._evaluate_expression_serialize(
             project_id=project_id,
             connection_id=connection_id,
             body=body,
@@ -115,11 +116,11 @@ class ParameterApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_evaluate_expression_post_with_http_info(
+    def evaluate_expression_with_http_info(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        body: Optional[StrictStr] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to use for evaluation expression")],
+        body: Annotated[Optional[StrictStr], Field(description="Expreession to evaluate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -133,14 +134,14 @@ class ParameterApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[str]:
-        """api1_projects_project_id_connections_connection_id_evaluate_expression_post
+        """Evaluate the expression and return the result
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to use for evaluation expression (required)
         :type connection_id: int
-        :param body:
+        :param body: Expreession to evaluate
         :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -164,7 +165,7 @@ class ParameterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_evaluate_expression_post_serialize(
+        _param = self._evaluate_expression_serialize(
             project_id=project_id,
             connection_id=connection_id,
             body=body,
@@ -189,11 +190,11 @@ class ParameterApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_evaluate_expression_post_without_preload_content(
+    def evaluate_expression_without_preload_content(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        body: Optional[StrictStr] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to use for evaluation expression")],
+        body: Annotated[Optional[StrictStr], Field(description="Expreession to evaluate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -207,14 +208,14 @@ class ParameterApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_evaluate_expression_post
+        """Evaluate the expression and return the result
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to use for evaluation expression (required)
         :type connection_id: int
-        :param body:
+        :param body: Expreession to evaluate
         :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -238,7 +239,7 @@ class ParameterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_evaluate_expression_post_serialize(
+        _param = self._evaluate_expression_serialize(
             project_id=project_id,
             connection_id=connection_id,
             body=body,
@@ -258,7 +259,7 @@ class ParameterApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_evaluate_expression_post_serialize(
+    def _evaluate_expression_serialize(
         self,
         project_id,
         connection_id,
@@ -345,11 +346,11 @@ class ParameterApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_parameters_get(
+    def get_parameters(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        include_hidden: Optional[StrictBool] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its parameters")],
+        include_hidden: Annotated[Optional[StrictBool], Field(description="Iclude also hdden parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -363,14 +364,14 @@ class ParameterApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]:
-        """api1_projects_project_id_connections_connection_id_parameters_get
+        """Get all parameters which are defined for projectId and connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its parameters (required)
         :type connection_id: int
-        :param include_hidden:
+        :param include_hidden: Iclude also hdden parameters
         :type include_hidden: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -394,7 +395,7 @@ class ParameterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_parameters_get_serialize(
+        _param = self._get_parameters_serialize(
             project_id=project_id,
             connection_id=connection_id,
             include_hidden=include_hidden,
@@ -419,11 +420,11 @@ class ParameterApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_parameters_get_with_http_info(
+    def get_parameters_with_http_info(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        include_hidden: Optional[StrictBool] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its parameters")],
+        include_hidden: Annotated[Optional[StrictBool], Field(description="Iclude also hdden parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -437,14 +438,14 @@ class ParameterApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]]:
-        """api1_projects_project_id_connections_connection_id_parameters_get
+        """Get all parameters which are defined for projectId and connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its parameters (required)
         :type connection_id: int
-        :param include_hidden:
+        :param include_hidden: Iclude also hdden parameters
         :type include_hidden: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -468,7 +469,7 @@ class ParameterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_parameters_get_serialize(
+        _param = self._get_parameters_serialize(
             project_id=project_id,
             connection_id=connection_id,
             include_hidden=include_hidden,
@@ -493,11 +494,11 @@ class ParameterApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_parameters_get_without_preload_content(
+    def get_parameters_without_preload_content(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        include_hidden: Optional[StrictBool] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its parameters")],
+        include_hidden: Annotated[Optional[StrictBool], Field(description="Iclude also hdden parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -511,14 +512,14 @@ class ParameterApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_parameters_get
+        """Get all parameters which are defined for projectId and connectionId
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to get its parameters (required)
         :type connection_id: int
-        :param include_hidden:
+        :param include_hidden: Iclude also hdden parameters
         :type include_hidden: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -542,7 +543,7 @@ class ParameterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_parameters_get_serialize(
+        _param = self._get_parameters_serialize(
             project_id=project_id,
             connection_id=connection_id,
             include_hidden=include_hidden,
@@ -562,7 +563,7 @@ class ParameterApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_parameters_get_serialize(
+    def _get_parameters_serialize(
         self,
         project_id,
         connection_id,
@@ -632,11 +633,11 @@ class ParameterApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_parameters_put(
+    def update_parameters(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to apply template")],
+        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Annotated[Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]], Field(description="New values of parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -650,14 +651,14 @@ class ParameterApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[IdeaRSCommonParametersParameterDataCIBasicTypes]:
-        """api1_projects_project_id_connections_connection_id_parameters_put
+        """Update parameters for the connection connectionId in the project projectId by values passed in parameters
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to apply template (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api:
+        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: New values of parameters
         :type idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -681,7 +682,7 @@ class ParameterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_parameters_put_serialize(
+        _param = self._update_parameters_serialize(
             project_id=project_id,
             connection_id=connection_id,
             idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
@@ -706,11 +707,11 @@ class ParameterApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_parameters_put_with_http_info(
+    def update_parameters_with_http_info(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to apply template")],
+        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Annotated[Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]], Field(description="New values of parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -724,14 +725,14 @@ class ParameterApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[IdeaRSCommonParametersParameterDataCIBasicTypes]]:
-        """api1_projects_project_id_connections_connection_id_parameters_put
+        """Update parameters for the connection connectionId in the project projectId by values passed in parameters
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to apply template (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api:
+        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: New values of parameters
         :type idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -755,7 +756,7 @@ class ParameterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_parameters_put_serialize(
+        _param = self._update_parameters_serialize(
             project_id=project_id,
             connection_id=connection_id,
             idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
@@ -780,11 +781,11 @@ class ParameterApi:
 
 
     @validate_call
-    def api1_projects_project_id_connections_connection_id_parameters_put_without_preload_content(
+    def update_parameters_without_preload_content(
         self,
-        project_id: StrictStr,
-        connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]] = None,
+        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to apply template")],
+        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Annotated[Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]], Field(description="New values of parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -798,14 +799,14 @@ class ParameterApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api1_projects_project_id_connections_connection_id_parameters_put
+        """Update parameters for the connection connectionId in the project projectId by values passed in parameters
 
 
-        :param project_id: (required)
+        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: (required)
+        :param connection_id: Id of the connection to apply template (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api:
+        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: New values of parameters
         :type idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -829,7 +830,7 @@ class ParameterApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_connections_connection_id_parameters_put_serialize(
+        _param = self._update_parameters_serialize(
             project_id=project_id,
             connection_id=connection_id,
             idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
@@ -849,7 +850,7 @@ class ParameterApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_connections_connection_id_parameters_put_serialize(
+    def _update_parameters_serialize(
         self,
         project_id,
         connection_id,

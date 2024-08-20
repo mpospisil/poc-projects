@@ -26,7 +26,7 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ResultResultOnMembersIdeaRSOpenModel
+    /// Result of the member
     /// </summary>
     [DataContract(Name = "Result_ResultOnMembers-IdeaRS_OpenModel")]
     public partial class ResultResultOnMembersIdeaRSOpenModel : IValidatableObject
@@ -35,7 +35,7 @@ namespace connection_restapi_client_poc.Model
         /// Initializes a new instance of the <see cref="ResultResultOnMembersIdeaRSOpenModel" /> class.
         /// </summary>
         /// <param name="loading">loading.</param>
-        /// <param name="members">members.</param>
+        /// <param name="members">List of result of members.</param>
         public ResultResultOnMembersIdeaRSOpenModel(ResultLoadingIdeaRSOpenModel loading = default(ResultLoadingIdeaRSOpenModel), List<ResultResultOnMemberIdeaRSOpenModel> members = default(List<ResultResultOnMemberIdeaRSOpenModel>))
         {
             this.Loading = loading;
@@ -49,8 +49,9 @@ namespace connection_restapi_client_poc.Model
         public ResultLoadingIdeaRSOpenModel Loading { get; set; }
 
         /// <summary>
-        /// Gets or Sets Members
+        /// List of result of members
         /// </summary>
+        /// <value>List of result of members</value>
         [DataMember(Name = "members", EmitDefaultValue = true)]
         public List<ResultResultOnMemberIdeaRSOpenModel> Members { get; set; }
 

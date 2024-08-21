@@ -16,6 +16,7 @@ All URIs are relative to *http://localhost*
 | [**UpdateFromIOM**](ProjectApi.md#updatefromiom) | **POST** /api/1/projects/{projectId}/update-iom-file | Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request. |
 | [**UpdateFromIOMContainer**](ProjectApi.md#updatefromiomcontainer) | **POST** /api/1/projects/{projectId}/update-iom | Update an IDEA Connection project by model (model and results) |
 | [**UpdateSetup**](ProjectApi.md#updatesetup) | **PUT** /api/1/projects/{projectId}/connection-setup | Update setup of the project |
+| [**UploadIdeaCon**](ProjectApi.md#uploadideacon) | **POST** /api/1/projects/upload-ideacon | Open ideacon project from ideaConFile |
 
 <a id="closeproject"></a>
 # **CloseProject**
@@ -180,7 +181,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+ - **Accept**: text/plain, application/json
 
 
 ### HTTP response details
@@ -192,7 +193,7 @@ No authorization required
 
 <a id="downloadproject"></a>
 # **DownloadProject**
-> SystemIOMemoryStreamSystemPrivateCoreLib DownloadProject (Guid projectId)
+> MemoryStream DownloadProject (Guid projectId)
 
 Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
 
@@ -218,7 +219,7 @@ namespace Example
             try
             {
                 // Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
-                SystemIOMemoryStreamSystemPrivateCoreLib result = apiInstance.DownloadProject(projectId);
+                MemoryStream result = apiInstance.DownloadProject(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -239,7 +240,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
-    ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib> response = apiInstance.DownloadProjectWithHttpInfo(projectId);
+    ApiResponse<MemoryStream> response = apiInstance.DownloadProjectWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -260,7 +261,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SystemIOMemoryStreamSystemPrivateCoreLib**](SystemIOMemoryStreamSystemPrivateCoreLib.md)
+[**MemoryStream**](MemoryStream.md)
 
 ### Authorization
 
@@ -269,7 +270,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -281,7 +282,7 @@ No authorization required
 
 <a id="getactiveprojects"></a>
 # **GetActiveProjects**
-> List&lt;IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi&gt; GetActiveProjects ()
+> List&lt;ConProject&gt; GetActiveProjects ()
 
 Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient
 
@@ -306,7 +307,7 @@ namespace Example
             try
             {
                 // Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient
-                List<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> result = apiInstance.GetActiveProjects();
+                List<ConProject> result = apiInstance.GetActiveProjects();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -327,7 +328,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient
-    ApiResponse<List<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>> response = apiInstance.GetActiveProjectsWithHttpInfo();
+    ApiResponse<List<ConProject>> response = apiInstance.GetActiveProjectsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -344,7 +345,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-[**List&lt;IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi&gt;**](IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi.md)
+[**List&lt;ConProject&gt;**](ConProject.md)
 
 ### Authorization
 
@@ -365,7 +366,7 @@ No authorization required
 
 <a id="getprojectdata"></a>
 # **GetProjectData**
-> IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi GetProjectData (Guid projectId)
+> ConProjectData GetProjectData (Guid projectId)
 
 Get data of the project.
 
@@ -391,7 +392,7 @@ namespace Example
             try
             {
                 // Get data of the project.
-                IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi result = apiInstance.GetProjectData(projectId);
+                ConProjectData result = apiInstance.GetProjectData(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -412,7 +413,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get data of the project.
-    ApiResponse<IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi> response = apiInstance.GetProjectDataWithHttpInfo(projectId);
+    ApiResponse<ConProjectData> response = apiInstance.GetProjectDataWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -433,7 +434,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi.md)
+[**ConProjectData**](ConProjectData.md)
 
 ### Authorization
 
@@ -454,7 +455,7 @@ No authorization required
 
 <a id="getsetup"></a>
 # **GetSetup**
-> ConnectionSetupIdeaRSOpenModel GetSetup (Guid projectId)
+> ConnectionSetup GetSetup (Guid projectId)
 
 Get setup from project
 
@@ -480,7 +481,7 @@ namespace Example
             try
             {
                 // Get setup from project
-                ConnectionSetupIdeaRSOpenModel result = apiInstance.GetSetup(projectId);
+                ConnectionSetup result = apiInstance.GetSetup(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -501,7 +502,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get setup from project
-    ApiResponse<ConnectionSetupIdeaRSOpenModel> response = apiInstance.GetSetupWithHttpInfo(projectId);
+    ApiResponse<ConnectionSetup> response = apiInstance.GetSetupWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -522,7 +523,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ConnectionSetupIdeaRSOpenModel**](ConnectionSetupIdeaRSOpenModel.md)
+[**ConnectionSetup**](ConnectionSetup.md)
 
 ### Authorization
 
@@ -543,7 +544,7 @@ No authorization required
 
 <a id="importiom"></a>
 # **ImportIOM**
-> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi ImportIOM (List<int>? connectionsToCreate = null)
+> ConProject ImportIOM (List<int>? connectionsToCreate = null)
 
 Creates an IDEA Connection project. IOM is passed in the body of the request.
 
@@ -569,7 +570,7 @@ namespace Example
             try
             {
                 // Creates an IDEA Connection project. IOM is passed in the body of the request.
-                IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi result = apiInstance.ImportIOM(connectionsToCreate);
+                ConProject result = apiInstance.ImportIOM(connectionsToCreate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -590,7 +591,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Creates an IDEA Connection project. IOM is passed in the body of the request.
-    ApiResponse<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> response = apiInstance.ImportIOMWithHttpInfo(connectionsToCreate);
+    ApiResponse<ConProject> response = apiInstance.ImportIOMWithHttpInfo(connectionsToCreate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -611,7 +612,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi.md)
+[**ConProject**](ConProject.md)
 
 ### Authorization
 
@@ -632,7 +633,7 @@ No authorization required
 
 <a id="importiomcontainer"></a>
 # **ImportIOMContainer**
-> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi ImportIOMContainer (List<int>? connectionsToCreate = null, OpenModelContainerIdeaRSOpenModel? openModelContainerIdeaRSOpenModel = null)
+> ConProject ImportIOMContainer (List<int>? connectionsToCreate = null, OpenModelContainer? openModelContainer = null)
 
 Creates an IDEA Connection project from model (model and results)
 
@@ -654,12 +655,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
             var connectionsToCreate = new List<int>?(); // List<int>? |  (optional) 
-            var openModelContainerIdeaRSOpenModel = new OpenModelContainerIdeaRSOpenModel?(); // OpenModelContainerIdeaRSOpenModel? |  (optional) 
+            var openModelContainer = new OpenModelContainer?(); // OpenModelContainer? |  (optional) 
 
             try
             {
                 // Creates an IDEA Connection project from model (model and results)
-                IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi result = apiInstance.ImportIOMContainer(connectionsToCreate, openModelContainerIdeaRSOpenModel);
+                ConProject result = apiInstance.ImportIOMContainer(connectionsToCreate, openModelContainer);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -680,7 +681,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Creates an IDEA Connection project from model (model and results)
-    ApiResponse<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> response = apiInstance.ImportIOMContainerWithHttpInfo(connectionsToCreate, openModelContainerIdeaRSOpenModel);
+    ApiResponse<ConProject> response = apiInstance.ImportIOMContainerWithHttpInfo(connectionsToCreate, openModelContainer);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -698,11 +699,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **connectionsToCreate** | [**List&lt;int&gt;?**](int.md) |  | [optional]  |
-| **openModelContainerIdeaRSOpenModel** | [**OpenModelContainerIdeaRSOpenModel?**](OpenModelContainerIdeaRSOpenModel?.md) |  | [optional]  |
+| **openModelContainer** | [**OpenModelContainer?**](OpenModelContainer?.md) |  | [optional]  |
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi.md)
+[**ConProject**](ConProject.md)
 
 ### Authorization
 
@@ -710,7 +711,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/xml, application/json
  - **Accept**: application/json
 
 
@@ -723,7 +724,7 @@ No authorization required
 
 <a id="openproject"></a>
 # **OpenProject**
-> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi OpenProject ()
+> ConProject OpenProject ()
 
 Open ideacon project which is passed in the body of the request  TODO - should be the parameter of the method
 
@@ -748,7 +749,7 @@ namespace Example
             try
             {
                 // Open ideacon project which is passed in the body of the request  TODO - should be the parameter of the method
-                IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi result = apiInstance.OpenProject();
+                ConProject result = apiInstance.OpenProject();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -769,7 +770,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Open ideacon project which is passed in the body of the request  TODO - should be the parameter of the method
-    ApiResponse<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi> response = apiInstance.OpenProjectWithHttpInfo();
+    ApiResponse<ConProject> response = apiInstance.OpenProjectWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -786,7 +787,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi.md)
+[**ConProject**](ConProject.md)
 
 ### Authorization
 
@@ -896,7 +897,7 @@ No authorization required
 
 <a id="updatefromiomcontainer"></a>
 # **UpdateFromIOMContainer**
-> bool UpdateFromIOMContainer (Guid projectId, OpenModelContainerIdeaRSOpenModel? openModelContainerIdeaRSOpenModel = null)
+> bool UpdateFromIOMContainer (Guid projectId, OpenModelContainer? openModelContainer = null)
 
 Update an IDEA Connection project by model (model and results)
 
@@ -918,12 +919,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service to be updated
-            var openModelContainerIdeaRSOpenModel = new OpenModelContainerIdeaRSOpenModel?(); // OpenModelContainerIdeaRSOpenModel? |  (optional) 
+            var openModelContainer = new OpenModelContainer?(); // OpenModelContainer? |  (optional) 
 
             try
             {
                 // Update an IDEA Connection project by model (model and results)
-                bool result = apiInstance.UpdateFromIOMContainer(projectId, openModelContainerIdeaRSOpenModel);
+                bool result = apiInstance.UpdateFromIOMContainer(projectId, openModelContainer);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -944,7 +945,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update an IDEA Connection project by model (model and results)
-    ApiResponse<bool> response = apiInstance.UpdateFromIOMContainerWithHttpInfo(projectId, openModelContainerIdeaRSOpenModel);
+    ApiResponse<bool> response = apiInstance.UpdateFromIOMContainerWithHttpInfo(projectId, openModelContainer);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -962,7 +963,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service to be updated |  |
-| **openModelContainerIdeaRSOpenModel** | [**OpenModelContainerIdeaRSOpenModel?**](OpenModelContainerIdeaRSOpenModel?.md) |  | [optional]  |
+| **openModelContainer** | [**OpenModelContainer?**](OpenModelContainer?.md) |  | [optional]  |
 
 ### Return type
 
@@ -974,7 +975,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/xml, application/json
  - **Accept**: application/json
 
 
@@ -987,7 +988,7 @@ No authorization required
 
 <a id="updatesetup"></a>
 # **UpdateSetup**
-> ConnectionSetupIdeaRSOpenModel UpdateSetup (Guid projectId, ConnectionSetupIdeaRSOpenModel? connectionSetupIdeaRSOpenModel = null)
+> ConnectionSetup UpdateSetup (Guid projectId, ConnectionSetup? connectionSetup = null)
 
 Update setup of the project
 
@@ -1009,12 +1010,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service to update project setup
-            var connectionSetupIdeaRSOpenModel = new ConnectionSetupIdeaRSOpenModel?(); // ConnectionSetupIdeaRSOpenModel? |  (optional) 
+            var connectionSetup = new ConnectionSetup?(); // ConnectionSetup? |  (optional) 
 
             try
             {
                 // Update setup of the project
-                ConnectionSetupIdeaRSOpenModel result = apiInstance.UpdateSetup(projectId, connectionSetupIdeaRSOpenModel);
+                ConnectionSetup result = apiInstance.UpdateSetup(projectId, connectionSetup);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1035,7 +1036,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update setup of the project
-    ApiResponse<ConnectionSetupIdeaRSOpenModel> response = apiInstance.UpdateSetupWithHttpInfo(projectId, connectionSetupIdeaRSOpenModel);
+    ApiResponse<ConnectionSetup> response = apiInstance.UpdateSetupWithHttpInfo(projectId, connectionSetup);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1053,11 +1054,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service to update project setup |  |
-| **connectionSetupIdeaRSOpenModel** | [**ConnectionSetupIdeaRSOpenModel?**](ConnectionSetupIdeaRSOpenModel?.md) |  | [optional]  |
+| **connectionSetup** | [**ConnectionSetup?**](ConnectionSetup?.md) |  | [optional]  |
 
 ### Return type
 
-[**ConnectionSetupIdeaRSOpenModel**](ConnectionSetupIdeaRSOpenModel.md)
+[**ConnectionSetup**](ConnectionSetup.md)
 
 ### Authorization
 
@@ -1065,7 +1066,96 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="uploadideacon"></a>
+# **UploadIdeaCon**
+> ConProject UploadIdeaCon (System.IO.Stream? ideaConFile = null)
+
+Open ideacon project from ideaConFile
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using connection_restapi_client_poc.Api;
+using connection_restapi_client_poc.Client;
+using connection_restapi_client_poc.Model;
+
+namespace Example
+{
+    public class UploadIdeaConExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            var apiInstance = new ProjectApi(config);
+            var ideaConFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
+
+            try
+            {
+                // Open ideacon project from ideaConFile
+                ConProject result = apiInstance.UploadIdeaCon(ideaConFile);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectApi.UploadIdeaCon: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UploadIdeaConWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Open ideacon project from ideaConFile
+    ApiResponse<ConProject> response = apiInstance.UploadIdeaConWithHttpInfo(ideaConFile);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.UploadIdeaConWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **ideaConFile** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
+
+### Return type
+
+[**ConProject**](ConProject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data, application/json
  - **Accept**: application/json
 
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **export_connection_data**
-> ConnectionConnectionDataIdeaRSOpenModel export_connection_data(project_id, connection_id)
+> ConnectionData export_connection_data(project_id, connection_id)
 
 Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
 
@@ -19,7 +19,7 @@ Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.Open
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.connection_connection_data_idea_rs_open_model import ConnectionConnectionDataIdeaRSOpenModel
+from connection_restapi_client_poc.models.connection_data import ConnectionData
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConnectionConnectionDataIdeaRSOpenModel**](ConnectionConnectionDataIdeaRSOpenModel.md)
+[**ConnectionData**](ConnectionData.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/xml
+ - **Accept**: application/xml, application/json
 
 ### HTTP response details
 
@@ -78,7 +78,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_connection_ifc**
-> SystemIOMemoryStreamSystemPrivateCoreLib export_connection_ifc(project_id, connection_id)
+> MemoryStream export_connection_ifc(project_id, connection_id)
 
 Export connection to IFC format
 
@@ -87,7 +87,7 @@ Export connection to IFC format
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.system_io_memory_stream_system_private_core_lib import SystemIOMemoryStreamSystemPrivateCoreLib
+from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SystemIOMemoryStreamSystemPrivateCoreLib**](SystemIOMemoryStreamSystemPrivateCoreLib.md)
+[**MemoryStream**](MemoryStream.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 

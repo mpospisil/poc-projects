@@ -63,9 +63,9 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null;
-            //var response = instance.AddBoltAssembly(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>(response);
+            //ConMprlElement? conMprlElement = null;
+            //var response = instance.AddBoltAssembly(projectId, connectionId, conMprlElement);
+            //Assert.IsType<ConMprlElement>(response);
         }
 
         /// <summary>
@@ -77,9 +77,9 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = null;
-            //var response = instance.AddCrossSection(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi>(response);
+            //ConMprlCrossSection? conMprlCrossSection = null;
+            //var response = instance.AddCrossSection(projectId, connectionId, conMprlCrossSection);
+            //Assert.IsType<ConMprlCrossSection>(response);
         }
 
         /// <summary>
@@ -91,9 +91,9 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null;
-            //var response = instance.AddMaterialBoltGrade(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>(response);
+            //ConMprlElement? conMprlElement = null;
+            //var response = instance.AddMaterialBoltGrade(projectId, connectionId, conMprlElement);
+            //Assert.IsType<ConMprlElement>(response);
         }
 
         /// <summary>
@@ -105,9 +105,9 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null;
-            //var response = instance.AddMaterialConcrete(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>(response);
+            //ConMprlElement? conMprlElement = null;
+            //var response = instance.AddMaterialConcrete(projectId, connectionId, conMprlElement);
+            //Assert.IsType<ConMprlElement>(response);
         }
 
         /// <summary>
@@ -119,9 +119,9 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null;
-            //var response = instance.AddMaterialSteel(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>(response);
+            //ConMprlElement? conMprlElement = null;
+            //var response = instance.AddMaterialSteel(projectId, connectionId, conMprlElement);
+            //Assert.IsType<ConMprlElement>(response);
         }
 
         /// <summary>
@@ -133,9 +133,9 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null;
-            //var response = instance.AddMaterialWeld(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>(response);
+            //ConMprlElement? conMprlElement = null;
+            //var response = instance.AddMaterialWeld(projectId, connectionId, conMprlElement);
+            //Assert.IsType<ConMprlElement>(response);
         }
 
         /// <summary>

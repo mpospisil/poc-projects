@@ -79,7 +79,7 @@ namespace connection_restapi_client_poc.Test.Api
             //int connectionId = null;
             //bool? includeHidden = null;
             //var response = instance.GetParameters(projectId, connectionId, includeHidden);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi>>(response);
+            //Assert.IsType<List<IdeaParameter>>(response);
         }
 
         /// <summary>
@@ -91,9 +91,9 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //List<IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi>? ideaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi = null;
-            //var response = instance.UpdateParameters(projectId, connectionId, ideaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi);
-            //Assert.IsType<List<IdeaRSCommonParametersParameterDataCIBasicTypes>>(response);
+            //List<IdeaParameterUpdate>? ideaParameterUpdate = null;
+            //var response = instance.UpdateParameters(projectId, connectionId, ideaParameterUpdate);
+            //Assert.IsType<List<ParameterData>>(response);
         }
     }
 }

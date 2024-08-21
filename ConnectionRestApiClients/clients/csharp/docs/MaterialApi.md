@@ -20,7 +20,7 @@ All URIs are relative to *http://localhost*
 
 <a id="addboltassembly"></a>
 # **AddBoltAssembly**
-> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddBoltAssembly (Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null)
+> ConMprlElement AddBoltAssembly (Guid projectId, int connectionId, ConMprlElement? conMprlElement = null)
 
 Add bolt assembly to the project
 
@@ -43,12 +43,12 @@ namespace Example
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | 
-            var ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? | Definition of a new bolt assemby to be added to the project (optional) 
+            var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new bolt assemby to be added to the project (optional) 
 
             try
             {
                 // Add bolt assembly to the project
-                IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi result = apiInstance.AddBoltAssembly(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+                ConMprlElement result = apiInstance.AddBoltAssembly(projectId, connectionId, conMprlElement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -69,7 +69,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add bolt assembly to the project
-    ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> response = apiInstance.AddBoltAssemblyWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+    ApiResponse<ConMprlElement> response = apiInstance.AddBoltAssemblyWithHttpInfo(projectId, connectionId, conMprlElement);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -88,11 +88,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** |  |  |
-| **ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?.md) | Definition of a new bolt assemby to be added to the project | [optional]  |
+| **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new bolt assemby to be added to the project | [optional]  |
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)
+[**ConMprlElement**](ConMprlElement.md)
 
 ### Authorization
 
@@ -100,7 +100,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -113,7 +113,7 @@ No authorization required
 
 <a id="addcrosssection"></a>
 # **AddCrossSection**
-> IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi AddCrossSection (Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = null)
+> ConMprlCrossSection AddCrossSection (Guid projectId, int connectionId, ConMprlCrossSection? conMprlCrossSection = null)
 
 Add cross section to the project
 
@@ -136,12 +136,12 @@ namespace Example
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | 
-            var ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? | Definition of a new cross-section to be added to the project (optional) 
+            var conMprlCrossSection = new ConMprlCrossSection?(); // ConMprlCrossSection? | Definition of a new cross-section to be added to the project (optional) 
 
             try
             {
                 // Add cross section to the project
-                IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi result = apiInstance.AddCrossSection(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi);
+                ConMprlCrossSection result = apiInstance.AddCrossSection(projectId, connectionId, conMprlCrossSection);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -162,7 +162,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add cross section to the project
-    ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi> response = apiInstance.AddCrossSectionWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi);
+    ApiResponse<ConMprlCrossSection> response = apiInstance.AddCrossSectionWithHttpInfo(projectId, connectionId, conMprlCrossSection);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -181,11 +181,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** |  |  |
-| **ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?.md) | Definition of a new cross-section to be added to the project | [optional]  |
+| **conMprlCrossSection** | [**ConMprlCrossSection?**](ConMprlCrossSection?.md) | Definition of a new cross-section to be added to the project | [optional]  |
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi.md)
+[**ConMprlCrossSection**](ConMprlCrossSection.md)
 
 ### Authorization
 
@@ -193,7 +193,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -206,7 +206,7 @@ No authorization required
 
 <a id="addmaterialboltgrade"></a>
 # **AddMaterialBoltGrade**
-> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialBoltGrade (Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null)
+> ConMprlElement AddMaterialBoltGrade (Guid projectId, int connectionId, ConMprlElement? conMprlElement = null)
 
 Add material to the project
 
@@ -229,12 +229,12 @@ namespace Example
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | 
-            var ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? | Definition of a new material to be added to the project (optional) 
+            var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
 
             try
             {
                 // Add material to the project
-                IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi result = apiInstance.AddMaterialBoltGrade(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+                ConMprlElement result = apiInstance.AddMaterialBoltGrade(projectId, connectionId, conMprlElement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -255,7 +255,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add material to the project
-    ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> response = apiInstance.AddMaterialBoltGradeWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialBoltGradeWithHttpInfo(projectId, connectionId, conMprlElement);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -274,11 +274,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** |  |  |
-| **ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?.md) | Definition of a new material to be added to the project | [optional]  |
+| **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)
+[**ConMprlElement**](ConMprlElement.md)
 
 ### Authorization
 
@@ -286,7 +286,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -299,7 +299,7 @@ No authorization required
 
 <a id="addmaterialconcrete"></a>
 # **AddMaterialConcrete**
-> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialConcrete (Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null)
+> ConMprlElement AddMaterialConcrete (Guid projectId, int connectionId, ConMprlElement? conMprlElement = null)
 
 Add material to the project
 
@@ -322,12 +322,12 @@ namespace Example
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | 
-            var ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? | Definition of a new material to be added to the project (optional) 
+            var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
 
             try
             {
                 // Add material to the project
-                IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi result = apiInstance.AddMaterialConcrete(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+                ConMprlElement result = apiInstance.AddMaterialConcrete(projectId, connectionId, conMprlElement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -348,7 +348,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add material to the project
-    ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> response = apiInstance.AddMaterialConcreteWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialConcreteWithHttpInfo(projectId, connectionId, conMprlElement);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -367,11 +367,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** |  |  |
-| **ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?.md) | Definition of a new material to be added to the project | [optional]  |
+| **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)
+[**ConMprlElement**](ConMprlElement.md)
 
 ### Authorization
 
@@ -379,7 +379,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -392,7 +392,7 @@ No authorization required
 
 <a id="addmaterialsteel"></a>
 # **AddMaterialSteel**
-> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialSteel (Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null)
+> ConMprlElement AddMaterialSteel (Guid projectId, int connectionId, ConMprlElement? conMprlElement = null)
 
 Add material to the project
 
@@ -415,12 +415,12 @@ namespace Example
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | 
-            var ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? | Definition of a new material to be added to the project (optional) 
+            var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
 
             try
             {
                 // Add material to the project
-                IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi result = apiInstance.AddMaterialSteel(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+                ConMprlElement result = apiInstance.AddMaterialSteel(projectId, connectionId, conMprlElement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -441,7 +441,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add material to the project
-    ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> response = apiInstance.AddMaterialSteelWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialSteelWithHttpInfo(projectId, connectionId, conMprlElement);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -460,11 +460,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** |  |  |
-| **ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?.md) | Definition of a new material to be added to the project | [optional]  |
+| **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)
+[**ConMprlElement**](ConMprlElement.md)
 
 ### Authorization
 
@@ -472,7 +472,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -485,7 +485,7 @@ No authorization required
 
 <a id="addmaterialweld"></a>
 # **AddMaterialWeld**
-> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialWeld (Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = null)
+> ConMprlElement AddMaterialWeld (Guid projectId, int connectionId, ConMprlElement? conMprlElement = null)
 
 Add material to the project
 
@@ -508,12 +508,12 @@ namespace Example
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | 
-            var ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? | Definition of a new material to be added to the project (optional) 
+            var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
 
             try
             {
                 // Add material to the project
-                IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi result = apiInstance.AddMaterialWeld(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+                ConMprlElement result = apiInstance.AddMaterialWeld(projectId, connectionId, conMprlElement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -534,7 +534,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add material to the project
-    ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> response = apiInstance.AddMaterialWeldWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialWeldWithHttpInfo(projectId, connectionId, conMprlElement);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -553,11 +553,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** |  |  |
-| **ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?.md) | Definition of a new material to be added to the project | [optional]  |
+| **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)
+[**ConMprlElement**](ConMprlElement.md)
 
 ### Authorization
 
@@ -565,7 +565,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

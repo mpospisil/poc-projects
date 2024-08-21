@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="exportconnectiondata"></a>
 # **ExportConnectionData**
-> ConnectionConnectionDataIdeaRSOpenModel ExportConnectionData (Guid projectId, int connectionId)
+> ConnectionData ExportConnectionData (Guid projectId, int connectionId)
 
 Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
 
@@ -37,7 +37,7 @@ namespace Example
             try
             {
                 // Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
-                ConnectionConnectionDataIdeaRSOpenModel result = apiInstance.ExportConnectionData(projectId, connectionId);
+                ConnectionData result = apiInstance.ExportConnectionData(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -58,7 +58,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
-    ApiResponse<ConnectionConnectionDataIdeaRSOpenModel> response = apiInstance.ExportConnectionDataWithHttpInfo(projectId, connectionId);
+    ApiResponse<ConnectionData> response = apiInstance.ExportConnectionDataWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -80,7 +80,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ConnectionConnectionDataIdeaRSOpenModel**](ConnectionConnectionDataIdeaRSOpenModel.md)
+[**ConnectionData**](ConnectionData.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/xml
+ - **Accept**: application/xml, application/json
 
 
 ### HTTP response details
@@ -101,7 +101,7 @@ No authorization required
 
 <a id="exportconnectionifc"></a>
 # **ExportConnectionIFC**
-> SystemIOMemoryStreamSystemPrivateCoreLib ExportConnectionIFC (Guid projectId, int connectionId)
+> MemoryStream ExportConnectionIFC (Guid projectId, int connectionId)
 
 Export connection to IFC format
 
@@ -128,7 +128,7 @@ namespace Example
             try
             {
                 // Export connection to IFC format
-                SystemIOMemoryStreamSystemPrivateCoreLib result = apiInstance.ExportConnectionIFC(projectId, connectionId);
+                MemoryStream result = apiInstance.ExportConnectionIFC(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -149,7 +149,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export connection to IFC format
-    ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib> response = apiInstance.ExportConnectionIFCWithHttpInfo(projectId, connectionId);
+    ApiResponse<MemoryStream> response = apiInstance.ExportConnectionIFCWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -171,7 +171,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SystemIOMemoryStreamSystemPrivateCoreLib**](SystemIOMemoryStreamSystemPrivateCoreLib.md)
+[**MemoryStream**](MemoryStream.md)
 
 ### Authorization
 
@@ -180,7 +180,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/xml, text/xml, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details

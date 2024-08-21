@@ -19,9 +19,9 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from connection_restapi_client_poc.models.connection_connection_check_res_idea_rs_open_model import ConnectionConnectionCheckResIdeaRSOpenModel
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_result_summary_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_calculation_parameter import ConCalculationParameter
+from connection_restapi_client_poc.models.con_result_summary import ConResultSummary
+from connection_restapi_client_poc.models.connection_check_res import ConnectionCheckRes
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -45,7 +45,7 @@ class CalculationApi:
     def calculate(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
+        con_calculation_parameter: Annotated[Optional[ConCalculationParameter], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,14 +58,14 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]:
+    ) -> List[ConResultSummary]:
         """Run CBFEM caluclation and return the summary of the results
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: List of connections to calculate and a type of CBFEM analysis
-        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+        :param con_calculation_parameter: List of connections to calculate and a type of CBFEM analysis
+        :type con_calculation_parameter: ConCalculationParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -90,7 +90,7 @@ class CalculationApi:
 
         _param = self._calculate_serialize(
             project_id=project_id,
-            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+            con_calculation_parameter=con_calculation_parameter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -98,7 +98,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]",
+            '200': "List[ConResultSummary]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -115,7 +115,7 @@ class CalculationApi:
     def calculate_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
+        con_calculation_parameter: Annotated[Optional[ConCalculationParameter], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -128,14 +128,14 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]]:
+    ) -> ApiResponse[List[ConResultSummary]]:
         """Run CBFEM caluclation and return the summary of the results
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: List of connections to calculate and a type of CBFEM analysis
-        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+        :param con_calculation_parameter: List of connections to calculate and a type of CBFEM analysis
+        :type con_calculation_parameter: ConCalculationParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -160,7 +160,7 @@ class CalculationApi:
 
         _param = self._calculate_serialize(
             project_id=project_id,
-            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+            con_calculation_parameter=con_calculation_parameter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -168,7 +168,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]",
+            '200': "List[ConResultSummary]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -185,7 +185,7 @@ class CalculationApi:
     def calculate_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
+        con_calculation_parameter: Annotated[Optional[ConCalculationParameter], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -204,8 +204,8 @@ class CalculationApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: List of connections to calculate and a type of CBFEM analysis
-        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+        :param con_calculation_parameter: List of connections to calculate and a type of CBFEM analysis
+        :type con_calculation_parameter: ConCalculationParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -230,7 +230,7 @@ class CalculationApi:
 
         _param = self._calculate_serialize(
             project_id=project_id,
-            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+            con_calculation_parameter=con_calculation_parameter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -238,7 +238,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]",
+            '200': "List[ConResultSummary]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -250,7 +250,7 @@ class CalculationApi:
     def _calculate_serialize(
         self,
         project_id,
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+        con_calculation_parameter,
         _request_auth,
         _content_type,
         _headers,
@@ -266,7 +266,9 @@ class CalculationApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -276,8 +278,8 @@ class CalculationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api
+        if con_calculation_parameter is not None:
+            _body_params = con_calculation_parameter
 
 
         # set the HTTP header `Accept`
@@ -295,13 +297,7 @@ class CalculationApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -334,7 +330,7 @@ class CalculationApi:
     def get_raw_json_results(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionRestApi service")],
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="Type of requested analysis and connection to calculate")] = None,
+        con_calculation_parameter: Annotated[Optional[ConCalculationParameter], Field(description="Type of requested analysis and connection to calculate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -353,8 +349,8 @@ class CalculationApi:
 
         :param project_id: The unique identifier of the opened connection in the ConnectionRestApi service (required)
         :type project_id: str
-        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Type of requested analysis and connection to calculate
-        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+        :param con_calculation_parameter: Type of requested analysis and connection to calculate
+        :type con_calculation_parameter: ConCalculationParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -379,7 +375,7 @@ class CalculationApi:
 
         _param = self._get_raw_json_results_serialize(
             project_id=project_id,
-            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+            con_calculation_parameter=con_calculation_parameter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -404,7 +400,7 @@ class CalculationApi:
     def get_raw_json_results_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionRestApi service")],
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="Type of requested analysis and connection to calculate")] = None,
+        con_calculation_parameter: Annotated[Optional[ConCalculationParameter], Field(description="Type of requested analysis and connection to calculate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -423,8 +419,8 @@ class CalculationApi:
 
         :param project_id: The unique identifier of the opened connection in the ConnectionRestApi service (required)
         :type project_id: str
-        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Type of requested analysis and connection to calculate
-        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+        :param con_calculation_parameter: Type of requested analysis and connection to calculate
+        :type con_calculation_parameter: ConCalculationParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -449,7 +445,7 @@ class CalculationApi:
 
         _param = self._get_raw_json_results_serialize(
             project_id=project_id,
-            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+            con_calculation_parameter=con_calculation_parameter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -474,7 +470,7 @@ class CalculationApi:
     def get_raw_json_results_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened connection in the ConnectionRestApi service")],
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="Type of requested analysis and connection to calculate")] = None,
+        con_calculation_parameter: Annotated[Optional[ConCalculationParameter], Field(description="Type of requested analysis and connection to calculate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -493,8 +489,8 @@ class CalculationApi:
 
         :param project_id: The unique identifier of the opened connection in the ConnectionRestApi service (required)
         :type project_id: str
-        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Type of requested analysis and connection to calculate
-        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+        :param con_calculation_parameter: Type of requested analysis and connection to calculate
+        :type con_calculation_parameter: ConCalculationParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -519,7 +515,7 @@ class CalculationApi:
 
         _param = self._get_raw_json_results_serialize(
             project_id=project_id,
-            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+            con_calculation_parameter=con_calculation_parameter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -539,7 +535,7 @@ class CalculationApi:
     def _get_raw_json_results_serialize(
         self,
         project_id,
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+        con_calculation_parameter,
         _request_auth,
         _content_type,
         _headers,
@@ -555,7 +551,9 @@ class CalculationApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -565,15 +563,16 @@ class CalculationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api
+        if con_calculation_parameter is not None:
+            _body_params = con_calculation_parameter
 
 
         # set the HTTP header `Accept`
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'text/plain'
+                    'text/plain', 
+                    'application/json'
                 ]
             )
 
@@ -584,13 +583,7 @@ class CalculationApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -623,7 +616,7 @@ class CalculationApi:
     def get_results(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
+        con_calculation_parameter: Annotated[Optional[ConCalculationParameter], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -636,14 +629,14 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[ConnectionConnectionCheckResIdeaRSOpenModel]:
+    ) -> List[ConnectionCheckRes]:
         """Get detailed results of the CBFEM analysis
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: List of connections to calculate and a type of CBFEM analysis
-        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+        :param con_calculation_parameter: List of connections to calculate and a type of CBFEM analysis
+        :type con_calculation_parameter: ConCalculationParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -668,7 +661,7 @@ class CalculationApi:
 
         _param = self._get_results_serialize(
             project_id=project_id,
-            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+            con_calculation_parameter=con_calculation_parameter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -676,7 +669,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ConnectionConnectionCheckResIdeaRSOpenModel]",
+            '200': "List[ConnectionCheckRes]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -693,7 +686,7 @@ class CalculationApi:
     def get_results_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
+        con_calculation_parameter: Annotated[Optional[ConCalculationParameter], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -706,14 +699,14 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[ConnectionConnectionCheckResIdeaRSOpenModel]]:
+    ) -> ApiResponse[List[ConnectionCheckRes]]:
         """Get detailed results of the CBFEM analysis
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: List of connections to calculate and a type of CBFEM analysis
-        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+        :param con_calculation_parameter: List of connections to calculate and a type of CBFEM analysis
+        :type con_calculation_parameter: ConCalculationParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -738,7 +731,7 @@ class CalculationApi:
 
         _param = self._get_results_serialize(
             project_id=project_id,
-            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+            con_calculation_parameter=con_calculation_parameter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -746,7 +739,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ConnectionConnectionCheckResIdeaRSOpenModel]",
+            '200': "List[ConnectionCheckRes]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -763,7 +756,7 @@ class CalculationApi:
     def get_results_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
+        con_calculation_parameter: Annotated[Optional[ConCalculationParameter], Field(description="List of connections to calculate and a type of CBFEM analysis")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -782,8 +775,8 @@ class CalculationApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: List of connections to calculate and a type of CBFEM analysis
-        :type idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+        :param con_calculation_parameter: List of connections to calculate and a type of CBFEM analysis
+        :type con_calculation_parameter: ConCalculationParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -808,7 +801,7 @@ class CalculationApi:
 
         _param = self._get_results_serialize(
             project_id=project_id,
-            idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+            con_calculation_parameter=con_calculation_parameter,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -816,7 +809,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[ConnectionConnectionCheckResIdeaRSOpenModel]",
+            '200': "List[ConnectionCheckRes]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -828,7 +821,7 @@ class CalculationApi:
     def _get_results_serialize(
         self,
         project_id,
-        idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api,
+        con_calculation_parameter,
         _request_auth,
         _content_type,
         _headers,
@@ -844,7 +837,9 @@ class CalculationApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -854,8 +849,8 @@ class CalculationApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api
+        if con_calculation_parameter is not None:
+            _body_params = con_calculation_parameter
 
 
         # set the HTTP header `Accept`
@@ -873,13 +868,7 @@ class CalculationApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )

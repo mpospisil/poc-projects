@@ -33,8 +33,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ConnectionConnectionDataIdeaRSOpenModel</returns>
-        ConnectionConnectionDataIdeaRSOpenModel ExportConnectionData(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>ConnectionData</returns>
+        ConnectionData ExportConnectionData(Guid projectId, int connectionId, int operationIndex = 0);
 
         /// <summary>
         /// Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
@@ -46,8 +46,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ConnectionConnectionDataIdeaRSOpenModel</returns>
-        ApiResponse<ConnectionConnectionDataIdeaRSOpenModel> ExportConnectionDataWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>ApiResponse of ConnectionData</returns>
+        ApiResponse<ConnectionData> ExportConnectionDataWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
         /// <summary>
         /// Export connection to IFC format
         /// </summary>
@@ -55,8 +55,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>SystemIOMemoryStreamSystemPrivateCoreLib</returns>
-        SystemIOMemoryStreamSystemPrivateCoreLib ExportConnectionIFC(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>MemoryStream</returns>
+        MemoryStream ExportConnectionIFC(Guid projectId, int connectionId, int operationIndex = 0);
 
         /// <summary>
         /// Export connection to IFC format
@@ -68,8 +68,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of SystemIOMemoryStreamSystemPrivateCoreLib</returns>
-        ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib> ExportConnectionIFCWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>ApiResponse of MemoryStream</returns>
+        ApiResponse<MemoryStream> ExportConnectionIFCWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
         /// <summary>
         /// Export connection to XML which includes https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs
         /// </summary>
@@ -114,8 +114,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ConnectionConnectionDataIdeaRSOpenModel</returns>
-        System.Threading.Tasks.Task<ConnectionConnectionDataIdeaRSOpenModel> ExportConnectionDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ConnectionData</returns>
+        System.Threading.Tasks.Task<ConnectionData> ExportConnectionDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
@@ -128,8 +128,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ConnectionConnectionDataIdeaRSOpenModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConnectionConnectionDataIdeaRSOpenModel>> ExportConnectionDataWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConnectionData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConnectionData>> ExportConnectionDataWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Export connection to IFC format
         /// </summary>
@@ -141,8 +141,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of SystemIOMemoryStreamSystemPrivateCoreLib</returns>
-        System.Threading.Tasks.Task<SystemIOMemoryStreamSystemPrivateCoreLib> ExportConnectionIFCAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of MemoryStream</returns>
+        System.Threading.Tasks.Task<MemoryStream> ExportConnectionIFCAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Export connection to IFC format
@@ -155,8 +155,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (SystemIOMemoryStreamSystemPrivateCoreLib)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib>> ExportConnectionIFCWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (MemoryStream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<MemoryStream>> ExportConnectionIFCWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Export connection to XML which includes https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs
         /// </summary>
@@ -313,10 +313,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ConnectionConnectionDataIdeaRSOpenModel</returns>
-        public ConnectionConnectionDataIdeaRSOpenModel ExportConnectionData(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns>ConnectionData</returns>
+        public ConnectionData ExportConnectionData(Guid projectId, int connectionId, int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<ConnectionConnectionDataIdeaRSOpenModel> localVarResponse = ExportConnectionDataWithHttpInfo(projectId, connectionId);
+            connection_restapi_client_poc.Client.ApiResponse<ConnectionData> localVarResponse = ExportConnectionDataWithHttpInfo(projectId, connectionId);
             return localVarResponse.Data;
         }
 
@@ -327,8 +327,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ConnectionConnectionDataIdeaRSOpenModel</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConnectionConnectionDataIdeaRSOpenModel> ExportConnectionDataWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns>ApiResponse of ConnectionData</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConnectionData> ExportConnectionDataWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -337,149 +337,147 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/xml"
-            };
-
-            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-
-            localVarRequestOptions.Operation = "ExportApi.ExportConnectionData";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<ConnectionConnectionDataIdeaRSOpenModel>("/api/1/projects/{projectId}/connections/{connectionId}/export-iom-connection-data", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ExportConnectionData", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection 
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ConnectionConnectionDataIdeaRSOpenModel</returns>
-        public async System.Threading.Tasks.Task<ConnectionConnectionDataIdeaRSOpenModel> ExportConnectionDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            connection_restapi_client_poc.Client.ApiResponse<ConnectionConnectionDataIdeaRSOpenModel> localVarResponse = await ExportConnectionDataWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection 
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ConnectionConnectionDataIdeaRSOpenModel)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConnectionConnectionDataIdeaRSOpenModel>> ExportConnectionDataWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/xml"
-            };
-
-            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-
-            localVarRequestOptions.Operation = "ExportApi.ExportConnectionData";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ConnectionConnectionDataIdeaRSOpenModel>("/api/1/projects/{projectId}/connections/{connectionId}/export-iom-connection-data", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ExportConnectionData", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Export connection to IFC format 
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>SystemIOMemoryStreamSystemPrivateCoreLib</returns>
-        public SystemIOMemoryStreamSystemPrivateCoreLib ExportConnectionIFC(Guid projectId, int connectionId, int operationIndex = 0)
-        {
-            connection_restapi_client_poc.Client.ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib> localVarResponse = ExportConnectionIFCWithHttpInfo(projectId, connectionId);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Export connection to IFC format 
-        /// </summary>
-        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of SystemIOMemoryStreamSystemPrivateCoreLib</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib> ExportConnectionIFCWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
-        {
-            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "text/plain",
                 "application/xml",
-                "text/xml",
-                "application/json",
-                "text/json"
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+
+            localVarRequestOptions.Operation = "ExportApi.ExportConnectionData";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ConnectionData>("/api/1/projects/{projectId}/connections/{connectionId}/export-iom-connection-data", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportConnectionData", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ConnectionData</returns>
+        public async System.Threading.Tasks.Task<ConnectionData> ExportConnectionDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            connection_restapi_client_poc.Client.ApiResponse<ConnectionData> localVarResponse = await ExportConnectionDataWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ConnectionData)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConnectionData>> ExportConnectionDataWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/xml",
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+
+            localVarRequestOptions.Operation = "ExportApi.ExportConnectionData";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ConnectionData>("/api/1/projects/{projectId}/connections/{connectionId}/export-iom-connection-data", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ExportConnectionData", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Export connection to IFC format 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>MemoryStream</returns>
+        public MemoryStream ExportConnectionIFC(Guid projectId, int connectionId, int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.ApiResponse<MemoryStream> localVarResponse = ExportConnectionIFCWithHttpInfo(projectId, connectionId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Export connection to IFC format 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of MemoryStream</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<MemoryStream> ExportConnectionIFCWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -502,7 +500,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<SystemIOMemoryStreamSystemPrivateCoreLib>("/api/1/projects/{projectId}/connections/{connectionId}/export-ifc", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<MemoryStream>("/api/1/projects/{projectId}/connections/{connectionId}/export-ifc", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ExportConnectionIFC", localVarResponse);
@@ -523,10 +521,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of SystemIOMemoryStreamSystemPrivateCoreLib</returns>
-        public async System.Threading.Tasks.Task<SystemIOMemoryStreamSystemPrivateCoreLib> ExportConnectionIFCAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of MemoryStream</returns>
+        public async System.Threading.Tasks.Task<MemoryStream> ExportConnectionIFCAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib> localVarResponse = await ExportConnectionIFCWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<MemoryStream> localVarResponse = await ExportConnectionIFCWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -538,8 +536,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (SystemIOMemoryStreamSystemPrivateCoreLib)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<SystemIOMemoryStreamSystemPrivateCoreLib>> ExportConnectionIFCWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (MemoryStream)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<MemoryStream>> ExportConnectionIFCWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -549,11 +547,7 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/xml",
-                "text/xml",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -576,7 +570,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<SystemIOMemoryStreamSystemPrivateCoreLib>("/api/1/projects/{projectId}/connections/{connectionId}/export-ifc", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<MemoryStream>("/api/1/projects/{projectId}/connections/{connectionId}/export-ifc", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

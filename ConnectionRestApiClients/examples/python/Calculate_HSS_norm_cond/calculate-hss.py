@@ -34,31 +34,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
         # Add your ClientId to HTTP header
         api_client.default_headers['ClientId'] = clientId
-        api_client.default_headers['Content-Type'] = 'application/json'
-
-
-        # temporary workaround to upload the project file
-        # it should be done directly by client later
-        url = urljoin(baseUrl, 'api/1/projects/open')
-
-        # Prepare headers if necessary (optional)
-        headers = {
-            "Content-Type": "application/octet-stream",
-            "ClientId": clientId
-        }
-
-        # Send the POST request with the byte array
-        response = requests.post(url, data=byte_array, headers=headers)
-        print(response.status_code)
-
-        if response.status_code == 200:
-            # Parse the JSON response
-            json_response = response.json()       
-            # Get the projectId of the uploaded project from the response 
-            project_id = json_response["projectId"]
-        else:
-            print("Error uploading the project file")
-            raise Exception("Error uploading the project file")
+        
+        # Override the default Content-Type for this specific call
+        uploadRes = api_project.upload_idea_con(idea_con_file=byte_array, _content_type='multipart/form-data')
+        project_id = uploadRes.project_id
 
         try:
             # Get the project data
@@ -80,7 +59,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             api_calculation = connection_restapi_client_poc.CalculationApi(api_client)
 
             # run stress-strain CBFEM analysis for the connection id = 1
-            calcParams = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi()
+            calcParams = connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
             calcParams.connection_ids = [connection1.id]
 
             # run stress-strain analysis for the connection

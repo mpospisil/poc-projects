@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **calculate**
-> List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi] calculate(project_id, idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api)
+> List[ConResultSummary] calculate(project_id, con_calculation_parameter=con_calculation_parameter)
 
 Run CBFEM caluclation and return the summary of the results
 
@@ -19,8 +19,8 @@ Run CBFEM caluclation and return the summary of the results
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_result_summary_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_calculation_parameter import ConCalculationParameter
+from connection_restapi_client_poc.models.con_result_summary import ConResultSummary
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -36,11 +36,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.CalculationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi | List of connections to calculate and a type of CBFEM analysis (optional)
+    con_calculation_parameter = connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
 
     try:
         # Run CBFEM caluclation and return the summary of the results
-        api_response = api_instance.calculate(project_id, idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api)
+        api_response = api_instance.calculate(project_id, con_calculation_parameter=con_calculation_parameter)
         print("The response of CalculationApi->calculate:\n")
         pprint(api_response)
     except Exception as e:
@@ -55,11 +55,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
- **idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi.md)| List of connections to calculate and a type of CBFEM analysis | [optional] 
+ **con_calculation_parameter** | [**ConCalculationParameter**](ConCalculationParameter.md)| List of connections to calculate and a type of CBFEM analysis | [optional] 
 
 ### Return type
 
-[**List[IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi.md)
+[**List[ConResultSummary]**](ConResultSummary.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -79,7 +79,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_raw_json_results**
-> str get_raw_json_results(project_id, idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api)
+> str get_raw_json_results(project_id, con_calculation_parameter=con_calculation_parameter)
 
 Get json string which represents raw CBFEM results (an instance of CheckResultsData)
 
@@ -88,7 +88,7 @@ Get json string which represents raw CBFEM results (an instance of CheckResultsD
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_calculation_parameter import ConCalculationParameter
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -104,11 +104,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.CalculationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened connection in the ConnectionRestApi service
-    idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi | Type of requested analysis and connection to calculate (optional)
+    con_calculation_parameter = connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | Type of requested analysis and connection to calculate (optional)
 
     try:
         # Get json string which represents raw CBFEM results (an instance of CheckResultsData)
-        api_response = api_instance.get_raw_json_results(project_id, idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api)
+        api_response = api_instance.get_raw_json_results(project_id, con_calculation_parameter=con_calculation_parameter)
         print("The response of CalculationApi->get_raw_json_results:\n")
         pprint(api_response)
     except Exception as e:
@@ -123,7 +123,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened connection in the ConnectionRestApi service | 
- **idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi.md)| Type of requested analysis and connection to calculate | [optional] 
+ **con_calculation_parameter** | [**ConCalculationParameter**](ConCalculationParameter.md)| Type of requested analysis and connection to calculate | [optional] 
 
 ### Return type
 
@@ -135,8 +135,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json
 
 ### HTTP response details
 
@@ -147,7 +147,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_results**
-> List[ConnectionConnectionCheckResIdeaRSOpenModel] get_results(project_id, idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api)
+> List[ConnectionCheckRes] get_results(project_id, con_calculation_parameter=con_calculation_parameter)
 
 Get detailed results of the CBFEM analysis
 
@@ -156,8 +156,8 @@ Get detailed results of the CBFEM analysis
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.connection_connection_check_res_idea_rs_open_model import ConnectionConnectionCheckResIdeaRSOpenModel
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_calculation_parameter import ConCalculationParameter
+from connection_restapi_client_poc.models.connection_check_res import ConnectionCheckRes
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -173,11 +173,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.CalculationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi | List of connections to calculate and a type of CBFEM analysis (optional)
+    con_calculation_parameter = connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
 
     try:
         # Get detailed results of the CBFEM analysis
-        api_response = api_instance.get_results(project_id, idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api)
+        api_response = api_instance.get_results(project_id, con_calculation_parameter=con_calculation_parameter)
         print("The response of CalculationApi->get_results:\n")
         pprint(api_response)
     except Exception as e:
@@ -192,11 +192,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
- **idea_stati_ca_api_connection_model_con_calculation_parameter_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi.md)| List of connections to calculate and a type of CBFEM analysis | [optional] 
+ **con_calculation_parameter** | [**ConCalculationParameter**](ConCalculationParameter.md)| List of connections to calculate and a type of CBFEM analysis | [optional] 
 
 ### Return type
 
-[**List[ConnectionConnectionCheckResIdeaRSOpenModel]**](ConnectionConnectionCheckResIdeaRSOpenModel.md)
+[**List[ConnectionCheckRes]**](ConnectionCheckRes.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

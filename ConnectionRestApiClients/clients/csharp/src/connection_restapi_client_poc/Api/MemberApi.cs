@@ -33,8 +33,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its members</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt;</returns>
-        List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> GetAllMemberData(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>List&lt;ConMember&gt;</returns>
+        List<ConMember> GetAllMemberData(Guid projectId, int connectionId, int operationIndex = 0);
 
         /// <summary>
         /// Get information about all members in the connection
@@ -46,8 +46,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its members</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt;</returns>
-        ApiResponse<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> GetAllMemberDataWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;ConMember&gt;</returns>
+        ApiResponse<List<ConMember>> GetAllMemberDataWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
         /// <summary>
         /// Get information about the requires member in the connection
         /// </summary>
@@ -56,8 +56,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId">Id of the connection to get its member</param>
         /// <param name="memberId">Id of the requested member in the connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi GetMemberData(Guid projectId, int connectionId, int memberId, int operationIndex = 0);
+        /// <returns>ConMember</returns>
+        ConMember GetMemberData(Guid projectId, int connectionId, int memberId, int operationIndex = 0);
 
         /// <summary>
         /// Get information about the requires member in the connection
@@ -70,8 +70,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId">Id of the connection to get its member</param>
         /// <param name="memberId">Id of the requested member in the connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> GetMemberDataWithHttpInfo(Guid projectId, int connectionId, int memberId, int operationIndex = 0);
+        /// <returns>ApiResponse of ConMember</returns>
+        ApiResponse<ConMember> GetMemberDataWithHttpInfo(Guid projectId, int connectionId, int memberId, int operationIndex = 0);
         /// <summary>
         /// Update the member in the connection by newMemberData
         /// </summary>
@@ -79,10 +79,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
         /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi">New mwmbwr data (optional)</param>
+        /// <param name="conMember">New mwmbwr data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi UpdateMember(Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ConMember</returns>
+        ConMember UpdateMember(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0);
 
         /// <summary>
         /// Update the member in the connection by newMemberData
@@ -94,10 +94,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
         /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi">New mwmbwr data (optional)</param>
+        /// <param name="conMember">New mwmbwr data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ApiResponse of ConMember</returns>
+        ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -118,8 +118,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId">Id of the connection to get its members</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt;</returns>
-        System.Threading.Tasks.Task<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> GetAllMemberDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;ConMember&gt;</returns>
+        System.Threading.Tasks.Task<List<ConMember>> GetAllMemberDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get information about all members in the connection
@@ -132,8 +132,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId">Id of the connection to get its members</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>>> GetAllMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;ConMember&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ConMember>>> GetAllMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get information about the requires member in the connection
         /// </summary>
@@ -146,8 +146,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="memberId">Id of the requested member in the connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> GetMemberDataAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ConMember</returns>
+        System.Threading.Tasks.Task<ConMember> GetMemberDataAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get information about the requires member in the connection
@@ -161,8 +161,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="memberId">Id of the requested member in the connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> GetMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConMember)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConMember>> GetMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update the member in the connection by newMemberData
         /// </summary>
@@ -173,11 +173,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
         /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi">New mwmbwr data (optional)</param>
+        /// <param name="conMember">New mwmbwr data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ConMember</returns>
+        System.Threading.Tasks.Task<ConMember> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update the member in the connection by newMemberData
@@ -189,11 +189,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
         /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi">New mwmbwr data (optional)</param>
+        /// <param name="conMember">New mwmbwr data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConMember)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConMember>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -321,10 +321,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its members</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt;</returns>
-        public List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> GetAllMemberData(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns>List&lt;ConMember&gt;</returns>
+        public List<ConMember> GetAllMemberData(Guid projectId, int connectionId, int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> localVarResponse = GetAllMemberDataWithHttpInfo(projectId, connectionId);
+            connection_restapi_client_poc.Client.ApiResponse<List<ConMember>> localVarResponse = GetAllMemberDataWithHttpInfo(projectId, connectionId);
             return localVarResponse.Data;
         }
 
@@ -335,8 +335,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its members</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt;</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> GetAllMemberDataWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;ConMember&gt;</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<List<ConMember>> GetAllMemberDataWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -368,7 +368,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>>("/api/1/projects/{projectId}/connections/{connectionId}/members", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<ConMember>>("/api/1/projects/{projectId}/connections/{connectionId}/members", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAllMemberData", localVarResponse);
@@ -389,10 +389,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId">Id of the connection to get its members</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt;</returns>
-        public async System.Threading.Tasks.Task<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> GetAllMemberDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;ConMember&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ConMember>> GetAllMemberDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> localVarResponse = await GetAllMemberDataWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<List<ConMember>> localVarResponse = await GetAllMemberDataWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -404,8 +404,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId">Id of the connection to get its members</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt;)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>>> GetAllMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;ConMember&gt;)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ConMember>>> GetAllMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -438,7 +438,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>>("/api/1/projects/{projectId}/connections/{connectionId}/members", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ConMember>>("/api/1/projects/{projectId}/connections/{connectionId}/members", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -460,10 +460,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId">Id of the connection to get its member</param>
         /// <param name="memberId">Id of the requested member in the connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi GetMemberData(Guid projectId, int connectionId, int memberId, int operationIndex = 0)
+        /// <returns>ConMember</returns>
+        public ConMember GetMemberData(Guid projectId, int connectionId, int memberId, int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> localVarResponse = GetMemberDataWithHttpInfo(projectId, connectionId, memberId);
+            connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = GetMemberDataWithHttpInfo(projectId, connectionId, memberId);
             return localVarResponse.Data;
         }
 
@@ -475,8 +475,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId">Id of the connection to get its member</param>
         /// <param name="memberId">Id of the requested member in the connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> GetMemberDataWithHttpInfo(Guid projectId, int connectionId, int memberId, int operationIndex = 0)
+        /// <returns>ApiResponse of ConMember</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConMember> GetMemberDataWithHttpInfo(Guid projectId, int connectionId, int memberId, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -509,7 +509,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ConMember>("/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetMemberData", localVarResponse);
@@ -531,10 +531,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="memberId">Id of the requested member in the connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> GetMemberDataAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ConMember</returns>
+        public async System.Threading.Tasks.Task<ConMember> GetMemberDataAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> localVarResponse = await GetMemberDataWithHttpInfoAsync(projectId, connectionId, memberId, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = await GetMemberDataWithHttpInfoAsync(projectId, connectionId, memberId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -547,8 +547,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="memberId">Id of the requested member in the connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> GetMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ConMember)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMember>> GetMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -582,7 +582,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ConMember>("/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -603,12 +603,12 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
         /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi">New mwmbwr data (optional)</param>
+        /// <param name="conMember">New mwmbwr data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi UpdateMember(Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ConMember</returns>
+        public ConMember UpdateMember(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> localVarResponse = UpdateMemberWithHttpInfo(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = UpdateMemberWithHttpInfo(projectId, connectionId, memberId, conMember);
             return localVarResponse.Data;
         }
 
@@ -619,18 +619,15 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
         /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi">New mwmbwr data (optional)</param>
+        /// <param name="conMember">New mwmbwr data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ApiResponse of ConMember</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -653,14 +650,14 @@ namespace connection_restapi_client_poc.Api
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("memberId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(memberId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMember;
 
             localVarRequestOptions.Operation = "MemberApi.UpdateMember";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<ConMember>("/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateMember", localVarResponse);
@@ -680,13 +677,13 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
         /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi">New mwmbwr data (optional)</param>
+        /// <param name="conMember">New mwmbwr data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ConMember</returns>
+        public async System.Threading.Tasks.Task<ConMember> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> localVarResponse = await UpdateMemberWithHttpInfoAsync(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = await UpdateMemberWithHttpInfoAsync(projectId, connectionId, memberId, conMember, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -697,20 +694,17 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
         /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi">New mwmbwr data (optional)</param>
+        /// <param name="conMember">New mwmbwr data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ConMember)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMember>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -733,14 +727,14 @@ namespace connection_restapi_client_poc.Api
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("memberId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(memberId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMember;
 
             localVarRequestOptions.Operation = "MemberApi.UpdateMember";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<ConMember>("/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

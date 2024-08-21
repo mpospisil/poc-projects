@@ -18,8 +18,8 @@ from typing_extensions import Annotated
 
 from pydantic import StrictInt, StrictStr
 from typing import Optional
-from connection_restapi_client_poc.models.connection_connection_data_idea_rs_open_model import ConnectionConnectionDataIdeaRSOpenModel
-from connection_restapi_client_poc.models.system_io_memory_stream_system_private_core_lib import SystemIOMemoryStreamSystemPrivateCoreLib
+from connection_restapi_client_poc.models.connection_data import ConnectionData
+from connection_restapi_client_poc.models.memory_stream import MemoryStream
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -56,7 +56,7 @@ class ExportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ConnectionConnectionDataIdeaRSOpenModel:
+    ) -> ConnectionData:
         """Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
 
 
@@ -96,7 +96,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConnectionConnectionDataIdeaRSOpenModel",
+            '200': "ConnectionData",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -126,7 +126,7 @@ class ExportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ConnectionConnectionDataIdeaRSOpenModel]:
+    ) -> ApiResponse[ConnectionData]:
         """Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection
 
 
@@ -166,7 +166,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConnectionConnectionDataIdeaRSOpenModel",
+            '200': "ConnectionData",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -236,7 +236,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConnectionConnectionDataIdeaRSOpenModel",
+            '200': "ConnectionData",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -264,7 +264,9 @@ class ExportApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -282,7 +284,8 @@ class ExportApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/xml'
+                    'application/xml', 
+                    'application/json'
                 ]
             )
 
@@ -326,7 +329,7 @@ class ExportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SystemIOMemoryStreamSystemPrivateCoreLib:
+    ) -> MemoryStream:
         """Export connection to IFC format
 
 
@@ -366,7 +369,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SystemIOMemoryStreamSystemPrivateCoreLib",
+            '200': "MemoryStream",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -396,7 +399,7 @@ class ExportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SystemIOMemoryStreamSystemPrivateCoreLib]:
+    ) -> ApiResponse[MemoryStream]:
         """Export connection to IFC format
 
 
@@ -436,7 +439,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SystemIOMemoryStreamSystemPrivateCoreLib",
+            '200': "MemoryStream",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -506,7 +509,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SystemIOMemoryStreamSystemPrivateCoreLib",
+            '200': "MemoryStream",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -534,7 +537,9 @@ class ExportApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -552,11 +557,7 @@ class ExportApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'text/plain', 
-                    'application/xml', 
-                    'text/xml', 
-                    'application/json', 
-                    'text/json'
+                    'application/json'
                 ]
             )
 
@@ -821,7 +822,9 @@ class ExportApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters

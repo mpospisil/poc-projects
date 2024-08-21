@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **add_bolt_assembly**
-> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi add_bolt_assembly(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api)
+> ConMprlElement add_bolt_assembly(project_id, connection_id, con_mprl_element=con_mprl_element)
 
 Add bolt assembly to the project
 
@@ -29,7 +29,7 @@ Add bolt assembly to the project
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api import IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -46,11 +46,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | 
-    idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi | Definition of a new bolt assemby to be added to the project (optional)
+    con_mprl_element = connection_restapi_client_poc.ConMprlElement() # ConMprlElement | Definition of a new bolt assemby to be added to the project (optional)
 
     try:
         # Add bolt assembly to the project
-        api_response = api_instance.add_bolt_assembly(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api)
+        api_response = api_instance.add_bolt_assembly(project_id, connection_id, con_mprl_element=con_mprl_element)
         print("The response of MaterialApi->add_bolt_assembly:\n")
         pprint(api_response)
     except Exception as e:
@@ -66,11 +66,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)| Definition of a new bolt assemby to be added to the project | [optional] 
+ **con_mprl_element** | [**ConMprlElement**](ConMprlElement.md)| Definition of a new bolt assemby to be added to the project | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)
+[**ConMprlElement**](ConMprlElement.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -90,7 +90,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_cross_section**
-> IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi add_cross_section(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api)
+> ConMprlCrossSection add_cross_section(project_id, connection_id, con_mprl_cross_section=con_mprl_cross_section)
 
 Add cross section to the project
 
@@ -99,7 +99,7 @@ Add cross section to the project
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api import IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_mprl_cross_section import ConMprlCrossSection
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -116,11 +116,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | 
-    idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi | Definition of a new cross-section to be added to the project (optional)
+    con_mprl_cross_section = connection_restapi_client_poc.ConMprlCrossSection() # ConMprlCrossSection | Definition of a new cross-section to be added to the project (optional)
 
     try:
         # Add cross section to the project
-        api_response = api_instance.add_cross_section(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api)
+        api_response = api_instance.add_cross_section(project_id, connection_id, con_mprl_cross_section=con_mprl_cross_section)
         print("The response of MaterialApi->add_cross_section:\n")
         pprint(api_response)
     except Exception as e:
@@ -136,11 +136,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi.md)| Definition of a new cross-section to be added to the project | [optional] 
+ **con_mprl_cross_section** | [**ConMprlCrossSection**](ConMprlCrossSection.md)| Definition of a new cross-section to be added to the project | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi.md)
+[**ConMprlCrossSection**](ConMprlCrossSection.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -160,7 +160,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_material_bolt_grade**
-> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi add_material_bolt_grade(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api)
+> ConMprlElement add_material_bolt_grade(project_id, connection_id, con_mprl_element=con_mprl_element)
 
 Add material to the project
 
@@ -169,7 +169,7 @@ Add material to the project
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api import IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -186,11 +186,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | 
-    idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi | Definition of a new material to be added to the project (optional)
+    con_mprl_element = connection_restapi_client_poc.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
 
     try:
         # Add material to the project
-        api_response = api_instance.add_material_bolt_grade(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api)
+        api_response = api_instance.add_material_bolt_grade(project_id, connection_id, con_mprl_element=con_mprl_element)
         print("The response of MaterialApi->add_material_bolt_grade:\n")
         pprint(api_response)
     except Exception as e:
@@ -206,11 +206,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)| Definition of a new material to be added to the project | [optional] 
+ **con_mprl_element** | [**ConMprlElement**](ConMprlElement.md)| Definition of a new material to be added to the project | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)
+[**ConMprlElement**](ConMprlElement.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -230,7 +230,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_material_concrete**
-> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi add_material_concrete(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api)
+> ConMprlElement add_material_concrete(project_id, connection_id, con_mprl_element=con_mprl_element)
 
 Add material to the project
 
@@ -239,7 +239,7 @@ Add material to the project
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api import IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -256,11 +256,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | 
-    idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi | Definition of a new material to be added to the project (optional)
+    con_mprl_element = connection_restapi_client_poc.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
 
     try:
         # Add material to the project
-        api_response = api_instance.add_material_concrete(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api)
+        api_response = api_instance.add_material_concrete(project_id, connection_id, con_mprl_element=con_mprl_element)
         print("The response of MaterialApi->add_material_concrete:\n")
         pprint(api_response)
     except Exception as e:
@@ -276,11 +276,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)| Definition of a new material to be added to the project | [optional] 
+ **con_mprl_element** | [**ConMprlElement**](ConMprlElement.md)| Definition of a new material to be added to the project | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)
+[**ConMprlElement**](ConMprlElement.md)
 
 ### Authorization
 
@@ -288,7 +288,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -300,7 +300,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_material_steel**
-> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi add_material_steel(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api)
+> ConMprlElement add_material_steel(project_id, connection_id, con_mprl_element=con_mprl_element)
 
 Add material to the project
 
@@ -309,7 +309,7 @@ Add material to the project
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api import IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -326,11 +326,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | 
-    idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi | Definition of a new material to be added to the project (optional)
+    con_mprl_element = connection_restapi_client_poc.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
 
     try:
         # Add material to the project
-        api_response = api_instance.add_material_steel(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api)
+        api_response = api_instance.add_material_steel(project_id, connection_id, con_mprl_element=con_mprl_element)
         print("The response of MaterialApi->add_material_steel:\n")
         pprint(api_response)
     except Exception as e:
@@ -346,11 +346,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)| Definition of a new material to be added to the project | [optional] 
+ **con_mprl_element** | [**ConMprlElement**](ConMprlElement.md)| Definition of a new material to be added to the project | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)
+[**ConMprlElement**](ConMprlElement.md)
 
 ### Authorization
 
@@ -358,7 +358,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -370,7 +370,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_material_weld**
-> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi add_material_weld(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api)
+> ConMprlElement add_material_weld(project_id, connection_id, con_mprl_element=con_mprl_element)
 
 Add material to the project
 
@@ -379,7 +379,7 @@ Add material to the project
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api import IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -396,11 +396,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | 
-    idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi | Definition of a new material to be added to the project (optional)
+    con_mprl_element = connection_restapi_client_poc.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
 
     try:
         # Add material to the project
-        api_response = api_instance.add_material_weld(project_id, connection_id, idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api)
+        api_response = api_instance.add_material_weld(project_id, connection_id, con_mprl_element=con_mprl_element)
         print("The response of MaterialApi->add_material_weld:\n")
         pprint(api_response)
     except Exception as e:
@@ -416,11 +416,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)| Definition of a new material to be added to the project | [optional] 
+ **con_mprl_element** | [**ConMprlElement**](ConMprlElement.md)| Definition of a new material to be added to the project | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi.md)
+[**ConMprlElement**](ConMprlElement.md)
 
 ### Authorization
 
@@ -428,7 +428,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

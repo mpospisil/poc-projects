@@ -19,7 +19,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_member import ConMember
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -56,7 +56,7 @@ class MemberApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]:
+    ) -> List[ConMember]:
         """Get information about all members in the connection
 
 
@@ -96,7 +96,7 @@ class MemberApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]",
+            '200': "List[ConMember]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -126,7 +126,7 @@ class MemberApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]]:
+    ) -> ApiResponse[List[ConMember]]:
         """Get information about all members in the connection
 
 
@@ -166,7 +166,7 @@ class MemberApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]",
+            '200': "List[ConMember]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -236,7 +236,7 @@ class MemberApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]",
+            '200': "List[ConMember]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -264,7 +264,9 @@ class MemberApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -327,7 +329,7 @@ class MemberApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi:
+    ) -> ConMember:
         """Get information about the requires member in the connection
 
 
@@ -370,7 +372,7 @@ class MemberApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi",
+            '200': "ConMember",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -401,7 +403,7 @@ class MemberApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]:
+    ) -> ApiResponse[ConMember]:
         """Get information about the requires member in the connection
 
 
@@ -444,7 +446,7 @@ class MemberApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi",
+            '200': "ConMember",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -518,7 +520,7 @@ class MemberApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi",
+            '200': "ConMember",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -547,7 +549,9 @@ class MemberApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -600,7 +604,7 @@ class MemberApi:
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is membar memberId")],
         member_id: Annotated[StrictInt, Field(description="Id of the member to be ubdated in the connection")],
-        idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi], Field(description="New mwmbwr data")] = None,
+        con_member: Annotated[Optional[ConMember], Field(description="New mwmbwr data")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -613,7 +617,7 @@ class MemberApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi:
+    ) -> ConMember:
         """Update the member in the connection by newMemberData
 
 
@@ -623,8 +627,8 @@ class MemberApi:
         :type connection_id: int
         :param member_id: Id of the member to be ubdated in the connection (required)
         :type member_id: int
-        :param idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: New mwmbwr data
-        :type idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
+        :param con_member: New mwmbwr data
+        :type con_member: ConMember
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -651,7 +655,7 @@ class MemberApi:
             project_id=project_id,
             connection_id=connection_id,
             member_id=member_id,
-            idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api,
+            con_member=con_member,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -659,7 +663,7 @@ class MemberApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi",
+            '200': "ConMember",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -678,7 +682,7 @@ class MemberApi:
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is membar memberId")],
         member_id: Annotated[StrictInt, Field(description="Id of the member to be ubdated in the connection")],
-        idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi], Field(description="New mwmbwr data")] = None,
+        con_member: Annotated[Optional[ConMember], Field(description="New mwmbwr data")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -691,7 +695,7 @@ class MemberApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]:
+    ) -> ApiResponse[ConMember]:
         """Update the member in the connection by newMemberData
 
 
@@ -701,8 +705,8 @@ class MemberApi:
         :type connection_id: int
         :param member_id: Id of the member to be ubdated in the connection (required)
         :type member_id: int
-        :param idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: New mwmbwr data
-        :type idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
+        :param con_member: New mwmbwr data
+        :type con_member: ConMember
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -729,7 +733,7 @@ class MemberApi:
             project_id=project_id,
             connection_id=connection_id,
             member_id=member_id,
-            idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api,
+            con_member=con_member,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -737,7 +741,7 @@ class MemberApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi",
+            '200': "ConMember",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -756,7 +760,7 @@ class MemberApi:
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is membar memberId")],
         member_id: Annotated[StrictInt, Field(description="Id of the member to be ubdated in the connection")],
-        idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi], Field(description="New mwmbwr data")] = None,
+        con_member: Annotated[Optional[ConMember], Field(description="New mwmbwr data")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -779,8 +783,8 @@ class MemberApi:
         :type connection_id: int
         :param member_id: Id of the member to be ubdated in the connection (required)
         :type member_id: int
-        :param idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: New mwmbwr data
-        :type idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
+        :param con_member: New mwmbwr data
+        :type con_member: ConMember
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -807,7 +811,7 @@ class MemberApi:
             project_id=project_id,
             connection_id=connection_id,
             member_id=member_id,
-            idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api,
+            con_member=con_member,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -815,7 +819,7 @@ class MemberApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi",
+            '200': "ConMember",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -829,7 +833,7 @@ class MemberApi:
         project_id,
         connection_id,
         member_id,
-        idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api,
+        con_member,
         _request_auth,
         _content_type,
         _headers,
@@ -845,7 +849,9 @@ class MemberApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -859,8 +865,8 @@ class MemberApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api
+        if con_member is not None:
+            _body_params = con_member
 
 
         # set the HTTP header `Accept`
@@ -878,10 +884,7 @@ class MemberApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **get_all_member_data**
-> List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi] get_all_member_data(project_id, connection_id)
+> List[ConMember] get_all_member_data(project_id, connection_id)
 
 Get information about all members in the connection
 
@@ -19,7 +19,7 @@ Get information about all members in the connection
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_member import ConMember
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi.md)
+[**List[ConMember]**](ConMember.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_member_data**
-> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi get_member_data(project_id, connection_id, member_id)
+> ConMember get_member_data(project_id, connection_id, member_id)
 
 Get information about the requires member in the connection
 
@@ -87,7 +87,7 @@ Get information about the requires member in the connection
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_member import ConMember
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi.md)
+[**ConMember**](ConMember.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_member**
-> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi update_member(project_id, connection_id, member_id, idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api)
+> ConMember update_member(project_id, connection_id, member_id, con_member=con_member)
 
 Update the member in the connection by newMemberData
 
@@ -157,7 +157,7 @@ Update the member in the connection by newMemberData
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_member import ConMember
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -175,11 +175,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to to update is membar memberId
     member_id = 56 # int | Id of the member to be ubdated in the connection
-    idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi | New mwmbwr data (optional)
+    con_member = connection_restapi_client_poc.ConMember() # ConMember | New mwmbwr data (optional)
 
     try:
         # Update the member in the connection by newMemberData
-        api_response = api_instance.update_member(project_id, connection_id, member_id, idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api)
+        api_response = api_instance.update_member(project_id, connection_id, member_id, con_member=con_member)
         print("The response of MemberApi->update_member:\n")
         pprint(api_response)
     except Exception as e:
@@ -196,11 +196,11 @@ Name | Type | Description  | Notes
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**| Id of the connection to to update is membar memberId | 
  **member_id** | **int**| Id of the member to be ubdated in the connection | 
- **idea_stati_ca_api_connection_model_con_member_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi.md)| New mwmbwr data | [optional] 
+ **con_member** | [**ConMember**](ConMember.md)| New mwmbwr data | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi.md)
+[**ConMember**](ConMember.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

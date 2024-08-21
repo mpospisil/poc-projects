@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **delete_operations**
-> MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore delete_operations(project_id, connection_id)
+> OkObjectResult delete_operations(project_id, connection_id)
 
 Delete all operations for the connection
 
@@ -23,7 +23,7 @@ Delete all operations for the connection
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.microsoft_asp_net_core_mvc_ok_object_result_microsoft_asp_net_core_mvc_core import MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore
+from connection_restapi_client_poc.models.ok_object_result import OkObjectResult
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore**](MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore.md)
+[**OkObjectResult**](OkObjectResult.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -82,7 +82,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_connections_data**
-> List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi] get_all_connections_data(project_id)
+> List[ConConnection] get_all_connections_data(project_id)
 
 Get data about all connections in the project
 
@@ -91,7 +91,7 @@ Get data about all connections in the project
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_connection import ConConnection
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)
+[**List[ConConnection]**](ConConnection.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_connection_data**
-> IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi get_connection_data(project_id, connection_id)
+> ConConnection get_connection_data(project_id, connection_id)
 
 Get data about a specific connection in the project
 
@@ -157,7 +157,7 @@ Get data about a specific connection in the project
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_connection import ConConnection
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)
+[**ConConnection**](ConConnection.md)
 
 ### Authorization
 
@@ -216,7 +216,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_missing_welds**
-> List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi] get_missing_welds(project_id, connection_id)
+> List[ConMissingWeld] get_missing_welds(project_id, connection_id)
 
 Get missing welds in the connection
 
@@ -225,7 +225,7 @@ Get missing welds in the connection
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_missing_weld_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_missing_weld import ConMissingWeld
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi.md)
+[**List[ConMissingWeld]**](ConMissingWeld.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_operations**
-> List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi] get_operations(project_id, connection_id)
+> List[ConOperation] get_operations(project_id, connection_id)
 
 Get the list of operations for the connection
 
@@ -293,7 +293,7 @@ Get the list of operations for the connection
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_operation_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_operation import ConOperation
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi.md)
+[**List[ConOperation]**](ConOperation.md)
 
 ### Authorization
 
@@ -352,7 +352,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_production_cost**
-> IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi get_production_cost(project_id, connection_id)
+> ConProductionCost get_production_cost(project_id, connection_id)
 
 Get production cost of the connection
 
@@ -361,7 +361,7 @@ Get production cost of the connection
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_production_cost_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_production_cost import ConProductionCost
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi.md)
+[**ConProductionCost**](ConProductionCost.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_connection_data**
-> IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi update_connection_data(project_id, connection_id, idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api)
+> ConConnection update_connection_data(project_id, connection_id, con_connection=con_connection)
 
 Update data of a specific connection in the project
 
@@ -429,7 +429,7 @@ Update data of a specific connection in the project
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_connection import ConConnection
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -446,11 +446,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.ConnectionApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to be update
-    idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi | New connection data to be set (optional)
+    con_connection = connection_restapi_client_poc.ConConnection() # ConConnection | New connection data to be set (optional)
 
     try:
         # Update data of a specific connection in the project
-        api_response = api_instance.update_connection_data(project_id, connection_id, idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api)
+        api_response = api_instance.update_connection_data(project_id, connection_id, con_connection=con_connection)
         print("The response of ConnectionApi->update_connection_data:\n")
         pprint(api_response)
     except Exception as e:
@@ -466,11 +466,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**| Id of the connection to be update | 
- **idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)| New connection data to be set | [optional] 
+ **con_connection** | [**ConConnection**](ConConnection.md)| New connection data to be set | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)
+[**ConConnection**](ConConnection.md)
 
 ### Authorization
 
@@ -478,7 +478,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

@@ -64,7 +64,7 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //int connectionId = null;
             //var response = instance.ExportConnectionData(projectId, connectionId);
-            //Assert.IsType<ConnectionConnectionDataIdeaRSOpenModel>(response);
+            //Assert.IsType<ConnectionData>(response);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //int connectionId = null;
             //var response = instance.ExportConnectionIFC(projectId, connectionId);
-            //Assert.IsType<SystemIOMemoryStreamSystemPrivateCoreLib>(response);
+            //Assert.IsType<MemoryStream>(response);
         }
 
         /// <summary>

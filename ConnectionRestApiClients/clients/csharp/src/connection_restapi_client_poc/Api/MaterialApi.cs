@@ -32,10 +32,10 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new bolt assemby to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddBoltAssembly(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ConMprlElement</returns>
+        ConMprlElement AddBoltAssembly(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
 
         /// <summary>
         /// Add bolt assembly to the project
@@ -46,20 +46,20 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new bolt assemby to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddBoltAssemblyWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ApiResponse of ConMprlElement</returns>
+        ApiResponse<ConMprlElement> AddBoltAssemblyWithHttpInfo(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
         /// <summary>
         /// Add cross section to the project
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi">Definition of a new cross-section to be added to the project (optional)</param>
+        /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi AddCrossSection(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ConMprlCrossSection</returns>
+        ConMprlCrossSection AddCrossSection(Guid projectId, int connectionId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0);
 
         /// <summary>
         /// Add cross section to the project
@@ -70,20 +70,20 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi">Definition of a new cross-section to be added to the project (optional)</param>
+        /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi> AddCrossSectionWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ApiResponse of ConMprlCrossSection</returns>
+        ApiResponse<ConMprlCrossSection> AddCrossSectionWithHttpInfo(Guid projectId, int connectionId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0);
         /// <summary>
         /// Add material to the project
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialBoltGrade(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ConMprlElement</returns>
+        ConMprlElement AddMaterialBoltGrade(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
 
         /// <summary>
         /// Add material to the project
@@ -94,20 +94,20 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialBoltGradeWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ApiResponse of ConMprlElement</returns>
+        ApiResponse<ConMprlElement> AddMaterialBoltGradeWithHttpInfo(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
         /// <summary>
         /// Add material to the project
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialConcrete(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ConMprlElement</returns>
+        ConMprlElement AddMaterialConcrete(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
 
         /// <summary>
         /// Add material to the project
@@ -118,20 +118,20 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialConcreteWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ApiResponse of ConMprlElement</returns>
+        ApiResponse<ConMprlElement> AddMaterialConcreteWithHttpInfo(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
         /// <summary>
         /// Add material to the project
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialSteel(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ConMprlElement</returns>
+        ConMprlElement AddMaterialSteel(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
 
         /// <summary>
         /// Add material to the project
@@ -142,20 +142,20 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialSteelWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ApiResponse of ConMprlElement</returns>
+        ApiResponse<ConMprlElement> AddMaterialSteelWithHttpInfo(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
         /// <summary>
         /// Add material to the project
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialWeld(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ConMprlElement</returns>
+        ConMprlElement AddMaterialWeld(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
 
         /// <summary>
         /// Add material to the project
@@ -166,10 +166,10 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialWeldWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ApiResponse of ConMprlElement</returns>
+        ApiResponse<ConMprlElement> AddMaterialWeldWithHttpInfo(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
         /// <summary>
         /// Get materials which are used in the connectionId
         /// </summary>
@@ -342,11 +342,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new bolt assemby to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddBoltAssemblyAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ConMprlElement</returns>
+        System.Threading.Tasks.Task<ConMprlElement> AddBoltAssemblyAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add bolt assembly to the project
@@ -357,11 +357,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new bolt assemby to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>> AddBoltAssemblyWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConMprlElement)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddBoltAssemblyWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add cross section to the project
         /// </summary>
@@ -371,11 +371,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi">Definition of a new cross-section to be added to the project (optional)</param>
+        /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi> AddCrossSectionAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ConMprlCrossSection</returns>
+        System.Threading.Tasks.Task<ConMprlCrossSection> AddCrossSectionAsync(Guid projectId, int connectionId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add cross section to the project
@@ -386,11 +386,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi">Definition of a new cross-section to be added to the project (optional)</param>
+        /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi>> AddCrossSectionWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConMprlCrossSection)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConMprlCrossSection>> AddCrossSectionWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -400,11 +400,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialBoltGradeAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ConMprlElement</returns>
+        System.Threading.Tasks.Task<ConMprlElement> AddMaterialBoltGradeAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add material to the project
@@ -415,11 +415,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>> AddMaterialBoltGradeWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConMprlElement)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialBoltGradeWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -429,11 +429,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialConcreteAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ConMprlElement</returns>
+        System.Threading.Tasks.Task<ConMprlElement> AddMaterialConcreteAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add material to the project
@@ -444,11 +444,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>> AddMaterialConcreteWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConMprlElement)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialConcreteWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -458,11 +458,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialSteelAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ConMprlElement</returns>
+        System.Threading.Tasks.Task<ConMprlElement> AddMaterialSteelAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add material to the project
@@ -473,11 +473,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>> AddMaterialSteelWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConMprlElement)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialSteelWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -487,11 +487,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialWeldAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ConMprlElement</returns>
+        System.Threading.Tasks.Task<ConMprlElement> AddMaterialWeldAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add material to the project
@@ -502,11 +502,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>> AddMaterialWeldWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConMprlElement)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialWeldWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get materials which are used in the connectionId
         /// </summary>
@@ -822,12 +822,12 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new bolt assemby to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddBoltAssembly(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ConMprlElement</returns>
+        public ConMprlElement AddBoltAssembly(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> localVarResponse = AddBoltAssemblyWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = AddBoltAssemblyWithHttpInfo(projectId, connectionId, conMprlElement);
             return localVarResponse.Data;
         }
 
@@ -837,21 +837,15 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new bolt assemby to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddBoltAssemblyWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ApiResponse of ConMprlElement</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddBoltAssemblyWithHttpInfo(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "text/xml",
-                "application/*+xml",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -873,14 +867,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlElement;
 
             localVarRequestOptions.Operation = "MaterialApi.AddBoltAssembly";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-assemblies", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ConMprlElement>("/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-assemblies", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddBoltAssembly", localVarResponse);
@@ -899,13 +893,13 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new bolt assemby to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddBoltAssemblyAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ConMprlElement</returns>
+        public async System.Threading.Tasks.Task<ConMprlElement> AddBoltAssemblyAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> localVarResponse = await AddBoltAssemblyWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = await AddBoltAssemblyWithHttpInfoAsync(projectId, connectionId, conMprlElement, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -915,23 +909,17 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new bolt assemby to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>> AddBoltAssemblyWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ConMprlElement)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddBoltAssemblyWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "text/xml", 
-                "application/*+xml", 
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -953,14 +941,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlElement;
 
             localVarRequestOptions.Operation = "MaterialApi.AddBoltAssembly";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-assemblies", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ConMprlElement>("/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-assemblies", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -980,12 +968,12 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi">Definition of a new cross-section to be added to the project (optional)</param>
+        /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi AddCrossSection(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ConMprlCrossSection</returns>
+        public ConMprlCrossSection AddCrossSection(Guid projectId, int connectionId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi> localVarResponse = AddCrossSectionWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlCrossSection> localVarResponse = AddCrossSectionWithHttpInfo(projectId, connectionId, conMprlCrossSection);
             return localVarResponse.Data;
         }
 
@@ -995,21 +983,15 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi">Definition of a new cross-section to be added to the project (optional)</param>
+        /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi> AddCrossSectionWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ApiResponse of ConMprlCrossSection</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlCrossSection> AddCrossSectionWithHttpInfo(Guid projectId, int connectionId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "text/xml",
-                "application/*+xml",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1031,14 +1013,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlCrossSection;
 
             localVarRequestOptions.Operation = "MaterialApi.AddCrossSection";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/cross-sections", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ConMprlCrossSection>("/api/1/projects/{projectId}/connections/{connectionId}/materials/cross-sections", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddCrossSection", localVarResponse);
@@ -1057,13 +1039,13 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi">Definition of a new cross-section to be added to the project (optional)</param>
+        /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi> AddCrossSectionAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ConMprlCrossSection</returns>
+        public async System.Threading.Tasks.Task<ConMprlCrossSection> AddCrossSectionAsync(Guid projectId, int connectionId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi> localVarResponse = await AddCrossSectionWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlCrossSection> localVarResponse = await AddCrossSectionWithHttpInfoAsync(projectId, connectionId, conMprlCrossSection, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1073,23 +1055,17 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi">Definition of a new cross-section to be added to the project (optional)</param>
+        /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi>> AddCrossSectionWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ConMprlCrossSection)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlCrossSection>> AddCrossSectionWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "text/xml", 
-                "application/*+xml", 
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1111,14 +1087,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlCrossSection;
 
             localVarRequestOptions.Operation = "MaterialApi.AddCrossSection";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/cross-sections", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ConMprlCrossSection>("/api/1/projects/{projectId}/connections/{connectionId}/materials/cross-sections", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1138,12 +1114,12 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialBoltGrade(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ConMprlElement</returns>
+        public ConMprlElement AddMaterialBoltGrade(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> localVarResponse = AddMaterialBoltGradeWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = AddMaterialBoltGradeWithHttpInfo(projectId, connectionId, conMprlElement);
             return localVarResponse.Data;
         }
 
@@ -1153,21 +1129,15 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialBoltGradeWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ApiResponse of ConMprlElement</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialBoltGradeWithHttpInfo(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "text/xml",
-                "application/*+xml",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1189,14 +1159,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlElement;
 
             localVarRequestOptions.Operation = "MaterialApi.AddMaterialBoltGrade";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ConMprlElement>("/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddMaterialBoltGrade", localVarResponse);
@@ -1215,13 +1185,13 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialBoltGradeAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ConMprlElement</returns>
+        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialBoltGradeAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> localVarResponse = await AddMaterialBoltGradeWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = await AddMaterialBoltGradeWithHttpInfoAsync(projectId, connectionId, conMprlElement, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1231,23 +1201,17 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>> AddMaterialBoltGradeWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ConMprlElement)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialBoltGradeWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "text/xml", 
-                "application/*+xml", 
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1269,14 +1233,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlElement;
 
             localVarRequestOptions.Operation = "MaterialApi.AddMaterialBoltGrade";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ConMprlElement>("/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1296,12 +1260,12 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialConcrete(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ConMprlElement</returns>
+        public ConMprlElement AddMaterialConcrete(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> localVarResponse = AddMaterialConcreteWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = AddMaterialConcreteWithHttpInfo(projectId, connectionId, conMprlElement);
             return localVarResponse.Data;
         }
 
@@ -1311,21 +1275,15 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialConcreteWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ApiResponse of ConMprlElement</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialConcreteWithHttpInfo(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "text/xml",
-                "application/*+xml",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1347,14 +1305,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlElement;
 
             localVarRequestOptions.Operation = "MaterialApi.AddMaterialConcrete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/concrete", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ConMprlElement>("/api/1/projects/{projectId}/connections/{connectionId}/materials/concrete", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddMaterialConcrete", localVarResponse);
@@ -1373,13 +1331,13 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialConcreteAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ConMprlElement</returns>
+        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialConcreteAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> localVarResponse = await AddMaterialConcreteWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = await AddMaterialConcreteWithHttpInfoAsync(projectId, connectionId, conMprlElement, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1389,23 +1347,17 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>> AddMaterialConcreteWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ConMprlElement)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialConcreteWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "text/xml", 
-                "application/*+xml", 
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1427,14 +1379,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlElement;
 
             localVarRequestOptions.Operation = "MaterialApi.AddMaterialConcrete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/concrete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ConMprlElement>("/api/1/projects/{projectId}/connections/{connectionId}/materials/concrete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1454,12 +1406,12 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialSteel(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ConMprlElement</returns>
+        public ConMprlElement AddMaterialSteel(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> localVarResponse = AddMaterialSteelWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = AddMaterialSteelWithHttpInfo(projectId, connectionId, conMprlElement);
             return localVarResponse.Data;
         }
 
@@ -1469,21 +1421,15 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialSteelWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ApiResponse of ConMprlElement</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialSteelWithHttpInfo(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "text/xml",
-                "application/*+xml",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1505,14 +1451,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlElement;
 
             localVarRequestOptions.Operation = "MaterialApi.AddMaterialSteel";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/steel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ConMprlElement>("/api/1/projects/{projectId}/connections/{connectionId}/materials/steel", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddMaterialSteel", localVarResponse);
@@ -1531,13 +1477,13 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialSteelAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ConMprlElement</returns>
+        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialSteelAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> localVarResponse = await AddMaterialSteelWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = await AddMaterialSteelWithHttpInfoAsync(projectId, connectionId, conMprlElement, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1547,23 +1493,17 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>> AddMaterialSteelWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ConMprlElement)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialSteelWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "text/xml", 
-                "application/*+xml", 
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1585,14 +1525,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlElement;
 
             localVarRequestOptions.Operation = "MaterialApi.AddMaterialSteel";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/steel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ConMprlElement>("/api/1/projects/{projectId}/connections/{connectionId}/materials/steel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1612,12 +1552,12 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi AddMaterialWeld(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ConMprlElement</returns>
+        public ConMprlElement AddMaterialWeld(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> localVarResponse = AddMaterialWeldWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = AddMaterialWeldWithHttpInfo(projectId, connectionId, conMprlElement);
             return localVarResponse.Data;
         }
 
@@ -1627,21 +1567,15 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialWeldWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ApiResponse of ConMprlElement</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialWeldWithHttpInfo(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "text/xml",
-                "application/*+xml",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1663,14 +1597,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlElement;
 
             localVarRequestOptions.Operation = "MaterialApi.AddMaterialWeld";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/welding", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ConMprlElement>("/api/1/projects/{projectId}/connections/{connectionId}/materials/welding", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddMaterialWeld", localVarResponse);
@@ -1689,13 +1623,13 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> AddMaterialWeldAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ConMprlElement</returns>
+        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialWeldAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi> localVarResponse = await AddMaterialWeldWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = await AddMaterialWeldWithHttpInfoAsync(projectId, connectionId, conMprlElement, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1705,23 +1639,17 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId"></param>
-        /// <param name="ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi">Definition of a new material to be added to the project (optional)</param>
+        /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>> AddMaterialWeldWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi? ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ConMprlElement)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialWeldWithHttpInfoAsync(Guid projectId, int connectionId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "text/xml", 
-                "application/*+xml", 
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1743,14 +1671,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi;
+            localVarRequestOptions.Data = conMprlElement;
 
             localVarRequestOptions.Operation = "MaterialApi.AddMaterialWeld";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/materials/welding", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ConMprlElement>("/api/1/projects/{projectId}/connections/{connectionId}/materials/welding", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

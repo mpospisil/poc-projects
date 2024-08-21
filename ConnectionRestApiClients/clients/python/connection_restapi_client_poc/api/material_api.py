@@ -19,8 +19,8 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Any, List, Optional
 from typing_extensions import Annotated
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api import IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api import IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_mprl_cross_section import ConMprlCrossSection
+from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -45,7 +45,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,7 +58,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi:
+    ) -> ConMprlElement:
         """Add bolt assembly to the project
 
 
@@ -66,8 +66,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new bolt assemby to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new bolt assemby to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,7 +93,7 @@ class MaterialApi:
         _param = self._add_bolt_assembly_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -101,7 +101,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -119,7 +119,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -132,7 +132,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi]:
+    ) -> ApiResponse[ConMprlElement]:
         """Add bolt assembly to the project
 
 
@@ -140,8 +140,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new bolt assemby to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new bolt assemby to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -167,7 +167,7 @@ class MaterialApi:
         _param = self._add_bolt_assembly_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -175,7 +175,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -193,7 +193,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -214,8 +214,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new bolt assemby to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new bolt assemby to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -241,7 +241,7 @@ class MaterialApi:
         _param = self._add_bolt_assembly_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -249,7 +249,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -262,7 +262,7 @@ class MaterialApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+        con_mprl_element,
         _request_auth,
         _content_type,
         _headers,
@@ -278,7 +278,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -290,8 +292,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api
+        if con_mprl_element is not None:
+            _body_params = con_mprl_element
 
 
         # set the HTTP header `Accept`
@@ -309,13 +311,7 @@ class MaterialApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -349,7 +345,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi], Field(description="Definition of a new cross-section to be added to the project")] = None,
+        con_mprl_cross_section: Annotated[Optional[ConMprlCrossSection], Field(description="Definition of a new cross-section to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -362,7 +358,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi:
+    ) -> ConMprlCrossSection:
         """Add cross section to the project
 
 
@@ -370,8 +366,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Definition of a new cross-section to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi
+        :param con_mprl_cross_section: Definition of a new cross-section to be added to the project
+        :type con_mprl_cross_section: ConMprlCrossSection
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -397,7 +393,7 @@ class MaterialApi:
         _param = self._add_cross_section_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api,
+            con_mprl_cross_section=con_mprl_cross_section,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -405,7 +401,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi",
+            '200': "ConMprlCrossSection",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -423,7 +419,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi], Field(description="Definition of a new cross-section to be added to the project")] = None,
+        con_mprl_cross_section: Annotated[Optional[ConMprlCrossSection], Field(description="Definition of a new cross-section to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -436,7 +432,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi]:
+    ) -> ApiResponse[ConMprlCrossSection]:
         """Add cross section to the project
 
 
@@ -444,8 +440,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Definition of a new cross-section to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi
+        :param con_mprl_cross_section: Definition of a new cross-section to be added to the project
+        :type con_mprl_cross_section: ConMprlCrossSection
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -471,7 +467,7 @@ class MaterialApi:
         _param = self._add_cross_section_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api,
+            con_mprl_cross_section=con_mprl_cross_section,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -479,7 +475,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi",
+            '200': "ConMprlCrossSection",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -497,7 +493,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi], Field(description="Definition of a new cross-section to be added to the project")] = None,
+        con_mprl_cross_section: Annotated[Optional[ConMprlCrossSection], Field(description="Definition of a new cross-section to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -518,8 +514,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: Definition of a new cross-section to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi
+        :param con_mprl_cross_section: Definition of a new cross-section to be added to the project
+        :type con_mprl_cross_section: ConMprlCrossSection
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -545,7 +541,7 @@ class MaterialApi:
         _param = self._add_cross_section_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api,
+            con_mprl_cross_section=con_mprl_cross_section,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -553,7 +549,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlCrossSectionIdeaStatiCaApi",
+            '200': "ConMprlCrossSection",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -566,7 +562,7 @@ class MaterialApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api,
+        con_mprl_cross_section,
         _request_auth,
         _content_type,
         _headers,
@@ -582,7 +578,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -594,8 +592,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_cross_section_idea_stati_ca_api
+        if con_mprl_cross_section is not None:
+            _body_params = con_mprl_cross_section
 
 
         # set the HTTP header `Accept`
@@ -613,13 +611,7 @@ class MaterialApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -653,7 +645,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -666,7 +658,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi:
+    ) -> ConMprlElement:
         """Add material to the project
 
 
@@ -674,8 +666,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -701,7 +693,7 @@ class MaterialApi:
         _param = self._add_material_bolt_grade_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -709,7 +701,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -727,7 +719,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -740,7 +732,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi]:
+    ) -> ApiResponse[ConMprlElement]:
         """Add material to the project
 
 
@@ -748,8 +740,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -775,7 +767,7 @@ class MaterialApi:
         _param = self._add_material_bolt_grade_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -783,7 +775,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -801,7 +793,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -822,8 +814,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -849,7 +841,7 @@ class MaterialApi:
         _param = self._add_material_bolt_grade_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -857,7 +849,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -870,7 +862,7 @@ class MaterialApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+        con_mprl_element,
         _request_auth,
         _content_type,
         _headers,
@@ -886,7 +878,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -898,8 +892,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api
+        if con_mprl_element is not None:
+            _body_params = con_mprl_element
 
 
         # set the HTTP header `Accept`
@@ -917,13 +911,7 @@ class MaterialApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -957,7 +945,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -970,7 +958,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi:
+    ) -> ConMprlElement:
         """Add material to the project
 
 
@@ -978,8 +966,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1005,7 +993,7 @@ class MaterialApi:
         _param = self._add_material_concrete_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1013,7 +1001,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1031,7 +1019,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1044,7 +1032,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi]:
+    ) -> ApiResponse[ConMprlElement]:
         """Add material to the project
 
 
@@ -1052,8 +1040,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1079,7 +1067,7 @@ class MaterialApi:
         _param = self._add_material_concrete_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1087,7 +1075,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1105,7 +1093,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1126,8 +1114,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1153,7 +1141,7 @@ class MaterialApi:
         _param = self._add_material_concrete_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1161,7 +1149,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1174,7 +1162,7 @@ class MaterialApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+        con_mprl_element,
         _request_auth,
         _content_type,
         _headers,
@@ -1190,7 +1178,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1202,8 +1192,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api
+        if con_mprl_element is not None:
+            _body_params = con_mprl_element
 
 
         # set the HTTP header `Accept`
@@ -1221,13 +1211,7 @@ class MaterialApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -1261,7 +1245,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1274,7 +1258,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi:
+    ) -> ConMprlElement:
         """Add material to the project
 
 
@@ -1282,8 +1266,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1309,7 +1293,7 @@ class MaterialApi:
         _param = self._add_material_steel_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1317,7 +1301,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1335,7 +1319,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1348,7 +1332,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi]:
+    ) -> ApiResponse[ConMprlElement]:
         """Add material to the project
 
 
@@ -1356,8 +1340,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1383,7 +1367,7 @@ class MaterialApi:
         _param = self._add_material_steel_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1391,7 +1375,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1409,7 +1393,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1430,8 +1414,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1457,7 +1441,7 @@ class MaterialApi:
         _param = self._add_material_steel_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1465,7 +1449,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1478,7 +1462,7 @@ class MaterialApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+        con_mprl_element,
         _request_auth,
         _content_type,
         _headers,
@@ -1494,7 +1478,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1506,8 +1492,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api
+        if con_mprl_element is not None:
+            _body_params = con_mprl_element
 
 
         # set the HTTP header `Accept`
@@ -1525,13 +1511,7 @@ class MaterialApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -1565,7 +1545,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1578,7 +1558,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi:
+    ) -> ConMprlElement:
         """Add material to the project
 
 
@@ -1586,8 +1566,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1613,7 +1593,7 @@ class MaterialApi:
         _param = self._add_material_weld_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1621,7 +1601,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1639,7 +1619,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1652,7 +1632,7 @@ class MaterialApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi]:
+    ) -> ApiResponse[ConMprlElement]:
         """Add material to the project
 
 
@@ -1660,8 +1640,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1687,7 +1667,7 @@ class MaterialApi:
         _param = self._add_material_weld_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1695,7 +1675,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1713,7 +1693,7 @@ class MaterialApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi], Field(description="Definition of a new material to be added to the project")] = None,
+        con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1734,8 +1714,8 @@ class MaterialApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: Definition of a new material to be added to the project
-        :type idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api: IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi
+        :param con_mprl_element: Definition of a new material to be added to the project
+        :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1761,7 +1741,7 @@ class MaterialApi:
         _param = self._add_material_weld_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api=idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+            con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1769,7 +1749,7 @@ class MaterialApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelMaterialConMprlElementIdeaStatiCaApi",
+            '200': "ConMprlElement",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1782,7 +1762,7 @@ class MaterialApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api,
+        con_mprl_element,
         _request_auth,
         _content_type,
         _headers,
@@ -1798,7 +1778,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1810,8 +1792,8 @@ class MaterialApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_material_con_mprl_element_idea_stati_ca_api
+        if con_mprl_element is not None:
+            _body_params = con_mprl_element
 
 
         # set the HTTP header `Accept`
@@ -1829,13 +1811,7 @@ class MaterialApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -2089,7 +2065,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2359,7 +2337,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2629,7 +2609,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2899,7 +2881,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3169,7 +3153,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3439,7 +3425,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3709,7 +3697,9 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters

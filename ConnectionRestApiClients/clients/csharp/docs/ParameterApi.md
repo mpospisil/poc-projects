@@ -90,7 +90,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -103,7 +103,7 @@ No authorization required
 
 <a id="getparameters"></a>
 # **GetParameters**
-> List&lt;IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi&gt; GetParameters (Guid projectId, int connectionId, bool? includeHidden = null)
+> List&lt;IdeaParameter&gt; GetParameters (Guid projectId, int connectionId, bool? includeHidden = null)
 
 Get all parameters which are defined for projectId and connectionId
 
@@ -131,7 +131,7 @@ namespace Example
             try
             {
                 // Get all parameters which are defined for projectId and connectionId
-                List<IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi> result = apiInstance.GetParameters(projectId, connectionId, includeHidden);
+                List<IdeaParameter> result = apiInstance.GetParameters(projectId, connectionId, includeHidden);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -152,7 +152,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get all parameters which are defined for projectId and connectionId
-    ApiResponse<List<IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi>> response = apiInstance.GetParametersWithHttpInfo(projectId, connectionId, includeHidden);
+    ApiResponse<List<IdeaParameter>> response = apiInstance.GetParametersWithHttpInfo(projectId, connectionId, includeHidden);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -175,7 +175,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi&gt;**](IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi.md)
+[**List&lt;IdeaParameter&gt;**](IdeaParameter.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ No authorization required
 
 <a id="updateparameters"></a>
 # **UpdateParameters**
-> List&lt;IdeaRSCommonParametersParameterDataCIBasicTypes&gt; UpdateParameters (Guid projectId, int connectionId, List<IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi>? ideaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi = null)
+> List&lt;ParameterData&gt; UpdateParameters (Guid projectId, int connectionId, List<IdeaParameterUpdate>? ideaParameterUpdate = null)
 
 Update parameters for the connection connectionId in the project projectId by values passed in parameters
 
@@ -219,12 +219,12 @@ namespace Example
             var apiInstance = new ParameterApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection to apply template
-            var ideaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi = new List<IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi>?(); // List<IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi>? | New values of parameters (optional) 
+            var ideaParameterUpdate = new List<IdeaParameterUpdate>?(); // List<IdeaParameterUpdate>? | New values of parameters (optional) 
 
             try
             {
                 // Update parameters for the connection connectionId in the project projectId by values passed in parameters
-                List<IdeaRSCommonParametersParameterDataCIBasicTypes> result = apiInstance.UpdateParameters(projectId, connectionId, ideaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi);
+                List<ParameterData> result = apiInstance.UpdateParameters(projectId, connectionId, ideaParameterUpdate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -245,7 +245,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update parameters for the connection connectionId in the project projectId by values passed in parameters
-    ApiResponse<List<IdeaRSCommonParametersParameterDataCIBasicTypes>> response = apiInstance.UpdateParametersWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi);
+    ApiResponse<List<ParameterData>> response = apiInstance.UpdateParametersWithHttpInfo(projectId, connectionId, ideaParameterUpdate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -264,11 +264,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection to apply template |  |
-| **ideaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi** | [**List&lt;IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi&gt;?**](IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi.md) | New values of parameters | [optional]  |
+| **ideaParameterUpdate** | [**List&lt;IdeaParameterUpdate&gt;?**](IdeaParameterUpdate.md) | New values of parameters | [optional]  |
 
 ### Return type
 
-[**List&lt;IdeaRSCommonParametersParameterDataCIBasicTypes&gt;**](IdeaRSCommonParametersParameterDataCIBasicTypes.md)
+[**List&lt;ParameterData&gt;**](ParameterData.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

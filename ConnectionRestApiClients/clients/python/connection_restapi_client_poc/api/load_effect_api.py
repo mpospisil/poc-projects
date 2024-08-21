@@ -19,8 +19,8 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
-from connection_restapi_client_poc.models.load_effect_data_idea_stati_ca_connection_checks import LoadEffectDataIdeaStatiCaConnectionChecks
+from connection_restapi_client_poc.models.con_load_effect import ConLoadEffect
+from connection_restapi_client_poc.models.load_effect_data import LoadEffectData
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -45,7 +45,7 @@ class LoadEffectApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
+        con_load_effect: Optional[ConLoadEffect] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,7 +58,7 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> LoadEffectDataIdeaStatiCaConnectionChecks:
+    ) -> LoadEffectData:
         """Add new load effect to the connection
 
 
@@ -66,8 +66,8 @@ class LoadEffectApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
-        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+        :param con_load_effect: 
+        :type con_load_effect: ConLoadEffect
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,7 +93,7 @@ class LoadEffectApi:
         _param = self._add_load_effect_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+            con_load_effect=con_load_effect,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -101,7 +101,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LoadEffectDataIdeaStatiCaConnectionChecks",
+            '200': "LoadEffectData",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -119,7 +119,7 @@ class LoadEffectApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
+        con_load_effect: Optional[ConLoadEffect] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -132,7 +132,7 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[LoadEffectDataIdeaStatiCaConnectionChecks]:
+    ) -> ApiResponse[LoadEffectData]:
         """Add new load effect to the connection
 
 
@@ -140,8 +140,8 @@ class LoadEffectApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
-        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+        :param con_load_effect: 
+        :type con_load_effect: ConLoadEffect
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -167,7 +167,7 @@ class LoadEffectApi:
         _param = self._add_load_effect_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+            con_load_effect=con_load_effect,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -175,7 +175,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LoadEffectDataIdeaStatiCaConnectionChecks",
+            '200': "LoadEffectData",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -193,7 +193,7 @@ class LoadEffectApi:
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
+        con_load_effect: Optional[ConLoadEffect] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -214,8 +214,8 @@ class LoadEffectApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
-        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+        :param con_load_effect: 
+        :type con_load_effect: ConLoadEffect
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -241,7 +241,7 @@ class LoadEffectApi:
         _param = self._add_load_effect_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+            con_load_effect=con_load_effect,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -249,7 +249,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "LoadEffectDataIdeaStatiCaConnectionChecks",
+            '200': "LoadEffectData",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -262,7 +262,7 @@ class LoadEffectApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+        con_load_effect,
         _request_auth,
         _content_type,
         _headers,
@@ -278,7 +278,9 @@ class LoadEffectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -290,8 +292,8 @@ class LoadEffectApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api
+        if con_load_effect is not None:
+            _body_params = con_load_effect
 
 
         # set the HTTP header `Accept`
@@ -309,10 +311,7 @@ class LoadEffectApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -579,7 +578,9 @@ class LoadEffectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -645,7 +646,7 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi:
+    ) -> ConLoadEffect:
         """Get load impulses from loadEffectId
 
 
@@ -691,7 +692,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
+            '200': "ConLoadEffect",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -723,7 +724,7 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]:
+    ) -> ApiResponse[ConLoadEffect]:
         """Get load impulses from loadEffectId
 
 
@@ -769,7 +770,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
+            '200': "ConLoadEffect",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -847,7 +848,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
+            '200': "ConLoadEffect",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -877,7 +878,9 @@ class LoadEffectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -946,7 +949,7 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]:
+    ) -> List[ConLoadEffect]:
         """Get all load effects which are defined in connectionId
 
 
@@ -989,7 +992,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]",
+            '200': "List[ConLoadEffect]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1020,7 +1023,7 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]]:
+    ) -> ApiResponse[List[ConLoadEffect]]:
         """Get all load effects which are defined in connectionId
 
 
@@ -1063,7 +1066,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]",
+            '200': "List[ConLoadEffect]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1137,7 +1140,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]",
+            '200': "List[ConLoadEffect]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1166,7 +1169,9 @@ class LoadEffectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1453,7 +1458,9 @@ class LoadEffectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1508,7 +1515,7 @@ class LoadEffectApi:
         project_id: StrictStr,
         connection_id: StrictInt,
         load_effect_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
+        con_load_effect: Optional[ConLoadEffect] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1521,7 +1528,7 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi:
+    ) -> ConLoadEffect:
         """Update load impulses in loadEffectId
 
 
@@ -1531,8 +1538,8 @@ class LoadEffectApi:
         :type connection_id: int
         :param load_effect_id:  (required)
         :type load_effect_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
-        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+        :param con_load_effect: 
+        :type con_load_effect: ConLoadEffect
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1559,7 +1566,7 @@ class LoadEffectApi:
             project_id=project_id,
             connection_id=connection_id,
             load_effect_id=load_effect_id,
-            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+            con_load_effect=con_load_effect,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1567,7 +1574,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
+            '200': "ConLoadEffect",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1586,7 +1593,7 @@ class LoadEffectApi:
         project_id: StrictStr,
         connection_id: StrictInt,
         load_effect_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
+        con_load_effect: Optional[ConLoadEffect] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1599,7 +1606,7 @@ class LoadEffectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]:
+    ) -> ApiResponse[ConLoadEffect]:
         """Update load impulses in loadEffectId
 
 
@@ -1609,8 +1616,8 @@ class LoadEffectApi:
         :type connection_id: int
         :param load_effect_id:  (required)
         :type load_effect_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
-        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+        :param con_load_effect: 
+        :type con_load_effect: ConLoadEffect
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1637,7 +1644,7 @@ class LoadEffectApi:
             project_id=project_id,
             connection_id=connection_id,
             load_effect_id=load_effect_id,
-            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+            con_load_effect=con_load_effect,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1645,7 +1652,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
+            '200': "ConLoadEffect",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1664,7 +1671,7 @@ class LoadEffectApi:
         project_id: StrictStr,
         connection_id: StrictInt,
         load_effect_id: StrictInt,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: Optional[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] = None,
+        con_load_effect: Optional[ConLoadEffect] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1687,8 +1694,8 @@ class LoadEffectApi:
         :type connection_id: int
         :param load_effect_id:  (required)
         :type load_effect_id: int
-        :param idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: 
-        :type idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+        :param con_load_effect: 
+        :type con_load_effect: ConLoadEffect
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1715,7 +1722,7 @@ class LoadEffectApi:
             project_id=project_id,
             connection_id=connection_id,
             load_effect_id=load_effect_id,
-            idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+            con_load_effect=con_load_effect,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1723,7 +1730,7 @@ class LoadEffectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi",
+            '200': "ConLoadEffect",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1737,7 +1744,7 @@ class LoadEffectApi:
         project_id,
         connection_id,
         load_effect_id,
-        idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api,
+        con_load_effect,
         _request_auth,
         _content_type,
         _headers,
@@ -1753,7 +1760,9 @@ class LoadEffectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1767,8 +1776,8 @@ class LoadEffectApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api
+        if con_load_effect is not None:
+            _body_params = con_load_effect
 
 
         # set the HTTP header `Accept`
@@ -1786,10 +1795,7 @@ class LoadEffectApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )

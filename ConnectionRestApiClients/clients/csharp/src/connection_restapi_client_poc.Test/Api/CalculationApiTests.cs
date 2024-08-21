@@ -62,9 +62,9 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = null;
-            //var response = instance.Calculate(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>>(response);
+            //ConCalculationParameter? conCalculationParameter = null;
+            //var response = instance.Calculate(projectId, conCalculationParameter);
+            //Assert.IsType<List<ConResultSummary>>(response);
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = null;
-            //var response = instance.GetRawJsonResults(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
+            //ConCalculationParameter? conCalculationParameter = null;
+            //var response = instance.GetRawJsonResults(projectId, conCalculationParameter);
             //Assert.IsType<string>(response);
         }
 
@@ -88,9 +88,9 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = null;
-            //var response = instance.GetResults(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
-            //Assert.IsType<List<ConnectionConnectionCheckResIdeaRSOpenModel>>(response);
+            //ConCalculationParameter? conCalculationParameter = null;
+            //var response = instance.GetResults(projectId, conCalculationParameter);
+            //Assert.IsType<List<ConnectionCheckRes>>(response);
         }
     }
 }

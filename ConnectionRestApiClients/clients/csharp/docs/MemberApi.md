@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="getallmemberdata"></a>
 # **GetAllMemberData**
-> List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt; GetAllMemberData (Guid projectId, int connectionId)
+> List&lt;ConMember&gt; GetAllMemberData (Guid projectId, int connectionId)
 
 Get information about all members in the connection
 
@@ -37,7 +37,7 @@ namespace Example
             try
             {
                 // Get information about all members in the connection
-                List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> result = apiInstance.GetAllMemberData(projectId, connectionId);
+                List<ConMember> result = apiInstance.GetAllMemberData(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -58,7 +58,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get information about all members in the connection
-    ApiResponse<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>> response = apiInstance.GetAllMemberDataWithHttpInfo(projectId, connectionId);
+    ApiResponse<List<ConMember>> response = apiInstance.GetAllMemberDataWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -80,7 +80,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi&gt;**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi.md)
+[**List&lt;ConMember&gt;**](ConMember.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 
 <a id="getmemberdata"></a>
 # **GetMemberData**
-> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi GetMemberData (Guid projectId, int connectionId, int memberId)
+> ConMember GetMemberData (Guid projectId, int connectionId, int memberId)
 
 Get information about the requires member in the connection
 
@@ -129,7 +129,7 @@ namespace Example
             try
             {
                 // Get information about the requires member in the connection
-                IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi result = apiInstance.GetMemberData(projectId, connectionId, memberId);
+                ConMember result = apiInstance.GetMemberData(projectId, connectionId, memberId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -150,7 +150,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get information about the requires member in the connection
-    ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> response = apiInstance.GetMemberDataWithHttpInfo(projectId, connectionId, memberId);
+    ApiResponse<ConMember> response = apiInstance.GetMemberDataWithHttpInfo(projectId, connectionId, memberId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -173,7 +173,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi.md)
+[**ConMember**](ConMember.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ No authorization required
 
 <a id="updatemember"></a>
 # **UpdateMember**
-> IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi UpdateMember (Guid projectId, int connectionId, int memberId, IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = null)
+> ConMember UpdateMember (Guid projectId, int connectionId, int memberId, ConMember? conMember = null)
 
 Update the member in the connection by newMemberData
 
@@ -218,12 +218,12 @@ namespace Example
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection to to update is membar memberId
             var memberId = 56;  // int | Id of the member to be ubdated in the connection
-            var ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? | New mwmbwr data (optional) 
+            var conMember = new ConMember?(); // ConMember? | New mwmbwr data (optional) 
 
             try
             {
                 // Update the member in the connection by newMemberData
-                IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi result = apiInstance.UpdateMember(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi);
+                ConMember result = apiInstance.UpdateMember(projectId, connectionId, memberId, conMember);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -244,7 +244,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update the member in the connection by newMemberData
-    ApiResponse<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi> response = apiInstance.UpdateMemberWithHttpInfo(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi);
+    ApiResponse<ConMember> response = apiInstance.UpdateMemberWithHttpInfo(projectId, connectionId, memberId, conMember);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -264,11 +264,11 @@ catch (ApiException e)
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection to to update is membar memberId |  |
 | **memberId** | **int** | Id of the member to be ubdated in the connection |  |
-| **ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi?.md) | New mwmbwr data | [optional]  |
+| **conMember** | [**ConMember?**](ConMember?.md) | New mwmbwr data | [optional]  |
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi.md)
+[**ConMember**](ConMember.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

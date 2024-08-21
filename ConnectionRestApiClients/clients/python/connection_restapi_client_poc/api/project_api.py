@@ -17,13 +17,13 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictBool, StrictBytes, StrictInt, StrictStr
-from typing import List, Optional, Union
+from typing import List, Optional, Tuple, Union
 from typing_extensions import Annotated
-from connection_restapi_client_poc.models.connection_setup_idea_rs_open_model import ConnectionSetupIdeaRSOpenModel
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_project_data_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_project_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi
-from connection_restapi_client_poc.models.open_model_container_idea_rs_open_model import OpenModelContainerIdeaRSOpenModel
-from connection_restapi_client_poc.models.system_io_memory_stream_system_private_core_lib import SystemIOMemoryStreamSystemPrivateCoreLib
+from connection_restapi_client_poc.models.con_project import ConProject
+from connection_restapi_client_poc.models.con_project_data import ConProjectData
+from connection_restapi_client_poc.models.connection_setup import ConnectionSetup
+from connection_restapi_client_poc.models.memory_stream import MemoryStream
+from connection_restapi_client_poc.models.open_model_container import OpenModelContainer
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -255,7 +255,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -497,7 +499,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -512,10 +516,7 @@ class ProjectApi:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
                     'text/plain', 
-                    'application/xml', 
-                    'text/xml', 
-                    'application/json', 
-                    'text/json'
+                    'application/json'
                 ]
             )
 
@@ -558,7 +559,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SystemIOMemoryStreamSystemPrivateCoreLib:
+    ) -> MemoryStream:
         """Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
 
 
@@ -595,7 +596,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SystemIOMemoryStreamSystemPrivateCoreLib",
+            '200': "MemoryStream",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -624,7 +625,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SystemIOMemoryStreamSystemPrivateCoreLib]:
+    ) -> ApiResponse[MemoryStream]:
         """Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
 
 
@@ -661,7 +662,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SystemIOMemoryStreamSystemPrivateCoreLib",
+            '200': "MemoryStream",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -727,7 +728,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SystemIOMemoryStreamSystemPrivateCoreLib",
+            '200': "MemoryStream",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -754,7 +755,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -770,11 +773,7 @@ class ProjectApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'text/plain', 
-                    'application/xml', 
-                    'text/xml', 
-                    'application/json', 
-                    'text/json'
+                    'application/json'
                 ]
             )
 
@@ -816,7 +815,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]:
+    ) -> List[ConProject]:
         """Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient
 
 
@@ -850,7 +849,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]",
+            '200': "List[ConProject]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -878,7 +877,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]]:
+    ) -> ApiResponse[List[ConProject]]:
         """Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient
 
 
@@ -912,7 +911,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]",
+            '200': "List[ConProject]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -974,7 +973,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]",
+            '200': "List[ConProject]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1000,7 +999,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1057,7 +1058,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi:
+    ) -> ConProjectData:
         """Get data of the project.
 
 
@@ -1094,7 +1095,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi",
+            '200': "ConProjectData",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1123,7 +1124,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi]:
+    ) -> ApiResponse[ConProjectData]:
         """Get data of the project.
 
 
@@ -1160,7 +1161,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi",
+            '200': "ConProjectData",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1226,7 +1227,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi",
+            '200': "ConProjectData",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1253,7 +1254,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1312,7 +1315,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ConnectionSetupIdeaRSOpenModel:
+    ) -> ConnectionSetup:
         """Get setup from project
 
 
@@ -1349,7 +1352,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetup",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1378,7 +1381,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ConnectionSetupIdeaRSOpenModel]:
+    ) -> ApiResponse[ConnectionSetup]:
         """Get setup from project
 
 
@@ -1415,7 +1418,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetup",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1481,7 +1484,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetup",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1508,7 +1511,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1567,7 +1572,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi:
+    ) -> ConProject:
         """Creates an IDEA Connection project. IOM is passed in the body of the request.
 
 
@@ -1604,7 +1609,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1633,7 +1638,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]:
+    ) -> ApiResponse[ConProject]:
         """Creates an IDEA Connection project. IOM is passed in the body of the request.
 
 
@@ -1670,7 +1675,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1736,7 +1741,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1764,7 +1769,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1813,7 +1820,7 @@ class ProjectApi:
     def import_iom_container(
         self,
         connections_to_create: Optional[List[StrictInt]] = None,
-        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container: Optional[OpenModelContainer] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1826,14 +1833,14 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi:
+    ) -> ConProject:
         """Creates an IDEA Connection project from model (model and results)
 
 
         :param connections_to_create:
         :type connections_to_create: List[int]
-        :param open_model_container_idea_rs_open_model: 
-        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
+        :param open_model_container: 
+        :type open_model_container: OpenModelContainer
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1858,7 +1865,7 @@ class ProjectApi:
 
         _param = self._import_iom_container_serialize(
             connections_to_create=connections_to_create,
-            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
+            open_model_container=open_model_container,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1866,7 +1873,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1883,7 +1890,7 @@ class ProjectApi:
     def import_iom_container_with_http_info(
         self,
         connections_to_create: Optional[List[StrictInt]] = None,
-        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container: Optional[OpenModelContainer] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1896,14 +1903,14 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]:
+    ) -> ApiResponse[ConProject]:
         """Creates an IDEA Connection project from model (model and results)
 
 
         :param connections_to_create:
         :type connections_to_create: List[int]
-        :param open_model_container_idea_rs_open_model: 
-        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
+        :param open_model_container: 
+        :type open_model_container: OpenModelContainer
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1928,7 +1935,7 @@ class ProjectApi:
 
         _param = self._import_iom_container_serialize(
             connections_to_create=connections_to_create,
-            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
+            open_model_container=open_model_container,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1936,7 +1943,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1953,7 +1960,7 @@ class ProjectApi:
     def import_iom_container_without_preload_content(
         self,
         connections_to_create: Optional[List[StrictInt]] = None,
-        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container: Optional[OpenModelContainer] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1972,8 +1979,8 @@ class ProjectApi:
 
         :param connections_to_create:
         :type connections_to_create: List[int]
-        :param open_model_container_idea_rs_open_model: 
-        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
+        :param open_model_container: 
+        :type open_model_container: OpenModelContainer
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1998,7 +2005,7 @@ class ProjectApi:
 
         _param = self._import_iom_container_serialize(
             connections_to_create=connections_to_create,
-            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
+            open_model_container=open_model_container,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2006,7 +2013,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2018,7 +2025,7 @@ class ProjectApi:
     def _import_iom_container_serialize(
         self,
         connections_to_create,
-        open_model_container_idea_rs_open_model,
+        open_model_container,
         _request_auth,
         _content_type,
         _headers,
@@ -2035,7 +2042,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2047,8 +2056,8 @@ class ProjectApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if open_model_container_idea_rs_open_model is not None:
-            _body_params = open_model_container_idea_rs_open_model
+        if open_model_container is not None:
+            _body_params = open_model_container
 
 
         # set the HTTP header `Accept`
@@ -2067,12 +2076,7 @@ class ProjectApi:
                 self.api_client.select_header_content_type(
                     [
                         'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -2116,7 +2120,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi:
+    ) -> ConProject:
         """Open ideacon project which is passed in the body of the request  TODO - should be the parameter of the method
 
 
@@ -2150,7 +2154,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2178,7 +2182,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]:
+    ) -> ApiResponse[ConProject]:
         """Open ideacon project which is passed in the body of the request  TODO - should be the parameter of the method
 
 
@@ -2212,7 +2216,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2274,7 +2278,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2300,7 +2304,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2553,7 +2559,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2600,7 +2608,7 @@ class ProjectApi:
     def update_from_iom_container(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to be updated")],
-        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container: Optional[OpenModelContainer] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2619,8 +2627,8 @@ class ProjectApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to be updated (required)
         :type project_id: str
-        :param open_model_container_idea_rs_open_model: 
-        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
+        :param open_model_container: 
+        :type open_model_container: OpenModelContainer
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2645,7 +2653,7 @@ class ProjectApi:
 
         _param = self._update_from_iom_container_serialize(
             project_id=project_id,
-            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
+            open_model_container=open_model_container,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2670,7 +2678,7 @@ class ProjectApi:
     def update_from_iom_container_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to be updated")],
-        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container: Optional[OpenModelContainer] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2689,8 +2697,8 @@ class ProjectApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to be updated (required)
         :type project_id: str
-        :param open_model_container_idea_rs_open_model: 
-        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
+        :param open_model_container: 
+        :type open_model_container: OpenModelContainer
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2715,7 +2723,7 @@ class ProjectApi:
 
         _param = self._update_from_iom_container_serialize(
             project_id=project_id,
-            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
+            open_model_container=open_model_container,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2740,7 +2748,7 @@ class ProjectApi:
     def update_from_iom_container_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to be updated")],
-        open_model_container_idea_rs_open_model: Optional[OpenModelContainerIdeaRSOpenModel] = None,
+        open_model_container: Optional[OpenModelContainer] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2759,8 +2767,8 @@ class ProjectApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to be updated (required)
         :type project_id: str
-        :param open_model_container_idea_rs_open_model: 
-        :type open_model_container_idea_rs_open_model: OpenModelContainerIdeaRSOpenModel
+        :param open_model_container: 
+        :type open_model_container: OpenModelContainer
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2785,7 +2793,7 @@ class ProjectApi:
 
         _param = self._update_from_iom_container_serialize(
             project_id=project_id,
-            open_model_container_idea_rs_open_model=open_model_container_idea_rs_open_model,
+            open_model_container=open_model_container,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2805,7 +2813,7 @@ class ProjectApi:
     def _update_from_iom_container_serialize(
         self,
         project_id,
-        open_model_container_idea_rs_open_model,
+        open_model_container,
         _request_auth,
         _content_type,
         _headers,
@@ -2821,7 +2829,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -2831,8 +2841,8 @@ class ProjectApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if open_model_container_idea_rs_open_model is not None:
-            _body_params = open_model_container_idea_rs_open_model
+        if open_model_container is not None:
+            _body_params = open_model_container
 
 
         # set the HTTP header `Accept`
@@ -2851,12 +2861,7 @@ class ProjectApi:
                 self.api_client.select_header_content_type(
                     [
                         'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -2889,7 +2894,7 @@ class ProjectApi:
     def update_setup(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to update project setup")],
-        connection_setup_idea_rs_open_model: Optional[ConnectionSetupIdeaRSOpenModel] = None,
+        connection_setup: Optional[ConnectionSetup] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2902,14 +2907,14 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ConnectionSetupIdeaRSOpenModel:
+    ) -> ConnectionSetup:
         """Update setup of the project
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to update project setup (required)
         :type project_id: str
-        :param connection_setup_idea_rs_open_model: 
-        :type connection_setup_idea_rs_open_model: ConnectionSetupIdeaRSOpenModel
+        :param connection_setup: 
+        :type connection_setup: ConnectionSetup
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2934,7 +2939,7 @@ class ProjectApi:
 
         _param = self._update_setup_serialize(
             project_id=project_id,
-            connection_setup_idea_rs_open_model=connection_setup_idea_rs_open_model,
+            connection_setup=connection_setup,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2942,7 +2947,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetup",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2959,7 +2964,7 @@ class ProjectApi:
     def update_setup_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to update project setup")],
-        connection_setup_idea_rs_open_model: Optional[ConnectionSetupIdeaRSOpenModel] = None,
+        connection_setup: Optional[ConnectionSetup] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2972,14 +2977,14 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ConnectionSetupIdeaRSOpenModel]:
+    ) -> ApiResponse[ConnectionSetup]:
         """Update setup of the project
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to update project setup (required)
         :type project_id: str
-        :param connection_setup_idea_rs_open_model: 
-        :type connection_setup_idea_rs_open_model: ConnectionSetupIdeaRSOpenModel
+        :param connection_setup: 
+        :type connection_setup: ConnectionSetup
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3004,7 +3009,7 @@ class ProjectApi:
 
         _param = self._update_setup_serialize(
             project_id=project_id,
-            connection_setup_idea_rs_open_model=connection_setup_idea_rs_open_model,
+            connection_setup=connection_setup,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3012,7 +3017,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetup",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3029,7 +3034,7 @@ class ProjectApi:
     def update_setup_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to update project setup")],
-        connection_setup_idea_rs_open_model: Optional[ConnectionSetupIdeaRSOpenModel] = None,
+        connection_setup: Optional[ConnectionSetup] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3048,8 +3053,8 @@ class ProjectApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to update project setup (required)
         :type project_id: str
-        :param connection_setup_idea_rs_open_model: 
-        :type connection_setup_idea_rs_open_model: ConnectionSetupIdeaRSOpenModel
+        :param connection_setup: 
+        :type connection_setup: ConnectionSetup
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3074,7 +3079,7 @@ class ProjectApi:
 
         _param = self._update_setup_serialize(
             project_id=project_id,
-            connection_setup_idea_rs_open_model=connection_setup_idea_rs_open_model,
+            connection_setup=connection_setup,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3082,7 +3087,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConnectionSetupIdeaRSOpenModel",
+            '200': "ConnectionSetup",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3094,7 +3099,7 @@ class ProjectApi:
     def _update_setup_serialize(
         self,
         project_id,
-        connection_setup_idea_rs_open_model,
+        connection_setup,
         _request_auth,
         _content_type,
         _headers,
@@ -3110,7 +3115,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3120,8 +3127,8 @@ class ProjectApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if connection_setup_idea_rs_open_model is not None:
-            _body_params = connection_setup_idea_rs_open_model
+        if connection_setup is not None:
+            _body_params = connection_setup
 
 
         # set the HTTP header `Accept`
@@ -3139,13 +3146,7 @@ class ProjectApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -3177,7 +3178,7 @@ class ProjectApi:
     @validate_call
     def upload_idea_con(
         self,
-        idea_con_file: Optional[Union[StrictBytes, StrictStr]] = None,
+        idea_con_file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3190,8 +3191,8 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi:
-        """Uploads two files to the server.
+    ) -> ConProject:
+        """Open ideacon project from ideaConFile
 
 
         :param idea_con_file:
@@ -3227,7 +3228,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3243,7 +3244,7 @@ class ProjectApi:
     @validate_call
     def upload_idea_con_with_http_info(
         self,
-        idea_con_file: Optional[Union[StrictBytes, StrictStr]] = None,
+        idea_con_file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3256,8 +3257,8 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi]:
-        """Uploads two files to the server.
+    ) -> ApiResponse[ConProject]:
+        """Open ideacon project from ideaConFile
 
 
         :param idea_con_file:
@@ -3293,7 +3294,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3309,7 +3310,7 @@ class ProjectApi:
     @validate_call
     def upload_idea_con_without_preload_content(
         self,
-        idea_con_file: Optional[Union[StrictBytes, StrictStr]] = None,
+        idea_con_file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3323,7 +3324,7 @@ class ProjectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Uploads two files to the server.
+        """Open ideacon project from ideaConFile
 
 
         :param idea_con_file:
@@ -3359,7 +3360,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3386,7 +3387,9 @@ class ProjectApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -3413,7 +3416,8 @@ class ProjectApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'multipart/form-data'
+                        'multipart/form-data', 
+                        'application/json'
                     ]
                 )
             )

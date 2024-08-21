@@ -86,7 +86,7 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //var response = instance.DownloadProject(projectId);
-            //Assert.IsType<SystemIOMemoryStreamSystemPrivateCoreLib>(response);
+            //Assert.IsType<MemoryStream>(response);
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.GetActiveProjects();
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>>(response);
+            //Assert.IsType<List<ConProject>>(response);
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //var response = instance.GetProjectData(projectId);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConProjectDataIdeaStatiCaApi>(response);
+            //Assert.IsType<ConProjectData>(response);
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //var response = instance.GetSetup(projectId);
-            //Assert.IsType<ConnectionSetupIdeaRSOpenModel>(response);
+            //Assert.IsType<ConnectionSetup>(response);
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //List<int>? connectionsToCreate = null;
             //var response = instance.ImportIOM(connectionsToCreate);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>(response);
+            //Assert.IsType<ConProject>(response);
         }
 
         /// <summary>
@@ -144,9 +144,9 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //List<int>? connectionsToCreate = null;
-            //OpenModelContainerIdeaRSOpenModel? openModelContainerIdeaRSOpenModel = null;
-            //var response = instance.ImportIOMContainer(connectionsToCreate, openModelContainerIdeaRSOpenModel);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>(response);
+            //OpenModelContainer? openModelContainer = null;
+            //var response = instance.ImportIOMContainer(connectionsToCreate, openModelContainer);
+            //Assert.IsType<ConProject>(response);
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.OpenProject();
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>(response);
+            //Assert.IsType<ConProject>(response);
         }
 
         /// <summary>
@@ -180,8 +180,8 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //OpenModelContainerIdeaRSOpenModel? openModelContainerIdeaRSOpenModel = null;
-            //var response = instance.UpdateFromIOMContainer(projectId, openModelContainerIdeaRSOpenModel);
+            //OpenModelContainer? openModelContainer = null;
+            //var response = instance.UpdateFromIOMContainer(projectId, openModelContainer);
             //Assert.IsType<bool>(response);
         }
 
@@ -193,9 +193,9 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //ConnectionSetupIdeaRSOpenModel? connectionSetupIdeaRSOpenModel = null;
-            //var response = instance.UpdateSetup(projectId, connectionSetupIdeaRSOpenModel);
-            //Assert.IsType<ConnectionSetupIdeaRSOpenModel>(response);
+            //ConnectionSetup? connectionSetup = null;
+            //var response = instance.UpdateSetup(projectId, connectionSetup);
+            //Assert.IsType<ConnectionSetup>(response);
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream? ideaConFile = null;
             //var response = instance.UploadIdeaCon(ideaConFile);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConProjectIdeaStatiCaApi>(response);
+            //Assert.IsType<ConProject>(response);
         }
     }
 }

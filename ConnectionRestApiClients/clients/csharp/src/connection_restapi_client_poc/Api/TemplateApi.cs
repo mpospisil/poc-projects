@@ -32,10 +32,10 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection where to apply the template</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi">Template to apply (optional)</param>
+        /// <param name="conTemplateApplyParam">Template to apply (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object ApplyTemplate(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0);
+        Object ApplyTemplate(Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = default(ConTemplateApplyParam?), int operationIndex = 0);
 
         /// <summary>
         /// Apply the connection template applyTemplateParam on the connection connectionId in the project projectId
@@ -46,10 +46,10 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection where to apply the template</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi">Template to apply (optional)</param>
+        /// <param name="conTemplateApplyParam">Template to apply (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> ApplyTemplateWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0);
+        ApiResponse<Object> ApplyTemplateWithHttpInfo(Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = default(ConTemplateApplyParam?), int operationIndex = 0);
         /// <summary>
         /// Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
         /// </summary>
@@ -59,10 +59,10 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get default mapping</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
+        /// <param name="conTemplateMappingGetParam">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi GetDefaultTemplateMapping(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>TemplateConversions</returns>
+        TemplateConversions GetDefaultTemplateMapping(Guid projectId, int connectionId, ConTemplateMappingGetParam? conTemplateMappingGetParam = default(ConTemplateMappingGetParam?), int operationIndex = 0);
 
         /// <summary>
         /// Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
@@ -73,10 +73,10 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get default mapping</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
+        /// <param name="conTemplateMappingGetParam">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDefaultTemplateMappingWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ApiResponse of TemplateConversions</returns>
+        ApiResponse<TemplateConversions> GetDefaultTemplateMappingWithHttpInfo(Guid projectId, int connectionId, ConTemplateMappingGetParam? conTemplateMappingGetParam = default(ConTemplateMappingGetParam?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -95,11 +95,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection where to apply the template</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi">Template to apply (optional)</param>
+        /// <param name="conTemplateApplyParam">Template to apply (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> ApplyTemplateAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> ApplyTemplateAsync(Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = default(ConTemplateApplyParam?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Apply the connection template applyTemplateParam on the connection connectionId in the project projectId
@@ -110,11 +110,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection where to apply the template</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi">Template to apply (optional)</param>
+        /// <param name="conTemplateApplyParam">Template to apply (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApplyTemplateWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApplyTemplateWithHttpInfoAsync(Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = default(ConTemplateApplyParam?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
         /// </summary>
@@ -124,11 +124,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get default mapping</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
+        /// <param name="conTemplateMappingGetParam">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDefaultTemplateMappingAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of TemplateConversions</returns>
+        System.Threading.Tasks.Task<TemplateConversions> GetDefaultTemplateMappingAsync(Guid projectId, int connectionId, ConTemplateMappingGetParam? conTemplateMappingGetParam = default(ConTemplateMappingGetParam?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
@@ -139,11 +139,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get default mapping</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
+        /// <param name="conTemplateMappingGetParam">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>> GetDefaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TemplateConversions)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TemplateConversions>> GetDefaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, ConTemplateMappingGetParam? conTemplateMappingGetParam = default(ConTemplateMappingGetParam?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -270,12 +270,12 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection where to apply the template</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi">Template to apply (optional)</param>
+        /// <param name="conTemplateApplyParam">Template to apply (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object ApplyTemplate(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0)
+        public Object ApplyTemplate(Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = default(ConTemplateApplyParam?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<Object> localVarResponse = ApplyTemplateWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<Object> localVarResponse = ApplyTemplateWithHttpInfo(projectId, connectionId, conTemplateApplyParam);
             return localVarResponse.Data;
         }
 
@@ -285,18 +285,15 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection where to apply the template</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi">Template to apply (optional)</param>
+        /// <param name="conTemplateApplyParam">Template to apply (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<Object> ApplyTemplateWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<Object> ApplyTemplateWithHttpInfo(Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = default(ConTemplateApplyParam?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -318,7 +315,7 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi;
+            localVarRequestOptions.Data = conTemplateApplyParam;
 
             localVarRequestOptions.Operation = "TemplateApi.ApplyTemplate";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -344,13 +341,13 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection where to apply the template</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi">Template to apply (optional)</param>
+        /// <param name="conTemplateApplyParam">Template to apply (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> ApplyTemplateAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> ApplyTemplateAsync(Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = default(ConTemplateApplyParam?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<Object> localVarResponse = await ApplyTemplateWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<Object> localVarResponse = await ApplyTemplateWithHttpInfoAsync(projectId, connectionId, conTemplateApplyParam, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -360,20 +357,17 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection where to apply the template</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi">Template to apply (optional)</param>
+        /// <param name="conTemplateApplyParam">Template to apply (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<Object>> ApplyTemplateWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<Object>> ApplyTemplateWithHttpInfoAsync(Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = default(ConTemplateApplyParam?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -395,7 +389,7 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi;
+            localVarRequestOptions.Data = conTemplateApplyParam;
 
             localVarRequestOptions.Operation = "TemplateApi.ApplyTemplate";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -422,12 +416,12 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get default mapping</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
+        /// <param name="conTemplateMappingGetParam">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        public IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi GetDefaultTemplateMapping(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>TemplateConversions</returns>
+        public TemplateConversions GetDefaultTemplateMapping(Guid projectId, int connectionId, ConTemplateMappingGetParam? conTemplateMappingGetParam = default(ConTemplateMappingGetParam?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> localVarResponse = GetDefaultTemplateMappingWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<TemplateConversions> localVarResponse = GetDefaultTemplateMappingWithHttpInfo(projectId, connectionId, conTemplateMappingGetParam);
             return localVarResponse.Data;
         }
 
@@ -437,21 +431,15 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get default mapping</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
+        /// <param name="conTemplateMappingGetParam">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDefaultTemplateMappingWithHttpInfo(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ApiResponse of TemplateConversions</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<TemplateConversions> GetDefaultTemplateMappingWithHttpInfo(Guid projectId, int connectionId, ConTemplateMappingGetParam? conTemplateMappingGetParam = default(ConTemplateMappingGetParam?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "text/xml",
-                "application/*+xml",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -473,14 +461,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi;
+            localVarRequestOptions.Data = conTemplateMappingGetParam;
 
             localVarRequestOptions.Operation = "TemplateApi.GetDefaultTemplateMapping";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TemplateConversions>("/api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetDefaultTemplateMapping", localVarResponse);
@@ -499,13 +487,13 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get default mapping</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
+        /// <param name="conTemplateMappingGetParam">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> GetDefaultTemplateMappingAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of TemplateConversions</returns>
+        public async System.Threading.Tasks.Task<TemplateConversions> GetDefaultTemplateMappingAsync(Guid projectId, int connectionId, ConTemplateMappingGetParam? conTemplateMappingGetParam = default(ConTemplateMappingGetParam?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi> localVarResponse = await GetDefaultTemplateMappingWithHttpInfoAsync(projectId, connectionId, ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<TemplateConversions> localVarResponse = await GetDefaultTemplateMappingWithHttpInfoAsync(projectId, connectionId, conTemplateMappingGetParam, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -515,23 +503,17 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get default mapping</param>
-        /// <param name="ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi">Data of the template to get default mapping (optional)</param>
+        /// <param name="conTemplateMappingGetParam">Data of the template to get default mapping (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>> GetDefaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi? ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TemplateConversions)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<TemplateConversions>> GetDefaultTemplateMappingWithHttpInfoAsync(Guid projectId, int connectionId, ConTemplateMappingGetParam? conTemplateMappingGetParam = default(ConTemplateMappingGetParam?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "text/xml", 
-                "application/*+xml", 
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -553,14 +535,14 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi;
+            localVarRequestOptions.Data = conTemplateMappingGetParam;
 
             localVarRequestOptions.Operation = "TemplateApi.GetDefaultTemplateMapping";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi>("/api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TemplateConversions>("/api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

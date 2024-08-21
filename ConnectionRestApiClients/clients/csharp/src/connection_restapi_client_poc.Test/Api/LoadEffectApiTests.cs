@@ -63,9 +63,9 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = null;
-            //var response = instance.AddLoadEffect(projectId, connectionId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
-            //Assert.IsType<LoadEffectDataIdeaStatiCaConnectionChecks>(response);
+            //ConLoadEffect? conLoadEffect = null;
+            //var response = instance.AddLoadEffect(projectId, connectionId, conLoadEffect);
+            //Assert.IsType<LoadEffectData>(response);
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace connection_restapi_client_poc.Test.Api
             //int loadEffectId = null;
             //bool? isPercentage = null;
             //var response = instance.GetLoadEffect(projectId, connectionId, loadEffectId, isPercentage);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>(response);
+            //Assert.IsType<ConLoadEffect>(response);
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace connection_restapi_client_poc.Test.Api
             //int connectionId = null;
             //bool? isPercentage = null;
             //var response = instance.GetLoadEffects(projectId, connectionId, isPercentage);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>>(response);
+            //Assert.IsType<List<ConLoadEffect>>(response);
         }
 
         /// <summary>
@@ -135,9 +135,9 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //int connectionId = null;
             //int loadEffectId = null;
-            //IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = null;
-            //var response = instance.UpdateLoadEffect(projectId, connectionId, loadEffectId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>(response);
+            //ConLoadEffect? conLoadEffect = null;
+            //var response = instance.UpdateLoadEffect(projectId, connectionId, loadEffectId, conLoadEffect);
+            //Assert.IsType<ConLoadEffect>(response);
         }
     }
 }

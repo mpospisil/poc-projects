@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="calculate"></a>
 # **Calculate**
-> List&lt;IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi&gt; Calculate (Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = null)
+> List&lt;ConResultSummary&gt; Calculate (Guid projectId, ConCalculationParameter? conCalculationParameter = null)
 
 Run CBFEM caluclation and return the summary of the results
 
@@ -32,12 +32,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new CalculationApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? | List of connections to calculate and a type of CBFEM analysis (optional) 
+            var conCalculationParameter = new ConCalculationParameter?(); // ConCalculationParameter? | List of connections to calculate and a type of CBFEM analysis (optional) 
 
             try
             {
                 // Run CBFEM caluclation and return the summary of the results
-                List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi> result = apiInstance.Calculate(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
+                List<ConResultSummary> result = apiInstance.Calculate(projectId, conCalculationParameter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -58,7 +58,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Run CBFEM caluclation and return the summary of the results
-    ApiResponse<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>> response = apiInstance.CalculateWithHttpInfo(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
+    ApiResponse<List<ConResultSummary>> response = apiInstance.CalculateWithHttpInfo(projectId, conCalculationParameter);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -76,11 +76,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?.md) | List of connections to calculate and a type of CBFEM analysis | [optional]  |
+| **conCalculationParameter** | [**ConCalculationParameter?**](ConCalculationParameter?.md) | List of connections to calculate and a type of CBFEM analysis | [optional]  |
 
 ### Return type
 
-[**List&lt;IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi&gt;**](IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi.md)
+[**List&lt;ConResultSummary&gt;**](ConResultSummary.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -101,7 +101,7 @@ No authorization required
 
 <a id="getrawjsonresults"></a>
 # **GetRawJsonResults**
-> string GetRawJsonResults (Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = null)
+> string GetRawJsonResults (Guid projectId, ConCalculationParameter? conCalculationParameter = null)
 
 Get json string which represents raw CBFEM results (an instance of CheckResultsData)
 
@@ -123,12 +123,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new CalculationApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened connection in the ConnectionRestApi service
-            var ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? | Type of requested analysis and connection to calculate (optional) 
+            var conCalculationParameter = new ConCalculationParameter?(); // ConCalculationParameter? | Type of requested analysis and connection to calculate (optional) 
 
             try
             {
                 // Get json string which represents raw CBFEM results (an instance of CheckResultsData)
-                string result = apiInstance.GetRawJsonResults(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
+                string result = apiInstance.GetRawJsonResults(projectId, conCalculationParameter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -149,7 +149,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get json string which represents raw CBFEM results (an instance of CheckResultsData)
-    ApiResponse<string> response = apiInstance.GetRawJsonResultsWithHttpInfo(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
+    ApiResponse<string> response = apiInstance.GetRawJsonResultsWithHttpInfo(projectId, conCalculationParameter);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -167,7 +167,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened connection in the ConnectionRestApi service |  |
-| **ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?.md) | Type of requested analysis and connection to calculate | [optional]  |
+| **conCalculationParameter** | [**ConCalculationParameter?**](ConCalculationParameter?.md) | Type of requested analysis and connection to calculate | [optional]  |
 
 ### Return type
 
@@ -179,8 +179,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json
 
 
 ### HTTP response details
@@ -192,7 +192,7 @@ No authorization required
 
 <a id="getresults"></a>
 # **GetResults**
-> List&lt;ConnectionConnectionCheckResIdeaRSOpenModel&gt; GetResults (Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = null)
+> List&lt;ConnectionCheckRes&gt; GetResults (Guid projectId, ConCalculationParameter? conCalculationParameter = null)
 
 Get detailed results of the CBFEM analysis
 
@@ -214,12 +214,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new CalculationApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? | List of connections to calculate and a type of CBFEM analysis (optional) 
+            var conCalculationParameter = new ConCalculationParameter?(); // ConCalculationParameter? | List of connections to calculate and a type of CBFEM analysis (optional) 
 
             try
             {
                 // Get detailed results of the CBFEM analysis
-                List<ConnectionConnectionCheckResIdeaRSOpenModel> result = apiInstance.GetResults(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
+                List<ConnectionCheckRes> result = apiInstance.GetResults(projectId, conCalculationParameter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -240,7 +240,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get detailed results of the CBFEM analysis
-    ApiResponse<List<ConnectionConnectionCheckResIdeaRSOpenModel>> response = apiInstance.GetResultsWithHttpInfo(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
+    ApiResponse<List<ConnectionCheckRes>> response = apiInstance.GetResultsWithHttpInfo(projectId, conCalculationParameter);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -258,11 +258,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?.md) | List of connections to calculate and a type of CBFEM analysis | [optional]  |
+| **conCalculationParameter** | [**ConCalculationParameter?**](ConCalculationParameter?.md) | List of connections to calculate and a type of CBFEM analysis | [optional]  |
 
 ### Return type
 
-[**List&lt;ConnectionConnectionCheckResIdeaRSOpenModel&gt;**](ConnectionConnectionCheckResIdeaRSOpenModel.md)
+[**List&lt;ConnectionCheckRes&gt;**](ConnectionCheckRes.md)
 
 ### Authorization
 
@@ -270,7 +270,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost*
 
 <a id="deleteoperations"></a>
 # **DeleteOperations**
-> MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore DeleteOperations (Guid projectId, int connectionId)
+> OkObjectResult DeleteOperations (Guid projectId, int connectionId)
 
 Delete all operations for the connection
 
@@ -41,7 +41,7 @@ namespace Example
             try
             {
                 // Delete all operations for the connection
-                MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore result = apiInstance.DeleteOperations(projectId, connectionId);
+                OkObjectResult result = apiInstance.DeleteOperations(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -62,7 +62,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete all operations for the connection
-    ApiResponse<MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore> response = apiInstance.DeleteOperationsWithHttpInfo(projectId, connectionId);
+    ApiResponse<OkObjectResult> response = apiInstance.DeleteOperationsWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,7 +84,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore**](MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore.md)
+[**OkObjectResult**](OkObjectResult.md)
 
 ### Authorization
 
@@ -93,7 +93,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -105,7 +105,7 @@ No authorization required
 
 <a id="getallconnectionsdata"></a>
 # **GetAllConnectionsData**
-> List&lt;IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi&gt; GetAllConnectionsData (Guid projectId)
+> List&lt;ConConnection&gt; GetAllConnectionsData (Guid projectId)
 
 Get data about all connections in the project
 
@@ -131,7 +131,7 @@ namespace Example
             try
             {
                 // Get data about all connections in the project
-                List<IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi> result = apiInstance.GetAllConnectionsData(projectId);
+                List<ConConnection> result = apiInstance.GetAllConnectionsData(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -152,7 +152,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get data about all connections in the project
-    ApiResponse<List<IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi>> response = apiInstance.GetAllConnectionsDataWithHttpInfo(projectId);
+    ApiResponse<List<ConConnection>> response = apiInstance.GetAllConnectionsDataWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -173,7 +173,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi&gt;**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)
+[**List&lt;ConConnection&gt;**](ConConnection.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ No authorization required
 
 <a id="getconnectiondata"></a>
 # **GetConnectionData**
-> IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi GetConnectionData (Guid projectId, int connectionId)
+> ConConnection GetConnectionData (Guid projectId, int connectionId)
 
 Get data about a specific connection in the project
 
@@ -221,7 +221,7 @@ namespace Example
             try
             {
                 // Get data about a specific connection in the project
-                IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi result = apiInstance.GetConnectionData(projectId, connectionId);
+                ConConnection result = apiInstance.GetConnectionData(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -242,7 +242,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get data about a specific connection in the project
-    ApiResponse<IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi> response = apiInstance.GetConnectionDataWithHttpInfo(projectId, connectionId);
+    ApiResponse<ConConnection> response = apiInstance.GetConnectionDataWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -264,7 +264,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)
+[**ConConnection**](ConConnection.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ No authorization required
 
 <a id="getmissingwelds"></a>
 # **GetMissingWelds**
-> List&lt;IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi&gt; GetMissingWelds (Guid projectId, int connectionId)
+> List&lt;ConMissingWeld&gt; GetMissingWelds (Guid projectId, int connectionId)
 
 Get missing welds in the connection
 
@@ -312,7 +312,7 @@ namespace Example
             try
             {
                 // Get missing welds in the connection
-                List<IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi> result = apiInstance.GetMissingWelds(projectId, connectionId);
+                List<ConMissingWeld> result = apiInstance.GetMissingWelds(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -333,7 +333,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get missing welds in the connection
-    ApiResponse<List<IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi>> response = apiInstance.GetMissingWeldsWithHttpInfo(projectId, connectionId);
+    ApiResponse<List<ConMissingWeld>> response = apiInstance.GetMissingWeldsWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -355,7 +355,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi&gt;**](IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi.md)
+[**List&lt;ConMissingWeld&gt;**](ConMissingWeld.md)
 
 ### Authorization
 
@@ -376,7 +376,7 @@ No authorization required
 
 <a id="getoperations"></a>
 # **GetOperations**
-> List&lt;IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi&gt; GetOperations (Guid projectId, int connectionId)
+> List&lt;ConOperation&gt; GetOperations (Guid projectId, int connectionId)
 
 Get the list of operations for the connection
 
@@ -403,7 +403,7 @@ namespace Example
             try
             {
                 // Get the list of operations for the connection
-                List<IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi> result = apiInstance.GetOperations(projectId, connectionId);
+                List<ConOperation> result = apiInstance.GetOperations(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -424,7 +424,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get the list of operations for the connection
-    ApiResponse<List<IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi>> response = apiInstance.GetOperationsWithHttpInfo(projectId, connectionId);
+    ApiResponse<List<ConOperation>> response = apiInstance.GetOperationsWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -446,7 +446,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi&gt;**](IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi.md)
+[**List&lt;ConOperation&gt;**](ConOperation.md)
 
 ### Authorization
 
@@ -467,7 +467,7 @@ No authorization required
 
 <a id="getproductioncost"></a>
 # **GetProductionCost**
-> IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi GetProductionCost (Guid projectId, int connectionId)
+> ConProductionCost GetProductionCost (Guid projectId, int connectionId)
 
 Get production cost of the connection
 
@@ -494,7 +494,7 @@ namespace Example
             try
             {
                 // Get production cost of the connection
-                IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi result = apiInstance.GetProductionCost(projectId, connectionId);
+                ConProductionCost result = apiInstance.GetProductionCost(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -515,7 +515,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get production cost of the connection
-    ApiResponse<IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi> response = apiInstance.GetProductionCostWithHttpInfo(projectId, connectionId);
+    ApiResponse<ConProductionCost> response = apiInstance.GetProductionCostWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -537,7 +537,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi.md)
+[**ConProductionCost**](ConProductionCost.md)
 
 ### Authorization
 
@@ -558,7 +558,7 @@ No authorization required
 
 <a id="updateconnectiondata"></a>
 # **UpdateConnectionData**
-> IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi UpdateConnectionData (Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi = null)
+> ConConnection UpdateConnectionData (Guid projectId, int connectionId, ConConnection? conConnection = null)
 
 Update data of a specific connection in the project
 
@@ -581,12 +581,12 @@ namespace Example
             var apiInstance = new ConnectionApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection to be update
-            var ideaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi? | New connection data to be set (optional) 
+            var conConnection = new ConConnection?(); // ConConnection? | New connection data to be set (optional) 
 
             try
             {
                 // Update data of a specific connection in the project
-                IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi result = apiInstance.UpdateConnectionData(projectId, connectionId, ideaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi);
+                ConConnection result = apiInstance.UpdateConnectionData(projectId, connectionId, conConnection);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -607,7 +607,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update data of a specific connection in the project
-    ApiResponse<IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi> response = apiInstance.UpdateConnectionDataWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi);
+    ApiResponse<ConConnection> response = apiInstance.UpdateConnectionDataWithHttpInfo(projectId, connectionId, conConnection);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -626,11 +626,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection to be update |  |
-| **ideaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi?.md) | New connection data to be set | [optional]  |
+| **conConnection** | [**ConConnection?**](ConConnection?.md) | New connection data to be set | [optional]  |
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi.md)
+[**ConConnection**](ConConnection.md)
 
 ### Authorization
 
@@ -638,7 +638,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, text/xml, application/*+xml, application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

@@ -19,9 +19,9 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from connection_restapi_client_poc.models.idea_rs_common_parameters_parameter_data_ci_basic_types import IdeaRSCommonParametersParameterDataCIBasicTypes
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_idea_parameter_idea_stati_ca_api import IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api import IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi
+from connection_restapi_client_poc.models.idea_parameter import IdeaParameter
+from connection_restapi_client_poc.models.idea_parameter_update import IdeaParameterUpdate
+from connection_restapi_client_poc.models.parameter_data import ParameterData
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -279,7 +279,9 @@ class ParameterApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -310,13 +312,7 @@ class ParameterApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )
@@ -363,7 +359,7 @@ class ParameterApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]:
+    ) -> List[IdeaParameter]:
         """Get all parameters which are defined for projectId and connectionId
 
 
@@ -406,7 +402,7 @@ class ParameterApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]",
+            '200': "List[IdeaParameter]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -437,7 +433,7 @@ class ParameterApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]]:
+    ) -> ApiResponse[List[IdeaParameter]]:
         """Get all parameters which are defined for projectId and connectionId
 
 
@@ -480,7 +476,7 @@ class ParameterApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]",
+            '200': "List[IdeaParameter]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -554,7 +550,7 @@ class ParameterApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelIdeaParameterIdeaStatiCaApi]",
+            '200': "List[IdeaParameter]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -583,7 +579,9 @@ class ParameterApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -637,7 +635,7 @@ class ParameterApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to apply template")],
-        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Annotated[Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]], Field(description="New values of parameters")] = None,
+        idea_parameter_update: Annotated[Optional[List[IdeaParameterUpdate]], Field(description="New values of parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -650,7 +648,7 @@ class ParameterApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaRSCommonParametersParameterDataCIBasicTypes]:
+    ) -> List[ParameterData]:
         """Update parameters for the connection connectionId in the project projectId by values passed in parameters
 
 
@@ -658,8 +656,8 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: Id of the connection to apply template (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: New values of parameters
-        :type idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]
+        :param idea_parameter_update: New values of parameters
+        :type idea_parameter_update: List[IdeaParameterUpdate]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -685,7 +683,7 @@ class ParameterApi:
         _param = self._update_parameters_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
+            idea_parameter_update=idea_parameter_update,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -693,7 +691,7 @@ class ParameterApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaRSCommonParametersParameterDataCIBasicTypes]",
+            '200': "List[ParameterData]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -711,7 +709,7 @@ class ParameterApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to apply template")],
-        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Annotated[Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]], Field(description="New values of parameters")] = None,
+        idea_parameter_update: Annotated[Optional[List[IdeaParameterUpdate]], Field(description="New values of parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -724,7 +722,7 @@ class ParameterApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaRSCommonParametersParameterDataCIBasicTypes]]:
+    ) -> ApiResponse[List[ParameterData]]:
         """Update parameters for the connection connectionId in the project projectId by values passed in parameters
 
 
@@ -732,8 +730,8 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: Id of the connection to apply template (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: New values of parameters
-        :type idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]
+        :param idea_parameter_update: New values of parameters
+        :type idea_parameter_update: List[IdeaParameterUpdate]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -759,7 +757,7 @@ class ParameterApi:
         _param = self._update_parameters_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
+            idea_parameter_update=idea_parameter_update,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -767,7 +765,7 @@ class ParameterApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaRSCommonParametersParameterDataCIBasicTypes]",
+            '200': "List[ParameterData]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -785,7 +783,7 @@ class ParameterApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to apply template")],
-        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: Annotated[Optional[List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]], Field(description="New values of parameters")] = None,
+        idea_parameter_update: Annotated[Optional[List[IdeaParameterUpdate]], Field(description="New values of parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -806,8 +804,8 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: Id of the connection to apply template (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: New values of parameters
-        :type idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api: List[IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi]
+        :param idea_parameter_update: New values of parameters
+        :type idea_parameter_update: List[IdeaParameterUpdate]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -833,7 +831,7 @@ class ParameterApi:
         _param = self._update_parameters_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api=idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
+            idea_parameter_update=idea_parameter_update,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -841,7 +839,7 @@ class ParameterApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaRSCommonParametersParameterDataCIBasicTypes]",
+            '200': "List[ParameterData]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -854,7 +852,7 @@ class ParameterApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api,
+        idea_parameter_update,
         _request_auth,
         _content_type,
         _headers,
@@ -864,14 +862,16 @@ class ParameterApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            'IdeaStatiCaApiConnectionModelIdeaParameterUpdateIdeaStatiCaApi': '',
+            'IdeaParameterUpdate': '',
         }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -883,8 +883,8 @@ class ParameterApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_idea_parameter_update_idea_stati_ca_api
+        if idea_parameter_update is not None:
+            _body_params = idea_parameter_update
 
 
         # set the HTTP header `Accept`
@@ -902,13 +902,7 @@ class ParameterApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )

@@ -64,7 +64,7 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //int connectionId = null;
             //var response = instance.DeleteOperations(projectId, connectionId);
-            //Assert.IsType<MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore>(response);
+            //Assert.IsType<OkObjectResult>(response);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //var response = instance.GetAllConnectionsData(projectId);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi>>(response);
+            //Assert.IsType<List<ConConnection>>(response);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //int connectionId = null;
             //var response = instance.GetConnectionData(projectId, connectionId);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi>(response);
+            //Assert.IsType<ConConnection>(response);
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //int connectionId = null;
             //var response = instance.GetMissingWelds(projectId, connectionId);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi>>(response);
+            //Assert.IsType<List<ConMissingWeld>>(response);
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //int connectionId = null;
             //var response = instance.GetOperations(projectId, connectionId);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi>>(response);
+            //Assert.IsType<List<ConOperation>>(response);
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //int connectionId = null;
             //var response = instance.GetProductionCost(projectId, connectionId);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi>(response);
+            //Assert.IsType<ConProductionCost>(response);
         }
 
         /// <summary>
@@ -140,9 +140,9 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi? ideaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi = null;
-            //var response = instance.UpdateConnectionData(projectId, connectionId, ideaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi>(response);
+            //ConConnection? conConnection = null;
+            //var response = instance.UpdateConnectionData(projectId, connectionId, conConnection);
+            //Assert.IsType<ConConnection>(response);
         }
     }
 }

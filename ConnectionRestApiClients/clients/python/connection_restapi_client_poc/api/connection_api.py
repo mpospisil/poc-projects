@@ -19,11 +19,11 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_missing_weld_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_operation_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_production_cost_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi
-from connection_restapi_client_poc.models.microsoft_asp_net_core_mvc_ok_object_result_microsoft_asp_net_core_mvc_core import MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore
+from connection_restapi_client_poc.models.con_connection import ConConnection
+from connection_restapi_client_poc.models.con_missing_weld import ConMissingWeld
+from connection_restapi_client_poc.models.con_operation import ConOperation
+from connection_restapi_client_poc.models.con_production_cost import ConProductionCost
+from connection_restapi_client_poc.models.ok_object_result import OkObjectResult
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -60,7 +60,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore:
+    ) -> OkObjectResult:
         """Delete all operations for the connection
 
 
@@ -100,7 +100,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore",
+            '200': "OkObjectResult",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -130,7 +130,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore]:
+    ) -> ApiResponse[OkObjectResult]:
         """Delete all operations for the connection
 
 
@@ -170,7 +170,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore",
+            '200': "OkObjectResult",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -240,7 +240,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MicrosoftAspNetCoreMvcOkObjectResultMicrosoftAspNetCoreMvcCore",
+            '200': "OkObjectResult",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -268,7 +268,9 @@ class ConnectionApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -286,9 +288,7 @@ class ConnectionApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'text/plain', 
-                    'application/json', 
-                    'text/json'
+                    'application/json'
                 ]
             )
 
@@ -331,7 +331,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]:
+    ) -> List[ConConnection]:
         """Get data about all connections in the project
 
 
@@ -368,7 +368,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]",
+            '200': "List[ConConnection]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -397,7 +397,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]]:
+    ) -> ApiResponse[List[ConConnection]]:
         """Get data about all connections in the project
 
 
@@ -434,7 +434,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]",
+            '200': "List[ConConnection]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -500,7 +500,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]",
+            '200': "List[ConConnection]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -527,7 +527,9 @@ class ConnectionApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -587,7 +589,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi:
+    ) -> ConConnection:
         """Get data about a specific connection in the project
 
 
@@ -627,7 +629,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
+            '200': "ConConnection",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -657,7 +659,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]:
+    ) -> ApiResponse[ConConnection]:
         """Get data about a specific connection in the project
 
 
@@ -697,7 +699,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
+            '200': "ConConnection",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -767,7 +769,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
+            '200': "ConConnection",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -795,7 +797,9 @@ class ConnectionApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -857,7 +861,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]:
+    ) -> List[ConMissingWeld]:
         """Get missing welds in the connection
 
 
@@ -897,7 +901,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]",
+            '200': "List[ConMissingWeld]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -927,7 +931,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]]:
+    ) -> ApiResponse[List[ConMissingWeld]]:
         """Get missing welds in the connection
 
 
@@ -967,7 +971,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]",
+            '200': "List[ConMissingWeld]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1037,7 +1041,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConMissingWeldIdeaStatiCaApi]",
+            '200': "List[ConMissingWeld]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1065,7 +1069,9 @@ class ConnectionApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1127,7 +1133,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]:
+    ) -> List[ConOperation]:
         """Get the list of operations for the connection
 
 
@@ -1167,7 +1173,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]",
+            '200': "List[ConOperation]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1197,7 +1203,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]]:
+    ) -> ApiResponse[List[ConOperation]]:
         """Get the list of operations for the connection
 
 
@@ -1237,7 +1243,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]",
+            '200': "List[ConOperation]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1307,7 +1313,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IdeaStatiCaApiConnectionModelConOperationIdeaStatiCaApi]",
+            '200': "List[ConOperation]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1335,7 +1341,9 @@ class ConnectionApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1397,7 +1405,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi:
+    ) -> ConProductionCost:
         """Get production cost of the connection
 
 
@@ -1437,7 +1445,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi",
+            '200': "ConProductionCost",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1467,7 +1475,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi]:
+    ) -> ApiResponse[ConProductionCost]:
         """Get production cost of the connection
 
 
@@ -1507,7 +1515,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi",
+            '200': "ConProductionCost",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1577,7 +1585,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConProductionCostIdeaStatiCaApi",
+            '200': "ConProductionCost",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1605,7 +1613,9 @@ class ConnectionApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1655,7 +1665,7 @@ class ConnectionApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to be update")],
-        idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi], Field(description="New connection data to be set")] = None,
+        con_connection: Annotated[Optional[ConConnection], Field(description="New connection data to be set")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1668,7 +1678,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi:
+    ) -> ConConnection:
         """Update data of a specific connection in the project
 
 
@@ -1676,8 +1686,8 @@ class ConnectionApi:
         :type project_id: str
         :param connection_id: Id of the connection to be update (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: New connection data to be set
-        :type idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
+        :param con_connection: New connection data to be set
+        :type con_connection: ConConnection
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1703,7 +1713,7 @@ class ConnectionApi:
         _param = self._update_connection_data_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api,
+            con_connection=con_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1711,7 +1721,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
+            '200': "ConConnection",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1729,7 +1739,7 @@ class ConnectionApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to be update")],
-        idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi], Field(description="New connection data to be set")] = None,
+        con_connection: Annotated[Optional[ConConnection], Field(description="New connection data to be set")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1742,7 +1752,7 @@ class ConnectionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi]:
+    ) -> ApiResponse[ConConnection]:
         """Update data of a specific connection in the project
 
 
@@ -1750,8 +1760,8 @@ class ConnectionApi:
         :type project_id: str
         :param connection_id: Id of the connection to be update (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: New connection data to be set
-        :type idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
+        :param con_connection: New connection data to be set
+        :type con_connection: ConConnection
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1777,7 +1787,7 @@ class ConnectionApi:
         _param = self._update_connection_data_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api,
+            con_connection=con_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1785,7 +1795,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
+            '200': "ConConnection",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1803,7 +1813,7 @@ class ConnectionApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to be update")],
-        idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: Annotated[Optional[IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi], Field(description="New connection data to be set")] = None,
+        con_connection: Annotated[Optional[ConConnection], Field(description="New connection data to be set")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1824,8 +1834,8 @@ class ConnectionApi:
         :type project_id: str
         :param connection_id: Id of the connection to be update (required)
         :type connection_id: int
-        :param idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: New connection data to be set
-        :type idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api: IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi
+        :param con_connection: New connection data to be set
+        :type con_connection: ConConnection
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1851,7 +1861,7 @@ class ConnectionApi:
         _param = self._update_connection_data_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api,
+            con_connection=con_connection,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1859,7 +1869,7 @@ class ConnectionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IdeaStatiCaApiConnectionModelConConnectionIdeaStatiCaApi",
+            '200': "ConConnection",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1872,7 +1882,7 @@ class ConnectionApi:
         self,
         project_id,
         connection_id,
-        idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api,
+        con_connection,
         _request_auth,
         _content_type,
         _headers,
@@ -1888,7 +1898,9 @@ class ConnectionApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1900,8 +1912,8 @@ class ConnectionApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api is not None:
-            _body_params = idea_stati_ca_api_connection_model_con_connection_idea_stati_ca_api
+        if con_connection is not None:
+            _body_params = con_connection
 
 
         # set the HTTP header `Accept`
@@ -1919,13 +1931,7 @@ class ConnectionApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'text/xml', 
-                        'application/*+xml', 
-                        'application/json-patch+json', 
-                        'application/json', 
-                        'text/json', 
-                        'application/*+json'
+                        'application/json'
                     ]
                 )
             )

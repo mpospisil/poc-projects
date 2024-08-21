@@ -33,7 +33,7 @@ namespace connection_restapi_client_poc.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "24.0.5.0671";
+        public const string Version = "24.0.5.0702";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -117,7 +117,7 @@ namespace connection_restapi_client_poc.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/24.0.5.0671/csharp");
+            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/24.0.5.0702/csharp");
             BasePath = "http://localhost";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -540,7 +540,7 @@ namespace connection_restapi_client_poc.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 1.0\n";
-            report += "    SDK Package Version: 24.0.5.0671\n";
+            report += "    SDK Package Version: 24.0.5.0702\n";
 
             return report;
         }

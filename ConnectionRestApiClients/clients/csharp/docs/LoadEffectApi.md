@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 
 <a id="addloadeffect"></a>
 # **AddLoadEffect**
-> LoadEffectDataIdeaStatiCaConnectionChecks AddLoadEffect (Guid projectId, int connectionId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = null)
+> LoadEffectData AddLoadEffect (Guid projectId, int connectionId, ConLoadEffect? conLoadEffect = null)
 
 Add new load effect to the connection
 
@@ -36,12 +36,12 @@ namespace Example
             var apiInstance = new LoadEffectApi(config);
             var projectId = "projectId_example";  // Guid | 
             var connectionId = 56;  // int | 
-            var ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? |  (optional) 
+            var conLoadEffect = new ConLoadEffect?(); // ConLoadEffect? |  (optional) 
 
             try
             {
                 // Add new load effect to the connection
-                LoadEffectDataIdeaStatiCaConnectionChecks result = apiInstance.AddLoadEffect(projectId, connectionId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
+                LoadEffectData result = apiInstance.AddLoadEffect(projectId, connectionId, conLoadEffect);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -62,7 +62,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add new load effect to the connection
-    ApiResponse<LoadEffectDataIdeaStatiCaConnectionChecks> response = apiInstance.AddLoadEffectWithHttpInfo(projectId, connectionId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
+    ApiResponse<LoadEffectData> response = apiInstance.AddLoadEffectWithHttpInfo(projectId, connectionId, conLoadEffect);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,11 +81,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** |  |  |
 | **connectionId** | **int** |  |  |
-| **ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?.md) |  | [optional]  |
+| **conLoadEffect** | [**ConLoadEffect?**](ConLoadEffect?.md) |  | [optional]  |
 
 ### Return type
 
-[**LoadEffectDataIdeaStatiCaConnectionChecks**](LoadEffectDataIdeaStatiCaConnectionChecks.md)
+[**LoadEffectData**](LoadEffectData.md)
 
 ### Authorization
 
@@ -93,7 +93,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -199,7 +199,7 @@ No authorization required
 
 <a id="getloadeffect"></a>
 # **GetLoadEffect**
-> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi GetLoadEffect (Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = null)
+> ConLoadEffect GetLoadEffect (Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = null)
 
 Get load impulses from loadEffectId
 
@@ -228,7 +228,7 @@ namespace Example
             try
             {
                 // Get load impulses from loadEffectId
-                IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi result = apiInstance.GetLoadEffect(projectId, connectionId, loadEffectId, isPercentage);
+                ConLoadEffect result = apiInstance.GetLoadEffect(projectId, connectionId, loadEffectId, isPercentage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -249,7 +249,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get load impulses from loadEffectId
-    ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> response = apiInstance.GetLoadEffectWithHttpInfo(projectId, connectionId, loadEffectId, isPercentage);
+    ApiResponse<ConLoadEffect> response = apiInstance.GetLoadEffectWithHttpInfo(projectId, connectionId, loadEffectId, isPercentage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -273,7 +273,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)
+[**ConLoadEffect**](ConLoadEffect.md)
 
 ### Authorization
 
@@ -294,7 +294,7 @@ No authorization required
 
 <a id="getloadeffects"></a>
 # **GetLoadEffects**
-> List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt; GetLoadEffects (Guid projectId, int connectionId, bool? isPercentage = null)
+> List&lt;ConLoadEffect&gt; GetLoadEffects (Guid projectId, int connectionId, bool? isPercentage = null)
 
 Get all load effects which are defined in connectionId
 
@@ -322,7 +322,7 @@ namespace Example
             try
             {
                 // Get all load effects which are defined in connectionId
-                List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> result = apiInstance.GetLoadEffects(projectId, connectionId, isPercentage);
+                List<ConLoadEffect> result = apiInstance.GetLoadEffects(projectId, connectionId, isPercentage);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -343,7 +343,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get all load effects which are defined in connectionId
-    ApiResponse<List<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi>> response = apiInstance.GetLoadEffectsWithHttpInfo(projectId, connectionId, isPercentage);
+    ApiResponse<List<ConLoadEffect>> response = apiInstance.GetLoadEffectsWithHttpInfo(projectId, connectionId, isPercentage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -366,7 +366,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi&gt;**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)
+[**List&lt;ConLoadEffect&gt;**](ConLoadEffect.md)
 
 ### Authorization
 
@@ -480,7 +480,7 @@ No authorization required
 
 <a id="updateloadeffect"></a>
 # **UpdateLoadEffect**
-> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi UpdateLoadEffect (Guid projectId, int connectionId, int loadEffectId, IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = null)
+> ConLoadEffect UpdateLoadEffect (Guid projectId, int connectionId, int loadEffectId, ConLoadEffect? conLoadEffect = null)
 
 Update load impulses in loadEffectId
 
@@ -504,12 +504,12 @@ namespace Example
             var projectId = "projectId_example";  // Guid | 
             var connectionId = 56;  // int | 
             var loadEffectId = 56;  // int | 
-            var ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi = new IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?(); // IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi? |  (optional) 
+            var conLoadEffect = new ConLoadEffect?(); // ConLoadEffect? |  (optional) 
 
             try
             {
                 // Update load impulses in loadEffectId
-                IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi result = apiInstance.UpdateLoadEffect(projectId, connectionId, loadEffectId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
+                ConLoadEffect result = apiInstance.UpdateLoadEffect(projectId, connectionId, loadEffectId, conLoadEffect);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -530,7 +530,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update load impulses in loadEffectId
-    ApiResponse<IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi> response = apiInstance.UpdateLoadEffectWithHttpInfo(projectId, connectionId, loadEffectId, ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi);
+    ApiResponse<ConLoadEffect> response = apiInstance.UpdateLoadEffectWithHttpInfo(projectId, connectionId, loadEffectId, conLoadEffect);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -550,11 +550,11 @@ catch (ApiException e)
 | **projectId** | **Guid** |  |  |
 | **connectionId** | **int** |  |  |
 | **loadEffectId** | **int** |  |  |
-| **ideaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi** | [**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi?.md) |  | [optional]  |
+| **conLoadEffect** | [**ConLoadEffect?**](ConLoadEffect?.md) |  | [optional]  |
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)
+[**ConLoadEffect**](ConLoadEffect.md)
 
 ### Authorization
 
@@ -562,7 +562,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

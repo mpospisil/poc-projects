@@ -31,10 +31,10 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi&gt;</returns>
-        List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi> Calculate(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>List&lt;ConResultSummary&gt;</returns>
+        List<ConResultSummary> Calculate(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0);
 
         /// <summary>
         /// Run CBFEM caluclation and return the summary of the results
@@ -44,19 +44,19 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi&gt;</returns>
-        ApiResponse<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>> CalculateWithHttpInfo(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;ConResultSummary&gt;</returns>
+        ApiResponse<List<ConResultSummary>> CalculateWithHttpInfo(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0);
         /// <summary>
         /// Get json string which represents raw CBFEM results (an instance of CheckResultsData)
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">Type of requested analysis and connection to calculate (optional)</param>
+        /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string GetRawJsonResults(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0);
+        string GetRawJsonResults(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0);
 
         /// <summary>
         /// Get json string which represents raw CBFEM results (an instance of CheckResultsData)
@@ -66,19 +66,19 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">Type of requested analysis and connection to calculate (optional)</param>
+        /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> GetRawJsonResultsWithHttpInfo(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0);
+        ApiResponse<string> GetRawJsonResultsWithHttpInfo(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0);
         /// <summary>
         /// Get detailed results of the CBFEM analysis
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;ConnectionConnectionCheckResIdeaRSOpenModel&gt;</returns>
-        List<ConnectionConnectionCheckResIdeaRSOpenModel> GetResults(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>List&lt;ConnectionCheckRes&gt;</returns>
+        List<ConnectionCheckRes> GetResults(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0);
 
         /// <summary>
         /// Get detailed results of the CBFEM analysis
@@ -88,10 +88,10 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;ConnectionConnectionCheckResIdeaRSOpenModel&gt;</returns>
-        ApiResponse<List<ConnectionConnectionCheckResIdeaRSOpenModel>> GetResultsWithHttpInfo(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;ConnectionCheckRes&gt;</returns>
+        ApiResponse<List<ConnectionCheckRes>> GetResultsWithHttpInfo(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -109,11 +109,11 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi&gt;</returns>
-        System.Threading.Tasks.Task<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>> CalculateAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;ConResultSummary&gt;</returns>
+        System.Threading.Tasks.Task<List<ConResultSummary>> CalculateAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Run CBFEM caluclation and return the summary of the results
@@ -123,11 +123,11 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>>> CalculateWithHttpInfoAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;ConResultSummary&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ConResultSummary>>> CalculateWithHttpInfoAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get json string which represents raw CBFEM results (an instance of CheckResultsData)
         /// </summary>
@@ -136,11 +136,11 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">Type of requested analysis and connection to calculate (optional)</param>
+        /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> GetRawJsonResultsAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> GetRawJsonResultsAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get json string which represents raw CBFEM results (an instance of CheckResultsData)
@@ -150,11 +150,11 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">Type of requested analysis and connection to calculate (optional)</param>
+        /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> GetRawJsonResultsWithHttpInfoAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> GetRawJsonResultsWithHttpInfoAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get detailed results of the CBFEM analysis
         /// </summary>
@@ -163,11 +163,11 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ConnectionConnectionCheckResIdeaRSOpenModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ConnectionConnectionCheckResIdeaRSOpenModel>> GetResultsAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;ConnectionCheckRes&gt;</returns>
+        System.Threading.Tasks.Task<List<ConnectionCheckRes>> GetResultsAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get detailed results of the CBFEM analysis
@@ -177,11 +177,11 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ConnectionConnectionCheckResIdeaRSOpenModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ConnectionConnectionCheckResIdeaRSOpenModel>>> GetResultsWithHttpInfoAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;ConnectionCheckRes&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ConnectionCheckRes>>> GetResultsWithHttpInfoAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -307,12 +307,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi&gt;</returns>
-        public List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi> Calculate(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>List&lt;ConResultSummary&gt;</returns>
+        public List<ConResultSummary> Calculate(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>> localVarResponse = CalculateWithHttpInfo(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<List<ConResultSummary>> localVarResponse = CalculateWithHttpInfo(projectId, conCalculationParameter);
             return localVarResponse.Data;
         }
 
@@ -321,21 +321,15 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi&gt;</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>> CalculateWithHttpInfo(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;ConResultSummary&gt;</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<List<ConResultSummary>> CalculateWithHttpInfo(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "text/xml",
-                "application/*+xml",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -356,14 +350,14 @@ namespace connection_restapi_client_poc.Api
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi;
+            localVarRequestOptions.Data = conCalculationParameter;
 
             localVarRequestOptions.Operation = "CalculationApi.Calculate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>>("/api/1/projects/{projectId}/calculate", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<ConResultSummary>>("/api/1/projects/{projectId}/calculate", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Calculate", localVarResponse);
@@ -381,13 +375,13 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi&gt;</returns>
-        public async System.Threading.Tasks.Task<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>> CalculateAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;ConResultSummary&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ConResultSummary>> CalculateAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>> localVarResponse = await CalculateWithHttpInfoAsync(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<List<ConResultSummary>> localVarResponse = await CalculateWithHttpInfoAsync(projectId, conCalculationParameter, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -396,23 +390,17 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi&gt;)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>>> CalculateWithHttpInfoAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;ConResultSummary&gt;)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ConResultSummary>>> CalculateWithHttpInfoAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "text/xml", 
-                "application/*+xml", 
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -433,14 +421,14 @@ namespace connection_restapi_client_poc.Api
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi;
+            localVarRequestOptions.Data = conCalculationParameter;
 
             localVarRequestOptions.Operation = "CalculationApi.Calculate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<IdeaStatiCaApiConnectionModelConResultSummaryIdeaStatiCaApi>>("/api/1/projects/{projectId}/calculate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ConResultSummary>>("/api/1/projects/{projectId}/calculate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -459,12 +447,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">Type of requested analysis and connection to calculate (optional)</param>
+        /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string GetRawJsonResults(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0)
+        public string GetRawJsonResults(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = GetRawJsonResultsWithHttpInfo(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = GetRawJsonResultsWithHttpInfo(projectId, conCalculationParameter);
             return localVarResponse.Data;
         }
 
@@ -473,26 +461,21 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">Type of requested analysis and connection to calculate (optional)</param>
+        /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<string> GetRawJsonResultsWithHttpInfo(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<string> GetRawJsonResultsWithHttpInfo(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "text/xml",
-                "application/*+xml",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain"
+                "text/plain",
+                "application/json"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -508,7 +491,7 @@ namespace connection_restapi_client_poc.Api
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi;
+            localVarRequestOptions.Data = conCalculationParameter;
 
             localVarRequestOptions.Operation = "CalculationApi.GetRawJsonResults";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -533,13 +516,13 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">Type of requested analysis and connection to calculate (optional)</param>
+        /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> GetRawJsonResultsAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> GetRawJsonResultsAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await GetRawJsonResultsWithHttpInfoAsync(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await GetRawJsonResultsWithHttpInfoAsync(projectId, conCalculationParameter, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -548,28 +531,23 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">Type of requested analysis and connection to calculate (optional)</param>
+        /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> GetRawJsonResultsWithHttpInfoAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> GetRawJsonResultsWithHttpInfoAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "text/xml", 
-                "application/*+xml", 
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain"
+                "text/plain",
+                "application/json"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -585,7 +563,7 @@ namespace connection_restapi_client_poc.Api
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi;
+            localVarRequestOptions.Data = conCalculationParameter;
 
             localVarRequestOptions.Operation = "CalculationApi.GetRawJsonResults";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -611,12 +589,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;ConnectionConnectionCheckResIdeaRSOpenModel&gt;</returns>
-        public List<ConnectionConnectionCheckResIdeaRSOpenModel> GetResults(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>List&lt;ConnectionCheckRes&gt;</returns>
+        public List<ConnectionCheckRes> GetResults(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<List<ConnectionConnectionCheckResIdeaRSOpenModel>> localVarResponse = GetResultsWithHttpInfo(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi);
+            connection_restapi_client_poc.Client.ApiResponse<List<ConnectionCheckRes>> localVarResponse = GetResultsWithHttpInfo(projectId, conCalculationParameter);
             return localVarResponse.Data;
         }
 
@@ -625,21 +603,15 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;ConnectionConnectionCheckResIdeaRSOpenModel&gt;</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<List<ConnectionConnectionCheckResIdeaRSOpenModel>> GetResultsWithHttpInfo(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;ConnectionCheckRes&gt;</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<List<ConnectionCheckRes>> GetResultsWithHttpInfo(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "text/xml",
-                "application/*+xml",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -660,14 +632,14 @@ namespace connection_restapi_client_poc.Api
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi;
+            localVarRequestOptions.Data = conCalculationParameter;
 
             localVarRequestOptions.Operation = "CalculationApi.GetResults";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<ConnectionConnectionCheckResIdeaRSOpenModel>>("/api/1/projects/{projectId}/results", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<ConnectionCheckRes>>("/api/1/projects/{projectId}/results", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetResults", localVarResponse);
@@ -685,13 +657,13 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ConnectionConnectionCheckResIdeaRSOpenModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ConnectionConnectionCheckResIdeaRSOpenModel>> GetResultsAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;ConnectionCheckRes&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ConnectionCheckRes>> GetResultsAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<List<ConnectionConnectionCheckResIdeaRSOpenModel>> localVarResponse = await GetResultsWithHttpInfoAsync(projectId, ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<List<ConnectionCheckRes>> localVarResponse = await GetResultsWithHttpInfoAsync(projectId, conCalculationParameter, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -700,23 +672,17 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi">List of connections to calculate and a type of CBFEM analysis (optional)</param>
+        /// <param name="conCalculationParameter">List of connections to calculate and a type of CBFEM analysis (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ConnectionConnectionCheckResIdeaRSOpenModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ConnectionConnectionCheckResIdeaRSOpenModel>>> GetResultsWithHttpInfoAsync(Guid projectId, IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi? ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi = default(IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;ConnectionCheckRes&gt;)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ConnectionCheckRes>>> GetResultsWithHttpInfoAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "text/xml", 
-                "application/*+xml", 
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -737,14 +703,14 @@ namespace connection_restapi_client_poc.Api
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = ideaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi;
+            localVarRequestOptions.Data = conCalculationParameter;
 
             localVarRequestOptions.Operation = "CalculationApi.GetResults";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ConnectionConnectionCheckResIdeaRSOpenModel>>("/api/1/projects/{projectId}/results", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ConnectionCheckRes>>("/api/1/projects/{projectId}/results", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

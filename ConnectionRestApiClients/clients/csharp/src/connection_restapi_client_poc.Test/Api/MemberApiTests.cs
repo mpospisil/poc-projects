@@ -64,7 +64,7 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //int connectionId = null;
             //var response = instance.GetAllMemberData(projectId, connectionId);
-            //Assert.IsType<List<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>>(response);
+            //Assert.IsType<List<ConMember>>(response);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace connection_restapi_client_poc.Test.Api
             //int connectionId = null;
             //int memberId = null;
             //var response = instance.GetMemberData(projectId, connectionId, memberId);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>(response);
+            //Assert.IsType<ConMember>(response);
         }
 
         /// <summary>
@@ -91,9 +91,9 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //int connectionId = null;
             //int memberId = null;
-            //IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi? ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi = null;
-            //var response = instance.UpdateMember(projectId, connectionId, memberId, ideaStatiCaApiConnectionModelConMemberIdeaStatiCaApi);
-            //Assert.IsType<IdeaStatiCaApiConnectionModelConMemberIdeaStatiCaApi>(response);
+            //ConMember? conMember = null;
+            //var response = instance.UpdateMember(projectId, connectionId, memberId, conMember);
+            //Assert.IsType<ConMember>(response);
         }
     }
 }

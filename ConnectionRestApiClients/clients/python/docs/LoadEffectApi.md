@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **add_load_effect**
-> LoadEffectDataIdeaStatiCaConnectionChecks add_load_effect(project_id, connection_id, idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api)
+> LoadEffectData add_load_effect(project_id, connection_id, con_load_effect=con_load_effect)
 
 Add new load effect to the connection
 
@@ -22,8 +22,8 @@ Add new load effect to the connection
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
-from connection_restapi_client_poc.models.load_effect_data_idea_stati_ca_connection_checks import LoadEffectDataIdeaStatiCaConnectionChecks
+from connection_restapi_client_poc.models.con_load_effect import ConLoadEffect
+from connection_restapi_client_poc.models.load_effect_data import LoadEffectData
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -40,11 +40,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi |  (optional)
+    con_load_effect = connection_restapi_client_poc.ConLoadEffect() # ConLoadEffect |  (optional)
 
     try:
         # Add new load effect to the connection
-        api_response = api_instance.add_load_effect(project_id, connection_id, idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api)
+        api_response = api_instance.add_load_effect(project_id, connection_id, con_load_effect=con_load_effect)
         print("The response of LoadEffectApi->add_load_effect:\n")
         pprint(api_response)
     except Exception as e:
@@ -60,11 +60,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)|  | [optional] 
+ **con_load_effect** | [**ConLoadEffect**](ConLoadEffect.md)|  | [optional] 
 
 ### Return type
 
-[**LoadEffectDataIdeaStatiCaConnectionChecks**](LoadEffectDataIdeaStatiCaConnectionChecks.md)
+[**LoadEffectData**](LoadEffectData.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -153,7 +153,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_load_effect**
-> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi get_load_effect(project_id, connection_id, load_effect_id, is_percentage=is_percentage)
+> ConLoadEffect get_load_effect(project_id, connection_id, load_effect_id, is_percentage=is_percentage)
 
 Get load impulses from loadEffectId
 
@@ -162,7 +162,7 @@ Get load impulses from loadEffectId
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_load_effect import ConLoadEffect
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)
+[**ConLoadEffect**](ConLoadEffect.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_load_effects**
-> List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi] get_load_effects(project_id, connection_id, is_percentage=is_percentage)
+> List[ConLoadEffect] get_load_effects(project_id, connection_id, is_percentage=is_percentage)
 
 Get all load effects which are defined in connectionId
 
@@ -234,7 +234,7 @@ Get all load effects which are defined in connectionId
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_load_effect import ConLoadEffect
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi]**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)
+[**List[ConLoadEffect]**](ConLoadEffect.md)
 
 ### Authorization
 
@@ -364,7 +364,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_load_effect**
-> IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi update_load_effect(project_id, connection_id, load_effect_id, idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api)
+> ConLoadEffect update_load_effect(project_id, connection_id, load_effect_id, con_load_effect=con_load_effect)
 
 Update load impulses in loadEffectId
 
@@ -373,7 +373,7 @@ Update load impulses in loadEffectId
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi
+from connection_restapi_client_poc.models.con_load_effect import ConLoadEffect
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -391,11 +391,11 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     load_effect_id = 56 # int | 
-    idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi() # IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi |  (optional)
+    con_load_effect = connection_restapi_client_poc.ConLoadEffect() # ConLoadEffect |  (optional)
 
     try:
         # Update load impulses in loadEffectId
-        api_response = api_instance.update_load_effect(project_id, connection_id, load_effect_id, idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api=idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api)
+        api_response = api_instance.update_load_effect(project_id, connection_id, load_effect_id, con_load_effect=con_load_effect)
         print("The response of LoadEffectApi->update_load_effect:\n")
         pprint(api_response)
     except Exception as e:
@@ -412,11 +412,11 @@ Name | Type | Description  | Notes
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
  **load_effect_id** | **int**|  | 
- **idea_stati_ca_api_connection_model_con_load_effect_idea_stati_ca_api** | [**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)|  | [optional] 
+ **con_load_effect** | [**ConLoadEffect**](ConLoadEffect.md)|  | [optional] 
 
 ### Return type
 
-[**IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi**](IdeaStatiCaApiConnectionModelConLoadEffectIdeaStatiCaApi.md)
+[**ConLoadEffect**](ConLoadEffect.md)
 
 ### Authorization
 
@@ -424,7 +424,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

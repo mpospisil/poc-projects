@@ -35,15 +35,9 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
         # Add your ClientId to HTTP header
         api_client.default_headers['ClientId'] = clientId
         
-
         # Override the default Content-Type for this specific call
-        api_client.default_headers['Content-Type'] = 'multipart/form-data'
         uploadRes = api_project.upload_idea_con(idea_con_file=byte_array)
-
         project_id = uploadRes.project_id
-
-        api_client.default_headers['Content-Type'] = 'application/json'
-
 
         try:
             # Get the project data

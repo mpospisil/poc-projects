@@ -5,9 +5,6 @@ import os
 import requests
 from urllib.parse import urljoin
 import json
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_template_mapping_get_param_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_template_conversions_idea_stati_ca_api import IdeaStatiCaApiConnectionModelTemplateConversionsIdeaStatiCaApi
-from connection_restapi_client_poc.models.idea_stati_ca_api_connection_model_con_template_apply_param_idea_stati_ca_api import IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi
 
 from connection_restapi_client_poc.rest import ApiException
 
@@ -38,31 +35,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
         # Add your ClientId to HTTP header
         api_client.default_headers['ClientId'] = clientId
-        api_client.default_headers['Content-Type'] = 'application/json'
 
-
-        # temporary workaround to upload the project file
-        # it should be done directly by client later
-        url = urljoin(baseUrl, 'api/1/projects/open')
-
-        # Prepare headers if necessary (optional)
-        headers = {
-            "Content-Type": "application/octet-stream",
-            "ClientId": clientId
-        }
-
-        # Send the POST request with the byte array
-        response = requests.post(url, data=byte_array, headers=headers)
-        print(response.status_code)
-
-        if response.status_code == 200:
-            # Parse the JSON response
-            json_response = response.json()       
-            # Get the projectId of the uploaded project from the response 
-            project_id = json_response["projectId"]
-        else:
-            print("Error uploading the project file")
-            raise Exception("Error uploading the project file")
+        # Override the default Content-Type for this specific call
+        uploadRes = api_project.upload_idea_con(idea_con_file=byte_array, _content_type='multipart/form-data')
+        project_id = uploadRes.project_id
 
         try:
             # Get the project data
@@ -82,21 +58,21 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             
             api_template = connection_restapi_client_poc.TemplateApi(api_client)
 
-            templateParam = IdeaStatiCaApiConnectionModelConTemplateMappingGetParamIdeaStatiCaApi()
+            templateParam =  connection_restapi_client_poc.ConTemplateMappingGetParam() # ConTemplateMappingGetParam | Data of the template to get default mapping (optional)
 
             template_file_name = os.path.join(dir_path, '..\..\projects', 'template-I-corner.contemp')
             with open(template_file_name, 'r', encoding='utf-16') as file:
                 templateParam.template = file.read()
 
             # get the default mapping for the selected template and connection  
-            default_mapping = api_template.get_deault_template_mapping(project_id, connection1.id, templateParam)
+            default_mapping = api_template.get_default_template_mapping(project_id, connection1.id, templateParam)
             pprint(default_mapping)
 
             # TODO
             # Modify mapping
           
             # Apply the template to the connection with the modified mapping
-            applyTemplateData = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConTemplateApplyParamIdeaStatiCaApi()
+            applyTemplateData =  connection_restapi_client_poc.ConTemplateApplyParam() # ConTemplateApplyParam | Template to apply (optional)
             applyTemplateData.connection_template = templateParam.template
             applyTemplateData.mapping = default_mapping
 
@@ -108,25 +84,12 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             api_calculation = connection_restapi_client_poc.CalculationApi(api_client)            
 
             # run stress-strain CBFEM analysis for the connection id = 1
-            calcParams =  connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi()
+            calcParams =  connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
             calcParams.connection_ids = [connection1.id]
 
             # run stress-strain analysis for the connection
             con1_cbfem_results1 = api_calculation.calculate(project_id, calcParams)
             pprint(con1_cbfem_results1)
-
-            # modify loading
-
-
-
-            # it doesn't work why ? wrong coding ?
-
-            # # download modified ideacon file
-            # projectDataStream = api_project.api1_projects_project_id_download_get(project_id)
-            # updatedProject_file_path = os.path.join(dir_path, '..\..\projects', 'corner-updated.ideaCon')
-            # with open(updatedProject_file_path, 'wb') as file:
-            #     file.write(projectDataStream.read())
-
 
         except Exception as ee:
             print("Exception when calling CalculationApi->api1_projects_project_id_calculate_post: %s\n" % ee)

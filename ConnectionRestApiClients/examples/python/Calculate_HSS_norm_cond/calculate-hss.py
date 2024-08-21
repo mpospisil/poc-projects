@@ -36,7 +36,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
         api_client.default_headers['ClientId'] = clientId
         
         # Override the default Content-Type for this specific call
-        uploadRes = api_project.upload_idea_con(idea_con_file=byte_array)
+        uploadRes = api_project.upload_idea_con(idea_con_file=byte_array, _content_type='multipart/form-data')
         project_id = uploadRes.project_id
 
         try:
@@ -59,7 +59,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
             api_calculation = connection_restapi_client_poc.CalculationApi(api_client)
 
             # run stress-strain CBFEM analysis for the connection id = 1
-            calcParams = connection_restapi_client_poc.IdeaStatiCaApiConnectionModelConCalculationParameterIdeaStatiCaApi()
+            calcParams = connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
             calcParams.connection_ids = [connection1.id]
 
             # run stress-strain analysis for the connection

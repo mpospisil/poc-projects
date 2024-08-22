@@ -1,0 +1,1287 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ConDesignProposer API 1.0",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/1/design-items": {
+      "put": {
+        "tags": [
+          "DesignItem"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConDesignItem"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConDesignItem"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConDesignItem"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConDesignItem"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "DesignItem"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConDesignItem"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConDesignItem"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConDesignItem"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConDesignItem"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/design-items/{designItemId}": {
+      "get": {
+        "tags": [
+          "DesignItem"
+        ],
+        "parameters": [
+          {
+            "name": "designItemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignItem"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignItem"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignItem"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "DesignItem"
+        ],
+        "parameters": [
+          {
+            "name": "designItemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/1/design-items/{designItemId}/picture": {
+      "get": {
+        "tags": [
+          "DesignItem"
+        ],
+        "parameters": [
+          {
+            "name": "designItemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/1/design-items/{designItemId}/publish": {
+      "post": {
+        "tags": [
+          "DesignItem"
+        ],
+        "parameters": [
+          {
+            "name": "designItemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "picture": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "picture": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignItem"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignItem"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignItem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/design-project/{designItemId}": {
+      "get": {
+        "tags": [
+          "DesignProject"
+        ],
+        "parameters": [
+          {
+            "name": "designItemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/design-project": {
+      "get": {
+        "tags": [
+          "DesignProject"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/design-sets": {
+      "post": {
+        "tags": [
+          "DesignSet"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConDesignSet"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConDesignSet"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConDesignSet"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConDesignSet"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignSet"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignSet"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignSet"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "DesignSet"
+        ],
+        "parameters": [
+          {
+            "name": "designSetId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "DesignSet"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IConDesignSet"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IConDesignSet"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IConDesignSet"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/design-sets/{designSetId}": {
+      "get": {
+        "tags": [
+          "DesignSet"
+        ],
+        "parameters": [
+          {
+            "name": "designSetId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignSet"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignSet"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignSet"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/design-sets/{designSetId}/design-items": {
+      "get": {
+        "tags": [
+          "DesignSet"
+        ],
+        "parameters": [
+          {
+            "name": "designSetId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IConDesignItem"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IConDesignItem"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IConDesignItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Anchoring": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "anchoringType": {
+            "$ref": "#/components/schemas/AnchoringType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AnchoringType": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "BearingMemberData": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "inclination": {
+            "type": "number",
+            "format": "double"
+          },
+          "continuityType": {
+            "$ref": "#/components/schemas/ContinuityType"
+          },
+          "cssMetaData": {
+            "$ref": "#/components/schemas/CssData"
+          },
+          "rigidity": {
+            "$ref": "#/components/schemas/ConnectionRigidity"
+          },
+          "staticBehaviour": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BoltGrid": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cleat": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConDesignData": {
+        "type": "object",
+        "properties": {
+          "typology": {
+            "$ref": "#/components/schemas/ConTypology"
+          },
+          "manufacture": {
+            "$ref": "#/components/schemas/ConManufacture"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConDesignItem": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "pictureId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "version": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "ownerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "designCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "conDesignSetId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "conDesignItemId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "designData": {
+            "$ref": "#/components/schemas/ConDesignData"
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "loadTransferType": {
+            "$ref": "#/components/schemas/LoadTransferType"
+          },
+          "authorName": {
+            "type": "string",
+            "nullable": true
+          },
+          "activity": {
+            "type": "boolean"
+          },
+          "priority": {
+            "type": "boolean"
+          },
+          "imported": {
+            "type": "boolean"
+          },
+          "isParametric": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConDesignSetType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ConManufacture": {
+        "type": "object",
+        "properties": {
+          "manufacturingType": {
+            "$ref": "#/components/schemas/ManufacturingTypes"
+          },
+          "connectionTemplate": {
+            "type": "string",
+            "nullable": true
+          },
+          "conParts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConPart"
+            },
+            "nullable": true
+          },
+          "operationsInfo": {
+            "$ref": "#/components/schemas/OperationsInfo"
+          },
+          "typologyCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConPart": {
+        "type": "object",
+        "properties": {
+          "stiffness": {
+            "$ref": "#/components/schemas/StiffnessCategoryTypes"
+          },
+          "category": {
+            "$ref": "#/components/schemas/ConPartCategoryTypes"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConPartCategoryTypes": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ConTypology": {
+        "type": "object",
+        "properties": {
+          "bearingMember": {
+            "$ref": "#/components/schemas/BearingMemberData"
+          },
+          "connectedMembers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConnectedMemberData"
+            },
+            "nullable": true
+          },
+          "typologyCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConnectedMemberData": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "typologicalSectorCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lcsRotatiton": {
+            "type": "number",
+            "format": "double"
+          },
+          "continuityType": {
+            "$ref": "#/components/schemas/ContinuityType"
+          },
+          "cssMetaData": {
+            "$ref": "#/components/schemas/CssData"
+          },
+          "rigidity": {
+            "$ref": "#/components/schemas/ConnectionRigidity"
+          },
+          "dirRelatedToBearing": {
+            "$ref": "#/components/schemas/ConnectionDirection"
+          },
+          "staticBehaviour": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConnectingPlate": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "connectingPlateType": {
+            "$ref": "#/components/schemas/MaterialType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConnectionDirection": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ConnectionRigidity": {
+        "enum": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          9,
+          16,
+          18,
+          32,
+          36
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ContinuityType": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CreateConDesignSet": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/ConDesignSetType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CssClass": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CssData": {
+        "type": "object",
+        "properties": {
+          "arcSegmentCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cssClass": {
+            "$ref": "#/components/schemas/CssClass"
+          },
+          "cssSize": {
+            "$ref": "#/components/schemas/CssSize"
+          },
+          "integralityType": {
+            "$ref": "#/components/schemas/IntegralityType"
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "mainSegmentCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shape": {
+            "$ref": "#/components/schemas/Shape"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "formCode": {
+            "$ref": "#/components/schemas/FormCode"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CssSize": {
+        "type": "object",
+        "properties": {
+          "width": {
+            "type": "number",
+            "format": "double"
+          },
+          "height": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EndPlate": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FinPlate": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FormCode": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "GeneralPlate": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "generalPlateType": {
+            "$ref": "#/components/schemas/GeneralPlateType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeneralPlateType": {
+        "enum": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "GussetPlate": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gussetPlateType": {
+            "$ref": "#/components/schemas/MaterialType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IConDesignItem": {
+        "type": "object",
+        "properties": {
+          "conDesignItemId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "conDesignSetId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "designCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "designData": {
+            "$ref": "#/components/schemas/ConDesignData"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "ownerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "pictureId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "version": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "loadTransferType": {
+            "$ref": "#/components/schemas/LoadTransferType"
+          },
+          "authorName": {
+            "type": "string",
+            "nullable": true
+          },
+          "activity": {
+            "type": "boolean"
+          },
+          "priority": {
+            "type": "boolean"
+          },
+          "imported": {
+            "type": "boolean"
+          },
+          "isParametric": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IConDesignSet": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "readOnly": {
+            "type": "boolean"
+          },
+          "ownerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modified": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ConDesignSetType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IntegralityType": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "LoadTransferType": {
+        "enum": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ManufacturingTypes": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          8,
+          16
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "MaterialType": {
+        "enum": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Opening": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OperationsInfo": {
+        "type": "object",
+        "properties": {
+          "endPlate": {
+            "$ref": "#/components/schemas/EndPlate"
+          },
+          "shiftedEndPlate": {
+            "$ref": "#/components/schemas/ShiftedEndPlate"
+          },
+          "stub": {
+            "$ref": "#/components/schemas/Stub"
+          },
+          "plateToPlate": {
+            "$ref": "#/components/schemas/PlateToPlate"
+          },
+          "splicePlate": {
+            "$ref": "#/components/schemas/SplicePlate"
+          },
+          "gussetPlate": {
+            "$ref": "#/components/schemas/GussetPlate"
+          },
+          "connectingPlate": {
+            "$ref": "#/components/schemas/ConnectingPlate"
+          },
+          "finPlate": {
+            "$ref": "#/components/schemas/FinPlate"
+          },
+          "cleat": {
+            "$ref": "#/components/schemas/Cleat"
+          },
+          "anchoring": {
+            "$ref": "#/components/schemas/Anchoring"
+          },
+          "opening": {
+            "$ref": "#/components/schemas/Opening"
+          },
+          "generalPlate": {
+            "$ref": "#/components/schemas/GeneralPlate"
+          },
+          "stiffener": {
+            "$ref": "#/components/schemas/Stiffener"
+          },
+          "boltGrid": {
+            "$ref": "#/components/schemas/BoltGrid"
+          },
+          "pinGrid": {
+            "$ref": "#/components/schemas/PinGrid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PinGrid": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PlateToPlate": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shape": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ShiftedEndPlate": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SplicePlate": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Stiffener": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StiffnessCategoryTypes": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Stub": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Insert bearer token valid for current issuer",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

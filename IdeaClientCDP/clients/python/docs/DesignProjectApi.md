@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api1_design_project_design_item_id_get**](DesignProjectApi.md#api1_design_project_design_item_id_get) | **GET** /api/1/design-project/{designItemId} | 
-[**api1_design_project_get**](DesignProjectApi.md#api1_design_project_get) | **GET** /api/1/design-project | 
+[**api9_design_project_design_item_id_get**](DesignProjectApi.md#api9_design_project_design_item_id_get) | **GET** /api/9/design-project/{designItemId} | 
+[**api9_design_project_get**](DesignProjectApi.md#api9_design_project_get) | **GET** /api/9/design-project | 
 
 
-# **api1_design_project_design_item_id_get**
-> str api1_design_project_design_item_id_get(design_item_id)
+# **api9_design_project_design_item_id_get**
+> str api9_design_project_design_item_id_get(design_item_id)
 
 
 
@@ -45,11 +45,11 @@ with idea_cdp_client_poc.ApiClient(configuration) as api_client:
     design_item_id = 'design_item_id_example' # str | 
 
     try:
-        api_response = api_instance.api1_design_project_design_item_id_get(design_item_id)
-        print("The response of DesignProjectApi->api1_design_project_design_item_id_get:\n")
+        api_response = api_instance.api9_design_project_design_item_id_get(design_item_id)
+        print("The response of DesignProjectApi->api9_design_project_design_item_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DesignProjectApi->api1_design_project_design_item_id_get: %s\n" % e)
+        print("Exception when calling DesignProjectApi->api9_design_project_design_item_id_get: %s\n" % e)
 ```
 
 
@@ -82,8 +82,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api1_design_project_get**
-> str api1_design_project_get()
+# **api9_design_project_get**
+> str api9_design_project_get()
 
 
 
@@ -118,11 +118,11 @@ with idea_cdp_client_poc.ApiClient(configuration) as api_client:
     api_instance = idea_cdp_client_poc.DesignProjectApi(api_client)
 
     try:
-        api_response = api_instance.api1_design_project_get()
-        print("The response of DesignProjectApi->api1_design_project_get:\n")
+        api_response = api_instance.api9_design_project_get()
+        print("The response of DesignProjectApi->api9_design_project_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DesignProjectApi->api1_design_project_get: %s\n" % e)
+        print("Exception when calling DesignProjectApi->api9_design_project_get: %s\n" % e)
 ```
 
 

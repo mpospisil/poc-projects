@@ -1,11 +1,199 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "ConDesignProposer API 1.0",
-    "version": "1.0"
+    "title": "ConDesignProposer API 9.0",
+    "version": "9.0"
   },
   "paths": {
-    "/api/1/design-items": {
+    "/api/9/design-items/{designItemId}": {
+      "get": {
+        "tags": [
+          "DesignItem"
+        ],
+        "parameters": [
+          {
+            "name": "designItemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdiDesignItem_V9"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdiDesignItem_V9"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CdiDesignItem_V9"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "DesignItem"
+        ],
+        "parameters": [
+          {
+            "name": "designItemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/9/design-items/{designItemId}/training": {
+      "post": {
+        "tags": [
+          "DesignItem"
+        ],
+        "parameters": [
+          {
+            "name": "designItemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/9/design-items/without-scene": {
+      "post": {
+        "tags": [
+          "DesignItem"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdiPublishDataWithoutScene_V9"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdiPublishDataWithoutScene_V9"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdiPublishDataWithoutScene_V9"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdiPublishDataWithoutScene_V9"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItem"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItem"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/9/design-items": {
+      "post": {
+        "tags": [
+          "DesignItem"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdiPublishData_V8"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdiPublishData_V8"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdiPublishData_V8"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CdiPublishData_V8"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItem"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItem"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItem"
+                }
+              }
+            }
+          }
+        }
+      },
       "put": {
         "tags": [
           "DesignItem"
@@ -39,63 +227,9 @@
             "description": "Success"
           }
         }
-      },
-      "post": {
-        "tags": [
-          "DesignItem"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConDesignItem"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConDesignItem"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConDesignItem"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConDesignItem"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            }
-          }
-        }
       }
     },
-    "/api/1/design-items/{designItemId}": {
+    "/api/9/design-items/{designItemId}/template": {
       "get": {
         "tags": [
           "DesignItem"
@@ -117,24 +251,26 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/IConDesignItem"
+                  "type": "string"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IConDesignItem"
+                  "type": "string"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IConDesignItem"
+                  "type": "string"
                 }
               }
             }
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/api/9/design-items/{designItemId}/picture-url": {
+      "get": {
         "tags": [
           "DesignItem"
         ],
@@ -151,12 +287,29 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
     },
-    "/api/1/design-items/{designItemId}/picture": {
+    "/api/9/design-items/{designItemId}/picture": {
       "get": {
         "tags": [
           "DesignItem"
@@ -179,67 +332,7 @@
         }
       }
     },
-    "/api/1/design-items/{designItemId}/publish": {
-      "post": {
-        "tags": [
-          "DesignItem"
-        ],
-        "parameters": [
-          {
-            "name": "designItemId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "picture": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              },
-              "encoding": {
-                "picture": {
-                  "style": "form"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/IConDesignItem"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IConDesignItem"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IConDesignItem"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/design-project/{designItemId}": {
+    "/api/9/design-project/{designItemId}": {
       "get": {
         "tags": [
           "DesignProject"
@@ -279,7 +372,7 @@
         }
       }
     },
-    "/api/1/design-project": {
+    "/api/9/design-project": {
       "get": {
         "tags": [
           "DesignProject"
@@ -308,156 +401,7 @@
         }
       }
     },
-    "/api/1/design-sets": {
-      "post": {
-        "tags": [
-          "DesignSet"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateConDesignSet"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateConDesignSet"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateConDesignSet"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateConDesignSet"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/IConDesignSet"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IConDesignSet"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IConDesignSet"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "DesignSet"
-        ],
-        "parameters": [
-          {
-            "name": "designSetId",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "DesignSet"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IConDesignSet"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IConDesignSet"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IConDesignSet"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/design-sets/{designSetId}": {
-      "get": {
-        "tags": [
-          "DesignSet"
-        ],
-        "parameters": [
-          {
-            "name": "designSetId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/IConDesignSet"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IConDesignSet"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IConDesignSet"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/design-sets/{designSetId}/design-items": {
+    "/api/9/design-sets/{designSetId}/design-items": {
       "get": {
         "tags": [
           "DesignSet"
@@ -477,8 +421,7 @@
             "in": "query",
             "schema": {
               "type": "integer",
-              "format": "int32",
-              "default": 1
+              "format": "int32"
             }
           }
         ],
@@ -507,6 +450,320 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/IConDesignItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/9/design-sets/{designSetId}/design-items/filter": {
+      "get": {
+        "tags": [
+          "DesignSet"
+        ],
+        "parameters": [
+          {
+            "name": "designSetId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "searchQueryFilter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItemLitePaginatedConDesignItems"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItemLitePaginatedConDesignItems"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItemLitePaginatedConDesignItems"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/9/design-sets/design-items/filter": {
+      "get": {
+        "tags": [
+          "DesignSet"
+        ],
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "searchQueryFilter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItemLitePaginatedConDesignItems"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItemLitePaginatedConDesignItems"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignItemLitePaginatedConDesignItems"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/9/design-sets": {
+      "get": {
+        "tags": [
+          "DesignSet"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConDesignSetDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConDesignSetDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConDesignSetDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "DesignSet"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConDesignSet"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConDesignSet"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConDesignSet"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConDesignSet"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignSet"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignSet"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IConDesignSet"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "DesignSet"
+        ],
+        "parameters": [
+          {
+            "name": "designSetId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/9/design-sets/{designSetId}": {
+      "get": {
+        "tags": [
+          "DesignSet"
+        ],
+        "parameters": [
+          {
+            "name": "designSetId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignSetDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignSetDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConDesignSetDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/9/upload-data/pre-signed-url": {
+      "get": {
+        "tags": [
+          "UploadData"
+        ],
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PreSignedUrl"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PreSignedUrl"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PreSignedUrl"
                   }
                 }
               }
@@ -577,6 +834,65 @@
           "count": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CdiDesignItem_V9": {
+        "type": "object",
+        "properties": {
+          "conDesignItem": {
+            "$ref": "#/components/schemas/ConDesignItem"
+          },
+          "pictureUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "projectUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "scene3dUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CdiPublishDataWithoutScene_V9": {
+        "type": "object",
+        "properties": {
+          "conDesignItem": {
+            "$ref": "#/components/schemas/ConDesignItem"
+          },
+          "pictureUploadId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "projectUploadId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CdiPublishData_V8": {
+        "type": "object",
+        "properties": {
+          "conDesignItem": {
+            "$ref": "#/components/schemas/ConDesignItem"
+          },
+          "pictureUploadId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "projectUploadId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "scene3DUploadId": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -666,6 +982,98 @@
           },
           "isParametric": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConDesignItemLite": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "pictureUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "designCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConDesignItemLitePaginatedConDesignItems": {
+        "type": "object",
+        "properties": {
+          "designItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConDesignItemLite"
+            },
+            "nullable": true
+          },
+          "isLastPage": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "totalItems": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConDesignSetDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "readOnly": {
+            "type": "boolean"
+          },
+          "ownerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modified": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ConDesignSetType"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Permission"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1192,6 +1600,17 @@
         },
         "additionalProperties": false
       },
+      "Permission": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "PinGrid": {
         "type": "object",
         "properties": {
@@ -1208,6 +1627,20 @@
           "count": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PreSignedUrl": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

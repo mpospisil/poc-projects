@@ -326,7 +326,7 @@ class ApiClient:
         return_data = None
 
         try:
-            if content_type == 'application/json':
+            if response_content_type == 'application/json':
                 # Preprocess the JSON string to replace special values with recognizable placeholders
                 response_text = response_data.data.replace('NaN', '"NaN"').replace('Infinity', '"Infinity"').replace('-Infinity', '"-Infinity"')
                 # Parse the JSON string using the custom decoder

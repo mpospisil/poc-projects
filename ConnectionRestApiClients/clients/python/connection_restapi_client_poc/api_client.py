@@ -325,13 +325,18 @@ class ApiClient:
         response_text = None
         return_data = None
 
-        try:
-            if response_content_type == 'application/json':
+        if response_content_type == 'application/json':
+            try:
                 # Preprocess the JSON string to replace special values with recognizable placeholders
                 response_text = response_data.data.replace('NaN', '"NaN"').replace('Infinity', '"Infinity"').replace('-Infinity', '"-Infinity"')
                 # Parse the JSON string using the custom decoder
-                return_data = json.loads(response_text, cls=CustomJsonDecoder)
-            elif response_type == "bytearray":
+                data = json.loads(response_text, cls=CustomJsonDecoder)
+            except ValueError as e:
+                raise ApiException(status=0, reason=str(e))
+            return self.__deserialize_model(data, response_type)
+        
+        try:
+            if response_type == "bytearray":
                 return_data = response_data.data
             elif response_type == "file":
                 return_data = self.__deserialize_file(response_data)
@@ -806,5 +811,10 @@ class ApiClient:
         :param klass: class literal.
         :return: model object.
         """
+        try:
+            return klass.from_dict(data)
+        except Exception as e:
+            # Log the validation error and return the data as-is
+            print(f"Validation error: {e}")
+            return data
 
-        return klass.from_dict(data)

@@ -15,12 +15,12 @@
 import datetime
 from dateutil.parser import parse
 from enum import Enum
-import decimal
 import json
 import mimetypes
 import os
 import re
 import tempfile
+import math
 
 from urllib.parse import quote
 from typing import Tuple, Optional, List, Dict, Union
@@ -41,6 +41,25 @@ from connection_restapi_client_poc.exceptions import (
 )
 
 RequestSerialized = Tuple[str, str, Dict[str, str], Optional[str], List[str]]
+
+# Custom function to handle special values
+def special_values_to_float(value):
+    if value == 'NaN':
+        return float('nan')
+    elif value == 'Infinity':
+        return float('inf')
+    elif value == '-Infinity':
+        return float('-inf')
+    return value
+
+# Custom JSON decoder
+class CustomJsonDecoder(json.JSONDecoder):
+    def __init__(self, *args, **kwargs):
+        super().__init__(object_hook=self.object_hook, *args, **kwargs)
+
+    def object_hook(self, obj):
+        return {k: special_values_to_float(v) if isinstance(v, str) else v for k, v in obj.items()}
+
 
 class ApiClient:
     """Generic API client for OpenAPI client library builds.
@@ -67,7 +86,6 @@ class ApiClient:
         'bool': bool,
         'date': datetime.date,
         'datetime': datetime.datetime,
-        'decimal': decimal.Decimal,
         'object': object,
     }
     _pool = None
@@ -90,7 +108,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/24.0.5.0702/python'
+        self.user_agent = 'OpenAPI-Generator/1.2.0/python'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -301,11 +319,19 @@ class ApiClient:
             # if not found, look for '1XX', '2XX', etc.
             response_type = response_types_map.get(str(response_data.status)[0] + "XX", None)
 
+        response_content_type = response_data.getheader('Content-Type')
+
         # deserialize response data
         response_text = None
         return_data = None
+
         try:
-            if response_type == "bytearray":
+            if content_type == 'application/json':
+                # Preprocess the JSON string to replace special values with recognizable placeholders
+                response_text = response_data.data.replace('NaN', '"NaN"').replace('Infinity', '"Infinity"').replace('-Infinity', '"-Infinity"')
+                # Parse the JSON string using the custom decoder
+                return_data = json.loads(response_text, cls=CustomJsonDecoder)
+            elif response_type == "bytearray":
                 return_data = response_data.data
             elif response_type == "file":
                 return_data = self.__deserialize_file(response_data)
@@ -340,7 +366,6 @@ class ApiClient:
         If obj is str, int, long, float, bool, return directly.
         If obj is datetime.datetime, datetime.date
             convert to string in iso8601 format.
-        If obj is decimal.Decimal return string representation.
         If obj is list, sanitize each element in the list.
         If obj is dict, return the dict.
         If obj is OpenAPI model, return the properties dict.
@@ -366,8 +391,6 @@ class ApiClient:
             )
         elif isinstance(obj, (datetime.datetime, datetime.date)):
             return obj.isoformat()
-        elif isinstance(obj, decimal.Decimal):
-            return str(obj)
 
         elif isinstance(obj, dict):
             obj_dict = obj
@@ -430,6 +453,7 @@ class ApiClient:
         if data is None:
             return None
 
+        # My custom serialization from the template
         if isinstance(klass, str):
             if klass.startswith('List['):
                 m = re.match(r'List\[(.*)]', klass)
@@ -459,8 +483,6 @@ class ApiClient:
             return self.__deserialize_date(data)
         elif klass == datetime.datetime:
             return self.__deserialize_datetime(data)
-        elif klass == decimal.Decimal:
-            return decimal.Decimal(data)
         elif issubclass(klass, Enum):
             return self.__deserialize_enum(data, klass)
         else:
@@ -535,10 +557,7 @@ class ApiClient:
 
         return "&".join(["=".join(map(str, item)) for item in new_params])
 
-    def files_parameters(
-        self,
-        files: Dict[str, Union[str, bytes, List[str], List[bytes], Tuple[str, bytes]]],
-    ):
+    def files_parameters(self, files: Dict[str, Union[str, bytes]]):
         """Builds form parameters.
 
         :param files: File parameters.
@@ -553,12 +572,6 @@ class ApiClient:
             elif isinstance(v, bytes):
                 filename = k
                 filedata = v
-            elif isinstance(v, tuple):
-                filename, filedata = v
-            elif isinstance(v, list):
-                for file_param in v:
-                    params.extend(self.files_parameters({k: file_param}))
-                continue
             else:
                 raise ValueError("Unsupported file value")
             mimetype = (

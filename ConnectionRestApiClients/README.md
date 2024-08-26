@@ -11,4 +11,4 @@ Open directory _.\ConnectionRestApiClients\clients\python_ in the cmd.exe
 run _pip install ._
 
 # Get author template
-docker run --rm -v "${PWD}/template:/template" openapitools/openapi-generator-cli author templates -g python -o ./template
+docker run --rm -v "${PWD}/template:/templates" openapitools/openapi-generator-cli author templates -g python -o ./template

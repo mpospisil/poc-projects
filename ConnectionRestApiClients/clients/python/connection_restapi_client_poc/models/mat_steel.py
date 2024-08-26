@@ -111,9 +111,9 @@ class MatSteel(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in user_thermal_stress_strain_curvature (list)
         _items = []
         if self.user_thermal_stress_strain_curvature:
-            for _item_user_thermal_stress_strain_curvature in self.user_thermal_stress_strain_curvature:
-                if _item_user_thermal_stress_strain_curvature:
-                    _items.append(_item_user_thermal_stress_strain_curvature.to_dict())
+            for _item in self.user_thermal_stress_strain_curvature:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['userThermalStressStrainCurvature'] = _items
         # set to None if name (nullable) is None
         # and model_fields_set contains the field

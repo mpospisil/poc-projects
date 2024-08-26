@@ -46,7 +46,7 @@ def special_values_to_float(value):
     return value
 
 # Custom JSON decoder
-class CustomDecoder(json.JSONDecoder):
+class CustomJsonDecoder(json.JSONDecoder):
     def __init__(self, *args, **kwargs):
         super().__init__(object_hook=self.object_hook, *args, **kwargs)
 
@@ -338,7 +338,7 @@ class ApiClient:
                 # Preprocess the JSON string to replace special values with recognizable placeholders
                 response_text = response_data.data.replace('NaN', '"NaN"').replace('Infinity', '"Infinity"').replace('-Infinity', '"-Infinity"')
                 # Parse the JSON string using the custom decoder
-                return_data = json.loads(response_text, cls=CustomDecoder)
+                return_data = json.loads(response_text, cls=CustomJsonDecoder)
             elif response_type == "bytearray":
                 return_data = response_data.data
             elif response_type == "file":

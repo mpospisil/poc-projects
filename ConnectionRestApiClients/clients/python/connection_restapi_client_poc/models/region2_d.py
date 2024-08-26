@@ -76,9 +76,9 @@ class Region2D(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in openings (list)
         _items = []
         if self.openings:
-            for _item_openings in self.openings:
-                if _item_openings:
-                    _items.append(_item_openings.to_dict())
+            for _item in self.openings:
+                if _item:
+                    _items.append(_item.to_dict())
             _dict['openings'] = _items
         # set to None if openings (nullable) is None
         # and model_fields_set contains the field

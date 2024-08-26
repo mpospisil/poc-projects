@@ -319,22 +319,10 @@ class ApiClient:
             # if not found, look for '1XX', '2XX', etc.
             response_type = response_types_map.get(str(response_data.status)[0] + "XX", None)
 
-        response_content_type = response_data.getheader('Content-Type')
-
         # deserialize response data
         response_text = None
         return_data = None
-
-        if response_content_type == 'application/json':
-            try:
-                # Preprocess the JSON string to replace special values with recognizable placeholders
-                response_text = response_data.data.replace('NaN', '"NaN"').replace('Infinity', '"Infinity"').replace('-Infinity', '"-Infinity"')
-                # Parse the JSON string using the custom decoder
-                data = json.loads(response_text, cls=CustomJsonDecoder)
-            except ValueError as e:
-                raise ApiException(status=0, reason=str(e))
-            return self.__deserialize_model(data, response_type)
-        
+       
         try:
             if response_type == "bytearray":
                 return_data = response_data.data
@@ -436,7 +424,7 @@ class ApiClient:
             if response_text == "":
                 data = ""
             else:
-                data = json.loads(response_text)
+                data = json.loads(response_text, cls=CustomJsonDecoder)
         elif content_type.startswith("text/plain"):
             data = response_text
         else:

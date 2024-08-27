@@ -694,7 +694,7 @@ paths:
       summary: Update the option 'LoadsInEquilibrium' for connectionId
       tags:
       - LoadEffect
-  /api/1/projects/{projectId}/connections/{connectionId}/materials:
+  /api/1/projects/{projectId}/materials:
     get:
       operationId: GetAllMaterials
       parameters:
@@ -708,15 +708,6 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: Id of the connection to get its materials
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -725,10 +716,10 @@ paths:
                 items: {}
                 type: array
           description: Success
-      summary: Get materials which are used in the connectionId
+      summary: Get materials which are used in the project projectId
       tags:
       - Material
-  /api/1/projects/{projectId}/connections/{connectionId}/materials/steel:
+  /api/1/projects/{projectId}/materials/steel:
     get:
       operationId: GetSteelMaterials
       parameters:
@@ -742,15 +733,6 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: Id of the connection to get its materials
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -759,7 +741,7 @@ paths:
                 items: {}
                 type: array
           description: Success
-      summary: Get materials which are used in the connectionId
+      summary: Get materials which are used in the project projectId
       tags:
       - Material
     post:
@@ -775,15 +757,6 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: ""
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -800,7 +773,7 @@ paths:
       summary: Add material to the project
       tags:
       - Material
-  /api/1/projects/{projectId}/connections/{connectionId}/materials/concrete:
+  /api/1/projects/{projectId}/materials/concrete:
     get:
       operationId: GetConcreteMaterials
       parameters:
@@ -814,15 +787,6 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: Id of the connection to get its materials
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -831,7 +795,7 @@ paths:
                 items: {}
                 type: array
           description: Success
-      summary: Get materials which are used in the connectionId
+      summary: Get materials which are used in the project projectId
       tags:
       - Material
     post:
@@ -847,15 +811,6 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: ""
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -872,7 +827,7 @@ paths:
       summary: Add material to the project
       tags:
       - Material
-  /api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade:
+  /api/1/projects/{projectId}/materials/bolt-grade:
     get:
       operationId: GetBlotGradeMaterials
       parameters:
@@ -886,15 +841,6 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: Id of the connection to get its materials
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -903,7 +849,7 @@ paths:
                 items: {}
                 type: array
           description: Success
-      summary: Get materials which are used in the connectionId
+      summary: Get materials which are used in the project projectId
       tags:
       - Material
     post:
@@ -919,15 +865,6 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: ""
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -944,7 +881,7 @@ paths:
       summary: Add material to the project
       tags:
       - Material
-  /api/1/projects/{projectId}/connections/{connectionId}/materials/welding:
+  /api/1/projects/{projectId}/materials/welding:
     get:
       operationId: GetWeldingMaterials
       parameters:
@@ -958,15 +895,6 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: Id of the connection to get its materials
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -975,7 +903,7 @@ paths:
                 items: {}
                 type: array
           description: Success
-      summary: Get materials which are used in the connectionId
+      summary: Get materials which are used in the project projectId
       tags:
       - Material
     post:
@@ -991,15 +919,6 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: ""
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -1016,7 +935,7 @@ paths:
       summary: Add material to the project
       tags:
       - Material
-  /api/1/projects/{projectId}/connections/{connectionId}/cross-sections:
+  /api/1/projects/{projectId}/materials/cross-sections:
     get:
       operationId: GetCrossSections
       parameters:
@@ -1030,15 +949,6 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: Id of the connection to get its cross-sections
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -1047,44 +957,9 @@ paths:
                 items: {}
                 type: array
           description: Success
-      summary: Get cross sections which are used in the connectionId
+      summary: Get cross sections which are used in the project projectId
       tags:
       - Material
-  /api/1/projects/{projectId}/connections/{connectionId}/bolt-assemblies:
-    get:
-      operationId: GetBoltAssemblies
-      parameters:
-      - description: The unique identifier of the opened project in the ConnectionRestApi
-          service
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: uuid
-          type: string
-        style: simple
-      - description: Id of the connection to get its bolt assemblies
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items: {}
-                type: array
-          description: Success
-      summary: Get bolt assemblies which are used in the connectionId
-      tags:
-      - Material
-  /api/1/projects/{projectId}/connections/{connectionId}/materials/cross-sections:
     post:
       operationId: AddCrossSection
       parameters:
@@ -1097,15 +972,6 @@ paths:
         schema:
           format: uuid
           type: string
-        style: simple
-      - description: ""
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
         style: simple
       requestBody:
         content:
@@ -1123,7 +989,31 @@ paths:
       summary: Add cross section to the project
       tags:
       - Material
-  /api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-assemblies:
+  /api/1/projects/{projectId}/materials/bolt-assemblies:
+    get:
+      operationId: GetBoltAssemblies
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items: {}
+                type: array
+          description: Success
+      summary: Get bolt assemblies which are used in the project projectId
+      tags:
+      - Material
     post:
       operationId: AddBoltAssembly
       parameters:
@@ -1136,15 +1026,6 @@ paths:
         schema:
           format: uuid
           type: string
-        style: simple
-      - description: ""
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
         style: simple
       requestBody:
         content:
@@ -1725,7 +1606,81 @@ paths:
       summary: Update setup of the project
       tags:
       - Project
-  /api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping:
+  /api/1/projects/{projectId}/reports/{connectionId}/pdf:
+    get:
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConnReportSettings'
+        description: ""
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Stream'
+          description: Success
+      summary: Generates report for projectId and connectionId
+      tags:
+      - Report
+  /api/1/projects/{projectId}/reports/{connectionId}/word:
+    get:
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConnReportSettings'
+        description: ""
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Stream'
+          description: Success
+      summary: Generates report for projectId and connectionId
+      tags:
+      - Report
+  /api/1/projects/{projectId}/connections/{connectionId}/get-default-mapping:
     post:
       description: "The result IdeaStatiCa.Api.Connection.Model.TemplateConversionsDefault\
         \ mapping to apply the passed template.\r\nIt can be modified by a user and\
@@ -3308,6 +3263,9 @@ components:
       - shear
       - none
       type: string
+    ConnReportSettings:
+      additionalProperties: false
+      type: object
     ConnectionCheckRes:
       additionalProperties: false
       description: Results for connection in project
@@ -14735,6 +14693,44 @@ components:
       properties:
         id:
           description: Element Id
+          format: int32
+          type: integer
+      type: object
+    Stream:
+      additionalProperties: false
+      example:
+        canRead: true
+        readTimeout: 1
+        length: 0
+        writeTimeout: 5
+        canWrite: true
+        position: 6
+        canSeek: true
+        canTimeout: true
+      properties:
+        canRead:
+          readOnly: true
+          type: boolean
+        canWrite:
+          readOnly: true
+          type: boolean
+        canSeek:
+          readOnly: true
+          type: boolean
+        canTimeout:
+          readOnly: true
+          type: boolean
+        length:
+          format: int64
+          readOnly: true
+          type: integer
+        position:
+          format: int64
+          type: integer
+        readTimeout:
+          format: int32
+          type: integer
+        writeTimeout:
           format: int32
           type: integer
       type: object

@@ -14,6 +14,7 @@ connection_restapi_client_poc/api/material_api.py
 connection_restapi_client_poc/api/member_api.py
 connection_restapi_client_poc/api/parameter_api.py
 connection_restapi_client_poc/api/project_api.py
+connection_restapi_client_poc/api/report_api.py
 connection_restapi_client_poc/api/template_api.py
 connection_restapi_client_poc/api/version_api.py
 connection_restapi_client_poc/api_client.py
@@ -156,6 +157,7 @@ connection_restapi_client_poc/models/solid_block3_d.py
 connection_restapi_client_poc/models/span.py
 connection_restapi_client_poc/models/stirrup.py
 connection_restapi_client_poc/models/strain_load_on_line.py
+connection_restapi_client_poc/models/stream.py
 connection_restapi_client_poc/models/sub_structure.py
 connection_restapi_client_poc/models/surface_support3_d.py
 connection_restapi_client_poc/models/table_container_type.py
@@ -311,6 +313,7 @@ docs/ReinfBarSurface.md
 docs/ReinforcedBar.md
 docs/ReinforcedCrossSection.md
 docs/Reinforcement.md
+docs/ReportApi.md
 docs/ResultClass.md
 docs/ResultLocalSystemType.md
 docs/ResultOnMember.md
@@ -324,6 +327,7 @@ docs/SolidBlock3D.md
 docs/Span.md
 docs/Stirrup.md
 docs/StrainLoadOnLine.md
+docs/Stream.md
 docs/SubStructure.md
 docs/SurfaceSupport3D.md
 docs/TableContainerType.md
@@ -486,6 +490,7 @@ test/test_reinf_bar_surface.py
 test/test_reinforced_bar.py
 test/test_reinforced_cross_section.py
 test/test_reinforcement.py
+test/test_report_api.py
 test/test_result_class.py
 test/test_result_local_system_type.py
 test/test_result_on_member.py
@@ -499,6 +504,7 @@ test/test_solid_block3_d.py
 test/test_span.py
 test/test_stirrup.py
 test/test_strain_load_on_line.py
+test/test_stream.py
 test/test_sub_structure.py
 test/test_surface_support3_d.py
 test/test_table_container_type.py

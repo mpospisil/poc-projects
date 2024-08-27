@@ -4,23 +4,23 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AddBoltAssembly**](MaterialApi.md#addboltassembly) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-assemblies | Add bolt assembly to the project |
-| [**AddCrossSection**](MaterialApi.md#addcrosssection) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/materials/cross-sections | Add cross section to the project |
-| [**AddMaterialBoltGrade**](MaterialApi.md#addmaterialboltgrade) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade | Add material to the project |
-| [**AddMaterialConcrete**](MaterialApi.md#addmaterialconcrete) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/materials/concrete | Add material to the project |
-| [**AddMaterialSteel**](MaterialApi.md#addmaterialsteel) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/materials/steel | Add material to the project |
-| [**AddMaterialWeld**](MaterialApi.md#addmaterialweld) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/materials/welding | Add material to the project |
-| [**GetAllMaterials**](MaterialApi.md#getallmaterials) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/materials | Get materials which are used in the connectionId |
-| [**GetBlotGradeMaterials**](MaterialApi.md#getblotgradematerials) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade | Get materials which are used in the connectionId |
-| [**GetBoltAssemblies**](MaterialApi.md#getboltassemblies) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/bolt-assemblies | Get bolt assemblies which are used in the connectionId |
-| [**GetConcreteMaterials**](MaterialApi.md#getconcretematerials) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/materials/concrete | Get materials which are used in the connectionId |
-| [**GetCrossSections**](MaterialApi.md#getcrosssections) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/cross-sections | Get cross sections which are used in the connectionId |
-| [**GetSteelMaterials**](MaterialApi.md#getsteelmaterials) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/materials/steel | Get materials which are used in the connectionId |
-| [**GetWeldingMaterials**](MaterialApi.md#getweldingmaterials) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/materials/welding | Get materials which are used in the connectionId |
+| [**AddBoltAssembly**](MaterialApi.md#addboltassembly) | **POST** /api/1/projects/{projectId}/materials/bolt-assemblies | Add bolt assembly to the project |
+| [**AddCrossSection**](MaterialApi.md#addcrosssection) | **POST** /api/1/projects/{projectId}/materials/cross-sections | Add cross section to the project |
+| [**AddMaterialBoltGrade**](MaterialApi.md#addmaterialboltgrade) | **POST** /api/1/projects/{projectId}/materials/bolt-grade | Add material to the project |
+| [**AddMaterialConcrete**](MaterialApi.md#addmaterialconcrete) | **POST** /api/1/projects/{projectId}/materials/concrete | Add material to the project |
+| [**AddMaterialSteel**](MaterialApi.md#addmaterialsteel) | **POST** /api/1/projects/{projectId}/materials/steel | Add material to the project |
+| [**AddMaterialWeld**](MaterialApi.md#addmaterialweld) | **POST** /api/1/projects/{projectId}/materials/welding | Add material to the project |
+| [**GetAllMaterials**](MaterialApi.md#getallmaterials) | **GET** /api/1/projects/{projectId}/materials | Get materials which are used in the project projectId |
+| [**GetBlotGradeMaterials**](MaterialApi.md#getblotgradematerials) | **GET** /api/1/projects/{projectId}/materials/bolt-grade | Get materials which are used in the project projectId |
+| [**GetBoltAssemblies**](MaterialApi.md#getboltassemblies) | **GET** /api/1/projects/{projectId}/materials/bolt-assemblies | Get bolt assemblies which are used in the project projectId |
+| [**GetConcreteMaterials**](MaterialApi.md#getconcretematerials) | **GET** /api/1/projects/{projectId}/materials/concrete | Get materials which are used in the project projectId |
+| [**GetCrossSections**](MaterialApi.md#getcrosssections) | **GET** /api/1/projects/{projectId}/materials/cross-sections | Get cross sections which are used in the project projectId |
+| [**GetSteelMaterials**](MaterialApi.md#getsteelmaterials) | **GET** /api/1/projects/{projectId}/materials/steel | Get materials which are used in the project projectId |
+| [**GetWeldingMaterials**](MaterialApi.md#getweldingmaterials) | **GET** /api/1/projects/{projectId}/materials/welding | Get materials which are used in the project projectId |
 
 <a id="addboltassembly"></a>
 # **AddBoltAssembly**
-> ConMprlElement AddBoltAssembly (Guid projectId, int connectionId, ConMprlElement? conMprlElement = null)
+> ConMprlElement AddBoltAssembly (Guid projectId, ConMprlElement? conMprlElement = null)
 
 Add bolt assembly to the project
 
@@ -42,13 +42,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | 
             var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new bolt assemby to be added to the project (optional) 
 
             try
             {
                 // Add bolt assembly to the project
-                ConMprlElement result = apiInstance.AddBoltAssembly(projectId, connectionId, conMprlElement);
+                ConMprlElement result = apiInstance.AddBoltAssembly(projectId, conMprlElement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -69,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add bolt assembly to the project
-    ApiResponse<ConMprlElement> response = apiInstance.AddBoltAssemblyWithHttpInfo(projectId, connectionId, conMprlElement);
+    ApiResponse<ConMprlElement> response = apiInstance.AddBoltAssemblyWithHttpInfo(projectId, conMprlElement);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -87,7 +86,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** |  |  |
 | **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new bolt assemby to be added to the project | [optional]  |
 
 ### Return type
@@ -113,7 +111,7 @@ No authorization required
 
 <a id="addcrosssection"></a>
 # **AddCrossSection**
-> ConMprlCrossSection AddCrossSection (Guid projectId, int connectionId, ConMprlCrossSection? conMprlCrossSection = null)
+> ConMprlCrossSection AddCrossSection (Guid projectId, ConMprlCrossSection? conMprlCrossSection = null)
 
 Add cross section to the project
 
@@ -135,13 +133,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | 
             var conMprlCrossSection = new ConMprlCrossSection?(); // ConMprlCrossSection? | Definition of a new cross-section to be added to the project (optional) 
 
             try
             {
                 // Add cross section to the project
-                ConMprlCrossSection result = apiInstance.AddCrossSection(projectId, connectionId, conMprlCrossSection);
+                ConMprlCrossSection result = apiInstance.AddCrossSection(projectId, conMprlCrossSection);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -162,7 +159,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add cross section to the project
-    ApiResponse<ConMprlCrossSection> response = apiInstance.AddCrossSectionWithHttpInfo(projectId, connectionId, conMprlCrossSection);
+    ApiResponse<ConMprlCrossSection> response = apiInstance.AddCrossSectionWithHttpInfo(projectId, conMprlCrossSection);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -180,7 +177,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** |  |  |
 | **conMprlCrossSection** | [**ConMprlCrossSection?**](ConMprlCrossSection?.md) | Definition of a new cross-section to be added to the project | [optional]  |
 
 ### Return type
@@ -206,7 +202,7 @@ No authorization required
 
 <a id="addmaterialboltgrade"></a>
 # **AddMaterialBoltGrade**
-> ConMprlElement AddMaterialBoltGrade (Guid projectId, int connectionId, ConMprlElement? conMprlElement = null)
+> ConMprlElement AddMaterialBoltGrade (Guid projectId, ConMprlElement? conMprlElement = null)
 
 Add material to the project
 
@@ -228,13 +224,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | 
             var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
 
             try
             {
                 // Add material to the project
-                ConMprlElement result = apiInstance.AddMaterialBoltGrade(projectId, connectionId, conMprlElement);
+                ConMprlElement result = apiInstance.AddMaterialBoltGrade(projectId, conMprlElement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -255,7 +250,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add material to the project
-    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialBoltGradeWithHttpInfo(projectId, connectionId, conMprlElement);
+    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialBoltGradeWithHttpInfo(projectId, conMprlElement);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -273,7 +268,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** |  |  |
 | **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
@@ -299,7 +293,7 @@ No authorization required
 
 <a id="addmaterialconcrete"></a>
 # **AddMaterialConcrete**
-> ConMprlElement AddMaterialConcrete (Guid projectId, int connectionId, ConMprlElement? conMprlElement = null)
+> ConMprlElement AddMaterialConcrete (Guid projectId, ConMprlElement? conMprlElement = null)
 
 Add material to the project
 
@@ -321,13 +315,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | 
             var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
 
             try
             {
                 // Add material to the project
-                ConMprlElement result = apiInstance.AddMaterialConcrete(projectId, connectionId, conMprlElement);
+                ConMprlElement result = apiInstance.AddMaterialConcrete(projectId, conMprlElement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -348,7 +341,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add material to the project
-    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialConcreteWithHttpInfo(projectId, connectionId, conMprlElement);
+    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialConcreteWithHttpInfo(projectId, conMprlElement);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -366,7 +359,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** |  |  |
 | **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
@@ -392,7 +384,7 @@ No authorization required
 
 <a id="addmaterialsteel"></a>
 # **AddMaterialSteel**
-> ConMprlElement AddMaterialSteel (Guid projectId, int connectionId, ConMprlElement? conMprlElement = null)
+> ConMprlElement AddMaterialSteel (Guid projectId, ConMprlElement? conMprlElement = null)
 
 Add material to the project
 
@@ -414,13 +406,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | 
             var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
 
             try
             {
                 // Add material to the project
-                ConMprlElement result = apiInstance.AddMaterialSteel(projectId, connectionId, conMprlElement);
+                ConMprlElement result = apiInstance.AddMaterialSteel(projectId, conMprlElement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -441,7 +432,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add material to the project
-    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialSteelWithHttpInfo(projectId, connectionId, conMprlElement);
+    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialSteelWithHttpInfo(projectId, conMprlElement);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -459,7 +450,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** |  |  |
 | **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
@@ -485,7 +475,7 @@ No authorization required
 
 <a id="addmaterialweld"></a>
 # **AddMaterialWeld**
-> ConMprlElement AddMaterialWeld (Guid projectId, int connectionId, ConMprlElement? conMprlElement = null)
+> ConMprlElement AddMaterialWeld (Guid projectId, ConMprlElement? conMprlElement = null)
 
 Add material to the project
 
@@ -507,13 +497,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | 
             var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
 
             try
             {
                 // Add material to the project
-                ConMprlElement result = apiInstance.AddMaterialWeld(projectId, connectionId, conMprlElement);
+                ConMprlElement result = apiInstance.AddMaterialWeld(projectId, conMprlElement);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -534,7 +523,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add material to the project
-    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialWeldWithHttpInfo(projectId, connectionId, conMprlElement);
+    ApiResponse<ConMprlElement> response = apiInstance.AddMaterialWeldWithHttpInfo(projectId, conMprlElement);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -552,7 +541,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** |  |  |
 | **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
@@ -578,9 +566,9 @@ No authorization required
 
 <a id="getallmaterials"></a>
 # **GetAllMaterials**
-> List&lt;Object&gt; GetAllMaterials (Guid projectId, int connectionId)
+> List&lt;Object&gt; GetAllMaterials (Guid projectId)
 
-Get materials which are used in the connectionId
+Get materials which are used in the project projectId
 
 ### Example
 ```csharp
@@ -600,12 +588,11 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | Id of the connection to get its materials
 
             try
             {
-                // Get materials which are used in the connectionId
-                List<Object> result = apiInstance.GetAllMaterials(projectId, connectionId);
+                // Get materials which are used in the project projectId
+                List<Object> result = apiInstance.GetAllMaterials(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -625,8 +612,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get materials which are used in the connectionId
-    ApiResponse<List<Object>> response = apiInstance.GetAllMaterialsWithHttpInfo(projectId, connectionId);
+    // Get materials which are used in the project projectId
+    ApiResponse<List<Object>> response = apiInstance.GetAllMaterialsWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -644,7 +631,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** | Id of the connection to get its materials |  |
 
 ### Return type
 
@@ -669,9 +655,9 @@ No authorization required
 
 <a id="getblotgradematerials"></a>
 # **GetBlotGradeMaterials**
-> List&lt;Object&gt; GetBlotGradeMaterials (Guid projectId, int connectionId)
+> List&lt;Object&gt; GetBlotGradeMaterials (Guid projectId)
 
-Get materials which are used in the connectionId
+Get materials which are used in the project projectId
 
 ### Example
 ```csharp
@@ -691,12 +677,11 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | Id of the connection to get its materials
 
             try
             {
-                // Get materials which are used in the connectionId
-                List<Object> result = apiInstance.GetBlotGradeMaterials(projectId, connectionId);
+                // Get materials which are used in the project projectId
+                List<Object> result = apiInstance.GetBlotGradeMaterials(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -716,8 +701,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get materials which are used in the connectionId
-    ApiResponse<List<Object>> response = apiInstance.GetBlotGradeMaterialsWithHttpInfo(projectId, connectionId);
+    // Get materials which are used in the project projectId
+    ApiResponse<List<Object>> response = apiInstance.GetBlotGradeMaterialsWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -735,7 +720,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** | Id of the connection to get its materials |  |
 
 ### Return type
 
@@ -760,9 +744,9 @@ No authorization required
 
 <a id="getboltassemblies"></a>
 # **GetBoltAssemblies**
-> List&lt;Object&gt; GetBoltAssemblies (Guid projectId, int connectionId)
+> List&lt;Object&gt; GetBoltAssemblies (Guid projectId)
 
-Get bolt assemblies which are used in the connectionId
+Get bolt assemblies which are used in the project projectId
 
 ### Example
 ```csharp
@@ -782,12 +766,11 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | Id of the connection to get its bolt assemblies
 
             try
             {
-                // Get bolt assemblies which are used in the connectionId
-                List<Object> result = apiInstance.GetBoltAssemblies(projectId, connectionId);
+                // Get bolt assemblies which are used in the project projectId
+                List<Object> result = apiInstance.GetBoltAssemblies(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -807,8 +790,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get bolt assemblies which are used in the connectionId
-    ApiResponse<List<Object>> response = apiInstance.GetBoltAssembliesWithHttpInfo(projectId, connectionId);
+    // Get bolt assemblies which are used in the project projectId
+    ApiResponse<List<Object>> response = apiInstance.GetBoltAssembliesWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -826,7 +809,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** | Id of the connection to get its bolt assemblies |  |
 
 ### Return type
 
@@ -851,9 +833,9 @@ No authorization required
 
 <a id="getconcretematerials"></a>
 # **GetConcreteMaterials**
-> List&lt;Object&gt; GetConcreteMaterials (Guid projectId, int connectionId)
+> List&lt;Object&gt; GetConcreteMaterials (Guid projectId)
 
-Get materials which are used in the connectionId
+Get materials which are used in the project projectId
 
 ### Example
 ```csharp
@@ -873,12 +855,11 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | Id of the connection to get its materials
 
             try
             {
-                // Get materials which are used in the connectionId
-                List<Object> result = apiInstance.GetConcreteMaterials(projectId, connectionId);
+                // Get materials which are used in the project projectId
+                List<Object> result = apiInstance.GetConcreteMaterials(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -898,8 +879,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get materials which are used in the connectionId
-    ApiResponse<List<Object>> response = apiInstance.GetConcreteMaterialsWithHttpInfo(projectId, connectionId);
+    // Get materials which are used in the project projectId
+    ApiResponse<List<Object>> response = apiInstance.GetConcreteMaterialsWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -917,7 +898,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** | Id of the connection to get its materials |  |
 
 ### Return type
 
@@ -942,9 +922,9 @@ No authorization required
 
 <a id="getcrosssections"></a>
 # **GetCrossSections**
-> List&lt;Object&gt; GetCrossSections (Guid projectId, int connectionId)
+> List&lt;Object&gt; GetCrossSections (Guid projectId)
 
-Get cross sections which are used in the connectionId
+Get cross sections which are used in the project projectId
 
 ### Example
 ```csharp
@@ -964,12 +944,11 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | Id of the connection to get its cross-sections
 
             try
             {
-                // Get cross sections which are used in the connectionId
-                List<Object> result = apiInstance.GetCrossSections(projectId, connectionId);
+                // Get cross sections which are used in the project projectId
+                List<Object> result = apiInstance.GetCrossSections(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -989,8 +968,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get cross sections which are used in the connectionId
-    ApiResponse<List<Object>> response = apiInstance.GetCrossSectionsWithHttpInfo(projectId, connectionId);
+    // Get cross sections which are used in the project projectId
+    ApiResponse<List<Object>> response = apiInstance.GetCrossSectionsWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1008,7 +987,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** | Id of the connection to get its cross-sections |  |
 
 ### Return type
 
@@ -1033,9 +1011,9 @@ No authorization required
 
 <a id="getsteelmaterials"></a>
 # **GetSteelMaterials**
-> List&lt;Object&gt; GetSteelMaterials (Guid projectId, int connectionId)
+> List&lt;Object&gt; GetSteelMaterials (Guid projectId)
 
-Get materials which are used in the connectionId
+Get materials which are used in the project projectId
 
 ### Example
 ```csharp
@@ -1055,12 +1033,11 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | Id of the connection to get its materials
 
             try
             {
-                // Get materials which are used in the connectionId
-                List<Object> result = apiInstance.GetSteelMaterials(projectId, connectionId);
+                // Get materials which are used in the project projectId
+                List<Object> result = apiInstance.GetSteelMaterials(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1080,8 +1057,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get materials which are used in the connectionId
-    ApiResponse<List<Object>> response = apiInstance.GetSteelMaterialsWithHttpInfo(projectId, connectionId);
+    // Get materials which are used in the project projectId
+    ApiResponse<List<Object>> response = apiInstance.GetSteelMaterialsWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1099,7 +1076,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** | Id of the connection to get its materials |  |
 
 ### Return type
 
@@ -1124,9 +1100,9 @@ No authorization required
 
 <a id="getweldingmaterials"></a>
 # **GetWeldingMaterials**
-> List&lt;Object&gt; GetWeldingMaterials (Guid projectId, int connectionId)
+> List&lt;Object&gt; GetWeldingMaterials (Guid projectId)
 
-Get materials which are used in the connectionId
+Get materials which are used in the project projectId
 
 ### Example
 ```csharp
@@ -1146,12 +1122,11 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | Id of the connection to get its materials
 
             try
             {
-                // Get materials which are used in the connectionId
-                List<Object> result = apiInstance.GetWeldingMaterials(projectId, connectionId);
+                // Get materials which are used in the project projectId
+                List<Object> result = apiInstance.GetWeldingMaterials(projectId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1171,8 +1146,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get materials which are used in the connectionId
-    ApiResponse<List<Object>> response = apiInstance.GetWeldingMaterialsWithHttpInfo(projectId, connectionId);
+    // Get materials which are used in the project projectId
+    ApiResponse<List<Object>> response = apiInstance.GetWeldingMaterialsWithHttpInfo(projectId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1190,7 +1165,6 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** | Id of the connection to get its materials |  |
 
 ### Return type
 

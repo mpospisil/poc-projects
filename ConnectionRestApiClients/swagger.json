@@ -916,12 +916,12 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/connections/{connectionId}/materials": {
+    "/api/1/projects/{projectId}/materials": {
       "get": {
         "tags": [
           "Material"
         ],
-        "summary": "Get materials which are used in the connectionId",
+        "summary": "Get materials which are used in the project projectId",
         "operationId": "GetAllMaterials",
         "parameters": [
           {
@@ -932,16 +932,6 @@
             "schema": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the connection to get its materials",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
             }
           }
         ],
@@ -960,12 +950,12 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/connections/{connectionId}/materials/steel": {
+    "/api/1/projects/{projectId}/materials/steel": {
       "get": {
         "tags": [
           "Material"
         ],
-        "summary": "Get materials which are used in the connectionId",
+        "summary": "Get materials which are used in the project projectId",
         "operationId": "GetSteelMaterials",
         "parameters": [
           {
@@ -976,16 +966,6 @@
             "schema": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the connection to get its materials",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
             }
           }
         ],
@@ -1019,16 +999,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
           }
         ],
         "requestBody": {
@@ -1055,12 +1025,12 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/connections/{connectionId}/materials/concrete": {
+    "/api/1/projects/{projectId}/materials/concrete": {
       "get": {
         "tags": [
           "Material"
         ],
-        "summary": "Get materials which are used in the connectionId",
+        "summary": "Get materials which are used in the project projectId",
         "operationId": "GetConcreteMaterials",
         "parameters": [
           {
@@ -1071,16 +1041,6 @@
             "schema": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the connection to get its materials",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
             }
           }
         ],
@@ -1114,16 +1074,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
           }
         ],
         "requestBody": {
@@ -1150,12 +1100,12 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade": {
+    "/api/1/projects/{projectId}/materials/bolt-grade": {
       "get": {
         "tags": [
           "Material"
         ],
-        "summary": "Get materials which are used in the connectionId",
+        "summary": "Get materials which are used in the project projectId",
         "operationId": "GetBlotGradeMaterials",
         "parameters": [
           {
@@ -1166,16 +1116,6 @@
             "schema": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the connection to get its materials",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
             }
           }
         ],
@@ -1209,16 +1149,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
           }
         ],
         "requestBody": {
@@ -1245,12 +1175,12 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/connections/{connectionId}/materials/welding": {
+    "/api/1/projects/{projectId}/materials/welding": {
       "get": {
         "tags": [
           "Material"
         ],
-        "summary": "Get materials which are used in the connectionId",
+        "summary": "Get materials which are used in the project projectId",
         "operationId": "GetWeldingMaterials",
         "parameters": [
           {
@@ -1261,16 +1191,6 @@
             "schema": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the connection to get its materials",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
             }
           }
         ],
@@ -1304,16 +1224,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
           }
         ],
         "requestBody": {
@@ -1340,12 +1250,12 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/connections/{connectionId}/cross-sections": {
+    "/api/1/projects/{projectId}/materials/cross-sections": {
       "get": {
         "tags": [
           "Material"
         ],
-        "summary": "Get cross sections which are used in the connectionId",
+        "summary": "Get cross sections which are used in the project projectId",
         "operationId": "GetCrossSections",
         "parameters": [
           {
@@ -1357,16 +1267,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the connection to get its cross-sections",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
           }
         ],
         "responses": {
@@ -1382,53 +1282,7 @@
             }
           }
         }
-      }
-    },
-    "/api/1/projects/{projectId}/connections/{connectionId}/bolt-assemblies": {
-      "get": {
-        "tags": [
-          "Material"
-        ],
-        "summary": "Get bolt assemblies which are used in the connectionId",
-        "operationId": "GetBoltAssemblies",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the connection to get its bolt assemblies",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/projects/{projectId}/connections/{connectionId}/materials/cross-sections": {
+      },
       "post": {
         "tags": [
           "Material"
@@ -1444,16 +1298,6 @@
             "schema": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
             }
           }
         ],
@@ -1481,7 +1325,39 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-assemblies": {
+    "/api/1/projects/{projectId}/materials/bolt-assemblies": {
+      "get": {
+        "tags": [
+          "Material"
+        ],
+        "summary": "Get bolt assemblies which are used in the project projectId",
+        "operationId": "GetBoltAssemblies",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      },
       "post": {
         "tags": [
           "Material"
@@ -1497,16 +1373,6 @@
             "schema": {
               "type": "string",
               "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
             }
           }
         ],
@@ -2323,7 +2189,111 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping": {
+    "/api/1/projects/{projectId}/reports/{connectionId}/pdf": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Generates report for projectId and connectionId",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnReportSettings"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Stream"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/reports/{connectionId}/word": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Generates report for projectId and connectionId",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnReportSettings"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Stream"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/get-default-mapping": {
       "post": {
         "tags": [
           "Template"
@@ -3655,6 +3625,10 @@
         ],
         "type": "string",
         "description": "Types of cone breakout checks"
+      },
+      "ConnReportSettings": {
+        "type": "object",
+        "additionalProperties": false
       },
       "ConnectionCheckRes": {
         "type": "object",
@@ -6543,6 +6517,45 @@
         },
         "additionalProperties": false,
         "description": "Linearly distributed generalized strain load along a line.\r\nStrain load is in local coordinate system and there are no possible eccentricities."
+      },
+      "Stream": {
+        "type": "object",
+        "properties": {
+          "canRead": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "canWrite": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "canSeek": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "canTimeout": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "length": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "position": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "readTimeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "writeTimeout": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
       },
       "SubStructure": {
         "type": "object",

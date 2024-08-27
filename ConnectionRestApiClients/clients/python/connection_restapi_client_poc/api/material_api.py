@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import Any, List, Optional
 from typing_extensions import Annotated
 from connection_restapi_client_poc.models.con_mprl_cross_section import ConMprlCrossSection
@@ -44,7 +44,6 @@ class MaterialApi:
     def add_bolt_assembly(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -64,8 +63,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new bolt assemby to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -92,7 +89,6 @@ class MaterialApi:
 
         _param = self._add_bolt_assembly_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -118,7 +114,6 @@ class MaterialApi:
     def add_bolt_assembly_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -138,8 +133,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new bolt assemby to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -166,7 +159,6 @@ class MaterialApi:
 
         _param = self._add_bolt_assembly_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -192,7 +184,6 @@ class MaterialApi:
     def add_bolt_assembly_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new bolt assemby to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -212,8 +203,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new bolt assemby to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -240,7 +229,6 @@ class MaterialApi:
 
         _param = self._add_bolt_assembly_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -261,7 +249,6 @@ class MaterialApi:
     def _add_bolt_assembly_serialize(
         self,
         project_id,
-        connection_id,
         con_mprl_element,
         _request_auth,
         _content_type,
@@ -278,14 +265,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -322,7 +309,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-assemblies',
+            resource_path='/api/1/projects/{projectId}/materials/bolt-assemblies',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -342,7 +329,6 @@ class MaterialApi:
     def add_cross_section(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_cross_section: Annotated[Optional[ConMprlCrossSection], Field(description="Definition of a new cross-section to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -362,8 +348,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_cross_section: Definition of a new cross-section to be added to the project
         :type con_mprl_cross_section: ConMprlCrossSection
         :param _request_timeout: timeout setting for this request. If one
@@ -390,7 +374,6 @@ class MaterialApi:
 
         _param = self._add_cross_section_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_cross_section=con_mprl_cross_section,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -416,7 +399,6 @@ class MaterialApi:
     def add_cross_section_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_cross_section: Annotated[Optional[ConMprlCrossSection], Field(description="Definition of a new cross-section to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -436,8 +418,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_cross_section: Definition of a new cross-section to be added to the project
         :type con_mprl_cross_section: ConMprlCrossSection
         :param _request_timeout: timeout setting for this request. If one
@@ -464,7 +444,6 @@ class MaterialApi:
 
         _param = self._add_cross_section_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_cross_section=con_mprl_cross_section,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -490,7 +469,6 @@ class MaterialApi:
     def add_cross_section_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_cross_section: Annotated[Optional[ConMprlCrossSection], Field(description="Definition of a new cross-section to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -510,8 +488,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_cross_section: Definition of a new cross-section to be added to the project
         :type con_mprl_cross_section: ConMprlCrossSection
         :param _request_timeout: timeout setting for this request. If one
@@ -538,7 +514,6 @@ class MaterialApi:
 
         _param = self._add_cross_section_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_cross_section=con_mprl_cross_section,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -559,7 +534,6 @@ class MaterialApi:
     def _add_cross_section_serialize(
         self,
         project_id,
-        connection_id,
         con_mprl_cross_section,
         _request_auth,
         _content_type,
@@ -576,14 +550,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -620,7 +594,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/cross-sections',
+            resource_path='/api/1/projects/{projectId}/materials/cross-sections',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -640,7 +614,6 @@ class MaterialApi:
     def add_material_bolt_grade(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -660,8 +633,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -688,7 +659,6 @@ class MaterialApi:
 
         _param = self._add_material_bolt_grade_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -714,7 +684,6 @@ class MaterialApi:
     def add_material_bolt_grade_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -734,8 +703,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -762,7 +729,6 @@ class MaterialApi:
 
         _param = self._add_material_bolt_grade_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -788,7 +754,6 @@ class MaterialApi:
     def add_material_bolt_grade_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -808,8 +773,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -836,7 +799,6 @@ class MaterialApi:
 
         _param = self._add_material_bolt_grade_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -857,7 +819,6 @@ class MaterialApi:
     def _add_material_bolt_grade_serialize(
         self,
         project_id,
-        connection_id,
         con_mprl_element,
         _request_auth,
         _content_type,
@@ -874,14 +835,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -918,7 +879,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade',
+            resource_path='/api/1/projects/{projectId}/materials/bolt-grade',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -938,7 +899,6 @@ class MaterialApi:
     def add_material_concrete(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -958,8 +918,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -986,7 +944,6 @@ class MaterialApi:
 
         _param = self._add_material_concrete_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1012,7 +969,6 @@ class MaterialApi:
     def add_material_concrete_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -1032,8 +988,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -1060,7 +1014,6 @@ class MaterialApi:
 
         _param = self._add_material_concrete_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1086,7 +1039,6 @@ class MaterialApi:
     def add_material_concrete_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -1106,8 +1058,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -1134,7 +1084,6 @@ class MaterialApi:
 
         _param = self._add_material_concrete_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1155,7 +1104,6 @@ class MaterialApi:
     def _add_material_concrete_serialize(
         self,
         project_id,
-        connection_id,
         con_mprl_element,
         _request_auth,
         _content_type,
@@ -1172,14 +1120,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1216,7 +1164,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/concrete',
+            resource_path='/api/1/projects/{projectId}/materials/concrete',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1236,7 +1184,6 @@ class MaterialApi:
     def add_material_steel(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -1256,8 +1203,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -1284,7 +1229,6 @@ class MaterialApi:
 
         _param = self._add_material_steel_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1310,7 +1254,6 @@ class MaterialApi:
     def add_material_steel_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -1330,8 +1273,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -1358,7 +1299,6 @@ class MaterialApi:
 
         _param = self._add_material_steel_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1384,7 +1324,6 @@ class MaterialApi:
     def add_material_steel_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -1404,8 +1343,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -1432,7 +1369,6 @@ class MaterialApi:
 
         _param = self._add_material_steel_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1453,7 +1389,6 @@ class MaterialApi:
     def _add_material_steel_serialize(
         self,
         project_id,
-        connection_id,
         con_mprl_element,
         _request_auth,
         _content_type,
@@ -1470,14 +1405,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1514,7 +1449,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/steel',
+            resource_path='/api/1/projects/{projectId}/materials/steel',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1534,7 +1469,6 @@ class MaterialApi:
     def add_material_weld(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -1554,8 +1488,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -1582,7 +1514,6 @@ class MaterialApi:
 
         _param = self._add_material_weld_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1608,7 +1539,6 @@ class MaterialApi:
     def add_material_weld_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -1628,8 +1558,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -1656,7 +1584,6 @@ class MaterialApi:
 
         _param = self._add_material_weld_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1682,7 +1609,6 @@ class MaterialApi:
     def add_material_weld_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: StrictInt,
         con_mprl_element: Annotated[Optional[ConMprlElement], Field(description="Definition of a new material to be added to the project")] = None,
         _request_timeout: Union[
             None,
@@ -1702,8 +1628,6 @@ class MaterialApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id:  (required)
-        :type connection_id: int
         :param con_mprl_element: Definition of a new material to be added to the project
         :type con_mprl_element: ConMprlElement
         :param _request_timeout: timeout setting for this request. If one
@@ -1730,7 +1654,6 @@ class MaterialApi:
 
         _param = self._add_material_weld_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             con_mprl_element=con_mprl_element,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1751,7 +1674,6 @@ class MaterialApi:
     def _add_material_weld_serialize(
         self,
         project_id,
-        connection_id,
         con_mprl_element,
         _request_auth,
         _content_type,
@@ -1768,14 +1690,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1812,7 +1734,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/welding',
+            resource_path='/api/1/projects/{projectId}/materials/welding',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1832,7 +1754,6 @@ class MaterialApi:
     def get_all_materials(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1846,13 +1767,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[object]:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1877,7 +1796,6 @@ class MaterialApi:
 
         _param = self._get_all_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1902,7 +1820,6 @@ class MaterialApi:
     def get_all_materials_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1916,13 +1833,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[object]]:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1947,7 +1862,6 @@ class MaterialApi:
 
         _param = self._get_all_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1972,7 +1886,6 @@ class MaterialApi:
     def get_all_materials_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1986,13 +1899,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2017,7 +1928,6 @@ class MaterialApi:
 
         _param = self._get_all_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2037,7 +1947,6 @@ class MaterialApi:
     def _get_all_materials_serialize(
         self,
         project_id,
-        connection_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2053,14 +1962,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -2082,7 +1991,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials',
+            resource_path='/api/1/projects/{projectId}/materials',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2102,7 +2011,6 @@ class MaterialApi:
     def get_blot_grade_materials(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2116,13 +2024,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[object]:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2147,7 +2053,6 @@ class MaterialApi:
 
         _param = self._get_blot_grade_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2172,7 +2077,6 @@ class MaterialApi:
     def get_blot_grade_materials_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2186,13 +2090,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[object]]:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2217,7 +2119,6 @@ class MaterialApi:
 
         _param = self._get_blot_grade_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2242,7 +2143,6 @@ class MaterialApi:
     def get_blot_grade_materials_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2256,13 +2156,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2287,7 +2185,6 @@ class MaterialApi:
 
         _param = self._get_blot_grade_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2307,7 +2204,6 @@ class MaterialApi:
     def _get_blot_grade_materials_serialize(
         self,
         project_id,
-        connection_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2323,14 +2219,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -2352,7 +2248,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/bolt-grade',
+            resource_path='/api/1/projects/{projectId}/materials/bolt-grade',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2372,7 +2268,6 @@ class MaterialApi:
     def get_bolt_assemblies(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its bolt assemblies")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2386,13 +2281,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[object]:
-        """Get bolt assemblies which are used in the connectionId
+        """Get bolt assemblies which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its bolt assemblies (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2417,7 +2310,6 @@ class MaterialApi:
 
         _param = self._get_bolt_assemblies_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2442,7 +2334,6 @@ class MaterialApi:
     def get_bolt_assemblies_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its bolt assemblies")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2456,13 +2347,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[object]]:
-        """Get bolt assemblies which are used in the connectionId
+        """Get bolt assemblies which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its bolt assemblies (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2487,7 +2376,6 @@ class MaterialApi:
 
         _param = self._get_bolt_assemblies_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2512,7 +2400,6 @@ class MaterialApi:
     def get_bolt_assemblies_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its bolt assemblies")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2526,13 +2413,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get bolt assemblies which are used in the connectionId
+        """Get bolt assemblies which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its bolt assemblies (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2557,7 +2442,6 @@ class MaterialApi:
 
         _param = self._get_bolt_assemblies_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2577,7 +2461,6 @@ class MaterialApi:
     def _get_bolt_assemblies_serialize(
         self,
         project_id,
-        connection_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2593,14 +2476,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -2622,7 +2505,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/bolt-assemblies',
+            resource_path='/api/1/projects/{projectId}/materials/bolt-assemblies',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2642,7 +2525,6 @@ class MaterialApi:
     def get_concrete_materials(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2656,13 +2538,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[object]:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2687,7 +2567,6 @@ class MaterialApi:
 
         _param = self._get_concrete_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2712,7 +2591,6 @@ class MaterialApi:
     def get_concrete_materials_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2726,13 +2604,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[object]]:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2757,7 +2633,6 @@ class MaterialApi:
 
         _param = self._get_concrete_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2782,7 +2657,6 @@ class MaterialApi:
     def get_concrete_materials_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2796,13 +2670,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2827,7 +2699,6 @@ class MaterialApi:
 
         _param = self._get_concrete_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2847,7 +2718,6 @@ class MaterialApi:
     def _get_concrete_materials_serialize(
         self,
         project_id,
-        connection_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2863,14 +2733,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -2892,7 +2762,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/concrete',
+            resource_path='/api/1/projects/{projectId}/materials/concrete',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2912,7 +2782,6 @@ class MaterialApi:
     def get_cross_sections(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its cross-sections")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2926,13 +2795,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[object]:
-        """Get cross sections which are used in the connectionId
+        """Get cross sections which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its cross-sections (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2957,7 +2824,6 @@ class MaterialApi:
 
         _param = self._get_cross_sections_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2982,7 +2848,6 @@ class MaterialApi:
     def get_cross_sections_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its cross-sections")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2996,13 +2861,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[object]]:
-        """Get cross sections which are used in the connectionId
+        """Get cross sections which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its cross-sections (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3027,7 +2890,6 @@ class MaterialApi:
 
         _param = self._get_cross_sections_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3052,7 +2914,6 @@ class MaterialApi:
     def get_cross_sections_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its cross-sections")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3066,13 +2927,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get cross sections which are used in the connectionId
+        """Get cross sections which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its cross-sections (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3097,7 +2956,6 @@ class MaterialApi:
 
         _param = self._get_cross_sections_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3117,7 +2975,6 @@ class MaterialApi:
     def _get_cross_sections_serialize(
         self,
         project_id,
-        connection_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3133,14 +2990,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -3162,7 +3019,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/cross-sections',
+            resource_path='/api/1/projects/{projectId}/materials/cross-sections',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -3182,7 +3039,6 @@ class MaterialApi:
     def get_steel_materials(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3196,13 +3052,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[object]:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3227,7 +3081,6 @@ class MaterialApi:
 
         _param = self._get_steel_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3252,7 +3105,6 @@ class MaterialApi:
     def get_steel_materials_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3266,13 +3118,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[object]]:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3297,7 +3147,6 @@ class MaterialApi:
 
         _param = self._get_steel_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3322,7 +3171,6 @@ class MaterialApi:
     def get_steel_materials_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3336,13 +3184,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3367,7 +3213,6 @@ class MaterialApi:
 
         _param = self._get_steel_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3387,7 +3232,6 @@ class MaterialApi:
     def _get_steel_materials_serialize(
         self,
         project_id,
-        connection_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3403,14 +3247,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -3432,7 +3276,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/steel',
+            resource_path='/api/1/projects/{projectId}/materials/steel',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -3452,7 +3296,6 @@ class MaterialApi:
     def get_welding_materials(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3466,13 +3309,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[object]:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3497,7 +3338,6 @@ class MaterialApi:
 
         _param = self._get_welding_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3522,7 +3362,6 @@ class MaterialApi:
     def get_welding_materials_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3536,13 +3375,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[object]]:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3567,7 +3404,6 @@ class MaterialApi:
 
         _param = self._get_welding_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3592,7 +3428,6 @@ class MaterialApi:
     def get_welding_materials_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its materials")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3606,13 +3441,11 @@ class MaterialApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get materials which are used in the connectionId
+        """Get materials which are used in the project projectId
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to get its materials (required)
-        :type connection_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3637,7 +3470,6 @@ class MaterialApi:
 
         _param = self._get_welding_materials_serialize(
             project_id=project_id,
-            connection_id=connection_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3657,7 +3489,6 @@ class MaterialApi:
     def _get_welding_materials_serialize(
         self,
         project_id,
-        connection_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3673,14 +3504,14 @@ class MaterialApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
         if project_id is not None:
             _path_params['projectId'] = project_id
-        if connection_id is not None:
-            _path_params['connectionId'] = connection_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -3702,7 +3533,7 @@ class MaterialApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/materials/welding',
+            resource_path='/api/1/projects/{projectId}/materials/welding',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

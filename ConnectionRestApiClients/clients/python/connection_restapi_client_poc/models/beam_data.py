@@ -88,16 +88,16 @@ class BeamData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in plates (list)
         _items = []
         if self.plates:
-            for _item in self.plates:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_plates in self.plates:
+                if _item_plates:
+                    _items.append(_item_plates.to_dict())
             _dict['plates'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cuts (list)
         _items = []
         if self.cuts:
-            for _item in self.cuts:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_cuts in self.cuts:
+                if _item_cuts:
+                    _items.append(_item_cuts.to_dict())
             _dict['cuts'] = _items
         # override the default output from pydantic by calling `to_dict()` of added_member
         if self.added_member:

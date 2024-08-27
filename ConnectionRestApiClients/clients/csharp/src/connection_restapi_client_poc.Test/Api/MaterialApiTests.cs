@@ -62,9 +62,8 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
             //ConMprlElement? conMprlElement = null;
-            //var response = instance.AddBoltAssembly(projectId, connectionId, conMprlElement);
+            //var response = instance.AddBoltAssembly(projectId, conMprlElement);
             //Assert.IsType<ConMprlElement>(response);
         }
 
@@ -76,9 +75,8 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
             //ConMprlCrossSection? conMprlCrossSection = null;
-            //var response = instance.AddCrossSection(projectId, connectionId, conMprlCrossSection);
+            //var response = instance.AddCrossSection(projectId, conMprlCrossSection);
             //Assert.IsType<ConMprlCrossSection>(response);
         }
 
@@ -90,9 +88,8 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
             //ConMprlElement? conMprlElement = null;
-            //var response = instance.AddMaterialBoltGrade(projectId, connectionId, conMprlElement);
+            //var response = instance.AddMaterialBoltGrade(projectId, conMprlElement);
             //Assert.IsType<ConMprlElement>(response);
         }
 
@@ -104,9 +101,8 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
             //ConMprlElement? conMprlElement = null;
-            //var response = instance.AddMaterialConcrete(projectId, connectionId, conMprlElement);
+            //var response = instance.AddMaterialConcrete(projectId, conMprlElement);
             //Assert.IsType<ConMprlElement>(response);
         }
 
@@ -118,9 +114,8 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
             //ConMprlElement? conMprlElement = null;
-            //var response = instance.AddMaterialSteel(projectId, connectionId, conMprlElement);
+            //var response = instance.AddMaterialSteel(projectId, conMprlElement);
             //Assert.IsType<ConMprlElement>(response);
         }
 
@@ -132,9 +127,8 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
             //ConMprlElement? conMprlElement = null;
-            //var response = instance.AddMaterialWeld(projectId, connectionId, conMprlElement);
+            //var response = instance.AddMaterialWeld(projectId, conMprlElement);
             //Assert.IsType<ConMprlElement>(response);
         }
 
@@ -146,8 +140,7 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.GetAllMaterials(projectId, connectionId);
+            //var response = instance.GetAllMaterials(projectId);
             //Assert.IsType<List<Object>>(response);
         }
 
@@ -159,8 +152,7 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.GetBlotGradeMaterials(projectId, connectionId);
+            //var response = instance.GetBlotGradeMaterials(projectId);
             //Assert.IsType<List<Object>>(response);
         }
 
@@ -172,8 +164,7 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.GetBoltAssemblies(projectId, connectionId);
+            //var response = instance.GetBoltAssemblies(projectId);
             //Assert.IsType<List<Object>>(response);
         }
 
@@ -185,8 +176,7 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.GetConcreteMaterials(projectId, connectionId);
+            //var response = instance.GetConcreteMaterials(projectId);
             //Assert.IsType<List<Object>>(response);
         }
 
@@ -198,8 +188,7 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.GetCrossSections(projectId, connectionId);
+            //var response = instance.GetCrossSections(projectId);
             //Assert.IsType<List<Object>>(response);
         }
 
@@ -211,8 +200,7 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.GetSteelMaterials(projectId, connectionId);
+            //var response = instance.GetSteelMaterials(projectId);
             //Assert.IsType<List<Object>>(response);
         }
 
@@ -224,8 +212,7 @@ namespace connection_restapi_client_poc.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.GetWeldingMaterials(projectId, connectionId);
+            //var response = instance.GetWeldingMaterials(projectId);
             //Assert.IsType<List<Object>>(response);
         }
     }

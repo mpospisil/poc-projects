@@ -9,6 +9,7 @@ from connection_restapi_client_poc.api.material_api import MaterialApi
 from connection_restapi_client_poc.api.member_api import MemberApi
 from connection_restapi_client_poc.api.parameter_api import ParameterApi
 from connection_restapi_client_poc.api.project_api import ProjectApi
+from connection_restapi_client_poc.api.report_api import ReportApi
 from connection_restapi_client_poc.api.template_api import TemplateApi
 from connection_restapi_client_poc.api.version_api import VersionApi
 

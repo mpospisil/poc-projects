@@ -85,30 +85,30 @@ class ReinforcedCrossSection(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in bars (list)
         _items = []
         if self.bars:
-            for _item in self.bars:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_bars in self.bars:
+                if _item_bars:
+                    _items.append(_item_bars.to_dict())
             _dict['bars'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in stirrups (list)
         _items = []
         if self.stirrups:
-            for _item in self.stirrups:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_stirrups in self.stirrups:
+                if _item_stirrups:
+                    _items.append(_item_stirrups.to_dict())
             _dict['stirrups'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in tendon_bars (list)
         _items = []
         if self.tendon_bars:
-            for _item in self.tendon_bars:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_tendon_bars in self.tendon_bars:
+                if _item_tendon_bars:
+                    _items.append(_item_tendon_bars.to_dict())
             _dict['tendonBars'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in tendon_ducts (list)
         _items = []
         if self.tendon_ducts:
-            for _item in self.tendon_ducts:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_tendon_ducts in self.tendon_ducts:
+                if _item_tendon_ducts:
+                    _items.append(_item_tendon_ducts.to_dict())
             _dict['tendonDucts'] = _items
         # set to None if name (nullable) is None
         # and model_fields_set contains the field

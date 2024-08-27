@@ -134,6 +134,7 @@ docs/ReinfBarSurface.md
 docs/ReinforcedBar.md
 docs/ReinforcedCrossSection.md
 docs/Reinforcement.md
+docs/ReportApi.md
 docs/ResultClass.md
 docs/ResultLocalSystemType.md
 docs/ResultOnMember.md
@@ -147,6 +148,7 @@ docs/SolidBlock3D.md
 docs/Span.md
 docs/Stirrup.md
 docs/StrainLoadOnLine.md
+docs/Stream.md
 docs/SubStructure.md
 docs/SurfaceSupport3D.md
 docs/TableContainerType.md
@@ -181,6 +183,7 @@ src/connection_restapi_client_poc.Test/Api/MaterialApiTests.cs
 src/connection_restapi_client_poc.Test/Api/MemberApiTests.cs
 src/connection_restapi_client_poc.Test/Api/ParameterApiTests.cs
 src/connection_restapi_client_poc.Test/Api/ProjectApiTests.cs
+src/connection_restapi_client_poc.Test/Api/ReportApiTests.cs
 src/connection_restapi_client_poc.Test/Api/TemplateApiTests.cs
 src/connection_restapi_client_poc.Test/Api/VersionApiTests.cs
 src/connection_restapi_client_poc.Test/Model/Anchor3DTests.cs
@@ -318,6 +321,7 @@ src/connection_restapi_client_poc.Test/Model/SolidBlock3DTests.cs
 src/connection_restapi_client_poc.Test/Model/SpanTests.cs
 src/connection_restapi_client_poc.Test/Model/StirrupTests.cs
 src/connection_restapi_client_poc.Test/Model/StrainLoadOnLineTests.cs
+src/connection_restapi_client_poc.Test/Model/StreamTests.cs
 src/connection_restapi_client_poc.Test/Model/SubStructureTests.cs
 src/connection_restapi_client_poc.Test/Model/SurfaceSupport3DTests.cs
 src/connection_restapi_client_poc.Test/Model/TableContainerTypeTests.cs
@@ -350,6 +354,7 @@ src/connection_restapi_client_poc/Api/MaterialApi.cs
 src/connection_restapi_client_poc/Api/MemberApi.cs
 src/connection_restapi_client_poc/Api/ParameterApi.cs
 src/connection_restapi_client_poc/Api/ProjectApi.cs
+src/connection_restapi_client_poc/Api/ReportApi.cs
 src/connection_restapi_client_poc/Api/TemplateApi.cs
 src/connection_restapi_client_poc/Api/VersionApi.cs
 src/connection_restapi_client_poc/Client/ApiClient.cs
@@ -504,6 +509,7 @@ src/connection_restapi_client_poc/Model/SolidBlock3D.cs
 src/connection_restapi_client_poc/Model/Span.cs
 src/connection_restapi_client_poc/Model/Stirrup.cs
 src/connection_restapi_client_poc/Model/StrainLoadOnLine.cs
+src/connection_restapi_client_poc/Model/Stream.cs
 src/connection_restapi_client_poc/Model/SubStructure.cs
 src/connection_restapi_client_poc/Model/SurfaceSupport3D.cs
 src/connection_restapi_client_poc/Model/TableContainerType.cs

@@ -17,18 +17,24 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from connection_restapi_client_poc.models.result_on_members import ResultOnMembers
 from typing import Optional, Set
 from typing_extensions import Self
 
-class OpenModelResult(BaseModel):
+class Stream(BaseModel):
     """
-    Results of open model
+    Stream
     """ # noqa: E501
-    result_on_members: Optional[List[ResultOnMembers]] = Field(default=None, description="Results on members", alias="resultOnMembers")
-    __properties: ClassVar[List[str]] = ["resultOnMembers"]
+    can_read: Optional[StrictBool] = Field(default=None, alias="canRead")
+    can_write: Optional[StrictBool] = Field(default=None, alias="canWrite")
+    can_seek: Optional[StrictBool] = Field(default=None, alias="canSeek")
+    can_timeout: Optional[StrictBool] = Field(default=None, alias="canTimeout")
+    length: Optional[StrictInt] = None
+    position: Optional[StrictInt] = None
+    read_timeout: Optional[StrictInt] = Field(default=None, alias="readTimeout")
+    write_timeout: Optional[StrictInt] = Field(default=None, alias="writeTimeout")
+    __properties: ClassVar[List[str]] = ["canRead", "canWrite", "canSeek", "canTimeout", "length", "position", "readTimeout", "writeTimeout"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +54,7 @@ class OpenModelResult(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of OpenModelResult from a JSON string"""
+        """Create an instance of Stream from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -60,8 +66,18 @@ class OpenModelResult(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
+            "can_read",
+            "can_write",
+            "can_seek",
+            "can_timeout",
+            "length",
         ])
 
         _dict = self.model_dump(
@@ -69,23 +85,11 @@ class OpenModelResult(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in result_on_members (list)
-        _items = []
-        if self.result_on_members:
-            for _item_result_on_members in self.result_on_members:
-                if _item_result_on_members:
-                    _items.append(_item_result_on_members.to_dict())
-            _dict['resultOnMembers'] = _items
-        # set to None if result_on_members (nullable) is None
-        # and model_fields_set contains the field
-        if self.result_on_members is None and "result_on_members" in self.model_fields_set:
-            _dict['resultOnMembers'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of OpenModelResult from a dict"""
+        """Create an instance of Stream from a dict"""
         if obj is None:
             return None
 
@@ -93,7 +97,14 @@ class OpenModelResult(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "resultOnMembers": [ResultOnMembers.from_dict(_item) for _item in obj["resultOnMembers"]] if obj.get("resultOnMembers") is not None else None
+            "canRead": obj.get("canRead"),
+            "canWrite": obj.get("canWrite"),
+            "canSeek": obj.get("canSeek"),
+            "canTimeout": obj.get("canTimeout"),
+            "length": obj.get("length"),
+            "position": obj.get("position"),
+            "readTimeout": obj.get("readTimeout"),
+            "writeTimeout": obj.get("writeTimeout")
         })
         return _obj
 

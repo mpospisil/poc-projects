@@ -74,16 +74,16 @@ class FoldedPlateData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in plates (list)
         _items = []
         if self.plates:
-            for _item in self.plates:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_plates in self.plates:
+                if _item_plates:
+                    _items.append(_item_plates.to_dict())
             _dict['plates'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in bends (list)
         _items = []
         if self.bends:
-            for _item in self.bends:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_bends in self.bends:
+                if _item_bends:
+                    _items.append(_item_bends.to_dict())
             _dict['bends'] = _items
         # set to None if plates (nullable) is None
         # and model_fields_set contains the field

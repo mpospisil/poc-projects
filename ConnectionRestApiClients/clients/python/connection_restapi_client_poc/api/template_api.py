@@ -279,7 +279,9 @@ class TemplateApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -580,7 +582,9 @@ class TemplateApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, Union[str, bytes]] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -624,7 +628,7 @@ class TemplateApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping',
+            resource_path='/api/1/projects/{projectId}/connections/{connectionId}/get-default-mapping',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -149,6 +149,7 @@ from connection_restapi_client_poc.models.solid_block3_d import SolidBlock3D
 from connection_restapi_client_poc.models.span import Span
 from connection_restapi_client_poc.models.stirrup import Stirrup
 from connection_restapi_client_poc.models.strain_load_on_line import StrainLoadOnLine
+from connection_restapi_client_poc.models.stream import Stream
 from connection_restapi_client_poc.models.sub_structure import SubStructure
 from connection_restapi_client_poc.models.surface_support3_d import SurfaceSupport3D
 from connection_restapi_client_poc.models.table_container_type import TableContainerType

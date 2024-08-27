@@ -89,51 +89,51 @@ class ConnectionCheckRes(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in check_res_summary (list)
         _items = []
         if self.check_res_summary:
-            for _item in self.check_res_summary:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_check_res_summary in self.check_res_summary:
+                if _item_check_res_summary:
+                    _items.append(_item_check_res_summary.to_dict())
             _dict['checkResSummary'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in check_res_plate (list)
         _items = []
         if self.check_res_plate:
-            for _item in self.check_res_plate:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_check_res_plate in self.check_res_plate:
+                if _item_check_res_plate:
+                    _items.append(_item_check_res_plate.to_dict())
             _dict['checkResPlate'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in check_res_weld (list)
         _items = []
         if self.check_res_weld:
-            for _item in self.check_res_weld:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_check_res_weld in self.check_res_weld:
+                if _item_check_res_weld:
+                    _items.append(_item_check_res_weld.to_dict())
             _dict['checkResWeld'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in check_res_bolt (list)
         _items = []
         if self.check_res_bolt:
-            for _item in self.check_res_bolt:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_check_res_bolt in self.check_res_bolt:
+                if _item_check_res_bolt:
+                    _items.append(_item_check_res_bolt.to_dict())
             _dict['checkResBolt'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in check_res_anchor (list)
         _items = []
         if self.check_res_anchor:
-            for _item in self.check_res_anchor:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_check_res_anchor in self.check_res_anchor:
+                if _item_check_res_anchor:
+                    _items.append(_item_check_res_anchor.to_dict())
             _dict['checkResAnchor'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in check_res_concrete_block (list)
         _items = []
         if self.check_res_concrete_block:
-            for _item in self.check_res_concrete_block:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_check_res_concrete_block in self.check_res_concrete_block:
+                if _item_check_res_concrete_block:
+                    _items.append(_item_check_res_concrete_block.to_dict())
             _dict['checkResConcreteBlock'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in buckling_results (list)
         _items = []
         if self.buckling_results:
-            for _item in self.buckling_results:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_buckling_results in self.buckling_results:
+                if _item_buckling_results:
+                    _items.append(_item_buckling_results.to_dict())
             _dict['bucklingResults'] = _items
         # override the default output from pydantic by calling `to_dict()` of messages
         if self.messages:

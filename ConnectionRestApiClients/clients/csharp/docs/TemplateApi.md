@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**ApplyTemplate**](TemplateApi.md#applytemplate) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/apply-template | Apply the connection template applyTemplateParam on the connection connectionId in the project projectId |
-| [**GetDefaultTemplateMapping**](TemplateApi.md#getdefaulttemplatemapping) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/get-template-mapping | Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId |
+| [**GetDefaultTemplateMapping**](TemplateApi.md#getdefaulttemplatemapping) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/get-default-mapping | Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId |
 
 <a id="applytemplate"></a>
 # **ApplyTemplate**

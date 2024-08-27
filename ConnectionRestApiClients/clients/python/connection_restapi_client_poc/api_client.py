@@ -108,7 +108,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/1.2.0/python'
+        self.user_agent = 'OpenAPI-Generator/24.0.5.0863/python'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -446,7 +446,6 @@ class ApiClient:
         if data is None:
             return None
 
-        # My custom serialization from the template
         if isinstance(klass, str):
             if klass.startswith('List['):
                 m = re.match(r'List\[(.*)]', klass)
@@ -799,10 +798,5 @@ class ApiClient:
         :param klass: class literal.
         :return: model object.
         """
-        try:
-            return klass.from_dict(data)
-        except Exception as e:
-            # Log the validation error and return the data as-is
-            print(f"Validation error: {e}")
-            return data
 
+        return klass.from_dict(data)

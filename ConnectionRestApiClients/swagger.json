@@ -1518,7 +1518,7 @@
           {
             "name": "connectionId",
             "in": "path",
-            "description": "Id of the connection to to update is membar memberId",
+            "description": "Id of the connection to to update is member memberId",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1528,7 +1528,7 @@
           {
             "name": "memberId",
             "in": "path",
-            "description": "Id of the member to be ubdated in the connection",
+            "description": "Id of the member to be updated in the connection",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1537,7 +1537,7 @@
           }
         ],
         "requestBody": {
-          "description": "New mwmbwr data",
+          "description": "New member data",
           "content": {
             "application/json": {
               "schema": {
@@ -1591,7 +1591,7 @@
           {
             "name": "includeHidden",
             "in": "query",
-            "description": "Iclude also hdden parameters",
+            "description": "Include also hidden parameters",
             "schema": {
               "type": "boolean",
               "default": false
@@ -1702,7 +1702,7 @@
           }
         ],
         "requestBody": {
-          "description": "Expreession to evaluate",
+          "description": "Expression to evaluate",
           "content": {
             "application/json": {
               "schema": {
@@ -1730,7 +1730,7 @@
         "tags": [
           "Project"
         ],
-        "summary": "Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.",
+        "summary": "Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.",
         "operationId": "ConnectClient",
         "responses": {
           "200": {
@@ -2195,6 +2195,7 @@
           "Report"
         ],
         "summary": "Generates report for projectId and connectionId",
+        "operationId": "GeneratePdf",
         "parameters": [
           {
             "name": "projectId",
@@ -2217,16 +2218,6 @@
             }
           }
         ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConnReportSettings"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -2247,6 +2238,7 @@
           "Report"
         ],
         "summary": "Generates report for projectId and connectionId",
+        "operationId": "GenerateWord",
         "parameters": [
           {
             "name": "projectId",
@@ -2269,16 +2261,6 @@
             }
           }
         ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConnReportSettings"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -2625,9 +2607,6 @@
           "newTemplateId": {
             "type": "string",
             "nullable": true
-          },
-          "newElement": {
-            "$ref": "#/components/schemas/SelectedElement"
           }
         },
         "additionalProperties": false
@@ -3625,10 +3604,6 @@
         ],
         "type": "string",
         "description": "Types of cone breakout checks"
-      },
-      "ConnReportSettings": {
-        "type": "object",
-        "additionalProperties": false
       },
       "ConnectionCheckRes": {
         "type": "object",
@@ -6397,29 +6372,6 @@
         "additionalProperties": false,
         "description": "Represents a segment in two-dimensional space."
       },
-      "SelectedElement": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "tableId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "elementId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "containerType": {
-            "$ref": "#/components/schemas/TableContainerType"
-          }
-        },
-        "additionalProperties": false
-      },
       "Settlement": {
         "type": "object",
         "properties": {
@@ -6580,17 +6532,6 @@
         },
         "additionalProperties": false,
         "description": "Representation of Surface Support 3D in IDEA StatiCa Detail"
-      },
-      "TableContainerType": {
-        "enum": [
-          "notSet",
-          "crossSection",
-          "material",
-          "plateThickness",
-          "steelStrands",
-          "fastener"
-        ],
-        "type": "string"
       },
       "Taper": {
         "type": "object",

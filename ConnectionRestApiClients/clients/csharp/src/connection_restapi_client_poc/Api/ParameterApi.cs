@@ -32,7 +32,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
-        /// <param name="body">Expreession to evaluate (optional)</param>
+        /// <param name="body">Expression to evaluate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         string EvaluateExpression(Guid projectId, int connectionId, string? body = default(string?), int operationIndex = 0);
@@ -46,7 +46,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
-        /// <param name="body">Expreession to evaluate (optional)</param>
+        /// <param name="body">Expression to evaluate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         ApiResponse<string> EvaluateExpressionWithHttpInfo(Guid projectId, int connectionId, string? body = default(string?), int operationIndex = 0);
@@ -56,7 +56,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its parameters</param>
-        /// <param name="includeHidden">Iclude also hdden parameters (optional, default to false)</param>
+        /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;IdeaParameter&gt;</returns>
         List<IdeaParameter> GetParameters(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0);
@@ -70,7 +70,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its parameters</param>
-        /// <param name="includeHidden">Iclude also hdden parameters (optional, default to false)</param>
+        /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;IdeaParameter&gt;</returns>
         ApiResponse<List<IdeaParameter>> GetParametersWithHttpInfo(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0);
@@ -116,7 +116,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
-        /// <param name="body">Expreession to evaluate (optional)</param>
+        /// <param name="body">Expression to evaluate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
@@ -131,7 +131,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
-        /// <param name="body">Expreession to evaluate (optional)</param>
+        /// <param name="body">Expression to evaluate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
@@ -145,7 +145,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its parameters</param>
-        /// <param name="includeHidden">Iclude also hdden parameters (optional, default to false)</param>
+        /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;IdeaParameter&gt;</returns>
@@ -160,7 +160,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its parameters</param>
-        /// <param name="includeHidden">Iclude also hdden parameters (optional, default to false)</param>
+        /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;IdeaParameter&gt;)</returns>
@@ -320,7 +320,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
-        /// <param name="body">Expreession to evaluate (optional)</param>
+        /// <param name="body">Expression to evaluate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
         public string EvaluateExpression(Guid projectId, int connectionId, string? body = default(string?), int operationIndex = 0)
@@ -335,7 +335,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
-        /// <param name="body">Expreession to evaluate (optional)</param>
+        /// <param name="body">Expression to evaluate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
         public connection_restapi_client_poc.Client.ApiResponse<string> EvaluateExpressionWithHttpInfo(Guid projectId, int connectionId, string? body = default(string?), int operationIndex = 0)
@@ -391,7 +391,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
-        /// <param name="body">Expreession to evaluate (optional)</param>
+        /// <param name="body">Expression to evaluate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
@@ -407,7 +407,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
-        /// <param name="body">Expreession to evaluate (optional)</param>
+        /// <param name="body">Expression to evaluate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
@@ -466,7 +466,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its parameters</param>
-        /// <param name="includeHidden">Iclude also hdden parameters (optional, default to false)</param>
+        /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;IdeaParameter&gt;</returns>
         public List<IdeaParameter> GetParameters(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0)
@@ -481,7 +481,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its parameters</param>
-        /// <param name="includeHidden">Iclude also hdden parameters (optional, default to false)</param>
+        /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;IdeaParameter&gt;</returns>
         public connection_restapi_client_poc.Client.ApiResponse<List<IdeaParameter>> GetParametersWithHttpInfo(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0)
@@ -539,7 +539,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its parameters</param>
-        /// <param name="includeHidden">Iclude also hdden parameters (optional, default to false)</param>
+        /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;IdeaParameter&gt;</returns>
@@ -555,7 +555,7 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its parameters</param>
-        /// <param name="includeHidden">Iclude also hdden parameters (optional, default to false)</param>
+        /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;IdeaParameter&gt;)</returns>

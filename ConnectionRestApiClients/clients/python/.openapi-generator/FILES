@@ -151,7 +151,6 @@ connection_restapi_client_poc/models/result_on_members.py
 connection_restapi_client_poc/models/result_type.py
 connection_restapi_client_poc/models/rigid_link.py
 connection_restapi_client_poc/models/segment2_d.py
-connection_restapi_client_poc/models/selected_element.py
 connection_restapi_client_poc/models/settlement.py
 connection_restapi_client_poc/models/solid_block3_d.py
 connection_restapi_client_poc/models/span.py
@@ -160,7 +159,6 @@ connection_restapi_client_poc/models/strain_load_on_line.py
 connection_restapi_client_poc/models/stream.py
 connection_restapi_client_poc/models/sub_structure.py
 connection_restapi_client_poc/models/surface_support3_d.py
-connection_restapi_client_poc/models/table_container_type.py
 connection_restapi_client_poc/models/taper.py
 connection_restapi_client_poc/models/temperature_curve2_d.py
 connection_restapi_client_poc/models/temperature_load_on_line.py
@@ -321,7 +319,6 @@ docs/ResultOnMembers.md
 docs/ResultType.md
 docs/RigidLink.md
 docs/Segment2D.md
-docs/SelectedElement.md
 docs/Settlement.md
 docs/SolidBlock3D.md
 docs/Span.md
@@ -330,7 +327,6 @@ docs/StrainLoadOnLine.md
 docs/Stream.md
 docs/SubStructure.md
 docs/SurfaceSupport3D.md
-docs/TableContainerType.md
 docs/Taper.md
 docs/TemperatureCurve2D.md
 docs/TemperatureLoadOnLine.md
@@ -498,7 +494,6 @@ test/test_result_on_members.py
 test/test_result_type.py
 test/test_rigid_link.py
 test/test_segment2_d.py
-test/test_selected_element.py
 test/test_settlement.py
 test/test_solid_block3_d.py
 test/test_span.py
@@ -507,7 +502,6 @@ test/test_strain_load_on_line.py
 test/test_stream.py
 test/test_sub_structure.py
 test/test_surface_support3_d.py
-test/test_table_container_type.py
 test/test_taper.py
 test/test_temperature_curve2_d.py
 test/test_temperature_load_on_line.py

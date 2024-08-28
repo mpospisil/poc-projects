@@ -35,7 +35,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.ParameterApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to use for evaluation expression
-    body = 'body_example' # str | Expreession to evaluate (optional)
+    body = 'body_example' # str | Expression to evaluate (optional)
 
     try:
         # Evaluate the expression and return the result
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**| Id of the connection to use for evaluation expression | 
- **body** | **str**| Expreession to evaluate | [optional] 
+ **body** | **str**| Expression to evaluate | [optional] 
 
 ### Return type
 
@@ -105,7 +105,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.ParameterApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to get its parameters
-    include_hidden = False # bool | Iclude also hdden parameters (optional) (default to False)
+    include_hidden = False # bool | Include also hidden parameters (optional) (default to False)
 
     try:
         # Get all parameters which are defined for projectId and connectionId
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**| Id of the connection to get its parameters | 
- **include_hidden** | **bool**| Iclude also hdden parameters | [optional] [default to False]
+ **include_hidden** | **bool**| Include also hidden parameters | [optional] [default to False]
 
 ### Return type
 

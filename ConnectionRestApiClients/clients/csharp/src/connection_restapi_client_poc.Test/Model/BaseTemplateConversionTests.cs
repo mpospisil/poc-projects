@@ -98,14 +98,5 @@ namespace connection_restapi_client_poc.Test.Model
         {
             // TODO unit test for the property 'NewTemplateId'
         }
-
-        /// <summary>
-        /// Test the property 'NewElement'
-        /// </summary>
-        [Fact]
-        public void NewElementTest()
-        {
-            // TODO unit test for the property 'NewElement'
-        }
     }
 }

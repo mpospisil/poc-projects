@@ -47,7 +47,7 @@ namespace connection_restapi_client_poc.Api
         /// <returns>ApiResponse of string</returns>
         ApiResponse<string> CloseProjectWithHttpInfo(string projectId, int operationIndex = 0);
         /// <summary>
-        /// Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+        /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -55,7 +55,7 @@ namespace connection_restapi_client_poc.Api
         string ConnectClient(int operationIndex = 0);
 
         /// <summary>
-        /// Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+        /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
         /// </summary>
         /// <remarks>
         /// 
@@ -321,7 +321,7 @@ namespace connection_restapi_client_poc.Api
         /// <returns>Task of ApiResponse (string)</returns>
         System.Threading.Tasks.Task<ApiResponse<string>> CloseProjectWithHttpInfoAsync(string projectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
-        /// Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+        /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
         /// </summary>
         /// <remarks>
         /// 
@@ -333,7 +333,7 @@ namespace connection_restapi_client_poc.Api
         System.Threading.Tasks.Task<string> ConnectClientAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+        /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
         /// </summary>
         /// <remarks>
         /// 
@@ -885,7 +885,7 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client. 
+        /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client. 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -897,7 +897,7 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client. 
+        /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client. 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -947,7 +947,7 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client. 
+        /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client. 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -960,7 +960,7 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client. 
+        /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client. 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>

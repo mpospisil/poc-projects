@@ -19,7 +19,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from connection_restapi_client_poc.models.selected_element import SelectedElement
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,8 +31,7 @@ class BaseTemplateConversion(BaseModel):
     new_value: Optional[StrictStr] = Field(default=None, alias="newValue")
     description: Optional[StrictStr] = None
     new_template_id: Optional[StrictStr] = Field(default=None, alias="newTemplateId")
-    new_element: Optional[SelectedElement] = Field(default=None, alias="newElement")
-    __properties: ClassVar[List[str]] = ["originalValue", "originalTemplateId", "newValue", "description", "newTemplateId", "newElement"]
+    __properties: ClassVar[List[str]] = ["originalValue", "originalTemplateId", "newValue", "description", "newTemplateId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,9 +72,6 @@ class BaseTemplateConversion(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of new_element
-        if self.new_element:
-            _dict['newElement'] = self.new_element.to_dict()
         # set to None if original_value (nullable) is None
         # and model_fields_set contains the field
         if self.original_value is None and "original_value" in self.model_fields_set:
@@ -118,8 +113,7 @@ class BaseTemplateConversion(BaseModel):
             "originalTemplateId": obj.get("originalTemplateId"),
             "newValue": obj.get("newValue"),
             "description": obj.get("description"),
-            "newTemplateId": obj.get("newTemplateId"),
-            "newElement": SelectedElement.from_dict(obj["newElement"]) if obj.get("newElement") is not None else None
+            "newTemplateId": obj.get("newTemplateId")
         })
         return _obj
 

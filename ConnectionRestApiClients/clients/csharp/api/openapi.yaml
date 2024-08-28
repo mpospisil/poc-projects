@@ -1133,7 +1133,7 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: Id of the connection to to update is membar memberId
+      - description: Id of the connection to to update is member memberId
         explode: false
         in: path
         name: connectionId
@@ -1142,7 +1142,7 @@ paths:
           format: int32
           type: integer
         style: simple
-      - description: Id of the member to be ubdated in the connection
+      - description: Id of the member to be updated in the connection
         explode: false
         in: path
         name: memberId
@@ -1156,7 +1156,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ConMember'
-        description: New mwmbwr data
+        description: New member data
       responses:
         "200":
           content:
@@ -1190,7 +1190,7 @@ paths:
           format: int32
           type: integer
         style: simple
-      - description: Iclude also hdden parameters
+      - description: Include also hidden parameters
         explode: true
         in: query
         name: includeHidden
@@ -1282,7 +1282,7 @@ paths:
           application/json:
             schema:
               type: string
-        description: Expreession to evaluate
+        description: Expression to evaluate
       responses:
         "200":
           content:
@@ -1306,8 +1306,8 @@ paths:
               schema:
                 type: string
           description: Success
-      summary: Connect a client to the ConnectionRestApi service. Methond returns
-        a unique identifier of the client.
+      summary: Connect a client to the ConnectionRestApi service. Method returns a
+        unique identifier of the client.
       tags:
       - Project
   /api/1/projects/open:
@@ -1608,6 +1608,7 @@ paths:
       - Project
   /api/1/projects/{projectId}/reports/{connectionId}/pdf:
     get:
+      operationId: GeneratePdf
       parameters:
       - description: ""
         explode: false
@@ -1627,12 +1628,6 @@ paths:
           format: int32
           type: integer
         style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ConnReportSettings'
-        description: ""
       responses:
         "200":
           content:
@@ -1645,6 +1640,7 @@ paths:
       - Report
   /api/1/projects/{projectId}/reports/{connectionId}/word:
     get:
+      operationId: GenerateWord
       parameters:
       - description: ""
         explode: false
@@ -1664,12 +1660,6 @@ paths:
           format: int32
           type: integer
         style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ConnReportSettings'
-        description: ""
       responses:
         "200":
           content:
@@ -1986,11 +1976,6 @@ components:
         newTemplateId: newTemplateId
         originalValue: originalValue
         description: description
-        newElement:
-          elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          containerType: notSet
-          name: name
-          tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         originalTemplateId: originalTemplateId
       properties:
         originalValue:
@@ -2008,8 +1993,6 @@ components:
         newTemplateId:
           nullable: true
           type: string
-        newElement:
-          $ref: '#/components/schemas/SelectedElement'
       type: object
     Beam:
       additionalProperties: false
@@ -3101,21 +3084,11 @@ components:
             newTemplateId: newTemplateId
             originalValue: originalValue
             description: description
-            newElement:
-              elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-              containerType: notSet
-              name: name
-              tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             originalTemplateId: originalTemplateId
           - newValue: newValue
             newTemplateId: newTemplateId
             originalValue: originalValue
             description: description
-            newElement:
-              elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-              containerType: notSet
-              name: name
-              tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             originalTemplateId: originalTemplateId
           countryCode: countryCode
         connectionTemplate: connectionTemplate
@@ -3263,9 +3236,6 @@ components:
       - shear
       - none
       type: string
-    ConnReportSettings:
-      additionalProperties: false
-      type: object
     ConnectionCheckRes:
       additionalProperties: false
       description: Results for connection in project
@@ -14566,28 +14536,6 @@ components:
         endPoint:
           $ref: '#/components/schemas/Point2D'
       type: object
-    SelectedElement:
-      additionalProperties: false
-      example:
-        elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        containerType: notSet
-        name: name
-        tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-      properties:
-        name:
-          nullable: true
-          type: string
-        tableId:
-          format: uuid
-          nullable: true
-          type: string
-        elementId:
-          format: uuid
-          nullable: true
-          type: string
-        containerType:
-          $ref: '#/components/schemas/TableContainerType'
-      type: object
     Settlement:
       additionalProperties: false
       description: Settlement of point support
@@ -14756,15 +14704,6 @@ components:
           format: int32
           type: integer
       type: object
-    TableContainerType:
-      enum:
-      - notSet
-      - crossSection
-      - material
-      - plateThickness
-      - steelStrands
-      - fastener
-      type: string
     Taper:
       additionalProperties: false
       description: "Defines haunches (variyng cross-sections) along the member.\r\n\
@@ -14815,21 +14754,11 @@ components:
           newTemplateId: newTemplateId
           originalValue: originalValue
           description: description
-          newElement:
-            elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            containerType: notSet
-            name: name
-            tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           originalTemplateId: originalTemplateId
         - newValue: newValue
           newTemplateId: newTemplateId
           originalValue: originalValue
           description: description
-          newElement:
-            elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            containerType: notSet
-            name: name
-            tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           originalTemplateId: originalTemplateId
         countryCode: countryCode
       properties:

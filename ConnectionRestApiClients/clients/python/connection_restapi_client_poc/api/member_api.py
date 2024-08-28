@@ -602,9 +602,9 @@ class MemberApi:
     def update_member(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is membar memberId")],
-        member_id: Annotated[StrictInt, Field(description="Id of the member to be ubdated in the connection")],
-        con_member: Annotated[Optional[ConMember], Field(description="New mwmbwr data")] = None,
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is member memberId")],
+        member_id: Annotated[StrictInt, Field(description="Id of the member to be updated in the connection")],
+        con_member: Annotated[Optional[ConMember], Field(description="New member data")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -623,11 +623,11 @@ class MemberApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to to update is membar memberId (required)
+        :param connection_id: Id of the connection to to update is member memberId (required)
         :type connection_id: int
-        :param member_id: Id of the member to be ubdated in the connection (required)
+        :param member_id: Id of the member to be updated in the connection (required)
         :type member_id: int
-        :param con_member: New mwmbwr data
+        :param con_member: New member data
         :type con_member: ConMember
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -680,9 +680,9 @@ class MemberApi:
     def update_member_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is membar memberId")],
-        member_id: Annotated[StrictInt, Field(description="Id of the member to be ubdated in the connection")],
-        con_member: Annotated[Optional[ConMember], Field(description="New mwmbwr data")] = None,
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is member memberId")],
+        member_id: Annotated[StrictInt, Field(description="Id of the member to be updated in the connection")],
+        con_member: Annotated[Optional[ConMember], Field(description="New member data")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -701,11 +701,11 @@ class MemberApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to to update is membar memberId (required)
+        :param connection_id: Id of the connection to to update is member memberId (required)
         :type connection_id: int
-        :param member_id: Id of the member to be ubdated in the connection (required)
+        :param member_id: Id of the member to be updated in the connection (required)
         :type member_id: int
-        :param con_member: New mwmbwr data
+        :param con_member: New member data
         :type con_member: ConMember
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -758,9 +758,9 @@ class MemberApi:
     def update_member_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
-        connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is membar memberId")],
-        member_id: Annotated[StrictInt, Field(description="Id of the member to be ubdated in the connection")],
-        con_member: Annotated[Optional[ConMember], Field(description="New mwmbwr data")] = None,
+        connection_id: Annotated[StrictInt, Field(description="Id of the connection to to update is member memberId")],
+        member_id: Annotated[StrictInt, Field(description="Id of the member to be updated in the connection")],
+        con_member: Annotated[Optional[ConMember], Field(description="New member data")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -779,11 +779,11 @@ class MemberApi:
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service (required)
         :type project_id: str
-        :param connection_id: Id of the connection to to update is membar memberId (required)
+        :param connection_id: Id of the connection to to update is member memberId (required)
         :type connection_id: int
-        :param member_id: Id of the member to be ubdated in the connection (required)
+        :param member_id: Id of the member to be updated in the connection (required)
         :type member_id: int
-        :param con_member: New mwmbwr data
+        :param con_member: New member data
         :type con_member: ConMember
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "24.0.5.0863"
+__version__ = "24.0.5.0921"
 
 # import apis into sdk package
 from connection_restapi_client_poc.api.calculation_api import CalculationApi
@@ -170,7 +170,6 @@ from connection_restapi_client_poc.models.result_on_members import ResultOnMembe
 from connection_restapi_client_poc.models.result_type import ResultType
 from connection_restapi_client_poc.models.rigid_link import RigidLink
 from connection_restapi_client_poc.models.segment2_d import Segment2D
-from connection_restapi_client_poc.models.selected_element import SelectedElement
 from connection_restapi_client_poc.models.settlement import Settlement
 from connection_restapi_client_poc.models.solid_block3_d import SolidBlock3D
 from connection_restapi_client_poc.models.span import Span
@@ -179,7 +178,6 @@ from connection_restapi_client_poc.models.strain_load_on_line import StrainLoadO
 from connection_restapi_client_poc.models.stream import Stream
 from connection_restapi_client_poc.models.sub_structure import SubStructure
 from connection_restapi_client_poc.models.surface_support3_d import SurfaceSupport3D
-from connection_restapi_client_poc.models.table_container_type import TableContainerType
 from connection_restapi_client_poc.models.taper import Taper
 from connection_restapi_client_poc.models.temperature_curve2_d import TemperatureCurve2D
 from connection_restapi_client_poc.models.temperature_load_on_line import TemperatureLoadOnLine

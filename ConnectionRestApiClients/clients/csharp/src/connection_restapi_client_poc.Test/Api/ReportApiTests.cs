@@ -55,30 +55,28 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdReportsConnectionIdPdfGet
+        /// Test GeneratePdf
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdReportsConnectionIdPdfGetTest()
+        public void GeneratePdfTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //Object? body = null;
-            //var response = instance.Api1ProjectsProjectIdReportsConnectionIdPdfGet(projectId, connectionId, body);
+            //var response = instance.GeneratePdf(projectId, connectionId);
             //Assert.IsType<Stream>(response);
         }
 
         /// <summary>
-        /// Test Api1ProjectsProjectIdReportsConnectionIdWordGet
+        /// Test GenerateWord
         /// </summary>
         [Fact]
-        public void Api1ProjectsProjectIdReportsConnectionIdWordGetTest()
+        public void GenerateWordTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //Object? body = null;
-            //var response = instance.Api1ProjectsProjectIdReportsConnectionIdWordGet(projectId, connectionId, body);
+            //var response = instance.GenerateWord(projectId, connectionId);
             //Assert.IsType<Stream>(response);
         }
     }

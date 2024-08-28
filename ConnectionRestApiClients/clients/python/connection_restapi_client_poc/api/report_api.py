@@ -17,7 +17,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictInt, StrictStr
-from typing import Any, Dict, Optional
 from connection_restapi_client_poc.models.stream import Stream
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
@@ -39,11 +38,10 @@ class ReportApi:
 
 
     @validate_call
-    def api1_projects_project_id_reports_connection_id_pdf_get(
+    def generate_pdf(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -64,8 +62,6 @@ class ReportApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param body: 
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,10 +84,9 @@ class ReportApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_reports_connection_id_pdf_get_serialize(
+        _param = self._generate_pdf_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -113,11 +108,10 @@ class ReportApi:
 
 
     @validate_call
-    def api1_projects_project_id_reports_connection_id_pdf_get_with_http_info(
+    def generate_pdf_with_http_info(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -138,8 +132,6 @@ class ReportApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param body: 
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -162,10 +154,9 @@ class ReportApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_reports_connection_id_pdf_get_serialize(
+        _param = self._generate_pdf_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -187,11 +178,10 @@ class ReportApi:
 
 
     @validate_call
-    def api1_projects_project_id_reports_connection_id_pdf_get_without_preload_content(
+    def generate_pdf_without_preload_content(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -212,8 +202,6 @@ class ReportApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param body: 
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -236,10 +224,9 @@ class ReportApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_reports_connection_id_pdf_get_serialize(
+        _param = self._generate_pdf_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -256,11 +243,10 @@ class ReportApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_reports_connection_id_pdf_get_serialize(
+    def _generate_pdf_serialize(
         self,
         project_id,
         connection_id,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -290,8 +276,6 @@ class ReportApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -302,19 +286,6 @@ class ReportApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -339,11 +310,10 @@ class ReportApi:
 
 
     @validate_call
-    def api1_projects_project_id_reports_connection_id_word_get(
+    def generate_word(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -364,8 +334,6 @@ class ReportApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param body: 
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -388,10 +356,9 @@ class ReportApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_reports_connection_id_word_get_serialize(
+        _param = self._generate_word_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -413,11 +380,10 @@ class ReportApi:
 
 
     @validate_call
-    def api1_projects_project_id_reports_connection_id_word_get_with_http_info(
+    def generate_word_with_http_info(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -438,8 +404,6 @@ class ReportApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param body: 
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -462,10 +426,9 @@ class ReportApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_reports_connection_id_word_get_serialize(
+        _param = self._generate_word_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -487,11 +450,10 @@ class ReportApi:
 
 
     @validate_call
-    def api1_projects_project_id_reports_connection_id_word_get_without_preload_content(
+    def generate_word_without_preload_content(
         self,
         project_id: StrictStr,
         connection_id: StrictInt,
-        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -512,8 +474,6 @@ class ReportApi:
         :type project_id: str
         :param connection_id:  (required)
         :type connection_id: int
-        :param body: 
-        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -536,10 +496,9 @@ class ReportApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._api1_projects_project_id_reports_connection_id_word_get_serialize(
+        _param = self._generate_word_serialize(
             project_id=project_id,
             connection_id=connection_id,
-            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -556,11 +515,10 @@ class ReportApi:
         return response_data.response
 
 
-    def _api1_projects_project_id_reports_connection_id_word_get_serialize(
+    def _generate_word_serialize(
         self,
         project_id,
         connection_id,
-        body,
         _request_auth,
         _content_type,
         _headers,
@@ -590,8 +548,6 @@ class ReportApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if body is not None:
-            _body_params = body
 
 
         # set the HTTP header `Accept`
@@ -602,19 +558,6 @@ class ReportApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [

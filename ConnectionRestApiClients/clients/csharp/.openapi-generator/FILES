@@ -142,7 +142,6 @@ docs/ResultOnMembers.md
 docs/ResultType.md
 docs/RigidLink.md
 docs/Segment2D.md
-docs/SelectedElement.md
 docs/Settlement.md
 docs/SolidBlock3D.md
 docs/Span.md
@@ -151,7 +150,6 @@ docs/StrainLoadOnLine.md
 docs/Stream.md
 docs/SubStructure.md
 docs/SurfaceSupport3D.md
-docs/TableContainerType.md
 docs/Taper.md
 docs/TemperatureCurve2D.md
 docs/TemperatureLoadOnLine.md
@@ -315,7 +313,6 @@ src/connection_restapi_client_poc.Test/Model/ResultOnMembersTests.cs
 src/connection_restapi_client_poc.Test/Model/ResultTypeTests.cs
 src/connection_restapi_client_poc.Test/Model/RigidLinkTests.cs
 src/connection_restapi_client_poc.Test/Model/Segment2DTests.cs
-src/connection_restapi_client_poc.Test/Model/SelectedElementTests.cs
 src/connection_restapi_client_poc.Test/Model/SettlementTests.cs
 src/connection_restapi_client_poc.Test/Model/SolidBlock3DTests.cs
 src/connection_restapi_client_poc.Test/Model/SpanTests.cs
@@ -324,7 +321,6 @@ src/connection_restapi_client_poc.Test/Model/StrainLoadOnLineTests.cs
 src/connection_restapi_client_poc.Test/Model/StreamTests.cs
 src/connection_restapi_client_poc.Test/Model/SubStructureTests.cs
 src/connection_restapi_client_poc.Test/Model/SurfaceSupport3DTests.cs
-src/connection_restapi_client_poc.Test/Model/TableContainerTypeTests.cs
 src/connection_restapi_client_poc.Test/Model/TaperTests.cs
 src/connection_restapi_client_poc.Test/Model/TemperatureCurve2DTests.cs
 src/connection_restapi_client_poc.Test/Model/TemperatureLoadOnLineTests.cs
@@ -503,7 +499,6 @@ src/connection_restapi_client_poc/Model/ResultOnMembers.cs
 src/connection_restapi_client_poc/Model/ResultType.cs
 src/connection_restapi_client_poc/Model/RigidLink.cs
 src/connection_restapi_client_poc/Model/Segment2D.cs
-src/connection_restapi_client_poc/Model/SelectedElement.cs
 src/connection_restapi_client_poc/Model/Settlement.cs
 src/connection_restapi_client_poc/Model/SolidBlock3D.cs
 src/connection_restapi_client_poc/Model/Span.cs
@@ -512,7 +507,6 @@ src/connection_restapi_client_poc/Model/StrainLoadOnLine.cs
 src/connection_restapi_client_poc/Model/Stream.cs
 src/connection_restapi_client_poc/Model/SubStructure.cs
 src/connection_restapi_client_poc/Model/SurfaceSupport3D.cs
-src/connection_restapi_client_poc/Model/TableContainerType.cs
 src/connection_restapi_client_poc/Model/Taper.cs
 src/connection_restapi_client_poc/Model/TemperatureCurve2D.cs
 src/connection_restapi_client_poc/Model/TemperatureLoadOnLine.cs

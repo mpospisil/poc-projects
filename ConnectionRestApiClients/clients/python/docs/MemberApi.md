@@ -173,9 +173,9 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.MemberApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    connection_id = 56 # int | Id of the connection to to update is membar memberId
-    member_id = 56 # int | Id of the member to be ubdated in the connection
-    con_member = connection_restapi_client_poc.ConMember() # ConMember | New mwmbwr data (optional)
+    connection_id = 56 # int | Id of the connection to to update is member memberId
+    member_id = 56 # int | Id of the member to be updated in the connection
+    con_member = connection_restapi_client_poc.ConMember() # ConMember | New member data (optional)
 
     try:
         # Update the member in the connection by newMemberData
@@ -194,9 +194,9 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
- **connection_id** | **int**| Id of the connection to to update is membar memberId | 
- **member_id** | **int**| Id of the member to be ubdated in the connection | 
- **con_member** | [**ConMember**](ConMember.md)| New mwmbwr data | [optional] 
+ **connection_id** | **int**| Id of the connection to to update is member memberId | 
+ **member_id** | **int**| Id of the member to be updated in the connection | 
+ **con_member** | [**ConMember**](ConMember.md)| New member data | [optional] 
 
 ### Return type
 

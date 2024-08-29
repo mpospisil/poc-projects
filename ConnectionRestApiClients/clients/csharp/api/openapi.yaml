@@ -1293,6 +1293,39 @@ paths:
       summary: Evaluate the expression and return the result
       tags:
       - Parameter
+  /api/1/projects/{projectId}/connections/{connectionId}/presentation:
+    get:
+      operationId: GetDataScene3D
+      parameters:
+      - description: The unique identifier of the open project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: Id of the connection to be presented to scene3D
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DrawData'
+          description: Success
+      summary: Returns data for scene3D
+      tags:
+      - Presentation
   /api/1/connect-client:
     get:
       operationId: ConnectClient
@@ -1406,6 +1439,9 @@ paths:
       responses:
         "200":
           content:
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/MemoryStream'
             application/json:
               schema:
                 $ref: '#/components/schemas/MemoryStream'
@@ -1631,9 +1667,12 @@ paths:
       responses:
         "200":
           content:
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/MemoryStream'
             application/json:
               schema:
-                $ref: '#/components/schemas/Stream'
+                $ref: '#/components/schemas/MemoryStream'
           description: Success
       summary: Generates report for projectId and connectionId
       tags:
@@ -1663,9 +1702,12 @@ paths:
       responses:
         "200":
           content:
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/MemoryStream'
             application/json:
               schema:
-                $ref: '#/components/schemas/Stream'
+                $ref: '#/components/schemas/MemoryStream'
           description: Success
       summary: Generates report for projectId and connectionId
       tags:
@@ -5115,6 +5157,135 @@ components:
       - farther
       - same
       type: string
+    DrawData:
+      additionalProperties: false
+      example:
+        vertices:
+        - 4.145608029883936
+        - 4.145608029883936
+        groups:
+        - text:
+          - color:
+            - 2
+            - 2
+            fontSize: 3.616076749251911
+            position:
+              angles:
+              - 9.301444243932576
+              - 9.301444243932576
+              origin:
+              - 7.061401241503109
+              - 7.061401241503109
+            tag: 2.027123023002322
+            value: value
+          - color:
+            - 2
+            - 2
+            fontSize: 3.616076749251911
+            position:
+              angles:
+              - 9.301444243932576
+              - 9.301444243932576
+              origin:
+              - 7.061401241503109
+              - 7.061401241503109
+            tag: 2.027123023002322
+            value: value
+          faces:
+          - 0
+          - 0
+          lines:
+          - color:
+            - 6
+            - 6
+            thickness: 5.962133916683182
+            pairs:
+            - 1
+            - 1
+          - color:
+            - 6
+            - 6
+            thickness: 5.962133916683182
+            pairs:
+            - 1
+            - 1
+          priority: 5
+          selected:
+            id: id
+            type:
+              kind: kind
+        - text:
+          - color:
+            - 2
+            - 2
+            fontSize: 3.616076749251911
+            position:
+              angles:
+              - 9.301444243932576
+              - 9.301444243932576
+              origin:
+              - 7.061401241503109
+              - 7.061401241503109
+            tag: 2.027123023002322
+            value: value
+          - color:
+            - 2
+            - 2
+            fontSize: 3.616076749251911
+            position:
+              angles:
+              - 9.301444243932576
+              - 9.301444243932576
+              origin:
+              - 7.061401241503109
+              - 7.061401241503109
+            tag: 2.027123023002322
+            value: value
+          faces:
+          - 0
+          - 0
+          lines:
+          - color:
+            - 6
+            - 6
+            thickness: 5.962133916683182
+            pairs:
+            - 1
+            - 1
+          - color:
+            - 6
+            - 6
+            thickness: 5.962133916683182
+            pairs:
+            - 1
+            - 1
+          priority: 5
+          selected:
+            id: id
+            type:
+              kind: kind
+        normals:
+        - 7.386281948385884
+        - 7.386281948385884
+      properties:
+        groups:
+          items:
+            $ref: '#/components/schemas/IGroup'
+          nullable: true
+          type: array
+        vertices:
+          items:
+            format: double
+            type: number
+          nullable: true
+          type: array
+        normals:
+          items:
+            format: double
+            type: number
+          nullable: true
+          type: array
+      type: object
     Element1D:
       additionalProperties: false
       description: Representation of element1D
@@ -5356,6 +5527,82 @@ components:
           format: int32
           type: integer
       type: object
+    IGroup:
+      additionalProperties: false
+      example:
+        text:
+        - color:
+          - 2
+          - 2
+          fontSize: 3.616076749251911
+          position:
+            angles:
+            - 9.301444243932576
+            - 9.301444243932576
+            origin:
+            - 7.061401241503109
+            - 7.061401241503109
+          tag: 2.027123023002322
+          value: value
+        - color:
+          - 2
+          - 2
+          fontSize: 3.616076749251911
+          position:
+            angles:
+            - 9.301444243932576
+            - 9.301444243932576
+            origin:
+            - 7.061401241503109
+            - 7.061401241503109
+          tag: 2.027123023002322
+          value: value
+        faces:
+        - 0
+        - 0
+        lines:
+        - color:
+          - 6
+          - 6
+          thickness: 5.962133916683182
+          pairs:
+          - 1
+          - 1
+        - color:
+          - 6
+          - 6
+          thickness: 5.962133916683182
+          pairs:
+          - 1
+          - 1
+        priority: 5
+        selected:
+          id: id
+          type:
+            kind: kind
+      properties:
+        faces:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        selected:
+          $ref: '#/components/schemas/Selected'
+        lines:
+          items:
+            $ref: '#/components/schemas/Line'
+          nullable: true
+          type: array
+        priority:
+          format: int32
+          type: integer
+        text:
+          items:
+            $ref: '#/components/schemas/Text'
+          nullable: true
+          type: array
+      type: object
     IOutputFormatter:
       additionalProperties: false
       type: object
@@ -5433,6 +5680,33 @@ components:
           description: Element Id
           format: int32
           type: integer
+      type: object
+    Line:
+      additionalProperties: false
+      example:
+        color:
+        - 6
+        - 6
+        thickness: 5.962133916683182
+        pairs:
+        - 1
+        - 1
+      properties:
+        color:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        pairs:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        thickness:
+          format: double
+          type: number
       type: object
     LineSegment3D:
       additionalProperties: false
@@ -14536,6 +14810,29 @@ components:
         endPoint:
           $ref: '#/components/schemas/Point2D'
       type: object
+    Selected:
+      additionalProperties: false
+      example:
+        id: id
+        type:
+          kind: kind
+      properties:
+        id:
+          nullable: true
+          type: string
+        type:
+          $ref: '#/components/schemas/SelectedType'
+      type: object
+    SelectedType:
+      additionalProperties: false
+      example:
+        kind: kind
+      properties:
+        kind:
+          nullable: true
+          readOnly: true
+          type: string
+      type: object
     Settlement:
       additionalProperties: false
       description: Settlement of point support
@@ -14641,44 +14938,6 @@ components:
       properties:
         id:
           description: Element Id
-          format: int32
-          type: integer
-      type: object
-    Stream:
-      additionalProperties: false
-      example:
-        canRead: true
-        readTimeout: 1
-        length: 0
-        writeTimeout: 5
-        canWrite: true
-        position: 6
-        canSeek: true
-        canTimeout: true
-      properties:
-        canRead:
-          readOnly: true
-          type: boolean
-        canWrite:
-          readOnly: true
-          type: boolean
-        canSeek:
-          readOnly: true
-          type: boolean
-        canTimeout:
-          readOnly: true
-          type: boolean
-        length:
-          format: int64
-          readOnly: true
-          type: integer
-        position:
-          format: int64
-          type: integer
-        readTimeout:
-          format: int32
-          type: integer
-        writeTimeout:
           format: int32
           type: integer
       type: object
@@ -14869,6 +15128,64 @@ components:
           description: Diameter
           format: double
           type: number
+      type: object
+    Text:
+      additionalProperties: false
+      example:
+        color:
+        - 2
+        - 2
+        fontSize: 3.616076749251911
+        position:
+          angles:
+          - 9.301444243932576
+          - 9.301444243932576
+          origin:
+          - 7.061401241503109
+          - 7.061401241503109
+        tag: 2.027123023002322
+        value: value
+      properties:
+        color:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        value:
+          nullable: true
+          type: string
+        position:
+          $ref: '#/components/schemas/TextPosition'
+        fontSize:
+          format: double
+          type: number
+        tag:
+          format: double
+          type: number
+      type: object
+    TextPosition:
+      additionalProperties: false
+      example:
+        angles:
+        - 9.301444243932576
+        - 9.301444243932576
+        origin:
+        - 7.061401241503109
+        - 7.061401241503109
+      properties:
+        origin:
+          items:
+            format: double
+            type: number
+          nullable: true
+          type: array
+        angles:
+          items:
+            format: double
+            type: number
+          nullable: true
+          type: array
       type: object
     ThermalConductivityState:
       description: Type of curvature - thermal conductivity

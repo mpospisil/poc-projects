@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **generate_pdf**
-> Stream generate_pdf(project_id, connection_id)
+> MemoryStream generate_pdf(project_id, connection_id)
 
 Generates report for projectId and connectionId
 
@@ -18,7 +18,7 @@ Generates report for projectId and connectionId
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.stream import Stream
+from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Stream**](Stream.md)
+[**MemoryStream**](MemoryStream.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/octet-stream, application/json
 
 ### HTTP response details
 
@@ -77,7 +77,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_word**
-> Stream generate_word(project_id, connection_id)
+> MemoryStream generate_word(project_id, connection_id)
 
 Generates report for projectId and connectionId
 
@@ -86,7 +86,7 @@ Generates report for projectId and connectionId
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.stream import Stream
+from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Stream**](Stream.md)
+[**MemoryStream**](MemoryStream.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/octet-stream, application/json
 
 ### HTTP response details
 

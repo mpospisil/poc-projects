@@ -324,7 +324,7 @@ class ApiClient:
         return_data = None
        
         try:
-            if response_type == "bytearray":
+            if response_type == "bytearray" or response_type == "MemoryStream" or response_type == "Stream":
                 return_data = response_data.data
             elif response_type == "file":
                 return_data = self.__deserialize_file(response_data)

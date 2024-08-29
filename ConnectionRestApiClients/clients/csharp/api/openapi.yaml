@@ -1406,6 +1406,9 @@ paths:
       responses:
         "200":
           content:
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/MemoryStream'
             application/json:
               schema:
                 $ref: '#/components/schemas/MemoryStream'
@@ -1631,6 +1634,9 @@ paths:
       responses:
         "200":
           content:
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/Stream'
             application/json:
               schema:
                 $ref: '#/components/schemas/Stream'
@@ -1663,6 +1669,9 @@ paths:
       responses:
         "200":
           content:
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/Stream'
             application/json:
               schema:
                 $ref: '#/components/schemas/Stream'

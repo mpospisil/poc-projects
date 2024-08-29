@@ -1908,6 +1908,11 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemoryStream"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MemoryStream"
@@ -2222,6 +2227,11 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/Stream"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Stream"
@@ -2265,6 +2275,11 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/Stream"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Stream"

@@ -1725,6 +1725,49 @@
         }
       }
     },
+    "/api/1/projects/{projectId}/connections/{connectionId}/presentation": {
+      "get": {
+        "tags": [
+          "Presentation"
+        ],
+        "summary": "Returns data for scene3D",
+        "operationId": "GetDataScene3D",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "The unique identifier of the open project in the ConnectionRestApi service",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "Id of the connection to be presented to scene3D",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DrawData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/1/connect-client": {
       "get": {
         "tags": [
@@ -1908,6 +1951,11 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemoryStream"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MemoryStream"
@@ -2222,9 +2270,14 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemoryStream"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Stream"
+                  "$ref": "#/components/schemas/MemoryStream"
                 }
               }
             }
@@ -2265,9 +2318,14 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemoryStream"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Stream"
+                  "$ref": "#/components/schemas/MemoryStream"
                 }
               }
             }
@@ -4236,6 +4294,35 @@
         "type": "string",
         "description": "Represents the result of comparison of distances of two object from the same point"
       },
+      "DrawData": {
+        "type": "object",
+        "properties": {
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IGroup"
+            },
+            "nullable": true
+          },
+          "vertices": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
+          },
+          "normals": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Element1D": {
         "type": "object",
         "properties": {
@@ -4306,6 +4393,41 @@
         },
         "additionalProperties": false,
         "description": "Representation of hinge element 1D"
+      },
+      "IGroup": {
+        "type": "object",
+        "properties": {
+          "faces": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "selected": {
+            "$ref": "#/components/schemas/Selected"
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            },
+            "nullable": true
+          },
+          "priority": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "text": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Text"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "IOutputFormatter": {
         "type": "object",
@@ -4389,6 +4511,32 @@
         },
         "additionalProperties": false,
         "description": "Initial deformation of point - geometry nonlinear calculation"
+      },
+      "Line": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "pairs": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "thickness": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
       },
       "LineSegment3D": {
         "type": "object",
@@ -6372,6 +6520,30 @@
         "additionalProperties": false,
         "description": "Represents a segment in two-dimensional space."
       },
+      "Selected": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/SelectedType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SelectedType": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Settlement": {
         "type": "object",
         "properties": {
@@ -6469,45 +6641,6 @@
         },
         "additionalProperties": false,
         "description": "Linearly distributed generalized strain load along a line.\r\nStrain load is in local coordinate system and there are no possible eccentricities."
-      },
-      "Stream": {
-        "type": "object",
-        "properties": {
-          "canRead": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canWrite": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canSeek": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canTimeout": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "length": {
-            "type": "integer",
-            "format": "int64",
-            "readOnly": true
-          },
-          "position": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "readTimeout": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "writeTimeout": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
       },
       "SubStructure": {
         "type": "object",
@@ -6677,6 +6810,57 @@
         },
         "additionalProperties": false,
         "description": "Tendon duct"
+      },
+      "Text": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "position": {
+            "$ref": "#/components/schemas/TextPosition"
+          },
+          "fontSize": {
+            "type": "number",
+            "format": "double"
+          },
+          "tag": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TextPosition": {
+        "type": "object",
+        "properties": {
+          "origin": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
+          },
+          "angles": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "ThermalConductivityState": {
         "enum": [

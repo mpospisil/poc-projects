@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**close_project**](ProjectApi.md#close_project) | **GET** /api/1/projects/{projectId}/close | Close the project. Needed for releasing resources in the service.
-[**connect_client**](ProjectApi.md#connect_client) | **GET** /api/1/connect-client | Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+[**connect_client**](ProjectApi.md#connect_client) | **GET** /api/1/connect-client | Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
 [**download_project**](ProjectApi.md#download_project) | **GET** /api/1/projects/{projectId}/download | Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
 [**get_active_projects**](ProjectApi.md#get_active_projects) | **GET** /api/1/projects | Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient
 [**get_project_data**](ProjectApi.md#get_project_data) | **GET** /api/1/projects/{projectId}/project-data | Get data of the project.
@@ -87,7 +87,7 @@ No authorization required
 # **connect_client**
 > str connect_client()
 
-Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
 
 ### Example
 
@@ -110,7 +110,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.ProjectApi(api_client)
 
     try:
-        # Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+        # Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
         api_response = api_instance.connect_client()
         print("The response of ProjectApi->connect_client:\n")
         pprint(api_response)
@@ -201,7 +201,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/octet-stream, application/json
 
 ### HTTP response details
 

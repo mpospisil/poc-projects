@@ -46,7 +46,7 @@ class ParameterApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to use for evaluation expression")],
-        body: Annotated[Optional[StrictStr], Field(description="Expreession to evaluate")] = None,
+        body: Annotated[Optional[StrictStr], Field(description="Expression to evaluate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,7 +67,7 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: Id of the connection to use for evaluation expression (required)
         :type connection_id: int
-        :param body: Expreession to evaluate
+        :param body: Expression to evaluate
         :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -120,7 +120,7 @@ class ParameterApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to use for evaluation expression")],
-        body: Annotated[Optional[StrictStr], Field(description="Expreession to evaluate")] = None,
+        body: Annotated[Optional[StrictStr], Field(description="Expression to evaluate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -141,7 +141,7 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: Id of the connection to use for evaluation expression (required)
         :type connection_id: int
-        :param body: Expreession to evaluate
+        :param body: Expression to evaluate
         :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -194,7 +194,7 @@ class ParameterApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to use for evaluation expression")],
-        body: Annotated[Optional[StrictStr], Field(description="Expreession to evaluate")] = None,
+        body: Annotated[Optional[StrictStr], Field(description="Expression to evaluate")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -215,7 +215,7 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: Id of the connection to use for evaluation expression (required)
         :type connection_id: int
-        :param body: Expreession to evaluate
+        :param body: Expression to evaluate
         :type body: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -346,7 +346,7 @@ class ParameterApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its parameters")],
-        include_hidden: Annotated[Optional[StrictBool], Field(description="Iclude also hdden parameters")] = None,
+        include_hidden: Annotated[Optional[StrictBool], Field(description="Include also hidden parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -367,7 +367,7 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: Id of the connection to get its parameters (required)
         :type connection_id: int
-        :param include_hidden: Iclude also hdden parameters
+        :param include_hidden: Include also hidden parameters
         :type include_hidden: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -420,7 +420,7 @@ class ParameterApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its parameters")],
-        include_hidden: Annotated[Optional[StrictBool], Field(description="Iclude also hdden parameters")] = None,
+        include_hidden: Annotated[Optional[StrictBool], Field(description="Include also hidden parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -441,7 +441,7 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: Id of the connection to get its parameters (required)
         :type connection_id: int
-        :param include_hidden: Iclude also hdden parameters
+        :param include_hidden: Include also hidden parameters
         :type include_hidden: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -494,7 +494,7 @@ class ParameterApi:
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service")],
         connection_id: Annotated[StrictInt, Field(description="Id of the connection to get its parameters")],
-        include_hidden: Annotated[Optional[StrictBool], Field(description="Iclude also hdden parameters")] = None,
+        include_hidden: Annotated[Optional[StrictBool], Field(description="Include also hidden parameters")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -515,7 +515,7 @@ class ParameterApi:
         :type project_id: str
         :param connection_id: Id of the connection to get its parameters (required)
         :type connection_id: int
-        :param include_hidden: Iclude also hdden parameters
+        :param include_hidden: Include also hidden parameters
         :type include_hidden: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

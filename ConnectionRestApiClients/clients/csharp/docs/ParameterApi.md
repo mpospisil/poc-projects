@@ -33,7 +33,7 @@ namespace Example
             var apiInstance = new ParameterApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection to use for evaluation expression
-            var body = "body_example";  // string? | Expreession to evaluate (optional) 
+            var body = "body_example";  // string? | Expression to evaluate (optional) 
 
             try
             {
@@ -78,7 +78,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection to use for evaluation expression |  |
-| **body** | **string?** | Expreession to evaluate | [optional]  |
+| **body** | **string?** | Expression to evaluate | [optional]  |
 
 ### Return type
 
@@ -126,7 +126,7 @@ namespace Example
             var apiInstance = new ParameterApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection to get its parameters
-            var includeHidden = false;  // bool? | Iclude also hdden parameters (optional)  (default to false)
+            var includeHidden = false;  // bool? | Include also hidden parameters (optional)  (default to false)
 
             try
             {
@@ -171,7 +171,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection to get its parameters |  |
-| **includeHidden** | **bool?** | Iclude also hdden parameters | [optional] [default to false] |
+| **includeHidden** | **bool?** | Include also hidden parameters | [optional] [default to false] |
 
 ### Return type
 

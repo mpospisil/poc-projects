@@ -77,9 +77,9 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
-        /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="conMember">New mwmbwr data (optional)</param>
+        /// <param name="connectionId">Id of the connection to to update is member memberId</param>
+        /// <param name="memberId">Id of the member to be updated in the connection</param>
+        /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMember</returns>
         ConMember UpdateMember(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0);
@@ -92,9 +92,9 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
-        /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="conMember">New mwmbwr data (optional)</param>
+        /// <param name="connectionId">Id of the connection to to update is member memberId</param>
+        /// <param name="memberId">Id of the member to be updated in the connection</param>
+        /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMember</returns>
         ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0);
@@ -171,9 +171,9 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
-        /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="conMember">New mwmbwr data (optional)</param>
+        /// <param name="connectionId">Id of the connection to to update is member memberId</param>
+        /// <param name="memberId">Id of the member to be updated in the connection</param>
+        /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMember</returns>
@@ -187,9 +187,9 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
-        /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="conMember">New mwmbwr data (optional)</param>
+        /// <param name="connectionId">Id of the connection to to update is member memberId</param>
+        /// <param name="memberId">Id of the member to be updated in the connection</param>
+        /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMember)</returns>
@@ -601,9 +601,9 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
-        /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="conMember">New mwmbwr data (optional)</param>
+        /// <param name="connectionId">Id of the connection to to update is member memberId</param>
+        /// <param name="memberId">Id of the member to be updated in the connection</param>
+        /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMember</returns>
         public ConMember UpdateMember(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0)
@@ -617,9 +617,9 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
-        /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="conMember">New mwmbwr data (optional)</param>
+        /// <param name="connectionId">Id of the connection to to update is member memberId</param>
+        /// <param name="memberId">Id of the member to be updated in the connection</param>
+        /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMember</returns>
         public connection_restapi_client_poc.Client.ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0)
@@ -675,9 +675,9 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
-        /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="conMember">New mwmbwr data (optional)</param>
+        /// <param name="connectionId">Id of the connection to to update is member memberId</param>
+        /// <param name="memberId">Id of the member to be updated in the connection</param>
+        /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMember</returns>
@@ -692,9 +692,9 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to to update is membar memberId</param>
-        /// <param name="memberId">Id of the member to be ubdated in the connection</param>
-        /// <param name="conMember">New mwmbwr data (optional)</param>
+        /// <param name="connectionId">Id of the connection to to update is member memberId</param>
+        /// <param name="memberId">Id of the member to be updated in the connection</param>
+        /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMember)</returns>

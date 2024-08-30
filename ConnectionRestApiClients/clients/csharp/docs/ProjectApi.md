@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**CloseProject**](ProjectApi.md#closeproject) | **GET** /api/1/projects/{projectId}/close | Close the project. Needed for releasing resources in the service. |
-| [**ConnectClient**](ProjectApi.md#connectclient) | **GET** /api/1/connect-client | Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client. |
+| [**ConnectClient**](ProjectApi.md#connectclient) | **GET** /api/1/connect-client | Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client. |
 | [**DownloadProject**](ProjectApi.md#downloadproject) | **GET** /api/1/projects/{projectId}/download | Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls. |
 | [**GetActiveProjects**](ProjectApi.md#getactiveprojects) | **GET** /api/1/projects | Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient |
 | [**GetProjectData**](ProjectApi.md#getprojectdata) | **GET** /api/1/projects/{projectId}/project-data | Get data of the project. |
@@ -111,7 +111,7 @@ No authorization required
 # **ConnectClient**
 > string ConnectClient ()
 
-Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
 
 ### Example
 ```csharp
@@ -133,7 +133,7 @@ namespace Example
 
             try
             {
-                // Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+                // Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
                 string result = apiInstance.ConnectClient();
                 Debug.WriteLine(result);
             }
@@ -154,7 +154,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+    // Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
     ApiResponse<string> response = apiInstance.ConnectClientWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -270,7 +270,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/octet-stream, application/json
 
 
 ### HTTP response details

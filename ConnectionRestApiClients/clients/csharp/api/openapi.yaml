@@ -1133,7 +1133,7 @@ paths:
           format: uuid
           type: string
         style: simple
-      - description: Id of the connection to to update is membar memberId
+      - description: Id of the connection to to update is member memberId
         explode: false
         in: path
         name: connectionId
@@ -1142,7 +1142,7 @@ paths:
           format: int32
           type: integer
         style: simple
-      - description: Id of the member to be ubdated in the connection
+      - description: Id of the member to be updated in the connection
         explode: false
         in: path
         name: memberId
@@ -1156,7 +1156,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ConMember'
-        description: New mwmbwr data
+        description: New member data
       responses:
         "200":
           content:
@@ -1190,7 +1190,7 @@ paths:
           format: int32
           type: integer
         style: simple
-      - description: Iclude also hdden parameters
+      - description: Include also hidden parameters
         explode: true
         in: query
         name: includeHidden
@@ -1282,7 +1282,7 @@ paths:
           application/json:
             schema:
               type: string
-        description: Expreession to evaluate
+        description: Expression to evaluate
       responses:
         "200":
           content:
@@ -1293,6 +1293,39 @@ paths:
       summary: Evaluate the expression and return the result
       tags:
       - Parameter
+  /api/1/projects/{projectId}/connections/{connectionId}/presentation:
+    get:
+      operationId: GetDataScene3D
+      parameters:
+      - description: The unique identifier of the open project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: Id of the connection to be presented to scene3D
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DrawData'
+          description: Success
+      summary: Returns data for scene3D
+      tags:
+      - Presentation
   /api/1/connect-client:
     get:
       operationId: ConnectClient
@@ -1306,8 +1339,8 @@ paths:
               schema:
                 type: string
           description: Success
-      summary: Connect a client to the ConnectionRestApi service. Methond returns
-        a unique identifier of the client.
+      summary: Connect a client to the ConnectionRestApi service. Method returns a
+        unique identifier of the client.
       tags:
       - Project
   /api/1/projects/open:
@@ -1406,6 +1439,9 @@ paths:
       responses:
         "200":
           content:
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/MemoryStream'
             application/json:
               schema:
                 $ref: '#/components/schemas/MemoryStream'
@@ -1608,6 +1644,7 @@ paths:
       - Project
   /api/1/projects/{projectId}/reports/{connectionId}/pdf:
     get:
+      operationId: GeneratePdf
       parameters:
       - description: ""
         explode: false
@@ -1627,24 +1664,22 @@ paths:
           format: int32
           type: integer
         style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ConnReportSettings'
-        description: ""
       responses:
         "200":
           content:
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/MemoryStream'
             application/json:
               schema:
-                $ref: '#/components/schemas/Stream'
+                $ref: '#/components/schemas/MemoryStream'
           description: Success
       summary: Generates report for projectId and connectionId
       tags:
       - Report
   /api/1/projects/{projectId}/reports/{connectionId}/word:
     get:
+      operationId: GenerateWord
       parameters:
       - description: ""
         explode: false
@@ -1664,18 +1699,15 @@ paths:
           format: int32
           type: integer
         style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ConnReportSettings'
-        description: ""
       responses:
         "200":
           content:
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/MemoryStream'
             application/json:
               schema:
-                $ref: '#/components/schemas/Stream'
+                $ref: '#/components/schemas/MemoryStream'
           description: Success
       summary: Generates report for projectId and connectionId
       tags:
@@ -1986,11 +2018,6 @@ components:
         newTemplateId: newTemplateId
         originalValue: originalValue
         description: description
-        newElement:
-          elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          containerType: notSet
-          name: name
-          tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         originalTemplateId: originalTemplateId
       properties:
         originalValue:
@@ -2008,8 +2035,6 @@ components:
         newTemplateId:
           nullable: true
           type: string
-        newElement:
-          $ref: '#/components/schemas/SelectedElement'
       type: object
     Beam:
       additionalProperties: false
@@ -3101,21 +3126,11 @@ components:
             newTemplateId: newTemplateId
             originalValue: originalValue
             description: description
-            newElement:
-              elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-              containerType: notSet
-              name: name
-              tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             originalTemplateId: originalTemplateId
           - newValue: newValue
             newTemplateId: newTemplateId
             originalValue: originalValue
             description: description
-            newElement:
-              elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-              containerType: notSet
-              name: name
-              tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             originalTemplateId: originalTemplateId
           countryCode: countryCode
         connectionTemplate: connectionTemplate
@@ -3263,9 +3278,6 @@ components:
       - shear
       - none
       type: string
-    ConnReportSettings:
-      additionalProperties: false
-      type: object
     ConnectionCheckRes:
       additionalProperties: false
       description: Results for connection in project
@@ -5145,6 +5157,135 @@ components:
       - farther
       - same
       type: string
+    DrawData:
+      additionalProperties: false
+      example:
+        vertices:
+        - 4.145608029883936
+        - 4.145608029883936
+        groups:
+        - text:
+          - color:
+            - 2
+            - 2
+            fontSize: 3.616076749251911
+            position:
+              angles:
+              - 9.301444243932576
+              - 9.301444243932576
+              origin:
+              - 7.061401241503109
+              - 7.061401241503109
+            tag: 2.027123023002322
+            value: value
+          - color:
+            - 2
+            - 2
+            fontSize: 3.616076749251911
+            position:
+              angles:
+              - 9.301444243932576
+              - 9.301444243932576
+              origin:
+              - 7.061401241503109
+              - 7.061401241503109
+            tag: 2.027123023002322
+            value: value
+          faces:
+          - 0
+          - 0
+          lines:
+          - color:
+            - 6
+            - 6
+            thickness: 5.962133916683182
+            pairs:
+            - 1
+            - 1
+          - color:
+            - 6
+            - 6
+            thickness: 5.962133916683182
+            pairs:
+            - 1
+            - 1
+          priority: 5
+          selected:
+            id: id
+            type:
+              kind: kind
+        - text:
+          - color:
+            - 2
+            - 2
+            fontSize: 3.616076749251911
+            position:
+              angles:
+              - 9.301444243932576
+              - 9.301444243932576
+              origin:
+              - 7.061401241503109
+              - 7.061401241503109
+            tag: 2.027123023002322
+            value: value
+          - color:
+            - 2
+            - 2
+            fontSize: 3.616076749251911
+            position:
+              angles:
+              - 9.301444243932576
+              - 9.301444243932576
+              origin:
+              - 7.061401241503109
+              - 7.061401241503109
+            tag: 2.027123023002322
+            value: value
+          faces:
+          - 0
+          - 0
+          lines:
+          - color:
+            - 6
+            - 6
+            thickness: 5.962133916683182
+            pairs:
+            - 1
+            - 1
+          - color:
+            - 6
+            - 6
+            thickness: 5.962133916683182
+            pairs:
+            - 1
+            - 1
+          priority: 5
+          selected:
+            id: id
+            type:
+              kind: kind
+        normals:
+        - 7.386281948385884
+        - 7.386281948385884
+      properties:
+        groups:
+          items:
+            $ref: '#/components/schemas/IGroup'
+          nullable: true
+          type: array
+        vertices:
+          items:
+            format: double
+            type: number
+          nullable: true
+          type: array
+        normals:
+          items:
+            format: double
+            type: number
+          nullable: true
+          type: array
+      type: object
     Element1D:
       additionalProperties: false
       description: Representation of element1D
@@ -5386,6 +5527,82 @@ components:
           format: int32
           type: integer
       type: object
+    IGroup:
+      additionalProperties: false
+      example:
+        text:
+        - color:
+          - 2
+          - 2
+          fontSize: 3.616076749251911
+          position:
+            angles:
+            - 9.301444243932576
+            - 9.301444243932576
+            origin:
+            - 7.061401241503109
+            - 7.061401241503109
+          tag: 2.027123023002322
+          value: value
+        - color:
+          - 2
+          - 2
+          fontSize: 3.616076749251911
+          position:
+            angles:
+            - 9.301444243932576
+            - 9.301444243932576
+            origin:
+            - 7.061401241503109
+            - 7.061401241503109
+          tag: 2.027123023002322
+          value: value
+        faces:
+        - 0
+        - 0
+        lines:
+        - color:
+          - 6
+          - 6
+          thickness: 5.962133916683182
+          pairs:
+          - 1
+          - 1
+        - color:
+          - 6
+          - 6
+          thickness: 5.962133916683182
+          pairs:
+          - 1
+          - 1
+        priority: 5
+        selected:
+          id: id
+          type:
+            kind: kind
+      properties:
+        faces:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        selected:
+          $ref: '#/components/schemas/Selected'
+        lines:
+          items:
+            $ref: '#/components/schemas/Line'
+          nullable: true
+          type: array
+        priority:
+          format: int32
+          type: integer
+        text:
+          items:
+            $ref: '#/components/schemas/Text'
+          nullable: true
+          type: array
+      type: object
     IOutputFormatter:
       additionalProperties: false
       type: object
@@ -5463,6 +5680,33 @@ components:
           description: Element Id
           format: int32
           type: integer
+      type: object
+    Line:
+      additionalProperties: false
+      example:
+        color:
+        - 6
+        - 6
+        thickness: 5.962133916683182
+        pairs:
+        - 1
+        - 1
+      properties:
+        color:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        pairs:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        thickness:
+          format: double
+          type: number
       type: object
     LineSegment3D:
       additionalProperties: false
@@ -14566,27 +14810,28 @@ components:
         endPoint:
           $ref: '#/components/schemas/Point2D'
       type: object
-    SelectedElement:
+    Selected:
       additionalProperties: false
       example:
-        elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        containerType: notSet
-        name: name
-        tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        id: id
+        type:
+          kind: kind
       properties:
-        name:
+        id:
           nullable: true
           type: string
-        tableId:
-          format: uuid
+        type:
+          $ref: '#/components/schemas/SelectedType'
+      type: object
+    SelectedType:
+      additionalProperties: false
+      example:
+        kind: kind
+      properties:
+        kind:
           nullable: true
+          readOnly: true
           type: string
-        elementId:
-          format: uuid
-          nullable: true
-          type: string
-        containerType:
-          $ref: '#/components/schemas/TableContainerType'
       type: object
     Settlement:
       additionalProperties: false
@@ -14696,44 +14941,6 @@ components:
           format: int32
           type: integer
       type: object
-    Stream:
-      additionalProperties: false
-      example:
-        canRead: true
-        readTimeout: 1
-        length: 0
-        writeTimeout: 5
-        canWrite: true
-        position: 6
-        canSeek: true
-        canTimeout: true
-      properties:
-        canRead:
-          readOnly: true
-          type: boolean
-        canWrite:
-          readOnly: true
-          type: boolean
-        canSeek:
-          readOnly: true
-          type: boolean
-        canTimeout:
-          readOnly: true
-          type: boolean
-        length:
-          format: int64
-          readOnly: true
-          type: integer
-        position:
-          format: int64
-          type: integer
-        readTimeout:
-          format: int32
-          type: integer
-        writeTimeout:
-          format: int32
-          type: integer
-      type: object
     SubStructure:
       additionalProperties: false
       description: SubStructure
@@ -14756,15 +14963,6 @@ components:
           format: int32
           type: integer
       type: object
-    TableContainerType:
-      enum:
-      - notSet
-      - crossSection
-      - material
-      - plateThickness
-      - steelStrands
-      - fastener
-      type: string
     Taper:
       additionalProperties: false
       description: "Defines haunches (variyng cross-sections) along the member.\r\n\
@@ -14815,21 +15013,11 @@ components:
           newTemplateId: newTemplateId
           originalValue: originalValue
           description: description
-          newElement:
-            elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            containerType: notSet
-            name: name
-            tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           originalTemplateId: originalTemplateId
         - newValue: newValue
           newTemplateId: newTemplateId
           originalValue: originalValue
           description: description
-          newElement:
-            elementId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            containerType: notSet
-            name: name
-            tableId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           originalTemplateId: originalTemplateId
         countryCode: countryCode
       properties:
@@ -14940,6 +15128,64 @@ components:
           description: Diameter
           format: double
           type: number
+      type: object
+    Text:
+      additionalProperties: false
+      example:
+        color:
+        - 2
+        - 2
+        fontSize: 3.616076749251911
+        position:
+          angles:
+          - 9.301444243932576
+          - 9.301444243932576
+          origin:
+          - 7.061401241503109
+          - 7.061401241503109
+        tag: 2.027123023002322
+        value: value
+      properties:
+        color:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        value:
+          nullable: true
+          type: string
+        position:
+          $ref: '#/components/schemas/TextPosition'
+        fontSize:
+          format: double
+          type: number
+        tag:
+          format: double
+          type: number
+      type: object
+    TextPosition:
+      additionalProperties: false
+      example:
+        angles:
+        - 9.301444243932576
+        - 9.301444243932576
+        origin:
+        - 7.061401241503109
+        - 7.061401241503109
+      properties:
+        origin:
+          items:
+            format: double
+            type: number
+          nullable: true
+          type: array
+        angles:
+          items:
+            format: double
+            type: number
+          nullable: true
+          type: array
       type: object
     ThermalConductivityState:
       description: Type of curvature - thermal conductivity

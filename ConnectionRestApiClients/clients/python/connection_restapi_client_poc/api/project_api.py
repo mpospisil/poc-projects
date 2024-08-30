@@ -316,7 +316,7 @@ class ProjectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> str:
-        """Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+        """Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -378,7 +378,7 @@ class ProjectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[str]:
-        """Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+        """Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -440,7 +440,7 @@ class ProjectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+        """Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -773,6 +773,7 @@ class ProjectApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
+                    'application/octet-stream', 
                     'application/json'
                 ]
             )

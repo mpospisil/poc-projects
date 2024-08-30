@@ -69,6 +69,19 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
+        /// Test CreateConTemplate
+        /// </summary>
+        [Fact]
+        public void CreateConTemplateTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //var response = instance.CreateConTemplate(projectId, connectionId);
+            //Assert.IsType<string>(response);
+        }
+
+        /// <summary>
         /// Test GetDefaultTemplateMapping
         /// </summary>
         [Fact]

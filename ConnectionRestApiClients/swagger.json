@@ -2333,6 +2333,54 @@
         }
       }
     },
+    "/api/1/projects/{projectId}/connections/{connectionId}/get-template": {
+      "get": {
+        "tags": [
+          "Template"
+        ],
+        "summary": "Create a template for the connection connectionId in the project projectId",
+        "operationId": "CreateConTemplate",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "Id of the connection to be converted to a template",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/1/projects/{projectId}/connections/{connectionId}/get-default-mapping": {
       "post": {
         "tags": [

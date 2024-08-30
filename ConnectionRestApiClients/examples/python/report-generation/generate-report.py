@@ -46,7 +46,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
         # will be solved in bug
         reportPdf = report_instance.generate_pdf(project_id, 1)
         with open('output.pdf', 'wb') as file:
-            file.write(reportPdf.content)
+            file.write(reportPdf)
             
         pprint('PDF file saved successfully as output.pdf')
         

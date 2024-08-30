@@ -51,6 +51,28 @@ namespace connection_restapi_client_poc.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> ApplyTemplateWithHttpInfo(Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = default(ConTemplateApplyParam?), int operationIndex = 0);
         /// <summary>
+        /// Create a template for the connection connectionId in the project projectId
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be converted to a template</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>string</returns>
+        string CreateConTemplate(Guid projectId, int connectionId, int operationIndex = 0);
+
+        /// <summary>
+        /// Create a template for the connection connectionId in the project projectId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be converted to a template</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> CreateConTemplateWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <summary>
         /// Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
         /// </summary>
         /// <remarks>
@@ -115,6 +137,33 @@ namespace connection_restapi_client_poc.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApplyTemplateWithHttpInfoAsync(Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = default(ConTemplateApplyParam?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Create a template for the connection connectionId in the project projectId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be converted to a template</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> CreateConTemplateAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create a template for the connection connectionId in the project projectId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be converted to a template</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> CreateConTemplateWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
         /// </summary>
@@ -401,6 +450,146 @@ namespace connection_restapi_client_poc.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApplyTemplate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create a template for the connection connectionId in the project projectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be converted to a template</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>string</returns>
+        public string CreateConTemplate(Guid projectId, int connectionId, int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = CreateConTemplateWithHttpInfo(projectId, connectionId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a template for the connection connectionId in the project projectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be converted to a template</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of string</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<string> CreateConTemplateWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+
+            localVarRequestOptions.Operation = "TemplateApi.CreateConTemplate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<string>("/api/1/projects/{projectId}/connections/{connectionId}/get-template", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateConTemplate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create a template for the connection connectionId in the project projectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be converted to a template</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> CreateConTemplateAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await CreateConTemplateWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a template for the connection connectionId in the project projectId 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be converted to a template</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> CreateConTemplateWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+
+            localVarRequestOptions.Operation = "TemplateApi.CreateConTemplate";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/api/1/projects/{projectId}/connections/{connectionId}/get-template", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateConTemplate", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

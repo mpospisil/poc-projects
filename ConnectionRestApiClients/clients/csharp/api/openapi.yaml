@@ -1712,6 +1712,42 @@ paths:
       summary: Generates report for projectId and connectionId
       tags:
       - Report
+  /api/1/projects/{projectId}/connections/{connectionId}/get-template:
+    get:
+      operationId: CreateConTemplate
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: Id of the connection to be converted to a template
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+          description: Success
+      summary: Create a template for the connection connectionId in the project projectId
+      tags:
+      - Template
   /api/1/projects/{projectId}/connections/{connectionId}/get-default-mapping:
     post:
       description: "The result IdeaStatiCa.Api.Connection.Model.TemplateConversionsDefault\

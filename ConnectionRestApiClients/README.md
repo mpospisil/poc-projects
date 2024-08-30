@@ -6,7 +6,7 @@ docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -
 docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i /local/swagger.json -g python -t /local/templates/python -o /local/clients/python --additional-properties=packageName=connection_restapi_client_poc,packageVersion=1.2.0
 
 # Build typescript-node client from Open API
-docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i /local/swagger.json -g typescript-node -o /local/clients/typescript-node --additional-properties=packageName=connection_restapi_client_poc,packageVersion=24.0.5.0863
+docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i /local/swagger.json -g typescript-node -o /local/clients/typescript-node --additional-properties=packageName=connection_restapi_client_poc,packageVersion=24.0.5.0987
 
 # Install connection_restapi_client_poc from directory
 

@@ -249,9 +249,9 @@ export class MemberApi {
      * 
      * @summary Update the member in the connection by newMemberData
      * @param projectId The unique identifier of the opened project in the ConnectionRestApi service
-     * @param connectionId Id of the connection to to update is membar memberId
-     * @param memberId Id of the member to be ubdated in the connection
-     * @param conMember New mwmbwr data
+     * @param connectionId Id of the connection to to update is member memberId
+     * @param memberId Id of the member to be updated in the connection
+     * @param conMember New member data
      */
     public async updateMember (projectId: string, connectionId: number, memberId: number, conMember?: ConMember, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ConMember;  }> {
         const localVarPath = this.basePath + '/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}'

@@ -93,7 +93,7 @@ export class ParameterApi {
      * @summary Evaluate the expression and return the result
      * @param projectId The unique identifier of the opened project in the ConnectionRestApi service
      * @param connectionId Id of the connection to use for evaluation expression
-     * @param body Expreession to evaluate
+     * @param body Expression to evaluate
      */
     public async evaluateExpression (projectId: string, connectionId: number, body?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
         const localVarPath = this.basePath + '/api/1/projects/{projectId}/connections/{connectionId}/evaluate-expression'
@@ -171,7 +171,7 @@ export class ParameterApi {
      * @summary Get all parameters which are defined for projectId and connectionId
      * @param projectId The unique identifier of the opened project in the ConnectionRestApi service
      * @param connectionId Id of the connection to get its parameters
-     * @param includeHidden Iclude also hdden parameters
+     * @param includeHidden Include also hidden parameters
      */
     public async getParameters (projectId: string, connectionId: number, includeHidden?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IdeaParameter>;  }> {
         const localVarPath = this.basePath + '/api/1/projects/{projectId}/connections/{connectionId}/parameters'

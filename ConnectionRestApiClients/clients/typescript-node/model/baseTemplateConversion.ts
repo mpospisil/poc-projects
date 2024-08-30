@@ -11,7 +11,6 @@
  */
 
 import { RequestFile } from './models';
-import { SelectedElement } from './selectedElement';
 
 export class BaseTemplateConversion {
     'originalValue'?: string | null;
@@ -19,7 +18,6 @@ export class BaseTemplateConversion {
     'newValue'?: string | null;
     'description'?: string | null;
     'newTemplateId'?: string | null;
-    'newElement'?: SelectedElement;
 
     static discriminator: string | undefined = undefined;
 
@@ -48,11 +46,6 @@ export class BaseTemplateConversion {
             "name": "newTemplateId",
             "baseName": "newTemplateId",
             "type": "string"
-        },
-        {
-            "name": "newElement",
-            "baseName": "newElement",
-            "type": "SelectedElement"
         }    ];
 
     static getAttributeTypeMap() {

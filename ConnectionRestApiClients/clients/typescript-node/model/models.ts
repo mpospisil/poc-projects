@@ -60,16 +60,19 @@ export * from './designMember';
 export * from './detailCombination';
 export * from './detailLoadCase';
 export * from './distanceComparison';
+export * from './drawData';
 export * from './ePurpose';
 export * from './element1D';
 export * from './element2D';
 export * from './fatigueTypeOfPrestressingSteel';
 export * from './foldedPlateData';
 export * from './hingeElement1D';
+export * from './iGroup';
 export * from './iSDModel';
 export * from './ideaParameter';
 export * from './ideaParameterUpdate';
 export * from './initialImperfectionOfPoint';
+export * from './line';
 export * from './lineSegment3D';
 export * from './lineSupportSegment';
 export * from './loadCase';
@@ -129,16 +132,15 @@ export * from './resultOnMembers';
 export * from './resultType';
 export * from './rigidLink';
 export * from './segment2D';
-export * from './selectedElement';
+export * from './selected';
+export * from './selectedType';
 export * from './settlement';
 export * from './solidBlock3D';
 export * from './span';
 export * from './stirrup';
 export * from './strainLoadOnLine';
-export * from './stream';
 export * from './subStructure';
 export * from './surfaceSupport3D';
-export * from './tableContainerType';
 export * from './taper';
 export * from './temperatureCurve2D';
 export * from './temperatureLoadOnLine';
@@ -147,6 +149,8 @@ export * from './tendon';
 export * from './tendonBar';
 export * from './tendonBarType';
 export * from './tendonDuct';
+export * from './text';
+export * from './textPosition';
 export * from './thermalConductivityState';
 export * from './thermalExpansionState';
 export * from './thermalSpecificHeatState';
@@ -233,16 +237,19 @@ import { DesignMember } from './designMember';
 import { DetailCombination } from './detailCombination';
 import { DetailLoadCase } from './detailLoadCase';
 import { DistanceComparison } from './distanceComparison';
+import { DrawData } from './drawData';
 import { EPurpose } from './ePurpose';
 import { Element1D } from './element1D';
 import { Element2D } from './element2D';
 import { FatigueTypeOfPrestressingSteel } from './fatigueTypeOfPrestressingSteel';
 import { FoldedPlateData } from './foldedPlateData';
 import { HingeElement1D } from './hingeElement1D';
+import { IGroup } from './iGroup';
 import { ISDModel } from './iSDModel';
 import { IdeaParameter } from './ideaParameter';
 import { IdeaParameterUpdate } from './ideaParameterUpdate';
 import { InitialImperfectionOfPoint } from './initialImperfectionOfPoint';
+import { Line } from './line';
 import { LineSegment3D } from './lineSegment3D';
 import { LineSupportSegment } from './lineSupportSegment';
 import { LoadCase } from './loadCase';
@@ -302,16 +309,15 @@ import { ResultOnMembers } from './resultOnMembers';
 import { ResultType } from './resultType';
 import { RigidLink } from './rigidLink';
 import { Segment2D } from './segment2D';
-import { SelectedElement } from './selectedElement';
+import { Selected } from './selected';
+import { SelectedType } from './selectedType';
 import { Settlement } from './settlement';
 import { SolidBlock3D } from './solidBlock3D';
 import { Span } from './span';
 import { Stirrup } from './stirrup';
 import { StrainLoadOnLine } from './strainLoadOnLine';
-import { Stream } from './stream';
 import { SubStructure } from './subStructure';
 import { SurfaceSupport3D } from './surfaceSupport3D';
-import { TableContainerType } from './tableContainerType';
 import { Taper } from './taper';
 import { TemperatureCurve2D } from './temperatureCurve2D';
 import { TemperatureLoadOnLine } from './temperatureLoadOnLine';
@@ -320,6 +326,8 @@ import { Tendon } from './tendon';
 import { TendonBar } from './tendonBar';
 import { TendonBarType } from './tendonBarType';
 import { TendonDuct } from './tendonDuct';
+import { Text } from './text';
+import { TextPosition } from './textPosition';
 import { ThermalConductivityState } from './thermalConductivityState';
 import { ThermalExpansionState } from './thermalExpansionState';
 import { ThermalSpecificHeatState } from './thermalSpecificHeatState';
@@ -365,7 +373,6 @@ let enumsMap: {[index: string]: any} = {
         "ReinfBarSurface": ReinfBarSurface,
         "ResultLocalSystemType": ResultLocalSystemType,
         "ResultType": ResultType,
-        "TableContainerType": TableContainerType,
         "TendonBarType": TendonBarType,
         "ThermalConductivityState": ThermalConductivityState,
         "ThermalExpansionState": ThermalExpansionState,
@@ -428,14 +435,17 @@ let typeMap: {[index: string]: any} = {
     "DesignMember": DesignMember,
     "DetailCombination": DetailCombination,
     "DetailLoadCase": DetailLoadCase,
+    "DrawData": DrawData,
     "Element1D": Element1D,
     "Element2D": Element2D,
     "FoldedPlateData": FoldedPlateData,
     "HingeElement1D": HingeElement1D,
+    "IGroup": IGroup,
     "ISDModel": ISDModel,
     "IdeaParameter": IdeaParameter,
     "IdeaParameterUpdate": IdeaParameterUpdate,
     "InitialImperfectionOfPoint": InitialImperfectionOfPoint,
+    "Line": Line,
     "LineSegment3D": LineSegment3D,
     "LineSupportSegment": LineSupportSegment,
     "LoadCase": LoadCase,
@@ -488,13 +498,13 @@ let typeMap: {[index: string]: any} = {
     "ResultOnMembers": ResultOnMembers,
     "RigidLink": RigidLink,
     "Segment2D": Segment2D,
-    "SelectedElement": SelectedElement,
+    "Selected": Selected,
+    "SelectedType": SelectedType,
     "Settlement": Settlement,
     "SolidBlock3D": SolidBlock3D,
     "Span": Span,
     "Stirrup": Stirrup,
     "StrainLoadOnLine": StrainLoadOnLine,
-    "Stream": Stream,
     "SubStructure": SubStructure,
     "SurfaceSupport3D": SurfaceSupport3D,
     "Taper": Taper,
@@ -504,6 +514,8 @@ let typeMap: {[index: string]: any} = {
     "Tendon": Tendon,
     "TendonBar": TendonBar,
     "TendonDuct": TendonDuct,
+    "Text": Text,
+    "TextPosition": TextPosition,
     "UploadIdeaConRequest": UploadIdeaConRequest,
     "Vector3D": Vector3D,
     "Wall": Wall,

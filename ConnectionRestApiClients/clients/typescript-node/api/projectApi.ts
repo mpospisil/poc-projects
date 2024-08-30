@@ -161,7 +161,7 @@ export class ProjectApi {
     }
     /**
      * 
-     * @summary Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.
+     * @summary Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
      */
     public async connectClient (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: string;  }> {
         const localVarPath = this.basePath + '/api/1/connect-client';
@@ -231,7 +231,7 @@ export class ProjectApi {
             .replace('{' + 'projectId' + '}', encodeURIComponent(String(projectId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json'];
+        const produces = ['application/octet-stream', 'application/json'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';

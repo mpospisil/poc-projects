@@ -15,7 +15,7 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
-import { Stream } from '../model/stream';
+import { MemoryStream } from '../model/memoryStream';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
 
@@ -91,15 +91,14 @@ export class ReportApi {
      * @summary Generates report for projectId and connectionId
      * @param projectId 
      * @param connectionId 
-     * @param body 
      */
-    public async api1ProjectsProjectIdReportsConnectionIdPdfGet (projectId: string, connectionId: number, body?: object, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Stream;  }> {
+    public async generatePdf (projectId: string, connectionId: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: MemoryStream;  }> {
         const localVarPath = this.basePath + '/api/1/projects/{projectId}/reports/{connectionId}/pdf'
             .replace('{' + 'projectId' + '}', encodeURIComponent(String(projectId)))
             .replace('{' + 'connectionId' + '}', encodeURIComponent(String(connectionId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json'];
+        const produces = ['application/octet-stream', 'application/json'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -110,12 +109,12 @@ export class ReportApi {
 
         // verify required parameter 'projectId' is not null or undefined
         if (projectId === null || projectId === undefined) {
-            throw new Error('Required parameter projectId was null or undefined when calling api1ProjectsProjectIdReportsConnectionIdPdfGet.');
+            throw new Error('Required parameter projectId was null or undefined when calling generatePdf.');
         }
 
         // verify required parameter 'connectionId' is not null or undefined
         if (connectionId === null || connectionId === undefined) {
-            throw new Error('Required parameter connectionId was null or undefined when calling api1ProjectsProjectIdReportsConnectionIdPdfGet.');
+            throw new Error('Required parameter connectionId was null or undefined when calling generatePdf.');
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -129,7 +128,6 @@ export class ReportApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(body, "object")
         };
 
         let authenticationPromise = Promise.resolve();
@@ -148,13 +146,13 @@ export class ReportApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Stream;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: MemoryStream;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Stream");
+                            body = ObjectSerializer.deserialize(body, "MemoryStream");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -169,15 +167,14 @@ export class ReportApi {
      * @summary Generates report for projectId and connectionId
      * @param projectId 
      * @param connectionId 
-     * @param body 
      */
-    public async api1ProjectsProjectIdReportsConnectionIdWordGet (projectId: string, connectionId: number, body?: object, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Stream;  }> {
+    public async generateWord (projectId: string, connectionId: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: MemoryStream;  }> {
         const localVarPath = this.basePath + '/api/1/projects/{projectId}/reports/{connectionId}/word'
             .replace('{' + 'projectId' + '}', encodeURIComponent(String(projectId)))
             .replace('{' + 'connectionId' + '}', encodeURIComponent(String(connectionId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json'];
+        const produces = ['application/octet-stream', 'application/json'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -188,12 +185,12 @@ export class ReportApi {
 
         // verify required parameter 'projectId' is not null or undefined
         if (projectId === null || projectId === undefined) {
-            throw new Error('Required parameter projectId was null or undefined when calling api1ProjectsProjectIdReportsConnectionIdWordGet.');
+            throw new Error('Required parameter projectId was null or undefined when calling generateWord.');
         }
 
         // verify required parameter 'connectionId' is not null or undefined
         if (connectionId === null || connectionId === undefined) {
-            throw new Error('Required parameter connectionId was null or undefined when calling api1ProjectsProjectIdReportsConnectionIdWordGet.');
+            throw new Error('Required parameter connectionId was null or undefined when calling generateWord.');
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -207,7 +204,6 @@ export class ReportApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-            body: ObjectSerializer.serialize(body, "object")
         };
 
         let authenticationPromise = Promise.resolve();
@@ -226,13 +222,13 @@ export class ReportApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Stream;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: MemoryStream;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Stream");
+                            body = ObjectSerializer.deserialize(body, "MemoryStream");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

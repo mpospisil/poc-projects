@@ -1,0 +1,210 @@
+import localVarRequest from 'request';
+export * from './anchor3D';
+export * from './anchorGrid';
+export * from './anchorType';
+export * from './arcSegment3D';
+export * from './basePlate3D';
+export * from './baseTemplateConversion';
+export * from './beam';
+export * from './beamData';
+export * from './bendData';
+export * from './boltGrid';
+export * from './boltShearType';
+export * from './bucklingRes';
+export * from './checkMember';
+export * from './checkResAnchor';
+export * from './checkResBolt';
+export * from './checkResConcreteBlock';
+export * from './checkResPlate';
+export * from './checkResSummary';
+export * from './checkResWeld';
+export * from './checkSection';
+export * from './combiInput';
+export * from './conAnalysisTypeEnum';
+export * from './conCalculationParameter';
+export * from './conConnection';
+export * from './conLoadEffect';
+export * from './conLoadEffectMemberLoad';
+export * from './conLoadEffectPositionEnum';
+export * from './conLoadEffectSectionLoad';
+export * from './conLoadingOptions';
+export * from './conMember';
+export * from './conMissingWeld';
+export * from './conMprlCrossSection';
+export * from './conMprlElement';
+export * from './conOperation';
+export * from './conProductionCost';
+export * from './conProject';
+export * from './conProjectData';
+export * from './conResultSummary';
+export * from './conTemplateApplyParam';
+export * from './conTemplateMappingGetParam';
+export * from './concreteBlock';
+export * from './concreteBlockData';
+export * from './concreteSetup';
+export * from './coneBreakoutCheckType';
+export * from './connectionCheckRes';
+export * from './connectionData';
+export * from './connectionPoint';
+export * from './connectionSetup';
+export * from './crossSection';
+export * from './crtCompCheckIS';
+export * from './cutBeamByBeamData';
+export * from './cutData';
+export * from './cutMethod';
+export * from './cutOrientation';
+export * from './cutPart';
+export * from './dappedEnd';
+export * from './designMember';
+export * from './detailCombination';
+export * from './detailLoadCase';
+export * from './distanceComparison';
+export * from './drawData';
+export * from './ePurpose';
+export * from './element1D';
+export * from './element2D';
+export * from './fatigueTypeOfPrestressingSteel';
+export * from './foldedPlateData';
+export * from './hingeElement1D';
+export * from './iGroup';
+export * from './iSDModel';
+export * from './ideaParameter';
+export * from './ideaParameterUpdate';
+export * from './initialImperfectionOfPoint';
+export * from './line';
+export * from './lineSegment3D';
+export * from './lineSupportSegment';
+export * from './loadCase';
+export * from './loadEffectData';
+export * from './loadGroup';
+export * from './loadInPoint';
+export * from './loadOnLine';
+export * from './loadOnSurface';
+export * from './loading';
+export * from './loadingType';
+export * from './matConcrete';
+export * from './matPrestressSteel';
+export * from './matReinforcement';
+export * from './matSteel';
+export * from './matWelding';
+export * from './materialDuct';
+export * from './member';
+export * from './member1D';
+export * from './member2D';
+export * from './memberType';
+export * from './memoryStream';
+export * from './messageNumber';
+export * from './okObjectResult';
+export * from './openElementId';
+export * from './openMessage';
+export * from './openMessages';
+export * from './openModel';
+export * from './openModelContainer';
+export * from './openModelResult';
+export * from './opening';
+export * from './parameterData';
+export * from './patchDevice';
+export * from './plateData';
+export * from './point2D';
+export * from './point3D';
+export * from './pointLoadOnLine';
+export * from './pointOnLine3D';
+export * from './pointSupportNode';
+export * from './polyLine2D';
+export * from './polyLine3D';
+export * from './polygon2D';
+export * from './rebarGeneral';
+export * from './rebarShape';
+export * from './rebarSingle';
+export * from './rebarStirrups';
+export * from './referenceElement';
+export * from './region2D';
+export * from './region3D';
+export * from './reinfBarSurface';
+export * from './reinforcedBar';
+export * from './reinforcedCrossSection';
+export * from './reinforcement';
+export * from './resultClass';
+export * from './resultLocalSystemType';
+export * from './resultOnMember';
+export * from './resultOnMembers';
+export * from './resultType';
+export * from './rigidLink';
+export * from './segment2D';
+export * from './selected';
+export * from './selectedType';
+export * from './settlement';
+export * from './solidBlock3D';
+export * from './span';
+export * from './stirrup';
+export * from './strainLoadOnLine';
+export * from './subStructure';
+export * from './surfaceSupport3D';
+export * from './taper';
+export * from './temperatureCurve2D';
+export * from './temperatureLoadOnLine';
+export * from './templateConversions';
+export * from './tendon';
+export * from './tendonBar';
+export * from './tendonBarType';
+export * from './tendonDuct';
+export * from './text';
+export * from './textPosition';
+export * from './thermalConductivityState';
+export * from './thermalExpansionState';
+export * from './thermalSpecificHeatState';
+export * from './thermalStrainState';
+export * from './thermalStressStrainState';
+export * from './uploadIdeaConRequest';
+export * from './validationType';
+export * from './vector3D';
+export * from './wall';
+export * from './weldData';
+export * from './weldEvaluation';
+export * from './weldType';
+import * as fs from 'fs';
+export interface RequestDetailedFile {
+    value: Buffer;
+    options?: {
+        filename?: string;
+        contentType?: string;
+    };
+}
+export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
+export declare class ObjectSerializer {
+    static findCorrectType(data: any, expectedType: string): any;
+    static serialize(data: any, type: string): any;
+    static deserialize(data: any, type: string): any;
+}
+export interface Authentication {
+    /**
+    * Apply authentication settings to header and query params.
+    */
+    applyToRequest(requestOptions: localVarRequest.Options): Promise<void> | void;
+}
+export declare class HttpBasicAuth implements Authentication {
+    username: string;
+    password: string;
+    applyToRequest(requestOptions: localVarRequest.Options): void;
+}
+export declare class HttpBearerAuth implements Authentication {
+    accessToken: string | (() => string);
+    applyToRequest(requestOptions: localVarRequest.Options): void;
+}
+export declare class ApiKeyAuth implements Authentication {
+    private location;
+    private paramName;
+    apiKey: string;
+    constructor(location: string, paramName: string);
+    applyToRequest(requestOptions: localVarRequest.Options): void;
+}
+export declare class OAuth implements Authentication {
+    accessToken: string;
+    applyToRequest(requestOptions: localVarRequest.Options): void;
+}
+export declare class VoidAuth implements Authentication {
+    username: string;
+    password: string;
+    applyToRequest(_: localVarRequest.Options): void;
+}
+export type Interceptor = (requestOptions: localVarRequest.Options) => (Promise<void> | void);

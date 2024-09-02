@@ -1,6 +1,8 @@
 {
   "name": "@martin.pospisil/react-components",
-  "version": "0.1.0",
+  "main": "dist/components/SceneRenderer.js",
+  "types": "dist/components/index.d.ts",  
+  "version": "0.2.0",
   "private": false,
   "dependencies": {
     "@ideastatica/scene": "^0.23.10",

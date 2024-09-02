@@ -20,7 +20,9 @@
     "noEmit": false, // Ensure this is set to false
     "jsx": "react-jsx",
     "outDir": "./dist", // Specify the output directory
-    "sourceMap": true // Enable source map generation
+    "sourceMap": true, // Enable source map generation
+    "declaration": true,
+    "declarationMap": true,
   },
   "include": [
     "src"

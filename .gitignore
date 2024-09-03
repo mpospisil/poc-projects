@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+project-nodejs/react-components/dist
+WebUI-CL/ConLibClient/webui-windows-msvc-x64

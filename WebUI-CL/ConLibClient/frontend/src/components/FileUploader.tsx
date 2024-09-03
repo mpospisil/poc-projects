@@ -102,7 +102,7 @@ const FileUploader: React.FC = () => {
       method: 'GET',
     };
 
-    const getProjectDataUrl = `/api/1/projects`;
+    const getProjectDataUrl = `http://localhost:5000/api/1/projects`;
 
     // Pass init as an "options" object with our headers.
     const req = new Request(getProjectDataUrl, options);  // URL is the URL of the image.  flowers.jpg is a placeholder.      

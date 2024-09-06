@@ -474,7 +474,6 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
                 "application/json"
             };
 
@@ -546,7 +545,6 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
                 "application/json"
             };
 

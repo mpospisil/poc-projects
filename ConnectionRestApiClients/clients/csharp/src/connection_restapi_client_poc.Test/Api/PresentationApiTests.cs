@@ -66,5 +66,18 @@ namespace connection_restapi_client_poc.Test.Api
             //var response = instance.GetDataScene3D(projectId, connectionId);
             //Assert.IsType<DrawData>(response);
         }
+
+        /// <summary>
+        /// Test GetDataScene3DText
+        /// </summary>
+        [Fact]
+        public void GetDataScene3DTextTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //var response = instance.GetDataScene3DText(projectId, connectionId);
+            //Assert.IsType<string>(response);
+        }
     }
 }

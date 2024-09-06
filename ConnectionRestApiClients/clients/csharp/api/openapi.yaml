@@ -1325,6 +1325,41 @@ paths:
       summary: Returns data for scene3D
       tags:
       - Presentation
+  /api/1/projects/{projectId}/connections/{connectionId}/presentation/text:
+    get:
+      operationId: GetDataScene3DText
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+          description: Success
+      summary: Return serialized data for scene3D in json format
+      tags:
+      - Presentation
   /api/1/connect-client:
     get:
       operationId: ConnectClient

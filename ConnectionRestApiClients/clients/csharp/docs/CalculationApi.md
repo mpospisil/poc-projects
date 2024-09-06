@@ -101,7 +101,7 @@ No authorization required
 
 <a id="getrawjsonresults"></a>
 # **GetRawJsonResults**
-> string GetRawJsonResults (Guid projectId, ConCalculationParameter? conCalculationParameter = null)
+> List&lt;string&gt; GetRawJsonResults (Guid projectId, ConCalculationParameter? conCalculationParameter = null)
 
 Get json string which represents raw CBFEM results (an instance of CheckResultsData)
 
@@ -128,7 +128,7 @@ namespace Example
             try
             {
                 // Get json string which represents raw CBFEM results (an instance of CheckResultsData)
-                string result = apiInstance.GetRawJsonResults(projectId, conCalculationParameter);
+                List<string> result = apiInstance.GetRawJsonResults(projectId, conCalculationParameter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -149,7 +149,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get json string which represents raw CBFEM results (an instance of CheckResultsData)
-    ApiResponse<string> response = apiInstance.GetRawJsonResultsWithHttpInfo(projectId, conCalculationParameter);
+    ApiResponse<List<string>> response = apiInstance.GetRawJsonResultsWithHttpInfo(projectId, conCalculationParameter);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -171,7 +171,7 @@ catch (ApiException e)
 
 ### Return type
 
-**string**
+**List<string>**
 
 ### Authorization
 

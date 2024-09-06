@@ -77,7 +77,7 @@ namespace connection_restapi_client_poc.Test.Api
             //Guid projectId = null;
             //ConCalculationParameter? conCalculationParameter = null;
             //var response = instance.GetRawJsonResults(projectId, conCalculationParameter);
-            //Assert.IsType<string>(response);
+            //Assert.IsType<List<string>>(response);
         }
 
         /// <summary>

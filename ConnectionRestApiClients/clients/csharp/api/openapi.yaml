@@ -94,10 +94,14 @@ paths:
           content:
             text/plain:
               schema:
-                type: string
+                items:
+                  type: string
+                type: array
             application/json:
               schema:
-                type: string
+                items:
+                  type: string
+                type: array
           description: Success
       summary: Get json string which represents raw CBFEM results (an instance of
         CheckResultsData)

@@ -343,7 +343,7 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> str:
+    ) -> List[str]:
         """Get json string which represents raw CBFEM results (an instance of CheckResultsData)
 
 
@@ -383,7 +383,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "str",
+            '200': "List[str]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -413,7 +413,7 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[str]:
+    ) -> ApiResponse[List[str]]:
         """Get json string which represents raw CBFEM results (an instance of CheckResultsData)
 
 
@@ -453,7 +453,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "str",
+            '200': "List[str]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -523,7 +523,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "str",
+            '200': "List[str]",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -79,7 +79,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_raw_json_results**
-> str get_raw_json_results(project_id, con_calculation_parameter=con_calculation_parameter)
+> List[str] get_raw_json_results(project_id, con_calculation_parameter=con_calculation_parameter)
 
 Get json string which represents raw CBFEM results (an instance of CheckResultsData)
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+**List[str]**
 
 ### Authorization
 

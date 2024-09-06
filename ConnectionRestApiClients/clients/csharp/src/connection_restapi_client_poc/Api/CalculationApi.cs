@@ -55,8 +55,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
         /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>string</returns>
-        string GetRawJsonResults(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0);
+        /// <returns>List&lt;string&gt;</returns>
+        List<string> GetRawJsonResults(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0);
 
         /// <summary>
         /// Get json string which represents raw CBFEM results (an instance of CheckResultsData)
@@ -68,8 +68,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
         /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> GetRawJsonResultsWithHttpInfo(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        ApiResponse<List<string>> GetRawJsonResultsWithHttpInfo(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0);
         /// <summary>
         /// Get detailed results of the CBFEM analysis
         /// </summary>
@@ -139,8 +139,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> GetRawJsonResultsAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;string&gt;</returns>
+        System.Threading.Tasks.Task<List<string>> GetRawJsonResultsAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get json string which represents raw CBFEM results (an instance of CheckResultsData)
@@ -153,8 +153,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> GetRawJsonResultsWithHttpInfoAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> GetRawJsonResultsWithHttpInfoAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get detailed results of the CBFEM analysis
         /// </summary>
@@ -449,10 +449,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
         /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>string</returns>
-        public string GetRawJsonResults(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0)
+        /// <returns>List&lt;string&gt;</returns>
+        public List<string> GetRawJsonResults(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = GetRawJsonResultsWithHttpInfo(projectId, conCalculationParameter);
+            connection_restapi_client_poc.Client.ApiResponse<List<string>> localVarResponse = GetRawJsonResultsWithHttpInfo(projectId, conCalculationParameter);
             return localVarResponse.Data;
         }
 
@@ -463,8 +463,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened connection in the ConnectionRestApi service</param>
         /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of string</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<string> GetRawJsonResultsWithHttpInfo(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<List<string>> GetRawJsonResultsWithHttpInfo(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -498,7 +498,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>("/api/1/projects/{projectId}/rawresults-text", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<string>>("/api/1/projects/{projectId}/rawresults-text", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetRawJsonResults", localVarResponse);
@@ -519,10 +519,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> GetRawJsonResultsAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;string&gt;</returns>
+        public async System.Threading.Tasks.Task<List<string>> GetRawJsonResultsAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await GetRawJsonResultsWithHttpInfoAsync(projectId, conCalculationParameter, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<List<string>> localVarResponse = await GetRawJsonResultsWithHttpInfoAsync(projectId, conCalculationParameter, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -534,8 +534,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conCalculationParameter">Type of requested analysis and connection to calculate (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> GetRawJsonResultsWithHttpInfoAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<string>>> GetRawJsonResultsWithHttpInfoAsync(Guid projectId, ConCalculationParameter? conCalculationParameter = default(ConCalculationParameter?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -570,7 +570,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/api/1/projects/{projectId}/rawresults-text", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<string>>("/api/1/projects/{projectId}/rawresults-text", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

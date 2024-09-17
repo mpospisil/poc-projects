@@ -39,15 +39,13 @@ namespace connection_restapi_client_poc.Model
         /// <param name="newValue">newValue.</param>
         /// <param name="description">description.</param>
         /// <param name="newTemplateId">newTemplateId.</param>
-        /// <param name="newElement">newElement.</param>
-        public BaseTemplateConversion(string originalValue = default(string), string originalTemplateId = default(string), string newValue = default(string), string description = default(string), string newTemplateId = default(string), SelectedElement newElement = default(SelectedElement))
+        public BaseTemplateConversion(string originalValue = default(string), string originalTemplateId = default(string), string newValue = default(string), string description = default(string), string newTemplateId = default(string))
         {
             this.OriginalValue = originalValue;
             this.OriginalTemplateId = originalTemplateId;
             this.NewValue = newValue;
             this.Description = description;
             this.NewTemplateId = newTemplateId;
-            this.NewElement = newElement;
         }
 
         /// <summary>
@@ -81,12 +79,6 @@ namespace connection_restapi_client_poc.Model
         public string NewTemplateId { get; set; }
 
         /// <summary>
-        /// Gets or Sets NewElement
-        /// </summary>
-        [DataMember(Name = "newElement", EmitDefaultValue = false)]
-        public SelectedElement NewElement { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -99,7 +91,6 @@ namespace connection_restapi_client_poc.Model
             sb.Append("  NewValue: ").Append(NewValue).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  NewTemplateId: ").Append(NewTemplateId).Append("\n");
-            sb.Append("  NewElement: ").Append(NewElement).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api1_projects_project_id_reports_connection_id_pdf_get**](ReportApi.md#api1_projects_project_id_reports_connection_id_pdf_get) | **GET** /api/1/projects/{projectId}/reports/{connectionId}/pdf | Generates report for projectId and connectionId
-[**api1_projects_project_id_reports_connection_id_word_get**](ReportApi.md#api1_projects_project_id_reports_connection_id_word_get) | **GET** /api/1/projects/{projectId}/reports/{connectionId}/word | Generates report for projectId and connectionId
+[**generate_pdf**](ReportApi.md#generate_pdf) | **GET** /api/1/projects/{projectId}/reports/{connectionId}/pdf | Generates report for projectId and connectionId
+[**generate_word**](ReportApi.md#generate_word) | **GET** /api/1/projects/{projectId}/reports/{connectionId}/word | Generates report for projectId and connectionId
 
 
-# **api1_projects_project_id_reports_connection_id_pdf_get**
-> Stream api1_projects_project_id_reports_connection_id_pdf_get(project_id, connection_id, body=body)
+# **generate_pdf**
+> MemoryStream generate_pdf(project_id, connection_id)
 
 Generates report for projectId and connectionId
 
@@ -18,7 +18,7 @@ Generates report for projectId and connectionId
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.stream import Stream
+from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -35,15 +35,14 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.ReportApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    body = None # object |  (optional)
 
     try:
         # Generates report for projectId and connectionId
-        api_response = api_instance.api1_projects_project_id_reports_connection_id_pdf_get(project_id, connection_id, body=body)
-        print("The response of ReportApi->api1_projects_project_id_reports_connection_id_pdf_get:\n")
+        api_response = api_instance.generate_pdf(project_id, connection_id)
+        print("The response of ReportApi->generate_pdf:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ReportApi->api1_projects_project_id_reports_connection_id_pdf_get: %s\n" % e)
+        print("Exception when calling ReportApi->generate_pdf: %s\n" % e)
 ```
 
 
@@ -55,11 +54,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
-[**Stream**](Stream.md)
+[**MemoryStream**](MemoryStream.md)
 
 ### Authorization
 
@@ -67,8 +65,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream, application/json
 
 ### HTTP response details
 
@@ -78,8 +76,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api1_projects_project_id_reports_connection_id_word_get**
-> Stream api1_projects_project_id_reports_connection_id_word_get(project_id, connection_id, body=body)
+# **generate_word**
+> MemoryStream generate_word(project_id, connection_id)
 
 Generates report for projectId and connectionId
 
@@ -88,7 +86,7 @@ Generates report for projectId and connectionId
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.stream import Stream
+from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -105,15 +103,14 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.ReportApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    body = None # object |  (optional)
 
     try:
         # Generates report for projectId and connectionId
-        api_response = api_instance.api1_projects_project_id_reports_connection_id_word_get(project_id, connection_id, body=body)
-        print("The response of ReportApi->api1_projects_project_id_reports_connection_id_word_get:\n")
+        api_response = api_instance.generate_word(project_id, connection_id)
+        print("The response of ReportApi->generate_word:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ReportApi->api1_projects_project_id_reports_connection_id_word_get: %s\n" % e)
+        print("Exception when calling ReportApi->generate_word: %s\n" % e)
 ```
 
 
@@ -125,11 +122,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **body** | **object**|  | [optional] 
 
 ### Return type
 
-[**Stream**](Stream.md)
+[**MemoryStream**](MemoryStream.md)
 
 ### Authorization
 
@@ -137,8 +133,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream, application/json
 
 ### HTTP response details
 

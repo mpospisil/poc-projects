@@ -55,19 +55,6 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test DeleteOperations
-        /// </summary>
-        [Fact]
-        public void DeleteOperationsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.DeleteOperations(projectId, connectionId);
-            //Assert.IsType<OkObjectResult>(response);
-        }
-
-        /// <summary>
         /// Test GetAllConnectionsData
         /// </summary>
         [Fact]
@@ -90,32 +77,6 @@ namespace connection_restapi_client_poc.Test.Api
             //int connectionId = null;
             //var response = instance.GetConnectionData(projectId, connectionId);
             //Assert.IsType<ConConnection>(response);
-        }
-
-        /// <summary>
-        /// Test GetMissingWelds
-        /// </summary>
-        [Fact]
-        public void GetMissingWeldsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.GetMissingWelds(projectId, connectionId);
-            //Assert.IsType<List<ConMissingWeld>>(response);
-        }
-
-        /// <summary>
-        /// Test GetOperations
-        /// </summary>
-        [Fact]
-        public void GetOperationsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Guid projectId = null;
-            //int connectionId = null;
-            //var response = instance.GetOperations(projectId, connectionId);
-            //Assert.IsType<List<ConOperation>>(response);
         }
 
         /// <summary>

@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/1/projects/{projectId}/calculate": {
+    "/api/1/projects/{projectId}/connections/calculate": {
       "post": {
         "tags": [
           "Calculation"
@@ -51,7 +51,7 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/results": {
+    "/api/1/projects/{projectId}/connections/results": {
       "post": {
         "tags": [
           "Calculation"
@@ -97,7 +97,7 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/rawresults-text": {
+    "/api/1/projects/{projectId}/connections/rawresults-text": {
       "post": {
         "tags": [
           "Calculation"
@@ -130,11 +130,56 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/clients/connect-client": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "summary": "Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.",
+        "operationId": "ConnectClient",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
               "text/plain": {
                 "schema": {
                   "type": "string"
                 }
               },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/clients/idea-service-version": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "summary": "Get the IdeaStatica version",
+        "operationId": "GetVersion",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -268,139 +313,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ConConnection"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/projects/{projectId}/connections/{connectionId}/operations": {
-      "get": {
-        "tags": [
-          "Connection"
-        ],
-        "summary": "Get the list of operations for the connection",
-        "operationId": "GetOperations",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the requested connection",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ConOperation"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Connection"
-        ],
-        "summary": "Delete all operations for the connection",
-        "operationId": "DeleteOperations",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the connection to be modified",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OkObjectResult"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/projects/{projectId}/connections/{connectionId}/missing-welds": {
-      "get": {
-        "tags": [
-          "Connection"
-        ],
-        "summary": "Get missing welds in the connection",
-        "operationId": "GetMissingWelds",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the requested connection in the project",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ConMissingWeld"
-                  }
                 }
               }
             }
@@ -1518,7 +1430,7 @@
           {
             "name": "connectionId",
             "in": "path",
-            "description": "Id of the connection to to update is membar memberId",
+            "description": "Id of the connection to to update is member memberId",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1528,7 +1440,7 @@
           {
             "name": "memberId",
             "in": "path",
-            "description": "Id of the member to be ubdated in the connection",
+            "description": "Id of the member to be updated in the connection",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1537,7 +1449,7 @@
           }
         ],
         "requestBody": {
-          "description": "New mwmbwr data",
+          "description": "New member data",
           "content": {
             "application/json": {
               "schema": {
@@ -1556,6 +1468,86 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/operations": {
+      "get": {
+        "tags": [
+          "Operation"
+        ],
+        "summary": "Get the list of operations for the connection",
+        "operationId": "GetOperations",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "Id of the requested connection",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConOperation"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Operation"
+        ],
+        "summary": "Delete all operations for the connection",
+        "operationId": "DeleteOperations",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "Id of the connection to be modified",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
           }
         }
       }
@@ -1591,7 +1583,7 @@
           {
             "name": "includeHidden",
             "in": "query",
-            "description": "Iclude also hdden parameters",
+            "description": "Include also hidden parameters",
             "schema": {
               "type": "boolean",
               "default": false
@@ -1702,7 +1694,7 @@
           }
         ],
         "requestBody": {
-          "description": "Expreession to evaluate",
+          "description": "Expression to evaluate",
           "content": {
             "application/json": {
               "schema": {
@@ -1725,13 +1717,78 @@
         }
       }
     },
-    "/api/1/connect-client": {
+    "/api/1/projects/{projectId}/connections/{connectionId}/presentations": {
       "get": {
         "tags": [
-          "Project"
+          "Presentation"
         ],
-        "summary": "Connect a client to the ConnectionRestApi service. Methond returns a unique identifier of the client.",
-        "operationId": "ConnectClient",
+        "summary": "Returns data for scene3D",
+        "operationId": "GetDataScene3D",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "The unique identifier of the open project in the ConnectionRestApi service",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "Id of the connection to be presented to scene3D",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DrawData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/presentations/text": {
+      "get": {
+        "tags": [
+          "Presentation"
+        ],
+        "summary": "Return serialized data for scene3D in json format",
+        "operationId": "GetDataScene3DText",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -1756,29 +1813,8 @@
         "tags": [
           "Project"
         ],
-        "summary": "Open ideacon project which is passed in the body of the request\r\nTODO - should be the parameter of the method",
-        "operationId": "OpenProject",
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConProject"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/projects/upload-ideacon": {
-      "post": {
-        "tags": [
-          "Project"
-        ],
         "summary": "Open ideacon project from ideaConFile",
-        "operationId": "UploadIdeaCon",
+        "operationId": "OpenProject",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -1866,7 +1902,7 @@
         "tags": [
           "Project"
         ],
-        "summary": "Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient",
+        "summary": "Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ClientController.ConnectClient",
         "operationId": "GetActiveProjects",
         "responses": {
           "200": {
@@ -1908,6 +1944,11 @@
           "200": {
             "description": "Success",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemoryStream"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MemoryStream"
@@ -1918,7 +1959,7 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/project-data": {
+    "/api/1/projects/{projectId}": {
       "get": {
         "tags": [
           "Project"
@@ -1943,7 +1984,48 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ConProjectData"
+                  "$ref": "#/components/schemas/ConProject"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Updates ConProjectData of project",
+        "operationId": "UpdateProjectData",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConProjectData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConProject"
                 }
               }
             }
@@ -2195,6 +2277,7 @@
           "Report"
         ],
         "summary": "Generates report for projectId and connectionId",
+        "operationId": "GeneratePdf",
         "parameters": [
           {
             "name": "projectId",
@@ -2217,23 +2300,18 @@
             }
           }
         ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConnReportSettings"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemoryStream"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Stream"
+                  "$ref": "#/components/schemas/MemoryStream"
                 }
               }
             }
@@ -2247,6 +2325,7 @@
           "Report"
         ],
         "summary": "Generates report for projectId and connectionId",
+        "operationId": "GenerateWord",
         "parameters": [
           {
             "name": "projectId",
@@ -2269,23 +2348,66 @@
             }
           }
         ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConnReportSettings"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemoryStream"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Stream"
+                  "$ref": "#/components/schemas/MemoryStream"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/get-template": {
+      "get": {
+        "tags": [
+          "Template"
+        ],
+        "summary": "Create a template for the connection connectionId in the project projectId",
+        "operationId": "CreateConTemplate",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "Id of the connection to be converted to a template",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
                 }
               }
             }
@@ -2393,26 +2515,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ConTemplateApplyResult"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/version": {
-      "get": {
-        "tags": [
-          "Version"
-        ],
-        "operationId": "GetVersion",
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
                 }
               }
             }
@@ -2625,9 +2727,6 @@
           "newTemplateId": {
             "type": "string",
             "nullable": true
-          },
-          "newElement": {
-            "$ref": "#/components/schemas/SelectedElement"
           }
         },
         "additionalProperties": false
@@ -3329,43 +3428,6 @@
         },
         "additionalProperties": false
       },
-      "ConMissingWeld": {
-        "type": "object",
-        "properties": {
-          "edgePlate": {
-            "type": "string",
-            "nullable": true
-          },
-          "surfacePlate": {
-            "type": "string",
-            "nullable": true
-          },
-          "edgeIndex": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "surfaceIndex": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "weldSize": {
-            "type": "number",
-            "format": "double"
-          },
-          "weldTypeCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "weldMaterialName": {
-            "type": "string",
-            "nullable": true
-          },
-          "isHollow_OrUncoiledSection": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
       "ConMprlCrossSection": {
         "type": "object",
         "properties": {
@@ -3625,10 +3687,6 @@
         ],
         "type": "string",
         "description": "Types of cone breakout checks"
-      },
-      "ConnReportSettings": {
-        "type": "object",
-        "additionalProperties": false
       },
       "ConnectionCheckRes": {
         "type": "object",
@@ -4261,6 +4319,35 @@
         "type": "string",
         "description": "Represents the result of comparison of distances of two object from the same point"
       },
+      "DrawData": {
+        "type": "object",
+        "properties": {
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IGroup"
+            },
+            "nullable": true
+          },
+          "vertices": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
+          },
+          "normals": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Element1D": {
         "type": "object",
         "properties": {
@@ -4332,8 +4419,39 @@
         "additionalProperties": false,
         "description": "Representation of hinge element 1D"
       },
-      "IOutputFormatter": {
+      "IGroup": {
         "type": "object",
+        "properties": {
+          "faces": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "selected": {
+            "$ref": "#/components/schemas/Selected"
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            },
+            "nullable": true
+          },
+          "priority": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "text": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Text"
+            },
+            "nullable": true
+          }
+        },
         "additionalProperties": false
       },
       "ISDModel": {
@@ -4414,6 +4532,32 @@
         },
         "additionalProperties": false,
         "description": "Initial deformation of point - geometry nonlinear calculation"
+      },
+      "Line": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "pairs": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "thickness": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
       },
       "LineSegment3D": {
         "type": "object",
@@ -5214,38 +5358,6 @@
         ],
         "type": "string",
         "description": "Message numbers"
-      },
-      "OkObjectResult": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "nullable": true
-          },
-          "formatters": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IOutputFormatter"
-            },
-            "nullable": true
-          },
-          "contentTypes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "declaredType": {
-            "type": "string",
-            "nullable": true
-          },
-          "statusCode": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       },
       "OpenAttribute": {
         "type": "object",
@@ -6397,25 +6509,26 @@
         "additionalProperties": false,
         "description": "Represents a segment in two-dimensional space."
       },
-      "SelectedElement": {
+      "Selected": {
         "type": "object",
         "properties": {
-          "name": {
+          "id": {
             "type": "string",
             "nullable": true
           },
-          "tableId": {
+          "type": {
+            "$ref": "#/components/schemas/SelectedType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SelectedType": {
+        "type": "object",
+        "properties": {
+          "kind": {
             "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "elementId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "containerType": {
-            "$ref": "#/components/schemas/TableContainerType"
+            "nullable": true,
+            "readOnly": true
           }
         },
         "additionalProperties": false
@@ -6518,45 +6631,6 @@
         "additionalProperties": false,
         "description": "Linearly distributed generalized strain load along a line.\r\nStrain load is in local coordinate system and there are no possible eccentricities."
       },
-      "Stream": {
-        "type": "object",
-        "properties": {
-          "canRead": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canWrite": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canSeek": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canTimeout": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "length": {
-            "type": "integer",
-            "format": "int64",
-            "readOnly": true
-          },
-          "position": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "readTimeout": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "writeTimeout": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "SubStructure": {
         "type": "object",
         "properties": {
@@ -6580,17 +6654,6 @@
         },
         "additionalProperties": false,
         "description": "Representation of Surface Support 3D in IDEA StatiCa Detail"
-      },
-      "TableContainerType": {
-        "enum": [
-          "notSet",
-          "crossSection",
-          "material",
-          "plateThickness",
-          "steelStrands",
-          "fastener"
-        ],
-        "type": "string"
       },
       "Taper": {
         "type": "object",
@@ -6736,6 +6799,57 @@
         },
         "additionalProperties": false,
         "description": "Tendon duct"
+      },
+      "Text": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "position": {
+            "$ref": "#/components/schemas/TextPosition"
+          },
+          "fontSize": {
+            "type": "number",
+            "format": "double"
+          },
+          "tag": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TextPosition": {
+        "type": "object",
+        "properties": {
+          "origin": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
+          },
+          "angles": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "ThermalConductivityState": {
         "enum": [

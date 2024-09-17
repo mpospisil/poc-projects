@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **new_value** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **new_template_id** | **str** |  | [optional] 
-**new_element** | [**SelectedElement**](SelectedElement.md) |  | [optional] 
 
 ## Example
 

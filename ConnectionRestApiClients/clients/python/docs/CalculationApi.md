@@ -4,9 +4,9 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**calculate**](CalculationApi.md#calculate) | **POST** /api/1/projects/{projectId}/calculate | Run CBFEM caluclation and return the summary of the results
-[**get_raw_json_results**](CalculationApi.md#get_raw_json_results) | **POST** /api/1/projects/{projectId}/rawresults-text | Get json string which represents raw CBFEM results (an instance of CheckResultsData)
-[**get_results**](CalculationApi.md#get_results) | **POST** /api/1/projects/{projectId}/results | Get detailed results of the CBFEM analysis
+[**calculate**](CalculationApi.md#calculate) | **POST** /api/1/projects/{projectId}/connections/calculate | Run CBFEM caluclation and return the summary of the results
+[**get_raw_json_results**](CalculationApi.md#get_raw_json_results) | **POST** /api/1/projects/{projectId}/connections/rawresults-text | Get json string which represents raw CBFEM results (an instance of CheckResultsData)
+[**get_results**](CalculationApi.md#get_results) | **POST** /api/1/projects/{projectId}/connections/results | Get detailed results of the CBFEM analysis
 
 
 # **calculate**
@@ -79,7 +79,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_raw_json_results**
-> str get_raw_json_results(project_id, con_calculation_parameter=con_calculation_parameter)
+> List[str] get_raw_json_results(project_id, con_calculation_parameter=con_calculation_parameter)
 
 Get json string which represents raw CBFEM results (an instance of CheckResultsData)
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+**List[str]**
 
 ### Authorization
 
@@ -136,7 +136,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain, application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 

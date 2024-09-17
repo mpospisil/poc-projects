@@ -310,7 +310,7 @@ class CalculationApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/calculate',
+            resource_path='/api/1/projects/{projectId}/connections/calculate',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -343,7 +343,7 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> str:
+    ) -> List[str]:
         """Get json string which represents raw CBFEM results (an instance of CheckResultsData)
 
 
@@ -383,7 +383,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "str",
+            '200': "List[str]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -413,7 +413,7 @@ class CalculationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[str]:
+    ) -> ApiResponse[List[str]]:
         """Get json string which represents raw CBFEM results (an instance of CheckResultsData)
 
 
@@ -453,7 +453,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "str",
+            '200': "List[str]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -523,7 +523,7 @@ class CalculationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "str",
+            '200': "List[str]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -571,7 +571,6 @@ class CalculationApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'text/plain', 
                     'application/json'
                 ]
             )
@@ -596,7 +595,7 @@ class CalculationApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/rawresults-text',
+            resource_path='/api/1/projects/{projectId}/connections/rawresults-text',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -881,7 +880,7 @@ class CalculationApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/results',
+            resource_path='/api/1/projects/{projectId}/connections/results',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

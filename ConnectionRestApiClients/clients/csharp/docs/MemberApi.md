@@ -216,9 +216,9 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MemberApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var connectionId = 56;  // int | Id of the connection to to update is membar memberId
-            var memberId = 56;  // int | Id of the member to be ubdated in the connection
-            var conMember = new ConMember?(); // ConMember? | New mwmbwr data (optional) 
+            var connectionId = 56;  // int | Id of the connection to to update is member memberId
+            var memberId = 56;  // int | Id of the member to be updated in the connection
+            var conMember = new ConMember?(); // ConMember? | New member data (optional) 
 
             try
             {
@@ -262,9 +262,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **connectionId** | **int** | Id of the connection to to update is membar memberId |  |
-| **memberId** | **int** | Id of the member to be ubdated in the connection |  |
-| **conMember** | [**ConMember?**](ConMember?.md) | New mwmbwr data | [optional]  |
+| **connectionId** | **int** | Id of the connection to to update is member memberId |  |
+| **memberId** | **int** | Id of the member to be updated in the connection |  |
+| **conMember** | [**ConMember?**](ConMember?.md) | New member data | [optional]  |
 
 ### Return type
 

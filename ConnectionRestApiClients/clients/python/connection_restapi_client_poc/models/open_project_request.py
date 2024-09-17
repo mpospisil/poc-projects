@@ -22,9 +22,9 @@ from typing import Any, ClassVar, Dict, List, Optional, Tuple, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
-class UploadIdeaConRequest(BaseModel):
+class OpenProjectRequest(BaseModel):
     """
-    UploadIdeaConRequest
+    OpenProjectRequest
     """ # noqa: E501
     idea_con_file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = Field(default=None, alias="ideaConFile")
     __properties: ClassVar[List[str]] = ["ideaConFile"]
@@ -47,7 +47,7 @@ class UploadIdeaConRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of UploadIdeaConRequest from a JSON string"""
+        """Create an instance of OpenProjectRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,7 +72,7 @@ class UploadIdeaConRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of UploadIdeaConRequest from a dict"""
+        """Create an instance of OpenProjectRequest from a dict"""
         if obj is None:
             return None
 

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.UploadIdeaConRequest
+# connection_restapi_client_poc.Model.OpenProjectRequest
 
 ## Properties
 

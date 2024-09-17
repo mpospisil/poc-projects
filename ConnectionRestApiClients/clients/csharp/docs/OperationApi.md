@@ -1,17 +1,17 @@
-# connection_restapi_client_poc.Api.PresentationApi
+# connection_restapi_client_poc.Api.OperationApi
 
 All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetDataScene3D**](PresentationApi.md#getdatascene3d) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/presentations | Returns data for scene3D |
-| [**GetDataScene3DText**](PresentationApi.md#getdatascene3dtext) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/presentations/text | Return serialized data for scene3D in json format |
+| [**DeleteOperations**](OperationApi.md#deleteoperations) | **DELETE** /api/1/projects/{projectId}/connections/{connectionId}/operations | Delete all operations for the connection |
+| [**GetOperations**](OperationApi.md#getoperations) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/operations | Get the list of operations for the connection |
 
-<a id="getdatascene3d"></a>
-# **GetDataScene3D**
-> DrawData GetDataScene3D (Guid projectId, int connectionId)
+<a id="deleteoperations"></a>
+# **DeleteOperations**
+> void DeleteOperations (Guid projectId, int connectionId)
 
-Returns data for scene3D
+Delete all operations for the connection
 
 ### Example
 ```csharp
@@ -23,25 +23,24 @@ using connection_restapi_client_poc.Model;
 
 namespace Example
 {
-    public class GetDataScene3DExample
+    public class DeleteOperationsExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
-            var apiInstance = new PresentationApi(config);
-            var projectId = "projectId_example";  // Guid | The unique identifier of the open project in the ConnectionRestApi service
-            var connectionId = 56;  // int | Id of the connection to be presented to scene3D
+            var apiInstance = new OperationApi(config);
+            var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
+            var connectionId = 56;  // int | Id of the connection to be modified
 
             try
             {
-                // Returns data for scene3D
-                DrawData result = apiInstance.GetDataScene3D(projectId, connectionId);
-                Debug.WriteLine(result);
+                // Delete all operations for the connection
+                apiInstance.DeleteOperations(projectId, connectionId);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PresentationApi.GetDataScene3D: " + e.Message);
+                Debug.Print("Exception when calling OperationApi.DeleteOperations: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -50,21 +49,18 @@ namespace Example
 }
 ```
 
-#### Using the GetDataScene3DWithHttpInfo variant
+#### Using the DeleteOperationsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Returns data for scene3D
-    ApiResponse<DrawData> response = apiInstance.GetDataScene3DWithHttpInfo(projectId, connectionId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    // Delete all operations for the connection
+    apiInstance.DeleteOperationsWithHttpInfo(projectId, connectionId);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PresentationApi.GetDataScene3DWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OperationApi.DeleteOperationsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -74,12 +70,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **Guid** | The unique identifier of the open project in the ConnectionRestApi service |  |
-| **connectionId** | **int** | Id of the connection to be presented to scene3D |  |
+| **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
+| **connectionId** | **int** | Id of the connection to be modified |  |
 
 ### Return type
 
-[**DrawData**](DrawData.md)
+void (empty response body)
 
 ### Authorization
 
@@ -88,7 +84,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -98,11 +94,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getdatascene3dtext"></a>
-# **GetDataScene3DText**
-> string GetDataScene3DText (Guid projectId, int connectionId)
+<a id="getoperations"></a>
+# **GetOperations**
+> List&lt;ConOperation&gt; GetOperations (Guid projectId, int connectionId)
 
-Return serialized data for scene3D in json format
+Get the list of operations for the connection
 
 ### Example
 ```csharp
@@ -114,25 +110,25 @@ using connection_restapi_client_poc.Model;
 
 namespace Example
 {
-    public class GetDataScene3DTextExample
+    public class GetOperationsExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
-            var apiInstance = new PresentationApi(config);
-            var projectId = "projectId_example";  // Guid | 
-            var connectionId = 56;  // int | 
+            var apiInstance = new OperationApi(config);
+            var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
+            var connectionId = 56;  // int | Id of the requested connection
 
             try
             {
-                // Return serialized data for scene3D in json format
-                string result = apiInstance.GetDataScene3DText(projectId, connectionId);
+                // Get the list of operations for the connection
+                List<ConOperation> result = apiInstance.GetOperations(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling PresentationApi.GetDataScene3DText: " + e.Message);
+                Debug.Print("Exception when calling OperationApi.GetOperations: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -141,21 +137,21 @@ namespace Example
 }
 ```
 
-#### Using the GetDataScene3DTextWithHttpInfo variant
+#### Using the GetOperationsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Return serialized data for scene3D in json format
-    ApiResponse<string> response = apiInstance.GetDataScene3DTextWithHttpInfo(projectId, connectionId);
+    // Get the list of operations for the connection
+    ApiResponse<List<ConOperation>> response = apiInstance.GetOperationsWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling PresentationApi.GetDataScene3DTextWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OperationApi.GetOperationsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -165,12 +161,12 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **projectId** | **Guid** |  |  |
-| **connectionId** | **int** |  |  |
+| **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
+| **connectionId** | **int** | Id of the requested connection |  |
 
 ### Return type
 
-**string**
+[**List&lt;ConOperation&gt;**](ConOperation.md)
 
 ### Authorization
 
@@ -179,7 +175,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details

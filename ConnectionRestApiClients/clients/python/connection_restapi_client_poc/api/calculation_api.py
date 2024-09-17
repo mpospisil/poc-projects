@@ -310,7 +310,7 @@ class CalculationApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/calculate',
+            resource_path='/api/1/projects/{projectId}/connections/calculate',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -595,7 +595,7 @@ class CalculationApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/rawresults-text',
+            resource_path='/api/1/projects/{projectId}/connections/rawresults-text',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -880,7 +880,7 @@ class CalculationApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/results',
+            resource_path='/api/1/projects/{projectId}/connections/results',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -4,9 +4,9 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**calculate**](CalculationApi.md#calculate) | **POST** /api/1/projects/{projectId}/calculate | Run CBFEM caluclation and return the summary of the results
-[**get_raw_json_results**](CalculationApi.md#get_raw_json_results) | **POST** /api/1/projects/{projectId}/rawresults-text | Get json string which represents raw CBFEM results (an instance of CheckResultsData)
-[**get_results**](CalculationApi.md#get_results) | **POST** /api/1/projects/{projectId}/results | Get detailed results of the CBFEM analysis
+[**calculate**](CalculationApi.md#calculate) | **POST** /api/1/projects/{projectId}/connections/calculate | Run CBFEM caluclation and return the summary of the results
+[**get_raw_json_results**](CalculationApi.md#get_raw_json_results) | **POST** /api/1/projects/{projectId}/connections/rawresults-text | Get json string which represents raw CBFEM results (an instance of CheckResultsData)
+[**get_results**](CalculationApi.md#get_results) | **POST** /api/1/projects/{projectId}/connections/results | Get detailed results of the CBFEM analysis
 
 
 # **calculate**

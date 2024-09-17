@@ -14,21 +14,22 @@
 """  # noqa: E501
 
 
-__version__ = "24.0.5.1260"
+__version__ = "24.0.6.0268"
 
 # import apis into sdk package
 from connection_restapi_client_poc.api.calculation_api import CalculationApi
+from connection_restapi_client_poc.api.client_api import ClientApi
 from connection_restapi_client_poc.api.connection_api import ConnectionApi
 from connection_restapi_client_poc.api.export_api import ExportApi
 from connection_restapi_client_poc.api.load_effect_api import LoadEffectApi
 from connection_restapi_client_poc.api.material_api import MaterialApi
 from connection_restapi_client_poc.api.member_api import MemberApi
+from connection_restapi_client_poc.api.operation_api import OperationApi
 from connection_restapi_client_poc.api.parameter_api import ParameterApi
 from connection_restapi_client_poc.api.presentation_api import PresentationApi
 from connection_restapi_client_poc.api.project_api import ProjectApi
 from connection_restapi_client_poc.api.report_api import ReportApi
 from connection_restapi_client_poc.api.template_api import TemplateApi
-from connection_restapi_client_poc.api.version_api import VersionApi
 
 # import ApiClient
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -72,7 +73,6 @@ from connection_restapi_client_poc.models.con_load_effect_position_enum import C
 from connection_restapi_client_poc.models.con_load_effect_section_load import ConLoadEffectSectionLoad
 from connection_restapi_client_poc.models.con_loading_options import ConLoadingOptions
 from connection_restapi_client_poc.models.con_member import ConMember
-from connection_restapi_client_poc.models.con_missing_weld import ConMissingWeld
 from connection_restapi_client_poc.models.con_mprl_cross_section import ConMprlCrossSection
 from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
 from connection_restapi_client_poc.models.con_operation import ConOperation
@@ -137,13 +137,13 @@ from connection_restapi_client_poc.models.member2_d import Member2D
 from connection_restapi_client_poc.models.member_type import MemberType
 from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.models.message_number import MessageNumber
-from connection_restapi_client_poc.models.ok_object_result import OkObjectResult
 from connection_restapi_client_poc.models.open_element_id import OpenElementId
 from connection_restapi_client_poc.models.open_message import OpenMessage
 from connection_restapi_client_poc.models.open_messages import OpenMessages
 from connection_restapi_client_poc.models.open_model import OpenModel
 from connection_restapi_client_poc.models.open_model_container import OpenModelContainer
 from connection_restapi_client_poc.models.open_model_result import OpenModelResult
+from connection_restapi_client_poc.models.open_project_request import OpenProjectRequest
 from connection_restapi_client_poc.models.opening import Opening
 from connection_restapi_client_poc.models.parameter_data import ParameterData
 from connection_restapi_client_poc.models.patch_device import PatchDevice
@@ -198,7 +198,6 @@ from connection_restapi_client_poc.models.thermal_expansion_state import Thermal
 from connection_restapi_client_poc.models.thermal_specific_heat_state import ThermalSpecificHeatState
 from connection_restapi_client_poc.models.thermal_strain_state import ThermalStrainState
 from connection_restapi_client_poc.models.thermal_stress_strain_state import ThermalStressStrainState
-from connection_restapi_client_poc.models.upload_idea_con_request import UploadIdeaConRequest
 from connection_restapi_client_poc.models.validation_type import ValidationType
 from connection_restapi_client_poc.models.vector3_d import Vector3D
 from connection_restapi_client_poc.models.wall import Wall

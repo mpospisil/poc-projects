@@ -26,16 +26,16 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// UploadIdeaConRequest
+    /// OpenProjectRequest
     /// </summary>
-    [DataContract(Name = "UploadIdeaCon_request")]
-    public partial class UploadIdeaConRequest : IValidatableObject
+    [DataContract(Name = "OpenProject_request")]
+    public partial class OpenProjectRequest : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UploadIdeaConRequest" /> class.
+        /// Initializes a new instance of the <see cref="OpenProjectRequest" /> class.
         /// </summary>
         /// <param name="ideaConFile">ideaConFile.</param>
-        public UploadIdeaConRequest(System.IO.Stream ideaConFile = default(System.IO.Stream))
+        public OpenProjectRequest(System.IO.Stream ideaConFile = default(System.IO.Stream))
         {
             this.IdeaConFile = ideaConFile;
         }
@@ -53,7 +53,7 @@ namespace connection_restapi_client_poc.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UploadIdeaConRequest {\n");
+            sb.Append("class OpenProjectRequest {\n");
             sb.Append("  IdeaConFile: ").Append(IdeaConFile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -5,18 +5,17 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**close_project**](ProjectApi.md#close_project) | **GET** /api/1/projects/{projectId}/close | Close the project. Needed for releasing resources in the service.
-[**connect_client**](ProjectApi.md#connect_client) | **GET** /api/1/connect-client | Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
 [**download_project**](ProjectApi.md#download_project) | **GET** /api/1/projects/{projectId}/download | Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
-[**get_active_projects**](ProjectApi.md#get_active_projects) | **GET** /api/1/projects | Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient
-[**get_project_data**](ProjectApi.md#get_project_data) | **GET** /api/1/projects/{projectId}/project-data | Get data of the project.
+[**get_active_projects**](ProjectApi.md#get_active_projects) | **GET** /api/1/projects | Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ClientController.ConnectClient
+[**get_project_data**](ProjectApi.md#get_project_data) | **GET** /api/1/projects/{projectId} | Get data of the project.
 [**get_setup**](ProjectApi.md#get_setup) | **GET** /api/1/projects/{projectId}/connection-setup | Get setup from project
 [**import_iom**](ProjectApi.md#import_iom) | **POST** /api/1/projects/import-iom-file | Creates an IDEA Connection project. IOM is passed in the body of the request.
 [**import_iom_container**](ProjectApi.md#import_iom_container) | **POST** /api/1/projects/import-iom | Creates an IDEA Connection project from model (model and results)
-[**open_project**](ProjectApi.md#open_project) | **POST** /api/1/projects/open | Open ideacon project which is passed in the body of the request  TODO - should be the parameter of the method
+[**open_project**](ProjectApi.md#open_project) | **POST** /api/1/projects/open | Open ideacon project from ideaConFile
 [**update_from_iom**](ProjectApi.md#update_from_iom) | **POST** /api/1/projects/{projectId}/update-iom-file | Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
 [**update_from_iom_container**](ProjectApi.md#update_from_iom_container) | **POST** /api/1/projects/{projectId}/update-iom | Update an IDEA Connection project by model (model and results)
+[**update_project_data**](ProjectApi.md#update_project_data) | **PUT** /api/1/projects/{projectId} | Updates ConProjectData of project
 [**update_setup**](ProjectApi.md#update_setup) | **PUT** /api/1/projects/{projectId}/connection-setup | Update setup of the project
-[**upload_idea_con**](ProjectApi.md#upload_idea_con) | **POST** /api/1/projects/upload-ideacon | Open ideacon project from ideaConFile
 
 
 # **close_project**
@@ -75,67 +74,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **connect_client**
-> str connect_client()
-
-Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
-
-### Example
-
-
-```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.ProjectApi(api_client)
-
-    try:
-        # Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
-        api_response = api_instance.connect_client()
-        print("The response of ProjectApi->connect_client:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProjectApi->connect_client: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**str**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json
 
 ### HTTP response details
 
@@ -214,7 +152,7 @@ No authorization required
 # **get_active_projects**
 > List[ConProject] get_active_projects()
 
-Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient
+Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ClientController.ConnectClient
 
 ### Example
 
@@ -238,7 +176,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.ProjectApi(api_client)
 
     try:
-        # Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient
+        # Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ClientController.ConnectClient
         api_response = api_instance.get_active_projects()
         print("The response of ProjectApi->get_active_projects:\n")
         pprint(api_response)
@@ -274,7 +212,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_project_data**
-> ConProjectData get_project_data(project_id)
+> ConProject get_project_data(project_id)
 
 Get data of the project.
 
@@ -283,7 +221,7 @@ Get data of the project.
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_project_data import ConProjectData
+from connection_restapi_client_poc.models.con_project import ConProject
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -320,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConProjectData**](ConProjectData.md)
+[**ConProject**](ConProject.md)
 
 ### Authorization
 
@@ -541,9 +479,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **open_project**
-> ConProject open_project()
+> ConProject open_project(idea_con_file=idea_con_file)
 
-Open ideacon project which is passed in the body of the request  TODO - should be the parameter of the method
+Open ideacon project from ideaConFile
 
 ### Example
 
@@ -565,10 +503,11 @@ configuration = connection_restapi_client_poc.Configuration(
 with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = connection_restapi_client_poc.ProjectApi(api_client)
+    idea_con_file = None # bytearray |  (optional)
 
     try:
-        # Open ideacon project which is passed in the body of the request  TODO - should be the parameter of the method
-        api_response = api_instance.open_project()
+        # Open ideacon project from ideaConFile
+        api_response = api_instance.open_project(idea_con_file=idea_con_file)
         print("The response of ProjectApi->open_project:\n")
         pprint(api_response)
     except Exception as e:
@@ -579,7 +518,10 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **idea_con_file** | **bytearray**|  | [optional] 
 
 ### Return type
 
@@ -591,7 +533,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: multipart/form-data, application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -735,6 +677,75 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_project_data**
+> ConProject update_project_data(project_id, con_project_data=con_project_data)
+
+Updates ConProjectData of project
+
+### Example
+
+
+```python
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.con_project import ConProject
+from connection_restapi_client_poc.models.con_project_data import ConProjectData
+from connection_restapi_client_poc.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = connection_restapi_client_poc.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = connection_restapi_client_poc.ProjectApi(api_client)
+    project_id = 'project_id_example' # str | 
+    con_project_data = connection_restapi_client_poc.ConProjectData() # ConProjectData |  (optional)
+
+    try:
+        # Updates ConProjectData of project
+        api_response = api_instance.update_project_data(project_id, con_project_data=con_project_data)
+        print("The response of ProjectApi->update_project_data:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProjectApi->update_project_data: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**|  | 
+ **con_project_data** | [**ConProjectData**](ConProjectData.md)|  | [optional] 
+
+### Return type
+
+[**ConProject**](ConProject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_setup**
 > ConnectionSetup update_setup(project_id, connection_setup=connection_setup)
 
@@ -793,72 +804,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **upload_idea_con**
-> ConProject upload_idea_con(idea_con_file=idea_con_file)
-
-Open ideacon project from ideaConFile
-
-### Example
-
-
-```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_project import ConProject
-from connection_restapi_client_poc.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.ProjectApi(api_client)
-    idea_con_file = None # bytearray |  (optional)
-
-    try:
-        # Open ideacon project from ideaConFile
-        api_response = api_instance.upload_idea_con(idea_con_file=idea_con_file)
-        print("The response of ProjectApi->upload_idea_con:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProjectApi->upload_idea_con: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **idea_con_file** | **bytearray**|  | [optional] 
-
-### Return type
-
-[**ConProject**](ConProject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data, application/json
  - **Accept**: application/json
 
 ### HTTP response details

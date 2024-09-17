@@ -67,17 +67,6 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test ConnectClient
-        /// </summary>
-        [Fact]
-        public void ConnectClientTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.ConnectClient();
-            //Assert.IsType<string>(response);
-        }
-
-        /// <summary>
         /// Test DownloadProject
         /// </summary>
         [Fact]
@@ -109,7 +98,7 @@ namespace connection_restapi_client_poc.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //var response = instance.GetProjectData(projectId);
-            //Assert.IsType<ConProjectData>(response);
+            //Assert.IsType<ConProject>(response);
         }
 
         /// <summary>
@@ -156,7 +145,8 @@ namespace connection_restapi_client_poc.Test.Api
         public void OpenProjectTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.OpenProject();
+            //System.IO.Stream? ideaConFile = null;
+            //var response = instance.OpenProject(ideaConFile);
             //Assert.IsType<ConProject>(response);
         }
 
@@ -186,6 +176,19 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
+        /// Test UpdateProjectData
+        /// </summary>
+        [Fact]
+        public void UpdateProjectDataTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //ConProjectData? conProjectData = null;
+            //var response = instance.UpdateProjectData(projectId, conProjectData);
+            //Assert.IsType<ConProject>(response);
+        }
+
+        /// <summary>
         /// Test UpdateSetup
         /// </summary>
         [Fact]
@@ -196,18 +199,6 @@ namespace connection_restapi_client_poc.Test.Api
             //ConnectionSetup? connectionSetup = null;
             //var response = instance.UpdateSetup(projectId, connectionSetup);
             //Assert.IsType<ConnectionSetup>(response);
-        }
-
-        /// <summary>
-        /// Test UploadIdeaCon
-        /// </summary>
-        [Fact]
-        public void UploadIdeaConTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //System.IO.Stream? ideaConFile = null;
-            //var response = instance.UploadIdeaCon(ideaConFile);
-            //Assert.IsType<ConProject>(response);
         }
     }
 }

@@ -23,123 +23,123 @@ namespace connection_restapi_client_poc.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPresentationApiSync : IApiAccessor
+    public interface IOperationApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Returns data for scene3D
+        /// Delete all operations for the connection
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the open project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to be presented to scene3D</param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be modified</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DrawData</returns>
-        DrawData GetDataScene3D(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns></returns>
+        void DeleteOperations(Guid projectId, int connectionId, int operationIndex = 0);
 
         /// <summary>
-        /// Returns data for scene3D
+        /// Delete all operations for the connection
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the open project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to be presented to scene3D</param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be modified</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DrawData</returns>
-        ApiResponse<DrawData> GetDataScene3DWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteOperationsWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
         /// <summary>
-        /// Return serialized data for scene3D in json format
+        /// Get the list of operations for the connection
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the requested connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>string</returns>
-        string GetDataScene3DText(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>List&lt;ConOperation&gt;</returns>
+        List<ConOperation> GetOperations(Guid projectId, int connectionId, int operationIndex = 0);
 
         /// <summary>
-        /// Return serialized data for scene3D in json format
+        /// Get the list of operations for the connection
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the requested connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> GetDataScene3DTextWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;ConOperation&gt;</returns>
+        ApiResponse<List<ConOperation>> GetOperationsWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPresentationApiAsync : IApiAccessor
+    public interface IOperationApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Returns data for scene3D
+        /// Delete all operations for the connection
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the open project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to be presented to scene3D</param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be modified</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DrawData</returns>
-        System.Threading.Tasks.Task<DrawData> GetDataScene3DAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteOperationsAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// Returns data for scene3D
+        /// Delete all operations for the connection
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the open project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to be presented to scene3D</param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be modified</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DrawData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DrawData>> GetDataScene3DWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteOperationsWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
-        /// Return serialized data for scene3D in json format
+        /// Get the list of operations for the connection
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the requested connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> GetDataScene3DTextAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;ConOperation&gt;</returns>
+        System.Threading.Tasks.Task<List<ConOperation>> GetOperationsAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// Return serialized data for scene3D in json format
+        /// Get the list of operations for the connection
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the requested connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> GetDataScene3DTextWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;ConOperation&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ConOperation>>> GetOperationsWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPresentationApi : IPresentationApiSync, IPresentationApiAsync
+    public interface IOperationApi : IOperationApiSync, IOperationApiAsync
     {
 
     }
@@ -147,23 +147,23 @@ namespace connection_restapi_client_poc.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class PresentationApi : IPresentationApi
+    public partial class OperationApi : IOperationApi
     {
         private connection_restapi_client_poc.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PresentationApi"/> class.
+        /// Initializes a new instance of the <see cref="OperationApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PresentationApi() : this((string)null)
+        public OperationApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PresentationApi"/> class.
+        /// Initializes a new instance of the <see cref="OperationApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PresentationApi(string basePath)
+        public OperationApi(string basePath)
         {
             this.Configuration = connection_restapi_client_poc.Client.Configuration.MergeConfigurations(
                 connection_restapi_client_poc.Client.GlobalConfiguration.Instance,
@@ -175,12 +175,12 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PresentationApi"/> class
+        /// Initializes a new instance of the <see cref="OperationApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public PresentationApi(connection_restapi_client_poc.Client.Configuration configuration)
+        public OperationApi(connection_restapi_client_poc.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -194,13 +194,13 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PresentationApi"/> class
+        /// Initializes a new instance of the <see cref="OperationApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public PresentationApi(connection_restapi_client_poc.Client.ISynchronousClient client, connection_restapi_client_poc.Client.IAsynchronousClient asyncClient, connection_restapi_client_poc.Client.IReadableConfiguration configuration)
+        public OperationApi(connection_restapi_client_poc.Client.ISynchronousClient client, connection_restapi_client_poc.Client.IAsynchronousClient asyncClient, connection_restapi_client_poc.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -254,28 +254,27 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Returns data for scene3D 
+        /// Delete all operations for the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the open project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to be presented to scene3D</param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be modified</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DrawData</returns>
-        public DrawData GetDataScene3D(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns></returns>
+        public void DeleteOperations(Guid projectId, int connectionId, int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<DrawData> localVarResponse = GetDataScene3DWithHttpInfo(projectId, connectionId);
-            return localVarResponse.Data;
+            DeleteOperationsWithHttpInfo(projectId, connectionId);
         }
 
         /// <summary>
-        /// Returns data for scene3D 
+        /// Delete all operations for the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the open project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to be presented to scene3D</param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be modified</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DrawData</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<DrawData> GetDataScene3DWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<Object> DeleteOperationsWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -284,7 +283,6 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -302,15 +300,15 @@ namespace connection_restapi_client_poc.Api
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
 
-            localVarRequestOptions.Operation = "PresentationApi.GetDataScene3D";
+            localVarRequestOptions.Operation = "OperationApi.DeleteOperations";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<DrawData>("/api/1/projects/{projectId}/connections/{connectionId}/presentations", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/api/1/projects/{projectId}/connections/{connectionId}/operations", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetDataScene3D", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteOperations", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -321,30 +319,29 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Returns data for scene3D 
+        /// Delete all operations for the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the open project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to be presented to scene3D</param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be modified</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DrawData</returns>
-        public async System.Threading.Tasks.Task<DrawData> GetDataScene3DAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteOperationsAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<DrawData> localVarResponse = await GetDataScene3DWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await DeleteOperationsWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Returns data for scene3D 
+        /// Delete all operations for the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the open project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to be presented to scene3D</param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the connection to be modified</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DrawData)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<DrawData>> GetDataScene3DWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<Object>> DeleteOperationsWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -354,7 +351,6 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -372,16 +368,16 @@ namespace connection_restapi_client_poc.Api
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
 
-            localVarRequestOptions.Operation = "PresentationApi.GetDataScene3D";
+            localVarRequestOptions.Operation = "OperationApi.DeleteOperations";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<DrawData>("/api/1/projects/{projectId}/connections/{connectionId}/presentations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/1/projects/{projectId}/connections/{connectionId}/operations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetDataScene3D", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteOperations", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -392,28 +388,28 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Return serialized data for scene3D in json format 
+        /// Get the list of operations for the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the requested connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>string</returns>
-        public string GetDataScene3DText(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns>List&lt;ConOperation&gt;</returns>
+        public List<ConOperation> GetOperations(Guid projectId, int connectionId, int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = GetDataScene3DTextWithHttpInfo(projectId, connectionId);
+            connection_restapi_client_poc.Client.ApiResponse<List<ConOperation>> localVarResponse = GetOperationsWithHttpInfo(projectId, connectionId);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Return serialized data for scene3D in json format 
+        /// Get the list of operations for the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the requested connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of string</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<string> GetDataScene3DTextWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;ConOperation&gt;</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<List<ConOperation>> GetOperationsWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -422,7 +418,6 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
                 "application/json"
             };
 
@@ -441,15 +436,15 @@ namespace connection_restapi_client_poc.Api
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
 
-            localVarRequestOptions.Operation = "PresentationApi.GetDataScene3DText";
+            localVarRequestOptions.Operation = "OperationApi.GetOperations";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<string>("/api/1/projects/{projectId}/connections/{connectionId}/presentations/text", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<ConOperation>>("/api/1/projects/{projectId}/connections/{connectionId}/operations", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetDataScene3DText", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetOperations", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -460,30 +455,30 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Return serialized data for scene3D in json format 
+        /// Get the list of operations for the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the requested connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> GetDataScene3DTextAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;ConOperation&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ConOperation>> GetOperationsAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await GetDataScene3DTextWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<List<ConOperation>> localVarResponse = await GetOperationsWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Return serialized data for scene3D in json format 
+        /// Get the list of operations for the connection 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
+        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
+        /// <param name="connectionId">Id of the requested connection</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> GetDataScene3DTextWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;ConOperation&gt;)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ConOperation>>> GetOperationsWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -493,7 +488,6 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
                 "application/json"
             };
 
@@ -512,16 +506,16 @@ namespace connection_restapi_client_poc.Api
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
 
-            localVarRequestOptions.Operation = "PresentationApi.GetDataScene3DText";
+            localVarRequestOptions.Operation = "OperationApi.GetOperations";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/api/1/projects/{projectId}/connections/{connectionId}/presentations/text", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ConOperation>>("/api/1/projects/{projectId}/connections/{connectionId}/operations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetDataScene3DText", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetOperations", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

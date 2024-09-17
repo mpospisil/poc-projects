@@ -5,7 +5,7 @@ info:
 servers:
 - url: /
 paths:
-  /api/1/projects/{projectId}/calculate:
+  /api/1/projects/{projectId}/connections/calculate:
     post:
       operationId: Calculate
       parameters:
@@ -37,7 +37,7 @@ paths:
       summary: Run CBFEM caluclation and return the summary of the results
       tags:
       - Calculation
-  /api/1/projects/{projectId}/results:
+  /api/1/projects/{projectId}/connections/results:
     post:
       operationId: GetResults
       parameters:
@@ -69,7 +69,7 @@ paths:
       summary: Get detailed results of the CBFEM analysis
       tags:
       - Calculation
-  /api/1/projects/{projectId}/rawresults-text:
+  /api/1/projects/{projectId}/connections/rawresults-text:
     post:
       operationId: GetRawJsonResults
       parameters:
@@ -102,6 +102,36 @@ paths:
         CheckResultsData)
       tags:
       - Calculation
+  /api/1/clients/connect-client:
+    get:
+      operationId: ConnectClient
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+          description: Success
+      summary: Connect a client to the ConnectionRestApi service. Method returns a
+        unique identifier of the client.
+      tags:
+      - Client
+  /api/1/clients/idea-service-version:
+    get:
+      operationId: GetVersion
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Success
+      summary: Get the IdeaStatica version
+      tags:
+      - Client
   /api/1/projects/{projectId}/connections:
     get:
       operationId: GetAllConnectionsData
@@ -197,108 +227,6 @@ paths:
                 $ref: '#/components/schemas/ConConnection'
           description: Success
       summary: Update data of a specific connection in the project
-      tags:
-      - Connection
-  /api/1/projects/{projectId}/connections/{connectionId}/operations:
-    delete:
-      operationId: DeleteOperations
-      parameters:
-      - description: The unique identifier of the opened project in the ConnectionRestApi
-          service
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: uuid
-          type: string
-        style: simple
-      - description: Id of the connection to be modified
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/OkObjectResult'
-          description: Success
-      summary: Delete all operations for the connection
-      tags:
-      - Connection
-    get:
-      operationId: GetOperations
-      parameters:
-      - description: The unique identifier of the opened project in the ConnectionRestApi
-          service
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: uuid
-          type: string
-        style: simple
-      - description: Id of the requested connection
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ConOperation'
-                type: array
-          description: Success
-      summary: Get the list of operations for the connection
-      tags:
-      - Connection
-  /api/1/projects/{projectId}/connections/{connectionId}/missing-welds:
-    get:
-      operationId: GetMissingWelds
-      parameters:
-      - description: The unique identifier of the opened project in the ConnectionRestApi
-          service
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: uuid
-          type: string
-        style: simple
-      - description: Id of the requested connection in the project
-        explode: false
-        in: path
-        name: connectionId
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ConMissingWeld'
-                type: array
-          description: Success
-      summary: Get missing welds in the connection
       tags:
       - Connection
   /api/1/projects/{projectId}/connections/{connectionId}/production-cost:
@@ -1166,6 +1094,69 @@ paths:
       summary: Update the member in the connection by newMemberData
       tags:
       - Member
+  /api/1/projects/{projectId}/connections/{connectionId}/operations:
+    delete:
+      operationId: DeleteOperations
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: Id of the connection to be modified
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Success
+      summary: Delete all operations for the connection
+      tags:
+      - Operation
+    get:
+      operationId: GetOperations
+      parameters:
+      - description: The unique identifier of the opened project in the ConnectionRestApi
+          service
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: Id of the requested connection
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ConOperation'
+                type: array
+          description: Success
+      summary: Get the list of operations for the connection
+      tags:
+      - Operation
   /api/1/projects/{projectId}/connections/{connectionId}/parameters:
     get:
       operationId: GetParameters
@@ -1292,7 +1283,7 @@ paths:
       summary: Evaluate the expression and return the result
       tags:
       - Parameter
-  /api/1/projects/{projectId}/connections/{connectionId}/presentation:
+  /api/1/projects/{projectId}/connections/{connectionId}/presentations:
     get:
       operationId: GetDataScene3D
       parameters:
@@ -1325,7 +1316,7 @@ paths:
       summary: Returns data for scene3D
       tags:
       - Presentation
-  /api/1/projects/{projectId}/connections/{connectionId}/presentation/text:
+  /api/1/projects/{projectId}/connections/{connectionId}/presentations/text:
     get:
       operationId: GetDataScene3DText
       parameters:
@@ -1360,40 +1351,9 @@ paths:
       summary: Return serialized data for scene3D in json format
       tags:
       - Presentation
-  /api/1/connect-client:
-    get:
-      operationId: ConnectClient
-      responses:
-        "200":
-          content:
-            text/plain:
-              schema:
-                type: string
-            application/json:
-              schema:
-                type: string
-          description: Success
-      summary: Connect a client to the ConnectionRestApi service. Method returns a
-        unique identifier of the client.
-      tags:
-      - Project
   /api/1/projects/open:
     post:
       operationId: OpenProject
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ConProject'
-          description: Success
-      summary: "Open ideacon project which is passed in the body of the request\r\n\
-        TODO - should be the parameter of the method"
-      tags:
-      - Project
-  /api/1/projects/upload-ideacon:
-    post:
-      operationId: UploadIdeaCon
       requestBody:
         content:
           multipart/form-data:
@@ -1401,13 +1361,13 @@ paths:
               ideaConFile:
                 style: form
             schema:
-              $ref: '#/components/schemas/UploadIdeaCon_request'
+              $ref: '#/components/schemas/OpenProject_request'
           application/json:
             encoding:
               ideaConFile:
                 style: form
             schema:
-              $ref: '#/components/schemas/UploadIdeaCon_request'
+              $ref: '#/components/schemas/OpenProject_request'
       responses:
         "200":
           content:
@@ -1453,7 +1413,7 @@ paths:
                 type: array
           description: Success
       summary: Get the list of projects in the service which were opened by the client
-        which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ProjectController.ConnectClient
+        which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ClientController.ConnectClient
       tags:
       - Project
   /api/1/projects/{projectId}/download:
@@ -1484,7 +1444,7 @@ paths:
         changes which were made by previous API calls.
       tags:
       - Project
-  /api/1/projects/{projectId}/project-data:
+  /api/1/projects/{projectId}:
     get:
       operationId: GetProjectData
       parameters:
@@ -1502,9 +1462,37 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ConProjectData'
+                $ref: '#/components/schemas/ConProject'
           description: Success
       summary: Get data of the project.
+      tags:
+      - Project
+    put:
+      operationId: UpdateProjectData
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConProjectData'
+        description: ""
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConProject'
+          description: Success
+      summary: Updates ConProjectData of project
       tags:
       - Project
   /api/1/projects/import-iom-file:
@@ -1866,18 +1854,6 @@ paths:
         connectionId in the project projectId
       tags:
       - Template
-  /api/1/version:
-    get:
-      operationId: GetVersion
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                type: string
-          description: Success
-      tags:
-      - Version
 components:
   schemas:
     Anchor3D:
@@ -2996,42 +2972,6 @@ components:
           nullable: true
           type: string
         active:
-          type: boolean
-      type: object
-    ConMissingWeld:
-      additionalProperties: false
-      example:
-        surfacePlate: surfacePlate
-        weldSize: 1.4658129805029452
-        edgePlate: edgePlate
-        weldTypeCode: weldTypeCode
-        weldMaterialName: weldMaterialName
-        edgeIndex: 0
-        surfaceIndex: 6
-        isHollow_OrUncoiledSection: true
-      properties:
-        edgePlate:
-          nullable: true
-          type: string
-        surfacePlate:
-          nullable: true
-          type: string
-        edgeIndex:
-          format: int32
-          type: integer
-        surfaceIndex:
-          format: int32
-          type: integer
-        weldSize:
-          format: double
-          type: number
-        weldTypeCode:
-          nullable: true
-          type: string
-        weldMaterialName:
-          nullable: true
-          type: string
-        isHollow_OrUncoiledSection:
           type: boolean
       type: object
     ConMprlCrossSection:
@@ -5673,9 +5613,6 @@ components:
           nullable: true
           type: array
       type: object
-    IOutputFormatter:
-      additionalProperties: false
-      type: object
     ISDModel:
       additionalProperties: false
       description: Model of IDEA StatiCa Detail
@@ -6708,39 +6645,6 @@ components:
       - errOperation
       - reserved
       type: string
-    OkObjectResult:
-      additionalProperties: false
-      example:
-        formatters:
-        - null
-        - null
-        declaredType: declaredType
-        contentTypes:
-        - contentTypes
-        - contentTypes
-        value: ""
-        statusCode: 0
-      properties:
-        value:
-          nullable: true
-        formatters:
-          items:
-            $ref: '#/components/schemas/IOutputFormatter'
-          nullable: true
-          type: array
-        contentTypes:
-          items:
-            type: string
-          nullable: true
-          type: array
-        declaredType:
-          nullable: true
-          type: string
-        statusCode:
-          format: int32
-          nullable: true
-          type: integer
-      type: object
     OpenAttribute:
       additionalProperties: false
       description: Open attribute base class
@@ -15416,7 +15320,7 @@ components:
       - maxCapacityCalculationNegative
       - horizontalTyingCalculation
       type: string
-    UploadIdeaCon_request:
+    OpenProject_request:
       properties:
         ideaConFile:
           format: binary

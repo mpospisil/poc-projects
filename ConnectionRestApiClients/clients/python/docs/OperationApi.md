@@ -1,24 +1,23 @@
-# connection_restapi_client_poc.PresentationApi
+# connection_restapi_client_poc.OperationApi
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_data_scene3_d**](PresentationApi.md#get_data_scene3_d) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/presentations | Returns data for scene3D
-[**get_data_scene3_d_text**](PresentationApi.md#get_data_scene3_d_text) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/presentations/text | Return serialized data for scene3D in json format
+[**delete_operations**](OperationApi.md#delete_operations) | **DELETE** /api/1/projects/{projectId}/connections/{connectionId}/operations | Delete all operations for the connection
+[**get_operations**](OperationApi.md#get_operations) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/operations | Get the list of operations for the connection
 
 
-# **get_data_scene3_d**
-> DrawData get_data_scene3_d(project_id, connection_id)
+# **delete_operations**
+> delete_operations(project_id, connection_id)
 
-Returns data for scene3D
+Delete all operations for the connection
 
 ### Example
 
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.draw_data import DrawData
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -32,17 +31,15 @@ configuration = connection_restapi_client_poc.Configuration(
 # Enter a context with an instance of the API client
 with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.PresentationApi(api_client)
-    project_id = 'project_id_example' # str | The unique identifier of the open project in the ConnectionRestApi service
-    connection_id = 56 # int | Id of the connection to be presented to scene3D
+    api_instance = connection_restapi_client_poc.OperationApi(api_client)
+    project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
+    connection_id = 56 # int | Id of the connection to be modified
 
     try:
-        # Returns data for scene3D
-        api_response = api_instance.get_data_scene3_d(project_id, connection_id)
-        print("The response of PresentationApi->get_data_scene3_d:\n")
-        pprint(api_response)
+        # Delete all operations for the connection
+        api_instance.delete_operations(project_id, connection_id)
     except Exception as e:
-        print("Exception when calling PresentationApi->get_data_scene3_d: %s\n" % e)
+        print("Exception when calling OperationApi->delete_operations: %s\n" % e)
 ```
 
 
@@ -52,12 +49,12 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| The unique identifier of the open project in the ConnectionRestApi service | 
- **connection_id** | **int**| Id of the connection to be presented to scene3D | 
+ **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
+ **connection_id** | **int**| Id of the connection to be modified | 
 
 ### Return type
 
-[**DrawData**](DrawData.md)
+void (empty response body)
 
 ### Authorization
 
@@ -66,7 +63,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -76,16 +73,17 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_data_scene3_d_text**
-> str get_data_scene3_d_text(project_id, connection_id)
+# **get_operations**
+> List[ConOperation] get_operations(project_id, connection_id)
 
-Return serialized data for scene3D in json format
+Get the list of operations for the connection
 
 ### Example
 
 
 ```python
 import connection_restapi_client_poc
+from connection_restapi_client_poc.models.con_operation import ConOperation
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -99,17 +97,17 @@ configuration = connection_restapi_client_poc.Configuration(
 # Enter a context with an instance of the API client
 with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.PresentationApi(api_client)
-    project_id = 'project_id_example' # str | 
-    connection_id = 56 # int | 
+    api_instance = connection_restapi_client_poc.OperationApi(api_client)
+    project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
+    connection_id = 56 # int | Id of the requested connection
 
     try:
-        # Return serialized data for scene3D in json format
-        api_response = api_instance.get_data_scene3_d_text(project_id, connection_id)
-        print("The response of PresentationApi->get_data_scene3_d_text:\n")
+        # Get the list of operations for the connection
+        api_response = api_instance.get_operations(project_id, connection_id)
+        print("The response of OperationApi->get_operations:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PresentationApi->get_data_scene3_d_text: %s\n" % e)
+        print("Exception when calling OperationApi->get_operations: %s\n" % e)
 ```
 
 
@@ -119,12 +117,12 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**|  | 
- **connection_id** | **int**|  | 
+ **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
+ **connection_id** | **int**| Id of the requested connection | 
 
 ### Return type
 
-**str**
+[**List[ConOperation]**](ConOperation.md)
 
 ### Authorization
 
@@ -133,7 +131,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 

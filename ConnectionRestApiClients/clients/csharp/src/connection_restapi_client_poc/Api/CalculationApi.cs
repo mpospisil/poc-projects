@@ -357,7 +357,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<ConResultSummary>>("/api/1/projects/{projectId}/calculate", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<ConResultSummary>>("/api/1/projects/{projectId}/connections/calculate", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("Calculate", localVarResponse);
@@ -428,7 +428,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ConResultSummary>>("/api/1/projects/{projectId}/calculate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ConResultSummary>>("/api/1/projects/{projectId}/connections/calculate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -497,7 +497,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<string>>("/api/1/projects/{projectId}/rawresults-text", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<string>>("/api/1/projects/{projectId}/connections/rawresults-text", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetRawJsonResults", localVarResponse);
@@ -568,7 +568,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<string>>("/api/1/projects/{projectId}/rawresults-text", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<string>>("/api/1/projects/{projectId}/connections/rawresults-text", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -637,7 +637,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<ConnectionCheckRes>>("/api/1/projects/{projectId}/results", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<ConnectionCheckRes>>("/api/1/projects/{projectId}/connections/results", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetResults", localVarResponse);
@@ -708,7 +708,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ConnectionCheckRes>>("/api/1/projects/{projectId}/results", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ConnectionCheckRes>>("/api/1/projects/{projectId}/connections/results", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

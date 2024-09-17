@@ -28,7 +28,7 @@ const ConnectionList: React.FC = () => {
         return;
       }
 
-    const url = `http://localhost:5000/api/1/projects/${projectId}/connections/${conId}/presentation`;
+    const url = `/api/1/projects/${projectId}/connections/${conId}/presentation`;
     const reqHeaders = new Headers();
     reqHeaders.append('ClientId', clientId!);
     reqHeaders.append('Content-Type', 'application/json');
@@ -67,7 +67,7 @@ const ConnectionList: React.FC = () => {
     }
 
     const calcParam : any = {
-      analysisType : " stress_Strain",
+      analysisType : "stress_Strain",
       connectionIds : [conId],
     };
 
@@ -81,7 +81,7 @@ const ConnectionList: React.FC = () => {
       body: JSON.stringify(calcParam),
     };
 
-    const url = `http://localhost:5000/api/1/projects/${projectId}/calculate`;
+    const url = `/api/1/projects/${projectId}/calculate`;
     const req = new Request(url, options); 
 
     fetch(req)

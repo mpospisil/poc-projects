@@ -28,7 +28,7 @@ const ConnectionList: React.FC = () => {
         return;
       }
 
-    const url = `/api/1/projects/${projectId}/connections/${conId}/presentation`;
+    const url = `/api/1/projects/${projectId}/connections/${conId}/presentations/text`;
     const reqHeaders = new Headers();
     reqHeaders.append('ClientId', clientId!);
     reqHeaders.append('Content-Type', 'application/json');

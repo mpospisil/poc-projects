@@ -15,3 +15,12 @@ run _pip install ._
 
 # Get author template
 docker run --rm -v "${PWD}/template:/templates" openapitools/openapi-generator-cli author templates -g python -o ./template
+
+# Build and publish node.js package
+```sh
+npm install
+npm run build
+npm login
+npm publish
+```
+

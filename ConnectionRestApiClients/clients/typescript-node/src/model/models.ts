@@ -28,7 +28,7 @@ export * from './conLoadEffect';
 export * from './conLoadEffectMemberLoad';
 export * from './conLoadEffectPositionEnum';
 export * from './conLoadEffectSectionLoad';
-export * from './conLoadingOptions';
+export * from './conLoadSettings';
 export * from './conMember';
 export * from './conMprlCrossSection';
 export * from './conMprlElement';
@@ -203,7 +203,7 @@ import { ConLoadEffect } from './conLoadEffect';
 import { ConLoadEffectMemberLoad } from './conLoadEffectMemberLoad';
 import { ConLoadEffectPositionEnum } from './conLoadEffectPositionEnum';
 import { ConLoadEffectSectionLoad } from './conLoadEffectSectionLoad';
-import { ConLoadingOptions } from './conLoadingOptions';
+import { ConLoadSettings } from './conLoadSettings';
 import { ConMember } from './conMember';
 import { ConMprlCrossSection } from './conMprlCrossSection';
 import { ConMprlElement } from './conMprlElement';
@@ -405,7 +405,7 @@ let typeMap: {[index: string]: any} = {
     "ConLoadEffect": ConLoadEffect,
     "ConLoadEffectMemberLoad": ConLoadEffectMemberLoad,
     "ConLoadEffectSectionLoad": ConLoadEffectSectionLoad,
-    "ConLoadingOptions": ConLoadingOptions,
+    "ConLoadSettings": ConLoadSettings,
     "ConMember": ConMember,
     "ConMprlCrossSection": ConMprlCrossSection,
     "ConMprlElement": ConMprlElement,

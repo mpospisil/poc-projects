@@ -20,7 +20,6 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from connection_restapi_client_poc.models.con_analysis_type_enum import ConAnalysisTypeEnum
-from connection_restapi_client_poc.models.con_loading_options import ConLoadingOptions
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,10 +32,9 @@ class ConConnection(BaseModel):
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     analysis_type: Optional[ConAnalysisTypeEnum] = Field(default=None, alias="analysisType")
-    load_options: Optional[ConLoadingOptions] = Field(default=None, alias="loadOptions")
     bearing_member_id: Optional[StrictInt] = Field(default=None, alias="bearingMemberId")
     is_calculated: Optional[StrictBool] = Field(default=None, alias="isCalculated")
-    __properties: ClassVar[List[str]] = ["id", "identifier", "name", "description", "analysisType", "loadOptions", "bearingMemberId", "isCalculated"]
+    __properties: ClassVar[List[str]] = ["id", "identifier", "name", "description", "analysisType", "bearingMemberId", "isCalculated"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,9 +77,6 @@ class ConConnection(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of load_options
-        if self.load_options:
-            _dict['loadOptions'] = self.load_options.to_dict()
         # set to None if identifier (nullable) is None
         # and model_fields_set contains the field
         if self.identifier is None and "identifier" in self.model_fields_set:
@@ -114,7 +109,6 @@ class ConConnection(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "analysisType": obj.get("analysisType"),
-            "loadOptions": ConLoadingOptions.from_dict(obj["loadOptions"]) if obj.get("loadOptions") is not None else None,
             "bearingMemberId": obj.get("bearingMemberId"),
             "isCalculated": obj.get("isCalculated")
         })

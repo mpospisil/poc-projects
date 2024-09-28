@@ -26,17 +26,17 @@ using OpenAPIDateConverter = connection_restapi_client_poc.Client.OpenAPIDateCon
 namespace connection_restapi_client_poc.Model
 {
     /// <summary>
-    /// ConLoadingOptions
+    /// ConLoadSettings
     /// </summary>
-    [DataContract(Name = "ConLoadingOptions")]
-    public partial class ConLoadingOptions : IValidatableObject
+    [DataContract(Name = "ConLoadSettings")]
+    public partial class ConLoadSettings : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConLoadingOptions" /> class.
+        /// Initializes a new instance of the <see cref="ConLoadSettings" /> class.
         /// </summary>
         /// <param name="loadsInEquilibrium">loadsInEquilibrium.</param>
         /// <param name="loadsInPercentage">loadsInPercentage.</param>
-        public ConLoadingOptions(bool loadsInEquilibrium = default(bool), bool loadsInPercentage = default(bool))
+        public ConLoadSettings(bool loadsInEquilibrium = default(bool), bool loadsInPercentage = default(bool))
         {
             this.LoadsInEquilibrium = loadsInEquilibrium;
             this.LoadsInPercentage = loadsInPercentage;
@@ -61,7 +61,7 @@ namespace connection_restapi_client_poc.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ConLoadingOptions {\n");
+            sb.Append("class ConLoadSettings {\n");
             sb.Append("  LoadsInEquilibrium: ").Append(LoadsInEquilibrium).Append("\n");
             sb.Append("  LoadsInPercentage: ").Append(LoadsInPercentage).Append("\n");
             sb.Append("}\n");

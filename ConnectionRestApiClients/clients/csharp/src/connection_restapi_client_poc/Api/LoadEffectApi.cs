@@ -125,18 +125,17 @@ namespace connection_restapi_client_poc.Api
         /// <returns>ApiResponse of List&lt;ConLoadEffect&gt;</returns>
         ApiResponse<List<ConLoadEffect>> GetLoadEffectsWithHttpInfo(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0);
         /// <summary>
-        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId
+        /// Get Load settings for connection in project
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>bool</returns>
-        bool SetLoadsInEquilibrium(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0);
+        /// <returns>ConLoadSettings</returns>
+        ConLoadSettings GetLoadSettings(Guid projectId, int connectionId, int operationIndex = 0);
 
         /// <summary>
-        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId
+        /// Get Load settings for connection in project
         /// </summary>
         /// <remarks>
         /// 
@@ -144,10 +143,33 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of bool</returns>
-        ApiResponse<bool> SetLoadsInEquilibriumWithHttpInfo(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0);
+        /// <returns>ApiResponse of ConLoadSettings</returns>
+        ApiResponse<ConLoadSettings> GetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <summary>
+        /// Set Load settings for connection in project
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ConLoadSettings</returns>
+        ConLoadSettings SetLoadSettings(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0);
+
+        /// <summary>
+        /// Set Load settings for connection in project
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ConLoadSettings</returns>
+        ApiResponse<ConLoadSettings> SetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0);
         /// <summary>
         /// Update load impulses in loadEffectId
         /// </summary>
@@ -302,7 +324,7 @@ namespace connection_restapi_client_poc.Api
         /// <returns>Task of ApiResponse (List&lt;ConLoadEffect&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ConLoadEffect>>> GetLoadEffectsWithHttpInfoAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
-        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId
+        /// Get Load settings for connection in project
         /// </summary>
         /// <remarks>
         /// 
@@ -310,14 +332,13 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of bool</returns>
-        System.Threading.Tasks.Task<bool> SetLoadsInEquilibriumAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ConLoadSettings</returns>
+        System.Threading.Tasks.Task<ConLoadSettings> GetLoadSettingsAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId
+        /// Get Load settings for connection in project
         /// </summary>
         /// <remarks>
         /// 
@@ -325,11 +346,39 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (bool)</returns>
-        System.Threading.Tasks.Task<ApiResponse<bool>> SetLoadsInEquilibriumWithHttpInfoAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConLoadSettings)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConLoadSettings>> GetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Set Load settings for connection in project
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ConLoadSettings</returns>
+        System.Threading.Tasks.Task<ConLoadSettings> SetLoadSettingsAsync(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Set Load settings for connection in project
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ConLoadSettings)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConLoadSettings>> SetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update load impulses in loadEffectId
         /// </summary>
@@ -1078,30 +1127,28 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId 
+        /// Get Load settings for connection in project 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>bool</returns>
-        public bool SetLoadsInEquilibrium(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0)
+        /// <returns>ConLoadSettings</returns>
+        public ConLoadSettings GetLoadSettings(Guid projectId, int connectionId, int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<bool> localVarResponse = SetLoadsInEquilibriumWithHttpInfo(projectId, connectionId, loadsInEquilibrium);
+            connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> localVarResponse = GetLoadSettingsWithHttpInfo(projectId, connectionId);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId 
+        /// Get Load settings for connection in project 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of bool</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<bool> SetLoadsInEquilibriumWithHttpInfo(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0)
+        /// <returns>ApiResponse of ConLoadSettings</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> GetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1127,20 +1174,16 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            if (loadsInEquilibrium != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "loadsInEquilibrium", loadsInEquilibrium));
-            }
 
-            localVarRequestOptions.Operation = "LoadEffectApi.SetLoadsInEquilibrium";
+            localVarRequestOptions.Operation = "LoadEffectApi.GetLoadSettings";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<bool>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ConLoadSettings>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/get-load-settings", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SetLoadsInEquilibrium", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetLoadSettings", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1151,32 +1194,30 @@ namespace connection_restapi_client_poc.Api
         }
 
         /// <summary>
-        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId 
+        /// Get Load settings for connection in project 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of bool</returns>
-        public async System.Threading.Tasks.Task<bool> SetLoadsInEquilibriumAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ConLoadSettings</returns>
+        public async System.Threading.Tasks.Task<ConLoadSettings> GetLoadSettingsAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<bool> localVarResponse = await SetLoadsInEquilibriumWithHttpInfoAsync(projectId, connectionId, loadsInEquilibrium, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> localVarResponse = await GetLoadSettingsWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Update the option &#39;LoadsInEquilibrium&#39; for connectionId 
+        /// Get Load settings for connection in project 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
-        /// <param name="loadsInEquilibrium">Value to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (bool)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<bool>> SetLoadsInEquilibriumWithHttpInfoAsync(Guid projectId, int connectionId, bool? loadsInEquilibrium = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ConLoadSettings)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings>> GetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1203,21 +1244,163 @@ namespace connection_restapi_client_poc.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
-            if (loadsInEquilibrium != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("", "loadsInEquilibrium", loadsInEquilibrium));
-            }
 
-            localVarRequestOptions.Operation = "LoadEffectApi.SetLoadsInEquilibrium";
+            localVarRequestOptions.Operation = "LoadEffectApi.GetLoadSettings";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<bool>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ConLoadSettings>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/get-load-settings", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SetLoadsInEquilibrium", localVarResponse);
+                Exception _exception = this.ExceptionFactory("GetLoadSettings", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set Load settings for connection in project 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ConLoadSettings</returns>
+        public ConLoadSettings SetLoadSettings(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> localVarResponse = SetLoadSettingsWithHttpInfo(projectId, connectionId, conLoadSettings);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set Load settings for connection in project 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ConLoadSettings</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> SetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0)
+        {
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+            localVarRequestOptions.Data = conLoadSettings;
+
+            localVarRequestOptions.Operation = "LoadEffectApi.SetLoadSettings";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<ConLoadSettings>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-load-settings", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetLoadSettings", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set Load settings for connection in project 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ConLoadSettings</returns>
+        public async System.Threading.Tasks.Task<ConLoadSettings> SetLoadSettingsAsync(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> localVarResponse = await SetLoadSettingsWithHttpInfoAsync(projectId, connectionId, conLoadSettings, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set Load settings for connection in project 
+        /// </summary>
+        /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ConLoadSettings)</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings>> SetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("connectionId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(connectionId)); // path parameter
+            localVarRequestOptions.Data = conLoadSettings;
+
+            localVarRequestOptions.Operation = "LoadEffectApi.SetLoadSettings";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ConLoadSettings>("/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-load-settings", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetLoadSettings", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

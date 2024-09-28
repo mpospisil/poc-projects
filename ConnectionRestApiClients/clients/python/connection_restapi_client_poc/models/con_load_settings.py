@@ -22,9 +22,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ConLoadingOptions(BaseModel):
+class ConLoadSettings(BaseModel):
     """
-    ConLoadingOptions
+    ConLoadSettings
     """ # noqa: E501
     loads_in_equilibrium: Optional[StrictBool] = Field(default=None, alias="loadsInEquilibrium")
     loads_in_percentage: Optional[StrictBool] = Field(default=None, alias="loadsInPercentage")
@@ -48,7 +48,7 @@ class ConLoadingOptions(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ConLoadingOptions from a JSON string"""
+        """Create an instance of ConLoadSettings from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,7 +73,7 @@ class ConLoadingOptions(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ConLoadingOptions from a dict"""
+        """Create an instance of ConLoadSettings from a dict"""
         if obj is None:
             return None
 

@@ -52,7 +52,7 @@ connection_restapi_client_poc/models/con_load_effect.py
 connection_restapi_client_poc/models/con_load_effect_member_load.py
 connection_restapi_client_poc/models/con_load_effect_position_enum.py
 connection_restapi_client_poc/models/con_load_effect_section_load.py
-connection_restapi_client_poc/models/con_loading_options.py
+connection_restapi_client_poc/models/con_load_settings.py
 connection_restapi_client_poc/models/con_member.py
 connection_restapi_client_poc/models/con_mprl_cross_section.py
 connection_restapi_client_poc/models/con_mprl_element.py
@@ -217,7 +217,7 @@ docs/ConLoadEffect.md
 docs/ConLoadEffectMemberLoad.md
 docs/ConLoadEffectPositionEnum.md
 docs/ConLoadEffectSectionLoad.md
-docs/ConLoadingOptions.md
+docs/ConLoadSettings.md
 docs/ConMember.md
 docs/ConMprlCrossSection.md
 docs/ConMprlElement.md
@@ -398,7 +398,7 @@ test/test_con_load_effect.py
 test/test_con_load_effect_member_load.py
 test/test_con_load_effect_position_enum.py
 test/test_con_load_effect_section_load.py
-test/test_con_loading_options.py
+test/test_con_load_settings.py
 test/test_con_member.py
 test/test_con_mprl_cross_section.py
 test/test_con_mprl_element.py

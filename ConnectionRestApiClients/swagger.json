@@ -777,13 +777,13 @@
         }
       }
     },
-    "/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium": {
-      "post": {
+    "/api/1/projects/{projectId}/connections/{connectionId}/load-effects/get-load-settings": {
+      "get": {
         "tags": [
           "LoadEffect"
         ],
-        "summary": "Update the option 'LoadsInEquilibrium' for connectionId",
-        "operationId": "SetLoadsInEquilibrium",
+        "summary": "Get Load settings for connection in project",
+        "operationId": "GetLoadSettings",
         "parameters": [
           {
             "name": "projectId",
@@ -804,14 +804,6 @@
               "type": "integer",
               "format": "int32"
             }
-          },
-          {
-            "name": "loadsInEquilibrium",
-            "in": "query",
-            "description": "Value to be set",
-            "schema": {
-              "type": "boolean"
-            }
           }
         ],
         "responses": {
@@ -820,7 +812,60 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "boolean"
+                  "$ref": "#/components/schemas/ConLoadSettings"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-load-settings": {
+      "post": {
+        "tags": [
+          "LoadEffect"
+        ],
+        "summary": "Set Load settings for connection in project",
+        "operationId": "SetLoadSettings",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConLoadSettings"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConLoadSettings"
                 }
               }
             }
@@ -1458,6 +1503,59 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConMember"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}/set-bearing-member": {
+      "put": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "Set bearing member for memberIt",
+        "operationId": "SetBearingMember",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "memberId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -3286,9 +3384,6 @@
           "analysisType": {
             "$ref": "#/components/schemas/ConAnalysisTypeEnum"
           },
-          "loadOptions": {
-            "$ref": "#/components/schemas/ConLoadingOptions"
-          },
           "bearingMemberId": {
             "type": "integer",
             "format": "int32"
@@ -3380,7 +3475,7 @@
         },
         "additionalProperties": false
       },
-      "ConLoadingOptions": {
+      "ConLoadSettings": {
         "type": "object",
         "properties": {
           "loadsInEquilibrium": {

@@ -45,16 +45,14 @@ namespace connection_restapi_client_poc.Model
         /// <param name="name">name.</param>
         /// <param name="description">description.</param>
         /// <param name="analysisType">analysisType.</param>
-        /// <param name="loadOptions">loadOptions.</param>
         /// <param name="bearingMemberId">bearingMemberId.</param>
-        public ConConnection(int id = default(int), string identifier = default(string), string name = default(string), string description = default(string), ConAnalysisTypeEnum? analysisType = default(ConAnalysisTypeEnum?), ConLoadingOptions loadOptions = default(ConLoadingOptions), int bearingMemberId = default(int))
+        public ConConnection(int id = default(int), string identifier = default(string), string name = default(string), string description = default(string), ConAnalysisTypeEnum? analysisType = default(ConAnalysisTypeEnum?), int bearingMemberId = default(int))
         {
             this.Id = id;
             this.Identifier = identifier;
             this.Name = name;
             this.Description = description;
             this.AnalysisType = analysisType;
-            this.LoadOptions = loadOptions;
             this.BearingMemberId = bearingMemberId;
         }
 
@@ -81,12 +79,6 @@ namespace connection_restapi_client_poc.Model
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or Sets LoadOptions
-        /// </summary>
-        [DataMember(Name = "loadOptions", EmitDefaultValue = false)]
-        public ConLoadingOptions LoadOptions { get; set; }
 
         /// <summary>
         /// Gets or Sets BearingMemberId
@@ -121,7 +113,6 @@ namespace connection_restapi_client_poc.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  AnalysisType: ").Append(AnalysisType).Append("\n");
-            sb.Append("  LoadOptions: ").Append(LoadOptions).Append("\n");
             sb.Append("  BearingMemberId: ").Append(BearingMemberId).Append("\n");
             sb.Append("  IsCalculated: ").Append(IsCalculated).Append("\n");
             sb.Append("}\n");

@@ -100,15 +100,6 @@ namespace connection_restapi_client_poc.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'LoadOptions'
-        /// </summary>
-        [Fact]
-        public void LoadOptionsTest()
-        {
-            // TODO unit test for the property 'LoadOptions'
-        }
-
-        /// <summary>
         /// Test the property 'BearingMemberId'
         /// </summary>
         [Fact]

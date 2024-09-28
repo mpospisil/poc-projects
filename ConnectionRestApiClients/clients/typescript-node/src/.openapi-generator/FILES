@@ -44,7 +44,7 @@ model/conLoadEffect.ts
 model/conLoadEffectMemberLoad.ts
 model/conLoadEffectPositionEnum.ts
 model/conLoadEffectSectionLoad.ts
-model/conLoadingOptions.ts
+model/conLoadSettings.ts
 model/conMember.ts
 model/conMprlCrossSection.ts
 model/conMprlElement.ts

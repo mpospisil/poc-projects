@@ -12,7 +12,6 @@
 
 import { RequestFile } from './models';
 import { ConAnalysisTypeEnum } from './conAnalysisTypeEnum';
-import { ConLoadingOptions } from './conLoadingOptions';
 
 export class ConConnection {
     'id'?: number;
@@ -20,7 +19,6 @@ export class ConConnection {
     'name'?: string | null;
     'description'?: string | null;
     'analysisType'?: ConAnalysisTypeEnum;
-    'loadOptions'?: ConLoadingOptions;
     'bearingMemberId'?: number;
     'isCalculated'?: boolean;
 
@@ -51,11 +49,6 @@ export class ConConnection {
             "name": "analysisType",
             "baseName": "analysisType",
             "type": "ConAnalysisTypeEnum"
-        },
-        {
-            "name": "loadOptions",
-            "baseName": "loadOptions",
-            "type": "ConLoadingOptions"
         },
         {
             "name": "bearingMemberId",

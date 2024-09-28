@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConLoadingOptions
+# connection_restapi_client_poc.Model.ConLoadSettings
 
 ## Properties
 

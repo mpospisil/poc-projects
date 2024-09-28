@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 
-export class ConLoadingOptions {
+export class ConLoadSettings {
     'loadsInEquilibrium'?: boolean;
     'loadsInPercentage'?: boolean;
 
@@ -31,7 +31,7 @@ export class ConLoadingOptions {
         }    ];
 
     static getAttributeTypeMap() {
-        return ConLoadingOptions.attributeTypeMap;
+        return ConLoadSettings.attributeTypeMap;
     }
 }
 

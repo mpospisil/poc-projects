@@ -8,7 +8,8 @@ All URIs are relative to *http://localhost*
 | [**DeleteLoadEffect**](LoadEffectApi.md#deleteloadeffect) | **DELETE** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId} | Delete load effect loadEffectId |
 | [**GetLoadEffect**](LoadEffectApi.md#getloadeffect) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId} | Get load impulses from loadEffectId |
 | [**GetLoadEffects**](LoadEffectApi.md#getloadeffects) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/load-effects | Get all load effects which are defined in connectionId |
-| [**SetLoadsInEquilibrium**](LoadEffectApi.md#setloadsinequilibrium) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium | Update the option &#39;LoadsInEquilibrium&#39; for connectionId |
+| [**GetLoadSettings**](LoadEffectApi.md#getloadsettings) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/get-load-settings | Get Load settings for connection in project |
+| [**SetLoadSettings**](LoadEffectApi.md#setloadsettings) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-load-settings | Set Load settings for connection in project |
 | [**UpdateLoadEffect**](LoadEffectApi.md#updateloadeffect) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId} | Update load impulses in loadEffectId |
 
 <a id="addloadeffect"></a>
@@ -385,11 +386,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="setloadsinequilibrium"></a>
-# **SetLoadsInEquilibrium**
-> bool SetLoadsInEquilibrium (Guid projectId, int connectionId, bool? loadsInEquilibrium = null)
+<a id="getloadsettings"></a>
+# **GetLoadSettings**
+> ConLoadSettings GetLoadSettings (Guid projectId, int connectionId)
 
-Update the option 'LoadsInEquilibrium' for connectionId
+Get Load settings for connection in project
 
 ### Example
 ```csharp
@@ -401,7 +402,7 @@ using connection_restapi_client_poc.Model;
 
 namespace Example
 {
-    public class SetLoadsInEquilibriumExample
+    public class GetLoadSettingsExample
     {
         public static void Main()
         {
@@ -410,17 +411,16 @@ namespace Example
             var apiInstance = new LoadEffectApi(config);
             var projectId = "projectId_example";  // Guid | 
             var connectionId = 56;  // int | 
-            var loadsInEquilibrium = true;  // bool? | Value to be set (optional) 
 
             try
             {
-                // Update the option 'LoadsInEquilibrium' for connectionId
-                bool result = apiInstance.SetLoadsInEquilibrium(projectId, connectionId, loadsInEquilibrium);
+                // Get Load settings for connection in project
+                ConLoadSettings result = apiInstance.GetLoadSettings(projectId, connectionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling LoadEffectApi.SetLoadsInEquilibrium: " + e.Message);
+                Debug.Print("Exception when calling LoadEffectApi.GetLoadSettings: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -429,21 +429,21 @@ namespace Example
 }
 ```
 
-#### Using the SetLoadsInEquilibriumWithHttpInfo variant
+#### Using the GetLoadSettingsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Update the option 'LoadsInEquilibrium' for connectionId
-    ApiResponse<bool> response = apiInstance.SetLoadsInEquilibriumWithHttpInfo(projectId, connectionId, loadsInEquilibrium);
+    // Get Load settings for connection in project
+    ApiResponse<ConLoadSettings> response = apiInstance.GetLoadSettingsWithHttpInfo(projectId, connectionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling LoadEffectApi.SetLoadsInEquilibriumWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling LoadEffectApi.GetLoadSettingsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -455,11 +455,10 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** |  |  |
 | **connectionId** | **int** |  |  |
-| **loadsInEquilibrium** | **bool?** | Value to be set | [optional]  |
 
 ### Return type
 
-**bool**
+[**ConLoadSettings**](ConLoadSettings.md)
 
 ### Authorization
 
@@ -468,6 +467,99 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="setloadsettings"></a>
+# **SetLoadSettings**
+> ConLoadSettings SetLoadSettings (Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = null)
+
+Set Load settings for connection in project
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using connection_restapi_client_poc.Api;
+using connection_restapi_client_poc.Client;
+using connection_restapi_client_poc.Model;
+
+namespace Example
+{
+    public class SetLoadSettingsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            var apiInstance = new LoadEffectApi(config);
+            var projectId = "projectId_example";  // Guid | 
+            var connectionId = 56;  // int | 
+            var conLoadSettings = new ConLoadSettings?(); // ConLoadSettings? |  (optional) 
+
+            try
+            {
+                // Set Load settings for connection in project
+                ConLoadSettings result = apiInstance.SetLoadSettings(projectId, connectionId, conLoadSettings);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling LoadEffectApi.SetLoadSettings: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SetLoadSettingsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set Load settings for connection in project
+    ApiResponse<ConLoadSettings> response = apiInstance.SetLoadSettingsWithHttpInfo(projectId, connectionId, conLoadSettings);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling LoadEffectApi.SetLoadSettingsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **Guid** |  |  |
+| **connectionId** | **int** |  |  |
+| **conLoadSettings** | [**ConLoadSettings?**](ConLoadSettings?.md) |  | [optional]  |
+
+### Return type
+
+[**ConLoadSettings**](ConLoadSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

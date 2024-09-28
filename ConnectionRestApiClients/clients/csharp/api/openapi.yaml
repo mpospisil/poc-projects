@@ -581,9 +581,9 @@ paths:
       summary: Update load impulses in loadEffectId
       tags:
       - LoadEffect
-  /api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium:
-    post:
-      operationId: SetLoadsInEquilibrium
+  /api/1/projects/{projectId}/connections/{connectionId}/load-effects/get-load-settings:
+    get:
+      operationId: GetLoadSettings
       parameters:
       - description: ""
         explode: false
@@ -603,22 +603,52 @@ paths:
           format: int32
           type: integer
         style: simple
-      - description: Value to be set
-        explode: true
-        in: query
-        name: loadsInEquilibrium
-        required: false
-        schema:
-          type: boolean
-        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
-                type: boolean
+                $ref: '#/components/schemas/ConLoadSettings'
           description: Success
-      summary: Update the option 'LoadsInEquilibrium' for connectionId
+      summary: Get Load settings for connection in project
+      tags:
+      - LoadEffect
+  /api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-load-settings:
+    post:
+      operationId: SetLoadSettings
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConLoadSettings'
+        description: ""
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConLoadSettings'
+          description: Success
+      summary: Set Load settings for connection in project
       tags:
       - LoadEffect
   /api/1/projects/{projectId}/materials:
@@ -1092,6 +1122,47 @@ paths:
                 $ref: '#/components/schemas/ConMember'
           description: Success
       summary: Update the member in the connection by newMemberData
+      tags:
+      - Member
+  /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}/set-bearing-member:
+    put:
+      operationId: SetBearingMember
+      parameters:
+      - description: ""
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: connectionId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      - description: ""
+        explode: false
+        in: path
+        name: memberId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConMember'
+          description: Success
+      summary: Set bearing member for memberIt
       tags:
       - Member
   /api/1/projects/{projectId}/connections/{connectionId}/operations:
@@ -2803,9 +2874,6 @@ components:
         bearingMemberId: 6
         id: 0
         analysisType: stress_Strain
-        loadOptions:
-          loadsInEquilibrium: true
-          loadsInPercentage: true
       properties:
         id:
           format: int32
@@ -2821,8 +2889,6 @@ components:
           type: string
         analysisType:
           $ref: '#/components/schemas/ConAnalysisTypeEnum'
-        loadOptions:
-          $ref: '#/components/schemas/ConLoadingOptions'
         bearingMemberId:
           format: int32
           type: integer
@@ -2928,7 +2994,7 @@ components:
           format: double
           type: number
       type: object
-    ConLoadingOptions:
+    ConLoadSettings:
       additionalProperties: false
       example:
         loadsInEquilibrium: true
@@ -3043,9 +3109,6 @@ components:
           bearingMemberId: 6
           id: 0
           analysisType: stress_Strain
-          loadOptions:
-            loadsInEquilibrium: true
-            loadsInPercentage: true
         - identifier: identifier
           isCalculated: true
           name: name
@@ -3053,9 +3116,6 @@ components:
           bearingMemberId: 6
           id: 0
           analysisType: stress_Strain
-          loadOptions:
-            loadsInEquilibrium: true
-            loadsInPercentage: true
       properties:
         projectId:
           format: uuid

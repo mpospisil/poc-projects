@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_member_data**](MemberApi.md#get_all_member_data) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members | Get information about all members in the connection
 [**get_member_data**](MemberApi.md#get_member_data) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} | Get information about the requires member in the connection
+[**set_bearing_member**](MemberApi.md#set_bearing_member) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}/set-bearing-member | Set bearing member for memberIt
 [**update_member**](MemberApi.md#update_member) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/members/{memberId} | Update the member in the connection by newMemberData
 
 
@@ -125,6 +126,76 @@ Name | Type | Description  | Notes
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service | 
  **connection_id** | **int**| Id of the connection to get its member | 
  **member_id** | **int**| Id of the requested member in the connection | 
+
+### Return type
+
+[**ConMember**](ConMember.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_bearing_member**
+> ConMember set_bearing_member(project_id, connection_id, member_id)
+
+Set bearing member for memberIt
+
+### Example
+
+
+```python
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.con_member import ConMember
+from connection_restapi_client_poc.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = connection_restapi_client_poc.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = connection_restapi_client_poc.MemberApi(api_client)
+    project_id = 'project_id_example' # str | 
+    connection_id = 56 # int | 
+    member_id = 56 # int | 
+
+    try:
+        # Set bearing member for memberIt
+        api_response = api_instance.set_bearing_member(project_id, connection_id, member_id)
+        print("The response of MemberApi->set_bearing_member:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MemberApi->set_bearing_member: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**|  | 
+ **connection_id** | **int**|  | 
+ **member_id** | **int**|  | 
 
 ### Return type
 

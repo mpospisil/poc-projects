@@ -16,6 +16,7 @@ import http from 'http';
 
 /* tslint:disable:no-unused-locals */
 import { ConLoadEffect } from '../model/conLoadEffect';
+import { ConLoadSettings } from '../model/conLoadSettings';
 import { LoadEffectData } from '../model/loadEffectData';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
@@ -419,13 +420,12 @@ export class LoadEffectApi {
     }
     /**
      * 
-     * @summary Update the option \'LoadsInEquilibrium\' for connectionId
+     * @summary Get Load settings for connection in project
      * @param projectId 
      * @param connectionId 
-     * @param loadsInEquilibrium Value to be set
      */
-    public async setLoadsInEquilibrium (projectId: string, connectionId: number, loadsInEquilibrium?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: boolean;  }> {
-        const localVarPath = this.basePath + '/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium'
+    public async getLoadSettings (projectId: string, connectionId: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ConLoadSettings;  }> {
+        const localVarPath = this.basePath + '/api/1/projects/{projectId}/connections/{connectionId}/load-effects/get-load-settings'
             .replace('{' + 'projectId' + '}', encodeURIComponent(String(projectId)))
             .replace('{' + 'connectionId' + '}', encodeURIComponent(String(connectionId)));
         let localVarQueryParameters: any = {};
@@ -441,16 +441,12 @@ export class LoadEffectApi {
 
         // verify required parameter 'projectId' is not null or undefined
         if (projectId === null || projectId === undefined) {
-            throw new Error('Required parameter projectId was null or undefined when calling setLoadsInEquilibrium.');
+            throw new Error('Required parameter projectId was null or undefined when calling getLoadSettings.');
         }
 
         // verify required parameter 'connectionId' is not null or undefined
         if (connectionId === null || connectionId === undefined) {
-            throw new Error('Required parameter connectionId was null or undefined when calling setLoadsInEquilibrium.');
-        }
-
-        if (loadsInEquilibrium !== undefined) {
-            localVarQueryParameters['loadsInEquilibrium'] = ObjectSerializer.serialize(loadsInEquilibrium, "boolean");
+            throw new Error('Required parameter connectionId was null or undefined when calling getLoadSettings.');
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -458,7 +454,7 @@ export class LoadEffectApi {
         let localVarUseFormData = false;
 
         let localVarRequestOptions: localVarRequest.Options = {
-            method: 'POST',
+            method: 'GET',
             qs: localVarQueryParameters,
             headers: localVarHeaderParams,
             uri: localVarPath,
@@ -482,13 +478,91 @@ export class LoadEffectApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: boolean;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ConLoadSettings;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "boolean");
+                            body = ObjectSerializer.deserialize(body, "ConLoadSettings");
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * 
+     * @summary Set Load settings for connection in project
+     * @param projectId 
+     * @param connectionId 
+     * @param conLoadSettings 
+     */
+    public async setLoadSettings (projectId: string, connectionId: number, conLoadSettings?: ConLoadSettings, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ConLoadSettings;  }> {
+        const localVarPath = this.basePath + '/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-load-settings'
+            .replace('{' + 'projectId' + '}', encodeURIComponent(String(projectId)))
+            .replace('{' + 'connectionId' + '}', encodeURIComponent(String(connectionId)));
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'projectId' is not null or undefined
+        if (projectId === null || projectId === undefined) {
+            throw new Error('Required parameter projectId was null or undefined when calling setLoadSettings.');
+        }
+
+        // verify required parameter 'connectionId' is not null or undefined
+        if (connectionId === null || connectionId === undefined) {
+            throw new Error('Required parameter connectionId was null or undefined when calling setLoadSettings.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+            body: ObjectSerializer.serialize(conLoadSettings, "ConLoadSettings")
+        };
+
+        let authenticationPromise = Promise.resolve();
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: ConLoadSettings;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            body = ObjectSerializer.deserialize(body, "ConLoadSettings");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

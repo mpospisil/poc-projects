@@ -8,7 +8,8 @@ Method | HTTP request | Description
 [**delete_load_effect**](LoadEffectApi.md#delete_load_effect) | **DELETE** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId} | Delete load effect loadEffectId
 [**get_load_effect**](LoadEffectApi.md#get_load_effect) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId} | Get load impulses from loadEffectId
 [**get_load_effects**](LoadEffectApi.md#get_load_effects) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/load-effects | Get all load effects which are defined in connectionId
-[**set_loads_in_equilibrium**](LoadEffectApi.md#set_loads_in_equilibrium) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-equilibrium | Update the option &#39;LoadsInEquilibrium&#39; for connectionId
+[**get_load_settings**](LoadEffectApi.md#get_load_settings) | **GET** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/get-load-settings | Get Load settings for connection in project
+[**set_load_settings**](LoadEffectApi.md#set_load_settings) | **POST** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-load-settings | Set Load settings for connection in project
 [**update_load_effect**](LoadEffectApi.md#update_load_effect) | **PUT** /api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId} | Update load impulses in loadEffectId
 
 
@@ -294,16 +295,17 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_loads_in_equilibrium**
-> bool set_loads_in_equilibrium(project_id, connection_id, loads_in_equilibrium=loads_in_equilibrium)
+# **get_load_settings**
+> ConLoadSettings get_load_settings(project_id, connection_id)
 
-Update the option 'LoadsInEquilibrium' for connectionId
+Get Load settings for connection in project
 
 ### Example
 
 
 ```python
 import connection_restapi_client_poc
+from connection_restapi_client_poc.models.con_load_settings import ConLoadSettings
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -320,15 +322,14 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
     api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    loads_in_equilibrium = True # bool | Value to be set (optional)
 
     try:
-        # Update the option 'LoadsInEquilibrium' for connectionId
-        api_response = api_instance.set_loads_in_equilibrium(project_id, connection_id, loads_in_equilibrium=loads_in_equilibrium)
-        print("The response of LoadEffectApi->set_loads_in_equilibrium:\n")
+        # Get Load settings for connection in project
+        api_response = api_instance.get_load_settings(project_id, connection_id)
+        print("The response of LoadEffectApi->get_load_settings:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LoadEffectApi->set_loads_in_equilibrium: %s\n" % e)
+        print("Exception when calling LoadEffectApi->get_load_settings: %s\n" % e)
 ```
 
 
@@ -340,11 +341,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**|  | 
  **connection_id** | **int**|  | 
- **loads_in_equilibrium** | **bool**| Value to be set | [optional] 
 
 ### Return type
 
-**bool**
+[**ConLoadSettings**](ConLoadSettings.md)
 
 ### Authorization
 
@@ -353,6 +353,76 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_load_settings**
+> ConLoadSettings set_load_settings(project_id, connection_id, con_load_settings=con_load_settings)
+
+Set Load settings for connection in project
+
+### Example
+
+
+```python
+import connection_restapi_client_poc
+from connection_restapi_client_poc.models.con_load_settings import ConLoadSettings
+from connection_restapi_client_poc.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = connection_restapi_client_poc.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
+    project_id = 'project_id_example' # str | 
+    connection_id = 56 # int | 
+    con_load_settings = connection_restapi_client_poc.ConLoadSettings() # ConLoadSettings |  (optional)
+
+    try:
+        # Set Load settings for connection in project
+        api_response = api_instance.set_load_settings(project_id, connection_id, con_load_settings=con_load_settings)
+        print("The response of LoadEffectApi->set_load_settings:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LoadEffectApi->set_load_settings: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**|  | 
+ **connection_id** | **int**|  | 
+ **con_load_settings** | [**ConLoadSettings**](ConLoadSettings.md)|  | [optional] 
+
+### Return type
+
+[**ConLoadSettings**](ConLoadSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

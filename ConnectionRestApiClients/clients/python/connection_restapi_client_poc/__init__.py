@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "24.0.6.0291"
+__version__ = "24.0.6.0639"
 
 # import apis into sdk package
 from connection_restapi_client_poc.api.calculation_api import CalculationApi
@@ -71,7 +71,7 @@ from connection_restapi_client_poc.models.con_load_effect import ConLoadEffect
 from connection_restapi_client_poc.models.con_load_effect_member_load import ConLoadEffectMemberLoad
 from connection_restapi_client_poc.models.con_load_effect_position_enum import ConLoadEffectPositionEnum
 from connection_restapi_client_poc.models.con_load_effect_section_load import ConLoadEffectSectionLoad
-from connection_restapi_client_poc.models.con_loading_options import ConLoadingOptions
+from connection_restapi_client_poc.models.con_load_settings import ConLoadSettings
 from connection_restapi_client_poc.models.con_member import ConMember
 from connection_restapi_client_poc.models.con_mprl_cross_section import ConMprlCrossSection
 from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement

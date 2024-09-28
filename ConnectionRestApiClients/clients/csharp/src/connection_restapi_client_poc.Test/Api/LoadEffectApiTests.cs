@@ -112,17 +112,30 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
-        /// Test SetLoadsInEquilibrium
+        /// Test GetLoadSettings
         /// </summary>
         [Fact]
-        public void SetLoadsInEquilibriumTest()
+        public void GetLoadSettingsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Guid projectId = null;
             //int connectionId = null;
-            //bool? loadsInEquilibrium = null;
-            //var response = instance.SetLoadsInEquilibrium(projectId, connectionId, loadsInEquilibrium);
-            //Assert.IsType<bool>(response);
+            //var response = instance.GetLoadSettings(projectId, connectionId);
+            //Assert.IsType<ConLoadSettings>(response);
+        }
+
+        /// <summary>
+        /// Test SetLoadSettings
+        /// </summary>
+        [Fact]
+        public void SetLoadSettingsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //ConLoadSettings? conLoadSettings = null;
+            //var response = instance.SetLoadSettings(projectId, connectionId, conLoadSettings);
+            //Assert.IsType<ConLoadSettings>(response);
         }
 
         /// <summary>

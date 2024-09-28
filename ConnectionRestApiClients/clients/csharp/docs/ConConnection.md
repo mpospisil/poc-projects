@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **AnalysisType** | **ConAnalysisTypeEnum** |  | [optional] 
-**LoadOptions** | [**ConLoadingOptions**](ConLoadingOptions.md) |  | [optional] 
 **BearingMemberId** | **int** |  | [optional] 
 **IsCalculated** | **bool** |  | [optional] [readonly] 
 

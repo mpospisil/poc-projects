@@ -82,6 +82,20 @@ namespace connection_restapi_client_poc.Test.Api
         }
 
         /// <summary>
+        /// Test SetBearingMember
+        /// </summary>
+        [Fact]
+        public void SetBearingMemberTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Guid projectId = null;
+            //int connectionId = null;
+            //int memberId = null;
+            //var response = instance.SetBearingMember(projectId, connectionId, memberId);
+            //Assert.IsType<ConMember>(response);
+        }
+
+        /// <summary>
         /// Test UpdateMember
         /// </summary>
         [Fact]

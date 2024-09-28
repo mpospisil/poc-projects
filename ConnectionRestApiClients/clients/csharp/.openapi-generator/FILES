@@ -34,7 +34,7 @@ docs/ConLoadEffect.md
 docs/ConLoadEffectMemberLoad.md
 docs/ConLoadEffectPositionEnum.md
 docs/ConLoadEffectSectionLoad.md
-docs/ConLoadingOptions.md
+docs/ConLoadSettings.md
 docs/ConMember.md
 docs/ConMprlCrossSection.md
 docs/ConMprlElement.md
@@ -220,7 +220,7 @@ src/connection_restapi_client_poc.Test/Model/ConLoadEffectMemberLoadTests.cs
 src/connection_restapi_client_poc.Test/Model/ConLoadEffectPositionEnumTests.cs
 src/connection_restapi_client_poc.Test/Model/ConLoadEffectSectionLoadTests.cs
 src/connection_restapi_client_poc.Test/Model/ConLoadEffectTests.cs
-src/connection_restapi_client_poc.Test/Model/ConLoadingOptionsTests.cs
+src/connection_restapi_client_poc.Test/Model/ConLoadSettingsTests.cs
 src/connection_restapi_client_poc.Test/Model/ConMemberTests.cs
 src/connection_restapi_client_poc.Test/Model/ConMprlCrossSectionTests.cs
 src/connection_restapi_client_poc.Test/Model/ConMprlElementTests.cs
@@ -412,7 +412,7 @@ src/connection_restapi_client_poc/Model/ConLoadEffect.cs
 src/connection_restapi_client_poc/Model/ConLoadEffectMemberLoad.cs
 src/connection_restapi_client_poc/Model/ConLoadEffectPositionEnum.cs
 src/connection_restapi_client_poc/Model/ConLoadEffectSectionLoad.cs
-src/connection_restapi_client_poc/Model/ConLoadingOptions.cs
+src/connection_restapi_client_poc/Model/ConLoadSettings.cs
 src/connection_restapi_client_poc/Model/ConMember.cs
 src/connection_restapi_client_poc/Model/ConMprlCrossSection.cs
 src/connection_restapi_client_poc/Model/ConMprlElement.cs

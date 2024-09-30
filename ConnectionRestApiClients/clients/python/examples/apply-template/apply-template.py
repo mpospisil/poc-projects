@@ -1,5 +1,7 @@
 import sys
 import os
+from pprint import pprint
+from urllib.parse import urljoin
 
 # Get the parent directory
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
@@ -9,13 +11,7 @@ sys.path.append(parent_dir)
 
 import connection_restapi_client_poc
 import connection_restapi_client_poc.ideastatica_client as ideastatica_client
-from connection_restapi_client_poc.rest import ApiException
-from pprint import pprint
-import requests
-from urllib.parse import urljoin
-import json
 
-from connection_restapi_client_poc.rest import ApiException
 
 baseUrl = "http://localhost:5000"
 
@@ -31,7 +27,7 @@ print(project_file_path)
 
 
 # Enter a context with an instance of the API client
-with ideastatica_client.OpenClient(configuration, project_file_path) as is_client:
+with ideastatica_client.IdeaStatiCaClient(configuration, project_file_path) as is_client:
 
     try:
         # Get the project data

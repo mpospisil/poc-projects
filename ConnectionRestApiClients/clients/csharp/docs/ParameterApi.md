@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="evaluateexpression"></a>
 # **EvaluateExpression**
-> string EvaluateExpression (Guid projectId, int connectionId, string? body = null)
+> string EvaluateExpression (Guid projectId, int connectionId, string body = null)
 
 Evaluate the expression and return the result
 
@@ -33,7 +33,7 @@ namespace Example
             var apiInstance = new ParameterApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection to use for evaluation expression
-            var body = "body_example";  // string? | Expression to evaluate (optional) 
+            var body = "body_example";  // string | Expression to evaluate (optional) 
 
             try
             {
@@ -78,7 +78,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection to use for evaluation expression |  |
-| **body** | **string?** | Expression to evaluate | [optional]  |
+| **body** | **string** | Expression to evaluate | [optional]  |
 
 ### Return type
 
@@ -196,7 +196,7 @@ No authorization required
 
 <a id="updateparameters"></a>
 # **UpdateParameters**
-> List&lt;ParameterData&gt; UpdateParameters (Guid projectId, int connectionId, List<IdeaParameterUpdate>? ideaParameterUpdate = null)
+> List&lt;ParameterData&gt; UpdateParameters (Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = null)
 
 Update parameters for the connection connectionId in the project projectId by values passed in parameters
 
@@ -219,7 +219,7 @@ namespace Example
             var apiInstance = new ParameterApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection to apply template
-            var ideaParameterUpdate = new List<IdeaParameterUpdate>?(); // List<IdeaParameterUpdate>? | New values of parameters (optional) 
+            var ideaParameterUpdate = new List<IdeaParameterUpdate>(); // List<IdeaParameterUpdate> | New values of parameters (optional) 
 
             try
             {
@@ -264,7 +264,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection to apply template |  |
-| **ideaParameterUpdate** | [**List&lt;IdeaParameterUpdate&gt;?**](IdeaParameterUpdate.md) | New values of parameters | [optional]  |
+| **ideaParameterUpdate** | [**List&lt;IdeaParameterUpdate&gt;**](IdeaParameterUpdate.md) | New values of parameters | [optional]  |
 
 ### Return type
 

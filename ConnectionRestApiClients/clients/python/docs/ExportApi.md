@@ -78,7 +78,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_connection_ifc**
-> MemoryStream export_connection_ifc(project_id, connection_id)
+> export_connection_ifc(project_id, connection_id)
 
 Export connection to IFC format
 
@@ -87,7 +87,6 @@ Export connection to IFC format
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -107,9 +106,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
     try:
         # Export connection to IFC format
-        api_response = api_instance.export_connection_ifc(project_id, connection_id)
-        print("The response of ExportApi->export_connection_ifc:\n")
-        pprint(api_response)
+        api_instance.export_connection_ifc(project_id, connection_id)
     except Exception as e:
         print("Exception when calling ExportApi->export_connection_ifc: %s\n" % e)
 ```
@@ -126,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MemoryStream**](MemoryStream.md)
+void (empty response body)
 
 ### Authorization
 
@@ -135,7 +132,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 

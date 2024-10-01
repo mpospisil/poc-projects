@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="applytemplate"></a>
 # **ApplyTemplate**
-> Object ApplyTemplate (Guid projectId, int connectionId, ConTemplateApplyParam? conTemplateApplyParam = null)
+> Object ApplyTemplate (Guid projectId, int connectionId, ConTemplateApplyParam conTemplateApplyParam = null)
 
 Apply the connection template applyTemplateParam on the connection connectionId in the project projectId
 
@@ -33,7 +33,7 @@ namespace Example
             var apiInstance = new TemplateApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection where to apply the template
-            var conTemplateApplyParam = new ConTemplateApplyParam?(); // ConTemplateApplyParam? | Template to apply (optional) 
+            var conTemplateApplyParam = new ConTemplateApplyParam(); // ConTemplateApplyParam | Template to apply (optional) 
 
             try
             {
@@ -78,7 +78,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection where to apply the template |  |
-| **conTemplateApplyParam** | [**ConTemplateApplyParam?**](ConTemplateApplyParam?.md) | Template to apply | [optional]  |
+| **conTemplateApplyParam** | [**ConTemplateApplyParam**](ConTemplateApplyParam.md) | Template to apply | [optional]  |
 
 ### Return type
 
@@ -194,7 +194,7 @@ No authorization required
 
 <a id="getdefaulttemplatemapping"></a>
 # **GetDefaultTemplateMapping**
-> TemplateConversions GetDefaultTemplateMapping (Guid projectId, int connectionId, ConTemplateMappingGetParam? conTemplateMappingGetParam = null)
+> TemplateConversions GetDefaultTemplateMapping (Guid projectId, int connectionId, ConTemplateMappingGetParam conTemplateMappingGetParam = null)
 
 Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId
 
@@ -219,7 +219,7 @@ namespace Example
             var apiInstance = new TemplateApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection to get default mapping
-            var conTemplateMappingGetParam = new ConTemplateMappingGetParam?(); // ConTemplateMappingGetParam? | Data of the template to get default mapping (optional) 
+            var conTemplateMappingGetParam = new ConTemplateMappingGetParam(); // ConTemplateMappingGetParam | Data of the template to get default mapping (optional) 
 
             try
             {
@@ -264,7 +264,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection to get default mapping |  |
-| **conTemplateMappingGetParam** | [**ConTemplateMappingGetParam?**](ConTemplateMappingGetParam?.md) | Data of the template to get default mapping | [optional]  |
+| **conTemplateMappingGetParam** | [**ConTemplateMappingGetParam**](ConTemplateMappingGetParam.md) | Data of the template to get default mapping | [optional]  |
 
 ### Return type
 

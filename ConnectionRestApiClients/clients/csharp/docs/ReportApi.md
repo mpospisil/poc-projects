@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 <a id="generatepdf"></a>
 # **GeneratePdf**
-> MemoryStream GeneratePdf (Guid projectId, int connectionId)
+> void GeneratePdf (Guid projectId, int connectionId)
 
 Generates report for projectId and connectionId
 
@@ -36,8 +36,7 @@ namespace Example
             try
             {
                 // Generates report for projectId and connectionId
-                MemoryStream result = apiInstance.GeneratePdf(projectId, connectionId);
-                Debug.WriteLine(result);
+                apiInstance.GeneratePdf(projectId, connectionId);
             }
             catch (ApiException  e)
             {
@@ -57,10 +56,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Generates report for projectId and connectionId
-    ApiResponse<MemoryStream> response = apiInstance.GeneratePdfWithHttpInfo(projectId, connectionId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.GeneratePdfWithHttpInfo(projectId, connectionId);
 }
 catch (ApiException e)
 {
@@ -79,7 +75,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**MemoryStream**](MemoryStream.md)
+void (empty response body)
 
 ### Authorization
 
@@ -88,7 +84,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -100,7 +96,7 @@ No authorization required
 
 <a id="generateword"></a>
 # **GenerateWord**
-> MemoryStream GenerateWord (Guid projectId, int connectionId)
+> void GenerateWord (Guid projectId, int connectionId)
 
 Generates report for projectId and connectionId
 
@@ -127,8 +123,7 @@ namespace Example
             try
             {
                 // Generates report for projectId and connectionId
-                MemoryStream result = apiInstance.GenerateWord(projectId, connectionId);
-                Debug.WriteLine(result);
+                apiInstance.GenerateWord(projectId, connectionId);
             }
             catch (ApiException  e)
             {
@@ -148,10 +143,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Generates report for projectId and connectionId
-    ApiResponse<MemoryStream> response = apiInstance.GenerateWordWithHttpInfo(projectId, connectionId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.GenerateWordWithHttpInfo(projectId, connectionId);
 }
 catch (ApiException e)
 {
@@ -170,7 +162,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**MemoryStream**](MemoryStream.md)
+void (empty response body)
 
 ### Authorization
 
@@ -179,7 +171,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details

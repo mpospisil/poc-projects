@@ -84,7 +84,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_project**
-> MemoryStream download_project(project_id)
+> download_project(project_id)
 
 Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
 
@@ -93,7 +93,6 @@ Download the actual ideacon project from the service. It includes alle changes w
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -112,9 +111,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
     try:
         # Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
-        api_response = api_instance.download_project(project_id)
-        print("The response of ProjectApi->download_project:\n")
-        pprint(api_response)
+        api_instance.download_project(project_id)
     except Exception as e:
         print("Exception when calling ProjectApi->download_project: %s\n" % e)
 ```
@@ -130,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MemoryStream**](MemoryStream.md)
+void (empty response body)
 
 ### Authorization
 
@@ -139,7 +136,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 

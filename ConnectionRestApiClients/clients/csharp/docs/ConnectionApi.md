@@ -282,7 +282,7 @@ No authorization required
 
 <a id="updateconnectiondata"></a>
 # **UpdateConnectionData**
-> ConConnection UpdateConnectionData (Guid projectId, int connectionId, ConConnection? conConnection = null)
+> ConConnection UpdateConnectionData (Guid projectId, int connectionId, ConConnection conConnection = null)
 
 Update data of a specific connection in the project
 
@@ -305,7 +305,7 @@ namespace Example
             var apiInstance = new ConnectionApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection to be update
-            var conConnection = new ConConnection?(); // ConConnection? | New connection data to be set (optional) 
+            var conConnection = new ConConnection(); // ConConnection | New connection data to be set (optional) 
 
             try
             {
@@ -350,7 +350,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection to be update |  |
-| **conConnection** | [**ConConnection?**](ConConnection?.md) | New connection data to be set | [optional]  |
+| **conConnection** | [**ConConnection**](ConConnection.md) | New connection data to be set | [optional]  |
 
 ### Return type
 

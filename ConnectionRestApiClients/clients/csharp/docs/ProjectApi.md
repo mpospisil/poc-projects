@@ -108,7 +108,7 @@ No authorization required
 
 <a id="downloadproject"></a>
 # **DownloadProject**
-> MemoryStream DownloadProject (Guid projectId)
+> void DownloadProject (Guid projectId)
 
 Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
 
@@ -134,8 +134,7 @@ namespace Example
             try
             {
                 // Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
-                MemoryStream result = apiInstance.DownloadProject(projectId);
-                Debug.WriteLine(result);
+                apiInstance.DownloadProject(projectId);
             }
             catch (ApiException  e)
             {
@@ -155,10 +154,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
-    ApiResponse<MemoryStream> response = apiInstance.DownloadProjectWithHttpInfo(projectId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.DownloadProjectWithHttpInfo(projectId);
 }
 catch (ApiException e)
 {
@@ -176,7 +172,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**MemoryStream**](MemoryStream.md)
+void (empty response body)
 
 ### Authorization
 
@@ -185,7 +181,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -459,7 +455,7 @@ No authorization required
 
 <a id="importiom"></a>
 # **ImportIOM**
-> ConProject ImportIOM (List<int>? connectionsToCreate = null)
+> ConProject ImportIOM (List<int> connectionsToCreate = null)
 
 Creates an IDEA Connection project. IOM is passed in the body of the request.
 
@@ -480,7 +476,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
-            var connectionsToCreate = new List<int>?(); // List<int>? |  (optional) 
+            var connectionsToCreate = new List<int>(); // List<int> |  (optional) 
 
             try
             {
@@ -523,7 +519,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **connectionsToCreate** | [**List&lt;int&gt;?**](int.md) |  | [optional]  |
+| **connectionsToCreate** | [**List&lt;int&gt;**](int.md) |  | [optional]  |
 
 ### Return type
 
@@ -548,7 +544,7 @@ No authorization required
 
 <a id="importiomcontainer"></a>
 # **ImportIOMContainer**
-> ConProject ImportIOMContainer (List<int>? connectionsToCreate = null, OpenModelContainer? openModelContainer = null)
+> ConProject ImportIOMContainer (List<int> connectionsToCreate = null, OpenModelContainer openModelContainer = null)
 
 Creates an IDEA Connection project from model (model and results)
 
@@ -569,8 +565,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
-            var connectionsToCreate = new List<int>?(); // List<int>? |  (optional) 
-            var openModelContainer = new OpenModelContainer?(); // OpenModelContainer? |  (optional) 
+            var connectionsToCreate = new List<int>(); // List<int> |  (optional) 
+            var openModelContainer = new OpenModelContainer(); // OpenModelContainer |  (optional) 
 
             try
             {
@@ -613,8 +609,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **connectionsToCreate** | [**List&lt;int&gt;?**](int.md) |  | [optional]  |
-| **openModelContainer** | [**OpenModelContainer?**](OpenModelContainer?.md) |  | [optional]  |
+| **connectionsToCreate** | [**List&lt;int&gt;**](int.md) |  | [optional]  |
+| **openModelContainer** | [**OpenModelContainer**](OpenModelContainer.md) |  | [optional]  |
 
 ### Return type
 
@@ -639,7 +635,7 @@ No authorization required
 
 <a id="openproject"></a>
 # **OpenProject**
-> ConProject OpenProject (System.IO.Stream? ideaConFile = null)
+> ConProject OpenProject (System.IO.Stream ideaConFile = null)
 
 Open ideacon project from ideaConFile
 
@@ -660,7 +656,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
-            var ideaConFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
+            var ideaConFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
 
             try
             {
@@ -703,7 +699,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **ideaConFile** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
+| **ideaConFile** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 
 ### Return type
 
@@ -817,7 +813,7 @@ No authorization required
 
 <a id="updatefromiomcontainer"></a>
 # **UpdateFromIOMContainer**
-> bool UpdateFromIOMContainer (Guid projectId, OpenModelContainer? openModelContainer = null)
+> bool UpdateFromIOMContainer (Guid projectId, OpenModelContainer openModelContainer = null)
 
 Update an IDEA Connection project by model (model and results)
 
@@ -839,7 +835,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service to be updated
-            var openModelContainer = new OpenModelContainer?(); // OpenModelContainer? |  (optional) 
+            var openModelContainer = new OpenModelContainer(); // OpenModelContainer |  (optional) 
 
             try
             {
@@ -883,7 +879,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service to be updated |  |
-| **openModelContainer** | [**OpenModelContainer?**](OpenModelContainer?.md) |  | [optional]  |
+| **openModelContainer** | [**OpenModelContainer**](OpenModelContainer.md) |  | [optional]  |
 
 ### Return type
 
@@ -908,7 +904,7 @@ No authorization required
 
 <a id="updateprojectdata"></a>
 # **UpdateProjectData**
-> ConProject UpdateProjectData (Guid projectId, ConProjectData? conProjectData = null)
+> ConProject UpdateProjectData (Guid projectId, ConProjectData conProjectData = null)
 
 Updates ConProjectData of project
 
@@ -930,7 +926,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
             var projectId = "projectId_example";  // Guid | 
-            var conProjectData = new ConProjectData?(); // ConProjectData? |  (optional) 
+            var conProjectData = new ConProjectData(); // ConProjectData |  (optional) 
 
             try
             {
@@ -974,7 +970,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** |  |  |
-| **conProjectData** | [**ConProjectData?**](ConProjectData?.md) |  | [optional]  |
+| **conProjectData** | [**ConProjectData**](ConProjectData.md) |  | [optional]  |
 
 ### Return type
 
@@ -999,7 +995,7 @@ No authorization required
 
 <a id="updatesetup"></a>
 # **UpdateSetup**
-> ConnectionSetup UpdateSetup (Guid projectId, ConnectionSetup? connectionSetup = null)
+> ConnectionSetup UpdateSetup (Guid projectId, ConnectionSetup connectionSetup = null)
 
 Update setup of the project
 
@@ -1021,7 +1017,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service to update project setup
-            var connectionSetup = new ConnectionSetup?(); // ConnectionSetup? |  (optional) 
+            var connectionSetup = new ConnectionSetup(); // ConnectionSetup |  (optional) 
 
             try
             {
@@ -1065,7 +1061,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service to update project setup |  |
-| **connectionSetup** | [**ConnectionSetup?**](ConnectionSetup?.md) |  | [optional]  |
+| **connectionSetup** | [**ConnectionSetup**](ConnectionSetup.md) |  | [optional]  |
 
 ### Return type
 

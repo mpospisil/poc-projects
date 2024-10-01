@@ -15,7 +15,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
 
 namespace connection_restapi_client_poc.Api
 {
@@ -33,8 +32,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>MemoryStream</returns>
-        MemoryStream GeneratePdf(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns></returns>
+        void GeneratePdf(Guid projectId, int connectionId, int operationIndex = 0);
 
         /// <summary>
         /// Generates report for projectId and connectionId
@@ -46,8 +45,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of MemoryStream</returns>
-        ApiResponse<MemoryStream> GeneratePdfWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> GeneratePdfWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
         /// <summary>
         /// Generates report for projectId and connectionId
         /// </summary>
@@ -55,8 +54,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>MemoryStream</returns>
-        MemoryStream GenerateWord(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns></returns>
+        void GenerateWord(Guid projectId, int connectionId, int operationIndex = 0);
 
         /// <summary>
         /// Generates report for projectId and connectionId
@@ -68,8 +67,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of MemoryStream</returns>
-        ApiResponse<MemoryStream> GenerateWordWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> GenerateWordWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -90,8 +89,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of MemoryStream</returns>
-        System.Threading.Tasks.Task<MemoryStream> GeneratePdfAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task GeneratePdfAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Generates report for projectId and connectionId
@@ -104,8 +103,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (MemoryStream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MemoryStream>> GeneratePdfWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> GeneratePdfWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Generates report for projectId and connectionId
         /// </summary>
@@ -117,8 +116,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of MemoryStream</returns>
-        System.Threading.Tasks.Task<MemoryStream> GenerateWordAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task GenerateWordAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Generates report for projectId and connectionId
@@ -131,8 +130,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (MemoryStream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MemoryStream>> GenerateWordWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> GenerateWordWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -260,11 +259,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>MemoryStream</returns>
-        public MemoryStream GeneratePdf(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns></returns>
+        public void GeneratePdf(Guid projectId, int connectionId, int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<MemoryStream> localVarResponse = GeneratePdfWithHttpInfo(projectId, connectionId);
-            return localVarResponse.Data;
+            GeneratePdfWithHttpInfo(projectId, connectionId);
         }
 
         /// <summary>
@@ -274,8 +272,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of MemoryStream</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<MemoryStream> GeneratePdfWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<Object> GeneratePdfWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -284,8 +282,6 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/octet-stream",
-                "application/json"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -308,7 +304,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<MemoryStream>("/api/1/projects/{projectId}/reports/{connectionId}/pdf", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Object>("/api/1/projects/{projectId}/reports/{connectionId}/pdf", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GeneratePdf", localVarResponse);
@@ -329,11 +325,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of MemoryStream</returns>
-        public async System.Threading.Tasks.Task<MemoryStream> GeneratePdfAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task GeneratePdfAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<MemoryStream> localVarResponse = await GeneratePdfWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await GeneratePdfWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -344,8 +339,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (MemoryStream)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<MemoryStream>> GeneratePdfWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<Object>> GeneratePdfWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -355,8 +350,6 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/octet-stream",
-                "application/json"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -379,7 +372,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<MemoryStream>("/api/1/projects/{projectId}/reports/{connectionId}/pdf", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/1/projects/{projectId}/reports/{connectionId}/pdf", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -400,11 +393,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>MemoryStream</returns>
-        public MemoryStream GenerateWord(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns></returns>
+        public void GenerateWord(Guid projectId, int connectionId, int operationIndex = 0)
         {
-            connection_restapi_client_poc.Client.ApiResponse<MemoryStream> localVarResponse = GenerateWordWithHttpInfo(projectId, connectionId);
-            return localVarResponse.Data;
+            GenerateWordWithHttpInfo(projectId, connectionId);
         }
 
         /// <summary>
@@ -414,8 +406,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of MemoryStream</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<MemoryStream> GenerateWordWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public connection_restapi_client_poc.Client.ApiResponse<Object> GenerateWordWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -424,8 +416,6 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/octet-stream",
-                "application/json"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -448,7 +438,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<MemoryStream>("/api/1/projects/{projectId}/reports/{connectionId}/word", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Object>("/api/1/projects/{projectId}/reports/{connectionId}/word", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GenerateWord", localVarResponse);
@@ -469,11 +459,10 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of MemoryStream</returns>
-        public async System.Threading.Tasks.Task<MemoryStream> GenerateWordAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task GenerateWordAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<MemoryStream> localVarResponse = await GenerateWordWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await GenerateWordWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -484,8 +473,8 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (MemoryStream)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<MemoryStream>> GenerateWordWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<Object>> GenerateWordWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -495,8 +484,6 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/octet-stream",
-                "application/json"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -519,7 +506,7 @@ namespace connection_restapi_client_poc.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<MemoryStream>("/api/1/projects/{projectId}/reports/{connectionId}/word", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/api/1/projects/{projectId}/reports/{connectionId}/word", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

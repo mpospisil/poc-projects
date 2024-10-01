@@ -99,7 +99,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conConnection">New connection data to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConConnection</returns>
-        ConConnection UpdateConnectionData(Guid projectId, int connectionId, ConConnection? conConnection = default(ConConnection?), int operationIndex = 0);
+        ConConnection UpdateConnectionData(Guid projectId, int connectionId, ConConnection conConnection = default(ConConnection), int operationIndex = 0);
 
         /// <summary>
         /// Update data of a specific connection in the project
@@ -113,7 +113,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conConnection">New connection data to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConConnection</returns>
-        ApiResponse<ConConnection> UpdateConnectionDataWithHttpInfo(Guid projectId, int connectionId, ConConnection? conConnection = default(ConConnection?), int operationIndex = 0);
+        ApiResponse<ConConnection> UpdateConnectionDataWithHttpInfo(Guid projectId, int connectionId, ConConnection conConnection = default(ConConnection), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -215,7 +215,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConConnection</returns>
-        System.Threading.Tasks.Task<ConConnection> UpdateConnectionDataAsync(Guid projectId, int connectionId, ConConnection? conConnection = default(ConConnection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConConnection> UpdateConnectionDataAsync(Guid projectId, int connectionId, ConConnection conConnection = default(ConConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update data of a specific connection in the project
@@ -230,7 +230,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConConnection)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConConnection>> UpdateConnectionDataWithHttpInfoAsync(Guid projectId, int connectionId, ConConnection? conConnection = default(ConConnection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConConnection>> UpdateConnectionDataWithHttpInfoAsync(Guid projectId, int connectionId, ConConnection conConnection = default(ConConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -768,7 +768,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conConnection">New connection data to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConConnection</returns>
-        public ConConnection UpdateConnectionData(Guid projectId, int connectionId, ConConnection? conConnection = default(ConConnection?), int operationIndex = 0)
+        public ConConnection UpdateConnectionData(Guid projectId, int connectionId, ConConnection conConnection = default(ConConnection), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<ConConnection> localVarResponse = UpdateConnectionDataWithHttpInfo(projectId, connectionId, conConnection);
             return localVarResponse.Data;
@@ -783,7 +783,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conConnection">New connection data to be set (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConConnection</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConConnection> UpdateConnectionDataWithHttpInfo(Guid projectId, int connectionId, ConConnection? conConnection = default(ConConnection?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConConnection> UpdateConnectionDataWithHttpInfo(Guid projectId, int connectionId, ConConnection conConnection = default(ConConnection), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -840,7 +840,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConConnection</returns>
-        public async System.Threading.Tasks.Task<ConConnection> UpdateConnectionDataAsync(Guid projectId, int connectionId, ConConnection? conConnection = default(ConConnection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConConnection> UpdateConnectionDataAsync(Guid projectId, int connectionId, ConConnection conConnection = default(ConConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConConnection> localVarResponse = await UpdateConnectionDataWithHttpInfoAsync(projectId, connectionId, conConnection, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -856,7 +856,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConConnection)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConConnection>> UpdateConnectionDataWithHttpInfoAsync(Guid projectId, int connectionId, ConConnection? conConnection = default(ConConnection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConConnection>> UpdateConnectionDataWithHttpInfoAsync(Guid projectId, int connectionId, ConConnection conConnection = default(ConConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();

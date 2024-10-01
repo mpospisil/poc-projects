@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **generate_pdf**
-> MemoryStream generate_pdf(project_id, connection_id)
+> generate_pdf(project_id, connection_id)
 
 Generates report for projectId and connectionId
 
@@ -18,7 +18,6 @@ Generates report for projectId and connectionId
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -38,9 +37,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
     try:
         # Generates report for projectId and connectionId
-        api_response = api_instance.generate_pdf(project_id, connection_id)
-        print("The response of ReportApi->generate_pdf:\n")
-        pprint(api_response)
+        api_instance.generate_pdf(project_id, connection_id)
     except Exception as e:
         print("Exception when calling ReportApi->generate_pdf: %s\n" % e)
 ```
@@ -57,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MemoryStream**](MemoryStream.md)
+void (empty response body)
 
 ### Authorization
 
@@ -66,7 +63,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
@@ -77,7 +74,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_word**
-> MemoryStream generate_word(project_id, connection_id)
+> generate_word(project_id, connection_id)
 
 Generates report for projectId and connectionId
 
@@ -86,7 +83,6 @@ Generates report for projectId and connectionId
 
 ```python
 import connection_restapi_client_poc
-from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.rest import ApiException
 from pprint import pprint
 
@@ -106,9 +102,7 @@ with connection_restapi_client_poc.ApiClient(configuration) as api_client:
 
     try:
         # Generates report for projectId and connectionId
-        api_response = api_instance.generate_word(project_id, connection_id)
-        print("The response of ReportApi->generate_word:\n")
-        pprint(api_response)
+        api_instance.generate_word(project_id, connection_id)
     except Exception as e:
         print("Exception when calling ReportApi->generate_word: %s\n" % e)
 ```
@@ -125,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MemoryStream**](MemoryStream.md)
+void (empty response body)
 
 ### Authorization
 
@@ -134,7 +128,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: Not defined
 
 ### HTTP response details
 

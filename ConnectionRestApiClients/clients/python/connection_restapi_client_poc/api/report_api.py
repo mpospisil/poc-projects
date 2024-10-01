@@ -17,7 +17,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictInt, StrictStr
-from connection_restapi_client_poc.models.memory_stream import MemoryStream
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -54,7 +53,7 @@ class ReportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> MemoryStream:
+    ) -> None:
         """Generates report for projectId and connectionId
 
 
@@ -94,7 +93,7 @@ class ReportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -124,7 +123,7 @@ class ReportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[MemoryStream]:
+    ) -> ApiResponse[None]:
         """Generates report for projectId and connectionId
 
 
@@ -164,7 +163,7 @@ class ReportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -234,7 +233,7 @@ class ReportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -278,14 +277,6 @@ class ReportApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/octet-stream', 
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting
@@ -327,7 +318,7 @@ class ReportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> MemoryStream:
+    ) -> None:
         """Generates report for projectId and connectionId
 
 
@@ -367,7 +358,7 @@ class ReportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -397,7 +388,7 @@ class ReportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[MemoryStream]:
+    ) -> ApiResponse[None]:
         """Generates report for projectId and connectionId
 
 
@@ -437,7 +428,7 @@ class ReportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -507,7 +498,7 @@ class ReportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -551,14 +542,6 @@ class ReportApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/octet-stream', 
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting

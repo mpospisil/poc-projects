@@ -19,7 +19,6 @@ from typing_extensions import Annotated
 from pydantic import StrictInt, StrictStr
 from typing import Optional
 from connection_restapi_client_poc.models.connection_data import ConnectionData
-from connection_restapi_client_poc.models.memory_stream import MemoryStream
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
 from connection_restapi_client_poc.api_response import ApiResponse
@@ -329,7 +328,7 @@ class ExportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> MemoryStream:
+    ) -> None:
         """Export connection to IFC format
 
 
@@ -369,7 +368,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -399,7 +398,7 @@ class ExportApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[MemoryStream]:
+    ) -> ApiResponse[None]:
         """Export connection to IFC format
 
 
@@ -439,7 +438,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -509,7 +508,7 @@ class ExportApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -553,13 +552,6 @@ class ExportApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting

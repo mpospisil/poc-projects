@@ -101,7 +101,7 @@ No authorization required
 
 <a id="exportconnectionifc"></a>
 # **ExportConnectionIFC**
-> MemoryStream ExportConnectionIFC (Guid projectId, int connectionId)
+> void ExportConnectionIFC (Guid projectId, int connectionId)
 
 Export connection to IFC format
 
@@ -128,8 +128,7 @@ namespace Example
             try
             {
                 // Export connection to IFC format
-                MemoryStream result = apiInstance.ExportConnectionIFC(projectId, connectionId);
-                Debug.WriteLine(result);
+                apiInstance.ExportConnectionIFC(projectId, connectionId);
             }
             catch (ApiException  e)
             {
@@ -149,10 +148,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export connection to IFC format
-    ApiResponse<MemoryStream> response = apiInstance.ExportConnectionIFCWithHttpInfo(projectId, connectionId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.ExportConnectionIFCWithHttpInfo(projectId, connectionId);
 }
 catch (ApiException e)
 {
@@ -171,7 +167,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**MemoryStream**](MemoryStream.md)
+void (empty response body)
 
 ### Authorization
 
@@ -180,7 +176,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -192,7 +188,7 @@ No authorization required
 
 <a id="exportiomxml"></a>
 # **ExportIomXml**
-> void ExportIomXml (Guid projectId, int connectionId, string? version = null)
+> void ExportIomXml (Guid projectId, int connectionId, string version = null)
 
 Export connection to XML which includes https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs
 
@@ -215,7 +211,7 @@ namespace Example
             var apiInstance = new ExportApi(config);
             var projectId = "projectId_example";  // Guid | 
             var connectionId = 56;  // int | 
-            var version = "version_example";  // string? |  (optional) 
+            var version = "version_example";  // string |  (optional) 
 
             try
             {
@@ -256,7 +252,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** |  |  |
 | **connectionId** | **int** |  |  |
-| **version** | **string?** |  | [optional]  |
+| **version** | **string** |  | [optional]  |
 
 ### Return type
 

@@ -288,7 +288,7 @@ No authorization required
 
 <a id="updatemember"></a>
 # **UpdateMember**
-> ConMember UpdateMember (Guid projectId, int connectionId, int memberId, ConMember? conMember = null)
+> ConMember UpdateMember (Guid projectId, int connectionId, int memberId, ConMember conMember = null)
 
 Update the member in the connection by newMemberData
 
@@ -312,7 +312,7 @@ namespace Example
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
             var connectionId = 56;  // int | Id of the connection to to update is member memberId
             var memberId = 56;  // int | Id of the member to be updated in the connection
-            var conMember = new ConMember?(); // ConMember? | New member data (optional) 
+            var conMember = new ConMember(); // ConMember | New member data (optional) 
 
             try
             {
@@ -358,7 +358,7 @@ catch (ApiException e)
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
 | **connectionId** | **int** | Id of the connection to to update is member memberId |  |
 | **memberId** | **int** | Id of the member to be updated in the connection |  |
-| **conMember** | [**ConMember?**](ConMember?.md) | New member data | [optional]  |
+| **conMember** | [**ConMember**](ConMember.md) | New member data | [optional]  |
 
 ### Return type
 

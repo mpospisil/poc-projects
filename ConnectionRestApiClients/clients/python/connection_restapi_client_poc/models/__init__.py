@@ -106,7 +106,6 @@ from connection_restapi_client_poc.models.member import Member
 from connection_restapi_client_poc.models.member1_d import Member1D
 from connection_restapi_client_poc.models.member2_d import Member2D
 from connection_restapi_client_poc.models.member_type import MemberType
-from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.models.message_number import MessageNumber
 from connection_restapi_client_poc.models.open_element_id import OpenElementId
 from connection_restapi_client_poc.models.open_message import OpenMessage

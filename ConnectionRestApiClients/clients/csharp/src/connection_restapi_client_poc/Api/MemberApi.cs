@@ -106,7 +106,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMember</returns>
-        ConMember UpdateMember(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0);
+        ConMember UpdateMember(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0);
 
         /// <summary>
         /// Update the member in the connection by newMemberData
@@ -121,7 +121,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMember</returns>
-        ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0);
+        ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -230,7 +230,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMember</returns>
-        System.Threading.Tasks.Task<ConMember> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConMember> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update the member in the connection by newMemberData
@@ -246,7 +246,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMember)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConMember>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConMember>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -803,7 +803,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMember</returns>
-        public ConMember UpdateMember(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0)
+        public ConMember UpdateMember(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = UpdateMemberWithHttpInfo(projectId, connectionId, memberId, conMember);
             return localVarResponse.Data;
@@ -819,7 +819,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMember">New member data (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMember</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -878,7 +878,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMember</returns>
-        public async System.Threading.Tasks.Task<ConMember> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConMember> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = await UpdateMemberWithHttpInfoAsync(projectId, connectionId, memberId, conMember, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -895,7 +895,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMember)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMember>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, ConMember? conMember = default(ConMember?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMember>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();

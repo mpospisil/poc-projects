@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="calculate"></a>
 # **Calculate**
-> List&lt;ConResultSummary&gt; Calculate (Guid projectId, ConCalculationParameter? conCalculationParameter = null)
+> List&lt;ConResultSummary&gt; Calculate (Guid projectId, ConCalculationParameter conCalculationParameter = null)
 
 Run CBFEM caluclation and return the summary of the results
 
@@ -32,7 +32,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new CalculationApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var conCalculationParameter = new ConCalculationParameter?(); // ConCalculationParameter? | List of connections to calculate and a type of CBFEM analysis (optional) 
+            var conCalculationParameter = new ConCalculationParameter(); // ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional) 
 
             try
             {
@@ -76,7 +76,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **conCalculationParameter** | [**ConCalculationParameter?**](ConCalculationParameter?.md) | List of connections to calculate and a type of CBFEM analysis | [optional]  |
+| **conCalculationParameter** | [**ConCalculationParameter**](ConCalculationParameter.md) | List of connections to calculate and a type of CBFEM analysis | [optional]  |
 
 ### Return type
 
@@ -101,7 +101,7 @@ No authorization required
 
 <a id="getrawjsonresults"></a>
 # **GetRawJsonResults**
-> List&lt;string&gt; GetRawJsonResults (Guid projectId, ConCalculationParameter? conCalculationParameter = null)
+> List&lt;string&gt; GetRawJsonResults (Guid projectId, ConCalculationParameter conCalculationParameter = null)
 
 Get json string which represents raw CBFEM results (an instance of CheckResultsData)
 
@@ -123,7 +123,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new CalculationApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened connection in the ConnectionRestApi service
-            var conCalculationParameter = new ConCalculationParameter?(); // ConCalculationParameter? | Type of requested analysis and connection to calculate (optional) 
+            var conCalculationParameter = new ConCalculationParameter(); // ConCalculationParameter | Type of requested analysis and connection to calculate (optional) 
 
             try
             {
@@ -167,7 +167,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened connection in the ConnectionRestApi service |  |
-| **conCalculationParameter** | [**ConCalculationParameter?**](ConCalculationParameter?.md) | Type of requested analysis and connection to calculate | [optional]  |
+| **conCalculationParameter** | [**ConCalculationParameter**](ConCalculationParameter.md) | Type of requested analysis and connection to calculate | [optional]  |
 
 ### Return type
 
@@ -192,7 +192,7 @@ No authorization required
 
 <a id="getresults"></a>
 # **GetResults**
-> List&lt;ConnectionCheckRes&gt; GetResults (Guid projectId, ConCalculationParameter? conCalculationParameter = null)
+> List&lt;ConnectionCheckRes&gt; GetResults (Guid projectId, ConCalculationParameter conCalculationParameter = null)
 
 Get detailed results of the CBFEM analysis
 
@@ -214,7 +214,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new CalculationApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var conCalculationParameter = new ConCalculationParameter?(); // ConCalculationParameter? | List of connections to calculate and a type of CBFEM analysis (optional) 
+            var conCalculationParameter = new ConCalculationParameter(); // ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional) 
 
             try
             {
@@ -258,7 +258,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **conCalculationParameter** | [**ConCalculationParameter?**](ConCalculationParameter?.md) | List of connections to calculate and a type of CBFEM analysis | [optional]  |
+| **conCalculationParameter** | [**ConCalculationParameter**](ConCalculationParameter.md) | List of connections to calculate and a type of CBFEM analysis | [optional]  |
 
 ### Return type
 

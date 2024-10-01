@@ -20,7 +20,7 @@ All URIs are relative to *http://localhost*
 
 <a id="addboltassembly"></a>
 # **AddBoltAssembly**
-> ConMprlElement AddBoltAssembly (Guid projectId, ConMprlElement? conMprlElement = null)
+> ConMprlElement AddBoltAssembly (Guid projectId, ConMprlElement conMprlElement = null)
 
 Add bolt assembly to the project
 
@@ -42,7 +42,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new bolt assemby to be added to the project (optional) 
+            var conMprlElement = new ConMprlElement(); // ConMprlElement | Definition of a new bolt assemby to be added to the project (optional) 
 
             try
             {
@@ -86,7 +86,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new bolt assemby to be added to the project | [optional]  |
+| **conMprlElement** | [**ConMprlElement**](ConMprlElement.md) | Definition of a new bolt assemby to be added to the project | [optional]  |
 
 ### Return type
 
@@ -111,7 +111,7 @@ No authorization required
 
 <a id="addcrosssection"></a>
 # **AddCrossSection**
-> ConMprlCrossSection AddCrossSection (Guid projectId, ConMprlCrossSection? conMprlCrossSection = null)
+> ConMprlCrossSection AddCrossSection (Guid projectId, ConMprlCrossSection conMprlCrossSection = null)
 
 Add cross section to the project
 
@@ -133,7 +133,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var conMprlCrossSection = new ConMprlCrossSection?(); // ConMprlCrossSection? | Definition of a new cross-section to be added to the project (optional) 
+            var conMprlCrossSection = new ConMprlCrossSection(); // ConMprlCrossSection | Definition of a new cross-section to be added to the project (optional) 
 
             try
             {
@@ -177,7 +177,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **conMprlCrossSection** | [**ConMprlCrossSection?**](ConMprlCrossSection?.md) | Definition of a new cross-section to be added to the project | [optional]  |
+| **conMprlCrossSection** | [**ConMprlCrossSection**](ConMprlCrossSection.md) | Definition of a new cross-section to be added to the project | [optional]  |
 
 ### Return type
 
@@ -202,7 +202,7 @@ No authorization required
 
 <a id="addmaterialboltgrade"></a>
 # **AddMaterialBoltGrade**
-> ConMprlElement AddMaterialBoltGrade (Guid projectId, ConMprlElement? conMprlElement = null)
+> ConMprlElement AddMaterialBoltGrade (Guid projectId, ConMprlElement conMprlElement = null)
 
 Add material to the project
 
@@ -224,7 +224,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
+            var conMprlElement = new ConMprlElement(); // ConMprlElement | Definition of a new material to be added to the project (optional) 
 
             try
             {
@@ -268,7 +268,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
+| **conMprlElement** | [**ConMprlElement**](ConMprlElement.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
 
@@ -293,7 +293,7 @@ No authorization required
 
 <a id="addmaterialconcrete"></a>
 # **AddMaterialConcrete**
-> ConMprlElement AddMaterialConcrete (Guid projectId, ConMprlElement? conMprlElement = null)
+> ConMprlElement AddMaterialConcrete (Guid projectId, ConMprlElement conMprlElement = null)
 
 Add material to the project
 
@@ -315,7 +315,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
+            var conMprlElement = new ConMprlElement(); // ConMprlElement | Definition of a new material to be added to the project (optional) 
 
             try
             {
@@ -359,7 +359,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
+| **conMprlElement** | [**ConMprlElement**](ConMprlElement.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
 
@@ -384,7 +384,7 @@ No authorization required
 
 <a id="addmaterialsteel"></a>
 # **AddMaterialSteel**
-> ConMprlElement AddMaterialSteel (Guid projectId, ConMprlElement? conMprlElement = null)
+> ConMprlElement AddMaterialSteel (Guid projectId, ConMprlElement conMprlElement = null)
 
 Add material to the project
 
@@ -406,7 +406,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
+            var conMprlElement = new ConMprlElement(); // ConMprlElement | Definition of a new material to be added to the project (optional) 
 
             try
             {
@@ -450,7 +450,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
+| **conMprlElement** | [**ConMprlElement**](ConMprlElement.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
 
@@ -475,7 +475,7 @@ No authorization required
 
 <a id="addmaterialweld"></a>
 # **AddMaterialWeld**
-> ConMprlElement AddMaterialWeld (Guid projectId, ConMprlElement? conMprlElement = null)
+> ConMprlElement AddMaterialWeld (Guid projectId, ConMprlElement conMprlElement = null)
 
 Add material to the project
 
@@ -497,7 +497,7 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new MaterialApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service
-            var conMprlElement = new ConMprlElement?(); // ConMprlElement? | Definition of a new material to be added to the project (optional) 
+            var conMprlElement = new ConMprlElement(); // ConMprlElement | Definition of a new material to be added to the project (optional) 
 
             try
             {
@@ -541,7 +541,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service |  |
-| **conMprlElement** | [**ConMprlElement?**](ConMprlElement?.md) | Definition of a new material to be added to the project | [optional]  |
+| **conMprlElement** | [**ConMprlElement**](ConMprlElement.md) | Definition of a new material to be added to the project | [optional]  |
 
 ### Return type
 

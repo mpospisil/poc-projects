@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost*
 
 <a id="addloadeffect"></a>
 # **AddLoadEffect**
-> LoadEffectData AddLoadEffect (Guid projectId, int connectionId, ConLoadEffect? conLoadEffect = null)
+> LoadEffectData AddLoadEffect (Guid projectId, int connectionId, ConLoadEffect conLoadEffect = null)
 
 Add new load effect to the connection
 
@@ -37,7 +37,7 @@ namespace Example
             var apiInstance = new LoadEffectApi(config);
             var projectId = "projectId_example";  // Guid | 
             var connectionId = 56;  // int | 
-            var conLoadEffect = new ConLoadEffect?(); // ConLoadEffect? |  (optional) 
+            var conLoadEffect = new ConLoadEffect(); // ConLoadEffect |  (optional) 
 
             try
             {
@@ -82,7 +82,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** |  |  |
 | **connectionId** | **int** |  |  |
-| **conLoadEffect** | [**ConLoadEffect?**](ConLoadEffect?.md) |  | [optional]  |
+| **conLoadEffect** | [**ConLoadEffect**](ConLoadEffect.md) |  | [optional]  |
 
 ### Return type
 
@@ -479,7 +479,7 @@ No authorization required
 
 <a id="setloadsettings"></a>
 # **SetLoadSettings**
-> ConLoadSettings SetLoadSettings (Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = null)
+> ConLoadSettings SetLoadSettings (Guid projectId, int connectionId, ConLoadSettings conLoadSettings = null)
 
 Set Load settings for connection in project
 
@@ -502,7 +502,7 @@ namespace Example
             var apiInstance = new LoadEffectApi(config);
             var projectId = "projectId_example";  // Guid | 
             var connectionId = 56;  // int | 
-            var conLoadSettings = new ConLoadSettings?(); // ConLoadSettings? |  (optional) 
+            var conLoadSettings = new ConLoadSettings(); // ConLoadSettings |  (optional) 
 
             try
             {
@@ -547,7 +547,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **projectId** | **Guid** |  |  |
 | **connectionId** | **int** |  |  |
-| **conLoadSettings** | [**ConLoadSettings?**](ConLoadSettings?.md) |  | [optional]  |
+| **conLoadSettings** | [**ConLoadSettings**](ConLoadSettings.md) |  | [optional]  |
 
 ### Return type
 
@@ -572,7 +572,7 @@ No authorization required
 
 <a id="updateloadeffect"></a>
 # **UpdateLoadEffect**
-> ConLoadEffect UpdateLoadEffect (Guid projectId, int connectionId, int loadEffectId, ConLoadEffect? conLoadEffect = null)
+> ConLoadEffect UpdateLoadEffect (Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = null)
 
 Update load impulses in loadEffectId
 
@@ -596,7 +596,7 @@ namespace Example
             var projectId = "projectId_example";  // Guid | 
             var connectionId = 56;  // int | 
             var loadEffectId = 56;  // int | 
-            var conLoadEffect = new ConLoadEffect?(); // ConLoadEffect? |  (optional) 
+            var conLoadEffect = new ConLoadEffect(); // ConLoadEffect |  (optional) 
 
             try
             {
@@ -642,7 +642,7 @@ catch (ApiException e)
 | **projectId** | **Guid** |  |  |
 | **connectionId** | **int** |  |  |
 | **loadEffectId** | **int** |  |  |
-| **conLoadEffect** | [**ConLoadEffect?**](ConLoadEffect?.md) |  | [optional]  |
+| **conLoadEffect** | [**ConLoadEffect**](ConLoadEffect.md) |  | [optional]  |
 
 ### Return type
 

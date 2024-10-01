@@ -34,7 +34,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlElement</returns>
-        ConMprlElement AddBoltAssembly(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
+        ConMprlElement AddBoltAssembly(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0);
 
         /// <summary>
         /// Add bolt assembly to the project
@@ -47,7 +47,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlElement</returns>
-        ApiResponse<ConMprlElement> AddBoltAssemblyWithHttpInfo(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
+        ApiResponse<ConMprlElement> AddBoltAssemblyWithHttpInfo(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0);
         /// <summary>
         /// Add cross section to the project
         /// </summary>
@@ -56,7 +56,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlCrossSection</returns>
-        ConMprlCrossSection AddCrossSection(Guid projectId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0);
+        ConMprlCrossSection AddCrossSection(Guid projectId, ConMprlCrossSection conMprlCrossSection = default(ConMprlCrossSection), int operationIndex = 0);
 
         /// <summary>
         /// Add cross section to the project
@@ -69,7 +69,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlCrossSection</returns>
-        ApiResponse<ConMprlCrossSection> AddCrossSectionWithHttpInfo(Guid projectId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0);
+        ApiResponse<ConMprlCrossSection> AddCrossSectionWithHttpInfo(Guid projectId, ConMprlCrossSection conMprlCrossSection = default(ConMprlCrossSection), int operationIndex = 0);
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -78,7 +78,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlElement</returns>
-        ConMprlElement AddMaterialBoltGrade(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
+        ConMprlElement AddMaterialBoltGrade(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0);
 
         /// <summary>
         /// Add material to the project
@@ -91,7 +91,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlElement</returns>
-        ApiResponse<ConMprlElement> AddMaterialBoltGradeWithHttpInfo(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
+        ApiResponse<ConMprlElement> AddMaterialBoltGradeWithHttpInfo(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0);
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -100,7 +100,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlElement</returns>
-        ConMprlElement AddMaterialConcrete(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
+        ConMprlElement AddMaterialConcrete(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0);
 
         /// <summary>
         /// Add material to the project
@@ -113,7 +113,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlElement</returns>
-        ApiResponse<ConMprlElement> AddMaterialConcreteWithHttpInfo(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
+        ApiResponse<ConMprlElement> AddMaterialConcreteWithHttpInfo(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0);
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -122,7 +122,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlElement</returns>
-        ConMprlElement AddMaterialSteel(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
+        ConMprlElement AddMaterialSteel(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0);
 
         /// <summary>
         /// Add material to the project
@@ -135,7 +135,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlElement</returns>
-        ApiResponse<ConMprlElement> AddMaterialSteelWithHttpInfo(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
+        ApiResponse<ConMprlElement> AddMaterialSteelWithHttpInfo(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0);
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -144,7 +144,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlElement</returns>
-        ConMprlElement AddMaterialWeld(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
+        ConMprlElement AddMaterialWeld(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0);
 
         /// <summary>
         /// Add material to the project
@@ -157,7 +157,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlElement</returns>
-        ApiResponse<ConMprlElement> AddMaterialWeldWithHttpInfo(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0);
+        ApiResponse<ConMprlElement> AddMaterialWeldWithHttpInfo(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0);
         /// <summary>
         /// Get materials which are used in the project projectId
         /// </summary>
@@ -319,7 +319,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlElement</returns>
-        System.Threading.Tasks.Task<ConMprlElement> AddBoltAssemblyAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConMprlElement> AddBoltAssemblyAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add bolt assembly to the project
@@ -333,7 +333,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlElement)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddBoltAssemblyWithHttpInfoAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddBoltAssemblyWithHttpInfoAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add cross section to the project
         /// </summary>
@@ -346,7 +346,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlCrossSection</returns>
-        System.Threading.Tasks.Task<ConMprlCrossSection> AddCrossSectionAsync(Guid projectId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConMprlCrossSection> AddCrossSectionAsync(Guid projectId, ConMprlCrossSection conMprlCrossSection = default(ConMprlCrossSection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add cross section to the project
@@ -360,7 +360,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlCrossSection)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConMprlCrossSection>> AddCrossSectionWithHttpInfoAsync(Guid projectId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConMprlCrossSection>> AddCrossSectionWithHttpInfoAsync(Guid projectId, ConMprlCrossSection conMprlCrossSection = default(ConMprlCrossSection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -373,7 +373,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlElement</returns>
-        System.Threading.Tasks.Task<ConMprlElement> AddMaterialBoltGradeAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConMprlElement> AddMaterialBoltGradeAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add material to the project
@@ -387,7 +387,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlElement)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialBoltGradeWithHttpInfoAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialBoltGradeWithHttpInfoAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -400,7 +400,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlElement</returns>
-        System.Threading.Tasks.Task<ConMprlElement> AddMaterialConcreteAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConMprlElement> AddMaterialConcreteAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add material to the project
@@ -414,7 +414,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlElement)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialConcreteWithHttpInfoAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialConcreteWithHttpInfoAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -427,7 +427,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlElement</returns>
-        System.Threading.Tasks.Task<ConMprlElement> AddMaterialSteelAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConMprlElement> AddMaterialSteelAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add material to the project
@@ -441,7 +441,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlElement)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialSteelWithHttpInfoAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialSteelWithHttpInfoAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Add material to the project
         /// </summary>
@@ -454,7 +454,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlElement</returns>
-        System.Threading.Tasks.Task<ConMprlElement> AddMaterialWeldAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConMprlElement> AddMaterialWeldAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add material to the project
@@ -468,7 +468,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlElement)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialWeldWithHttpInfoAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConMprlElement>> AddMaterialWeldWithHttpInfoAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get materials which are used in the project projectId
         /// </summary>
@@ -772,7 +772,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlElement</returns>
-        public ConMprlElement AddBoltAssembly(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
+        public ConMprlElement AddBoltAssembly(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = AddBoltAssemblyWithHttpInfo(projectId, conMprlElement);
             return localVarResponse.Data;
@@ -786,7 +786,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new bolt assemby to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlElement</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddBoltAssemblyWithHttpInfo(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddBoltAssemblyWithHttpInfo(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -841,7 +841,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlElement</returns>
-        public async System.Threading.Tasks.Task<ConMprlElement> AddBoltAssemblyAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConMprlElement> AddBoltAssemblyAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = await AddBoltAssemblyWithHttpInfoAsync(projectId, conMprlElement, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -856,7 +856,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlElement)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddBoltAssemblyWithHttpInfoAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddBoltAssemblyWithHttpInfoAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -912,7 +912,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlCrossSection</returns>
-        public ConMprlCrossSection AddCrossSection(Guid projectId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0)
+        public ConMprlCrossSection AddCrossSection(Guid projectId, ConMprlCrossSection conMprlCrossSection = default(ConMprlCrossSection), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlCrossSection> localVarResponse = AddCrossSectionWithHttpInfo(projectId, conMprlCrossSection);
             return localVarResponse.Data;
@@ -926,7 +926,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlCrossSection">Definition of a new cross-section to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlCrossSection</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConMprlCrossSection> AddCrossSectionWithHttpInfo(Guid projectId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlCrossSection> AddCrossSectionWithHttpInfo(Guid projectId, ConMprlCrossSection conMprlCrossSection = default(ConMprlCrossSection), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -981,7 +981,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlCrossSection</returns>
-        public async System.Threading.Tasks.Task<ConMprlCrossSection> AddCrossSectionAsync(Guid projectId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConMprlCrossSection> AddCrossSectionAsync(Guid projectId, ConMprlCrossSection conMprlCrossSection = default(ConMprlCrossSection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlCrossSection> localVarResponse = await AddCrossSectionWithHttpInfoAsync(projectId, conMprlCrossSection, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -996,7 +996,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlCrossSection)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlCrossSection>> AddCrossSectionWithHttpInfoAsync(Guid projectId, ConMprlCrossSection? conMprlCrossSection = default(ConMprlCrossSection?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlCrossSection>> AddCrossSectionWithHttpInfoAsync(Guid projectId, ConMprlCrossSection conMprlCrossSection = default(ConMprlCrossSection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1052,7 +1052,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlElement</returns>
-        public ConMprlElement AddMaterialBoltGrade(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
+        public ConMprlElement AddMaterialBoltGrade(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = AddMaterialBoltGradeWithHttpInfo(projectId, conMprlElement);
             return localVarResponse.Data;
@@ -1066,7 +1066,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlElement</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialBoltGradeWithHttpInfo(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialBoltGradeWithHttpInfo(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1121,7 +1121,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlElement</returns>
-        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialBoltGradeAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialBoltGradeAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = await AddMaterialBoltGradeWithHttpInfoAsync(projectId, conMprlElement, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1136,7 +1136,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlElement)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialBoltGradeWithHttpInfoAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialBoltGradeWithHttpInfoAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1192,7 +1192,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlElement</returns>
-        public ConMprlElement AddMaterialConcrete(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
+        public ConMprlElement AddMaterialConcrete(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = AddMaterialConcreteWithHttpInfo(projectId, conMprlElement);
             return localVarResponse.Data;
@@ -1206,7 +1206,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlElement</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialConcreteWithHttpInfo(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialConcreteWithHttpInfo(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1261,7 +1261,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlElement</returns>
-        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialConcreteAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialConcreteAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = await AddMaterialConcreteWithHttpInfoAsync(projectId, conMprlElement, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1276,7 +1276,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlElement)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialConcreteWithHttpInfoAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialConcreteWithHttpInfoAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1332,7 +1332,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlElement</returns>
-        public ConMprlElement AddMaterialSteel(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
+        public ConMprlElement AddMaterialSteel(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = AddMaterialSteelWithHttpInfo(projectId, conMprlElement);
             return localVarResponse.Data;
@@ -1346,7 +1346,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlElement</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialSteelWithHttpInfo(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialSteelWithHttpInfo(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1401,7 +1401,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlElement</returns>
-        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialSteelAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialSteelAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = await AddMaterialSteelWithHttpInfoAsync(projectId, conMprlElement, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1416,7 +1416,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlElement)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialSteelWithHttpInfoAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialSteelWithHttpInfoAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1472,7 +1472,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConMprlElement</returns>
-        public ConMprlElement AddMaterialWeld(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
+        public ConMprlElement AddMaterialWeld(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = AddMaterialWeldWithHttpInfo(projectId, conMprlElement);
             return localVarResponse.Data;
@@ -1486,7 +1486,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conMprlElement">Definition of a new material to be added to the project (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMprlElement</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialWeldWithHttpInfo(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> AddMaterialWeldWithHttpInfo(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1541,7 +1541,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMprlElement</returns>
-        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialWeldAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConMprlElement> AddMaterialWeldAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConMprlElement> localVarResponse = await AddMaterialWeldWithHttpInfoAsync(projectId, conMprlElement, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1556,7 +1556,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMprlElement)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialWeldWithHttpInfoAsync(Guid projectId, ConMprlElement? conMprlElement = default(ConMprlElement?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMprlElement>> AddMaterialWeldWithHttpInfoAsync(Guid projectId, ConMprlElement conMprlElement = default(ConMprlElement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();

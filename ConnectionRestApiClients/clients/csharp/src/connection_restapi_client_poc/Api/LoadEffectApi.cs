@@ -35,7 +35,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadEffect"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadEffectData</returns>
-        LoadEffectData AddLoadEffect(Guid projectId, int connectionId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0);
+        LoadEffectData AddLoadEffect(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0);
 
         /// <summary>
         /// Add new load effect to the connection
@@ -49,7 +49,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadEffect"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadEffectData</returns>
-        ApiResponse<LoadEffectData> AddLoadEffectWithHttpInfo(Guid projectId, int connectionId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0);
+        ApiResponse<LoadEffectData> AddLoadEffectWithHttpInfo(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0);
         /// <summary>
         /// Delete load effect loadEffectId
         /// </summary>
@@ -155,7 +155,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadSettings"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConLoadSettings</returns>
-        ConLoadSettings SetLoadSettings(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0);
+        ConLoadSettings SetLoadSettings(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0);
 
         /// <summary>
         /// Set Load settings for connection in project
@@ -169,7 +169,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadSettings"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadSettings</returns>
-        ApiResponse<ConLoadSettings> SetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0);
+        ApiResponse<ConLoadSettings> SetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0);
         /// <summary>
         /// Update load impulses in loadEffectId
         /// </summary>
@@ -180,7 +180,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadEffect"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConLoadEffect</returns>
-        ConLoadEffect UpdateLoadEffect(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0);
+        ConLoadEffect UpdateLoadEffect(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0);
 
         /// <summary>
         /// Update load impulses in loadEffectId
@@ -195,7 +195,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadEffect"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadEffect</returns>
-        ApiResponse<ConLoadEffect> UpdateLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0);
+        ApiResponse<ConLoadEffect> UpdateLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -218,7 +218,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LoadEffectData</returns>
-        System.Threading.Tasks.Task<LoadEffectData> AddLoadEffectAsync(Guid projectId, int connectionId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<LoadEffectData> AddLoadEffectAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add new load effect to the connection
@@ -233,7 +233,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadEffectData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LoadEffectData>> AddLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<LoadEffectData>> AddLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Delete load effect loadEffectId
         /// </summary>
@@ -363,7 +363,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadSettings</returns>
-        System.Threading.Tasks.Task<ConLoadSettings> SetLoadSettingsAsync(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConLoadSettings> SetLoadSettingsAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Set Load settings for connection in project
@@ -378,7 +378,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadSettings)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConLoadSettings>> SetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConLoadSettings>> SetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update load impulses in loadEffectId
         /// </summary>
@@ -393,7 +393,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadEffect</returns>
-        System.Threading.Tasks.Task<ConLoadEffect> UpdateLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConLoadEffect> UpdateLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update load impulses in loadEffectId
@@ -409,7 +409,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadEffect)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConLoadEffect>> UpdateLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConLoadEffect>> UpdateLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -539,7 +539,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadEffect"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>LoadEffectData</returns>
-        public LoadEffectData AddLoadEffect(Guid projectId, int connectionId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0)
+        public LoadEffectData AddLoadEffect(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<LoadEffectData> localVarResponse = AddLoadEffectWithHttpInfo(projectId, connectionId, conLoadEffect);
             return localVarResponse.Data;
@@ -554,7 +554,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadEffect"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadEffectData</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<LoadEffectData> AddLoadEffectWithHttpInfo(Guid projectId, int connectionId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<LoadEffectData> AddLoadEffectWithHttpInfo(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -611,7 +611,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LoadEffectData</returns>
-        public async System.Threading.Tasks.Task<LoadEffectData> AddLoadEffectAsync(Guid projectId, int connectionId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LoadEffectData> AddLoadEffectAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<LoadEffectData> localVarResponse = await AddLoadEffectWithHttpInfoAsync(projectId, connectionId, conLoadEffect, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -627,7 +627,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadEffectData)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<LoadEffectData>> AddLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<LoadEffectData>> AddLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1273,7 +1273,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadSettings"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConLoadSettings</returns>
-        public ConLoadSettings SetLoadSettings(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0)
+        public ConLoadSettings SetLoadSettings(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> localVarResponse = SetLoadSettingsWithHttpInfo(projectId, connectionId, conLoadSettings);
             return localVarResponse.Data;
@@ -1288,7 +1288,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadSettings"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadSettings</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> SetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> SetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1345,7 +1345,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadSettings</returns>
-        public async System.Threading.Tasks.Task<ConLoadSettings> SetLoadSettingsAsync(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConLoadSettings> SetLoadSettingsAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> localVarResponse = await SetLoadSettingsWithHttpInfoAsync(projectId, connectionId, conLoadSettings, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1361,7 +1361,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadSettings)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings>> SetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadSettings? conLoadSettings = default(ConLoadSettings?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings>> SetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1420,7 +1420,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadEffect"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConLoadEffect</returns>
-        public ConLoadEffect UpdateLoadEffect(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0)
+        public ConLoadEffect UpdateLoadEffect(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> localVarResponse = UpdateLoadEffectWithHttpInfo(projectId, connectionId, loadEffectId, conLoadEffect);
             return localVarResponse.Data;
@@ -1436,7 +1436,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="conLoadEffect"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadEffect</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> UpdateLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> UpdateLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1495,7 +1495,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadEffect</returns>
-        public async System.Threading.Tasks.Task<ConLoadEffect> UpdateLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConLoadEffect> UpdateLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> localVarResponse = await UpdateLoadEffectWithHttpInfoAsync(projectId, connectionId, loadEffectId, conLoadEffect, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1512,7 +1512,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadEffect)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect>> UpdateLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect? conLoadEffect = default(ConLoadEffect?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect>> UpdateLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();

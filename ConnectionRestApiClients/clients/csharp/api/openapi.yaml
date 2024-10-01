@@ -358,10 +358,6 @@ paths:
         style: simple
       responses:
         "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MemoryStream'
           description: Success
       summary: Export connection to IFC format
       tags:
@@ -1503,13 +1499,6 @@ paths:
         style: simple
       responses:
         "200":
-          content:
-            application/octet-stream:
-              schema:
-                $ref: '#/components/schemas/MemoryStream'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MemoryStream'
           description: Success
       summary: Download the actual ideacon project from the service. It includes alle
         changes which were made by previous API calls.
@@ -1759,13 +1748,6 @@ paths:
         style: simple
       responses:
         "200":
-          content:
-            application/octet-stream:
-              schema:
-                $ref: '#/components/schemas/MemoryStream'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MemoryStream'
           description: Success
       summary: Generates report for projectId and connectionId
       tags:
@@ -1794,13 +1776,6 @@ paths:
         style: simple
       responses:
         "200":
-          content:
-            application/octet-stream:
-              schema:
-                $ref: '#/components/schemas/MemoryStream'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MemoryStream'
           description: Success
       summary: Generates report for projectId and connectionId
       tags:
@@ -6626,48 +6601,6 @@ components:
       - member1D
       - element1D
       type: string
-    MemoryStream:
-      additionalProperties: false
-      example:
-        canRead: true
-        readTimeout: 5
-        length: 6
-        writeTimeout: 5
-        canWrite: true
-        position: 1
-        canSeek: true
-        canTimeout: true
-        capacity: 0
-      properties:
-        canRead:
-          readOnly: true
-          type: boolean
-        canSeek:
-          readOnly: true
-          type: boolean
-        canWrite:
-          readOnly: true
-          type: boolean
-        capacity:
-          format: int32
-          type: integer
-        length:
-          format: int64
-          readOnly: true
-          type: integer
-        position:
-          format: int64
-          type: integer
-        canTimeout:
-          readOnly: true
-          type: boolean
-        readTimeout:
-          format: int32
-          type: integer
-        writeTimeout:
-          format: int32
-          type: integer
-      type: object
     MessageNumber:
       description: Message numbers
       enum:

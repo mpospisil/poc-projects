@@ -22,7 +22,6 @@ from typing_extensions import Annotated
 from connection_restapi_client_poc.models.con_project import ConProject
 from connection_restapi_client_poc.models.con_project_data import ConProjectData
 from connection_restapi_client_poc.models.connection_setup import ConnectionSetup
-from connection_restapi_client_poc.models.memory_stream import MemoryStream
 from connection_restapi_client_poc.models.open_model_container import OpenModelContainer
 
 from connection_restapi_client_poc.api_client import ApiClient, RequestSerialized
@@ -316,7 +315,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> MemoryStream:
+    ) -> None:
         """Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
 
 
@@ -353,7 +352,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -382,7 +381,7 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[MemoryStream]:
+    ) -> ApiResponse[None]:
         """Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
 
 
@@ -419,7 +418,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -485,7 +484,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MemoryStream",
+            '200': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -526,14 +525,6 @@ class ProjectApi:
         # process the body parameter
 
 
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/octet-stream', 
-                    'application/json'
-                ]
-            )
 
 
         # authentication setting

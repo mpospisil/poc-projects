@@ -31,55 +31,48 @@ with ideastatica_client.IdeaStatiCaClient(configuration, project_file_path) as i
 
     try:
         # Get the project data
-        project_data = is_client.api_project.get_project_data(is_client.project_id)
+        project_data = is_client.project.get_project_data(is_client.project_id)
         pprint(project_data)
 
-        # Get API for connections in the project
-        api_connection = connection_restapi_client_poc.ConnectionApi(is_client.client)
-  
         # Get list of all connections in the project
-        connections_in_project = api_connection.get_all_connections_data(is_client.project_id)
+        connections_in_project = is_client.connection.get_all_connections_data(is_client.project_id)
 
         # first connection in the project 
         connection1 = connections_in_project[0]
-
         pprint(connection1)
-        
-            # get calculation API for the active project
-        api_calculation = connection_restapi_client_poc.CalculationApi(is_client.client)
 
         # run stress-strain CBFEM analysis for the connection id = 1
         calcParams = connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
         calcParams.connection_ids = [connection1.id]
 
         # run stress-strain analysis for the connection
-        con1_cbfem_results = api_calculation.calculate(is_client.project_id, calcParams)
+        con1_cbfem_results = is_client.calculation.calculate(is_client.project_id, calcParams)
         pprint(con1_cbfem_results)
 
         # TODO - fix serialization JSON
         
         # get detailed results. Results are list of strings
         # the number of strings in the list correspond to the number of calculated connections
-        results_text = api_calculation.get_raw_json_results(is_client.project_id, calcParams)
+        results_text = is_client.calculation.get_raw_json_results(is_client.project_id, calcParams)
         firstConnectionResult = results_text[0];
         pprint(firstConnectionResult)
 
         raw_results = json.loads(firstConnectionResult)
         pprint(raw_results)
 
-        detailed_results = api_calculation.get_results(is_client.project_id, calcParams)
+        detailed_results = is_client.calculation.get_results(is_client.project_id, calcParams)
         pprint(detailed_results)
 
         # get connection setup
-        connection_setup =  is_client.api_project.get_setup(is_client.project_id)
+        connection_setup =  is_client.project.get_setup(is_client.project_id)
         pprint(connection_setup)
 
         # modify setup
         connection_setup.hss_limit_plastic_strain = 0.02
-        modifiedSetup = is_client.api_project.update_setup(is_client.project_id, connection_setup)
+        modifiedSetup = is_client.project.update_setup(is_client.project_id, connection_setup)
 
         # recalculate connection
-        recalculate_results = api_calculation.calculate(is_client.project_id, calcParams)
+        recalculate_results = is_client.calculation.calculate(is_client.project_id, calcParams)
         pprint(recalculate_results)
 
     except Exception as e:

@@ -58,12 +58,14 @@ with ideastatica_client.IdeaStatiCaClient(configuration, project_file_path) as i
 
         # TODO - fix serialization JSON
         
-        # # get detailed results
-        # results_text = api_calculation.get_raw_json_results(is_client.project_id, calcParams)
-        # #pprint(results_text)
+        # get detailed results. Results are list of strings
+        # the number of strings in the list correspond to the number of calculated connections
+        results_text = api_calculation.get_raw_json_results(is_client.project_id, calcParams)
+        firstConnectionResult = results_text[0];
+        pprint(firstConnectionResult)
 
-        # raw_results = json.loads(results_text)
-        # pprint(raw_results)
+        raw_results = json.loads(firstConnectionResult)
+        pprint(raw_results)
 
         detailed_results = api_calculation.get_results(is_client.project_id, calcParams)
         pprint(detailed_results)

@@ -25,6 +25,7 @@ namespace connection_restapi_client_poc
 		Guid ProjectId { get; }
 
 		ICalculationApiAsync Calculation { get; }
+		IConnectionApiAsync Connection { get; }
 		IExportApiAsync Export { get; }
 		ILoadEffectApiAsync LoadEffect { get; }
 		IMaterialApiAsync Material { get; }

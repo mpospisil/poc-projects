@@ -30,6 +30,7 @@ namespace connection_restapi_client_poc
 		public IClientApi ClientApi { get; private set; }
 
 		public ICalculationApiAsync Calculation { get; private set; }
+		public IConnectionApiAsync Connection { get; private set; }
 		public IExportApiAsync Export { get; private set; }
 		public ILoadEffectApiAsync LoadEffect { get; private set; }
 		public IMaterialApiAsync Material { get; private set; }
@@ -82,6 +83,7 @@ namespace connection_restapi_client_poc
 			}
 
 			this.Calculation = null;
+			this.Connection = null;
 			this.Export = null;
 			this.LoadEffect = null;
 			this.Material = null;
@@ -107,6 +109,7 @@ namespace connection_restapi_client_poc
 			configuration.DefaultHeaders.Add("ClientId", clientId);
 
 			this.Calculation = new CalculationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
+			this.Connection = new ConnectionApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Export = new ExportApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.LoadEffect = new LoadEffectApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Material = new MaterialApi(clientApi.Client, clientApi.AsynchronousClient, configuration);

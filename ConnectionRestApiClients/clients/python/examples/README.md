@@ -1,4 +1,4 @@
-# How to run the script calculate-hss.py
+# How to run the scripts
 
 Run IdeaStatiCa.ConnectionRestApi from command line
 

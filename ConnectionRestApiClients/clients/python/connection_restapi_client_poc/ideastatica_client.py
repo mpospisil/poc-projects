@@ -1,5 +1,6 @@
-from connection_restapi_client_poc import Configuration, ProjectApi, ClientApi, CalculationApi, TemplateApi, ConnectionApi, ReportApi
+from connection_restapi_client_poc import Configuration, ClientApi, CalculationApi, TemplateApi, ConnectionApi, ReportApi
 import connection_restapi_client_poc.api_client as api_client
+import connection_restapi_client_poc.api.project_ext_api as project_ext_api
 from typing import Optional
 
 class IdeaStatiCaClient:
@@ -9,7 +10,7 @@ class IdeaStatiCaClient:
         self.client: Optional[api_client.ApiClient] = None
         self.project_id: Optional[str] = None
         self.client_id: Optional[str] = None
-        self.project: Optional[ProjectApi] = None
+        self.project: Optional[project_ext_api.ProjectExtApi] = None
         self.calculation: Optional[CalculationApi] = None
         self.template: Optional[TemplateApi] = None
         self.connection: Optional[ConnectionApi] = None
@@ -28,7 +29,7 @@ class IdeaStatiCaClient:
         # Add your ClientId to HTTP header
         self.client.default_headers['ClientId'] = self.client_id        
 
-        self.project = ProjectApi(self.client)
+        self.project = project_ext_api.ProjectExtApi(self.client)
         self.calculation = CalculationApi(self.client)
         self.template = TemplateApi(self.client)
         self.connection = ConnectionApi(self.client)

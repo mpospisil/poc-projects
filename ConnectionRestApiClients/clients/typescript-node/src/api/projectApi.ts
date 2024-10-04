@@ -18,7 +18,6 @@ import http from 'http';
 import { ConProject } from '../model/conProject';
 import { ConProjectData } from '../model/conProjectData';
 import { ConnectionSetup } from '../model/connectionSetup';
-import { MemoryStream } from '../model/memoryStream';
 import { OpenModelContainer } from '../model/openModelContainer';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
@@ -164,18 +163,11 @@ export class ProjectApi {
      * @summary Download the actual ideacon project from the service. It includes alle changes which were made by previous API calls.
      * @param projectId The unique identifier of the opened project in the ConnectionRestApi service
      */
-    public async downloadProject (projectId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: MemoryStream;  }> {
+    public async downloadProject (projectId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
         const localVarPath = this.basePath + '/api/1/projects/{projectId}/download'
             .replace('{' + 'projectId' + '}', encodeURIComponent(String(projectId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/octet-stream', 'application/json'];
-        // give precedence to 'application/json'
-        if (produces.indexOf('application/json') >= 0) {
-            localVarHeaderParams.Accept = 'application/json';
-        } else {
-            localVarHeaderParams.Accept = produces.join(',');
-        }
         let localVarFormParams: any = {};
 
         // verify required parameter 'projectId' is not null or undefined
@@ -212,13 +204,12 @@ export class ProjectApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: MemoryStream;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body?: any;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "MemoryStream");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

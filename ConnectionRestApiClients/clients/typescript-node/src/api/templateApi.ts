@@ -178,7 +178,7 @@ export class TemplateApi {
             .replace('{' + 'connectionId' + '}', encodeURIComponent(String(connectionId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['text/plain', 'application/json'];
+        const produces = ['text/plain'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';

@@ -92,7 +92,6 @@ export * from './member';
 export * from './member1D';
 export * from './member2D';
 export * from './memberType';
-export * from './memoryStream';
 export * from './messageNumber';
 export * from './openElementId';
 export * from './openMessage';
@@ -100,7 +99,6 @@ export * from './openMessages';
 export * from './openModel';
 export * from './openModelContainer';
 export * from './openModelResult';
-export * from './openProjectRequest';
 export * from './opening';
 export * from './parameterData';
 export * from './patchDevice';
@@ -267,7 +265,6 @@ import { Member } from './member';
 import { Member1D } from './member1D';
 import { Member2D } from './member2D';
 import { MemberType } from './memberType';
-import { MemoryStream } from './memoryStream';
 import { MessageNumber } from './messageNumber';
 import { OpenElementId } from './openElementId';
 import { OpenMessage } from './openMessage';
@@ -275,7 +272,6 @@ import { OpenMessages } from './openMessages';
 import { OpenModel } from './openModel';
 import { OpenModelContainer } from './openModelContainer';
 import { OpenModelResult } from './openModelResult';
-import { OpenProjectRequest } from './openProjectRequest';
 import { Opening } from './opening';
 import { ParameterData } from './parameterData';
 import { PatchDevice } from './patchDevice';
@@ -458,14 +454,12 @@ let typeMap: {[index: string]: any} = {
     "Member": Member,
     "Member1D": Member1D,
     "Member2D": Member2D,
-    "MemoryStream": MemoryStream,
     "OpenElementId": OpenElementId,
     "OpenMessage": OpenMessage,
     "OpenMessages": OpenMessages,
     "OpenModel": OpenModel,
     "OpenModelContainer": OpenModelContainer,
     "OpenModelResult": OpenModelResult,
-    "OpenProjectRequest": OpenProjectRequest,
     "Opening": Opening,
     "ParameterData": ParameterData,
     "PatchDevice": PatchDevice,
@@ -516,6 +510,23 @@ let typeMap: {[index: string]: any} = {
     "WeldData": WeldData,
 }
 
+// Check if a string starts with another string without using es6 features
+function startsWith(str: string, match: string): boolean {
+    return str.substring(0, match.length) === match;
+}
+
+// Check if a string ends with another string without using es6 features
+function endsWith(str: string, match: string): boolean {
+    return str.length >= match.length && str.substring(str.length - match.length) === match;
+}
+
+const nullableSuffix = " | null";
+const optionalSuffix = " | undefined";
+const arrayPrefix = "Array<";
+const arraySuffix = ">";
+const mapPrefix = "{ [key: string]: ";
+const mapSuffix = "; }";
+
 export class ObjectSerializer {
     public static findCorrectType(data: any, expectedType: string) {
         if (data == undefined) {
@@ -552,18 +563,33 @@ export class ObjectSerializer {
         }
     }
 
-    public static serialize(data: any, type: string) {
+    public static serialize(data: any, type: string): any {
         if (data == undefined) {
             return data;
         } else if (primitives.indexOf(type.toLowerCase()) !== -1) {
             return data;
-        } else if (type.lastIndexOf("Array<", 0) === 0) { // string.startsWith pre es6
-            let subType: string = type.replace("Array<", ""); // Array<Type> => Type>
-            subType = subType.substring(0, subType.length - 1); // Type> => Type
+        } else if (endsWith(type, nullableSuffix)) {
+            let subType: string = type.slice(0, -nullableSuffix.length); // Type | null => Type
+            return ObjectSerializer.serialize(data, subType);
+        } else if (endsWith(type, optionalSuffix)) {
+            let subType: string = type.slice(0, -optionalSuffix.length); // Type | undefined => Type
+            return ObjectSerializer.serialize(data, subType);
+        } else if (startsWith(type, arrayPrefix)) {
+            let subType: string = type.slice(arrayPrefix.length, -arraySuffix.length); // Array<Type> => Type
             let transformedData: any[] = [];
             for (let index = 0; index < data.length; index++) {
                 let datum = data[index];
                 transformedData.push(ObjectSerializer.serialize(datum, subType));
+            }
+            return transformedData;
+        } else if (startsWith(type, mapPrefix)) {
+            let subType: string = type.slice(mapPrefix.length, -mapSuffix.length); // { [key: string]: Type; } => Type
+            let transformedData: { [key: string]: any } = {};
+            for (let key in data) {
+                transformedData[key] = ObjectSerializer.serialize(
+                    data[key],
+                    subType,
+                );
             }
             return transformedData;
         } else if (type === "Date") {
@@ -590,20 +616,35 @@ export class ObjectSerializer {
         }
     }
 
-    public static deserialize(data: any, type: string) {
+    public static deserialize(data: any, type: string): any {
         // polymorphism may change the actual type.
         type = ObjectSerializer.findCorrectType(data, type);
         if (data == undefined) {
             return data;
         } else if (primitives.indexOf(type.toLowerCase()) !== -1) {
             return data;
-        } else if (type.lastIndexOf("Array<", 0) === 0) { // string.startsWith pre es6
-            let subType: string = type.replace("Array<", ""); // Array<Type> => Type>
-            subType = subType.substring(0, subType.length - 1); // Type> => Type
+        } else if (endsWith(type, nullableSuffix)) {
+            let subType: string = type.slice(0, -nullableSuffix.length); // Type | null => Type
+            return ObjectSerializer.deserialize(data, subType);
+        } else if (endsWith(type, optionalSuffix)) {
+            let subType: string = type.slice(0, -optionalSuffix.length); // Type | undefined => Type
+            return ObjectSerializer.deserialize(data, subType);
+        } else if (startsWith(type, arrayPrefix)) {
+            let subType: string = type.slice(arrayPrefix.length, -arraySuffix.length); // Array<Type> => Type
             let transformedData: any[] = [];
             for (let index = 0; index < data.length; index++) {
                 let datum = data[index];
                 transformedData.push(ObjectSerializer.deserialize(datum, subType));
+            }
+            return transformedData;
+        } else if (startsWith(type, mapPrefix)) {
+            let subType: string = type.slice(mapPrefix.length, -mapSuffix.length); // { [key: string]: Type; } => Type
+            let transformedData: { [key: string]: any } = {};
+            for (let key in data) {
+                transformedData[key] = ObjectSerializer.deserialize(
+                    data[key],
+                    subType,
+                );
             }
             return transformedData;
         } else if (type === "Date") {

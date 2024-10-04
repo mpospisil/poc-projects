@@ -1534,8 +1534,7 @@ namespace connection_restapi_client_poc.Api
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "application/json"
+                "application/xml"
             };
 
             // to determine the Accept header
@@ -1609,8 +1608,7 @@ namespace connection_restapi_client_poc.Api
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "application/json"
+                "application/xml"
             };
 
             // to determine the Accept header
@@ -1680,8 +1678,7 @@ namespace connection_restapi_client_poc.Api
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "multipart/form-data",
-                "application/json"
+                "multipart/form-data"
             };
 
             // to determine the Accept header
@@ -1752,8 +1749,7 @@ namespace connection_restapi_client_poc.Api
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "multipart/form-data", 
-                "application/json"
+                "multipart/form-data"
             };
 
             // to determine the Accept header
@@ -1956,8 +1952,7 @@ namespace connection_restapi_client_poc.Api
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml",
-                "application/json"
+                "application/xml"
             };
 
             // to determine the Accept header
@@ -2028,8 +2023,7 @@ namespace connection_restapi_client_poc.Api
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/xml", 
-                "application/json"
+                "application/xml"
             };
 
             // to determine the Accept header

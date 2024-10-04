@@ -337,8 +337,8 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/xml",
-                "application/json"
+                "application/json",
+                "application/xml"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -408,8 +408,8 @@ namespace connection_restapi_client_poc.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/xml",
-                "application/json"
+                "application/json",
+                "application/xml"
             };
 
             var localVarContentType = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderContentType(_contentTypes);

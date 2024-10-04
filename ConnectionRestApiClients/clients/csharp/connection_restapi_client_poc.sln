@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "connection_restapi_client_poc", "src\connection_restapi_client_poc\connection_restapi_client_poc.csproj", "{6770A8BE-524D-4AAC-8C85-28ABD416FE75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "connection_restapi_client_poc", "src\connection_restapi_client_poc\connection_restapi_client_poc.csproj", "{A499EA9A-8264-4D77-9752-1FCAF97DA554}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6770A8BE-524D-4AAC-8C85-28ABD416FE75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6770A8BE-524D-4AAC-8C85-28ABD416FE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6770A8BE-524D-4AAC-8C85-28ABD416FE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6770A8BE-524D-4AAC-8C85-28ABD416FE75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A499EA9A-8264-4D77-9752-1FCAF97DA554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A499EA9A-8264-4D77-9752-1FCAF97DA554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A499EA9A-8264-4D77-9752-1FCAF97DA554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A499EA9A-8264-4D77-9752-1FCAF97DA554}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

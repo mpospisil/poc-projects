@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35201.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "connection_restapi_client_poc", "src\connection_restapi_client_poc\connection_restapi_client_poc.csproj", "{6770A8BE-524D-4AAC-8C85-28ABD416FE75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ST_ConRestApiClient", "src\tests\ST_ConRestApiClient\ST_ConRestApiClient.csproj", "{AA8350ED-2508-465B-A62B-1CCCAE3A0774}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6770A8BE-524D-4AAC-8C85-28ABD416FE75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6770A8BE-524D-4AAC-8C85-28ABD416FE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6770A8BE-524D-4AAC-8C85-28ABD416FE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6770A8BE-524D-4AAC-8C85-28ABD416FE75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA8350ED-2508-465B-A62B-1CCCAE3A0774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8350ED-2508-465B-A62B-1CCCAE3A0774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8350ED-2508-465B-A62B-1CCCAE3A0774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8350ED-2508-465B-A62B-1CCCAE3A0774}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {588E6FA7-5005-43C1-9114-75ACD2D45D4D}
+	EndGlobalSection
+EndGlobal

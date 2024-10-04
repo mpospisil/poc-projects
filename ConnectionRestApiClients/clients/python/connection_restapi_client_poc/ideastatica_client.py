@@ -1,6 +1,6 @@
 import os
 import logging
-from connection_restapi_client_poc import Configuration, ClientApi, CalculationApi, ConnectionApi, ExportApi, LoadEffectApi, MaterialApi, MemberApi, OperationApi, ParameterApi, PresentationApi, ProjectApi, ReportApi, TemplateApi 
+from connection_restapi_client_poc import Configuration, ClientApi, CalculationApi, ConnectionApi, ExportApi, LoadEffectApi, MaterialApi, MemberApi, OperationApi, ParameterApi, PresentationApi, ReportApi, TemplateApi
 import connection_restapi_client_poc.api_client as api_client
 import connection_restapi_client_poc.api_ext.project_ext_api as project_ext_api
 from typing import Optional
@@ -66,9 +66,8 @@ class IdeaStatiCaClient:
             if ext == '.ideacon':
                 uploadRes = self.project.open_project(idea_con_file=byte_array, _content_type='multipart/form-data')
                 self.project_id = uploadRes.project_id
-
             elif ext == '.xml' or ext == '.iom':
-                self.project.cr(byte_array)
+                raise ValueError(f"TODO - Not implemented yet")
             else:
                 raise ValueError(f"Unsupported file type: {ext}")
 

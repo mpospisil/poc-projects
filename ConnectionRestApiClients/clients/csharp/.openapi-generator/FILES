@@ -110,7 +110,6 @@ docs/OpenMessages.md
 docs/OpenModel.md
 docs/OpenModelContainer.md
 docs/OpenModelResult.md
-docs/OpenProjectRequest.md
 docs/Opening.md
 docs/OperationApi.md
 docs/ParameterApi.md
@@ -307,7 +306,6 @@ src/connection_restapi_client_poc/Model/OpenMessages.cs
 src/connection_restapi_client_poc/Model/OpenModel.cs
 src/connection_restapi_client_poc/Model/OpenModelContainer.cs
 src/connection_restapi_client_poc/Model/OpenModelResult.cs
-src/connection_restapi_client_poc/Model/OpenProjectRequest.cs
 src/connection_restapi_client_poc/Model/Opening.cs
 src/connection_restapi_client_poc/Model/ParameterData.cs
 src/connection_restapi_client_poc/Model/PatchDevice.cs

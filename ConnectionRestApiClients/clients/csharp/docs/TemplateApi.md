@@ -182,7 +182,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json
+ - **Accept**: text/plain
 
 
 ### HTTP response details

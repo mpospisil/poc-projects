@@ -440,12 +440,12 @@
           "200": {
             "description": "Success",
             "content": {
-              "application/xml": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ConnectionData"
                 }
               },
-              "application/json": {
+              "application/xml": {
                 "schema": {
                   "$ref": "#/components/schemas/ConnectionData"
                 }
@@ -486,14 +486,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MemoryStream"
-                }
-              }
-            }
+            "description": "Success"
           }
         }
       }
@@ -1930,22 +1923,6 @@
                   "style": "form"
                 }
               }
-            },
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "ideaConFile": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              },
-              "encoding": {
-                "ideaConFile": {
-                  "style": "form"
-                }
-              }
             }
           }
         },
@@ -2040,19 +2017,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "$ref": "#/components/schemas/MemoryStream"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MemoryStream"
-                }
-              }
-            }
+            "description": "Success"
           }
         }
       }
@@ -2192,11 +2157,6 @@
               "schema": {
                 "$ref": "#/components/schemas/OpenModelContainer"
               }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OpenModelContainer"
-              }
             }
           }
         },
@@ -2270,11 +2230,6 @@
           "description": "",
           "content": {
             "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/OpenModelContainer"
-              }
-            },
-            "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/OpenModelContainer"
               }
@@ -2400,19 +2355,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "$ref": "#/components/schemas/MemoryStream"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MemoryStream"
-                }
-              }
-            }
+            "description": "Success"
           }
         }
       }
@@ -2448,19 +2391,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "$ref": "#/components/schemas/MemoryStream"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MemoryStream"
-                }
-              }
-            }
+            "description": "Success"
           }
         }
       }
@@ -2499,11 +2430,6 @@
             "description": "Success",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/json": {
                 "schema": {
                   "type": "string"
                 }
@@ -5371,49 +5297,6 @@
         ],
         "type": "string",
         "description": "Type of member"
-      },
-      "MemoryStream": {
-        "type": "object",
-        "properties": {
-          "canRead": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canSeek": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canWrite": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "capacity": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "length": {
-            "type": "integer",
-            "format": "int64",
-            "readOnly": true
-          },
-          "position": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "canTimeout": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "readTimeout": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "writeTimeout": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
       },
       "MessageNumber": {
         "enum": [

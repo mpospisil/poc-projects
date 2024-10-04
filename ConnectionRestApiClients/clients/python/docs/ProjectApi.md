@@ -464,7 +464,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
+ - **Content-Type**: application/xml
  - **Accept**: application/json
 
 ### HTTP response details
@@ -530,7 +530,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -663,7 +663,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
+ - **Content-Type**: application/xml
  - **Accept**: application/json
 
 ### HTTP response details

@@ -113,7 +113,6 @@ from connection_restapi_client_poc.models.open_messages import OpenMessages
 from connection_restapi_client_poc.models.open_model import OpenModel
 from connection_restapi_client_poc.models.open_model_container import OpenModelContainer
 from connection_restapi_client_poc.models.open_model_result import OpenModelResult
-from connection_restapi_client_poc.models.open_project_request import OpenProjectRequest
 from connection_restapi_client_poc.models.opening import Opening
 from connection_restapi_client_poc.models.parameter_data import ParameterData
 from connection_restapi_client_poc.models.patch_device import PatchDevice

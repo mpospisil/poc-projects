@@ -1,3 +1,4 @@
+import logging
 import sys
 import os
 from pprint import pprint
@@ -12,6 +13,10 @@ sys.path.append(parent_dir)
 import connection_restapi_client_poc
 import connection_restapi_client_poc.ideastatica_client as ideastatica_client
 
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 baseUrl = "http://localhost:5000"
 

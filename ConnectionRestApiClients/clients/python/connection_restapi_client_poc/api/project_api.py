@@ -1824,8 +1824,7 @@ class ProjectApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'application/json'
+                        'application/xml'
                     ]
                 )
             )
@@ -2095,8 +2094,7 @@ class ProjectApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'multipart/form-data', 
-                        'application/json'
+                        'multipart/form-data'
                     ]
                 )
             )
@@ -2638,8 +2636,7 @@ class ProjectApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml', 
-                        'application/json'
+                        'application/xml'
                     ]
                 )
             )

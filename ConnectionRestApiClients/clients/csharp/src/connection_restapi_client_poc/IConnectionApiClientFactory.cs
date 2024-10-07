@@ -9,7 +9,7 @@ namespace connection_restapi_client_poc
 	public interface IConnectionApiClientFactory
 	{
 		/// <summary>
-		/// Create an instance of IConnectionApiClient that is connected to the service which listens on <paramref name="uri"/>
+		/// Create an instance of IConnectionApiClient
 		/// </summary>
 		/// <returns>Instance of <see cref="IConnectionApiClient"/></returns>
 		Task<IConnectionApiClient> CreateConnectionApiClient();

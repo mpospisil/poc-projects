@@ -98,7 +98,8 @@ namespace connection_restapi_client_poc.Client
         /// <returns>Object representation of the JSON string.</returns>
         internal object Deserialize(RestResponse response, Type type)
         {
-            if (type == typeof(byte[])) // return byte array
+            string responseContentType = response?.ContentType?.ToLowerInvariant();
+            if (type == typeof(byte[]) || "application/octet-stream".Equals(responseContentType, StringComparison.InvariantCultureIgnoreCase)) // return byte array
             {
                 return response.RawBytes;
             }

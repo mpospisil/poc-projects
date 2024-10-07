@@ -94,15 +94,27 @@ namespace ST_ConRestApiClient
 			con2.AnalysisType.Should().Be(ConAnalysisTypeEnum.Stiffness);
 		}
 
-		//[Test]
-		//public async Task ShouldDownloadConnection()
-		//{
-		//	using (var ideaConInStream = await ConnectionApiClient!.Project!.DownloadProjectAsync(ActiveProjectId))
-		//	{
-		//		ideaConInStream.Should().NotBeNull();
-		//		ideaConInStream.Length.Should().BeGreaterThan(0);
-		//	}
-		//}
+		[Test]
+		public async Task ShouldDownloadConnection()
+		{
+			string tempFileName = Path.GetTempFileName()!;
+			try
+			{
+				await ConnectionApiClient!.Project!.DownloadProjectAsync(ActiveProjectId, tempFileName);
+
+				bool fileExists = File.Exists(tempFileName);
+				fileExists.Should().BeTrue("Ideacon project should be downloaded");
+
+				FileInfo fileInfo = new FileInfo(tempFileName);
+				long fileSize = fileInfo.Length;
+
+				fileSize.Should().BeGreaterThan(0, "The downloaded file should not be empty");
+			}
+			finally
+			{
+				File.Delete(tempFileName);
+			}
+		}
 
 		public async Task ShouldUpdateConnection()
 		{

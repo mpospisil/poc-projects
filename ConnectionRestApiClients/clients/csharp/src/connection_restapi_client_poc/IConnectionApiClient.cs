@@ -33,7 +33,7 @@ namespace connection_restapi_client_poc
 		IOperationApiAsync Operation { get; }
 		IParameterApiAsync Parameter { get; }
 		IPresentationApiAsync Presentation { get; }
-		IProjectApiAsync Project { get; }
+		IProjectApiAsyncExt Project { get; }
 		IReportApiAsync Report { get; }
 		ITemplateApiAsync Template { get; }
 	}

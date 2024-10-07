@@ -38,7 +38,7 @@ namespace connection_restapi_client_poc
 		public IOperationApiAsync Operation { get; private set; }
 		public IParameterApiAsync Parameter { get; private set; }
 		public IPresentationApiAsync Presentation { get; private set; }
-		public IProjectApiAsync Project { get; private set; }
+		public IProjectApiAsyncExt Project { get; private set; }
 		public IReportApiAsync Report { get; private set; }
 		public ITemplateApiAsync Template { get; private set; }
 
@@ -117,7 +117,7 @@ namespace connection_restapi_client_poc
 			this.Operation = new OperationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Parameter = new ParameterApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Presentation = new PresentationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
-			this.Project = new ProjectApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
+			this.Project = new ProjectApiExt(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Report = new ReportApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Template = new TemplateApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 

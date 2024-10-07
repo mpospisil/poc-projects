@@ -40,11 +40,11 @@ namespace ST_ConRestApiClient
 		}
 
 		[TearDown]
-		public void TearDown()
+		public async Task TearDown()
 		{
 			if (ConnectionApiClient != null)
 			{
-				ConnectionApiClient.Dispose();
+				await ConnectionApiClient!.DisposeAsync();
 			}
 		}
 

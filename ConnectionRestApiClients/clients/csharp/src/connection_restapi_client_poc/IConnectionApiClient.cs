@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace connection_restapi_client_poc
 {
 	/// <summary>
-	/// 
+	/// Client for accessing IdeaStatiCa.ConnectionRestApi
 	/// </summary>
 	public interface IConnectionApiClient : IDisposable
 #if NETSTANDARD2_1_OR_GREATER

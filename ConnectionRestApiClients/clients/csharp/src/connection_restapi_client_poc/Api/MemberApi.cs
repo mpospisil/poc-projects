@@ -44,10 +44,11 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to get its members</param>
+/// <param name="connectionId">Id of the connection to get its members</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ConMember&gt;</returns>
-        ApiResponse<List<ConMember>> GetAllMemberDataWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        ApiResponse<List<ConMember>> GetAllMemberDataWithHttpInfo(Guid projectId, int connectionId, string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Get information about the requires member in the connection
         /// </summary>
@@ -67,11 +68,12 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to get its member</param>
-        /// <param name="memberId">Id of the requested member in the connection</param>
+/// <param name="connectionId">Id of the connection to get its member</param>
+/// <param name="memberId">Id of the requested member in the connection</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMember</returns>
-        ApiResponse<ConMember> GetMemberDataWithHttpInfo(Guid projectId, int connectionId, int memberId, int operationIndex = 0);
+        ApiResponse<ConMember> GetMemberDataWithHttpInfo(Guid projectId, int connectionId, int memberId, string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Set bearing member for memberIt
         /// </summary>
@@ -91,11 +93,12 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="memberId"></param>
+/// <param name="connectionId"></param>
+/// <param name="memberId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMember</returns>
-        ApiResponse<ConMember> SetBearingMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, int operationIndex = 0);
+        ApiResponse<ConMember> SetBearingMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Update the member in the connection by newMemberData
         /// </summary>
@@ -116,12 +119,13 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to to update is member memberId</param>
-        /// <param name="memberId">Id of the member to be updated in the connection</param>
-        /// <param name="conMember">New member data (optional)</param>
+/// <param name="connectionId">Id of the connection to to update is member memberId</param>
+/// <param name="memberId">Id of the member to be updated in the connection</param>
+/// <param name="conMember">New member data (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMember</returns>
-        ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0);
+        ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), string requestedType = null, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -143,7 +147,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConMember&gt;</returns>
-        System.Threading.Tasks.Task<List<ConMember>> GetAllMemberDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ConMember>> GetAllMemberDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get information about all members in the connection
@@ -154,10 +158,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its members</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConMember&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ConMember>>> GetAllMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ConMember>>> GetAllMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get information about the requires member in the connection
         /// </summary>
@@ -171,7 +176,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMember</returns>
-        System.Threading.Tasks.Task<ConMember> GetMemberDataAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConMember> GetMemberDataAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get information about the requires member in the connection
@@ -183,10 +188,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its member</param>
         /// <param name="memberId">Id of the requested member in the connection</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMember)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConMember>> GetMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConMember>> GetMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Set bearing member for memberIt
         /// </summary>
@@ -200,7 +206,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMember</returns>
-        System.Threading.Tasks.Task<ConMember> SetBearingMemberAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConMember> SetBearingMemberAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Set bearing member for memberIt
@@ -212,10 +218,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="memberId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMember)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConMember>> SetBearingMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConMember>> SetBearingMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update the member in the connection by newMemberData
         /// </summary>
@@ -230,7 +237,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMember</returns>
-        System.Threading.Tasks.Task<ConMember> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConMember> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update the member in the connection by newMemberData
@@ -243,10 +250,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId">Id of the connection to to update is member memberId</param>
         /// <param name="memberId">Id of the member to be updated in the connection</param>
         /// <param name="conMember">New member data (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMember)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConMember>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConMember>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -386,10 +394,11 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to get its members</param>
+/// <param name="connectionId">Id of the connection to get its members</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ConMember&gt;</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<List<ConMember>> GetAllMemberDataWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<List<ConMember>> GetAllMemberDataWithHttpInfo(Guid projectId, int connectionId, string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -407,10 +416,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -443,9 +457,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConMember&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ConMember>> GetAllMemberDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ConMember>> GetAllMemberDataAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<List<ConMember>> localVarResponse = await GetAllMemberDataWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<List<ConMember>> localVarResponse = await GetAllMemberDataWithHttpInfoAsync(projectId, connectionId, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -455,10 +469,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its members</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConMember&gt;)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ConMember>>> GetAllMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ConMember>>> GetAllMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -477,7 +492,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -525,11 +545,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to get its member</param>
-        /// <param name="memberId">Id of the requested member in the connection</param>
+/// <param name="connectionId">Id of the connection to get its member</param>
+/// <param name="memberId">Id of the requested member in the connection</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMember</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConMember> GetMemberDataWithHttpInfo(Guid projectId, int connectionId, int memberId, int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConMember> GetMemberDataWithHttpInfo(Guid projectId, int connectionId, int memberId, string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -547,10 +568,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -585,9 +611,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMember</returns>
-        public async System.Threading.Tasks.Task<ConMember> GetMemberDataAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConMember> GetMemberDataAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = await GetMemberDataWithHttpInfoAsync(projectId, connectionId, memberId, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = await GetMemberDataWithHttpInfoAsync(projectId, connectionId, memberId, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -598,10 +624,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its member</param>
         /// <param name="memberId">Id of the requested member in the connection</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMember)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMember>> GetMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMember>> GetMemberDataWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -620,7 +647,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -669,11 +701,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="memberId"></param>
+/// <param name="connectionId"></param>
+/// <param name="memberId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMember</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConMember> SetBearingMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConMember> SetBearingMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -691,10 +724,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -729,9 +767,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMember</returns>
-        public async System.Threading.Tasks.Task<ConMember> SetBearingMemberAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConMember> SetBearingMemberAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = await SetBearingMemberWithHttpInfoAsync(projectId, connectionId, memberId, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = await SetBearingMemberWithHttpInfoAsync(projectId, connectionId, memberId, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -742,10 +780,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="memberId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMember)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMember>> SetBearingMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMember>> SetBearingMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -764,7 +803,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -814,12 +858,13 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to to update is member memberId</param>
-        /// <param name="memberId">Id of the member to be updated in the connection</param>
-        /// <param name="conMember">New member data (optional)</param>
+/// <param name="connectionId">Id of the connection to to update is member memberId</param>
+/// <param name="memberId">Id of the member to be updated in the connection</param>
+/// <param name="conMember">New member data (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConMember</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConMember> UpdateMemberWithHttpInfo(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -838,10 +883,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -878,9 +928,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConMember</returns>
-        public async System.Threading.Tasks.Task<ConMember> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConMember> UpdateMemberAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = await UpdateMemberWithHttpInfoAsync(projectId, connectionId, memberId, conMember, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConMember> localVarResponse = await UpdateMemberWithHttpInfoAsync(projectId, connectionId, memberId, conMember, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -892,10 +942,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId">Id of the connection to to update is member memberId</param>
         /// <param name="memberId">Id of the member to be updated in the connection</param>
         /// <param name="conMember">New member data (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConMember)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMember>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConMember>> UpdateMemberWithHttpInfoAsync(Guid projectId, int connectionId, int memberId, ConMember conMember = default(ConMember), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -915,7 +966,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

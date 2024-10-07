@@ -450,9 +450,10 @@ namespace connection_restapi_client_poc.Client
         /// <param name="configuration">A per-request configuration object.
         /// It is assumed that any merge with GlobalConfiguration has been done before calling this method.</param>
         /// <returns>A new ApiResponse instance.</returns>
-        private async Task<ApiResponse<T>> ExecClientAsync<T>(Func<RestClient, Task<RestResponse<T>>> getResponse, Action<RestClientOptions> setOptions, RestRequest request, RequestOptions options, IReadableConfiguration configuration)
+        private ApiResponse<T> ExecClient<T>(Func<RestClient, RestResponse<T>> getResponse, Action<RestClientOptions> setOptions, RestRequest request, RequestOptions options, IReadableConfiguration configuration)
         {
             var baseUrl = configuration.GetOperationServerUrl(options.Operation, options.OperationIndex) ?? _baseUrl;
+
             var clientOptions = new RestClientOptions(baseUrl)
             {
                 ClientCertificates = configuration.ClientCertificates,
@@ -469,7 +470,14 @@ namespace connection_restapi_client_poc.Client
             {
                 InterceptRequest(request);
 
-                RestResponse<T> response = await getResponse(client);
+                RestResponse<T> response = getResponse(client);
+
+                if(response.ContentType == "application/octet-stream" && typeof(T).Name == "Object")
+                {
+                    response.Data = (T)(object)response.RawBytes;
+                    var res = ToApiResponse(response);
+                    return res;
+                }
 
                 // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
                 if (typeof(AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
@@ -565,21 +573,21 @@ namespace connection_restapi_client_poc.Client
                 clientOptions.CookieContainer = cookies;
             };
 
-            Func<RestClient, Task<RestResponse<T>>> getResponse = (client) =>
+            Func<RestClient, RestResponse<T>> getResponse = (client) =>
             {
                 if (RetryConfiguration.RetryPolicy != null)
                 {
                     var policy = RetryConfiguration.RetryPolicy;
                     var policyResult = policy.ExecuteAndCapture(() => client.Execute(request));
-                    return Task.FromResult(DeserializeRestResponseFromPolicy<T>(client, request, policyResult));
+                    return DeserializeRestResponseFromPolicy<T>(client, request, policyResult);
                 }
                 else
                 {
-                    return Task.FromResult(client.Execute<T>(request));
+                    return client.Execute<T>(request);
                 }
             };
 
-            return ExecClientAsync(getResponse, setOptions, request, options, configuration).GetAwaiter().GetResult();
+            return ExecClient(getResponse, setOptions, request, options, configuration);
         }
 
         private Task<ApiResponse<T>> ExecAsync<T>(RestRequest request, RequestOptions options, IReadableConfiguration configuration, CancellationToken cancellationToken = default(CancellationToken))
@@ -589,21 +597,25 @@ namespace connection_restapi_client_poc.Client
                 //no extra options
             };
 
-            Func<RestClient, Task<RestResponse<T>>> getResponse = async (client) =>
+            Func<RestClient, RestResponse<T>> getResponse = (client) =>
             {
-                if (RetryConfiguration.AsyncRetryPolicy != null)
+                Func<Task<RestResponse<T>>> action = async () =>
                 {
-                    var policy = RetryConfiguration.AsyncRetryPolicy;
-                    var policyResult = await policy.ExecuteAndCaptureAsync((ct) => client.ExecuteAsync(request, ct), cancellationToken).ConfigureAwait(false);
-                    return DeserializeRestResponseFromPolicy<T>(client, request, policyResult);
-                }
-                else
-                {
-                    return await client.ExecuteAsync<T>(request, cancellationToken).ConfigureAwait(false);
-                }
+                    if (RetryConfiguration.AsyncRetryPolicy != null)
+                    {
+                        var policy = RetryConfiguration.AsyncRetryPolicy;
+                        var policyResult = await policy.ExecuteAndCaptureAsync((ct) => client.ExecuteAsync(request, ct), cancellationToken).ConfigureAwait(false);
+                        return DeserializeRestResponseFromPolicy<T>(client, request, policyResult);
+                    }
+                    else
+                    {
+                        return await client.ExecuteAsync<T>(request, cancellationToken).ConfigureAwait(false);
+                    }
+                };
+                return action().Result;
             };
 
-            return ExecClientAsync(getResponse, setOptions, request, options, configuration);
+            return Task.FromResult<ApiResponse<T>>(ExecClient(getResponse, setOptions, request, options, configuration));
         }
 
         #region IAsynchronousClient

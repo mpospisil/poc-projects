@@ -45,11 +45,12 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
-        /// <param name="body">Expression to evaluate (optional)</param>
+/// <param name="connectionId">Id of the connection to use for evaluation expression</param>
+/// <param name="body">Expression to evaluate (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> EvaluateExpressionWithHttpInfo(Guid projectId, int connectionId, string body = default(string), int operationIndex = 0);
+        ApiResponse<string> EvaluateExpressionWithHttpInfo(Guid projectId, int connectionId, string body = default(string), string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Get all parameters which are defined for projectId and connectionId
         /// </summary>
@@ -69,11 +70,12 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to get its parameters</param>
-        /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
+/// <param name="connectionId">Id of the connection to get its parameters</param>
+/// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;IdeaParameter&gt;</returns>
-        ApiResponse<List<IdeaParameter>> GetParametersWithHttpInfo(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0);
+        ApiResponse<List<IdeaParameter>> GetParametersWithHttpInfo(Guid projectId, int connectionId, bool? includeHidden = default(bool?), string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Update parameters for the connection connectionId in the project projectId by values passed in parameters
         /// </summary>
@@ -93,11 +95,12 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to apply template</param>
-        /// <param name="ideaParameterUpdate">New values of parameters (optional)</param>
+/// <param name="connectionId">Id of the connection to apply template</param>
+/// <param name="ideaParameterUpdate">New values of parameters (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ParameterData&gt;</returns>
-        ApiResponse<List<ParameterData>> UpdateParametersWithHttpInfo(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), int operationIndex = 0);
+        ApiResponse<List<ParameterData>> UpdateParametersWithHttpInfo(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), string requestedType = null, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -120,7 +123,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> EvaluateExpressionAsync(Guid projectId, int connectionId, string body = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> EvaluateExpressionAsync(Guid projectId, int connectionId, string body = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Evaluate the expression and return the result
@@ -132,10 +135,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
         /// <param name="body">Expression to evaluate (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> EvaluateExpressionWithHttpInfoAsync(Guid projectId, int connectionId, string body = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> EvaluateExpressionWithHttpInfoAsync(Guid projectId, int connectionId, string body = default(string), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all parameters which are defined for projectId and connectionId
         /// </summary>
@@ -149,7 +153,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;IdeaParameter&gt;</returns>
-        System.Threading.Tasks.Task<List<IdeaParameter>> GetParametersAsync(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<IdeaParameter>> GetParametersAsync(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all parameters which are defined for projectId and connectionId
@@ -161,10 +165,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its parameters</param>
         /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;IdeaParameter&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<IdeaParameter>>> GetParametersWithHttpInfoAsync(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<IdeaParameter>>> GetParametersWithHttpInfoAsync(Guid projectId, int connectionId, bool? includeHidden = default(bool?), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update parameters for the connection connectionId in the project projectId by values passed in parameters
         /// </summary>
@@ -178,7 +183,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterData&gt;</returns>
-        System.Threading.Tasks.Task<List<ParameterData>> UpdateParametersAsync(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ParameterData>> UpdateParametersAsync(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update parameters for the connection connectionId in the project projectId by values passed in parameters
@@ -190,10 +195,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to apply template</param>
         /// <param name="ideaParameterUpdate">New values of parameters (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterData&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ParameterData>>> UpdateParametersWithHttpInfoAsync(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ParameterData>>> UpdateParametersWithHttpInfoAsync(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -334,11 +340,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
-        /// <param name="body">Expression to evaluate (optional)</param>
+/// <param name="connectionId">Id of the connection to use for evaluation expression</param>
+/// <param name="body">Expression to evaluate (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<string> EvaluateExpressionWithHttpInfo(Guid projectId, int connectionId, string body = default(string), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<string> EvaluateExpressionWithHttpInfo(Guid projectId, int connectionId, string body = default(string), string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -357,10 +364,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -395,9 +407,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> EvaluateExpressionAsync(Guid projectId, int connectionId, string body = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> EvaluateExpressionAsync(Guid projectId, int connectionId, string body = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await EvaluateExpressionWithHttpInfoAsync(projectId, connectionId, body, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await EvaluateExpressionWithHttpInfoAsync(projectId, connectionId, body, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -408,10 +420,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to use for evaluation expression</param>
         /// <param name="body">Expression to evaluate (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> EvaluateExpressionWithHttpInfoAsync(Guid projectId, int connectionId, string body = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> EvaluateExpressionWithHttpInfoAsync(Guid projectId, int connectionId, string body = default(string), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -431,7 +444,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -480,11 +498,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to get its parameters</param>
-        /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
+/// <param name="connectionId">Id of the connection to get its parameters</param>
+/// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;IdeaParameter&gt;</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<List<IdeaParameter>> GetParametersWithHttpInfo(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<List<IdeaParameter>> GetParametersWithHttpInfo(Guid projectId, int connectionId, bool? includeHidden = default(bool?), string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -502,10 +521,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -543,9 +567,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;IdeaParameter&gt;</returns>
-        public async System.Threading.Tasks.Task<List<IdeaParameter>> GetParametersAsync(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<IdeaParameter>> GetParametersAsync(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<List<IdeaParameter>> localVarResponse = await GetParametersWithHttpInfoAsync(projectId, connectionId, includeHidden, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<List<IdeaParameter>> localVarResponse = await GetParametersWithHttpInfoAsync(projectId, connectionId, includeHidden, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -556,10 +580,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to get its parameters</param>
         /// <param name="includeHidden">Include also hidden parameters (optional, default to false)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;IdeaParameter&gt;)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<IdeaParameter>>> GetParametersWithHttpInfoAsync(Guid projectId, int connectionId, bool? includeHidden = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<IdeaParameter>>> GetParametersWithHttpInfoAsync(Guid projectId, int connectionId, bool? includeHidden = default(bool?), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -578,7 +603,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -630,11 +660,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
-        /// <param name="connectionId">Id of the connection to apply template</param>
-        /// <param name="ideaParameterUpdate">New values of parameters (optional)</param>
+/// <param name="connectionId">Id of the connection to apply template</param>
+/// <param name="ideaParameterUpdate">New values of parameters (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ParameterData&gt;</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<List<ParameterData>> UpdateParametersWithHttpInfo(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<List<ParameterData>> UpdateParametersWithHttpInfo(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -653,10 +684,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -691,9 +727,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ParameterData&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ParameterData>> UpdateParametersAsync(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ParameterData>> UpdateParametersAsync(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<List<ParameterData>> localVarResponse = await UpdateParametersWithHttpInfoAsync(projectId, connectionId, ideaParameterUpdate, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<List<ParameterData>> localVarResponse = await UpdateParametersWithHttpInfoAsync(projectId, connectionId, ideaParameterUpdate, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -704,10 +740,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service</param>
         /// <param name="connectionId">Id of the connection to apply template</param>
         /// <param name="ideaParameterUpdate">New values of parameters (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ParameterData&gt;)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ParameterData>>> UpdateParametersWithHttpInfoAsync(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ParameterData>>> UpdateParametersWithHttpInfoAsync(Guid projectId, int connectionId, List<IdeaParameterUpdate> ideaParameterUpdate = default(List<IdeaParameterUpdate>), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -727,7 +764,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

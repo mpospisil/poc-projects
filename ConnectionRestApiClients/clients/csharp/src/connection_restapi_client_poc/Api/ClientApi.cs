@@ -40,9 +40,10 @@ namespace connection_restapi_client_poc.Api
         /// 
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+                /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> ConnectClientWithHttpInfo(int operationIndex = 0);
+        ApiResponse<string> ConnectClientWithHttpInfo(string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Get the IdeaStatica version
         /// </summary>
@@ -58,9 +59,10 @@ namespace connection_restapi_client_poc.Api
         /// 
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+                /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> GetVersionWithHttpInfo(int operationIndex = 0);
+        ApiResponse<string> GetVersionWithHttpInfo(string requestedType = null, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -80,7 +82,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> ConnectClientAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> ConnectClientAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
@@ -89,10 +91,11 @@ namespace connection_restapi_client_poc.Api
         /// 
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> ConnectClientWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> ConnectClientWithHttpInfoAsync(string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the IdeaStatica version
         /// </summary>
@@ -103,7 +106,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> GetVersionAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> GetVersionAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the IdeaStatica version
@@ -112,10 +115,11 @@ namespace connection_restapi_client_poc.Api
         /// 
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> GetVersionWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> GetVersionWithHttpInfoAsync(string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -252,9 +256,10 @@ namespace connection_restapi_client_poc.Api
         /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client. 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+                /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<string> ConnectClientWithHttpInfo(int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<string> ConnectClientWithHttpInfo(string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -273,10 +278,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
 
@@ -305,9 +315,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> ConnectClientAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> ConnectClientAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await ConnectClientWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await ConnectClientWithHttpInfoAsync(null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -315,10 +325,11 @@ namespace connection_restapi_client_poc.Api
         /// Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client. 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> ConnectClientWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> ConnectClientWithHttpInfoAsync(string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -338,7 +349,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -380,9 +396,10 @@ namespace connection_restapi_client_poc.Api
         /// Get the IdeaStatica version 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+                /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<string> GetVersionWithHttpInfo(int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<string> GetVersionWithHttpInfo(string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -400,10 +417,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
 
@@ -432,9 +454,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> GetVersionAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> GetVersionAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await GetVersionWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<string> localVarResponse = await GetVersionWithHttpInfoAsync(null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -442,10 +464,11 @@ namespace connection_restapi_client_poc.Api
         /// Get the IdeaStatica version 
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> GetVersionWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<string>> GetVersionWithHttpInfoAsync(string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -464,7 +487,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

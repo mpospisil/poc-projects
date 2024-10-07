@@ -40,11 +40,11 @@ namespace ST_ConRestApiClient
 		}
 
 		[TearDown]
-		public void TearDown()
+		public async Task TearDown()
 		{
 			if (ConnectionApiClient != null)
 			{
-				ConnectionApiClient.Dispose();
+				await ConnectionApiClient!.DisposeAsync();
 			}
 		}
 
@@ -94,15 +94,27 @@ namespace ST_ConRestApiClient
 			con2.AnalysisType.Should().Be(ConAnalysisTypeEnum.Stiffness);
 		}
 
-		//[Test]
-		//public async Task ShouldDownloadConnection()
-		//{
-		//	using (var ideaConInStream = await ConnectionApiClient!.Project!.DownloadProjectAsync(ActiveProjectId))
-		//	{
-		//		ideaConInStream.Should().NotBeNull();
-		//		ideaConInStream.Length.Should().BeGreaterThan(0);
-		//	}
-		//}
+		[Test]
+		public async Task ShouldDownloadConnection()
+		{
+			string tempFileName = Path.GetTempFileName()!;
+			try
+			{
+				await ConnectionApiClient!.Project!.DownloadProjectAsync(ActiveProjectId, tempFileName);
+
+				bool fileExists = File.Exists(tempFileName);
+				fileExists.Should().BeTrue("Ideacon project should be downloaded");
+
+				FileInfo fileInfo = new FileInfo(tempFileName);
+				long fileSize = fileInfo.Length;
+
+				fileSize.Should().BeGreaterThan(0, "The downloaded file should not be empty");
+			}
+			finally
+			{
+				File.Delete(tempFileName);
+			}
+		}
 
 		public async Task ShouldUpdateConnection()
 		{
@@ -131,108 +143,107 @@ namespace ST_ConRestApiClient
 			conData.Should().NotBeNull();
 		}
 
-		//[Test]
-		//public async Task ShouldGetAllMembers()
-		//{
-		//	var members = await ConnApiController!.GetMembersAsync(1, CancellationToken.None);
-		//	members.Count.Should().Be(3);
+		[Test]
+		public async Task ShouldGetAllMembers()
+		{
+			var members = await ConnectionApiClient!.Member!.GetAllMemberDataAsync(ActiveProjectId, 1);
+			members.Count.Should().Be(3);
 
-		//	var mem1 = members[0];
-		//	mem1.Id.Should().Be(1);
-		//	mem1.Name.Should().Be("C");
-		//	mem1.CrossSectionId.Should().Be(1);
-		//	mem1.Active.Should().BeTrue();
-		//	mem1.IsBearing.Should().BeTrue();
-		//	mem1.IsContinuous.Should().BeTrue();
-		//	mem1.MirrorY.Should().BeFalse();
-		//	mem1.MirrorZ.Should().BeFalse();
+			var mem1 = members[0];
+			mem1.Id.Should().Be(1);
+			mem1.Name.Should().Be("C");
+			mem1.CrossSectionId.Should().Be(1);
+			mem1.Active.Should().BeTrue();
+			mem1.IsBearing.Should().BeTrue();
+			mem1.IsContinuous.Should().BeTrue();
+			mem1.MirrorY.Should().BeFalse();
+			mem1.MirrorZ.Should().BeFalse();
 
-		//	var mem2 = members[1];
-		//	mem2.Id.Should().Be(2);
-		//	mem2.Name.Should().Be("B1");
-		//	mem2.CrossSectionId.Should().Be(2);
-		//	mem2.Active.Should().BeTrue();
-		//	mem2.IsBearing.Should().BeFalse();
-		//	mem2.IsContinuous.Should().BeFalse();
-		//	mem2.MirrorY.Should().BeFalse();
-		//	mem2.MirrorZ.Should().BeFalse();
+			var mem2 = members[1];
+			mem2.Id.Should().Be(2);
+			mem2.Name.Should().Be("B1");
+			mem2.CrossSectionId.Should().Be(2);
+			mem2.Active.Should().BeTrue();
+			mem2.IsBearing.Should().BeFalse();
+			mem2.IsContinuous.Should().BeFalse();
+			mem2.MirrorY.Should().BeFalse();
+			mem2.MirrorZ.Should().BeFalse();
 
-		//	var mem3 = members[2];
-		//	mem3.Id.Should().Be(3);
-		//	mem3.Name.Should().Be("B2");
-		//	mem3.CrossSectionId.Should().Be(3);
-		//	mem3.Active.Should().BeTrue();
-		//	mem3.IsBearing.Should().BeFalse();
-		//	mem3.IsContinuous.Should().BeFalse();
-		//	mem3.MirrorY.Should().BeFalse();
-		//	mem3.MirrorZ.Should().BeFalse();
-		//}
+			var mem3 = members[2];
+			mem3.Id.Should().Be(3);
+			mem3.Name.Should().Be("B2");
+			mem3.CrossSectionId.Should().Be(3);
+			mem3.Active.Should().BeTrue();
+			mem3.IsBearing.Should().BeFalse();
+			mem3.IsContinuous.Should().BeFalse();
+			mem3.MirrorY.Should().BeFalse();
+			mem3.MirrorZ.Should().BeFalse();
+		}
 
-		//[Test]
-		//public async Task ShouldGetOneMember()
-		//{
-		//	var member = await ConnApiController!.GetMemberAsync(1, 1, CancellationToken.None);
+		[Test]
+		public async Task ShouldGetOneMember()
+		{
+			var member = await ConnectionApiClient!.Member!.GetMemberDataAsync(ActiveProjectId, 1, 1);
 
-		//	member.Id.Should().Be(1);
-		//	member.Name.Should().Be("C");
-		//	member.CrossSectionId.Should().Be(1);
-		//	member.Active.Should().BeTrue();
-		//	member.IsBearing.Should().BeTrue();
-		//	member.IsContinuous.Should().BeTrue();
-		//	member.MirrorY.Should().BeFalse();
-		//	member.MirrorZ.Should().BeFalse();
-		//}
+			member.Id.Should().Be(1);
+			member.Name.Should().Be("C");
+			member.CrossSectionId.Should().Be(1);
+			member.Active.Should().BeTrue();
+			member.IsBearing.Should().BeTrue();
+			member.IsContinuous.Should().BeTrue();
+			member.MirrorY.Should().BeFalse();
+			member.MirrorZ.Should().BeFalse();
+		}
 
-		//[Test]
-		//public async Task SetBearingMember()
-		//{
-		//	var member = await ConnApiController!.GetMemberAsync(1, 1, CancellationToken.None);
+		[Test]
+		public async Task SetBearingMember()
+		{
+			var member = await ConnectionApiClient!.Member!.GetMemberDataAsync(ActiveProjectId, 1, 1);
 
-		//	member.Id.Should().Be(1);
-		//	member.Name.Should().Be("C");
-		//	member.CrossSectionId.Should().Be(1);
-		//	member.Active.Should().BeTrue();
-		//	member.IsBearing.Should().BeTrue();
-		//	member.IsContinuous.Should().BeTrue();
-		//	member.MirrorY.Should().BeFalse();
-		//	member.MirrorZ.Should().BeFalse();
+			member.Id.Should().Be(1);
+			member.Name.Should().Be("C");
+			member.CrossSectionId.Should().Be(1);
+			member.Active.Should().BeTrue();
+			member.IsBearing.Should().BeTrue();
+			member.IsContinuous.Should().BeTrue();
+			member.MirrorY.Should().BeFalse();
+			member.MirrorZ.Should().BeFalse();
 
-		//	var bearingMember = await ConnApiController!.SetBearingMemberAsync(1, 2, CancellationToken.None);
-		//	bearingMember.IsBearing.Should().BeTrue();
+			var bearingMember = await ConnectionApiClient!.Member!.SetBearingMemberAsync(ActiveProjectId, 1, 2);
+			bearingMember.IsBearing.Should().BeTrue();
 
-		//	member = await ConnApiController!.GetMemberAsync(1, 1, CancellationToken.None);
-		//	member.IsBearing.Should().BeFalse();
-		//}
+			member = await ConnectionApiClient!.Member!.GetMemberDataAsync(ActiveProjectId, 1, 1);
+			member.IsBearing.Should().BeFalse();
+		}
 
-		//[Test]
-		//public async Task ShouldUpdateMember()
-		//{
-		//	var member = await ConnApiController!.GetMemberAsync(3, 1, CancellationToken.None);
+		[Test]
+		public async Task ShouldUpdateMember()
+		{
+			var member = await ConnectionApiClient!.Member!.GetMemberDataAsync(ActiveProjectId, 3, 1);
 
-		//	member.Name = "D";
-		//	member.CrossSectionId = 2;
-		//	member.IsContinuous = false;
-		//	member.MirrorY = true;
-		//	member.MirrorZ = true;
+			member.Name = "D";
+			member.CrossSectionId = 2;
+			member.IsContinuous = false;
+			member.MirrorY = true;
+			member.MirrorZ = true;
 
-		//	var updatedMember = await ConnApiController!.UpdateMemberAsync(3, 1, member, CancellationToken.None);
-		//	updatedMember.Name.Should().Be("D");
-		//	updatedMember.CrossSectionId?.Should().Be(2);
-		//	updatedMember.IsContinuous.Should().BeFalse();
-		//	updatedMember.MirrorY.Should().BeTrue();
-		//	updatedMember.MirrorZ.Should().BeTrue();
-		//}
+			var updatedMember = await ConnectionApiClient!.Member!.UpdateMemberAsync(ActiveProjectId, 3, 1, member);
+			updatedMember.Name.Should().Be("D");
+			updatedMember.CrossSectionId?.Should().Be(2);
+			updatedMember.IsContinuous.Should().BeFalse();
+			updatedMember.MirrorY.Should().BeTrue();
+			updatedMember.MirrorZ.Should().BeTrue();
+		}
 
+		[Test]
+		public async Task ShouldGetConnectionData()
+		{
+			var con1 = Project!.Connections.First();
+			con1.Id.Should().Be(1);
 
-		//[Test]
-		//public async Task ShouldGetConnectionIOMConnectionData()
-		//{
-		//	var con1 = Project!.Connections.First();
-		//	con1.Id.Should().Be(1);
-
-		//	var connectionData = await ConnApiController!.ExportConnectionIomConnectionData(1, CancellationToken.None);
-		//	connectionData.Should().NotBeNull();
-		//}
+			var connectionData = await ConnectionApiClient!.Export!.ExportConnectionDataAsync(ActiveProjectId, 1);
+			connectionData.Should().NotBeNull();
+		}
 
 		//[Test]
 		//public async Task ShouldExportConnectionToIfc()

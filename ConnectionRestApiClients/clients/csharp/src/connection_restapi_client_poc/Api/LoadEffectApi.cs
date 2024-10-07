@@ -45,11 +45,12 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="conLoadEffect"> (optional)</param>
+/// <param name="connectionId"></param>
+/// <param name="conLoadEffect"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadEffectData</returns>
-        ApiResponse<LoadEffectData> AddLoadEffectWithHttpInfo(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0);
+        ApiResponse<LoadEffectData> AddLoadEffectWithHttpInfo(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Delete load effect loadEffectId
         /// </summary>
@@ -69,11 +70,12 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
+/// <param name="connectionId"></param>
+/// <param name="loadEffectId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of int</returns>
-        ApiResponse<int> DeleteLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0);
+        ApiResponse<int> DeleteLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Get load impulses from loadEffectId
         /// </summary>
@@ -94,12 +96,13 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="isPercentage"> (optional)</param>
+/// <param name="connectionId"></param>
+/// <param name="loadEffectId"></param>
+/// <param name="isPercentage"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadEffect</returns>
-        ApiResponse<ConLoadEffect> GetLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0);
+        ApiResponse<ConLoadEffect> GetLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Get all load effects which are defined in connectionId
         /// </summary>
@@ -119,11 +122,12 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="isPercentage"> (optional)</param>
+/// <param name="connectionId"></param>
+/// <param name="isPercentage"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ConLoadEffect&gt;</returns>
-        ApiResponse<List<ConLoadEffect>> GetLoadEffectsWithHttpInfo(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0);
+        ApiResponse<List<ConLoadEffect>> GetLoadEffectsWithHttpInfo(Guid projectId, int connectionId, bool? isPercentage = default(bool?), string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Get Load settings for connection in project
         /// </summary>
@@ -142,10 +146,11 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
+/// <param name="connectionId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadSettings</returns>
-        ApiResponse<ConLoadSettings> GetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0);
+        ApiResponse<ConLoadSettings> GetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Set Load settings for connection in project
         /// </summary>
@@ -165,11 +170,12 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="conLoadSettings"> (optional)</param>
+/// <param name="connectionId"></param>
+/// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadSettings</returns>
-        ApiResponse<ConLoadSettings> SetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0);
+        ApiResponse<ConLoadSettings> SetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Update load impulses in loadEffectId
         /// </summary>
@@ -190,12 +196,13 @@ namespace connection_restapi_client_poc.Api
         /// </remarks>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="conLoadEffect"> (optional)</param>
+/// <param name="connectionId"></param>
+/// <param name="loadEffectId"></param>
+/// <param name="conLoadEffect"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadEffect</returns>
-        ApiResponse<ConLoadEffect> UpdateLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0);
+        ApiResponse<ConLoadEffect> UpdateLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), string requestedType = null, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -218,7 +225,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LoadEffectData</returns>
-        System.Threading.Tasks.Task<LoadEffectData> AddLoadEffectAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<LoadEffectData> AddLoadEffectAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add new load effect to the connection
@@ -230,10 +237,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="conLoadEffect"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadEffectData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LoadEffectData>> AddLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<LoadEffectData>> AddLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete load effect loadEffectId
         /// </summary>
@@ -247,7 +255,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
-        System.Threading.Tasks.Task<int> DeleteLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<int> DeleteLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete load effect loadEffectId
@@ -259,10 +267,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="loadEffectId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        System.Threading.Tasks.Task<ApiResponse<int>> DeleteLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<int>> DeleteLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get load impulses from loadEffectId
         /// </summary>
@@ -277,7 +286,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadEffect</returns>
-        System.Threading.Tasks.Task<ConLoadEffect> GetLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConLoadEffect> GetLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get load impulses from loadEffectId
@@ -290,10 +299,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="loadEffectId"></param>
         /// <param name="isPercentage"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadEffect)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConLoadEffect>> GetLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConLoadEffect>> GetLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all load effects which are defined in connectionId
         /// </summary>
@@ -307,7 +317,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConLoadEffect&gt;</returns>
-        System.Threading.Tasks.Task<List<ConLoadEffect>> GetLoadEffectsAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ConLoadEffect>> GetLoadEffectsAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get all load effects which are defined in connectionId
@@ -319,10 +329,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="isPercentage"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConLoadEffect&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ConLoadEffect>>> GetLoadEffectsWithHttpInfoAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ConLoadEffect>>> GetLoadEffectsWithHttpInfoAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Load settings for connection in project
         /// </summary>
@@ -335,7 +346,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadSettings</returns>
-        System.Threading.Tasks.Task<ConLoadSettings> GetLoadSettingsAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConLoadSettings> GetLoadSettingsAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Load settings for connection in project
@@ -346,10 +357,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadSettings)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConLoadSettings>> GetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConLoadSettings>> GetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Set Load settings for connection in project
         /// </summary>
@@ -363,7 +375,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadSettings</returns>
-        System.Threading.Tasks.Task<ConLoadSettings> SetLoadSettingsAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConLoadSettings> SetLoadSettingsAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Set Load settings for connection in project
@@ -375,10 +387,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadSettings)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConLoadSettings>> SetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConLoadSettings>> SetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update load impulses in loadEffectId
         /// </summary>
@@ -393,7 +406,7 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadEffect</returns>
-        System.Threading.Tasks.Task<ConLoadEffect> UpdateLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConLoadEffect> UpdateLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update load impulses in loadEffectId
@@ -406,10 +419,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="loadEffectId"></param>
         /// <param name="conLoadEffect"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadEffect)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConLoadEffect>> UpdateLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConLoadEffect>> UpdateLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -550,11 +564,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="conLoadEffect"> (optional)</param>
+/// <param name="connectionId"></param>
+/// <param name="conLoadEffect"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of LoadEffectData</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<LoadEffectData> AddLoadEffectWithHttpInfo(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<LoadEffectData> AddLoadEffectWithHttpInfo(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -573,10 +588,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -611,9 +631,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of LoadEffectData</returns>
-        public async System.Threading.Tasks.Task<LoadEffectData> AddLoadEffectAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LoadEffectData> AddLoadEffectAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<LoadEffectData> localVarResponse = await AddLoadEffectWithHttpInfoAsync(projectId, connectionId, conLoadEffect, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<LoadEffectData> localVarResponse = await AddLoadEffectWithHttpInfoAsync(projectId, connectionId, conLoadEffect, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -624,10 +644,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="conLoadEffect"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (LoadEffectData)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<LoadEffectData>> AddLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<LoadEffectData>> AddLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadEffect conLoadEffect = default(ConLoadEffect), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -647,7 +668,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -696,11 +722,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
+/// <param name="connectionId"></param>
+/// <param name="loadEffectId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of int</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<int> DeleteLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<int> DeleteLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -718,10 +745,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -756,9 +788,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
-        public async System.Threading.Tasks.Task<int> DeleteLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<int> DeleteLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<int> localVarResponse = await DeleteLoadEffectWithHttpInfoAsync(projectId, connectionId, loadEffectId, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<int> localVarResponse = await DeleteLoadEffectWithHttpInfoAsync(projectId, connectionId, loadEffectId, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -769,10 +801,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="loadEffectId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<int>> DeleteLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<int>> DeleteLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -791,7 +824,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -841,12 +879,13 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="isPercentage"> (optional)</param>
+/// <param name="connectionId"></param>
+/// <param name="loadEffectId"></param>
+/// <param name="isPercentage"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadEffect</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> GetLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> GetLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -864,10 +903,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -907,9 +951,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadEffect</returns>
-        public async System.Threading.Tasks.Task<ConLoadEffect> GetLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConLoadEffect> GetLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> localVarResponse = await GetLoadEffectWithHttpInfoAsync(projectId, connectionId, loadEffectId, isPercentage, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> localVarResponse = await GetLoadEffectWithHttpInfoAsync(projectId, connectionId, loadEffectId, isPercentage, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -921,10 +965,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="loadEffectId"></param>
         /// <param name="isPercentage"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadEffect)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect>> GetLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect>> GetLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, bool? isPercentage = default(bool?), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -943,7 +988,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -996,11 +1046,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="isPercentage"> (optional)</param>
+/// <param name="connectionId"></param>
+/// <param name="isPercentage"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ConLoadEffect&gt;</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<List<ConLoadEffect>> GetLoadEffectsWithHttpInfo(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<List<ConLoadEffect>> GetLoadEffectsWithHttpInfo(Guid projectId, int connectionId, bool? isPercentage = default(bool?), string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1018,10 +1069,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -1059,9 +1115,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConLoadEffect&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ConLoadEffect>> GetLoadEffectsAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ConLoadEffect>> GetLoadEffectsAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<List<ConLoadEffect>> localVarResponse = await GetLoadEffectsWithHttpInfoAsync(projectId, connectionId, isPercentage, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<List<ConLoadEffect>> localVarResponse = await GetLoadEffectsWithHttpInfoAsync(projectId, connectionId, isPercentage, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1072,10 +1128,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="isPercentage"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConLoadEffect&gt;)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ConLoadEffect>>> GetLoadEffectsWithHttpInfoAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<List<ConLoadEffect>>> GetLoadEffectsWithHttpInfoAsync(Guid projectId, int connectionId, bool? isPercentage = default(bool?), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1094,7 +1151,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1145,10 +1207,11 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
+/// <param name="connectionId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadSettings</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> GetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> GetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1166,10 +1229,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -1202,9 +1270,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadSettings</returns>
-        public async System.Threading.Tasks.Task<ConLoadSettings> GetLoadSettingsAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConLoadSettings> GetLoadSettingsAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> localVarResponse = await GetLoadSettingsWithHttpInfoAsync(projectId, connectionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> localVarResponse = await GetLoadSettingsWithHttpInfoAsync(projectId, connectionId, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1214,10 +1282,11 @@ namespace connection_restapi_client_poc.Api
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadSettings)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings>> GetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings>> GetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1236,7 +1305,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1284,11 +1358,12 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="conLoadSettings"> (optional)</param>
+/// <param name="connectionId"></param>
+/// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadSettings</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> SetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> SetLoadSettingsWithHttpInfo(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1307,10 +1382,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -1345,9 +1425,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadSettings</returns>
-        public async System.Threading.Tasks.Task<ConLoadSettings> SetLoadSettingsAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConLoadSettings> SetLoadSettingsAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> localVarResponse = await SetLoadSettingsWithHttpInfoAsync(projectId, connectionId, conLoadSettings, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings> localVarResponse = await SetLoadSettingsWithHttpInfoAsync(projectId, connectionId, conLoadSettings, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1358,10 +1438,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="projectId"></param>
         /// <param name="connectionId"></param>
         /// <param name="conLoadSettings"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadSettings)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings>> SetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadSettings>> SetLoadSettingsWithHttpInfoAsync(Guid projectId, int connectionId, ConLoadSettings conLoadSettings = default(ConLoadSettings), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1381,7 +1462,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1431,12 +1517,13 @@ namespace connection_restapi_client_poc.Api
         /// </summary>
         /// <exception cref="connection_restapi_client_poc.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId"></param>
-        /// <param name="connectionId"></param>
-        /// <param name="loadEffectId"></param>
-        /// <param name="conLoadEffect"> (optional)</param>
+/// <param name="connectionId"></param>
+/// <param name="loadEffectId"></param>
+/// <param name="conLoadEffect"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConLoadEffect</returns>
-        public connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> UpdateLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0)
+        public connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> UpdateLoadEffectWithHttpInfo(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), string requestedType = null, int operationIndex = 0)
         {
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
 
@@ -1455,10 +1542,15 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
+            string localVarAccept = requestedType;
+
+            if(string.IsNullOrEmpty(localVarAccept))
             {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+                if (localVarAccept != null)
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+                }
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
@@ -1495,9 +1587,9 @@ namespace connection_restapi_client_poc.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConLoadEffect</returns>
-        public async System.Threading.Tasks.Task<ConLoadEffect> UpdateLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConLoadEffect> UpdateLoadEffectAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> localVarResponse = await UpdateLoadEffectWithHttpInfoAsync(projectId, connectionId, loadEffectId, conLoadEffect, operationIndex, cancellationToken).ConfigureAwait(false);
+            connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect> localVarResponse = await UpdateLoadEffectWithHttpInfoAsync(projectId, connectionId, loadEffectId, conLoadEffect, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1509,10 +1601,11 @@ namespace connection_restapi_client_poc.Api
         /// <param name="connectionId"></param>
         /// <param name="loadEffectId"></param>
         /// <param name="conLoadEffect"> (optional)</param>
+        /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConLoadEffect)</returns>
-        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect>> UpdateLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<connection_restapi_client_poc.Client.ApiResponse<ConLoadEffect>> UpdateLoadEffectWithHttpInfoAsync(Guid projectId, int connectionId, int loadEffectId, ConLoadEffect conLoadEffect = default(ConLoadEffect), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
@@ -1532,7 +1625,12 @@ namespace connection_restapi_client_poc.Api
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            string localVarAccept = requestedType;
+            if(string.IsNullOrEmpty(localVarAccept))
+            {
+                localVarAccept = connection_restapi_client_poc.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            }
+
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

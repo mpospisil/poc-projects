@@ -16,30 +16,45 @@ namespace connection_restapi_client_poc
 		/// </summary>
 		public Uri BasePath { get; private set; }
 
-		/// <summary>
-		/// 
-		/// </summary>
+		/// <inheritdoc cref="IConnectionApiClient.ClientId"/>/>
 		public string ClientId { get; private set; }
+
+		/// <inheritdoc cref="IConnectionApiClient.ProjectId"/>/>
 		public Guid ProjectId { get; private set; } = Guid.Empty;
 
+		/// <summary>
+		/// Data about the active project
+		/// </summary>
 		public ConProject ActiveProject { get; private set; } = null;
 
 		/// <summary>
-		/// 
+		/// Client API
 		/// </summary>
 		public IClientApi ClientApi { get; private set; }
 
+		/// <inheritdoc cref="IConnectionApiClient.Calculation"/>
 		public ICalculationApiAsync Calculation { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.Connection"/>
 		public IConnectionApiAsync Connection { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.Export"/>
 		public IExportApiAsync Export { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.LoadEffect"/>
 		public ILoadEffectApiAsync LoadEffect { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.Material"/>
 		public IMaterialApiAsync Material { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.Member"/>
 		public IMemberApiAsync Member { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.Operation"/>
 		public IOperationApiAsync Operation { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.Parameter"/>
 		public IParameterApiAsync Parameter { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.Presentation"/>
 		public IPresentationApiAsync Presentation { get; private set; }
-		public IProjectApiAsync Project { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.Project"/>
+		public IProjectApiAsyncExt Project { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.Report"/>
 		public IReportApiAsync Report { get; private set; }
+		/// <inheritdoc cref="IConnectionApiClient.Template"/>
 		public ITemplateApiAsync Template { get; private set; }
 
 		/// <summary>
@@ -117,7 +132,7 @@ namespace connection_restapi_client_poc
 			this.Operation = new OperationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Parameter = new ParameterApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Presentation = new PresentationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
-			this.Project = new ProjectApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
+			this.Project = new ProjectApiExt(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Report = new ReportApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Template = new TemplateApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 

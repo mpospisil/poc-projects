@@ -488,6 +488,13 @@ namespace {{packageName}}.Client
 
                 RestResponse<T> response = getResponse(client);
 
+                if(response.ContentType == "application/octet-stream" && typeof(T).Name == "Object")
+                {
+                    response.Data = (T)(object)response.RawBytes;
+                    var res = ToApiResponse(response);
+                    return res;
+                }
+
                 // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
                 if (typeof(AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
                 {

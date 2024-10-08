@@ -18,7 +18,7 @@ namespace IdeaStatiCa.ConnectionApi
 		/// </summary>
 		/// <param name="path">Idea con file</param>
 		/// <returns></returns>
-		Task<ConProject> OpenProjectAsync(string path);
+		///Task<ConProject> OpenProjectAsync(string path);
 
 		Task<ConProject> OpenFromIomFileAsync(string iomFilePath);
 
@@ -90,6 +90,6 @@ namespace IdeaStatiCa.ConnectionApi
 		/// <summary>
 		/// Get Template API
 		/// </summary>
-		ITemplateApiAsync Template { get; }
+		ITemplateApiAsyncExt Template { get; }
 	}
 }

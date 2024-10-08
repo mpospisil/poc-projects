@@ -2,6 +2,8 @@
 using IdeaStatiCa.ConnectionApi.Client;
 using IdeaStatiCa.ConnectionApi.Model;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace IdeaStatiCa.ConnectionApi
@@ -34,28 +36,41 @@ namespace IdeaStatiCa.ConnectionApi
 
 		/// <inheritdoc cref="IConnectionApiClient.Calculation"/>
 		public ICalculationApiAsync Calculation { get; private set; }
+		
 		/// <inheritdoc cref="IConnectionApiClient.Connection"/>
 		public IConnectionApiAsync Connection { get; private set; }
+		
 		/// <inheritdoc cref="IConnectionApiClient.Export"/>
+
 		public IExportApiExtAsync Export { get; private set; }
+
 		/// <inheritdoc cref="IConnectionApiClient.LoadEffect"/>
 		public ILoadEffectApiAsync LoadEffect { get; private set; }
+		
 		/// <inheritdoc cref="IConnectionApiClient.Material"/>
 		public IMaterialApiAsync Material { get; private set; }
+		
 		/// <inheritdoc cref="IConnectionApiClient.Member"/>
 		public IMemberApiAsync Member { get; private set; }
+		
 		/// <inheritdoc cref="IConnectionApiClient.Operation"/>
 		public IOperationApiAsync Operation { get; private set; }
+		
 		/// <inheritdoc cref="IConnectionApiClient.Parameter"/>
 		public IParameterApiAsync Parameter { get; private set; }
+		
 		/// <inheritdoc cref="IConnectionApiClient.Presentation"/>
 		public IPresentationApiAsync Presentation { get; private set; }
+		
 		/// <inheritdoc cref="IConnectionApiClient.Project"/>
 		public IProjectApiExtAsync Project { get; private set; }
+
 		/// <inheritdoc cref="IConnectionApiClient.Report"/>
 		public IReportApiAsync Report { get; private set; }
+
 		/// <inheritdoc cref="IConnectionApiClient.Template"/>
-		public ITemplateApiAsync Template { get; private set; }
+		public ITemplateApiAsyncExt Template { get; private set; }
+
 
 		/// <summary>
 		/// 
@@ -64,9 +79,10 @@ namespace IdeaStatiCa.ConnectionApi
 		public ConnectionApiClient(string basePath)
 		{
 			BasePath = new Uri(basePath);
-		}
+            CreateClientAsync().Wait();
+        }
 
-		/// <summary>
+		/// <summary
 		/// 
 		/// </summary>
 		/// <returns></returns>
@@ -108,14 +124,16 @@ namespace IdeaStatiCa.ConnectionApi
 				}
 			}
 
-			return this.ActiveProject;
-		}
 
 		private async Task CloseAsync()
 		{
 			if(Project != null && ProjectId == Guid.Empty)
 			{
-				await Project.CloseProjectAsync(ProjectId.ToString());
+				//Get all active projects.
+				var guids = await Project.GetActiveProjectsAsync();
+				var closed = await Task.WhenAll(guids.Select(x => Project.CloseProjectAsync(x.ProjectId.ToString())));
+
+				//await Project.CloseProjectAsync(ProjectId.ToString());
 			}
 
 			this.Calculation = null;
@@ -160,6 +178,7 @@ namespace IdeaStatiCa.ConnectionApi
 			this.Project = new ProjectApiExt(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Report = new ReportApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Template = new TemplateApiExt(iomClient, iomClient, configuration);
+
 
 			this.ClientApi = clientApi;
 			this.ClientId = clientId;

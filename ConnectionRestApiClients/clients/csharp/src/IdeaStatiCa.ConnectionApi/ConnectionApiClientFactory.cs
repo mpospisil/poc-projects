@@ -17,6 +17,7 @@ namespace IdeaStatiCa.ConnectionApi
 		public async Task<IConnectionApiClient> CreateConnectionApiClient()
 		{
 			var client = new ConnectionApiClient(BaseUrl);
+			
 			return await Task.FromResult(client);
 		}
 	}		

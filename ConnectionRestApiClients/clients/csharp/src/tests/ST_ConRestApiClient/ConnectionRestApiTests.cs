@@ -267,50 +267,54 @@ namespace ST_ConRestApiClient
 			{
 				File.Delete(tempFileName);
 			}
-
-			
-
-			//using (var ifcDataStream = await ConnectionApiClient!.Export!.ExportConToIfcFileAsync(con1.Id, CancellationToken.None))
-			//{
-			//	ifcDataStream.Should().NotBeNull();
-			//	ifcDataStream.Length.Should().BeGreaterThan(0);
-			//}
 		}
 
-		//[Test]
-		//public async Task ShouldCalculateStressStrain()
-		//{
-		//	var con1 = Project!.Connections.First();
-		//	con1.Id.Should().Be(1);
+		[Test]
+		public async Task ShouldCalculateStressStrain()
+		{
+			var con1 = Project!.Connections.First();
+			con1.Id.Should().Be(1);
 
-		//	List<int> conToCalc = new List<int>() { con1.Id };
-		//	var cbfemResults = await ConnApiController!.CalculateAsync(conToCalc);
-		//	cbfemResults.Should().NotBeNull();
-		//	cbfemResults.Count.Should().Be(1);
-		//	var res1 = cbfemResults[0];
-		//	res1.Passed.Should().BeTrue();
-		//	res1.ResultSummary.Count.Should().Be(4);
-		//}
+			List<int> conToCalc = new List<int>() { con1.Id };
+			ConCalculationParameter conCalculationParameter = new ConCalculationParameter()
+			{
+				AnalysisType = ConAnalysisTypeEnum.StressStrain,
+				ConnectionIds = new List<int>() { con1.Id }
+			};
 
-		//[Test]
-		//public async Task ShouldCalculateBuckling()
-		//{
-		//	var con1 = Project!.Connections.First();
-		//	con1.Id.Should().Be(1);
+			var cbfemResults = await ConnectionApiClient!.Calculation!.CalculateAsync(ActiveProjectId, conCalculationParameter);
+			cbfemResults.Should().NotBeNull();
+			cbfemResults.Count.Should().Be(1);
+			var res1 = cbfemResults[0];
+			res1.Passed.Should().BeTrue();
+			res1.ResultSummary.Count.Should().Be(4);
+		}
 
-		//	List<int> conToCalc = new List<int>() { con1.Id };
-		//	var cbfemResults = await ConnApiController!.CalculateAsync(conToCalc, ConAnalysisTypeEnum.Buckling);
-		//	cbfemResults.Should().NotBeNull();
-		//	cbfemResults.Count.Should().Be(1);
-		//	var res1 = cbfemResults[0];
-		//	res1.Passed.Should().BeTrue();
-		//	res1.ResultSummary.Count.Should().Be(4);
+		[Test]
+		public async Task ShouldCalculateBuckling()
+		{
+			var con1 = Project!.Connections.First();
+			con1.Id.Should().Be(1);
 
-		//	//check buckling
-		//	var bucklingResult = res1.ResultSummary.Last();
-		//	bucklingResult.Skipped.Should().BeFalse();
-		//	bucklingResult.Name.Equals("Buckling");
-		//}
+			List<int> conToCalc = new List<int>() { con1.Id };
+			ConCalculationParameter conCalculationParameter = new ConCalculationParameter()
+			{
+				AnalysisType = ConAnalysisTypeEnum.Buckling,
+				ConnectionIds = new List<int>() { con1.Id }
+			};
+
+			var cbfemResults = await ConnectionApiClient!.Calculation!.CalculateAsync(ActiveProjectId, conCalculationParameter);;
+			cbfemResults.Should().NotBeNull();
+			cbfemResults.Count.Should().Be(1);
+			var res1 = cbfemResults[0];
+			res1.Passed.Should().BeTrue();
+			res1.ResultSummary.Count.Should().Be(4);
+
+			//check buckling
+			var bucklingResult = res1.ResultSummary.Last();
+			bucklingResult.Skipped.Should().BeFalse();
+			bucklingResult.Name.Equals("Buckling");
+		}
 
 		//[Test]
 		//public async Task ShouldGetResult()
@@ -331,39 +335,40 @@ namespace ST_ConRestApiClient
 
 		//}
 
-		//[Test]
-		//public async Task ShouldGetProductionCost()
-		//{
-		//	var con1 = Project!.Connections.First();
-		//	var cost = await ConnApiController!.GetProductionCostAsync(con1.Id, CancellationToken.None);
-		//	cost.Should().NotBeNull();
-		//	cost.TotalEstimatedCost.Should().BeGreaterThan(0);
-		//}
+		[Test]
+		public async Task ShouldGetProductionCost()
+		{
+			var con1 = Project!.Connections.First();
+			var cost = await ConnectionApiClient!.Connection.GetProductionCostAsync(ActiveProjectId, con1.Id);
+			cost.Should().NotBeNull();
+			cost.TotalEstimatedCost.Should().BeGreaterThan(0);
+		}
+
+		// TODO - not working
 
 		//[Test]
 		//public async Task ShouldGetAndUpdateConnectionSetup()
 		//{
-		//	var connectionSetup = await ConnApiController!.GetConnectionSetupAsync(CancellationToken.None);
+		//	var connectionSetup = await ConnectionApiClient!.Project.GetSetupAsync(ActiveProjectId);
 
 		//	connectionSetup.HssLimitPlasticStrain.Should().Be(0.01);
 
 		//	connectionSetup.HssLimitPlasticStrain = 0.02;
 
-		//	var updateResponse = await ConnApiController!.UpdateConnectionSetupAsync(connectionSetup, CancellationToken.None);
+		//	var updateResponse = await ConnectionApiClient!.Project.UpdateSetupAsync(ActiveProjectId, connectionSetup);
 
-		//	var updatedConnectionSetup = await ConnApiController!.GetConnectionSetupAsync(CancellationToken.None);
+		//	var updatedConnectionSetup = await ConnectionApiClient!.Project!.GetSetupAsync(ActiveProjectId);
 
 		//	updatedConnectionSetup.HssLimitPlasticStrain.Should().Be(0.02);
 		//}
 
-		//[Test]
-		//public async Task ShouldGetSceneData()
-		//{
-		//	var con1 = Project!.Connections.First();
-		//	var sceneData = await ConnApiController!.GetDataScene3DAsync(con1.Id);
-		//	sceneData.Should().NotBeNull();
-		//	sceneData.Should().NotBeEmpty();
-		//}
-
+		[Test]
+		public async Task ShouldGetSceneData()
+		{
+			var con1 = Project!.Connections.First();
+			var sceneData = await ConnectionApiClient!.Presentation.GetDataScene3DAsync(ActiveProjectId, con1.Id);
+			sceneData.Should().NotBeNull();
+			sceneData.Vertices.Should().NotBeEmpty();
+		}
 	}
 }

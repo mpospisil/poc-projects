@@ -10,11 +10,11 @@ namespace connection_restapi_client_poc.Api
 	public interface IExportApiExtAsync : IExportApiAsync
 	{
 		/// <summary>
-		/// Seve <paramref name="connectionId"/> to <paramref name="filePath"/>
+		/// Save the connection to the IFC format
 		/// </summary>
 		/// <param name="projectId">Identifier of the open connection project in the service</param>
 		/// <param name="connectionId">ID of the connection in <paramref name="projectId"/></param>
-		/// <param name="filePath">The full path to the IFC file</param>
+		/// <param name="filePath">The full path to the IFC file which will be created</param>
 		/// <returns></returns>
 		Task ExportConToIfcFileAsync(Guid projectId, int connectionId, string filePath);
 	}
@@ -22,6 +22,12 @@ namespace connection_restapi_client_poc.Api
 	/// <inheritdoc cref="IExportApiExtAsync" />
 	public class ExportApiExt : ExportApi, IExportApiExtAsync
 	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="client"></param>
+		/// <param name="asyncClient"></param>
+		/// <param name="configuration"></param>
 		public ExportApiExt(connection_restapi_client_poc.Client.ISynchronousClient client, connection_restapi_client_poc.Client.IAsynchronousClient asyncClient, connection_restapi_client_poc.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
 		{
 		}

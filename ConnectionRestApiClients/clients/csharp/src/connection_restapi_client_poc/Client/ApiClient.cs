@@ -472,7 +472,14 @@ namespace connection_restapi_client_poc.Client
 
                 RestResponse<T> response = getResponse(client);
 
-                if(response.ContentType == "application/octet-stream" && typeof(T).Name == "Object")
+                if (response.ContentType == "text/plain" && typeof(T).Name == "Object")
+                {
+                  response.Data = (T)(object)response.Content.ToString();
+                  var res = ToApiResponse(response);
+                  return res;
+                }
+
+                if (response.ContentType == "application/octet-stream" && typeof(T).Name == "Object")
                 {
                     response.Data = (T)(object)response.RawBytes;
                     var res = ToApiResponse(response);

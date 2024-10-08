@@ -1,4 +1,3 @@
-using connection_restapi_client_poc;
 using connection_restapi_client_poc.Model;
 using FluentAssertions;
 
@@ -245,18 +244,38 @@ namespace ST_ConRestApiClient
 			connectionData.Should().NotBeNull();
 		}
 
-		//[Test]
-		//public async Task ShouldExportConnectionToIfc()
-		//{
-		//	var con1 = Project!.Connections.First();
-		//	con1.Id.Should().Be(1);
+		[Test]
+		public async Task ShouldExportConnectionToIfc()
+		{
+			var con1 = Project!.Connections.First();
+			con1.Id.Should().Be(1);
 
-		//	using (var ifcDataStream = await ConnApiController!.ExportToIfcAsync(con1.Id, CancellationToken.None))
-		//	{
-		//		ifcDataStream.Should().NotBeNull();
-		//		ifcDataStream.Length.Should().BeGreaterThan(0);
-		//	}
-		//}
+			string tempFileName = Path.GetTempFileName()!;
+			try
+			{
+				await ConnectionApiClient!.Export!.ExportConToIfcFileAsync(ActiveProjectId, con1.Id, tempFileName);
+
+				bool fileExists = File.Exists(tempFileName);
+				fileExists.Should().BeTrue("Ifc should be saved");
+
+				FileInfo fileInfo = new FileInfo(tempFileName);
+				long fileSize = fileInfo.Length;
+
+				fileSize.Should().BeGreaterThan(0, "The downlifcoaded file should not be empty");
+			}
+			finally
+			{
+				File.Delete(tempFileName);
+			}
+
+			
+
+			//using (var ifcDataStream = await ConnectionApiClient!.Export!.ExportConToIfcFileAsync(con1.Id, CancellationToken.None))
+			//{
+			//	ifcDataStream.Should().NotBeNull();
+			//	ifcDataStream.Length.Should().BeGreaterThan(0);
+			//}
+		}
 
 		//[Test]
 		//public async Task ShouldCalculateStressStrain()

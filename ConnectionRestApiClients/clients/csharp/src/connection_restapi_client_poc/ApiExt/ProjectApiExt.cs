@@ -3,12 +3,12 @@ using System.Threading.Tasks;
 
 namespace connection_restapi_client_poc.Api
 {
-	public interface IProjectApiAsyncExt : IProjectApiAsync
+	public interface IProjectApiExtAsync : IProjectApiAsync
 	{
 		Task DownloadProjectAsync(Guid projectId, string fileName);
 	}
 
-	public class ProjectApiExt : ProjectApi, IProjectApiAsyncExt
+	public class ProjectApiExt : ProjectApi, IProjectApiExtAsync
 	{
 		public ProjectApiExt(connection_restapi_client_poc.Client.ISynchronousClient client, connection_restapi_client_poc.Client.IAsynchronousClient asyncClient, connection_restapi_client_poc.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
 		{

@@ -37,7 +37,7 @@ namespace connection_restapi_client_poc
 		/// <inheritdoc cref="IConnectionApiClient.Connection"/>
 		public IConnectionApiAsync Connection { get; private set; }
 		/// <inheritdoc cref="IConnectionApiClient.Export"/>
-		public IExportApiAsync Export { get; private set; }
+		public IExportApiExtAsync Export { get; private set; }
 		/// <inheritdoc cref="IConnectionApiClient.LoadEffect"/>
 		public ILoadEffectApiAsync LoadEffect { get; private set; }
 		/// <inheritdoc cref="IConnectionApiClient.Material"/>
@@ -51,7 +51,7 @@ namespace connection_restapi_client_poc
 		/// <inheritdoc cref="IConnectionApiClient.Presentation"/>
 		public IPresentationApiAsync Presentation { get; private set; }
 		/// <inheritdoc cref="IConnectionApiClient.Project"/>
-		public IProjectApiAsyncExt Project { get; private set; }
+		public IProjectApiExtAsync Project { get; private set; }
 		/// <inheritdoc cref="IConnectionApiClient.Report"/>
 		public IReportApiAsync Report { get; private set; }
 		/// <inheritdoc cref="IConnectionApiClient.Template"/>
@@ -125,7 +125,7 @@ namespace connection_restapi_client_poc
 
 			this.Calculation = new CalculationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Connection = new ConnectionApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
-			this.Export = new ExportApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
+			this.Export = new ExportApiExt(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.LoadEffect = new LoadEffectApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Material = new MaterialApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Member = new MemberApi(clientApi.Client, clientApi.AsynchronousClient, configuration);

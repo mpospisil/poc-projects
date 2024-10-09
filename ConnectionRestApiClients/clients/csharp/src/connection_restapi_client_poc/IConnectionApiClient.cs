@@ -43,7 +43,7 @@ namespace connection_restapi_client_poc
 		/// <summary>
 		/// Get Export API
 		/// </summary>
-		IExportApiAsync Export { get; }
+		IExportApiExtAsync Export { get; }
 
 		/// <summary>
 		/// Get LoadEffect API
@@ -78,7 +78,7 @@ namespace connection_restapi_client_poc
 		/// <summary>
 		/// Get Project API
 		/// </summary>
-		IProjectApiAsyncExt Project { get; }
+		IProjectApiExtAsync Project { get; }
 
 		/// <summary>
 		/// Get Report API

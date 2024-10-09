@@ -35,9 +35,9 @@ namespace connection_restapi_client_poc.Api
             return conProject;
         }
 
-        public async Task<ConProject> CreateProjectFromIOMFileAsync(string filePath)
+        public async Task<ConProject> CreateProjectFromIomFileAsync(string filePath)
         {
-            //TODO
+            
 
             ConProject conProject = null;
 
@@ -47,6 +47,10 @@ namespace connection_restapi_client_poc.Api
                 {
                     await fs.CopyToAsync(ms);
                     ms.Seek(0, System.IO.SeekOrigin.Begin);
+
+                    //this.ImportIOMContainerAsync()
+
+
                     conProject = await this.OpenProjectAsync(ms);
                 }
             }

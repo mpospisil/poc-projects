@@ -13,40 +13,24 @@ namespace ImportIOM
 
             try
             {
-                string filePath = "inputs/mulitple_connections.xml";
-                
-                ConProject conProject = await conclient.Project.ImportIOMAsync(OpenProjectFromFileAsync(filePath);
+                //TO DO: FIX IOM IMPORT
 
-                //Get projectId Guid
-                Guid projectId = conProject.ProjectId;
-                var connections = await conclient.Connection.GetAllConnectionsDataAsync(projectId);
-                int connectionId = connections[0].Id;
+                //string filePath = "inputs/mulitple_connections.xml";
+                //ConProject conProject = await conclient.Project.CreateProjectFromIomFileAsync(filePath);
 
-                string templateFilePath = "inputs/mulitple_connections.xml";
+                ////Get projectId Guid
+                //Guid projectId = conProject.ProjectId;
+                //var connections = await conclient.Connection.GetAllConnectionsDataAsync(projectId);
+                //int connectionId = connections[0].Id;
 
-                //FIX Param --> Params
-                ConTemplateMappingGetParam templateImport = conclient.Template.ImportTemplateFromFile(templateFilePath);
+                ////FIX Parameter --> Params
+                //ConCalculationParameter calculationParams = new ConCalculationParameter();
+                //calculationParams.ConnectionIds = new List<int> { connectionId };
+                //List<ConResultSummary> results = await conclient.Calculation.CalculateAsync(projectId, calculationParams);
 
-                //FIX TemplateConversions --> ConTemplateMappings??
-                TemplateConversions conversionMapping = await conclient.Template.GetDefaultTemplateMappingAsync(projectId, connectionId, templateImport);
+                //string saveFilePath = "connection-file-from-IOM.ideaCon";
 
-                ConTemplateApplyParam applyParam = new ConTemplateApplyParam();
-                applyParam.ConnectionTemplate = templateImport.Template;
-
-                //TO DO: We can do some custom mapping if we would like to.
-                applyParam.Mapping = conversionMapping;
-
-                var result = conclient.Template.ApplyTemplateAsync(projectId, connectionId, applyParam);
-
-                //FIX Parameter --> Params
-                ConCalculationParameter calculationParams = new ConCalculationParameter();
-                calculationParams.ConnectionIds = new List<int> { connectionId };
-
-                List<ConResultSummary> results = await conclient.Calculation.CalculateAsync(projectId, calculationParams);
-
-                string saveFilePath = "corner-template-applied.ideaCon";
-
-                await conclient.Project.SaveProjectAsync(projectId, saveFilePath);
+                //await conclient.Project.SaveProjectAsync(projectId, saveFilePath);
 
             }
             catch (Exception ex)

@@ -23,20 +23,26 @@ namespace ST_ConnectionRestApi
 			//}
 
 			ConnectionApiClient = await ApiFactory.CreateConnectionApiClient();
+			ConnectionApiClient.ClientId.Should().NotBeEmpty();
 
-			string connProjectFilePath = Path.Combine(ProjectPath, "Simple-1-ECEN.ideaCon");
-			this.Project = await ConnectionApiClient.OpenProjectAsync(connProjectFilePath);
-			this.ActiveProjectId = Project.ProjectId;
-			if (this.ActiveProjectId == Guid.Empty)
-			{
-				throw new Exception("Project is not opened");
-			}
-
-			this.Project = await ConnectionApiClient.Project.GetProjectDataAsync(ActiveProjectId);
-
-			Project.Should().NotBeNull();
-			Project.ProjectId.Should().NotBe(Guid.Empty);
 		}
+
+		public async Task ShouldOpenProject()
+		{
+            string connProjectFilePath = Path.Combine(ProjectPath, "Simple-1-ECEN.ideaCon");
+            this.Project = await ConnectionApiClient!.Project.OpenProjectFromFileAsync(connProjectFilePath);
+            this.ActiveProjectId = Project.ProjectId;
+            if (this.ActiveProjectId == Guid.Empty)
+            {
+                throw new Exception("Project is not opened");
+            }
+
+            this.Project = await ConnectionApiClient.Project.GetProjectDataAsync(ActiveProjectId);
+
+            Project.Should().NotBeNull();
+            Project.ProjectId.Should().NotBe(Guid.Empty);
+        }
+
 
 		[TearDown]
 		public async Task TearDown()
@@ -99,7 +105,7 @@ namespace ST_ConnectionRestApi
 			string tempFileName = Path.GetTempFileName()!;
 			try
 			{
-				await ConnectionApiClient!.Project!.DownloadProjectAsync(ActiveProjectId, tempFileName);
+				await ConnectionApiClient!.Project!.SaveProjectAsync(ActiveProjectId, tempFileName);
 
 				bool fileExists = File.Exists(tempFileName);
 				fileExists.Should().BeTrue("Ideacon project should be downloaded");

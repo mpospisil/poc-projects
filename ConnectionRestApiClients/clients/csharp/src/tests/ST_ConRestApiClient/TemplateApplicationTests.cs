@@ -1,6 +1,4 @@
-﻿using connection_restapi_client_poc.Model;
-using FluentAssertions;
-using ST_ConRestApiClient;
+﻿using FluentAssertions;
 
 namespace ST_ConnectionRestApi
 {

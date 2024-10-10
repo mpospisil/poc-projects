@@ -2,7 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 
-namespace connection_restapi_client_poc.Api
+namespace IdeaStatiCa.ConnectionApi.Api
 {
 	/// <summary>
 	/// 
@@ -28,7 +28,7 @@ namespace connection_restapi_client_poc.Api
 		/// <param name="client"></param>
 		/// <param name="asyncClient"></param>
 		/// <param name="configuration"></param>
-		public ExportApiExt(connection_restapi_client_poc.Client.ISynchronousClient client, connection_restapi_client_poc.Client.IAsynchronousClient asyncClient, connection_restapi_client_poc.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
+		public ExportApiExt(IdeaStatiCa.ConnectionApi.Client.ISynchronousClient client, IdeaStatiCa.ConnectionApi.Client.IAsynchronousClient asyncClient, IdeaStatiCa.ConnectionApi.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
 		{
 		}
 

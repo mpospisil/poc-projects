@@ -1,9 +1,9 @@
-﻿using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Model;
+﻿using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Model;
 using System;
 using System.Threading.Tasks;
 
-namespace connection_restapi_client_poc
+namespace IdeaStatiCa.ConnectionApi
 {
 	/// <summary>
 	/// Client for accessing IdeaStatiCa.ConnectionRestApi

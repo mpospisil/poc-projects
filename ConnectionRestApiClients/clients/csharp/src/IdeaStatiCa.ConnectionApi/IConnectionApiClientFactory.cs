@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace connection_restapi_client_poc
+namespace IdeaStatiCa.ConnectionApi
 {
 	/// <summary>
 	/// Factory for creating instances of <see cref="IConnectionApiClient"/>

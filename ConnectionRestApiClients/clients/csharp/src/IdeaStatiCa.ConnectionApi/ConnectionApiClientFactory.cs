@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace connection_restapi_client_poc
+namespace IdeaStatiCa.ConnectionApi
 {
 	public class ConnectionApiClientFactory : IConnectionApiClientFactory
 	{

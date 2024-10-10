@@ -1,10 +1,10 @@
-﻿using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+﻿using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 using System;
 using System.Threading.Tasks;
 
-namespace connection_restapi_client_poc
+namespace IdeaStatiCa.ConnectionApi
 {
 	public class ConnectionApiClient : IConnectionApiClient
 	{
@@ -145,11 +145,11 @@ namespace connection_restapi_client_poc
 			configuration.DefaultHeaders.Add("ClientId", clientId);
 
 			this.Calculation = new CalculationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
-			this.Connection = new ConnectionApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
+			this.Connection = new IdeaStatiCa.ConnectionApi.Api.ConnectionApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Export = new ExportApiExt(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.LoadEffect = new LoadEffectApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 
-			var iomClient = new connection_restapi_client_poc.Client.ApiClient(configuration.BasePath);
+			var iomClient = new IdeaStatiCa.ConnectionApi.Client.ApiClient(configuration.BasePath);
 			iomClient.SerializerSettings = IdeaJsonSerializerSetting.GetJsonSettingIdea();
 
 			this.Material = new MaterialApi(iomClient, iomClient, configuration);

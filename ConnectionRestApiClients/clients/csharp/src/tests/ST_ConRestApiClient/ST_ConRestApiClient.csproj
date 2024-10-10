@@ -23,10 +23,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\connection_restapi_client_poc\connection_restapi_client_poc.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<Using Include="NUnit.Framework" />
 	</ItemGroup>
 
@@ -80,6 +76,10 @@
 
 	<ItemGroup>
 	  <Folder Include="Projects\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\IdeaStatiCa.ConnectionApi\IdeaStatiCa.ConnectionApi.csproj" />
 	</ItemGroup>
 
 </Project>

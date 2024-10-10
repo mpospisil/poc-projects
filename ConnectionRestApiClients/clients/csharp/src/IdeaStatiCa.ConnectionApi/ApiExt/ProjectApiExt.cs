@@ -1,4 +1,4 @@
-﻿using connection_restapi_client_poc.Model;
+﻿using IdeaStatiCa.ConnectionApi.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace connection_restapi_client_poc.Api
+namespace IdeaStatiCa.ConnectionApi.Api
 {
 	public interface IProjectApiExtAsync : IProjectApiAsync
 	{
@@ -19,8 +19,8 @@ namespace connection_restapi_client_poc.Api
 
 	public class ProjectApiExt : ProjectApi, IProjectApiExtAsync
 	{
-		/// <inheritdoc cref="ProjectApi.ProjectApi(connection_restapi_client_poc.Client.ISynchronousClient, connection_restapi_client_poc.Client.IAsynchronousClient, connection_restapi_client_poc.Client.IReadableConfiguration)"/>/>
-		public ProjectApiExt(connection_restapi_client_poc.Client.ISynchronousClient client, connection_restapi_client_poc.Client.IAsynchronousClient asyncClient, connection_restapi_client_poc.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
+		/// <inheritdoc cref="ProjectApi.ProjectApi(IdeaStatiCa.ConnectionApi.Client.ISynchronousClient, IdeaStatiCa.ConnectionApi.Client.IAsynchronousClient, IdeaStatiCa.ConnectionApi.Client.IReadableConfiguration)"/>/>
+		public ProjectApiExt(IdeaStatiCa.ConnectionApi.Client.ISynchronousClient client, IdeaStatiCa.ConnectionApi.Client.IAsynchronousClient asyncClient, IdeaStatiCa.ConnectionApi.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
 		{
 		}
 
@@ -36,7 +36,7 @@ namespace connection_restapi_client_poc.Api
 
 		public async Task<ConProject> CreateProjectFromIomFileAsync(string fileName)
 		{
-			connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+			IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
 
 			var localVarContentType = "application/xml";
 			localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -45,7 +45,7 @@ namespace connection_restapi_client_poc.Api
 			localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
-			//localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+			//localVarRequestOptions.PathParameters.Add("projectId", IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToString(projectId)); // path parameter
 
 			localVarRequestOptions.Operation = "ProjectApi.UpdateFromIOM";
 			localVarRequestOptions.OperationIndex = 0;
@@ -67,10 +67,10 @@ namespace connection_restapi_client_poc.Api
 
 			//if (connectionsToCreate != null)
 			//{
-			//	localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
+			//	localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
 			//}
 
-			localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", new List<int>()));
+			localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", new List<int>()));
 			localVarRequestOptions.Data = contentString;
 
 			localVarRequestOptions.Operation = "ProjectApi.ImportIOMContainer";
@@ -103,7 +103,7 @@ namespace connection_restapi_client_poc.Api
 		public new async System.Threading.Tasks.Task<ConnectionSetup> UpdateSetupAsync(Guid projectId, ConnectionSetup connectionSetup = default(ConnectionSetup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
 		{
 
-			connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+			IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
 
 			var localVarContentType = "application/json";
 
@@ -113,7 +113,7 @@ namespace connection_restapi_client_poc.Api
 
 			localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-			localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+			localVarRequestOptions.PathParameters.Add("projectId", IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToString(projectId)); // path parameter
 			localVarRequestOptions.Data = connectionSetup;
 
 			localVarRequestOptions.Operation = "ProjectApi.UpdateSetup";

@@ -1,6 +1,5 @@
-﻿using connection_restapi_client_poc.Model;
-using FluentAssertions;
-using ST_ConRestApiClient;
+﻿using FluentAssertions;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace ST_ConnectionRestApi
 {

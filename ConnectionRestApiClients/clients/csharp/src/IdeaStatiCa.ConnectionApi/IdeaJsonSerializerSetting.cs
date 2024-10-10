@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
-namespace connection_restapi_client_poc
+namespace IdeaStatiCa.ConnectionApi
 {
 	public static class IdeaJsonSerializerSetting
 	{

@@ -1,8 +1,4 @@
-﻿
-using FluentAssertions;
-using ST_ConRestApiClient;
-
-namespace ST_ConnectionRestApi
+﻿namespace ST_ConnectionRestApi
 {
 	public class OpenModelRestApiTest : ConRestApiBaseTest
 	{

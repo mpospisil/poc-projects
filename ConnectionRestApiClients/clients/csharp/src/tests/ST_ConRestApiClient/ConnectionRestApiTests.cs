@@ -1,7 +1,7 @@
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Model;
 using FluentAssertions;
 
-namespace ST_ConRestApiClient
+namespace ST_ConnectionRestApi
 {
 	public class ConnectionRestApiTests : ConRestApiBaseTest
 	{

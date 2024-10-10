@@ -18,7 +18,7 @@ namespace connection_restapi_client_poc
 		/// </summary>
 		/// <param name="path">Idea con file</param>
 		/// <returns></returns>
-		Task<ConProject> OpenProjectAsync(string path);
+		///Task<ConProject> OpenProjectAsync(string path);
 
 		/// <summary>
 		/// ClientID - assigned by the service
@@ -88,6 +88,6 @@ namespace connection_restapi_client_poc
 		/// <summary>
 		/// Get Template API
 		/// </summary>
-		ITemplateApiAsync Template { get; }
+		ITemplateApiAsyncExt Template { get; }
 	}
 }

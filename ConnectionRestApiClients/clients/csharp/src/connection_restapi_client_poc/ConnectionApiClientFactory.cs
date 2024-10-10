@@ -17,6 +17,7 @@ namespace connection_restapi_client_poc
 		public async Task<IConnectionApiClient> CreateConnectionApiClient()
 		{
 			var client = new ConnectionApiClient(BaseUrl);
+			
 			return await Task.FromResult(client);
 		}
 	}		

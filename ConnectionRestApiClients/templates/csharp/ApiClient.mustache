@@ -196,7 +196,7 @@ namespace {{packageName}}.Client
         public ApiClient()
         {
             _baseUrl = GlobalConfiguration.Instance.BasePath;
-             SerializerSettings = CreateDefaultSerializerSettings()
+             SerializerSettings = CreateDefaultSerializerSettings();
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace {{packageName}}.Client
                 throw new ArgumentException("basePath cannot be empty");
 
             _baseUrl = basePath;
-            SerializerSettings = CreateDefaultSerializerSettings()
+            SerializerSettings = CreateDefaultSerializerSettings();
         }
 
 
@@ -218,7 +218,7 @@ namespace {{packageName}}.Client
         {
             var settings = new JsonSerializerSettings();
 
-            settings.Converters.Add(new StringEnumConverter { NamingStrategy = new CamelCaseNamingStrategy() });
+            settings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter { NamingStrategy = new CamelCaseNamingStrategy() });
             settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             // Equivalent of PropertyNamingPolicy = CamelCase
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();

@@ -1,9 +1,10 @@
 ﻿using connection_restapi_client_poc.Model;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
 using System;
-using System.Runtime;
+using System.Collections.Generic;
+using System.IO;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace connection_restapi_client_poc.Api
@@ -11,10 +12,14 @@ namespace connection_restapi_client_poc.Api
 	public interface IProjectApiExtAsync : IProjectApiAsync
 	{
 		Task DownloadProjectAsync(Guid projectId, string fileName);
+
+		Task<ConProject> CreateProjectFromIomFileAsync(string iomFilePath);
 	}
+
 
 	public class ProjectApiExt : ProjectApi, IProjectApiExtAsync
 	{
+		/// <inheritdoc cref="ProjectApi.ProjectApi(connection_restapi_client_poc.Client.ISynchronousClient, connection_restapi_client_poc.Client.IAsynchronousClient, connection_restapi_client_poc.Client.IReadableConfiguration)"/>/>
 		public ProjectApiExt(connection_restapi_client_poc.Client.ISynchronousClient client, connection_restapi_client_poc.Client.IAsynchronousClient asyncClient, connection_restapi_client_poc.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
 		{
 		}

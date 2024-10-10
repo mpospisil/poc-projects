@@ -316,24 +316,30 @@ namespace ST_ConRestApiClient
 			bucklingResult.Name.Equals("Buckling");
 		}
 
-		//[Test]
-		//public async Task ShouldGetResult()
-		//{
-		//	string connProjectFilePath = Path.Combine(ProjectPath, "Parametric.ideaCon");
-		//	var project = await ConnApiController!.OpenProjectAsync(connProjectFilePath, CancellationToken.None);
+		[Test]
+		public async Task ShouldGetResult()
+		{
+			string connProjectFilePath = Path.Combine(ProjectPath, "Parametric.ideaCon");
 
-		//	var con1 = project.Connections.First();
-		//	List<int> conToCalc = new List<int>() { con1.Id };
+			using (var apiClient2 = await ApiFactory.CreateConnectionApiClient())
+			{
+				var project2 = await apiClient2!.OpenProjectAsync(connProjectFilePath);
 
-		//	var cbfemResults = await ConnApiController!.ResultsAsync(conToCalc, CancellationToken.None);
-		//	cbfemResults.Should().BeEmpty();
+				var con1 = project2.Connections.First();
+				List<int> conToCalc = new List<int>() { con1.Id };
 
-		//	await ConnApiController.CalculateAsync(conToCalc, ConAnalysisTypeEnum.Stress_Strain);
+				ConCalculationParameter conCalculationParameter = new ConCalculationParameter()
+				{
+					AnalysisType = ConAnalysisTypeEnum.StressStrain,
+					ConnectionIds = new List<int>() { con1.Id }
+				};
 
-		//	cbfemResults = await ConnApiController!.ResultsAsync(conToCalc, CancellationToken.None);
-		//	cbfemResults.Should().NotBeEmpty();
+				await apiClient2!.Calculation!.CalculateAsync(project2.ProjectId, conCalculationParameter);
 
-		//}
+				var cbfemResults = await apiClient2!.Calculation!.GetResultsAsync(project2.ProjectId, conCalculationParameter);
+				cbfemResults.Should().NotBeEmpty();
+			}
+		}
 
 		[Test]
 		public async Task ShouldGetProductionCost()

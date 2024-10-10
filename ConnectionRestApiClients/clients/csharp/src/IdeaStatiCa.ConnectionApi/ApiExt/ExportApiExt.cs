@@ -41,7 +41,7 @@ namespace IdeaStatiCa.ConnectionApi.Api
 
 			// Write the string to the file
 #if NETSTANDARD2_1_OR_GREATER
-			await File.AppendAllTextAsync(filePath, ifc);
+			await File.WriteAllTextAsync(filePath, ifc);
 #else
 			File.WriteAllText(filePath, ifc);
 #endif

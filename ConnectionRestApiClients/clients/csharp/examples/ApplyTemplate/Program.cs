@@ -9,7 +9,6 @@ namespace ApplyTemplate
         static async Task Main(string[] args)
         {
             ConnectionApiClientFactory clientFactory = new ConnectionApiClientFactory("http://localhost:5000");
-
             ConnectionApiClient conclient = (ConnectionApiClient)await clientFactory.CreateConnectionApiClient();
 
             try 
@@ -22,7 +21,7 @@ namespace ApplyTemplate
                 var connections = await conclient.Connection.GetAllConnectionsDataAsync(projectId);
                 int connectionId = connections[0].Id;
 
-                string templateFilePath = "inputs/template-I-corner.contemp";
+                string templateFilePath = "Inputs/template-I-corner.contemp";
                 
                 //FIX Param --> Params
                 ConTemplateMappingGetParam templateImport = conclient.Template.ImportTemplateFromFile(templateFilePath);

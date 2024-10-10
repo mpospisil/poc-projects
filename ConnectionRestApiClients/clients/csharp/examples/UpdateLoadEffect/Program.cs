@@ -8,24 +8,24 @@ namespace UpdateLoadEffect
         static async Task Main(string[] args)
         {
             ConnectionApiClientFactory clientFactory = new ConnectionApiClientFactory("http://localhost:5000");
-            ConnectionApiClient conclient = (ConnectionApiClient)await clientFactory.CreateConnectionApiClient();
+            ConnectionApiClient conClient = (ConnectionApiClient)await clientFactory.CreateConnectionApiClient();
 
             try
             {
                 string filePath = "inputs/simple knee connection.ideaCon";
-                ConProject conProject = await conclient.Project.OpenProjectFromFileAsync(filePath);
+                ConProject conProject = await conClient.Project.OpenProjectFromFileAsync(filePath);
 
                 //Get projectId Guid
                 Guid projectId = conProject.ProjectId;
-                var connections = await conclient.Connection.GetAllConnectionsDataAsync(projectId);
+                var connections = await conClient.Connection.GetAllConnectionsDataAsync(projectId);
                 int connectionId = connections[0].Id;
 
-                ConLoadSettings loadSettings = await conclient.LoadEffect.GetLoadSettingsAsync(projectId, connectionId);
+                ConLoadSettings loadSettings = await conClient.LoadEffect.GetLoadSettingsAsync(projectId, connectionId);
 
                 Console.WriteLine(loadSettings.ToString());
 
                 //Get Load Effects
-                List<ConLoadEffect> loadEffects = await conclient.LoadEffect.GetLoadEffectsAsync(projectId, connectionId);
+                List<ConLoadEffect> loadEffects = await conClient.LoadEffect.GetLoadEffectsAsync(projectId, connectionId);
 
                 double effectMultiplier = 1.25;
                 
@@ -55,7 +55,7 @@ namespace UpdateLoadEffect
                         loading.SectionLoad.Mx = loadingBasis.SectionLoad.Mx * effectMultiplier;
                     }
 
-                     await conclient.LoadEffect.UpdateLoadEffectAsync(projectId, connectionId, loadEffect.Id, loadEffect);
+                     await conClient.LoadEffect.UpdateLoadEffectAsync(projectId, connectionId, loadEffect.Id, loadEffect);
 
                     //Increase each increment by 25% of the original value.
                     effectMultiplier += 0.25;
@@ -64,7 +64,7 @@ namespace UpdateLoadEffect
                 //Save updated file.
                 string saveFilePath = "updated-load-effects.ideaCon";
 
-                await conclient.Project.SaveProjectAsync(projectId, saveFilePath);
+                await conClient.Project.SaveProjectAsync(projectId, saveFilePath);
 
                 Console.WriteLine("File saved to: " + saveFilePath);
 

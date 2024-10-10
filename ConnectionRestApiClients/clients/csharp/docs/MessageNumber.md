@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.MessageNumber
+# IdeaStatiCa.ConnectionApi.Model.MessageNumber
 Message numbers
 
 ## Properties

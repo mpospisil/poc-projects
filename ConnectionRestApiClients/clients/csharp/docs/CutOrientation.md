@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CutOrientation
+# IdeaStatiCa.ConnectionApi.Model.CutOrientation
 Represents the type of the cut
 
 ## Properties

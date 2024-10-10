@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Beam
+# IdeaStatiCa.ConnectionApi.Model.Beam
 Representation of 1D member in IDEA StatiCa Detail
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.LineSegment3D
+# IdeaStatiCa.ConnectionApi.Model.LineSegment3D
 Represents a line segment in three-dimensional space.
 
 ## Properties

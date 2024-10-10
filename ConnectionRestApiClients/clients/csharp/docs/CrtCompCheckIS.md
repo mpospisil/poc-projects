@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CrtCompCheckIS
+# IdeaStatiCa.ConnectionApi.Model.CrtCompCheckIS
 CRT IS check
 
 ## Properties

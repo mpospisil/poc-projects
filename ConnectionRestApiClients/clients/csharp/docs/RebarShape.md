@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.RebarShape
+# IdeaStatiCa.ConnectionApi.Model.RebarShape
 Represents a geometrical shape for Rebar in 3D space.
 
 ## Properties

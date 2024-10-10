@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.StrainLoadOnLine
+# IdeaStatiCa.ConnectionApi.Model.StrainLoadOnLine
 Linearly distributed generalized strain load along a line.  Strain load is in local coordinate system and there are no possible eccentricities.
 
 ## Properties

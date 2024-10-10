@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.FatigueTypeOfPrestressingSteel
+# IdeaStatiCa.ConnectionApi.Model.FatigueTypeOfPrestressingSteel
 Posttensioned reinforcement type
 
 ## Properties

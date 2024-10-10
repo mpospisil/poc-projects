@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CheckResBolt
+# IdeaStatiCa.ConnectionApi.Model.CheckResBolt
 Check value for Bolts
 
 ## Properties

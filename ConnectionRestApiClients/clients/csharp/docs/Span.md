@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Span
+# IdeaStatiCa.ConnectionApi.Model.Span
 Span allows specifying haunched member.    Both cross-section must be of the same type. Spans must not overlap.
 
 ## Properties

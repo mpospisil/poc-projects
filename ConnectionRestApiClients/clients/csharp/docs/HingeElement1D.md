@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.HingeElement1D
+# IdeaStatiCa.ConnectionApi.Model.HingeElement1D
 Representation of hinge element 1D
 
 ## Properties

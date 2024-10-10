@@ -6,4 +6,4 @@ build_script:
 - dotnet build -c Release
 - dotnet test -c Release
 after_build:
-- dotnet pack .\src\connection_restapi_client_poc\connection_restapi_client_poc.csproj -o ../../output -c Release --no-build
+- dotnet pack .\src\IdeaStatiCa.ConnectionApi\IdeaStatiCa.ConnectionApi.csproj -o ../../output -c Release --no-build

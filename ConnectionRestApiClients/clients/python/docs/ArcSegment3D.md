@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.arc_segment3_d import ArcSegment3D
+from ideastatica-connection-api.models.arc_segment3_d import ArcSegment3D
 
 # TODO update the JSON string below
 json = "{}"

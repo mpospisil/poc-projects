@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CheckResConcreteBlock
+# IdeaStatiCa.ConnectionApi.Model.CheckResConcreteBlock
 Check value for Concrete Block
 
 ## Properties

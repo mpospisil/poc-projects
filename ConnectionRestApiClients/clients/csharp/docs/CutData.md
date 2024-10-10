@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CutData
+# IdeaStatiCa.ConnectionApi.Model.CutData
 Provides data of the cut beam
 
 ## Properties

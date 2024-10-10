@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.draw_data import DrawData
+from ideastatica-connection-api.models.draw_data import DrawData
 
 # TODO update the JSON string below
 json = "{}"

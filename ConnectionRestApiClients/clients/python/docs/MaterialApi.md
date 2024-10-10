@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.MaterialApi
+# ideastatica-connection-api.MaterialApi
 
 All URIs are relative to *http://localhost*
 
@@ -28,24 +28,24 @@ Add bolt assembly to the project
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_mprl_element import ConMprlElement
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    con_mprl_element = connection_restapi_client_poc.ConMprlElement() # ConMprlElement | Definition of a new bolt assemby to be added to the project (optional)
+    con_mprl_element = ideastatica-connection-api.ConMprlElement() # ConMprlElement | Definition of a new bolt assemby to be added to the project (optional)
 
     try:
         # Add bolt assembly to the project
@@ -96,24 +96,24 @@ Add cross section to the project
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_mprl_cross_section import ConMprlCrossSection
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_mprl_cross_section import ConMprlCrossSection
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    con_mprl_cross_section = connection_restapi_client_poc.ConMprlCrossSection() # ConMprlCrossSection | Definition of a new cross-section to be added to the project (optional)
+    con_mprl_cross_section = ideastatica-connection-api.ConMprlCrossSection() # ConMprlCrossSection | Definition of a new cross-section to be added to the project (optional)
 
     try:
         # Add cross section to the project
@@ -164,24 +164,24 @@ Add material to the project
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_mprl_element import ConMprlElement
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    con_mprl_element = connection_restapi_client_poc.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
+    con_mprl_element = ideastatica-connection-api.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
 
     try:
         # Add material to the project
@@ -232,24 +232,24 @@ Add material to the project
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_mprl_element import ConMprlElement
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    con_mprl_element = connection_restapi_client_poc.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
+    con_mprl_element = ideastatica-connection-api.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
 
     try:
         # Add material to the project
@@ -300,24 +300,24 @@ Add material to the project
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_mprl_element import ConMprlElement
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    con_mprl_element = connection_restapi_client_poc.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
+    con_mprl_element = ideastatica-connection-api.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
 
     try:
         # Add material to the project
@@ -368,24 +368,24 @@ Add material to the project
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_mprl_element import ConMprlElement
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_mprl_element import ConMprlElement
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    con_mprl_element = connection_restapi_client_poc.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
+    con_mprl_element = ideastatica-connection-api.ConMprlElement() # ConMprlElement | Definition of a new material to be added to the project (optional)
 
     try:
         # Add material to the project
@@ -436,21 +436,21 @@ Get materials which are used in the project projectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
 
     try:
@@ -501,21 +501,21 @@ Get materials which are used in the project projectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
 
     try:
@@ -566,21 +566,21 @@ Get bolt assemblies which are used in the project projectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
 
     try:
@@ -631,21 +631,21 @@ Get materials which are used in the project projectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
 
     try:
@@ -696,21 +696,21 @@ Get cross sections which are used in the project projectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
 
     try:
@@ -761,21 +761,21 @@ Get materials which are used in the project projectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
 
     try:
@@ -826,21 +826,21 @@ Get materials which are used in the project projectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.MaterialApi(api_client)
+    api_instance = ideastatica-connection-api.MaterialApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
 
     try:

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.TemplateApi
+# ideastatica-connection-api.TemplateApi
 
 All URIs are relative to *http://localhost*
 
@@ -18,25 +18,25 @@ Apply the connection template applyTemplateParam on the connection connectionId 
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_template_apply_param import ConTemplateApplyParam
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_template_apply_param import ConTemplateApplyParam
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.TemplateApi(api_client)
+    api_instance = ideastatica-connection-api.TemplateApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection where to apply the template
-    con_template_apply_param = connection_restapi_client_poc.ConTemplateApplyParam() # ConTemplateApplyParam | Template to apply (optional)
+    con_template_apply_param = ideastatica-connection-api.ConTemplateApplyParam() # ConTemplateApplyParam | Template to apply (optional)
 
     try:
         # Apply the connection template applyTemplateParam on the connection connectionId in the project projectId
@@ -88,21 +88,21 @@ Create a template for the connection connectionId in the project projectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.TemplateApi(api_client)
+    api_instance = ideastatica-connection-api.TemplateApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to be converted to a template
 
@@ -157,26 +157,26 @@ The result IdeaStatiCa.Api.Connection.Model.TemplateConversionsDefault mapping t
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_template_mapping_get_param import ConTemplateMappingGetParam
-from connection_restapi_client_poc.models.template_conversions import TemplateConversions
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_template_mapping_get_param import ConTemplateMappingGetParam
+from ideastatica-connection-api.models.template_conversions import TemplateConversions
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.TemplateApi(api_client)
+    api_instance = ideastatica-connection-api.TemplateApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to get default mapping
-    con_template_mapping_get_param = connection_restapi_client_poc.ConTemplateMappingGetParam() # ConTemplateMappingGetParam | Data of the template to get default mapping (optional)
+    con_template_mapping_get_param = ideastatica-connection-api.ConTemplateMappingGetParam() # ConTemplateMappingGetParam | Data of the template to get default mapping (optional)
 
     try:
         # Get the default mappings for the application of the connection template passed in templateToApply  on connectionId in the project projectId

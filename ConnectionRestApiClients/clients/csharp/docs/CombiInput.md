@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CombiInput
+# IdeaStatiCa.ConnectionApi.Model.CombiInput
 Basic class combination
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.PolyLine3D
+# IdeaStatiCa.ConnectionApi.Model.PolyLine3D
 Represents a polyline in three-dimensional space.
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.PointSupportNode
+# IdeaStatiCa.ConnectionApi.Model.PointSupportNode
 Point support in point
 
 ## Properties

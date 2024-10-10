@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.settlement import Settlement
+from ideastatica-connection-api.models.settlement import Settlement
 
 # TODO update the JSON string below
 json = "{}"

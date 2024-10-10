@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.OpenModelResult
+# IdeaStatiCa.ConnectionApi.Model.OpenModelResult
 Results of open model
 
 ## Properties

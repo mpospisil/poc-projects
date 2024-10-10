@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CheckSection
+# IdeaStatiCa.ConnectionApi.Model.CheckSection
 Check section base class
 
 ## Properties

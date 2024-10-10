@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.BoltShearType
+# IdeaStatiCa.ConnectionApi.Model.BoltShearType
 Defines a transfer of shear force in bolts.
 
 ## Properties

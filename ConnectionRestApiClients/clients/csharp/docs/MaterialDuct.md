@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.MaterialDuct
+# IdeaStatiCa.ConnectionApi.Model.MaterialDuct
 Tendon ducts material type
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CheckResPlate
+# IdeaStatiCa.ConnectionApi.Model.CheckResPlate
 Check value for Plate
 
 ## Properties

@@ -1,7 +1,7 @@
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Model;
 using FluentAssertions;
 
-namespace ST_ConRestApiClient
+namespace ST_ConnectionRestApi
 {
 	public class ConnectionRestApiTests : ConRestApiBaseTest
 	{
@@ -316,24 +316,30 @@ namespace ST_ConRestApiClient
 			bucklingResult.Name.Equals("Buckling");
 		}
 
-		//[Test]
-		//public async Task ShouldGetResult()
-		//{
-		//	string connProjectFilePath = Path.Combine(ProjectPath, "Parametric.ideaCon");
-		//	var project = await ConnApiController!.OpenProjectAsync(connProjectFilePath, CancellationToken.None);
+		[Test]
+		public async Task ShouldGetResult()
+		{
+			string connProjectFilePath = Path.Combine(ProjectPath, "Parametric.ideaCon");
 
-		//	var con1 = project.Connections.First();
-		//	List<int> conToCalc = new List<int>() { con1.Id };
+			using (var apiClient2 = await ApiFactory.CreateConnectionApiClient())
+			{
+				var project2 = await apiClient2!.OpenProjectAsync(connProjectFilePath);
 
-		//	var cbfemResults = await ConnApiController!.ResultsAsync(conToCalc, CancellationToken.None);
-		//	cbfemResults.Should().BeEmpty();
+				var con1 = project2.Connections.First();
+				List<int> conToCalc = new List<int>() { con1.Id };
 
-		//	await ConnApiController.CalculateAsync(conToCalc, ConAnalysisTypeEnum.Stress_Strain);
+				ConCalculationParameter conCalculationParameter = new ConCalculationParameter()
+				{
+					AnalysisType = ConAnalysisTypeEnum.StressStrain,
+					ConnectionIds = new List<int>() { con1.Id }
+				};
 
-		//	cbfemResults = await ConnApiController!.ResultsAsync(conToCalc, CancellationToken.None);
-		//	cbfemResults.Should().NotBeEmpty();
+				await apiClient2!.Calculation!.CalculateAsync(project2.ProjectId, conCalculationParameter);
 
-		//}
+				var cbfemResults = await apiClient2!.Calculation!.GetResultsAsync(project2.ProjectId, conCalculationParameter);
+				cbfemResults.Should().NotBeEmpty();
+			}
+		}
 
 		[Test]
 		public async Task ShouldGetProductionCost()
@@ -346,21 +352,21 @@ namespace ST_ConRestApiClient
 
 		// TODO - not working
 
-		//[Test]
-		//public async Task ShouldGetAndUpdateConnectionSetup()
-		//{
-		//	var connectionSetup = await ConnectionApiClient!.Project.GetSetupAsync(ActiveProjectId);
+		[Test]
+		public async Task ShouldGetAndUpdateConnectionSetup()
+		{
+			var connectionSetup = await ConnectionApiClient!.Project.GetSetupAsync(ActiveProjectId);
 
-		//	connectionSetup.HssLimitPlasticStrain.Should().Be(0.01);
+			connectionSetup.HssLimitPlasticStrain.Should().Be(0.01);
 
-		//	connectionSetup.HssLimitPlasticStrain = 0.02;
+			connectionSetup.HssLimitPlasticStrain = 0.02;
 
-		//	var updateResponse = await ConnectionApiClient!.Project.UpdateSetupAsync(ActiveProjectId, connectionSetup);
+			var updateResponse = await ConnectionApiClient!.Project.UpdateSetupAsync(ActiveProjectId, connectionSetup);
 
-		//	var updatedConnectionSetup = await ConnectionApiClient!.Project!.GetSetupAsync(ActiveProjectId);
+			var updatedConnectionSetup = await ConnectionApiClient!.Project!.GetSetupAsync(ActiveProjectId);
 
-		//	updatedConnectionSetup.HssLimitPlasticStrain.Should().Be(0.02);
-		//}
+			updatedConnectionSetup.HssLimitPlasticStrain.Should().Be(0.02);
+		}
 
 		[Test]
 		public async Task ShouldGetSceneData()

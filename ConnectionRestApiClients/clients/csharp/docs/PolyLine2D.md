@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.PolyLine2D
+# IdeaStatiCa.ConnectionApi.Model.PolyLine2D
 Represents a polyline in two-dimensional space.
 
 ## Properties

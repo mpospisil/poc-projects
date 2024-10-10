@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ArcSegment3D
+# IdeaStatiCa.ConnectionApi.Model.ArcSegment3D
 Represents an arc segment in three-dimensional space.
 
 ## Properties

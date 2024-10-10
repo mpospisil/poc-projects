@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.TemperatureCurve2D
+# IdeaStatiCa.ConnectionApi.Model.TemperatureCurve2D
 Reperesents a thermal curve.
 
 ## Properties

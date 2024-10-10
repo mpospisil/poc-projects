@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.cut_data import CutData
+from ideastatica-connection-api.models.cut_data import CutData
 
 # TODO update the JSON string below
 json = "{}"

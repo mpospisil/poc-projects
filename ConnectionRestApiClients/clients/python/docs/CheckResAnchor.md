@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.check_res_anchor import CheckResAnchor
+from ideastatica-connection-api.models.check_res_anchor import CheckResAnchor
 
 # TODO update the JSON string below
 json = "{}"

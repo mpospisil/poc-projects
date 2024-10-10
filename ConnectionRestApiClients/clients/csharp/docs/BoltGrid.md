@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.BoltGrid
+# IdeaStatiCa.ConnectionApi.Model.BoltGrid
 Data of the bolt grid
 
 ## Properties

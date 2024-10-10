@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.PresentationApi
+# ideastatica-connection-api.PresentationApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,22 +17,22 @@ Returns data for scene3D
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.draw_data import DrawData
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.draw_data import DrawData
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.PresentationApi(api_client)
+    api_instance = ideastatica-connection-api.PresentationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the open project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to be presented to scene3D
 
@@ -85,21 +85,21 @@ Return serialized data for scene3D in json format
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.PresentationApi(api_client)
+    api_instance = ideastatica-connection-api.PresentationApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
 

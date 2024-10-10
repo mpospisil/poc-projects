@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.LoadEffectApi
+# ideastatica-connection-api.LoadEffectApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,26 +22,26 @@ Add new load effect to the connection
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_load_effect import ConLoadEffect
-from connection_restapi_client_poc.models.load_effect_data import LoadEffectData
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_load_effect import ConLoadEffect
+from ideastatica-connection-api.models.load_effect_data import LoadEffectData
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
+    api_instance = ideastatica-connection-api.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    con_load_effect = connection_restapi_client_poc.ConLoadEffect() # ConLoadEffect |  (optional)
+    con_load_effect = ideastatica-connection-api.ConLoadEffect() # ConLoadEffect |  (optional)
 
     try:
         # Add new load effect to the connection
@@ -93,21 +93,21 @@ Delete load effect loadEffectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
+    api_instance = ideastatica-connection-api.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     load_effect_id = 56 # int | 
@@ -162,22 +162,22 @@ Get load impulses from loadEffectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_load_effect import ConLoadEffect
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_load_effect import ConLoadEffect
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
+    api_instance = ideastatica-connection-api.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     load_effect_id = 56 # int | 
@@ -234,22 +234,22 @@ Get all load effects which are defined in connectionId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_load_effect import ConLoadEffect
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_load_effect import ConLoadEffect
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
+    api_instance = ideastatica-connection-api.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     is_percentage = True # bool |  (optional)
@@ -304,22 +304,22 @@ Get Load settings for connection in project
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_load_settings import ConLoadSettings
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_load_settings import ConLoadSettings
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
+    api_instance = ideastatica-connection-api.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
 
@@ -372,25 +372,25 @@ Set Load settings for connection in project
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_load_settings import ConLoadSettings
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_load_settings import ConLoadSettings
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
+    api_instance = ideastatica-connection-api.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
-    con_load_settings = connection_restapi_client_poc.ConLoadSettings() # ConLoadSettings |  (optional)
+    con_load_settings = ideastatica-connection-api.ConLoadSettings() # ConLoadSettings |  (optional)
 
     try:
         # Set Load settings for connection in project
@@ -442,26 +442,26 @@ Update load impulses in loadEffectId
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_load_effect import ConLoadEffect
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_load_effect import ConLoadEffect
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.LoadEffectApi(api_client)
+    api_instance = ideastatica-connection-api.LoadEffectApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     load_effect_id = 56 # int | 
-    con_load_effect = connection_restapi_client_poc.ConLoadEffect() # ConLoadEffect |  (optional)
+    con_load_effect = ideastatica-connection-api.ConLoadEffect() # ConLoadEffect |  (optional)
 
     try:
         # Update load impulses in loadEffectId

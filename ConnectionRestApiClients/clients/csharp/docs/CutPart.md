@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CutPart
+# IdeaStatiCa.ConnectionApi.Model.CutPart
 
 ## Properties
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.polygon2_d import Polygon2D
+from ideastatica-connection-api.models.polygon2_d import Polygon2D
 
 # TODO update the JSON string below
 json = "{}"

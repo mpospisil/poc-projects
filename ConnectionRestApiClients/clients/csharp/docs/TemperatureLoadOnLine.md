@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.TemperatureLoadOnLine
+# IdeaStatiCa.ConnectionApi.Model.TemperatureLoadOnLine
 Temperature load on line
 
 ## Properties

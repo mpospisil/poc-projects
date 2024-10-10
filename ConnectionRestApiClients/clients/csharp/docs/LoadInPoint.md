@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.LoadInPoint
+# IdeaStatiCa.ConnectionApi.Model.LoadInPoint
 Concentrated load
 
 ## Properties

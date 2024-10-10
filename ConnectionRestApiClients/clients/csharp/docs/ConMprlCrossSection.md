@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConMprlCrossSection
+# IdeaStatiCa.ConnectionApi.Model.ConMprlCrossSection
 
 ## Properties
 

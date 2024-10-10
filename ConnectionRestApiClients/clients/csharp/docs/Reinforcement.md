@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Reinforcement
+# IdeaStatiCa.ConnectionApi.Model.Reinforcement
 Base class representing reinforcement in IDEA StatiCa Detail
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.DrawData
+# IdeaStatiCa.ConnectionApi.Model.DrawData
 
 ## Properties
 

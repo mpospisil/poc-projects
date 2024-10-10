@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CheckResWeld
+# IdeaStatiCa.ConnectionApi.Model.CheckResWeld
 Check value for Weld
 
 ## Properties

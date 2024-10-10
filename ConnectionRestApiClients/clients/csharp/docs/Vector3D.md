@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Vector3D
+# IdeaStatiCa.ConnectionApi.Model.Vector3D
 Represents a vector in three-dimensional space.
 
 ## Properties

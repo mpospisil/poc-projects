@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.LoadGroup
+# IdeaStatiCa.ConnectionApi.Model.LoadGroup
 Load group
 
 ## Properties

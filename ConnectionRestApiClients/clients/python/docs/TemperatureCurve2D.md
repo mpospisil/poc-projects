@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.temperature_curve2_d import TemperatureCurve2D
+from ideastatica-connection-api.models.temperature_curve2_d import TemperatureCurve2D
 
 # TODO update the JSON string below
 json = "{}"

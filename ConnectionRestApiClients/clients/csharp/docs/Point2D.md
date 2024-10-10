@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Point2D
+# IdeaStatiCa.ConnectionApi.Model.Point2D
 Represents an x- and y-coordinate pair in two-dimensional space.
 
 ## Properties

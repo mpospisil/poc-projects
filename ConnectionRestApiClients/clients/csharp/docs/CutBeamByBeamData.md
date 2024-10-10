@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CutBeamByBeamData
+# IdeaStatiCa.ConnectionApi.Model.CutBeamByBeamData
 Provides data of the cut objec by object
 
 ## Properties

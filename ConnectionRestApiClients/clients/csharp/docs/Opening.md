@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Opening
+# IdeaStatiCa.ConnectionApi.Model.Opening
 Representation of opening in IDEA StatiCa Detail
 
 ## Properties

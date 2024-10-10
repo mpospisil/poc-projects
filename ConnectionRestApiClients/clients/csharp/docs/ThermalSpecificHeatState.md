@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ThermalSpecificHeatState
+# IdeaStatiCa.ConnectionApi.Model.ThermalSpecificHeatState
 Type of curvature - thermal specific heat
 
 ## Properties

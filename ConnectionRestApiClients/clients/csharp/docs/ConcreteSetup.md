@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConcreteSetup
+# IdeaStatiCa.ConnectionApi.Model.ConcreteSetup
 Concrete setup base class
 
 ## Properties

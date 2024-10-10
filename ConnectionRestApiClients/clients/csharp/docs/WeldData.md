@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.WeldData
+# IdeaStatiCa.ConnectionApi.Model.WeldData
 Provides data of the single weld
 
 ## Properties

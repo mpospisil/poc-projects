@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.reinforcement import Reinforcement
+from ideastatica-connection-api.models.reinforcement import Reinforcement
 
 # TODO update the JSON string below
 json = "{}"

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.buckling_res import BucklingRes
+from ideastatica-connection-api.models.buckling_res import BucklingRes
 
 # TODO update the JSON string below
 json = "{}"

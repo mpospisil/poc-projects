@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.MemberType
+# IdeaStatiCa.ConnectionApi.Model.MemberType
 Type of member
 
 ## Properties

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.concrete_setup import ConcreteSetup
+from ideastatica-connection-api.models.concrete_setup import ConcreteSetup
 
 # TODO update the JSON string below
 json = "{}"

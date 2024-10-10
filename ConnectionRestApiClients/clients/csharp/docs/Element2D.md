@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Element2D
+# IdeaStatiCa.ConnectionApi.Model.Element2D
 Representation of element2D
 
 ## Properties

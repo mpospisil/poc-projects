@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Anchor3D
+# IdeaStatiCa.ConnectionApi.Model.Anchor3D
 Representation of Anchor 3D in IDEA StatiCa Detail
 
 ## Properties

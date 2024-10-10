@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.load_in_point import LoadInPoint
+from ideastatica-connection-api.models.load_in_point import LoadInPoint
 
 # TODO update the JSON string below
 json = "{}"

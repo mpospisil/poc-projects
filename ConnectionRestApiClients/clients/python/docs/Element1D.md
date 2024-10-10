@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.element1_d import Element1D
+from ideastatica-connection-api.models.element1_d import Element1D
 
 # TODO update the JSON string below
 json = "{}"

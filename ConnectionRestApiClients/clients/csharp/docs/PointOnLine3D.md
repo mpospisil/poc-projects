@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.PointOnLine3D
+# IdeaStatiCa.ConnectionApi.Model.PointOnLine3D
 Represents a Point dependent on the line in three-dimensional space.
 
 ## Properties

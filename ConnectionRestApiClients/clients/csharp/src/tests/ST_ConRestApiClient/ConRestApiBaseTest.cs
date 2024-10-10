@@ -1,8 +1,8 @@
-﻿using connection_restapi_client_poc;
-using connection_restapi_client_poc.Model;
+﻿using IdeaStatiCa.ConnectionApi;
+using IdeaStatiCa.ConnectionApi.Model;
 using Microsoft.Extensions.Configuration;
 
-namespace ST_ConRestApiClient
+namespace ST_ConnectionRestApi
 {
 	public class ConRestApiBaseTest
 	{

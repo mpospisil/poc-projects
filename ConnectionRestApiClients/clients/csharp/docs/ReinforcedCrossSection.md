@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ReinforcedCrossSection
+# IdeaStatiCa.ConnectionApi.Model.ReinforcedCrossSection
 Reinforced cross-section
 
 ## Properties

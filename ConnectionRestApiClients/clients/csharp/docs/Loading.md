@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Loading
+# IdeaStatiCa.ConnectionApi.Model.Loading
 Loading identification
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ValidationType
+# IdeaStatiCa.ConnectionApi.Model.ValidationType
 
 ## Properties
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.wall import Wall
+from ideastatica-connection-api.models.wall import Wall
 
 # TODO update the JSON string below
 json = "{}"

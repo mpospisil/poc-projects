@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ISDModel
+# IdeaStatiCa.ConnectionApi.Model.ISDModel
 Model of IDEA StatiCa Detail
 
 ## Properties

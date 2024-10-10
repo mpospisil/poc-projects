@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.LoadOnLine
+# IdeaStatiCa.ConnectionApi.Model.LoadOnLine
 Load on line
 
 ## Properties

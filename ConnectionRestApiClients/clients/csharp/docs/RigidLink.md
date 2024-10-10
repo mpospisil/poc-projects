@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.RigidLink
+# IdeaStatiCa.ConnectionApi.Model.RigidLink
 Rigid link between nodes
 
 ## Properties

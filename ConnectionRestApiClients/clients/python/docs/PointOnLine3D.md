@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.point_on_line3_d import PointOnLine3D
+from ideastatica-connection-api.models.point_on_line3_d import PointOnLine3D
 
 # TODO update the JSON string below
 json = "{}"

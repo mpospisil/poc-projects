@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.dapped_end import DappedEnd
+from ideastatica-connection-api.models.dapped_end import DappedEnd
 
 # TODO update the JSON string below
 json = "{}"

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Member1D
+# IdeaStatiCa.ConnectionApi.Model.Member1D
 Representation of member1D
 
 ## Properties

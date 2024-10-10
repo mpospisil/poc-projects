@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Polygon2D
+# IdeaStatiCa.ConnectionApi.Model.Polygon2D
 Represents a polygon in two-dimensional space.
 
 ## Properties

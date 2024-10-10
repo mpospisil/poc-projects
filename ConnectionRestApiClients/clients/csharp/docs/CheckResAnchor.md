@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CheckResAnchor
+# IdeaStatiCa.ConnectionApi.Model.CheckResAnchor
 Check value for Anchor
 
 ## Properties

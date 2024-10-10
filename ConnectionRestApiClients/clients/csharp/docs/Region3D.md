@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Region3D
+# IdeaStatiCa.ConnectionApi.Model.Region3D
 Represents a region in three-dimensional space included outline (border) and openings.
 
 ## Properties

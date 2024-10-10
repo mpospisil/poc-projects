@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.BendData
+# IdeaStatiCa.ConnectionApi.Model.BendData
 Provides data of bend
 
 ## Properties

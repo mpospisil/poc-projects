@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.DappedEnd
+# IdeaStatiCa.ConnectionApi.Model.DappedEnd
 Representation of dapped end in IDEA StatiCa Detail
 
 ## Properties

@@ -1,6 +1,6 @@
 import logging
-from connection_restapi_client_poc.api.project_api import ProjectApi
-from connection_restapi_client_poc.api_response import ApiResponse
+from ideastatica_connection_api.api.project_api import ProjectApi
+from ideastatica_connection_api.api_response import ApiResponse
 
 logger = logging.getLogger(__name__)
 

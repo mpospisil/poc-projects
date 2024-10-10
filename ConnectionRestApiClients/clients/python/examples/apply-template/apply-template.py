@@ -10,8 +10,8 @@ parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')
 # Add the parent directory to sys.path
 sys.path.append(parent_dir)
 
-import connection_restapi_client_poc
-import connection_restapi_client_poc.ideastatica_client as ideastatica_client
+import ideastatica_connection_api
+import ideastatica_connection_api.ideastatica_client as ideastatica_client
 
 
 # Configure logging
@@ -22,7 +22,7 @@ baseUrl = "http://localhost:5000"
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica_connection_api.Configuration(
     host = baseUrl
 )
 
@@ -45,7 +45,7 @@ with ideastatica_client.IdeaStatiCaClient(configuration, project_file_path) as i
         connection1 = connections_in_project[0]
         pprint(connection1)
 
-        templateParam =  connection_restapi_client_poc.ConTemplateMappingGetParam() # ConTemplateMappingGetParam | Data of the template to get default mapping (optional)
+        templateParam =  ideastatica_connection_api.ConTemplateMappingGetParam() # ConTemplateMappingGetParam | Data of the template to get default mapping (optional)
 
         template_file_name = os.path.join(dir_path, '..\projects', 'template-I-corner.contemp')
         with open(template_file_name, 'r', encoding='utf-16') as file:
@@ -59,7 +59,7 @@ with ideastatica_client.IdeaStatiCaClient(configuration, project_file_path) as i
         # Modify mapping
 
         # Apply the template to the connection with the modified mapping
-        applyTemplateData =  connection_restapi_client_poc.ConTemplateApplyParam() # ConTemplateApplyParam | Template to apply (optional)
+        applyTemplateData =  ideastatica_connection_api.ConTemplateApplyParam() # ConTemplateApplyParam | Template to apply (optional)
         applyTemplateData.connection_template = templateParam.template
         applyTemplateData.mapping = default_mapping
 
@@ -68,7 +68,7 @@ with ideastatica_client.IdeaStatiCaClient(configuration, project_file_path) as i
         pprint(applyTemplateResult)
 
         # run stress-strain CBFEM analysis for the connection id = 1
-        calcParams =  connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
+        calcParams =  ideastatica_connection_api.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
         calcParams.connection_ids = [connection1.id]
 
         # run stress-strain analysis for the connection

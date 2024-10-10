@@ -11,8 +11,8 @@ parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')
 # Add the parent directory to sys.path
 sys.path.append(parent_dir)
 
-import connection_restapi_client_poc
-import connection_restapi_client_poc.ideastatica_client as ideastatica_client
+import ideastatica_connection_api
+import ideastatica_connection_api.ideastatica_client as ideastatica_client
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -22,7 +22,7 @@ baseUrl = "http://localhost:5000"
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica_connection_api.Configuration(
     host = baseUrl
 )
 

@@ -10,9 +10,9 @@ parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')
 # Add the parent directory to sys.path
 sys.path.append(parent_dir)
 
-import connection_restapi_client_poc
-import connection_restapi_client_poc.ideastatica_client as ideastatica_client
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica_connection_api
+import ideastatica_connection_api.ideastatica_client as ideastatica_client
+from ideastatica_connection_api.rest import ApiException
 
 # Verify that your service is running on following URL
 baseUrl = "http://localhost:5000"
@@ -23,7 +23,7 @@ print(project_file_path)
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica_connection_api.Configuration(
     host = baseUrl
 )
 
@@ -31,10 +31,10 @@ configuration = connection_restapi_client_poc.Configuration(
 with ideastatica_client.IdeaStatiCaClient(configuration, project_file_path) as is_client:
 
     try:
-        con_calculation_parameter = connection_restapi_client_poc.ConCalculationParameter()
+        con_calculation_parameter = ideastatica_connection_api.ConCalculationParameter()
         con_calculation_parameter.connection_ids = [1]
 
-        calc_Results = connection_restapi_client_poc.CalculationApi(is_client.client)
+        calc_Results = ideastatica_connection_api.CalculationApi(is_client.client)
         api_response = is_client.calculation.calculate(is_client.project_id, con_calculation_parameter)
         print("The response of CalculationApi->calculate:\n")
         pprint(calc_Results)      

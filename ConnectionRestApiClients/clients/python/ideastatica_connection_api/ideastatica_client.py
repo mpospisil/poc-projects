@@ -1,8 +1,8 @@
 import os
 import logging
-from connection_restapi_client_poc import Configuration, ClientApi, CalculationApi, ConnectionApi, ExportApi, LoadEffectApi, MaterialApi, MemberApi, OperationApi, ParameterApi, PresentationApi, ReportApi, TemplateApi
-import connection_restapi_client_poc.api_client as api_client
-import connection_restapi_client_poc.api_ext.project_ext_api as project_ext_api
+from ideastatica_connection_api import Configuration, ClientApi, CalculationApi, ConnectionApi, ExportApi, LoadEffectApi, MaterialApi, MemberApi, OperationApi, ParameterApi, PresentationApi, ReportApi, TemplateApi
+import ideastatica_connection_api.api_client as api_client
+import ideastatica_connection_api.api_ext.project_ext_api as project_ext_api
 from typing import Optional
 
 logger = logging.getLogger(__name__)

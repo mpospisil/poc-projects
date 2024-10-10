@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.sub_structure import SubStructure
+from ideastatica_connection_api.models.sub_structure import SubStructure
 
 # TODO update the JSON string below
 json = "{}"

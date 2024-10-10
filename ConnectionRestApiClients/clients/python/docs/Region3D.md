@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.region3_d import Region3D
+from ideastatica_connection_api.models.region3_d import Region3D
 
 # TODO update the JSON string below
 json = "{}"

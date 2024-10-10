@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.solid_block3_d import SolidBlock3D
+from ideastatica_connection_api.models.solid_block3_d import SolidBlock3D
 
 # TODO update the JSON string below
 json = "{}"

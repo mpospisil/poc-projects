@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.tendon_bar import TendonBar
+from ideastatica_connection_api.models.tendon_bar import TendonBar
 
 # TODO update the JSON string below
 json = "{}"

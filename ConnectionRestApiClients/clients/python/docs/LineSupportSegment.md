@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.line_support_segment import LineSupportSegment
+from ideastatica_connection_api.models.line_support_segment import LineSupportSegment
 
 # TODO update the JSON string below
 json = "{}"

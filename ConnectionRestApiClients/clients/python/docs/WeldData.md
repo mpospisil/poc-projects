@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.weld_data import WeldData
+from ideastatica_connection_api.models.weld_data import WeldData
 
 # TODO update the JSON string below
 json = "{}"

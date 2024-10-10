@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.base_plate3_d import BasePlate3D
+from ideastatica_connection_api.models.base_plate3_d import BasePlate3D
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.detail_load_case import DetailLoadCase
+from ideastatica_connection_api.models.detail_load_case import DetailLoadCase
 
 # TODO update the JSON string below
 json = "{}"

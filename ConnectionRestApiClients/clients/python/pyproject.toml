@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "ideastatica-connection-api"
-version = "24.0.6.1103"
+name = "ideastatica_connection_api"
+version = "24.0.6.1109"
 description = "Connection Rest API 1.0"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"
 readme = "README.md"
 repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Connection Rest API 1.0"]
-include = ["ideastatica-connection-api/py.typed"]
+include = ["ideastatica_connection_api/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -35,7 +35,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "ideastatica-connection-api",
+  "ideastatica_connection_api",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]

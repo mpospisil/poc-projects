@@ -1,4 +1,4 @@
-# ideastatica-connection-api.ExportApi
+# ideastatica_connection_api.ExportApi
 
 All URIs are relative to *http://localhost*
 
@@ -18,22 +18,22 @@ Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.Open
 
 
 ```python
-import ideastatica-connection-api
-from ideastatica-connection-api.models.connection_data import ConnectionData
-from ideastatica-connection-api.rest import ApiException
+import ideastatica_connection_api
+from ideastatica_connection_api.models.connection_data import ConnectionData
+from ideastatica_connection_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ideastatica-connection-api.Configuration(
+configuration = ideastatica_connection_api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ideastatica-connection-api.ApiClient(configuration) as api_client:
+with ideastatica_connection_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ideastatica-connection-api.ExportApi(api_client)
+    api_instance = ideastatica_connection_api.ExportApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
 
@@ -86,21 +86,21 @@ Export connection to IFC format
 
 
 ```python
-import ideastatica-connection-api
-from ideastatica-connection-api.rest import ApiException
+import ideastatica_connection_api
+from ideastatica_connection_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ideastatica-connection-api.Configuration(
+configuration = ideastatica_connection_api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ideastatica-connection-api.ApiClient(configuration) as api_client:
+with ideastatica_connection_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ideastatica-connection-api.ExportApi(api_client)
+    api_instance = ideastatica_connection_api.ExportApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
 
@@ -151,21 +151,21 @@ Export connection to XML which includes https://github.com/idea-statica/ideastat
 
 
 ```python
-import ideastatica-connection-api
-from ideastatica-connection-api.rest import ApiException
+import ideastatica_connection_api
+from ideastatica_connection_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ideastatica-connection-api.Configuration(
+configuration = ideastatica_connection_api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ideastatica-connection-api.ApiClient(configuration) as api_client:
+with ideastatica_connection_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ideastatica-connection-api.ExportApi(api_client)
+    api_instance = ideastatica_connection_api.ExportApi(api_client)
     project_id = 'project_id_example' # str | 
     connection_id = 56 # int | 
     version = 'version_example' # str |  (optional)

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.con_template_apply_param import ConTemplateApplyParam
+from ideastatica_connection_api.models.con_template_apply_param import ConTemplateApplyParam
 
 # TODO update the JSON string below
 json = "{}"

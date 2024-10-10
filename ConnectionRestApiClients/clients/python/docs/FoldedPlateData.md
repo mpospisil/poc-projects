@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.folded_plate_data import FoldedPlateData
+from ideastatica_connection_api.models.folded_plate_data import FoldedPlateData
 
 # TODO update the JSON string below
 json = "{}"

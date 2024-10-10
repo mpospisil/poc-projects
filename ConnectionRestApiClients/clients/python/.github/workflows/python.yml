@@ -3,7 +3,7 @@
 #
 # ref: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: ideastatica-connection-api Python package
+name: ideastatica_connection_api Python package
 
 on: [push, pull_request]
 

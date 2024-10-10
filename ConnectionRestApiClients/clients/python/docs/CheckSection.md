@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.check_section import CheckSection
+from ideastatica_connection_api.models.check_section import CheckSection
 
 # TODO update the JSON string below
 json = "{}"

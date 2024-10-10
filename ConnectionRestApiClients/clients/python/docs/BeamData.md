@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.beam_data import BeamData
+from ideastatica_connection_api.models.beam_data import BeamData
 
 # TODO update the JSON string below
 json = "{}"

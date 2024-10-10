@@ -11,8 +11,8 @@ parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')
 # Add the parent directory to sys.path
 sys.path.append(parent_dir)
 
-import connection_restapi_client_poc
-import connection_restapi_client_poc.ideastatica_client as ideastatica_client
+import ideastatica_connection_api
+import ideastatica_connection_api.ideastatica_client as ideastatica_client
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -22,7 +22,7 @@ baseUrl = "http://localhost:5000"
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica_connection_api.Configuration(
     host = baseUrl
 )
 
@@ -47,7 +47,7 @@ with ideastatica_client.IdeaStatiCaClient(configuration, project_file_path) as i
         pprint(connection1)
 
         # run stress-strain CBFEM analysis for the connection id = 1
-        calcParams = connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
+        calcParams = ideastatica_connection_api.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
         calcParams.connection_ids = [connection1.id]
 
         # run stress-strain analysis for the connection

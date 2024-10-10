@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.con_project_data import ConProjectData
+from ideastatica_connection_api.models.con_project_data import ConProjectData
 
 # TODO update the JSON string below
 json = "{}"

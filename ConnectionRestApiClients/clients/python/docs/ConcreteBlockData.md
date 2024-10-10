@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.concrete_block_data import ConcreteBlockData
+from ideastatica_connection_api.models.concrete_block_data import ConcreteBlockData
 
 # TODO update the JSON string below
 json = "{}"

@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.cut_beam_by_beam_data import CutBeamByBeamData
+from ideastatica_connection_api.models.cut_beam_by_beam_data import CutBeamByBeamData
 
 # TODO update the JSON string below
 json = "{}"

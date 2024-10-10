@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.reinforced_cross_section import ReinforcedCrossSection
+from ideastatica_connection_api.models.reinforced_cross_section import ReinforcedCrossSection
 
 # TODO update the JSON string below
 json = "{}"

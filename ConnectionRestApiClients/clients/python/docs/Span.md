@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.span import Span
+from ideastatica_connection_api.models.span import Span
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.poly_line3_d import PolyLine3D
+from ideastatica_connection_api.models.poly_line3_d import PolyLine3D
 
 # TODO update the JSON string below
 json = "{}"

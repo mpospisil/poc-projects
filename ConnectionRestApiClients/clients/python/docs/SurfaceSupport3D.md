@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.surface_support3_d import SurfaceSupport3D
+from ideastatica_connection_api.models.surface_support3_d import SurfaceSupport3D
 
 # TODO update the JSON string below
 json = "{}"

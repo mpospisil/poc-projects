@@ -127,14 +127,18 @@ namespace connection_restapi_client_poc
 			this.Connection = new ConnectionApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Export = new ExportApiExt(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.LoadEffect = new LoadEffectApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
-			this.Material = new MaterialApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
+
+			var iomClient = new connection_restapi_client_poc.Client.ApiClient(configuration.BasePath);
+			iomClient.SerializerSettings = IdeaJsonSerializerSetting.GetJsonSettingIdea();
+
+			this.Material = new MaterialApi(iomClient, iomClient, configuration);
 			this.Member = new MemberApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Operation = new OperationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Parameter = new ParameterApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Presentation = new PresentationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Project = new ProjectApiExt(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Report = new ReportApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
-			this.Template = new TemplateApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
+			this.Template = new TemplateApiExt(iomClient, iomClient, configuration);
 
 			this.ClientApi = clientApi;
 			this.ClientId = clientId;

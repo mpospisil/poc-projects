@@ -76,7 +76,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.open_model import OpenModel
+from ideastatica_connection_api.models.open_model import OpenModel
 
 # TODO update the JSON string below
 json = "{}"

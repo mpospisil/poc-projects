@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.result_on_members import ResultOnMembers
+from ideastatica_connection_api.models.result_on_members import ResultOnMembers
 
 # TODO update the JSON string below
 json = "{}"

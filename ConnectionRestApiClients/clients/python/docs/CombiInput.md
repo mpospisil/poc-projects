@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.combi_input import CombiInput
+from ideastatica_connection_api.models.combi_input import CombiInput
 
 # TODO update the JSON string below
 json = "{}"

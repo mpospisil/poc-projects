@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.hinge_element1_d import HingeElement1D
+from ideastatica_connection_api.models.hinge_element1_d import HingeElement1D
 
 # TODO update the JSON string below
 json = "{}"

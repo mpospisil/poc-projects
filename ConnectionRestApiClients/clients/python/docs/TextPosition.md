@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.text_position import TextPosition
+from ideastatica_connection_api.models.text_position import TextPosition
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.rigid_link import RigidLink
+from ideastatica_connection_api.models.rigid_link import RigidLink
 
 # TODO update the JSON string below
 json = "{}"

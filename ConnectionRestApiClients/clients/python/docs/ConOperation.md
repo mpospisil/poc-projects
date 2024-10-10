@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.con_operation import ConOperation
+from ideastatica_connection_api.models.con_operation import ConOperation
 
 # TODO update the JSON string below
 json = "{}"

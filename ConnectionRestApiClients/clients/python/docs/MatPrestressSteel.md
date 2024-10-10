@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.mat_prestress_steel import MatPrestressSteel
+from ideastatica_connection_api.models.mat_prestress_steel import MatPrestressSteel
 
 # TODO update the JSON string below
 json = "{}"

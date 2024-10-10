@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.plate_data import PlateData
+from ideastatica_connection_api.models.plate_data import PlateData
 
 # TODO update the JSON string below
 json = "{}"

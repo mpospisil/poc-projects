@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.bend_data import BendData
+from ideastatica_connection_api.models.bend_data import BendData
 
 # TODO update the JSON string below
 json = "{}"

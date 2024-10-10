@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.initial_imperfection_of_point import InitialImperfectionOfPoint
+from ideastatica_connection_api.models.initial_imperfection_of_point import InitialImperfectionOfPoint
 
 # TODO update the JSON string below
 json = "{}"

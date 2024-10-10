@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.bolt_grid import BoltGrid
+from ideastatica_connection_api.models.bolt_grid import BoltGrid
 
 # TODO update the JSON string below
 json = "{}"

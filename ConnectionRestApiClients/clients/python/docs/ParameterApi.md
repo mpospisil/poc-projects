@@ -1,4 +1,4 @@
-# ideastatica-connection-api.ParameterApi
+# ideastatica_connection_api.ParameterApi
 
 All URIs are relative to *http://localhost*
 
@@ -18,21 +18,21 @@ Evaluate the expression and return the result
 
 
 ```python
-import ideastatica-connection-api
-from ideastatica-connection-api.rest import ApiException
+import ideastatica_connection_api
+from ideastatica_connection_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ideastatica-connection-api.Configuration(
+configuration = ideastatica_connection_api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ideastatica-connection-api.ApiClient(configuration) as api_client:
+with ideastatica_connection_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ideastatica-connection-api.ParameterApi(api_client)
+    api_instance = ideastatica_connection_api.ParameterApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to use for evaluation expression
     body = 'body_example' # str | Expression to evaluate (optional)
@@ -87,22 +87,22 @@ Get all parameters which are defined for projectId and connectionId
 
 
 ```python
-import ideastatica-connection-api
-from ideastatica-connection-api.models.idea_parameter import IdeaParameter
-from ideastatica-connection-api.rest import ApiException
+import ideastatica_connection_api
+from ideastatica_connection_api.models.idea_parameter import IdeaParameter
+from ideastatica_connection_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ideastatica-connection-api.Configuration(
+configuration = ideastatica_connection_api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ideastatica-connection-api.ApiClient(configuration) as api_client:
+with ideastatica_connection_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ideastatica-connection-api.ParameterApi(api_client)
+    api_instance = ideastatica_connection_api.ParameterApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to get its parameters
     include_hidden = False # bool | Include also hidden parameters (optional) (default to False)
@@ -157,26 +157,26 @@ Update parameters for the connection connectionId in the project projectId by va
 
 
 ```python
-import ideastatica-connection-api
-from ideastatica-connection-api.models.idea_parameter_update import IdeaParameterUpdate
-from ideastatica-connection-api.models.parameter_data import ParameterData
-from ideastatica-connection-api.rest import ApiException
+import ideastatica_connection_api
+from ideastatica_connection_api.models.idea_parameter_update import IdeaParameterUpdate
+from ideastatica_connection_api.models.parameter_data import ParameterData
+from ideastatica_connection_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ideastatica-connection-api.Configuration(
+configuration = ideastatica_connection_api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with ideastatica-connection-api.ApiClient(configuration) as api_client:
+with ideastatica_connection_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ideastatica-connection-api.ParameterApi(api_client)
+    api_instance = ideastatica_connection_api.ParameterApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to apply template
-    idea_parameter_update = [ideastatica-connection-api.IdeaParameterUpdate()] # List[IdeaParameterUpdate] | New values of parameters (optional)
+    idea_parameter_update = [ideastatica_connection_api.IdeaParameterUpdate()] # List[IdeaParameterUpdate] | New values of parameters (optional)
 
     try:
         # Update parameters for the connection connectionId in the project projectId by values passed in parameters

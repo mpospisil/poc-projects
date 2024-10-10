@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.concrete_setup import ConcreteSetup
+from ideastatica_connection_api.models.concrete_setup import ConcreteSetup
 
 # TODO update the JSON string below
 json = "{}"

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.con_mprl_element import ConMprlElement
+from ideastatica_connection_api.models.con_mprl_element import ConMprlElement
 
 # TODO update the JSON string below
 json = "{}"

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.reinforced_bar import ReinforcedBar
+from ideastatica_connection_api.models.reinforced_bar import ReinforcedBar
 
 # TODO update the JSON string below
 json = "{}"

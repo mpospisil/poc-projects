@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.tendon_duct import TendonDuct
+from ideastatica_connection_api.models.tendon_duct import TendonDuct
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.anchor3_d import Anchor3D
+from ideastatica_connection_api.models.anchor3_d import Anchor3D
 
 # TODO update the JSON string below
 json = "{}"

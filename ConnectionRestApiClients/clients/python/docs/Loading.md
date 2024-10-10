@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.loading import Loading
+from ideastatica_connection_api.models.loading import Loading
 
 # TODO update the JSON string below
 json = "{}"

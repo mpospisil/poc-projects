@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.template_conversions import TemplateConversions
+from ideastatica_connection_api.models.template_conversions import TemplateConversions
 
 # TODO update the JSON string below
 json = "{}"

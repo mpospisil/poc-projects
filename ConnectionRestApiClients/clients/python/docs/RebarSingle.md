@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.rebar_single import RebarSingle
+from ideastatica_connection_api.models.rebar_single import RebarSingle
 
 # TODO update the JSON string below
 json = "{}"

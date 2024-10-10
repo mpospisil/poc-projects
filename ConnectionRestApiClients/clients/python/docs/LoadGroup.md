@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.load_group import LoadGroup
+from ideastatica_connection_api.models.load_group import LoadGroup
 
 # TODO update the JSON string below
 json = "{}"

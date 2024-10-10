@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.selected_type import SelectedType
+from ideastatica_connection_api.models.selected_type import SelectedType
 
 # TODO update the JSON string below
 json = "{}"

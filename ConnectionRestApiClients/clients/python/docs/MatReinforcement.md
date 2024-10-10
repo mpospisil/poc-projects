@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from ideastatica-connection-api.models.mat_reinforcement import MatReinforcement
+from ideastatica_connection_api.models.mat_reinforcement import MatReinforcement
 
 # TODO update the JSON string below
 json = "{}"

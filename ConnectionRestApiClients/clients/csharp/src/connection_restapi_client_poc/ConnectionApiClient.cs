@@ -66,16 +66,37 @@ namespace connection_restapi_client_poc
 			BasePath = new Uri(basePath);
 		}
 
-		public async Task<ConProject> OpenProjectAsync(string path)
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		/// <exception cref="Exception"></exception>
+		public async Task CreateAsync()
 		{
-			if(ClientApi != null)
+			if (ClientApi != null)
 			{
 				throw new Exception("Client is already connected");
 			}
 
 			await CreateClientAsync();
+		}
 
-			using(var fs = new System.IO.FileStream(path, System.IO.FileMode.Open))
+		public async Task<ConProject> OpenFromIomFileAsync(string iomFilePath)
+		{
+			await CreateAsync();
+
+			var conProject = await this.Project.CreateProjectFromIomFileAsync(iomFilePath);
+			this.ActiveProject = conProject;
+			this.ProjectId = conProject.ProjectId;
+
+			return conProject;
+		}
+
+		public async Task<ConProject> OpenProjectAsync(string path)
+		{
+			await CreateAsync();
+
+			using (var fs = new System.IO.FileStream(path, System.IO.FileMode.Open))
 			{
 				using(var ms = new System.IO.MemoryStream())
 				{

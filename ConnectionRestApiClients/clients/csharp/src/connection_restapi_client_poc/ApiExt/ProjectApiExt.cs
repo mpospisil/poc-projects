@@ -29,6 +29,63 @@ namespace connection_restapi_client_poc.Api
 			}
 		}
 
+		public async Task<ConProject> CreateProjectFromIomFileAsync(string fileName)
+		{
+			connection_restapi_client_poc.Client.RequestOptions localVarRequestOptions = new connection_restapi_client_poc.Client.RequestOptions();
+
+			var localVarContentType = "application/xml";
+			localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+			string localVarAccept = "application/json";
+			localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+			//localVarRequestOptions.PathParameters.Add("projectId", connection_restapi_client_poc.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+
+			localVarRequestOptions.Operation = "ProjectApi.UpdateFromIOM";
+			localVarRequestOptions.OperationIndex = 0;
+
+			string xmlString = string.Empty;
+#if NETSTANDARD2_1_OR_GREATER
+			xmlString = await System.IO.File.ReadAllTextAsync(fileName);
+#else
+			xmlString = System.IO.File.ReadAllText(fileName);
+
+#endif
+			localVarRequestOptions.Data = xmlString;
+
+
+			xmlString = xmlString.Replace("utf-16", "utf-8");
+			var contentString = new StringContent(xmlString, encoding: Encoding.UTF8, "application/xml");
+
+			//ConIomImportOptions 
+
+			//if (connectionsToCreate != null)
+			//{
+			//	localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
+			//}
+
+			localVarRequestOptions.QueryParameters.Add(connection_restapi_client_poc.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", new List<int>()));
+			localVarRequestOptions.Data = contentString;
+
+			localVarRequestOptions.Operation = "ProjectApi.ImportIOMContainer";
+
+
+			// make the HTTP request
+			var localVarResponse = this.Client.Post<ConProject>("/api/1/projects/import-iom", localVarRequestOptions, this.Configuration);
+			if (this.ExceptionFactory != null)
+			{
+				Exception _exception = this.ExceptionFactory("ImportIOMContainer", localVarResponse);
+				if (_exception != null)
+				{
+					throw _exception;
+				}
+			}
+
+			return localVarResponse.Data;
+
+		}
+
 		/// <inheritdoc cref="ProjectApi.GetSetupAsync(Guid, int, System.Threading.CancellationToken)"/>
 		public new async System.Threading.Tasks.Task<ConnectionSetup> GetSetupAsync(Guid projectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
 		{

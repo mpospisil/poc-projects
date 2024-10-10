@@ -20,6 +20,8 @@ namespace connection_restapi_client_poc
 		/// <returns></returns>
 		Task<ConProject> OpenProjectAsync(string path);
 
+		Task<ConProject> OpenFromIomFileAsync(string iomFilePath);
+
 		/// <summary>
 		/// ClientID - assigned by the service
 		/// </summary>

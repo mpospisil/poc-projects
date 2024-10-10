@@ -175,7 +175,18 @@ namespace {{packageName}}.Client
         /// Specifies the settings on a <see cref="JsonSerializer" /> object.
         /// These settings can be adjusted to accommodate custom serialization rules.
         /// </summary>
-        public JsonSerializerSettings SerializerSettings { get; set; }
+        public JsonSerializerSettings SerializerSettings { get; set; } = new JsonSerializerSettings
+        {
+            // OpenAPI generated types generally hide default constructors.
+            ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+            ContractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new CamelCaseNamingStrategy
+                {
+                    OverrideSpecifiedNames = false
+                }
+            }
+        };
 
         /// <summary>
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
@@ -196,7 +207,6 @@ namespace {{packageName}}.Client
         public ApiClient()
         {
             _baseUrl = GlobalConfiguration.Instance.BasePath;
-             SerializerSettings = CreateDefaultSerializerSettings();
         }
 
         /// <summary>
@@ -210,25 +220,6 @@ namespace {{packageName}}.Client
                 throw new ArgumentException("basePath cannot be empty");
 
             _baseUrl = basePath;
-            SerializerSettings = CreateDefaultSerializerSettings();
-        }
-
-
-        private static JsonSerializerSettings CreateDefaultSerializerSettings()
-        {
-            var settings = new JsonSerializerSettings();
-
-            settings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter { NamingStrategy = new CamelCaseNamingStrategy() });
-            settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            // Equivalent of PropertyNamingPolicy = CamelCase
-            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-
-            // Equivalent of PropertyNameCaseInsensitive = false
-            settings.MetadataPropertyHandling = MetadataPropertyHandling.Default;
-
-            // serialize type names for polymorphic types
-            settings.TypeNameHandling = TypeNameHandling.Auto;
-            return settings;
         }
 
         /// <summary>

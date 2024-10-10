@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.reference_element import ReferenceElement
+from ideastatica-connection-api.models.reference_element import ReferenceElement
 
 # TODO update the JSON string below
 json = "{}"

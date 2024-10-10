@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.PatchDevice
+# IdeaStatiCa.ConnectionApi.Model.PatchDevice
 Abstract class of patch support/load
 
 ## Properties

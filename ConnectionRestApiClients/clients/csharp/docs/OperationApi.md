@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Api.OperationApi
+# IdeaStatiCa.ConnectionApi.Api.OperationApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,9 +17,9 @@ Delete all operations for the connection
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -104,9 +104,9 @@ Get the list of operations for the connection
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {

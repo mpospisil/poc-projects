@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.check_res_weld import CheckResWeld
+from ideastatica-connection-api.models.check_res_weld import CheckResWeld
 
 # TODO update the JSON string below
 json = "{}"

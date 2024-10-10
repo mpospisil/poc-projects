@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.TendonDuct
+# IdeaStatiCa.ConnectionApi.Model.TendonDuct
 Tendon duct
 
 ## Properties

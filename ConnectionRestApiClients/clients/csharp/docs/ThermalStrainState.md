@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ThermalStrainState
+# IdeaStatiCa.ConnectionApi.Model.ThermalStrainState
 Type of curvature - thermal strain curvature
 
 ## Properties

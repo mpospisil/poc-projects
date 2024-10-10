@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.taper import Taper
+from ideastatica-connection-api.models.taper import Taper
 
 # TODO update the JSON string below
 json = "{}"

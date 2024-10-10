@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Api.ClientApi
+# IdeaStatiCa.ConnectionApi.Api.ClientApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,9 +17,9 @@ Connect a client to the ConnectionRestApi service. Method returns a unique ident
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -101,9 +101,9 @@ Get the IdeaStatica version
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {

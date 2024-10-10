@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.CalculationApi
+# ideastatica-connection-api.CalculationApi
 
 All URIs are relative to *http://localhost*
 
@@ -18,25 +18,25 @@ Run CBFEM caluclation and return the summary of the results
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_calculation_parameter import ConCalculationParameter
-from connection_restapi_client_poc.models.con_result_summary import ConResultSummary
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_calculation_parameter import ConCalculationParameter
+from ideastatica-connection-api.models.con_result_summary import ConResultSummary
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.CalculationApi(api_client)
+    api_instance = ideastatica-connection-api.CalculationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    con_calculation_parameter = connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
+    con_calculation_parameter = ideastatica-connection-api.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
 
     try:
         # Run CBFEM caluclation and return the summary of the results
@@ -87,24 +87,24 @@ Get json string which represents raw CBFEM results (an instance of CheckResultsD
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_calculation_parameter import ConCalculationParameter
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_calculation_parameter import ConCalculationParameter
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.CalculationApi(api_client)
+    api_instance = ideastatica-connection-api.CalculationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened connection in the ConnectionRestApi service
-    con_calculation_parameter = connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | Type of requested analysis and connection to calculate (optional)
+    con_calculation_parameter = ideastatica-connection-api.ConCalculationParameter() # ConCalculationParameter | Type of requested analysis and connection to calculate (optional)
 
     try:
         # Get json string which represents raw CBFEM results (an instance of CheckResultsData)
@@ -155,25 +155,25 @@ Get detailed results of the CBFEM analysis
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_calculation_parameter import ConCalculationParameter
-from connection_restapi_client_poc.models.connection_check_res import ConnectionCheckRes
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_calculation_parameter import ConCalculationParameter
+from ideastatica-connection-api.models.connection_check_res import ConnectionCheckRes
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.CalculationApi(api_client)
+    api_instance = ideastatica-connection-api.CalculationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
-    con_calculation_parameter = connection_restapi_client_poc.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
+    con_calculation_parameter = ideastatica-connection-api.ConCalculationParameter() # ConCalculationParameter | List of connections to calculate and a type of CBFEM analysis (optional)
 
     try:
         # Get detailed results of the CBFEM analysis

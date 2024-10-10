@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.DesignMember
+# IdeaStatiCa.ConnectionApi.Model.DesignMember
 DesignMember
 
 ## Properties

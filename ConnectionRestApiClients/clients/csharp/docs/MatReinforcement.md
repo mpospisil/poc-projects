@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.MatReinforcement
+# IdeaStatiCa.ConnectionApi.Model.MatReinforcement
 Material reinforcement base class
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.MatSteel
+# IdeaStatiCa.ConnectionApi.Model.MatSteel
 Material steel base class
 
 ## Properties

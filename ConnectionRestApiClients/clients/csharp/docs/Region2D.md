@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Region2D
+# IdeaStatiCa.ConnectionApi.Model.Region2D
 Represents a region in two-dimensional space included outline (border) and openings.
 
 ## Properties

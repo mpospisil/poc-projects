@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CheckMember
+# IdeaStatiCa.ConnectionApi.Model.CheckMember
 Check member base class
 
 ## Properties

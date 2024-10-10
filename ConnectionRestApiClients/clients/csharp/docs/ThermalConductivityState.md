@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ThermalConductivityState
+# IdeaStatiCa.ConnectionApi.Model.ThermalConductivityState
 Type of curvature - thermal conductivity
 
 ## Properties

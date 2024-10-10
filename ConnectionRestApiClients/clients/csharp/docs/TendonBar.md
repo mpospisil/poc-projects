@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.TendonBar
+# IdeaStatiCa.ConnectionApi.Model.TendonBar
 Tendon bar
 
 ## Properties

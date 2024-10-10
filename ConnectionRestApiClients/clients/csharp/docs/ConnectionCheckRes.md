@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConnectionCheckRes
+# IdeaStatiCa.ConnectionApi.Model.ConnectionCheckRes
 Results for connection in project
 
 ## Properties

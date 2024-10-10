@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConAnalysisTypeEnum
+# IdeaStatiCa.ConnectionApi.Model.ConAnalysisTypeEnum
 
 ## Properties
 

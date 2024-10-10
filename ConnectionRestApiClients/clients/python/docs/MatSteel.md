@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.mat_steel import MatSteel
+from ideastatica-connection-api.models.mat_steel import MatSteel
 
 # TODO update the JSON string below
 json = "{}"

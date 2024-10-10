@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.ClientApi
+# ideastatica-connection-api.ClientApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,21 +17,21 @@ Connect a client to the ConnectionRestApi service. Method returns a unique ident
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.ClientApi(api_client)
+    api_instance = ideastatica-connection-api.ClientApi(api_client)
 
     try:
         # Connect a client to the ConnectionRestApi service. Method returns a unique identifier of the client.
@@ -78,21 +78,21 @@ Get the IdeaStatica version
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.ClientApi(api_client)
+    api_instance = ideastatica-connection-api.ClientApi(api_client)
 
     try:
         # Get the IdeaStatica version

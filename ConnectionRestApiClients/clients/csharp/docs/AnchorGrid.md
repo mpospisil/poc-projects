@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.AnchorGrid
+# IdeaStatiCa.ConnectionApi.Model.AnchorGrid
 Data of the anchor grid
 
 ## Properties

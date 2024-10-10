@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.FoldedPlateData
+# IdeaStatiCa.ConnectionApi.Model.FoldedPlateData
 Provides data of the folded plate
 
 ## Properties

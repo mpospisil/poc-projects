@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConProductionCost
+# IdeaStatiCa.ConnectionApi.Model.ConProductionCost
 
 ## Properties
 

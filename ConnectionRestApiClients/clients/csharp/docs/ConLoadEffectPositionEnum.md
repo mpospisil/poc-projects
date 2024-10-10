@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConLoadEffectPositionEnum
+# IdeaStatiCa.ConnectionApi.Model.ConLoadEffectPositionEnum
 
 ## Properties
 

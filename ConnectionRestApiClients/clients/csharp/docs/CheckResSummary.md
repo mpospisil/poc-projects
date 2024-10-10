@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CheckResSummary
+# IdeaStatiCa.ConnectionApi.Model.CheckResSummary
 Check summary
 
 ## Properties

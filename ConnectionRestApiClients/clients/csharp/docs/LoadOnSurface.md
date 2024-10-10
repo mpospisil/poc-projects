@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.LoadOnSurface
+# IdeaStatiCa.ConnectionApi.Model.LoadOnSurface
 Load on surface
 
 ## Properties

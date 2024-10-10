@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConTemplateMappingGetParam
+# IdeaStatiCa.ConnectionApi.Model.ConTemplateMappingGetParam
 
 ## Properties
 

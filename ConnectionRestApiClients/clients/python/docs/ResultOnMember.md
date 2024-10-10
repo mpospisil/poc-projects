@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.result_on_member import ResultOnMember
+from ideastatica-connection-api.models.result_on_member import ResultOnMember
 
 # TODO update the JSON string below
 json = "{}"

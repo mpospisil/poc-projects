@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.SolidBlock3D
+# IdeaStatiCa.ConnectionApi.Model.SolidBlock3D
 Representation of Solid Block in IDEA StatiCa Detail
 
 ## Properties

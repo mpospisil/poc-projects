@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.SubStructure
+# IdeaStatiCa.ConnectionApi.Model.SubStructure
 SubStructure
 
 ## Properties

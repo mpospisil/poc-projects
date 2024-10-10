@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ResultOnMembers
+# IdeaStatiCa.ConnectionApi.Model.ResultOnMembers
 Result of the member
 
 ## Properties

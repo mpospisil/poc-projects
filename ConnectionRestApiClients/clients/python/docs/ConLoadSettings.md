@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.con_load_settings import ConLoadSettings
+from ideastatica-connection-api.models.con_load_settings import ConLoadSettings
 
 # TODO update the JSON string below
 json = "{}"

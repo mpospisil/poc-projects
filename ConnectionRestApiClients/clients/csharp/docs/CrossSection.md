@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.CrossSection
+# IdeaStatiCa.ConnectionApi.Model.CrossSection
 Cross-section
 
 ## Properties

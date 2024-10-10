@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.OperationApi
+# ideastatica-connection-api.OperationApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,21 +17,21 @@ Delete all operations for the connection
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.OperationApi(api_client)
+    api_instance = ideastatica-connection-api.OperationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the connection to be modified
 
@@ -82,22 +82,22 @@ Get the list of operations for the connection
 
 
 ```python
-import connection_restapi_client_poc
-from connection_restapi_client_poc.models.con_operation import ConOperation
-from connection_restapi_client_poc.rest import ApiException
+import ideastatica-connection-api
+from ideastatica-connection-api.models.con_operation import ConOperation
+from ideastatica-connection-api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
-configuration = connection_restapi_client_poc.Configuration(
+configuration = ideastatica-connection-api.Configuration(
     host = "http://localhost"
 )
 
 
 # Enter a context with an instance of the API client
-with connection_restapi_client_poc.ApiClient(configuration) as api_client:
+with ideastatica-connection-api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = connection_restapi_client_poc.OperationApi(api_client)
+    api_instance = ideastatica-connection-api.OperationApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service
     connection_id = 56 # int | Id of the requested connection
 

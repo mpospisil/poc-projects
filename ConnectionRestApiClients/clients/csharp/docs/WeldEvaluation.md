@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.WeldEvaluation
+# IdeaStatiCa.ConnectionApi.Model.WeldEvaluation
 WeldEvaluation
 
 ## Properties

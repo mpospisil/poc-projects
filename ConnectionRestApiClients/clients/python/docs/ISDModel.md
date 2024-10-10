@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.isd_model import ISDModel
+from ideastatica-connection-api.models.isd_model import ISDModel
 
 # TODO update the JSON string below
 json = "{}"

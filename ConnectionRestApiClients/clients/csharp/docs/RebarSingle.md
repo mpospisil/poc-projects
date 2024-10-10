@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.RebarSingle
+# IdeaStatiCa.ConnectionApi.Model.RebarSingle
 Represents a single main rebar in 3D space.
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.WeldType
+# IdeaStatiCa.ConnectionApi.Model.WeldType
 enum of weld types
 
 ## Properties

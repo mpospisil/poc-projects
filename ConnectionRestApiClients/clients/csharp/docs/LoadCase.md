@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.LoadCase
+# IdeaStatiCa.ConnectionApi.Model.LoadCase
 Load case in the model
 
 ## Properties

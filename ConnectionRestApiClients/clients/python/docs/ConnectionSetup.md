@@ -68,7 +68,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.connection_setup import ConnectionSetup
+from ideastatica-connection-api.models.connection_setup import ConnectionSetup
 
 # TODO update the JSON string below
 json = "{}"

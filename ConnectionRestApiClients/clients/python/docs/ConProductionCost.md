@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.con_production_cost import ConProductionCost
+from ideastatica-connection-api.models.con_production_cost import ConProductionCost
 
 # TODO update the JSON string below
 json = "{}"

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.BaseTemplateConversion
+# IdeaStatiCa.ConnectionApi.Model.BaseTemplateConversion
 
 ## Properties
 

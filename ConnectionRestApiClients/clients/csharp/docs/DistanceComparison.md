@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.DistanceComparison
+# IdeaStatiCa.ConnectionApi.Model.DistanceComparison
 Represents the result of comparison of distances of two object from the same point
 
 ## Properties

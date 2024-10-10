@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.PointLoadOnLine
+# IdeaStatiCa.ConnectionApi.Model.PointLoadOnLine
 Load in specific point on line
 
 ## Properties

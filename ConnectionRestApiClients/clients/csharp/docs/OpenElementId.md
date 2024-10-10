@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.OpenElementId
+# IdeaStatiCa.ConnectionApi.Model.OpenElementId
 Open element base class  POS - class can not be abstract -it causes problems with serialization
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Api.ProjectApi
+# IdeaStatiCa.ConnectionApi.Api.ProjectApi
 
 All URIs are relative to *http://localhost*
 
@@ -27,9 +27,9 @@ Close the project. Needed for releasing resources in the service.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -116,9 +116,9 @@ Download the actual ideacon project from the service. It includes alle changes w
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -201,9 +201,9 @@ Get the list of projects in the service which were opened by the client which wa
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -285,9 +285,9 @@ Get data of the project.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -374,9 +374,9 @@ Get setup from project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -463,9 +463,9 @@ Creates an IDEA Connection project. IOM is passed in the body of the request.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -552,9 +552,9 @@ Creates an IDEA Connection project from model (model and results)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -643,9 +643,9 @@ Open ideacon project from ideaConFile
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -732,9 +732,9 @@ Update an IDEA Connection project based on OpenModelContainer (model and results
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -821,9 +821,9 @@ Update an IDEA Connection project by model (model and results)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -912,9 +912,9 @@ Updates ConProjectData of project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -1003,9 +1003,9 @@ Update setup of the project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {

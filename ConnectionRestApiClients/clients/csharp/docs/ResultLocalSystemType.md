@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ResultLocalSystemType
+# IdeaStatiCa.ConnectionApi.Model.ResultLocalSystemType
 Type of local system of result
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConeBreakoutCheckType
+# IdeaStatiCa.ConnectionApi.Model.ConeBreakoutCheckType
 Types of cone breakout checks
 
 ## Properties

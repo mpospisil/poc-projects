@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.PlateData
+# IdeaStatiCa.ConnectionApi.Model.PlateData
 Provides data of the single plate
 
 ## Properties

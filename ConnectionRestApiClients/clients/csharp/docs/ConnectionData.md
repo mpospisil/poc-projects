@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConnectionData
+# IdeaStatiCa.ConnectionApi.Model.ConnectionData
 Provides data of the connection
 
 ## Properties

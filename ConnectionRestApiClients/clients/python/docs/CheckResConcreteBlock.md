@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.check_res_concrete_block import CheckResConcreteBlock
+from ideastatica-connection-api.models.check_res_concrete_block import CheckResConcreteBlock
 
 # TODO update the JSON string below
 json = "{}"

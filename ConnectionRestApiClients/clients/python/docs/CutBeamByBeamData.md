@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.cut_beam_by_beam_data import CutBeamByBeamData
+from ideastatica-connection-api.models.cut_beam_by_beam_data import CutBeamByBeamData
 
 # TODO update the JSON string below
 json = "{}"

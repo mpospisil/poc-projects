@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConnectionSetup
+# IdeaStatiCa.ConnectionApi.Model.ConnectionSetup
 ConnectionSetup
 
 ## Properties

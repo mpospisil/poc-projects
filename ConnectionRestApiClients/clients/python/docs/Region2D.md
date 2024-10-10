@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.region2_d import Region2D
+from ideastatica-connection-api.models.region2_d import Region2D
 
 # TODO update the JSON string below
 json = "{}"

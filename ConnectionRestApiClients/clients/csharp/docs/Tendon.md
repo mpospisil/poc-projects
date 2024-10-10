@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Tendon
+# IdeaStatiCa.ConnectionApi.Model.Tendon
 Tendon base class
 
 ## Properties

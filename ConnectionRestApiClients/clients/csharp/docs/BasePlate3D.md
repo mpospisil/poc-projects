@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.BasePlate3D
+# IdeaStatiCa.ConnectionApi.Model.BasePlate3D
 Representation of Base Plate 3D in IDEA StatiCa Detail
 
 ## Properties

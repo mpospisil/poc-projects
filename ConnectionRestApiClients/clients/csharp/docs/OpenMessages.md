@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.OpenMessages
+# IdeaStatiCa.ConnectionApi.Model.OpenMessages
 Open messages collection
 
 ## Properties

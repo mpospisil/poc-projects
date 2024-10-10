@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ReinfBarSurface
+# IdeaStatiCa.ConnectionApi.Model.ReinfBarSurface
 Reinforcement bar surface
 
 ## Properties

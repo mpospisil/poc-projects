@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ReferenceElement
+# IdeaStatiCa.ConnectionApi.Model.ReferenceElement
 Reference element class
 
 ## Properties

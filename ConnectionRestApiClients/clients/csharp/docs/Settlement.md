@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Settlement
+# IdeaStatiCa.ConnectionApi.Model.Settlement
 Settlement of point support
 
 ## Properties

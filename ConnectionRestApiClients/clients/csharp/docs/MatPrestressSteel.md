@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.MatPrestressSteel
+# IdeaStatiCa.ConnectionApi.Model.MatPrestressSteel
 Material prestressing steel base class
 
 ## Properties

@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.MatWelding
+# IdeaStatiCa.ConnectionApi.Model.MatWelding
 Welding material base class
 
 ## Properties

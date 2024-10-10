@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.InitialImperfectionOfPoint
+# IdeaStatiCa.ConnectionApi.Model.InitialImperfectionOfPoint
 Initial deformation of point - geometry nonlinear calculation
 
 ## Properties

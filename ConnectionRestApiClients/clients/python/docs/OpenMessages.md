@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.open_messages import OpenMessages
+from ideastatica-connection-api.models.open_messages import OpenMessages
 
 # TODO update the JSON string below
 json = "{}"

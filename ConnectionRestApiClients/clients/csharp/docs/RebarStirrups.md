@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.RebarStirrups
+# IdeaStatiCa.ConnectionApi.Model.RebarStirrups
 Represents a rebar grouping in 3D space.
 
 ## Properties

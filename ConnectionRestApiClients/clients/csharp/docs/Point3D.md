@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Point3D
+# IdeaStatiCa.ConnectionApi.Model.Point3D
 Represents an x- , y- an z-coordinates in three-dimensional space.
 
 ## Properties

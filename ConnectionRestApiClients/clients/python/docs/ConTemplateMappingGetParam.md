@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.con_template_mapping_get_param import ConTemplateMappingGetParam
+from ideastatica-connection-api.models.con_template_mapping_get_param import ConTemplateMappingGetParam
 
 # TODO update the JSON string below
 json = "{}"

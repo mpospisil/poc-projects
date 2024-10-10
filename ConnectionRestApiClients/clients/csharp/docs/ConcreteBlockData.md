@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ConcreteBlockData
+# IdeaStatiCa.ConnectionApi.Model.ConcreteBlockData
 Provides data of the single concrete block
 
 ## Properties

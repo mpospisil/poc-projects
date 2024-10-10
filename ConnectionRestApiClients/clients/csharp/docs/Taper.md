@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Taper
+# IdeaStatiCa.ConnectionApi.Model.Taper
 Defines haunches (variyng cross-sections) along the member.    One IdeaRS.OpenModel.Model.Taper may be assigned to multiple <see cref=\"T:IdeaRS.OpenModel.Model.Member1D\">Members</see>.  Sections of the member not covered by a span will use the member's cross-section.
 
 ## Properties

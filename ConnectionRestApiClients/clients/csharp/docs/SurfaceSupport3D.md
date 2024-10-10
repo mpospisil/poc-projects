@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.SurfaceSupport3D
+# IdeaStatiCa.ConnectionApi.Model.SurfaceSupport3D
 Representation of Surface Support 3D in IDEA StatiCa Detail
 
 ## Properties

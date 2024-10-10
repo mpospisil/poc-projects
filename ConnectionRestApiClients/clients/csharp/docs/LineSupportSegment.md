@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.LineSupportSegment
+# IdeaStatiCa.ConnectionApi.Model.LineSupportSegment
 Line support on segment
 
 ## Properties

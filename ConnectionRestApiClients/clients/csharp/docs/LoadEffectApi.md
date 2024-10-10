@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Api.LoadEffectApi
+# IdeaStatiCa.ConnectionApi.Api.LoadEffectApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,9 +22,9 @@ Add new load effect to the connection
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -115,9 +115,9 @@ Delete load effect loadEffectId
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -208,9 +208,9 @@ Get load impulses from loadEffectId
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -303,9 +303,9 @@ Get all load effects which are defined in connectionId
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -396,9 +396,9 @@ Get Load settings for connection in project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -487,9 +487,9 @@ Set Load settings for connection in project
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -580,9 +580,9 @@ Update load impulses in loadEffectId
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {

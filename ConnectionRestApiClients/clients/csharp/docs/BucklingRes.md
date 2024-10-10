@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.BucklingRes
+# IdeaStatiCa.ConnectionApi.Model.BucklingRes
 Results of the buckling analysis
 
 ## Properties

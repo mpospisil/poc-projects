@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.beam import Beam
+from ideastatica-connection-api.models.beam import Beam
 
 # TODO update the JSON string below
 json = "{}"

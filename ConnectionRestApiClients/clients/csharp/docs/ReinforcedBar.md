@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ReinforcedBar
+# IdeaStatiCa.ConnectionApi.Model.ReinforcedBar
 Reinforced bar
 
 ## Properties

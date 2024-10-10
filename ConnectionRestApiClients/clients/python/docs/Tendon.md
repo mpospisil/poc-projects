@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.tendon import Tendon
+from ideastatica-connection-api.models.tendon import Tendon
 
 # TODO update the JSON string below
 json = "{}"

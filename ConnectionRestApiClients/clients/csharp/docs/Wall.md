@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Wall
+# IdeaStatiCa.ConnectionApi.Model.Wall
 Representation of Wall in IDEA StatiCa Detail
 
 ## Properties

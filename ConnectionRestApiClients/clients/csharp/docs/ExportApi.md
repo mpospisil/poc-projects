@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Api.ExportApi
+# IdeaStatiCa.ConnectionApi.Api.ExportApi
 
 All URIs are relative to *http://localhost*
 
@@ -18,9 +18,9 @@ Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.Open
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -109,9 +109,9 @@ Export connection to IFC format
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {
@@ -196,9 +196,9 @@ Export connection to XML which includes https://github.com/idea-statica/ideastat
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Client;
-using connection_restapi_client_poc.Model;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Client;
+using IdeaStatiCa.ConnectionApi.Model;
 
 namespace Example
 {

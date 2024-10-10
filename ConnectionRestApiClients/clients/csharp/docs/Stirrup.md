@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.Stirrup
+# IdeaStatiCa.ConnectionApi.Model.Stirrup
 Stirrup
 
 ## Properties

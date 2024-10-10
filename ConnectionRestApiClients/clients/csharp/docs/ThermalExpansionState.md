@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.ThermalExpansionState
+# IdeaStatiCa.ConnectionApi.Model.ThermalExpansionState
 Type of curvature -  thermal expansion
 
 ## Properties

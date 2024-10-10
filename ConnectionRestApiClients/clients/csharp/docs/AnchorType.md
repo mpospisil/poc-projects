@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.AnchorType
+# IdeaStatiCa.ConnectionApi.Model.AnchorType
 Defines a type of anchor end.
 
 ## Properties

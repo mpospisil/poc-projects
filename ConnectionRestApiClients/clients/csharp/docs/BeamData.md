@@ -1,4 +1,4 @@
-# connection_restapi_client_poc.Model.BeamData
+# IdeaStatiCa.ConnectionApi.Model.BeamData
 Provides data of the connected beam
 
 ## Properties

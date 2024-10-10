@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from connection_restapi_client_poc.models.load_on_surface import LoadOnSurface
+from ideastatica-connection-api.models.load_on_surface import LoadOnSurface
 
 # TODO update the JSON string below
 json = "{}"

@@ -21,14 +21,6 @@ namespace IdeaStatiCa.ConnectionApi
 		/// <inheritdoc cref="IConnectionApiClient.ClientId"/>/>
 		public string ClientId { get; private set; }
 
-		/// <inheritdoc cref="IConnectionApiClient.ProjectId"/>/>
-		public Guid ProjectId { get; private set; } = Guid.Empty;
-
-		/// <summary>
-		/// Data about the active project
-		/// </summary>
-		public ConProject ActiveProject { get; private set; } = null;
-
 		/// <summary>
 		/// Client API
 		/// </summary>
@@ -69,7 +61,7 @@ namespace IdeaStatiCa.ConnectionApi
 		public IReportApiAsync Report { get; private set; }
 
 		/// <inheritdoc cref="IConnectionApiClient.Template"/>
-		public ITemplateApiAsyncExt Template { get; private set; }
+		public ITemplateApiExtAsync Template { get; private set; }
 
 
 		/// <summary>
@@ -97,43 +89,42 @@ namespace IdeaStatiCa.ConnectionApi
 			await CreateClientAsync();
 		}
 
-		public async Task<ConProject> OpenFromIomFileAsync(string iomFilePath)
-		{
-			await CreateAsync();
+		//public async Task<ConProject> OpenFromIomFileAsync(string iomFilePath)
+		//{
+		//	await CreateAsync();
 
-			var conProject = await this.Project.CreateProjectFromIomFileAsync(iomFilePath);
-			this.ActiveProject = conProject;
-			this.ProjectId = conProject.ProjectId;
+		//	var conProject = await this.Project.CreateProjectFromIomFileAsync(iomFilePath);
+		//	this.ActiveProject = conProject;
+		//	this.ProjectId = conProject.ProjectId;
 
-			return conProject;
-		}
+		//	return conProject;
+		//}
 
-		public async Task<ConProject> OpenProjectAsync(string path)
-		{
-			await CreateAsync();
+		//public async Task<ConProject> OpenProjectAsync(string path)
+		//{
+		//	await CreateAsync();
 
-			using (var fs = new System.IO.FileStream(path, System.IO.FileMode.Open))
-			{
-				using(var ms = new System.IO.MemoryStream())
-				{
-					await fs.CopyToAsync(ms);
-					ms.Seek(0, System.IO.SeekOrigin.Begin);
-					var conProject = await this.Project.OpenProjectAsync(ms);
-					this.ActiveProject = conProject;
-					this.ProjectId = conProject.ProjectId;
-				}
-			}
+		//	using (var fs = new System.IO.FileStream(path, System.IO.FileMode.Open))
+		//	{
+		//		using (var ms = new System.IO.MemoryStream())
+		//		{
+		//			await fs.CopyToAsync(ms);
+		//			ms.Seek(0, System.IO.SeekOrigin.Begin);
+		//			var conProject = await this.Project.OpenProjectAsync(ms);
+		//			this.ActiveProject = conProject;
+		//			this.ProjectId = conProject.ProjectId;
+		//		}
+		//	}
+		//}
 
 
 		private async Task CloseAsync()
 		{
-			if(Project != null && ProjectId == Guid.Empty)
+			if(Project != null)
 			{
-				//Get all active projects.
+				//Close all projects open on the server.
 				var guids = await Project.GetActiveProjectsAsync();
 				var closed = await Task.WhenAll(guids.Select(x => Project.CloseProjectAsync(x.ProjectId.ToString())));
-
-				//await Project.CloseProjectAsync(ProjectId.ToString());
 			}
 
 			this.Calculation = null;

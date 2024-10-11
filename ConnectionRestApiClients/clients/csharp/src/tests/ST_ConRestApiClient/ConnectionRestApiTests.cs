@@ -30,7 +30,7 @@ namespace ST_ConnectionRestApi
 		public async Task ShouldOpenProject()
 		{
             string connProjectFilePath = Path.Combine(ProjectPath, "Simple-1-ECEN.ideaCon");
-            this.Project = await ConnectionApiClient!.Project.OpenProjectFromFileAsync(connProjectFilePath);
+            this.Project = await ConnectionApiClient!.Project.OpenProjectAsync(connProjectFilePath);
             this.ActiveProjectId = Project.ProjectId;
             if (this.ActiveProjectId == Guid.Empty)
             {
@@ -329,7 +329,7 @@ namespace ST_ConnectionRestApi
 
 			using (var apiClient2 = await ApiFactory.CreateConnectionApiClient())
 			{
-				var project2 = await apiClient2!.OpenProjectAsync(connProjectFilePath);
+				var project2 = await apiClient2!.Project.OpenProjectAsync(connProjectFilePath);
 
 				var con1 = project2.Connections.First();
 				List<int> conToCalc = new List<int>() { con1.Id };

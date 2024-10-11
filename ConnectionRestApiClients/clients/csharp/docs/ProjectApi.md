@@ -9,11 +9,9 @@ All URIs are relative to *http://localhost*
 | [**GetActiveProjects**](ProjectApi.md#getactiveprojects) | **GET** /api/1/projects | Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ClientController.ConnectClient |
 | [**GetProjectData**](ProjectApi.md#getprojectdata) | **GET** /api/1/projects/{projectId} | Get data of the project. |
 | [**GetSetup**](ProjectApi.md#getsetup) | **GET** /api/1/projects/{projectId}/connection-setup | Get setup from project |
-| [**ImportIOM**](ProjectApi.md#importiom) | **POST** /api/1/projects/import-iom-file | Creates an IDEA Connection project. IOM is passed in the body of the request. |
-| [**ImportIOMContainer**](ProjectApi.md#importiomcontainer) | **POST** /api/1/projects/import-iom | Creates an IDEA Connection project from model (model and results) |
+| [**ImportIOM**](ProjectApi.md#importiom) | **POST** /api/1/projects/import-iom-file | Create the IDEA Connection project from IOM provided in xml format.  The parameter &#39;containerXmlFile&#39; passed in HTTP body represents :  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  which is serialized to XML string by  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; |
 | [**OpenProject**](ProjectApi.md#openproject) | **POST** /api/1/projects/open | Open ideacon project from ideaConFile |
-| [**UpdateFromIOM**](ProjectApi.md#updatefromiom) | **POST** /api/1/projects/{projectId}/update-iom-file | Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request. |
-| [**UpdateFromIOMContainer**](ProjectApi.md#updatefromiomcontainer) | **POST** /api/1/projects/{projectId}/update-iom | Update an IDEA Connection project by model (model and results) |
+| [**UpdateFromIOM**](ProjectApi.md#updatefromiom) | **POST** /api/1/projects/{projectId}/update-iom-file | Update the IDEA Connection project by &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  (model and results).  IOM is passed in the body of the request as the xml string.  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; should be used to generate the valid xml string |
 | [**UpdateProjectData**](ProjectApi.md#updateprojectdata) | **PUT** /api/1/projects/{projectId} | Updates ConProjectData of project |
 | [**UpdateSetup**](ProjectApi.md#updatesetup) | **PUT** /api/1/projects/{projectId}/connection-setup | Update setup of the project |
 
@@ -455,9 +453,9 @@ No authorization required
 
 <a id="importiom"></a>
 # **ImportIOM**
-> ConProject ImportIOM (List<int> connectionsToCreate = null)
+> ConProject ImportIOM (System.IO.Stream containerXmlFile = null, List<int> connectionsToCreate = null)
 
-Creates an IDEA Connection project. IOM is passed in the body of the request.
+Create the IDEA Connection project from IOM provided in xml format.  The parameter 'containerXmlFile' passed in HTTP body represents :  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  which is serialized to XML string by  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see>
 
 ### Example
 ```csharp
@@ -476,12 +474,13 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
+            var containerXmlFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
             var connectionsToCreate = new List<int>(); // List<int> |  (optional) 
 
             try
             {
-                // Creates an IDEA Connection project. IOM is passed in the body of the request.
-                ConProject result = apiInstance.ImportIOM(connectionsToCreate);
+                // Create the IDEA Connection project from IOM provided in xml format.  The parameter 'containerXmlFile' passed in HTTP body represents :  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  which is serialized to XML string by  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see>
+                ConProject result = apiInstance.ImportIOM(containerXmlFile, connectionsToCreate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -501,8 +500,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Creates an IDEA Connection project. IOM is passed in the body of the request.
-    ApiResponse<ConProject> response = apiInstance.ImportIOMWithHttpInfo(connectionsToCreate);
+    // Create the IDEA Connection project from IOM provided in xml format.  The parameter 'containerXmlFile' passed in HTTP body represents :  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  which is serialized to XML string by  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see>
+    ApiResponse<ConProject> response = apiInstance.ImportIOMWithHttpInfo(containerXmlFile, connectionsToCreate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -519,6 +518,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
+| **containerXmlFile** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 | **connectionsToCreate** | [**List&lt;int&gt;**](int.md) |  | [optional]  |
 
 ### Return type
@@ -531,98 +531,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="importiomcontainer"></a>
-# **ImportIOMContainer**
-> ConProject ImportIOMContainer (List<int> connectionsToCreate = null, OpenModelContainer openModelContainer = null)
-
-Creates an IDEA Connection project from model (model and results)
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using IdeaStatiCa.ConnectionApi.Api;
-using IdeaStatiCa.ConnectionApi.Client;
-using IdeaStatiCa.ConnectionApi.Model;
-
-namespace Example
-{
-    public class ImportIOMContainerExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            var apiInstance = new ProjectApi(config);
-            var connectionsToCreate = new List<int>(); // List<int> |  (optional) 
-            var openModelContainer = new OpenModelContainer(); // OpenModelContainer |  (optional) 
-
-            try
-            {
-                // Creates an IDEA Connection project from model (model and results)
-                ConProject result = apiInstance.ImportIOMContainer(connectionsToCreate, openModelContainer);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ProjectApi.ImportIOMContainer: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ImportIOMContainerWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Creates an IDEA Connection project from model (model and results)
-    ApiResponse<ConProject> response = apiInstance.ImportIOMContainerWithHttpInfo(connectionsToCreate, openModelContainer);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ProjectApi.ImportIOMContainerWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **connectionsToCreate** | [**List&lt;int&gt;**](int.md) |  | [optional]  |
-| **openModelContainer** | [**OpenModelContainer**](OpenModelContainer.md) |  | [optional]  |
-
-### Return type
-
-[**ConProject**](ConProject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 
@@ -724,9 +633,9 @@ No authorization required
 
 <a id="updatefromiom"></a>
 # **UpdateFromIOM**
-> bool UpdateFromIOM (Guid projectId)
+> ConProject UpdateFromIOM (Guid projectId, System.IO.Stream containerXmlFile = null)
 
-Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
+Update the IDEA Connection project by <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  (model and results).  IOM is passed in the body of the request as the xml string.  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see> should be used to generate the valid xml string
 
 ### Example
 ```csharp
@@ -746,11 +655,12 @@ namespace Example
             config.BasePath = "http://localhost";
             var apiInstance = new ProjectApi(config);
             var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service to be updated
+            var containerXmlFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
 
             try
             {
-                // Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
-                bool result = apiInstance.UpdateFromIOM(projectId);
+                // Update the IDEA Connection project by <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  (model and results).  IOM is passed in the body of the request as the xml string.  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see> should be used to generate the valid xml string
+                ConProject result = apiInstance.UpdateFromIOM(projectId, containerXmlFile);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -770,8 +680,8 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
-    ApiResponse<bool> response = apiInstance.UpdateFromIOMWithHttpInfo(projectId);
+    // Update the IDEA Connection project by <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  (model and results).  IOM is passed in the body of the request as the xml string.  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see> should be used to generate the valid xml string
+    ApiResponse<ConProject> response = apiInstance.UpdateFromIOMWithHttpInfo(projectId, containerXmlFile);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -789,10 +699,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service to be updated |  |
+| **containerXmlFile** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 
 ### Return type
 
-**bool**
+[**ConProject**](ConProject.md)
 
 ### Authorization
 
@@ -800,98 +711,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="updatefromiomcontainer"></a>
-# **UpdateFromIOMContainer**
-> bool UpdateFromIOMContainer (Guid projectId, OpenModelContainer openModelContainer = null)
-
-Update an IDEA Connection project by model (model and results)
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using IdeaStatiCa.ConnectionApi.Api;
-using IdeaStatiCa.ConnectionApi.Client;
-using IdeaStatiCa.ConnectionApi.Model;
-
-namespace Example
-{
-    public class UpdateFromIOMContainerExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            var apiInstance = new ProjectApi(config);
-            var projectId = "projectId_example";  // Guid | The unique identifier of the opened project in the ConnectionRestApi service to be updated
-            var openModelContainer = new OpenModelContainer(); // OpenModelContainer |  (optional) 
-
-            try
-            {
-                // Update an IDEA Connection project by model (model and results)
-                bool result = apiInstance.UpdateFromIOMContainer(projectId, openModelContainer);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ProjectApi.UpdateFromIOMContainer: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the UpdateFromIOMContainerWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update an IDEA Connection project by model (model and results)
-    ApiResponse<bool> response = apiInstance.UpdateFromIOMContainerWithHttpInfo(projectId, openModelContainer);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ProjectApi.UpdateFromIOMContainerWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **projectId** | **Guid** | The unique identifier of the opened project in the ConnectionRestApi service to be updated |  |
-| **openModelContainer** | [**OpenModelContainer**](OpenModelContainer.md) |  | [optional]  |
-
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 

@@ -9,11 +9,9 @@ Method | HTTP request | Description
 [**get_active_projects**](ProjectApi.md#get_active_projects) | **GET** /api/1/projects | Get the list of projects in the service which were opened by the client which was connected by M:IdeaStatiCa.ConnectionRestApi.Controllers.ClientController.ConnectClient
 [**get_project_data**](ProjectApi.md#get_project_data) | **GET** /api/1/projects/{projectId} | Get data of the project.
 [**get_setup**](ProjectApi.md#get_setup) | **GET** /api/1/projects/{projectId}/connection-setup | Get setup from project
-[**import_iom**](ProjectApi.md#import_iom) | **POST** /api/1/projects/import-iom-file | Creates an IDEA Connection project. IOM is passed in the body of the request.
-[**import_iom_container**](ProjectApi.md#import_iom_container) | **POST** /api/1/projects/import-iom | Creates an IDEA Connection project from model (model and results)
+[**import_iom**](ProjectApi.md#import_iom) | **POST** /api/1/projects/import-iom-file | Create the IDEA Connection project from IOM provided in xml format.  The parameter &#39;containerXmlFile&#39; passed in HTTP body represents :  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  which is serialized to XML string by  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt;
 [**open_project**](ProjectApi.md#open_project) | **POST** /api/1/projects/open | Open ideacon project from ideaConFile
-[**update_from_iom**](ProjectApi.md#update_from_iom) | **POST** /api/1/projects/{projectId}/update-iom-file | Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
-[**update_from_iom_container**](ProjectApi.md#update_from_iom_container) | **POST** /api/1/projects/{projectId}/update-iom | Update an IDEA Connection project by model (model and results)
+[**update_from_iom**](ProjectApi.md#update_from_iom) | **POST** /api/1/projects/{projectId}/update-iom-file | Update the IDEA Connection project by &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  (model and results).  IOM is passed in the body of the request as the xml string.  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; should be used to generate the valid xml string
 [**update_project_data**](ProjectApi.md#update_project_data) | **PUT** /api/1/projects/{projectId} | Updates ConProjectData of project
 [**update_setup**](ProjectApi.md#update_setup) | **PUT** /api/1/projects/{projectId}/connection-setup | Update setup of the project
 
@@ -341,9 +339,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **import_iom**
-> ConProject import_iom(connections_to_create=connections_to_create)
+> ConProject import_iom(container_xml_file=container_xml_file, connections_to_create=connections_to_create)
 
-Creates an IDEA Connection project. IOM is passed in the body of the request.
+Create the IDEA Connection project from IOM provided in xml format.  The parameter 'containerXmlFile' passed in HTTP body represents :  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  which is serialized to XML string by  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see>
 
 ### Example
 
@@ -365,11 +363,12 @@ configuration = ideastatica_connection_api.Configuration(
 with ideastatica_connection_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ideastatica_connection_api.ProjectApi(api_client)
+    container_xml_file = None # bytearray |  (optional)
     connections_to_create = [56] # List[int] |  (optional)
 
     try:
-        # Creates an IDEA Connection project. IOM is passed in the body of the request.
-        api_response = api_instance.import_iom(connections_to_create=connections_to_create)
+        # Create the IDEA Connection project from IOM provided in xml format.  The parameter 'containerXmlFile' passed in HTTP body represents :  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  which is serialized to XML string by  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see>
+        api_response = api_instance.import_iom(container_xml_file=container_xml_file, connections_to_create=connections_to_create)
         print("The response of ProjectApi->import_iom:\n")
         pprint(api_response)
     except Exception as e:
@@ -383,6 +382,7 @@ with ideastatica_connection_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **container_xml_file** | **bytearray**|  | [optional] 
  **connections_to_create** | [**List[int]**](int.md)|  | [optional] 
 
 ### Return type
@@ -395,76 +395,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **import_iom_container**
-> ConProject import_iom_container(connections_to_create=connections_to_create, open_model_container=open_model_container)
-
-Creates an IDEA Connection project from model (model and results)
-
-### Example
-
-
-```python
-import ideastatica_connection_api
-from ideastatica_connection_api.models.con_project import ConProject
-from ideastatica_connection_api.models.open_model_container import OpenModelContainer
-from ideastatica_connection_api.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ideastatica_connection_api.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with ideastatica_connection_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ideastatica_connection_api.ProjectApi(api_client)
-    connections_to_create = [56] # List[int] |  (optional)
-    open_model_container = ideastatica_connection_api.OpenModelContainer() # OpenModelContainer |  (optional)
-
-    try:
-        # Creates an IDEA Connection project from model (model and results)
-        api_response = api_instance.import_iom_container(connections_to_create=connections_to_create, open_model_container=open_model_container)
-        print("The response of ProjectApi->import_iom_container:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProjectApi->import_iom_container: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connections_to_create** | [**List[int]**](int.md)|  | [optional] 
- **open_model_container** | [**OpenModelContainer**](OpenModelContainer.md)|  | [optional] 
-
-### Return type
-
-[**ConProject**](ConProject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -542,15 +473,16 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_from_iom**
-> bool update_from_iom(project_id)
+> ConProject update_from_iom(project_id, container_xml_file=container_xml_file)
 
-Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
+Update the IDEA Connection project by <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  (model and results).  IOM is passed in the body of the request as the xml string.  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see> should be used to generate the valid xml string
 
 ### Example
 
 
 ```python
 import ideastatica_connection_api
+from ideastatica_connection_api.models.con_project import ConProject
 from ideastatica_connection_api.rest import ApiException
 from pprint import pprint
 
@@ -566,10 +498,11 @@ with ideastatica_connection_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ideastatica_connection_api.ProjectApi(api_client)
     project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service to be updated
+    container_xml_file = None # bytearray |  (optional)
 
     try:
-        # Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
-        api_response = api_instance.update_from_iom(project_id)
+        # Update the IDEA Connection project by <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  (model and results).  IOM is passed in the body of the request as the xml string.  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see> should be used to generate the valid xml string
+        api_response = api_instance.update_from_iom(project_id, container_xml_file=container_xml_file)
         print("The response of ProjectApi->update_from_iom:\n")
         pprint(api_response)
     except Exception as e:
@@ -584,10 +517,11 @@ with ideastatica_connection_api.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service to be updated | 
+ **container_xml_file** | **bytearray**|  | [optional] 
 
 ### Return type
 
-**bool**
+[**ConProject**](ConProject.md)
 
 ### Authorization
 
@@ -595,75 +529,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_from_iom_container**
-> bool update_from_iom_container(project_id, open_model_container=open_model_container)
-
-Update an IDEA Connection project by model (model and results)
-
-### Example
-
-
-```python
-import ideastatica_connection_api
-from ideastatica_connection_api.models.open_model_container import OpenModelContainer
-from ideastatica_connection_api.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ideastatica_connection_api.Configuration(
-    host = "http://localhost"
-)
-
-
-# Enter a context with an instance of the API client
-with ideastatica_connection_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ideastatica_connection_api.ProjectApi(api_client)
-    project_id = 'project_id_example' # str | The unique identifier of the opened project in the ConnectionRestApi service to be updated
-    open_model_container = ideastatica_connection_api.OpenModelContainer() # OpenModelContainer |  (optional)
-
-    try:
-        # Update an IDEA Connection project by model (model and results)
-        api_response = api_instance.update_from_iom_container(project_id, open_model_container=open_model_container)
-        print("The response of ProjectApi->update_from_iom_container:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProjectApi->update_from_iom_container: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **project_id** | **str**| The unique identifier of the opened project in the ConnectionRestApi service to be updated | 
- **open_model_container** | [**OpenModelContainer**](OpenModelContainer.md)|  | [optional] 
-
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,20 +8,24 @@
   </PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="IdeaStatiCa.OpenModel" Version="24.0.5.1401" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="Polly" Version="8.4.2" />
 		<PackageReference Include="RestSharp" Version="112.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="connection_restapi_client_poc">
-			<HintPath>..\..\src\connection_restapi_client_poc\bin\Debug\netstandard2.1\connection_restapi_client_poc.dll</HintPath>
-		</Reference>
+	  <Reference Include="IdeaStatiCa.ConnectionApi">
+	    <HintPath>..\..\src\IdeaStatiCa.ConnectionApi\bin\Debug\netstandard2.1\IdeaStatiCa.ConnectionApi.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <None Update="Inputs\corner-empty.ideaCon">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Inputs\multiple_connections.xml">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
 	  <None Update="Inputs\simple knee connection.ideaCon">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

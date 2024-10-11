@@ -1,4 +1,4 @@
-﻿using connection_restapi_client_poc;
+﻿using IdeaStatiCa.ConnectionApi;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

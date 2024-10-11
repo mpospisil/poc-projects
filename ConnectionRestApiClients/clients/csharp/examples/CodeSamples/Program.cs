@@ -1,6 +1,6 @@
-﻿using connection_restapi_client_poc;
-using connection_restapi_client_poc.Api;
-using connection_restapi_client_poc.Model;
+﻿using IdeaStatiCa.ConnectionApi;
+using IdeaStatiCa.ConnectionApi.Api;
+using IdeaStatiCa.ConnectionApi.Model;
 using System.Reflection;
 
 namespace CodeSamples

@@ -1,5 +1,5 @@
-﻿using connection_restapi_client_poc;
-using connection_restapi_client_poc.Model;
+﻿using IdeaStatiCa.ConnectionApi;
+using IdeaStatiCa.ConnectionApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

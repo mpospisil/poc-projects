@@ -16,13 +16,12 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictBytes, StrictInt, StrictStr
+from pydantic import Field, StrictBytes, StrictInt, StrictStr
 from typing import List, Optional, Tuple, Union
 from typing_extensions import Annotated
 from ideastatica_connection_api.models.con_project import ConProject
 from ideastatica_connection_api.models.con_project_data import ConProjectData
 from ideastatica_connection_api.models.connection_setup import ConnectionSetup
-from ideastatica_connection_api.models.open_model_container import OpenModelContainer
 
 from ideastatica_connection_api.api_client import ApiClient, RequestSerialized
 from ideastatica_connection_api.api_response import ApiResponse
@@ -1308,6 +1307,7 @@ class ProjectApi:
     @validate_call
     def import_iom(
         self,
+        container_xml_file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         connections_to_create: Optional[List[StrictInt]] = None,
         _request_timeout: Union[
             None,
@@ -1322,9 +1322,11 @@ class ProjectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ConProject:
-        """Creates an IDEA Connection project. IOM is passed in the body of the request.
+        """Create the IDEA Connection project from IOM provided in xml format.  The parameter 'containerXmlFile' passed in HTTP body represents :  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  which is serialized to XML string by  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see>
 
 
+        :param container_xml_file:
+        :type container_xml_file: bytearray
         :param connections_to_create:
         :type connections_to_create: List[int]
         :param _request_timeout: timeout setting for this request. If one
@@ -1350,6 +1352,7 @@ class ProjectApi:
         """ # noqa: E501
 
         _param = self._import_iom_serialize(
+            container_xml_file=container_xml_file,
             connections_to_create=connections_to_create,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1374,6 +1377,7 @@ class ProjectApi:
     @validate_call
     def import_iom_with_http_info(
         self,
+        container_xml_file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         connections_to_create: Optional[List[StrictInt]] = None,
         _request_timeout: Union[
             None,
@@ -1388,9 +1392,11 @@ class ProjectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ConProject]:
-        """Creates an IDEA Connection project. IOM is passed in the body of the request.
+        """Create the IDEA Connection project from IOM provided in xml format.  The parameter 'containerXmlFile' passed in HTTP body represents :  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  which is serialized to XML string by  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see>
 
 
+        :param container_xml_file:
+        :type container_xml_file: bytearray
         :param connections_to_create:
         :type connections_to_create: List[int]
         :param _request_timeout: timeout setting for this request. If one
@@ -1416,6 +1422,7 @@ class ProjectApi:
         """ # noqa: E501
 
         _param = self._import_iom_serialize(
+            container_xml_file=container_xml_file,
             connections_to_create=connections_to_create,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1440,6 +1447,7 @@ class ProjectApi:
     @validate_call
     def import_iom_without_preload_content(
         self,
+        container_xml_file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         connections_to_create: Optional[List[StrictInt]] = None,
         _request_timeout: Union[
             None,
@@ -1454,9 +1462,11 @@ class ProjectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Creates an IDEA Connection project. IOM is passed in the body of the request.
+        """Create the IDEA Connection project from IOM provided in xml format.  The parameter 'containerXmlFile' passed in HTTP body represents :  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  which is serialized to XML string by  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see>
 
 
+        :param container_xml_file:
+        :type container_xml_file: bytearray
         :param connections_to_create:
         :type connections_to_create: List[int]
         :param _request_timeout: timeout setting for this request. If one
@@ -1482,6 +1492,7 @@ class ProjectApi:
         """ # noqa: E501
 
         _param = self._import_iom_serialize(
+            container_xml_file=container_xml_file,
             connections_to_create=connections_to_create,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1501,6 +1512,7 @@ class ProjectApi:
 
     def _import_iom_serialize(
         self,
+        container_xml_file,
         connections_to_create,
         _request_auth,
         _content_type,
@@ -1525,288 +1537,13 @@ class ProjectApi:
 
         # process the path parameters
         # process the query parameters
-        if connections_to_create is not None:
-            
-            _query_params.append(('ConnectionsToCreate', connections_to_create))
-            
         # process the header parameters
         # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/1/projects/import-iom-file',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def import_iom_container(
-        self,
-        connections_to_create: Optional[List[StrictInt]] = None,
-        open_model_container: Optional[OpenModelContainer] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ConProject:
-        """Creates an IDEA Connection project from model (model and results)
-
-
-        :param connections_to_create:
-        :type connections_to_create: List[int]
-        :param open_model_container: 
-        :type open_model_container: OpenModelContainer
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._import_iom_container_serialize(
-            connections_to_create=connections_to_create,
-            open_model_container=open_model_container,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConProject",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def import_iom_container_with_http_info(
-        self,
-        connections_to_create: Optional[List[StrictInt]] = None,
-        open_model_container: Optional[OpenModelContainer] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ConProject]:
-        """Creates an IDEA Connection project from model (model and results)
-
-
-        :param connections_to_create:
-        :type connections_to_create: List[int]
-        :param open_model_container: 
-        :type open_model_container: OpenModelContainer
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._import_iom_container_serialize(
-            connections_to_create=connections_to_create,
-            open_model_container=open_model_container,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConProject",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def import_iom_container_without_preload_content(
-        self,
-        connections_to_create: Optional[List[StrictInt]] = None,
-        open_model_container: Optional[OpenModelContainer] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Creates an IDEA Connection project from model (model and results)
-
-
-        :param connections_to_create:
-        :type connections_to_create: List[int]
-        :param open_model_container: 
-        :type open_model_container: OpenModelContainer
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._import_iom_container_serialize(
-            connections_to_create=connections_to_create,
-            open_model_container=open_model_container,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ConProject",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _import_iom_container_serialize(
-        self,
-        connections_to_create,
-        open_model_container,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-            'ConnectionsToCreate': 'multi',
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
+        if container_xml_file is not None:
+            _files['containerXmlFile'] = container_xml_file
         if connections_to_create is not None:
-            
-            _query_params.append(('ConnectionsToCreate', connections_to_create))
-            
-        # process the header parameters
-        # process the form parameters
+            _form_params.append(('ConnectionsToCreate', connections_to_create))
         # process the body parameter
-        if open_model_container is not None:
-            _body_params = open_model_container
 
 
         # set the HTTP header `Accept`
@@ -1824,7 +1561,7 @@ class ProjectApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml'
+                        'multipart/form-data'
                     ]
                 )
             )
@@ -1837,7 +1574,7 @@ class ProjectApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/import-iom',
+            resource_path='/api/1/projects/import-iom-file',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2127,6 +1864,7 @@ class ProjectApi:
     def update_from_iom(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to be updated")],
+        container_xml_file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2139,12 +1877,14 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> bool:
-        """Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
+    ) -> ConProject:
+        """Update the IDEA Connection project by <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  (model and results).  IOM is passed in the body of the request as the xml string.  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see> should be used to generate the valid xml string
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to be updated (required)
         :type project_id: str
+        :param container_xml_file:
+        :type container_xml_file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2169,6 +1909,7 @@ class ProjectApi:
 
         _param = self._update_from_iom_serialize(
             project_id=project_id,
+            container_xml_file=container_xml_file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2176,7 +1917,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bool",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2193,6 +1934,7 @@ class ProjectApi:
     def update_from_iom_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to be updated")],
+        container_xml_file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2205,12 +1947,14 @@ class ProjectApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[bool]:
-        """Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
+    ) -> ApiResponse[ConProject]:
+        """Update the IDEA Connection project by <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  (model and results).  IOM is passed in the body of the request as the xml string.  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see> should be used to generate the valid xml string
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to be updated (required)
         :type project_id: str
+        :param container_xml_file:
+        :type container_xml_file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2235,6 +1979,7 @@ class ProjectApi:
 
         _param = self._update_from_iom_serialize(
             project_id=project_id,
+            container_xml_file=container_xml_file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2242,7 +1987,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bool",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2259,6 +2004,7 @@ class ProjectApi:
     def update_from_iom_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to be updated")],
+        container_xml_file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2272,11 +2018,13 @@ class ProjectApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
+        """Update the IDEA Connection project by <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  (model and results).  IOM is passed in the body of the request as the xml string.  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see> should be used to generate the valid xml string
 
 
         :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to be updated (required)
         :type project_id: str
+        :param container_xml_file:
+        :type container_xml_file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2301,6 +2049,7 @@ class ProjectApi:
 
         _param = self._update_from_iom_serialize(
             project_id=project_id,
+            container_xml_file=container_xml_file,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2308,7 +2057,7 @@ class ProjectApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bool",
+            '200': "ConProject",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2320,6 +2069,7 @@ class ProjectApi:
     def _update_from_iom_serialize(
         self,
         project_id,
+        container_xml_file,
         _request_auth,
         _content_type,
         _headers,
@@ -2346,279 +2096,9 @@ class ProjectApi:
         # process the query parameters
         # process the header parameters
         # process the form parameters
+        if container_xml_file is not None:
+            _files['containerXmlFile'] = container_xml_file
         # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/1/projects/{projectId}/update-iom-file',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def update_from_iom_container(
-        self,
-        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to be updated")],
-        open_model_container: Optional[OpenModelContainer] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> bool:
-        """Update an IDEA Connection project by model (model and results)
-
-
-        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to be updated (required)
-        :type project_id: str
-        :param open_model_container: 
-        :type open_model_container: OpenModelContainer
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._update_from_iom_container_serialize(
-            project_id=project_id,
-            open_model_container=open_model_container,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bool",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def update_from_iom_container_with_http_info(
-        self,
-        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to be updated")],
-        open_model_container: Optional[OpenModelContainer] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[bool]:
-        """Update an IDEA Connection project by model (model and results)
-
-
-        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to be updated (required)
-        :type project_id: str
-        :param open_model_container: 
-        :type open_model_container: OpenModelContainer
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._update_from_iom_container_serialize(
-            project_id=project_id,
-            open_model_container=open_model_container,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bool",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def update_from_iom_container_without_preload_content(
-        self,
-        project_id: Annotated[StrictStr, Field(description="The unique identifier of the opened project in the ConnectionRestApi service to be updated")],
-        open_model_container: Optional[OpenModelContainer] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update an IDEA Connection project by model (model and results)
-
-
-        :param project_id: The unique identifier of the opened project in the ConnectionRestApi service to be updated (required)
-        :type project_id: str
-        :param open_model_container: 
-        :type open_model_container: OpenModelContainer
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._update_from_iom_container_serialize(
-            project_id=project_id,
-            open_model_container=open_model_container,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bool",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _update_from_iom_container_serialize(
-        self,
-        project_id,
-        open_model_container,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if project_id is not None:
-            _path_params['projectId'] = project_id
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if open_model_container is not None:
-            _body_params = open_model_container
 
 
         # set the HTTP header `Accept`
@@ -2636,7 +2116,7 @@ class ProjectApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/xml'
+                        'multipart/form-data'
                     ]
                 )
             )
@@ -2649,7 +2129,7 @@ class ProjectApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/api/1/projects/{projectId}/update-iom',
+            resource_path='/api/1/projects/{projectId}/update-iom-file',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -2101,61 +2101,34 @@
         "tags": [
           "Project"
         ],
-        "summary": "Creates an IDEA Connection project. IOM is passed in the body of the request.",
+        "summary": "Create the IDEA Connection project from IOM provided in xml format.\r\nThe parameter 'containerXmlFile' passed in HTTP body represents :\r\n<see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>\r\nwhich is serialized to XML string by  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see>",
         "operationId": "ImportIOM",
-        "parameters": [
-          {
-            "name": "ConnectionsToCreate",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int32"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConProject"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/projects/import-iom": {
-      "post": {
-        "tags": [
-          "Project"
-        ],
-        "summary": "Creates an IDEA Connection project from model (model and results)",
-        "operationId": "ImportIOMContainer",
-        "parameters": [
-          {
-            "name": "ConnectionsToCreate",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int32"
-              }
-            }
-          }
-        ],
         "requestBody": {
-          "description": "",
           "content": {
-            "application/xml": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/OpenModelContainer"
+                "type": "object",
+                "properties": {
+                  "containerXmlFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ConnectionsToCreate": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "containerXmlFile": {
+                  "style": "form"
+                },
+                "ConnectionsToCreate": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -2179,7 +2152,7 @@
         "tags": [
           "Project"
         ],
-        "summary": "Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.",
+        "summary": "Update the IDEA Connection project by <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  (model and results).\r\nIOM is passed in the body of the request as the xml string.\r\n<see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see> should be used to generate the valid xml string",
         "operationId": "UpdateFromIOM",
         "parameters": [
           {
@@ -2193,45 +2166,22 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "boolean"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/1/projects/{projectId}/update-iom": {
-      "post": {
-        "tags": [
-          "Project"
-        ],
-        "summary": "Update an IDEA Connection project by model (model and results)",
-        "operationId": "UpdateFromIOMContainer",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "The unique identifier of the opened project in the ConnectionRestApi service to be updated",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
         "requestBody": {
-          "description": "",
           "content": {
-            "application/xml": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/OpenModelContainer"
+                "type": "object",
+                "properties": {
+                  "containerXmlFile": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "containerXmlFile": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -2242,7 +2192,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "boolean"
+                  "$ref": "#/components/schemas/ConProject"
                 }
               }
             }
@@ -2549,18 +2499,6 @@
   },
   "components": {
     "schemas": {
-      "Anchor3D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of Anchor 3D in IDEA StatiCa Detail"
-      },
       "AnchorGrid": {
         "type": "object",
         "properties": {
@@ -2705,30 +2643,6 @@
         "type": "string",
         "description": "Defines a type of anchor end."
       },
-      "ArcSegment3D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents an arc segment in three-dimensional space."
-      },
-      "BasePlate3D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of Base Plate 3D in IDEA StatiCa Detail"
-      },
       "BaseTemplateConversion": {
         "type": "object",
         "properties": {
@@ -2754,18 +2668,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "Beam": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of 1D member in IDEA StatiCa Detail"
       },
       "BeamData": {
         "type": "object",
@@ -3038,18 +2940,6 @@
         "additionalProperties": false,
         "description": "Results of the buckling analysis"
       },
-      "CheckMember": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Check member base class"
-      },
       "CheckResAnchor": {
         "type": "object",
         "properties": {
@@ -3232,30 +3122,6 @@
         },
         "additionalProperties": false,
         "description": "Check value for Weld"
-      },
-      "CheckSection": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Check section base class"
-      },
-      "CombiInput": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Basic class combination"
       },
       "ConAnalysisTypeEnum": {
         "enum": [
@@ -3866,18 +3732,6 @@
         "additionalProperties": false,
         "description": "Provides data of the connection"
       },
-      "ConnectionPoint": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "ConnectedDesignMemeber"
-      },
       "ConnectionSetup": {
         "type": "object",
         "properties": {
@@ -4151,32 +4005,6 @@
         "additionalProperties": false,
         "description": "ConnectionSetup"
       },
-      "CrossSection": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name of cross-section",
-            "nullable": true
-          },
-          "crossSectionRotation": {
-            "type": "number",
-            "description": "Rotation of Cross - Section",
-            "format": "double"
-          },
-          "isInPrincipal": {
-            "type": "boolean",
-            "description": "Specifies that the cross-section is in its principal axis."
-          },
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Cross-section"
-      },
       "CrtCompCheckIS": {
         "enum": [
           "iS800_Cl_7_4",
@@ -4283,54 +4111,6 @@
         ],
         "type": "string"
       },
-      "DappedEnd": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of dapped end in IDEA StatiCa Detail"
-      },
-      "DesignMember": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "DesignMember"
-      },
-      "DetailCombination": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Load case"
-      },
-      "DetailLoadCase": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Load case"
-      },
       "DistanceComparison": {
         "enum": [
           "closer",
@@ -4369,42 +4149,6 @@
         },
         "additionalProperties": false
       },
-      "Element1D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of element1D"
-      },
-      "Element2D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of element2D"
-      },
-      "FatigueTypeOfPrestressingSteel": {
-        "enum": [
-          "postTensioningSingleStrandsInPlasticDucts",
-          "postTensioningStraightTendonsOrCurvedTendonsInPlasticDucts",
-          "postTensioningCurvedTendonsInSteelDucts",
-          "postTensioningSplicingDevices",
-          "preTensioning",
-          "externalTendon"
-        ],
-        "type": "string",
-        "description": "Posttensioned reinforcement type"
-      },
       "FoldedPlateData": {
         "type": "object",
         "properties": {
@@ -4427,18 +4171,6 @@
         },
         "additionalProperties": false,
         "description": "Provides data of the folded plate"
-      },
-      "HingeElement1D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of hinge element 1D"
       },
       "IGroup": {
         "type": "object",
@@ -4474,18 +4206,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ISDModel": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Model of IDEA StatiCa Detail"
       },
       "IdeaParameter": {
         "type": "object",
@@ -4542,18 +4262,6 @@
         },
         "additionalProperties": false
       },
-      "InitialImperfectionOfPoint": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Initial deformation of point - geometry nonlinear calculation"
-      },
       "Line": {
         "type": "object",
         "properties": {
@@ -4579,42 +4287,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "LineSegment3D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a line segment in three-dimensional space."
-      },
-      "LineSupportSegment": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Line support on segment"
-      },
-      "LoadCase": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Load case in the model"
       },
       "LoadEffectData": {
         "type": "object",
@@ -4647,656 +4319,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "LoadGroup": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Load group"
-      },
-      "LoadInPoint": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Concentrated load"
-      },
-      "LoadOnLine": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Load on line"
-      },
-      "LoadOnSurface": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Load on surface"
-      },
-      "Loading": {
-        "type": "object",
-        "properties": {
-          "loadingType": {
-            "$ref": "#/components/schemas/LoadingType"
-          },
-          "id": {
-            "type": "integer",
-            "description": "Id of loading",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Loading identification"
-      },
-      "LoadingType": {
-        "enum": [
-          "loadCase",
-          "combination",
-          "resultClass"
-        ],
-        "type": "string",
-        "description": "Type of loading"
-      },
-      "MatConcrete": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name of material",
-            "nullable": true
-          },
-          "loadFromLibrary": {
-            "type": "boolean",
-            "description": "Load from library - try override properties from library find material by name"
-          },
-          "e": {
-            "type": "number",
-            "description": "Young's modulus",
-            "format": "double"
-          },
-          "g": {
-            "type": "number",
-            "description": "Shear modulus",
-            "format": "double"
-          },
-          "poisson": {
-            "type": "number",
-            "description": "Poisson's ratio",
-            "format": "double"
-          },
-          "unitMass": {
-            "type": "number",
-            "description": "Unit weight",
-            "format": "double"
-          },
-          "specificHeat": {
-            "type": "number",
-            "description": "Specific heat capacity",
-            "format": "double"
-          },
-          "thermalExpansion": {
-            "type": "number",
-            "description": "Thermal expansion",
-            "format": "double"
-          },
-          "thermalConductivity": {
-            "type": "number",
-            "description": "Thermal conductivity",
-            "format": "double"
-          },
-          "isDefaultMaterial": {
-            "type": "boolean",
-            "description": "True if material is default material from the code"
-          },
-          "orderInCode": {
-            "type": "integer",
-            "description": "Order of this material in the code",
-            "format": "int32"
-          },
-          "stateOfThermalExpansion": {
-            "$ref": "#/components/schemas/ThermalExpansionState"
-          },
-          "stateOfThermalConductivity": {
-            "$ref": "#/components/schemas/ThermalConductivityState"
-          },
-          "stateOfThermalSpecificHeat": {
-            "$ref": "#/components/schemas/ThermalSpecificHeatState"
-          },
-          "stateOfThermalStressStrain": {
-            "$ref": "#/components/schemas/ThermalStressStrainState"
-          },
-          "stateOfThermalStrain": {
-            "$ref": "#/components/schemas/ThermalStrainState"
-          },
-          "userThermalSpecificHeatCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalConductivityCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalExpansionCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalStrainCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalStressStrainCurvature": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TemperatureCurve2D"
-            },
-            "description": "User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}",
-            "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Material concrete base class"
-      },
-      "MatPrestressSteel": {
-        "type": "object",
-        "properties": {
-          "diameter": {
-            "type": "number",
-            "description": "Diameter",
-            "format": "double"
-          },
-          "area": {
-            "type": "number",
-            "description": "Area",
-            "format": "double"
-          },
-          "numberOfWires": {
-            "type": "integer",
-            "description": "number of wires in strand",
-            "format": "int32"
-          },
-          "equivalentDiameter": {
-            "type": "number",
-            "description": "Equivalent diameter",
-            "format": "double"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of material",
-            "nullable": true
-          },
-          "loadFromLibrary": {
-            "type": "boolean",
-            "description": "Load from library - try override properties from library find material by name"
-          },
-          "e": {
-            "type": "number",
-            "description": "Young's modulus",
-            "format": "double"
-          },
-          "g": {
-            "type": "number",
-            "description": "Shear modulus",
-            "format": "double"
-          },
-          "poisson": {
-            "type": "number",
-            "description": "Poisson's ratio",
-            "format": "double"
-          },
-          "unitMass": {
-            "type": "number",
-            "description": "Unit weight",
-            "format": "double"
-          },
-          "specificHeat": {
-            "type": "number",
-            "description": "Specific heat capacity",
-            "format": "double"
-          },
-          "thermalExpansion": {
-            "type": "number",
-            "description": "Thermal expansion",
-            "format": "double"
-          },
-          "thermalConductivity": {
-            "type": "number",
-            "description": "Thermal conductivity",
-            "format": "double"
-          },
-          "isDefaultMaterial": {
-            "type": "boolean",
-            "description": "True if material is default material from the code"
-          },
-          "orderInCode": {
-            "type": "integer",
-            "description": "Order of this material in the code",
-            "format": "int32"
-          },
-          "stateOfThermalExpansion": {
-            "$ref": "#/components/schemas/ThermalExpansionState"
-          },
-          "stateOfThermalConductivity": {
-            "$ref": "#/components/schemas/ThermalConductivityState"
-          },
-          "stateOfThermalSpecificHeat": {
-            "$ref": "#/components/schemas/ThermalSpecificHeatState"
-          },
-          "stateOfThermalStressStrain": {
-            "$ref": "#/components/schemas/ThermalStressStrainState"
-          },
-          "stateOfThermalStrain": {
-            "$ref": "#/components/schemas/ThermalStrainState"
-          },
-          "userThermalSpecificHeatCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalConductivityCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalExpansionCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalStrainCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalStressStrainCurvature": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TemperatureCurve2D"
-            },
-            "description": "User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}",
-            "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Material prestressing steel base class"
-      },
-      "MatReinforcement": {
-        "type": "object",
-        "properties": {
-          "barSurface": {
-            "$ref": "#/components/schemas/ReinfBarSurface"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of material",
-            "nullable": true
-          },
-          "loadFromLibrary": {
-            "type": "boolean",
-            "description": "Load from library - try override properties from library find material by name"
-          },
-          "e": {
-            "type": "number",
-            "description": "Young's modulus",
-            "format": "double"
-          },
-          "g": {
-            "type": "number",
-            "description": "Shear modulus",
-            "format": "double"
-          },
-          "poisson": {
-            "type": "number",
-            "description": "Poisson's ratio",
-            "format": "double"
-          },
-          "unitMass": {
-            "type": "number",
-            "description": "Unit weight",
-            "format": "double"
-          },
-          "specificHeat": {
-            "type": "number",
-            "description": "Specific heat capacity",
-            "format": "double"
-          },
-          "thermalExpansion": {
-            "type": "number",
-            "description": "Thermal expansion",
-            "format": "double"
-          },
-          "thermalConductivity": {
-            "type": "number",
-            "description": "Thermal conductivity",
-            "format": "double"
-          },
-          "isDefaultMaterial": {
-            "type": "boolean",
-            "description": "True if material is default material from the code"
-          },
-          "orderInCode": {
-            "type": "integer",
-            "description": "Order of this material in the code",
-            "format": "int32"
-          },
-          "stateOfThermalExpansion": {
-            "$ref": "#/components/schemas/ThermalExpansionState"
-          },
-          "stateOfThermalConductivity": {
-            "$ref": "#/components/schemas/ThermalConductivityState"
-          },
-          "stateOfThermalSpecificHeat": {
-            "$ref": "#/components/schemas/ThermalSpecificHeatState"
-          },
-          "stateOfThermalStressStrain": {
-            "$ref": "#/components/schemas/ThermalStressStrainState"
-          },
-          "stateOfThermalStrain": {
-            "$ref": "#/components/schemas/ThermalStrainState"
-          },
-          "userThermalSpecificHeatCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalConductivityCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalExpansionCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalStrainCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalStressStrainCurvature": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TemperatureCurve2D"
-            },
-            "description": "User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}",
-            "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Material reinforcement base class"
-      },
-      "MatSteel": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name of material",
-            "nullable": true
-          },
-          "loadFromLibrary": {
-            "type": "boolean",
-            "description": "Load from library - try override properties from library find material by name"
-          },
-          "e": {
-            "type": "number",
-            "description": "Young's modulus",
-            "format": "double"
-          },
-          "g": {
-            "type": "number",
-            "description": "Shear modulus",
-            "format": "double"
-          },
-          "poisson": {
-            "type": "number",
-            "description": "Poisson's ratio",
-            "format": "double"
-          },
-          "unitMass": {
-            "type": "number",
-            "description": "Unit weight",
-            "format": "double"
-          },
-          "specificHeat": {
-            "type": "number",
-            "description": "Specific heat capacity",
-            "format": "double"
-          },
-          "thermalExpansion": {
-            "type": "number",
-            "description": "Thermal expansion",
-            "format": "double"
-          },
-          "thermalConductivity": {
-            "type": "number",
-            "description": "Thermal conductivity",
-            "format": "double"
-          },
-          "isDefaultMaterial": {
-            "type": "boolean",
-            "description": "True if material is default material from the code"
-          },
-          "orderInCode": {
-            "type": "integer",
-            "description": "Order of this material in the code",
-            "format": "int32"
-          },
-          "stateOfThermalExpansion": {
-            "$ref": "#/components/schemas/ThermalExpansionState"
-          },
-          "stateOfThermalConductivity": {
-            "$ref": "#/components/schemas/ThermalConductivityState"
-          },
-          "stateOfThermalSpecificHeat": {
-            "$ref": "#/components/schemas/ThermalSpecificHeatState"
-          },
-          "stateOfThermalStressStrain": {
-            "$ref": "#/components/schemas/ThermalStressStrainState"
-          },
-          "stateOfThermalStrain": {
-            "$ref": "#/components/schemas/ThermalStrainState"
-          },
-          "userThermalSpecificHeatCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalConductivityCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalExpansionCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalStrainCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalStressStrainCurvature": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TemperatureCurve2D"
-            },
-            "description": "User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}",
-            "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Material steel base class"
-      },
-      "MatWelding": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name of material",
-            "nullable": true
-          },
-          "loadFromLibrary": {
-            "type": "boolean",
-            "description": "Load from library - try override properties from library find material by name"
-          },
-          "e": {
-            "type": "number",
-            "description": "Young's modulus",
-            "format": "double"
-          },
-          "g": {
-            "type": "number",
-            "description": "Shear modulus",
-            "format": "double"
-          },
-          "poisson": {
-            "type": "number",
-            "description": "Poisson's ratio",
-            "format": "double"
-          },
-          "unitMass": {
-            "type": "number",
-            "description": "Unit weight",
-            "format": "double"
-          },
-          "specificHeat": {
-            "type": "number",
-            "description": "Specific heat capacity",
-            "format": "double"
-          },
-          "thermalExpansion": {
-            "type": "number",
-            "description": "Thermal expansion",
-            "format": "double"
-          },
-          "thermalConductivity": {
-            "type": "number",
-            "description": "Thermal conductivity",
-            "format": "double"
-          },
-          "isDefaultMaterial": {
-            "type": "boolean",
-            "description": "True if material is default material from the code"
-          },
-          "orderInCode": {
-            "type": "integer",
-            "description": "Order of this material in the code",
-            "format": "int32"
-          },
-          "stateOfThermalExpansion": {
-            "$ref": "#/components/schemas/ThermalExpansionState"
-          },
-          "stateOfThermalConductivity": {
-            "$ref": "#/components/schemas/ThermalConductivityState"
-          },
-          "stateOfThermalSpecificHeat": {
-            "$ref": "#/components/schemas/ThermalSpecificHeatState"
-          },
-          "stateOfThermalStressStrain": {
-            "$ref": "#/components/schemas/ThermalStressStrainState"
-          },
-          "stateOfThermalStrain": {
-            "$ref": "#/components/schemas/ThermalStrainState"
-          },
-          "userThermalSpecificHeatCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalConductivityCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalExpansionCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalStrainCurvature": {
-            "$ref": "#/components/schemas/Polygon2D"
-          },
-          "userThermalStressStrainCurvature": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TemperatureCurve2D"
-            },
-            "description": "User-defined curvature for thermal stress,strain { Temperature = Θ[K], {x = ε[-], y = σ[Pa]}}",
-            "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Welding material base class"
-      },
-      "MaterialDuct": {
-        "enum": [
-          "metal",
-          "plastic"
-        ],
-        "type": "string",
-        "description": "Tendon ducts material type"
-      },
-      "Member": {
-        "type": "object",
-        "properties": {
-          "memberType": {
-            "$ref": "#/components/schemas/MemberType"
-          },
-          "id": {
-            "type": "integer",
-            "description": "Id of member",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Member identification"
-      },
-      "Member1D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of member1D"
-      },
-      "Member2D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of member2D"
-      },
-      "MemberType": {
-        "enum": [
-          "member1D",
-          "element1D"
-        ],
-        "type": "string",
-        "description": "Type of member"
       },
       "MessageNumber": {
         "enum": [
@@ -5336,11 +4358,6 @@
         ],
         "type": "string",
         "description": "Message numbers"
-      },
-      "OpenAttribute": {
-        "type": "object",
-        "additionalProperties": false,
-        "description": "Open attribute base class"
       },
       "OpenElementId": {
         "type": "object",
@@ -5383,556 +4400,6 @@
         },
         "additionalProperties": false,
         "description": "Open messages collection"
-      },
-      "OpenModel": {
-        "type": "object",
-        "properties": {
-          "version": {
-            "type": "integer",
-            "description": "Data format version",
-            "format": "int32"
-          },
-          "originSettings": {
-            "$ref": "#/components/schemas/OriginSettings"
-          },
-          "point3D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Point3D"
-            },
-            "description": "List of Point3D",
-            "nullable": true
-          },
-          "lineSegment3D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LineSegment3D"
-            },
-            "description": "List of LineSegment3D",
-            "nullable": true
-          },
-          "arcSegment3D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ArcSegment3D"
-            },
-            "description": "List of ArcSegment3D",
-            "nullable": true
-          },
-          "polyLine3D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PolyLine3D"
-            },
-            "description": "List of PolyLine3D",
-            "nullable": true
-          },
-          "region3D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Region3D"
-            },
-            "description": "List of Region3D",
-            "nullable": true
-          },
-          "matConcrete": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MatConcrete"
-            },
-            "description": "List of MatConcrete",
-            "nullable": true
-          },
-          "matReinforcement": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MatReinforcement"
-            },
-            "description": "List of MatReinforcement",
-            "nullable": true
-          },
-          "matSteel": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MatSteel"
-            },
-            "description": "List of MatSteel",
-            "nullable": true
-          },
-          "matPrestressSteel": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MatPrestressSteel"
-            },
-            "description": "List of MatPrestressSteel",
-            "nullable": true
-          },
-          "matWelding": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MatWelding"
-            },
-            "description": "List of MatWelding",
-            "nullable": true
-          },
-          "crossSection": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CrossSection"
-            },
-            "description": "List of CrossSection",
-            "nullable": true
-          },
-          "reinforcedCrossSection": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReinforcedCrossSection"
-            },
-            "description": "List of Reinforced CrossSection",
-            "nullable": true
-          },
-          "hingeElement1D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/HingeElement1D"
-            },
-            "description": "List of hinge elements 1D",
-            "nullable": true
-          },
-          "opening": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Opening"
-            },
-            "description": "List of openings for Detail",
-            "nullable": true
-          },
-          "dappedEnd": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DappedEnd"
-            },
-            "description": "List of dapped ends in Detail",
-            "nullable": true
-          },
-          "patchDevice": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PatchDevice"
-            },
-            "description": "List of dapped ends in Detail",
-            "nullable": true
-          },
-          "element1D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Element1D"
-            },
-            "description": "List of Elements 1D",
-            "nullable": true
-          },
-          "beam": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Beam"
-            },
-            "description": "List of Elements 1D",
-            "nullable": true
-          },
-          "member1D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Member1D"
-            },
-            "description": "List of Member 1D",
-            "nullable": true
-          },
-          "element2D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Element2D"
-            },
-            "description": "List of Elements 2D",
-            "nullable": true
-          },
-          "wall": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Wall"
-            },
-            "description": "List of Elements 2D",
-            "nullable": true
-          },
-          "member2D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Member2D"
-            },
-            "description": "List of Member 2D",
-            "nullable": true
-          },
-          "rigidLink": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RigidLink"
-            },
-            "description": "List of Rigid link",
-            "nullable": true
-          },
-          "pointOnLine3D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PointOnLine3D"
-            },
-            "description": "List of Point on line 3D",
-            "nullable": true
-          },
-          "pointSupportNode": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PointSupportNode"
-            },
-            "description": "List of Point support in node",
-            "nullable": true
-          },
-          "lineSupportSegment": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LineSupportSegment"
-            },
-            "description": "List of Line support on segment",
-            "nullable": true
-          },
-          "loadsInPoint": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LoadInPoint"
-            },
-            "description": "List of point load impulses in this load case",
-            "nullable": true
-          },
-          "loadsOnLine": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LoadOnLine"
-            },
-            "description": "List of line load impulses in this load case",
-            "nullable": true
-          },
-          "strainLoadsOnLine": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StrainLoadOnLine"
-            },
-            "description": "List of generalized strain load impulses along the line in this load case.",
-            "nullable": true
-          },
-          "pointLoadsOnLine": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PointLoadOnLine"
-            },
-            "description": "List of point load impulses in this load case",
-            "nullable": true
-          },
-          "loadsOnSurface": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LoadOnSurface"
-            },
-            "description": "List surafce load in this load case",
-            "nullable": true
-          },
-          "settlements": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Settlement"
-            },
-            "description": "Settlements in this load case",
-            "nullable": true
-          },
-          "temperatureLoadsOnLine": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TemperatureLoadOnLine"
-            },
-            "description": "List of temperature load in this load case",
-            "nullable": true
-          },
-          "loadGroup": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LoadGroup"
-            },
-            "description": "List of Load groups",
-            "nullable": true
-          },
-          "loadCase": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LoadCase"
-            },
-            "description": "List of Load cases",
-            "nullable": true
-          },
-          "combiInput": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CombiInput"
-            },
-            "description": "List of Combinations",
-            "nullable": true
-          },
-          "attribute": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OpenAttribute"
-            },
-            "description": "List of attributes",
-            "nullable": true
-          },
-          "connectionPoint": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ConnectionPoint"
-            },
-            "description": "List of Connection Points",
-            "nullable": true
-          },
-          "connections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ConnectionData"
-            },
-            "description": "List of Connection data",
-            "nullable": true
-          },
-          "reinforcement": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Reinforcement"
-            },
-            "description": "List of reinforcement in IDEA StatiCa Detail",
-            "nullable": true
-          },
-          "isdModel": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ISDModel"
-            },
-            "description": "List of Details",
-            "nullable": true
-          },
-          "initialImperfectionOfPoint": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InitialImperfectionOfPoint"
-            },
-            "description": "List of InitialmperfectionOfPoint",
-            "nullable": true
-          },
-          "tendon": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Tendon"
-            },
-            "description": "Tendon",
-            "nullable": true
-          },
-          "resultClass": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ResultClass"
-            },
-            "description": "Result Class",
-            "nullable": true
-          },
-          "designMember": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DesignMember"
-            },
-            "description": "Design Member",
-            "nullable": true
-          },
-          "subStructure": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubStructure"
-            },
-            "description": "Design Member",
-            "nullable": true
-          },
-          "connectionSetup": {
-            "$ref": "#/components/schemas/ConnectionSetup"
-          },
-          "projectData": {
-            "$ref": "#/components/schemas/ProjectData"
-          },
-          "checkMember": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CheckMember"
-            },
-            "description": "List of the Check members",
-            "nullable": true
-          },
-          "concreteCheckSection": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CheckSection"
-            },
-            "description": "List of the concrete check section",
-            "nullable": true
-          },
-          "concreteSetup": {
-            "$ref": "#/components/schemas/ConcreteSetup"
-          },
-          "projectDataConcrete": {
-            "$ref": "#/components/schemas/ProjectDataConcrete"
-          },
-          "rebarShape": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RebarShape"
-            },
-            "description": "Gets or sets the rebars shapes",
-            "nullable": true
-          },
-          "rebarGeneral": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RebarGeneral"
-            },
-            "description": "Gets or sets the rebar General collection",
-            "nullable": true
-          },
-          "rebarSingle": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RebarSingle"
-            },
-            "description": "Gets or sets the rebar single collection",
-            "nullable": true
-          },
-          "rebarStirrups": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RebarStirrups"
-            },
-            "description": "Gets or sets the rebar group (stirrups) collection",
-            "nullable": true
-          },
-          "taper": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Taper"
-            },
-            "nullable": true
-          },
-          "span": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Span"
-            },
-            "nullable": true
-          },
-          "solidBlocks3D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SolidBlock3D"
-            },
-            "description": "List of Solid Blocks 3D",
-            "nullable": true
-          },
-          "surfaceSupports3D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SurfaceSupport3D"
-            },
-            "description": "List of Surface Supports 3D",
-            "nullable": true
-          },
-          "basePlates3D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BasePlate3D"
-            },
-            "description": "List of Base Plates 3D",
-            "nullable": true
-          },
-          "anchors3D": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Anchor3D"
-            },
-            "description": "List of Anchors 3D",
-            "nullable": true
-          },
-          "detailLoadCase": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DetailLoadCase"
-            },
-            "description": "List of Load cases",
-            "nullable": true
-          },
-          "detailCombination": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DetailCombination"
-            },
-            "description": "List of Combinations",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Open model"
-      },
-      "OpenModelContainer": {
-        "type": "object",
-        "properties": {
-          "openModel": {
-            "$ref": "#/components/schemas/OpenModel"
-          },
-          "openModelResult": {
-            "$ref": "#/components/schemas/OpenModelResult"
-          }
-        },
-        "additionalProperties": false,
-        "description": "OpenModelContainer is used to keep structural data and results of a finite element analysis in one place.\r\nThe main reason is easier moving (passing) pass the instance of OpenModel and corresponding instace of OpenModelResults."
-      },
-      "OpenModelResult": {
-        "type": "object",
-        "properties": {
-          "resultOnMembers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ResultOnMembers"
-            },
-            "description": "Results on members",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Results of open model"
-      },
-      "Opening": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of opening in IDEA StatiCa Detail"
-      },
-      "OriginSettings": {
-        "type": "object",
-        "additionalProperties": false,
-        "description": "OriginProject"
       },
       "ParameterData": {
         "type": "object",
@@ -5985,18 +4452,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "PatchDevice": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Abstract class of patch support/load"
       },
       "PlateData": {
         "type": "object",
@@ -6106,42 +4561,6 @@
         "additionalProperties": false,
         "description": "Represents an x- , y- an z-coordinates in three-dimensional space."
       },
-      "PointLoadOnLine": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Load in specific point on line"
-      },
-      "PointOnLine3D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a Point dependent on the line in three-dimensional space."
-      },
-      "PointSupportNode": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Point support in point"
-      },
       "PolyLine2D": {
         "type": "object",
         "properties": {
@@ -6159,91 +4578,6 @@
         },
         "additionalProperties": false,
         "description": "Represents a polyline in two-dimensional space."
-      },
-      "PolyLine3D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a polyline in three-dimensional space."
-      },
-      "Polygon2D": {
-        "type": "object",
-        "properties": {
-          "points": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Point2D"
-            },
-            "description": "List of polygon points",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a polygon in two-dimensional space."
-      },
-      "ProjectData": {
-        "type": "object",
-        "additionalProperties": false,
-        "description": "Defines certain data about user project."
-      },
-      "ProjectDataConcrete": {
-        "type": "object",
-        "additionalProperties": false,
-        "description": "Project data concrete"
-      },
-      "RebarGeneral": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a single main rebar in 3D space.\r\nHolds data from generated rebar or rebar imported from Tekla.\r\nthe rebarShape is in global coordinates and it is not possible to prject it along Member1D, Polyline, ... (referenceLine)"
-      },
-      "RebarShape": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a geometrical shape for Rebar in 3D space."
-      },
-      "RebarSingle": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a single main rebar in 3D space."
-      },
-      "RebarStirrups": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a rebar grouping in 3D space."
       },
       "ReferenceElement": {
         "type": "object",
@@ -6283,200 +4617,6 @@
         "additionalProperties": false,
         "description": "Represents a region in two-dimensional space included outline (border) and openings."
       },
-      "Region3D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a region in three-dimensional space included outline (border) and openings."
-      },
-      "ReinfBarSurface": {
-        "enum": [
-          "smooth",
-          "ribbed"
-        ],
-        "type": "string",
-        "description": "Reinforcement bar surface"
-      },
-      "ReinforcedBar": {
-        "type": "object",
-        "properties": {
-          "point": {
-            "$ref": "#/components/schemas/Point2D"
-          },
-          "diameter": {
-            "type": "number",
-            "description": "Diameter",
-            "format": "double"
-          },
-          "material": {
-            "$ref": "#/components/schemas/ReferenceElement"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Reinforced bar"
-      },
-      "ReinforcedCrossSection": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name of cross-section",
-            "nullable": true
-          },
-          "crossSection": {
-            "$ref": "#/components/schemas/ReferenceElement"
-          },
-          "bars": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReinforcedBar"
-            },
-            "description": "Reinforced bars",
-            "nullable": true
-          },
-          "stirrups": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Stirrup"
-            },
-            "description": "Stirrups",
-            "nullable": true
-          },
-          "tendonBars": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TendonBar"
-            },
-            "description": "Tendon bars",
-            "nullable": true
-          },
-          "tendonDucts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TendonDuct"
-            },
-            "description": "Tendon ducts",
-            "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Reinforced cross-section"
-      },
-      "Reinforcement": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Base class representing reinforcement in IDEA StatiCa Detail"
-      },
-      "ResultBase": {
-        "type": "object",
-        "additionalProperties": false,
-        "description": "Result base abstract class"
-      },
-      "ResultClass": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "ResultClass object"
-      },
-      "ResultLocalSystemType": {
-        "enum": [
-          "local",
-          "global",
-          "principle"
-        ],
-        "type": "string",
-        "description": "Type of local system of result"
-      },
-      "ResultOnMember": {
-        "type": "object",
-        "properties": {
-          "member": {
-            "$ref": "#/components/schemas/Member"
-          },
-          "resultType": {
-            "$ref": "#/components/schemas/ResultType"
-          },
-          "localSystemType": {
-            "$ref": "#/components/schemas/ResultLocalSystemType"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ResultBase"
-            },
-            "description": "List of result",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Result of the member"
-      },
-      "ResultOnMembers": {
-        "type": "object",
-        "properties": {
-          "loading": {
-            "$ref": "#/components/schemas/Loading"
-          },
-          "members": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ResultOnMember"
-            },
-            "description": "List of result of members",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Result of the member"
-      },
-      "ResultType": {
-        "enum": [
-          "internalForces",
-          "deformation",
-          "crossSectionNLA",
-          "crossSectionTA",
-          "interactionDiagram",
-          "crossSectionMesh"
-        ],
-        "type": "string",
-        "description": "Type of results"
-      },
-      "RigidLink": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Rigid link between nodes"
-      },
       "Segment2D": {
         "type": "object",
         "properties": {
@@ -6511,166 +4651,10 @@
         },
         "additionalProperties": false
       },
-      "Settlement": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Settlement of point support"
-      },
-      "SolidBlock3D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of Solid Block in IDEA StatiCa Detail"
-      },
-      "Span": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Span allows specifying haunched member.\r\n\r\nBoth cross-section must be of the same type. Spans must not overlap."
-      },
       "SteelSetup": {
         "type": "object",
         "additionalProperties": false,
         "description": "ISteelSetup"
-      },
-      "Stirrup": {
-        "type": "object",
-        "properties": {
-          "geometry": {
-            "$ref": "#/components/schemas/PolyLine2D"
-          },
-          "diameter": {
-            "type": "number",
-            "description": "Diameter",
-            "format": "double"
-          },
-          "material": {
-            "$ref": "#/components/schemas/ReferenceElement"
-          },
-          "anchorageLenght": {
-            "type": "number",
-            "description": "Anchorage Lenght",
-            "format": "double"
-          },
-          "diameterOfMandrel": {
-            "type": "number",
-            "description": "Radius of stirrup mandrel - refering to stirrup axis",
-            "format": "double"
-          },
-          "isClosed": {
-            "type": "boolean",
-            "description": "Open / Closed stirrup"
-          },
-          "distance": {
-            "type": "number",
-            "description": "Longitudinal distance between stirrups",
-            "format": "double"
-          },
-          "shearCheck": {
-            "type": "boolean",
-            "description": "Status of shear check, not possible for detailing stirrup"
-          },
-          "torsionCheck": {
-            "type": "boolean",
-            "description": "Status of torsion check, not possible for detailing stirrup"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Stirrup"
-      },
-      "StrainLoadOnLine": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Linearly distributed generalized strain load along a line.\r\nStrain load is in local coordinate system and there are no possible eccentricities."
-      },
-      "SubStructure": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "SubStructure"
-      },
-      "SurfaceSupport3D": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of Surface Support 3D in IDEA StatiCa Detail"
-      },
-      "Taper": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Defines haunches (variyng cross-sections) along the member.\r\n\r\nOne IdeaRS.OpenModel.Model.Taper may be assigned to multiple <see cref=\"T:IdeaRS.OpenModel.Model.Member1D\">Members</see>.\r\nSections of the member not covered by a span will use the member's cross-section."
-      },
-      "TemperatureCurve2D": {
-        "type": "object",
-        "properties": {
-          "points": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Point2D"
-            },
-            "description": "List of polygon points",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Reperesents a thermal curve."
-      },
-      "TemperatureLoadOnLine": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Temperature load on line"
       },
       "TemplateConversions": {
         "type": "object",
@@ -6688,95 +4672,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "Tendon": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Tendon base class"
-      },
-      "TendonBar": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Tendon Id",
-            "format": "int32"
-          },
-          "tendonType": {
-            "$ref": "#/components/schemas/TendonBarType"
-          },
-          "point": {
-            "$ref": "#/components/schemas/Point2D"
-          },
-          "material": {
-            "$ref": "#/components/schemas/ReferenceElement"
-          },
-          "prestressingOrder": {
-            "type": "integer",
-            "description": "order of tendon prestessing",
-            "format": "int32"
-          },
-          "numStrandsInTendon": {
-            "type": "integer",
-            "description": "number of ropes in tendon",
-            "format": "int32"
-          },
-          "prestressReinforcementType": {
-            "$ref": "#/components/schemas/FatigueTypeOfPrestressingSteel"
-          },
-          "phase": {
-            "type": "integer",
-            "description": "Phase",
-            "format": "int32"
-          },
-          "tendonDuct": {
-            "$ref": "#/components/schemas/TendonDuct"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Tendon bar"
-      },
-      "TendonBarType": {
-        "enum": [
-          "posttensioned",
-          "pretensioned"
-        ],
-        "type": "string",
-        "description": "Tendon bar type"
-      },
-      "TendonDuct": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Tendon duct Id",
-            "format": "int32"
-          },
-          "point": {
-            "$ref": "#/components/schemas/Point2D"
-          },
-          "materialDuct": {
-            "$ref": "#/components/schemas/MaterialDuct"
-          },
-          "isDebondingTube": {
-            "type": "boolean",
-            "description": "rue for debonding tubes, false for tendon ducts"
-          },
-          "diameter": {
-            "type": "number",
-            "description": "Diameter",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Tendon duct"
       },
       "Text": {
         "type": "object",
@@ -6829,51 +4724,6 @@
         },
         "additionalProperties": false
       },
-      "ThermalConductivityState": {
-        "enum": [
-          "none",
-          "code",
-          "user"
-        ],
-        "type": "string",
-        "description": "Type of curvature - thermal conductivity"
-      },
-      "ThermalExpansionState": {
-        "enum": [
-          "none",
-          "code",
-          "user"
-        ],
-        "type": "string",
-        "description": "Type of curvature -  thermal expansion"
-      },
-      "ThermalSpecificHeatState": {
-        "enum": [
-          "none",
-          "code",
-          "user"
-        ],
-        "type": "string",
-        "description": "Type of curvature - thermal specific heat"
-      },
-      "ThermalStrainState": {
-        "enum": [
-          "none",
-          "code",
-          "user"
-        ],
-        "type": "string",
-        "description": "Type of curvature - thermal strain curvature"
-      },
-      "ThermalStressStrainState": {
-        "enum": [
-          "none",
-          "code",
-          "user"
-        ],
-        "type": "string",
-        "description": "Type of curvature - thermal stress-strain curvature"
-      },
       "ValidationType": {
         "enum": [
           "warning",
@@ -6902,18 +4752,6 @@
         },
         "additionalProperties": false,
         "description": "Represents a vector in three-dimensional space."
-      },
-      "Wall": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Element Id",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Representation of Wall in IDEA StatiCa Detail"
       },
       "WeldData": {
         "type": "object",

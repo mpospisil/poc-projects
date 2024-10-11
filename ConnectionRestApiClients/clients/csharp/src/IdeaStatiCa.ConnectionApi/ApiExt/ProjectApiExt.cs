@@ -11,20 +11,51 @@ namespace IdeaStatiCa.ConnectionApi.Api
 {
 	public interface IProjectApiExtAsync : IProjectApiAsync
 	{
-		Task DownloadProjectAsync(Guid projectId, string fileName);
+		Task SaveProjectAsync(Guid projectId, string fileName);
 
-		Task<ConProject> CreateProjectFromIomFileAsync(string iomFilePath);
-	}
+		Task<ConProject> OpenProjectAsync(string filePath);
+
+		Task<ConProject> CreateProjectFromIomFileAsync(string iomFilePath, List<int> connectionsToCreate = null);
+
+    }
 
 
 	public class ProjectApiExt : ProjectApi, IProjectApiExtAsync
 	{
-		/// <inheritdoc cref="ProjectApi.ProjectApi(IdeaStatiCa.ConnectionApi.Client.ISynchronousClient, IdeaStatiCa.ConnectionApi.Client.IAsynchronousClient, IdeaStatiCa.ConnectionApi.Client.IReadableConfiguration)"/>/>
-		public ProjectApiExt(IdeaStatiCa.ConnectionApi.Client.ISynchronousClient client, IdeaStatiCa.ConnectionApi.Client.IAsynchronousClient asyncClient, IdeaStatiCa.ConnectionApi.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
+        /// <summary>
+        /// Data about the active project
+        /// </summary>
+        public ConProject ActiveProject { get; private set; } = null;
+
+        /// <summary>
+        /// Id of the open project on the service side
+        /// </summary>
+        public Guid ActiveProjectId { get { return ActiveProject.ProjectId; } }
+
+
+        /// <inheritdoc cref="ProjectApi.ProjectApi(IdeaStatiCa.ConnectionApi.Client.ISynchronousClient, IdeaStatiCa.ConnectionApi.Client.IAsynchronousClient, IdeaStatiCa.ConnectionApi.Client.IReadableConfiguration)"/>/>
+        public ProjectApiExt(IdeaStatiCa.ConnectionApi.Client.ISynchronousClient client, IdeaStatiCa.ConnectionApi.Client.IAsynchronousClient asyncClient, IdeaStatiCa.ConnectionApi.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
 		{
 		}
 
-		public async Task DownloadProjectAsync(Guid projectId, string fileName)
+		public async Task<ConProject> OpenProjectAsync(string path)
+		{
+			//await CreateAsync();
+
+			using (var fs = new System.IO.FileStream(path, System.IO.FileMode.Open))
+			{
+				using (var ms = new System.IO.MemoryStream())
+				{
+					await fs.CopyToAsync(ms);
+					ms.Seek(0, System.IO.SeekOrigin.Begin);
+					var conProject = await OpenProjectAsync(ms);
+					this.ActiveProject = conProject;
+                }
+			}
+            return ActiveProject;
+        }
+
+		public async Task SaveProjectAsync(Guid projectId, string fileName)
 		{
 			var response = await base.DownloadProjectWithHttpInfoAsync(projectId, "application/octet-stream");
 			byte[] buffer = (byte[])response.Data;
@@ -34,7 +65,7 @@ namespace IdeaStatiCa.ConnectionApi.Api
 			}
 		}
 
-		public async Task<ConProject> CreateProjectFromIomFileAsync(string fileName)
+		public async Task<ConProject> CreateProjectFromIomFileAsync(string fileName, List<int> connectionsToCreate = null)
 		{
 			IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
 
@@ -63,14 +94,16 @@ namespace IdeaStatiCa.ConnectionApi.Api
 			xmlString = xmlString.Replace("utf-16", "utf-8");
 			var contentString = new StringContent(xmlString, encoding: Encoding.UTF8, "application/xml");
 
-			//ConIomImportOptions 
+
 
 			//if (connectionsToCreate != null)
 			//{
 			//	localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
 			//}
+			if (connectionsToCreate == null)
+				connectionsToCreate = new List<int>();
 
-			localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", new List<int>()));
+			localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
 			localVarRequestOptions.Data = contentString;
 
 			localVarRequestOptions.Operation = "ProjectApi.ImportIOMContainer";
@@ -87,8 +120,8 @@ namespace IdeaStatiCa.ConnectionApi.Api
 				}
 			}
 
-			return localVarResponse.Data;
-
+			ActiveProject = localVarResponse.Data;
+            return ActiveProject;
 		}
 
 		/// <inheritdoc cref="ProjectApi.GetSetupAsync(Guid, int, System.Threading.CancellationToken)"/>

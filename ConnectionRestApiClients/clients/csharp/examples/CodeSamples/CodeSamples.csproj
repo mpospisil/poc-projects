@@ -24,7 +24,13 @@
 	  <None Update="Inputs\corner-empty.ideaCon">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
+	  <None Update="Inputs\HSS_norm_cond.ideaCon">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Inputs\multiple_connections.xml">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Inputs\simple cleat connection.ideaCon">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
 	  <None Update="Inputs\simple knee connection.ideaCon">

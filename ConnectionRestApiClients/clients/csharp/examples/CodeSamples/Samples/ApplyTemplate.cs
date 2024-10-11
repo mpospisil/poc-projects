@@ -49,6 +49,7 @@ namespace CodeSamples
 
             //Save the applied template
             await conClient.Project.SaveProjectAsync(projectId, saveFilePath);
+            Console.WriteLine("Project saved to: " + saveFilePath);
 
             //Close the opened project.
             await conClient.Project.CloseProjectAsync(projectId.ToString());

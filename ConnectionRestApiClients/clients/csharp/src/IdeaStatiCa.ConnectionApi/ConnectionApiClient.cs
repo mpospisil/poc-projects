@@ -12,7 +12,6 @@ namespace IdeaStatiCa.ConnectionApi
 	{
 		private bool disposedValue;
 		
-
 		/// <summary>
 		/// 
 		/// </summary>

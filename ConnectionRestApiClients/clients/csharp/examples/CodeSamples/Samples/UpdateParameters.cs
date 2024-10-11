@@ -31,7 +31,7 @@ namespace CodeSamples
 
             foreach (var visibleParam in parametersVisible)
             {
-                if (visibleParam.Key == "NoOfBolts")
+                if (visibleParam.Key == "NoCols")
                 {
                     Console.WriteLine("Current No of Bolt Rows: "+visibleParam.Value);
                     Console.WriteLine("Please Select the Number of Bolt Rows");
@@ -49,6 +49,7 @@ namespace CodeSamples
 
             //Save the applied template
             await conClient.Project.SaveProjectAsync(projectId, saveFilePath);
+            Console.WriteLine("Project saved to: " + saveFilePath);
 
             //Close the opened project.
             await conClient.Project.CloseProjectAsync(projectId.ToString());

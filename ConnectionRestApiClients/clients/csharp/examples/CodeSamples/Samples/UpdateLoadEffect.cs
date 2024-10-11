@@ -13,7 +13,7 @@ namespace CodeSamples
         public static async Task UpdateLoadEffect(ConnectionApiClient conClient)
         {
             string filePath = "inputs/simple knee connection.ideaCon";
-            ConProject conProject = await conClient.Project.OpenProjectFromFileAsync(filePath);
+            ConProject conProject = await conClient.Project.OpenProjectAsync(filePath);
 
             //Get projectId Guid
             Guid projectId = conProject.ProjectId;

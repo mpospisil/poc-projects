@@ -13,7 +13,7 @@ namespace CodeSamples
         public static async Task GenerateReport_NOTWORKING(ConnectionApiClient conClient)
         {
             string filePath = "Inputs/HSS_norm_cond.ideaCon";
-            ConProject conProject = await conClient.Project.OpenProjectFromFileAsync(filePath);
+            ConProject conProject = await conClient.Project.OpenProjectAsync(filePath);
 
             //Get projectId Guid
             Guid projectId = conProject.ProjectId;

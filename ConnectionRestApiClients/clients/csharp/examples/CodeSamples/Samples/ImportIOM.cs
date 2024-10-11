@@ -12,7 +12,7 @@ namespace CodeSamples
     {
         public static async Task ImportIOM(ConnectionApiClient conClient) 
         {
-            string filePath = "inputs/mulitple_connections.xml";
+            string filePath = "Inputs/multiple_connections.xml";
             ConProject conProject = await conClient.Project.CreateProjectFromIomFileAsync(filePath);
 
             //Get projectId Guid

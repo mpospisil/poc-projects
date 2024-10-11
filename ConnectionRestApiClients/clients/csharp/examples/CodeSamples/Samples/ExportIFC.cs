@@ -14,7 +14,7 @@ namespace CodeSamples
         {
             string filePath = "Inputs/simple knee connection.ideaCon";
 
-            ConProject conProject = await conClient.Project.OpenProjectFromFileAsync(filePath);
+            ConProject conProject = await conClient.Project.OpenProjectAsync(filePath);
 
             Guid projectId = conProject.ProjectId;
             var connections = await conClient.Connection.GetAllConnectionsDataAsync(projectId);

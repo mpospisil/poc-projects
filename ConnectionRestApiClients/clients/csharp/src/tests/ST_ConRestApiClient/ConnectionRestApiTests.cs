@@ -25,14 +25,12 @@ namespace ST_ConnectionRestApi
 			ConnectionApiClient = await ApiFactory.CreateConnectionApiClient();
 
 			string connProjectFilePath = Path.Combine(ProjectPath, "Simple-1-ECEN.ideaCon");
-			this.Project = await ConnectionApiClient.OpenProjectAsync(connProjectFilePath);
+			this.Project = await ConnectionApiClient.Project.OpenProjectAsync(connProjectFilePath);
 			this.ActiveProjectId = Project.ProjectId;
 			if (this.ActiveProjectId == Guid.Empty)
 			{
 				throw new Exception("Project is not opened");
 			}
-
-			this.Project = await ConnectionApiClient.Project.GetProjectDataAsync(ActiveProjectId);
 
 			Project.Should().NotBeNull();
 			Project.ProjectId.Should().NotBe(Guid.Empty);
@@ -99,7 +97,7 @@ namespace ST_ConnectionRestApi
 			string tempFileName = Path.GetTempFileName()!;
 			try
 			{
-				await ConnectionApiClient!.Project!.DownloadProjectAsync(ActiveProjectId, tempFileName);
+				await ConnectionApiClient!.Project!.SaveProjectAsync(ActiveProjectId, tempFileName);
 
 				bool fileExists = File.Exists(tempFileName);
 				fileExists.Should().BeTrue("Ideacon project should be downloaded");
@@ -323,7 +321,7 @@ namespace ST_ConnectionRestApi
 
 			using (var apiClient2 = await ApiFactory.CreateConnectionApiClient())
 			{
-				var project2 = await apiClient2!.OpenProjectAsync(connProjectFilePath);
+				var project2 = await apiClient2!.Project.OpenProjectAsync(connProjectFilePath);
 
 				var con1 = project2.Connections.First();
 				List<int> conToCalc = new List<int>() { con1.Id };

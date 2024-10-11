@@ -14,15 +14,6 @@ namespace IdeaStatiCa.ConnectionApi
 #endif
 	{
 		/// <summary>
-		/// Open idea connection project in ConnectionRestApi service
-		/// </summary>
-		/// <param name="path">Idea con file</param>
-		/// <returns></returns>
-		Task<ConProject> OpenProjectAsync(string path);
-
-		Task<ConProject> OpenFromIomFileAsync(string iomFilePath);
-
-		/// <summary>
 		/// ClientID - assigned by the service
 		/// </summary>
 		string ClientId { get; }
@@ -31,6 +22,8 @@ namespace IdeaStatiCa.ConnectionApi
 		/// Id of the open project on the service side
 		/// </summary>
 		Guid ProjectId { get; }
+
+		IClientApi ClientApi { get; }
 
 		/// <summary>
 		/// Get Calculation API
@@ -91,5 +84,11 @@ namespace IdeaStatiCa.ConnectionApi
 		/// Get Template API
 		/// </summary>
 		ITemplateApiAsync Template { get; }
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		Task CreateAsync();
 	}
 }

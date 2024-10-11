@@ -25,7 +25,7 @@ namespace ST_ConnectionRestApi
 			ConnectionApiClient = await ApiFactory.CreateConnectionApiClient();
 
 			string connProjectFilePath = Path.Combine(ProjectPath, "Simple-1-ECEN.ideaCon");
-			this.Project = await ConnectionApiClient.OpenProjectAsync(connProjectFilePath);
+			this.Project = await ConnectionApiClient.Project.OpenProjectAsync(connProjectFilePath);
 			this.ActiveProjectId = Project.ProjectId;
 			if (this.ActiveProjectId == Guid.Empty)
 			{

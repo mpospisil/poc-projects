@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,20 +10,76 @@ namespace IdeaStatiCa.ConnectionApi.Api
 {
 	public interface IProjectApiExtAsync : IProjectApiAsync
 	{
-		Task DownloadProjectAsync(Guid projectId, string fileName);
+		/// <summary>
+		/// 
+		/// </summary>
+		Guid ProjectId { get; }
 
-		Task<ConProject> CreateProjectFromIomFileAsync(string iomFilePath);
+		/// <summary>
+		/// 
+		/// </summary>
+		ConProject ActiveProjectData { get; }
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="filePath"></param>
+		/// <returns></returns>
+		Task<ConProject> OpenProjectAsync(string filePath);
+
+		Task SaveProjectAsync(Guid projectId, string fileName);
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="iomFilePath"></param>
+		/// <param name="connectionsToCreate"></param>
+		/// <returns></returns>
+		Task<ConProject> CreateProjectFromIomFileAsync(string iomFilePath, List<int> connectionsToCreate = null);
 	}
 
-
+	/// <summary>
+	/// 
+	/// </summary>
 	public class ProjectApiExt : ProjectApi, IProjectApiExtAsync
 	{
-		/// <inheritdoc cref="ProjectApi.ProjectApi(IdeaStatiCa.ConnectionApi.Client.ISynchronousClient, IdeaStatiCa.ConnectionApi.Client.IAsynchronousClient, IdeaStatiCa.ConnectionApi.Client.IReadableConfiguration)"/>/>
-		public ProjectApiExt(IdeaStatiCa.ConnectionApi.Client.ISynchronousClient client, IdeaStatiCa.ConnectionApi.Client.IAsynchronousClient asyncClient, IdeaStatiCa.ConnectionApi.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
+		private readonly IConnectionApiClient _connectionApiClient;
+
+		public ProjectApiExt(IConnectionApiClient connectionApiClient, IdeaStatiCa.ConnectionApi.Client.ISynchronousClient client, IdeaStatiCa.ConnectionApi.Client.IAsynchronousClient asyncClient, IdeaStatiCa.ConnectionApi.Client.IReadableConfiguration configuration) : base(client, asyncClient, configuration)
 		{
+			this._connectionApiClient = connectionApiClient;
 		}
 
-		public async Task DownloadProjectAsync(Guid projectId, string fileName)
+		/// <inheritdoc cref="IConnectionApiClient.ProjectId"/>/>
+		public Guid ProjectId
+		{
+			get => ActiveProjectData == null ? Guid.Empty : ActiveProjectData.ProjectId;
+		}
+
+		/// <summary>
+		/// Data about the active project
+		/// </summary>
+		public ConProject ActiveProjectData { get; private set; } = null;
+
+		public async Task<ConProject> OpenProjectAsync(string path)
+		{
+			//await CreateAsync();
+
+			using (var fs = new System.IO.FileStream(path, System.IO.FileMode.Open))
+			{
+				using (var ms = new System.IO.MemoryStream())
+				{
+					await fs.CopyToAsync(ms);
+					ms.Seek(0, System.IO.SeekOrigin.Begin);
+					var conProject = await OpenProjectAsync(ms);
+					this.ActiveProjectData = conProject;
+				}
+			}
+
+			return this.ActiveProjectData;
+		}
+
+		public async Task SaveProjectAsync(Guid projectId, string fileName)
 		{
 			var response = await base.DownloadProjectWithHttpInfoAsync(projectId, "application/octet-stream");
 			byte[] buffer = (byte[])response.Data;
@@ -34,7 +89,7 @@ namespace IdeaStatiCa.ConnectionApi.Api
 			}
 		}
 
-		public async Task<ConProject> CreateProjectFromIomFileAsync(string fileName)
+		public async Task<ConProject> CreateProjectFromIomFileAsync(string fileName, List<int> connectionsToCreate = null)
 		{
 			IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
 

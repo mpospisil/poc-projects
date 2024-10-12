@@ -66,8 +66,11 @@ class IdeaStatiCaClient:
             if ext == '.ideacon':
                 uploadRes = self.project.open_project(idea_con_file=byte_array, _content_type='multipart/form-data')
                 self.project_id = uploadRes.project_id
+
             elif ext == '.xml' or ext == '.iom':
-                raise ValueError(f"TODO - Not implemented yet")
+                uploadRes = self.project.import_iom(byte_array, _content_type='multipart/form-data')
+                self.project_id = uploadRes.project_id
+                
             else:
                 raise ValueError(f"Unsupported file type: {ext}")
 

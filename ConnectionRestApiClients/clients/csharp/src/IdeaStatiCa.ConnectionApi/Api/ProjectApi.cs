@@ -130,49 +130,28 @@ namespace IdeaStatiCa.ConnectionApi.Api
         /// <returns>ApiResponse of ConnectionSetup</returns>
         ApiResponse<ConnectionSetup> GetSetupWithHttpInfo(Guid projectId, string requestedType = null, int operationIndex = 0);
         /// <summary>
-        /// Creates an IDEA Connection project. IOM is passed in the body of the request.
+        /// Create the IDEA Connection project from IOM provided in xml format.  The parameter &#39;containerXmlFile&#39; passed in HTTP body represents :  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  which is serialized to XML string by  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt;
         /// </summary>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="connectionsToCreate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConProject</returns>
-        ConProject ImportIOM(List<int> connectionsToCreate = default(List<int>), int operationIndex = 0);
+        ConProject ImportIOM(System.IO.Stream containerXmlFile = default(System.IO.Stream), List<int> connectionsToCreate = default(List<int>), int operationIndex = 0);
 
         /// <summary>
-        /// Creates an IDEA Connection project. IOM is passed in the body of the request.
+        /// Create the IDEA Connection project from IOM provided in xml format.  The parameter &#39;containerXmlFile&#39; passed in HTTP body represents :  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  which is serialized to XML string by  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt;
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectionsToCreate"> (optional)</param>
+        /// <param name="containerXmlFile"> (optional)</param>
+/// <param name="connectionsToCreate"> (optional)</param>
         /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConProject</returns>
-        ApiResponse<ConProject> ImportIOMWithHttpInfo(List<int> connectionsToCreate = default(List<int>), string requestedType = null, int operationIndex = 0);
-        /// <summary>
-        /// Creates an IDEA Connection project from model (model and results)
-        /// </summary>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectionsToCreate"> (optional)</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ConProject</returns>
-        ConProject ImportIOMContainer(List<int> connectionsToCreate = default(List<int>), OpenModelContainer openModelContainer = default(OpenModelContainer), int operationIndex = 0);
-
-        /// <summary>
-        /// Creates an IDEA Connection project from model (model and results)
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectionsToCreate"> (optional)</param>
-/// <param name="openModelContainer"> (optional)</param>
-        /// <param name="requestedType">Requested content type in the response.</param>        
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ConProject</returns>
-        ApiResponse<ConProject> ImportIOMContainerWithHttpInfo(List<int> connectionsToCreate = default(List<int>), OpenModelContainer openModelContainer = default(OpenModelContainer), string requestedType = null, int operationIndex = 0);
+        ApiResponse<ConProject> ImportIOMWithHttpInfo(System.IO.Stream containerXmlFile = default(System.IO.Stream), List<int> connectionsToCreate = default(List<int>), string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Open ideacon project from ideaConFile
         /// </summary>
@@ -195,49 +174,28 @@ namespace IdeaStatiCa.ConnectionApi.Api
         /// <returns>ApiResponse of ConProject</returns>
         ApiResponse<ConProject> OpenProjectWithHttpInfo(System.IO.Stream ideaConFile = default(System.IO.Stream), string requestedType = null, int operationIndex = 0);
         /// <summary>
-        /// Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
+        /// Update the IDEA Connection project by &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  (model and results).  IOM is passed in the body of the request as the xml string.  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; should be used to generate the valid xml string
         /// </summary>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>bool</returns>
-        bool UpdateFromIOM(Guid projectId, int operationIndex = 0);
+        /// <returns>ConProject</returns>
+        ConProject UpdateFromIOM(Guid projectId, System.IO.Stream containerXmlFile = default(System.IO.Stream), int operationIndex = 0);
 
         /// <summary>
-        /// Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
+        /// Update the IDEA Connection project by &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  (model and results).  IOM is passed in the body of the request as the xml string.  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; should be used to generate the valid xml string
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
+/// <param name="containerXmlFile"> (optional)</param>
         /// <param name="requestedType">Requested content type in the response.</param>        
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of bool</returns>
-        ApiResponse<bool> UpdateFromIOMWithHttpInfo(Guid projectId, string requestedType = null, int operationIndex = 0);
-        /// <summary>
-        /// Update an IDEA Connection project by model (model and results)
-        /// </summary>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>bool</returns>
-        bool UpdateFromIOMContainer(Guid projectId, OpenModelContainer openModelContainer = default(OpenModelContainer), int operationIndex = 0);
-
-        /// <summary>
-        /// Update an IDEA Connection project by model (model and results)
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
-/// <param name="openModelContainer"> (optional)</param>
-        /// <param name="requestedType">Requested content type in the response.</param>        
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of bool</returns>
-        ApiResponse<bool> UpdateFromIOMContainerWithHttpInfo(Guid projectId, OpenModelContainer openModelContainer = default(OpenModelContainer), string requestedType = null, int operationIndex = 0);
+        /// <returns>ApiResponse of ConProject</returns>
+        ApiResponse<ConProject> UpdateFromIOMWithHttpInfo(Guid projectId, System.IO.Stream containerXmlFile = default(System.IO.Stream), string requestedType = null, int operationIndex = 0);
         /// <summary>
         /// Updates ConProjectData of project
         /// </summary>
@@ -422,59 +380,33 @@ namespace IdeaStatiCa.ConnectionApi.Api
         /// <returns>Task of ApiResponse (ConnectionSetup)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConnectionSetup>> GetSetupWithHttpInfoAsync(Guid projectId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Creates an IDEA Connection project. IOM is passed in the body of the request.
+        /// Create the IDEA Connection project from IOM provided in xml format.  The parameter &#39;containerXmlFile&#39; passed in HTTP body represents :  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  which is serialized to XML string by  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt;
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="connectionsToCreate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConProject</returns>
-        System.Threading.Tasks.Task<ConProject> ImportIOMAsync(List<int> connectionsToCreate = default(List<int>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConProject> ImportIOMAsync(System.IO.Stream containerXmlFile = default(System.IO.Stream), List<int> connectionsToCreate = default(List<int>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Creates an IDEA Connection project. IOM is passed in the body of the request.
+        /// Create the IDEA Connection project from IOM provided in xml format.  The parameter &#39;containerXmlFile&#39; passed in HTTP body represents :  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  which is serialized to XML string by  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt;
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="connectionsToCreate"> (optional)</param>
         /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConProject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConProject>> ImportIOMWithHttpInfoAsync(List<int> connectionsToCreate = default(List<int>), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Creates an IDEA Connection project from model (model and results)
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectionsToCreate"> (optional)</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ConProject</returns>
-        System.Threading.Tasks.Task<ConProject> ImportIOMContainerAsync(List<int> connectionsToCreate = default(List<int>), OpenModelContainer openModelContainer = default(OpenModelContainer), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Creates an IDEA Connection project from model (model and results)
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectionsToCreate"> (optional)</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="requestedType">Requested content type in the response.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ConProject)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConProject>> ImportIOMContainerWithHttpInfoAsync(List<int> connectionsToCreate = default(List<int>), OpenModelContainer openModelContainer = default(OpenModelContainer), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConProject>> ImportIOMWithHttpInfoAsync(System.IO.Stream containerXmlFile = default(System.IO.Stream), List<int> connectionsToCreate = default(List<int>), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Open ideacon project from ideaConFile
         /// </summary>
@@ -502,59 +434,33 @@ namespace IdeaStatiCa.ConnectionApi.Api
         /// <returns>Task of ApiResponse (ConProject)</returns>
         System.Threading.Tasks.Task<ApiResponse<ConProject>> OpenProjectWithHttpInfoAsync(System.IO.Stream ideaConFile = default(System.IO.Stream), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
+        /// Update the IDEA Connection project by &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  (model and results).  IOM is passed in the body of the request as the xml string.  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; should be used to generate the valid xml string
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of bool</returns>
-        System.Threading.Tasks.Task<bool> UpdateFromIOMAsync(Guid projectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ConProject</returns>
+        System.Threading.Tasks.Task<ConProject> UpdateFromIOMAsync(Guid projectId, System.IO.Stream containerXmlFile = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
+        /// Update the IDEA Connection project by &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  (model and results).  IOM is passed in the body of the request as the xml string.  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; should be used to generate the valid xml string
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (bool)</returns>
-        System.Threading.Tasks.Task<ApiResponse<bool>> UpdateFromIOMWithHttpInfoAsync(Guid projectId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Update an IDEA Connection project by model (model and results)
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of bool</returns>
-        System.Threading.Tasks.Task<bool> UpdateFromIOMContainerAsync(Guid projectId, OpenModelContainer openModelContainer = default(OpenModelContainer), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Update an IDEA Connection project by model (model and results)
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="requestedType">Requested content type in the response.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (bool)</returns>
-        System.Threading.Tasks.Task<ApiResponse<bool>> UpdateFromIOMContainerWithHttpInfoAsync(Guid projectId, OpenModelContainer openModelContainer = default(OpenModelContainer), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ConProject)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConProject>> UpdateFromIOMWithHttpInfoAsync(Guid projectId, System.IO.Stream containerXmlFile = default(System.IO.Stream), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Updates ConProjectData of project
         /// </summary>
@@ -1454,31 +1360,34 @@ namespace IdeaStatiCa.ConnectionApi.Api
         }
 
         /// <summary>
-        /// Creates an IDEA Connection project. IOM is passed in the body of the request. 
+        /// Create the IDEA Connection project from IOM provided in xml format.  The parameter &#39;containerXmlFile&#39; passed in HTTP body represents :  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  which is serialized to XML string by  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; 
         /// </summary>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="connectionsToCreate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ConProject</returns>
-        public ConProject ImportIOM(List<int> connectionsToCreate = default(List<int>), int operationIndex = 0)
+        public ConProject ImportIOM(System.IO.Stream containerXmlFile = default(System.IO.Stream), List<int> connectionsToCreate = default(List<int>), int operationIndex = 0)
         {
-            IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> localVarResponse = ImportIOMWithHttpInfo(connectionsToCreate);
+            IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> localVarResponse = ImportIOMWithHttpInfo(containerXmlFile, connectionsToCreate);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Creates an IDEA Connection project. IOM is passed in the body of the request. 
+        /// Create the IDEA Connection project from IOM provided in xml format.  The parameter &#39;containerXmlFile&#39; passed in HTTP body represents :  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  which is serialized to XML string by  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; 
         /// </summary>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectionsToCreate"> (optional)</param>
+        /// <param name="containerXmlFile"> (optional)</param>
+/// <param name="connectionsToCreate"> (optional)</param>
         /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ConProject</returns>
-        public IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> ImportIOMWithHttpInfo(List<int> connectionsToCreate = default(List<int>), string requestedType = null, int operationIndex = 0)
+        public IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> ImportIOMWithHttpInfo(System.IO.Stream containerXmlFile = default(System.IO.Stream), List<int> connectionsToCreate = default(List<int>), string requestedType = null, int operationIndex = 0)
         {
             IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "multipart/form-data"
             };
 
             // to determine the Accept header
@@ -1503,9 +1412,13 @@ namespace IdeaStatiCa.ConnectionApi.Api
                 }
             }
 
+            if (containerXmlFile != null)
+            {
+                localVarRequestOptions.FileParameters.Add("containerXmlFile", containerXmlFile);
+            }
             if (connectionsToCreate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
+                localVarRequestOptions.FormParameters.Add("ConnectionsToCreate", IdeaStatiCa.ConnectionApi.Client.ClientUtils.Serialize(connectionsToCreate)); // form parameter
             }
 
             localVarRequestOptions.Operation = "ProjectApi.ImportIOM";
@@ -1527,34 +1440,37 @@ namespace IdeaStatiCa.ConnectionApi.Api
         }
 
         /// <summary>
-        /// Creates an IDEA Connection project. IOM is passed in the body of the request. 
+        /// Create the IDEA Connection project from IOM provided in xml format.  The parameter &#39;containerXmlFile&#39; passed in HTTP body represents :  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  which is serialized to XML string by  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; 
         /// </summary>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="connectionsToCreate"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConProject</returns>
-        public async System.Threading.Tasks.Task<ConProject> ImportIOMAsync(List<int> connectionsToCreate = default(List<int>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConProject> ImportIOMAsync(System.IO.Stream containerXmlFile = default(System.IO.Stream), List<int> connectionsToCreate = default(List<int>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> localVarResponse = await ImportIOMWithHttpInfoAsync(connectionsToCreate, null, operationIndex, cancellationToken).ConfigureAwait(false);
+            IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> localVarResponse = await ImportIOMWithHttpInfoAsync(containerXmlFile, connectionsToCreate, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Creates an IDEA Connection project. IOM is passed in the body of the request. 
+        /// Create the IDEA Connection project from IOM provided in xml format.  The parameter &#39;containerXmlFile&#39; passed in HTTP body represents :  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  which is serialized to XML string by  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; 
         /// </summary>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="connectionsToCreate"> (optional)</param>
         /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConProject)</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject>> ImportIOMWithHttpInfoAsync(List<int> connectionsToCreate = default(List<int>), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject>> ImportIOMWithHttpInfoAsync(System.IO.Stream containerXmlFile = default(System.IO.Stream), List<int> connectionsToCreate = default(List<int>), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "multipart/form-data"
             };
 
             // to determine the Accept header
@@ -1579,9 +1495,13 @@ namespace IdeaStatiCa.ConnectionApi.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (containerXmlFile != null)
+            {
+                localVarRequestOptions.FileParameters.Add("containerXmlFile", containerXmlFile);
+            }
             if (connectionsToCreate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
+                localVarRequestOptions.FormParameters.Add("ConnectionsToCreate", IdeaStatiCa.ConnectionApi.Client.ClientUtils.Serialize(connectionsToCreate)); // form parameter
             }
 
             localVarRequestOptions.Operation = "ProjectApi.ImportIOM";
@@ -1594,164 +1514,6 @@ namespace IdeaStatiCa.ConnectionApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ImportIOM", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Creates an IDEA Connection project from model (model and results) 
-        /// </summary>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectionsToCreate"> (optional)</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ConProject</returns>
-        public ConProject ImportIOMContainer(List<int> connectionsToCreate = default(List<int>), OpenModelContainer openModelContainer = default(OpenModelContainer), int operationIndex = 0)
-        {
-            IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> localVarResponse = ImportIOMContainerWithHttpInfo(connectionsToCreate, openModelContainer);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Creates an IDEA Connection project from model (model and results) 
-        /// </summary>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectionsToCreate"> (optional)</param>
-/// <param name="openModelContainer"> (optional)</param>
-        /// <param name="requestedType">Requested content type in the response.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ConProject</returns>
-        public IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> ImportIOMContainerWithHttpInfo(List<int> connectionsToCreate = default(List<int>), OpenModelContainer openModelContainer = default(OpenModelContainer), string requestedType = null, int operationIndex = 0)
-        {
-            IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/xml"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = IdeaStatiCa.ConnectionApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            string localVarAccept = requestedType;
-
-            if(string.IsNullOrEmpty(localVarAccept))
-            {
-                localVarAccept = IdeaStatiCa.ConnectionApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
-                if (localVarAccept != null)
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-                }
-            }
-
-            if (connectionsToCreate != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
-            }
-            localVarRequestOptions.Data = openModelContainer;
-
-            localVarRequestOptions.Operation = "ProjectApi.ImportIOMContainer";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<ConProject>("/api/1/projects/import-iom", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ImportIOMContainer", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Creates an IDEA Connection project from model (model and results) 
-        /// </summary>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectionsToCreate"> (optional)</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ConProject</returns>
-        public async System.Threading.Tasks.Task<ConProject> ImportIOMContainerAsync(List<int> connectionsToCreate = default(List<int>), OpenModelContainer openModelContainer = default(OpenModelContainer), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> localVarResponse = await ImportIOMContainerWithHttpInfoAsync(connectionsToCreate, openModelContainer, null, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Creates an IDEA Connection project from model (model and results) 
-        /// </summary>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="connectionsToCreate"> (optional)</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="requestedType">Requested content type in the response.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ConProject)</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject>> ImportIOMContainerWithHttpInfoAsync(List<int> connectionsToCreate = default(List<int>), OpenModelContainer openModelContainer = default(OpenModelContainer), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/xml"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = IdeaStatiCa.ConnectionApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            string localVarAccept = requestedType;
-            if(string.IsNullOrEmpty(localVarAccept))
-            {
-                localVarAccept = IdeaStatiCa.ConnectionApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            }
-
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            if (connectionsToCreate != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
-            }
-            localVarRequestOptions.Data = openModelContainer;
-
-            localVarRequestOptions.Operation = "ProjectApi.ImportIOMContainer";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<ConProject>("/api/1/projects/import-iom", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ImportIOMContainer", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1914,31 +1676,34 @@ namespace IdeaStatiCa.ConnectionApi.Api
         }
 
         /// <summary>
-        /// Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request. 
+        /// Update the IDEA Connection project by &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  (model and results).  IOM is passed in the body of the request as the xml string.  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; should be used to generate the valid xml string 
         /// </summary>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>bool</returns>
-        public bool UpdateFromIOM(Guid projectId, int operationIndex = 0)
+        /// <returns>ConProject</returns>
+        public ConProject UpdateFromIOM(Guid projectId, System.IO.Stream containerXmlFile = default(System.IO.Stream), int operationIndex = 0)
         {
-            IdeaStatiCa.ConnectionApi.Client.ApiResponse<bool> localVarResponse = UpdateFromIOMWithHttpInfo(projectId);
+            IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> localVarResponse = UpdateFromIOMWithHttpInfo(projectId, containerXmlFile);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request. 
+        /// Update the IDEA Connection project by &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  (model and results).  IOM is passed in the body of the request as the xml string.  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; should be used to generate the valid xml string 
         /// </summary>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
+/// <param name="containerXmlFile"> (optional)</param>
         /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of bool</returns>
-        public IdeaStatiCa.ConnectionApi.Client.ApiResponse<bool> UpdateFromIOMWithHttpInfo(Guid projectId, string requestedType = null, int operationIndex = 0)
+        /// <returns>ApiResponse of ConProject</returns>
+        public IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> UpdateFromIOMWithHttpInfo(Guid projectId, System.IO.Stream containerXmlFile = default(System.IO.Stream), string requestedType = null, int operationIndex = 0)
         {
             IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "multipart/form-data"
             };
 
             // to determine the Accept header
@@ -1964,13 +1729,17 @@ namespace IdeaStatiCa.ConnectionApi.Api
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            if (containerXmlFile != null)
+            {
+                localVarRequestOptions.FileParameters.Add("containerXmlFile", containerXmlFile);
+            }
 
             localVarRequestOptions.Operation = "ProjectApi.UpdateFromIOM";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<bool>("/api/1/projects/{projectId}/update-iom-file", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ConProject>("/api/1/projects/{projectId}/update-iom-file", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateFromIOM", localVarResponse);
@@ -1984,34 +1753,37 @@ namespace IdeaStatiCa.ConnectionApi.Api
         }
 
         /// <summary>
-        /// Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request. 
+        /// Update the IDEA Connection project by &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  (model and results).  IOM is passed in the body of the request as the xml string.  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; should be used to generate the valid xml string 
         /// </summary>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of bool</returns>
-        public async System.Threading.Tasks.Task<bool> UpdateFromIOMAsync(Guid projectId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ConProject</returns>
+        public async System.Threading.Tasks.Task<ConProject> UpdateFromIOMAsync(Guid projectId, System.IO.Stream containerXmlFile = default(System.IO.Stream), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            IdeaStatiCa.ConnectionApi.Client.ApiResponse<bool> localVarResponse = await UpdateFromIOMWithHttpInfoAsync(projectId, null, operationIndex, cancellationToken).ConfigureAwait(false);
+            IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject> localVarResponse = await UpdateFromIOMWithHttpInfoAsync(projectId, containerXmlFile, null, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request. 
+        /// Update the IDEA Connection project by &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\&quot;&gt;IdeaRS.OpenModel.OpenModelContainer&lt;/see&gt;  (model and results).  IOM is passed in the body of the request as the xml string.  &lt;see href&#x3D;\&quot;https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\&quot;&gt;IdeaRS.OpenModel.Tools.OpenModelContainerToXml&lt;/see&gt; should be used to generate the valid xml string 
         /// </summary>
         /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
+        /// <param name="containerXmlFile"> (optional)</param>
         /// <param name="requestedType">Requested content type in the response.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (bool)</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCa.ConnectionApi.Client.ApiResponse<bool>> UpdateFromIOMWithHttpInfoAsync(Guid projectId, string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ConProject)</returns>
+        public async System.Threading.Tasks.Task<IdeaStatiCa.ConnectionApi.Client.ApiResponse<ConProject>> UpdateFromIOMWithHttpInfoAsync(Guid projectId, System.IO.Stream containerXmlFile = default(System.IO.Stream), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "multipart/form-data"
             };
 
             // to determine the Accept header
@@ -2037,169 +1809,21 @@ namespace IdeaStatiCa.ConnectionApi.Api
             }
 
             localVarRequestOptions.PathParameters.Add("projectId", IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            if (containerXmlFile != null)
+            {
+                localVarRequestOptions.FileParameters.Add("containerXmlFile", containerXmlFile);
+            }
 
             localVarRequestOptions.Operation = "ProjectApi.UpdateFromIOM";
             localVarRequestOptions.OperationIndex = operationIndex;
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<bool>("/api/1/projects/{projectId}/update-iom-file", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ConProject>("/api/1/projects/{projectId}/update-iom-file", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateFromIOM", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update an IDEA Connection project by model (model and results) 
-        /// </summary>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>bool</returns>
-        public bool UpdateFromIOMContainer(Guid projectId, OpenModelContainer openModelContainer = default(OpenModelContainer), int operationIndex = 0)
-        {
-            IdeaStatiCa.ConnectionApi.Client.ApiResponse<bool> localVarResponse = UpdateFromIOMContainerWithHttpInfo(projectId, openModelContainer);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update an IDEA Connection project by model (model and results) 
-        /// </summary>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
-/// <param name="openModelContainer"> (optional)</param>
-        /// <param name="requestedType">Requested content type in the response.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of bool</returns>
-        public IdeaStatiCa.ConnectionApi.Client.ApiResponse<bool> UpdateFromIOMContainerWithHttpInfo(Guid projectId, OpenModelContainer openModelContainer = default(OpenModelContainer), string requestedType = null, int operationIndex = 0)
-        {
-            IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/xml"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = IdeaStatiCa.ConnectionApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            string localVarAccept = requestedType;
-
-            if(string.IsNullOrEmpty(localVarAccept))
-            {
-                localVarAccept = IdeaStatiCa.ConnectionApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
-                if (localVarAccept != null)
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-                }
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = openModelContainer;
-
-            localVarRequestOptions.Operation = "ProjectApi.UpdateFromIOMContainer";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<bool>("/api/1/projects/{projectId}/update-iom", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdateFromIOMContainer", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update an IDEA Connection project by model (model and results) 
-        /// </summary>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of bool</returns>
-        public async System.Threading.Tasks.Task<bool> UpdateFromIOMContainerAsync(Guid projectId, OpenModelContainer openModelContainer = default(OpenModelContainer), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            IdeaStatiCa.ConnectionApi.Client.ApiResponse<bool> localVarResponse = await UpdateFromIOMContainerWithHttpInfoAsync(projectId, openModelContainer, null, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update an IDEA Connection project by model (model and results) 
-        /// </summary>
-        /// <exception cref="IdeaStatiCa.ConnectionApi.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="projectId">The unique identifier of the opened project in the ConnectionRestApi service to be updated</param>
-        /// <param name="openModelContainer"> (optional)</param>
-        /// <param name="requestedType">Requested content type in the response.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (bool)</returns>
-        public async System.Threading.Tasks.Task<IdeaStatiCa.ConnectionApi.Client.ApiResponse<bool>> UpdateFromIOMContainerWithHttpInfoAsync(Guid projectId, OpenModelContainer openModelContainer = default(OpenModelContainer), string requestedType = null, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-
-            IdeaStatiCa.ConnectionApi.Client.RequestOptions localVarRequestOptions = new IdeaStatiCa.ConnectionApi.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/xml"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = IdeaStatiCa.ConnectionApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            string localVarAccept = requestedType;
-            if(string.IsNullOrEmpty(localVarAccept))
-            {
-                localVarAccept = IdeaStatiCa.ConnectionApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            }
-
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("projectId", IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.Data = openModelContainer;
-
-            localVarRequestOptions.Operation = "ProjectApi.UpdateFromIOMContainer";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<bool>("/api/1/projects/{projectId}/update-iom", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdateFromIOMContainer", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

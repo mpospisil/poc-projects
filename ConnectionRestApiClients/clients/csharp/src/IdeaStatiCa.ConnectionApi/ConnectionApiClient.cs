@@ -1,6 +1,5 @@
 ﻿using IdeaStatiCa.ConnectionApi.Api;
 using IdeaStatiCa.ConnectionApi.Client;
-using IdeaStatiCa.ConnectionApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +18,13 @@ namespace IdeaStatiCa.ConnectionApi
 
 		/// <inheritdoc cref="IConnectionApiClient.ClientId"/>/>
 		public string ClientId { get; private set; }
+
+
+		/// <inheritdoc cref="IConnectionApiClient.ProjectId"/>/>
+		public Guid ProjectId
+		{
+			get => this.Project.ProjectId;
+		}
 
 		/// <summary>
 		/// Client API
@@ -88,35 +94,6 @@ namespace IdeaStatiCa.ConnectionApi
 			await CreateClientAsync();
 		}
 
-		//public async Task<ConProject> OpenFromIomFileAsync(string iomFilePath)
-		//{
-		//	await CreateAsync();
-
-		//	var conProject = await this.Project.CreateProjectFromIomFileAsync(iomFilePath);
-		//	this.ActiveProject = conProject;
-		//	this.ProjectId = conProject.ProjectId;
-
-		//	return conProject;
-		//}
-
-		//public async Task<ConProject> OpenProjectAsync(string path)
-		//{
-		//	await CreateAsync();
-
-		//	using (var fs = new System.IO.FileStream(path, System.IO.FileMode.Open))
-		//	{
-		//		using (var ms = new System.IO.MemoryStream())
-		//		{
-		//			await fs.CopyToAsync(ms);
-		//			ms.Seek(0, System.IO.SeekOrigin.Begin);
-		//			var conProject = await this.Project.OpenProjectAsync(ms);
-		//			this.ActiveProject = conProject;
-		//			this.ProjectId = conProject.ProjectId;
-		//		}
-		//	}
-		//}
-
-
 		private async Task CloseAsync()
 		{
 			if(Project != null)
@@ -165,7 +142,7 @@ namespace IdeaStatiCa.ConnectionApi
 			this.Operation = new OperationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Parameter = new ParameterApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Presentation = new PresentationApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
-			this.Project = new ProjectApiExt(clientApi.Client, clientApi.AsynchronousClient, configuration);
+			this.Project = new ProjectApiExt(this, clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Report = new ReportApi(clientApi.Client, clientApi.AsynchronousClient, configuration);
 			this.Template = new TemplateApiExt(iomClient, iomClient, configuration);
 
@@ -205,6 +182,12 @@ namespace IdeaStatiCa.ConnectionApi
 			}
 		}
 
+		/// <summary>
+		/// Dispose for oll .Net Frameworks
+		/// C# 8.0 and higher should use DisposeAsync
+		/// <see href="https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-disposeasync"/>
+		/// </summary>
+		[Obsolete("Use DisposeAsync")]
 		public void Dispose()
 		{
 			// Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method

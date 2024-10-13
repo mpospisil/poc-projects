@@ -19,6 +19,16 @@ namespace IdeaStatiCa.ConnectionApi
 		string ClientId { get; }
 
 		/// <summary>
+		/// Id of the open project on the service side
+		/// </summary>
+		Guid ProjectId { get; }
+
+        /// <summary>
+        /// Get Client API
+        /// </summary>
+        IClientApi ClientApi { get; }
+
+		/// <summary>
 		/// Get Calculation API
 		/// </summary>
 		ICalculationApiAsync Calculation { get; }
@@ -77,5 +87,11 @@ namespace IdeaStatiCa.ConnectionApi
         /// Get Template API
         /// </summary>
         ITemplateApiExtAsync Template { get; }
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		Task CreateAsync();
 	}
 }

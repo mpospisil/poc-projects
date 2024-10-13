@@ -18,7 +18,6 @@ import http from 'http';
 import { ConProject } from '../model/conProject';
 import { ConProjectData } from '../model/conProjectData';
 import { ConnectionSetup } from '../model/connectionSetup';
-import { OpenModelContainer } from '../model/openModelContainer';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
 
@@ -421,10 +420,11 @@ export class ProjectApi {
     }
     /**
      * 
-     * @summary Creates an IDEA Connection project. IOM is passed in the body of the request.
+     * @summary Create the IDEA Connection project from IOM provided in xml format.  The parameter \'containerXmlFile\' passed in HTTP body represents :  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  which is serialized to XML string by  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see>
+     * @param containerXmlFile 
      * @param connectionsToCreate 
      */
-    public async importIOM (connectionsToCreate?: Array<number>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ConProject;  }> {
+    public async importIOM (containerXmlFile?: RequestFile, connectionsToCreate?: Array<number>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ConProject;  }> {
         const localVarPath = this.basePath + '/api/1/projects/import-iom-file';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -437,13 +437,18 @@ export class ProjectApi {
         }
         let localVarFormParams: any = {};
 
-        if (connectionsToCreate !== undefined) {
-            localVarQueryParameters['ConnectionsToCreate'] = ObjectSerializer.serialize(connectionsToCreate, "Array<number>");
-        }
-
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
+
+        if (containerXmlFile !== undefined) {
+            localVarFormParams['containerXmlFile'] = containerXmlFile;
+        }
+        localVarUseFormData = true;
+
+        if (connectionsToCreate !== undefined) {
+            localVarFormParams['ConnectionsToCreate'] = ObjectSerializer.serialize(connectionsToCreate, "Array<number>");
+        }
 
         let localVarRequestOptions: localVarRequest.Options = {
             method: 'POST',
@@ -452,75 +457,6 @@ export class ProjectApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
-        };
-
-        let authenticationPromise = Promise.resolve();
-        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
-
-        let interceptorPromise = authenticationPromise;
-        for (const interceptor of this.interceptors) {
-            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
-        }
-
-        return interceptorPromise.then(() => {
-            if (Object.keys(localVarFormParams).length) {
-                if (localVarUseFormData) {
-                    (<any>localVarRequestOptions).formData = localVarFormParams;
-                } else {
-                    localVarRequestOptions.form = localVarFormParams;
-                }
-            }
-            return new Promise<{ response: http.IncomingMessage; body: ConProject;  }>((resolve, reject) => {
-                localVarRequest(localVarRequestOptions, (error, response, body) => {
-                    if (error) {
-                        reject(error);
-                    } else {
-                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "ConProject");
-                            resolve({ response: response, body: body });
-                        } else {
-                            reject(new HttpError(response, body, response.statusCode));
-                        }
-                    }
-                });
-            });
-        });
-    }
-    /**
-     * 
-     * @summary Creates an IDEA Connection project from model (model and results)
-     * @param connectionsToCreate 
-     * @param openModelContainer 
-     */
-    public async importIOMContainer (connectionsToCreate?: Array<number>, openModelContainer?: OpenModelContainer, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ConProject;  }> {
-        const localVarPath = this.basePath + '/api/1/projects/import-iom';
-        let localVarQueryParameters: any = {};
-        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json'];
-        // give precedence to 'application/json'
-        if (produces.indexOf('application/json') >= 0) {
-            localVarHeaderParams.Accept = 'application/json';
-        } else {
-            localVarHeaderParams.Accept = produces.join(',');
-        }
-        let localVarFormParams: any = {};
-
-        if (connectionsToCreate !== undefined) {
-            localVarQueryParameters['ConnectionsToCreate'] = ObjectSerializer.serialize(connectionsToCreate, "Array<number>");
-        }
-
-        (<any>Object).assign(localVarHeaderParams, options.headers);
-
-        let localVarUseFormData = false;
-
-        let localVarRequestOptions: localVarRequest.Options = {
-            method: 'POST',
-            qs: localVarQueryParameters,
-            headers: localVarHeaderParams,
-            uri: localVarPath,
-            useQuerystring: this._useQuerystring,
-            json: true,
-            body: ObjectSerializer.serialize(openModelContainer, "OpenModelContainer")
         };
 
         let authenticationPromise = Promise.resolve();
@@ -625,10 +561,11 @@ export class ProjectApi {
     }
     /**
      * 
-     * @summary Update an IDEA Connection project based on OpenModelContainer (model and results). IOM is passed in the body of the request.
+     * @summary Update the IDEA Connection project by <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs\">IdeaRS.OpenModel.OpenModelContainer</see>  (model and results).  IOM is passed in the body of the request as the xml string.  <see href=\"https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Tools.cs\">IdeaRS.OpenModel.Tools.OpenModelContainerToXml</see> should be used to generate the valid xml string
      * @param projectId The unique identifier of the opened project in the ConnectionRestApi service to be updated
+     * @param containerXmlFile 
      */
-    public async updateFromIOM (projectId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: boolean;  }> {
+    public async updateFromIOM (projectId: string, containerXmlFile?: RequestFile, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ConProject;  }> {
         const localVarPath = this.basePath + '/api/1/projects/{projectId}/update-iom-file'
             .replace('{' + 'projectId' + '}', encodeURIComponent(String(projectId)));
         let localVarQueryParameters: any = {};
@@ -651,6 +588,11 @@ export class ProjectApi {
 
         let localVarUseFormData = false;
 
+        if (containerXmlFile !== undefined) {
+            localVarFormParams['containerXmlFile'] = containerXmlFile;
+        }
+        localVarUseFormData = true;
+
         let localVarRequestOptions: localVarRequest.Options = {
             method: 'POST',
             qs: localVarQueryParameters,
@@ -676,84 +618,13 @@ export class ProjectApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: boolean;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ConProject;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "boolean");
-                            resolve({ response: response, body: body });
-                        } else {
-                            reject(new HttpError(response, body, response.statusCode));
-                        }
-                    }
-                });
-            });
-        });
-    }
-    /**
-     * 
-     * @summary Update an IDEA Connection project by model (model and results)
-     * @param projectId The unique identifier of the opened project in the ConnectionRestApi service to be updated
-     * @param openModelContainer 
-     */
-    public async updateFromIOMContainer (projectId: string, openModelContainer?: OpenModelContainer, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: boolean;  }> {
-        const localVarPath = this.basePath + '/api/1/projects/{projectId}/update-iom'
-            .replace('{' + 'projectId' + '}', encodeURIComponent(String(projectId)));
-        let localVarQueryParameters: any = {};
-        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json'];
-        // give precedence to 'application/json'
-        if (produces.indexOf('application/json') >= 0) {
-            localVarHeaderParams.Accept = 'application/json';
-        } else {
-            localVarHeaderParams.Accept = produces.join(',');
-        }
-        let localVarFormParams: any = {};
-
-        // verify required parameter 'projectId' is not null or undefined
-        if (projectId === null || projectId === undefined) {
-            throw new Error('Required parameter projectId was null or undefined when calling updateFromIOMContainer.');
-        }
-
-        (<any>Object).assign(localVarHeaderParams, options.headers);
-
-        let localVarUseFormData = false;
-
-        let localVarRequestOptions: localVarRequest.Options = {
-            method: 'POST',
-            qs: localVarQueryParameters,
-            headers: localVarHeaderParams,
-            uri: localVarPath,
-            useQuerystring: this._useQuerystring,
-            json: true,
-            body: ObjectSerializer.serialize(openModelContainer, "OpenModelContainer")
-        };
-
-        let authenticationPromise = Promise.resolve();
-        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
-
-        let interceptorPromise = authenticationPromise;
-        for (const interceptor of this.interceptors) {
-            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
-        }
-
-        return interceptorPromise.then(() => {
-            if (Object.keys(localVarFormParams).length) {
-                if (localVarUseFormData) {
-                    (<any>localVarRequestOptions).formData = localVarFormParams;
-                } else {
-                    localVarRequestOptions.form = localVarFormParams;
-                }
-            }
-            return new Promise<{ response: http.IncomingMessage; body: boolean;  }>((resolve, reject) => {
-                localVarRequest(localVarRequestOptions, (error, response, body) => {
-                    if (error) {
-                        reject(error);
-                    } else {
-                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "boolean");
+                            body = ObjectSerializer.deserialize(body, "ConProject");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

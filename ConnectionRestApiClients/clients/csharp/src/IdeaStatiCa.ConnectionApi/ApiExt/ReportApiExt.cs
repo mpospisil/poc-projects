@@ -14,16 +14,16 @@ namespace IdeaStatiCa.ConnectionApi.Api
 		/// </summary>
 		/// <param name="projectId">Identifier of the open connection project in the service</param>
 		/// <param name="connectionId">ID of the connection in <paramref name="projectId"/></param>
-		/// <param name="filePath">The full path to the Pdf file which will be created</param>
+		/// <param name="filePath">The full path to the Pdf file (.pdf) which will be created</param>
 		/// <returns></returns>
 		Task SaveReportPdfAsync(Guid projectId, int connectionId, string filePath);
 
         /// <summary>
-        /// Save the connection report to PDF format
+        /// Save the connection report in Word format
         /// </summary>
         /// <param name="projectId">Identifier of the open connection project in the service</param>
         /// <param name="connectionId">ID of the connection in <paramref name="projectId"/></param>
-        /// <param name="filePath">The full path to the Pdf file which will be created</param>
+        /// <param name="filePath">The full path to the Word file (.docx) which will be created</param>
         /// <returns></returns>
         Task SaveReportWordAsync(Guid projectId, int connectionId, string filePath);
     }

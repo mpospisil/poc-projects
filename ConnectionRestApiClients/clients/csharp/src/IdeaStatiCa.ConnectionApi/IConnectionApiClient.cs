@@ -81,7 +81,7 @@ namespace IdeaStatiCa.ConnectionApi
 		/// <summary>
 		/// Get Report API
 		/// </summary>
-		IReportApiAsync Report { get; }
+		IReportApiExtAsync Report { get; }
 
         /// <summary>
         /// Get Template API

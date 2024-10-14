@@ -10,9 +10,9 @@ namespace CodeSamples
 {
     public partial class ClientExamples
     {
-        public static async Task GenerateReport_NOTWORKING(ConnectionApiClient conClient)
+        public static async Task SaveReport_Word_NOTWORKING(ConnectionApiClient conClient)
         {
-            string filePath = "Inputs/HSS_norm_cond.ideaCon";
+            string filePath = "Inputs/simple cleat connection.ideaCon";
             ConProject conProject = await conClient.Project.OpenProjectAsync(filePath);
 
             //Get projectId Guid
@@ -20,10 +20,16 @@ namespace CodeSamples
             var connections = await conClient.Connection.GetAllConnectionsDataAsync(projectId);
             int connectionId = connections[0].Id;
 
-            //TO DO - FIX REPORT GENERATION
-            //Generate Report
-            //conclient.Report.GeneratePdfAsync()
+            string exampleFolder = GetExampleFolderPathOnDesktop("GenerateReport");
 
+            // Save updated file.
+            string fileName = "simple cleat connection.pdf";
+            string pdfFilePath = Path.Combine(exampleFolder, fileName);
+
+            //Save Report to PDF
+            await conClient.Report.SaveReportWordAsync(projectId, connectionId, pdfFilePath);
+
+            Console.WriteLine($"Report saved to: {pdfFilePath}");
 
             //Close the opened project.
             await conClient.Project.CloseProjectAsync(projectId.ToString());

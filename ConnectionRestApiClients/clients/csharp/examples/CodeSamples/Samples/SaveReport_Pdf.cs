@@ -10,9 +10,9 @@ namespace CodeSamples
 {
     public partial class ClientExamples
     {
-        public static async Task ExportIom_NOTWORKING(ConnectionApiClient conClient) 
+        public static async Task SaveReport_Pdf_NOTWORKING(ConnectionApiClient conClient)
         {
-            string filePath = "Inputs/HSS_norm_cond.ideaCon";
+            string filePath = "Inputs/simple cleat connection.ideaCon";
             ConProject conProject = await conClient.Project.OpenProjectAsync(filePath);
 
             //Get projectId Guid
@@ -20,11 +20,16 @@ namespace CodeSamples
             var connections = await conClient.Connection.GetAllConnectionsDataAsync(projectId);
             int connectionId = connections[0].Id;
 
-            //ConnectionData conData = await conClient.Export.ExportIomXmlAsync()
+            string exampleFolder = GetExampleFolderPathOnDesktop("GenerateReport");
 
-            //string saveFilePath = "connection-file-from-IOM.ideaCon";
+            // Save updated file.
+            string fileName = "simple cleat connection.pdf";
+            string pdfFilePath = Path.Combine(exampleFolder, fileName);
 
-            //await conClient.Project.SaveProjectAsync(projectId, saveFilePath);
+            //Save Report to PDF
+            await conClient.Report.SaveReportWordAsync(projectId, connectionId, pdfFilePath);
+
+            Console.WriteLine($"Report saved to: {pdfFilePath}");
 
             //Close the opened project.
             await conClient.Project.CloseProjectAsync(projectId.ToString());

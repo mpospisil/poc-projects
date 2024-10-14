@@ -76,7 +76,6 @@ namespace IdeaStatiCa.ConnectionApi
 		public ConnectionApiClient(string basePath)
 		{
 			BasePath = new Uri(basePath);
-            CreateClientAsync().Wait();
         }
 
 		/// <summary

@@ -30,6 +30,9 @@
 	  <None Update="Inputs\multiple_connections.xml">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
+	  <None Update="Inputs\simple cleat connection - sections.ideaCon">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Inputs\simple cleat connection.ideaCon">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>

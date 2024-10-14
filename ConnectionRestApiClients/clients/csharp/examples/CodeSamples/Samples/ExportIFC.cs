@@ -10,7 +10,7 @@ namespace CodeSamples
 {
     public partial class ClientExamples
     {
-        public static async Task ExportIFC(ConnectionApiClient conClient) 
+        public static async Task ExportIfc(ConnectionApiClient conClient) 
         {
             string filePath = "Inputs/simple knee connection.ideaCon";
 
@@ -25,7 +25,7 @@ namespace CodeSamples
             string ifcPath = Path.Combine(exampleFolderPath, connectionName + ".ifc");
 
             //FIX Naming remove 'Con'
-            await conClient.Export.ExportConToIfcFileAsync(projectId, connectionId, ifcPath);
+            await conClient.Export.ExportIfcFileAsync(projectId, connectionId, ifcPath);
 
             await conClient.Project.CloseProjectAsync(projectId.ToString());
 

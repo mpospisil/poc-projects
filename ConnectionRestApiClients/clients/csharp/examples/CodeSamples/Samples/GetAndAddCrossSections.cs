@@ -40,6 +40,7 @@ namespace CodeSamples
             {
                 if (!SteelMaterialMap.ContainsKey(section.MaterialName))
                 {
+                    //FIX: Add Materal should return the Material not the ConMprlElement
                     ConMprlElement addedMaterial = await conClient.Material.AddMaterialSteelAsync(projectId, new ConMprlElement(section.MaterialName));
                     Console.WriteLine("Successfully Added new Material: " + addedMaterial.MprlName);
                 }

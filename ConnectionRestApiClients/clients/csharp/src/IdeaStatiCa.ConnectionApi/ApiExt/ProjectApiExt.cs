@@ -18,7 +18,7 @@ namespace IdeaStatiCa.ConnectionApi.Api
 		/// <summary>
 		/// 
 		/// </summary>
-		ConProject ActiveProjectData { get; }
+		ConProject ActiveProject { get; }
 
 		/// <summary>
 		/// 
@@ -54,13 +54,13 @@ namespace IdeaStatiCa.ConnectionApi.Api
 		/// <inheritdoc cref="IConnectionApiClient.ProjectId"/>/>
 		public Guid ProjectId
 		{
-			get => ActiveProjectData == null ? Guid.Empty : ActiveProjectData.ProjectId;
+			get => ActiveProject == null ? Guid.Empty : ActiveProject.ProjectId;
 		}
 
 		/// <summary>
 		/// Data about the active project
 		/// </summary>
-		public ConProject ActiveProjectData { get; private set; } = null;
+		public ConProject ActiveProject { get; private set; } = null;
 
 		public async Task<ConProject> OpenProjectAsync(string path)
 		{
@@ -72,11 +72,11 @@ namespace IdeaStatiCa.ConnectionApi.Api
 					await fs.CopyToAsync(ms);
 					ms.Seek(0, System.IO.SeekOrigin.Begin);
 					var conProject = await OpenProjectAsync(ms);
-					this.ActiveProjectData = conProject;
+					this.ActiveProject = conProject;
 				}
 			}
 
-			return this.ActiveProjectData;
+			return this.ActiveProject;
 		}
 
 

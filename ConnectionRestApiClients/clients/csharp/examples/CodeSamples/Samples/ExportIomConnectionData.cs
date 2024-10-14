@@ -10,7 +10,7 @@ namespace CodeSamples
 {
     public partial class ClientExamples
     {
-        public static async Task GenerateReport_NOTWORKING(ConnectionApiClient conClient)
+        public static async Task ExportIom(ConnectionApiClient conClient) 
         {
             string filePath = "Inputs/HSS_norm_cond.ideaCon";
             ConProject conProject = await conClient.Project.OpenProjectAsync(filePath);
@@ -20,13 +20,16 @@ namespace CodeSamples
             var connections = await conClient.Connection.GetAllConnectionsDataAsync(projectId);
             int connectionId = connections[0].Id;
 
-            //TO DO - FIX REPORT GENERATION
-            //Generate Report
-            //conclient.Report.GeneratePdfAsync()
+
+            ConnectionData conData = await conClient.Export.ExportConnectionDataAsync(projectId, connectionId);
 
 
-            //Close the opened project.
-            await conClient.Project.CloseProjectAsync(projectId.ToString());
+
+
+
+            string saveFilePath = "connection-file-from-IOM.ideaCon";
+
+            await conClient.Project.SaveProjectAsync(projectId, saveFilePath);
         }
     }
 }

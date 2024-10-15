@@ -15,11 +15,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Reference Include="IdeaStatiCa.ConnectionApi">
-	    <HintPath>..\..\src\IdeaStatiCa.ConnectionApi\bin\Debug\netstandard2.1\IdeaStatiCa.ConnectionApi.dll</HintPath>
-	  </Reference>
+		<ProjectReference Include="..\..\src\IdeaStatiCa.ConnectionApi\IdeaStatiCa.ConnectionApi.csproj" />
 	</ItemGroup>
-
+	
+	
 	<ItemGroup>
 	  <None Update="Inputs\corner-empty.ideaCon">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>

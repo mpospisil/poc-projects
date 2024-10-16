@@ -15,10 +15,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\IdeaStatiCa.ConnectionApi\IdeaStatiCa.ConnectionApi.csproj" />
+	  <ProjectReference Include="..\..\src\IdeaStatiCa.ConnectionApi\IdeaStatiCa.ConnectionApi.csproj" />
 	</ItemGroup>
-	
-	
+
 	<ItemGroup>
 	  <None Update="Inputs\corner-empty.ideaCon">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>

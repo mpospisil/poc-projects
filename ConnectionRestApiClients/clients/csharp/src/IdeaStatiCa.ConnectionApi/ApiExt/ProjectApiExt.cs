@@ -18,7 +18,7 @@ namespace IdeaStatiCa.ConnectionApi.Api
 		/// <summary>
 		/// 
 		/// </summary>
-		ConProject ActiveProjectData { get; }
+		ConProject ActiveProject { get; }
 
 		/// <summary>
 		/// 
@@ -50,20 +50,20 @@ namespace IdeaStatiCa.ConnectionApi.Api
 			this._connectionApiClient = connectionApiClient;
 		}
 
+
 		/// <inheritdoc cref="IConnectionApiClient.ProjectId"/>/>
 		public Guid ProjectId
 		{
-			get => ActiveProjectData == null ? Guid.Empty : ActiveProjectData.ProjectId;
+			get => ActiveProject == null ? Guid.Empty : ActiveProject.ProjectId;
 		}
 
 		/// <summary>
 		/// Data about the active project
 		/// </summary>
-		public ConProject ActiveProjectData { get; private set; } = null;
+		public ConProject ActiveProject { get; private set; } = null;
 
 		public async Task<ConProject> OpenProjectAsync(string path)
 		{
-			//await CreateAsync();
 
 			using (var fs = new System.IO.FileStream(path, System.IO.FileMode.Open))
 			{
@@ -72,12 +72,13 @@ namespace IdeaStatiCa.ConnectionApi.Api
 					await fs.CopyToAsync(ms);
 					ms.Seek(0, System.IO.SeekOrigin.Begin);
 					var conProject = await OpenProjectAsync(ms);
-					this.ActiveProjectData = conProject;
+					this.ActiveProject = conProject;
 				}
 			}
 
-			return this.ActiveProjectData;
+			return this.ActiveProject;
 		}
+
 
 		public async Task SaveProjectAsync(Guid projectId, string fileName)
 		{
@@ -118,14 +119,16 @@ namespace IdeaStatiCa.ConnectionApi.Api
 			xmlString = xmlString.Replace("utf-16", "utf-8");
 			var contentString = new StringContent(xmlString, encoding: Encoding.UTF8, "application/xml");
 
-			//ConIomImportOptions 
+
 
 			//if (connectionsToCreate != null)
 			//{
 			//	localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
 			//}
+			if (connectionsToCreate == null)
+				connectionsToCreate = new List<int>();
 
-			localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", new List<int>()));
+			localVarRequestOptions.QueryParameters.Add(IdeaStatiCa.ConnectionApi.Client.ClientUtils.ParameterToMultiMap("multi", "ConnectionsToCreate", connectionsToCreate));
 			localVarRequestOptions.Data = contentString;
 
 			localVarRequestOptions.Operation = "ProjectApi.ImportIOMContainer";
@@ -142,8 +145,8 @@ namespace IdeaStatiCa.ConnectionApi.Api
 				}
 			}
 
-			return localVarResponse.Data;
-
+			ActiveProject = localVarResponse.Data;
+            return ActiveProject;
 		}
 
 		/// <inheritdoc cref="ProjectApi.GetSetupAsync(Guid, int, System.Threading.CancellationToken)"/>

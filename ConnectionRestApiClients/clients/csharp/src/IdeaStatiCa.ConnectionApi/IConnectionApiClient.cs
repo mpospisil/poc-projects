@@ -23,7 +23,10 @@ namespace IdeaStatiCa.ConnectionApi
 		/// </summary>
 		Guid ProjectId { get; }
 
-		IClientApi ClientApi { get; }
+        /// <summary>
+        /// Get Client API
+        /// </summary>
+        IClientApi ClientApi { get; }
 
 		/// <summary>
 		/// Get Calculation API
@@ -78,12 +81,12 @@ namespace IdeaStatiCa.ConnectionApi
 		/// <summary>
 		/// Get Report API
 		/// </summary>
-		IReportApiAsync Report { get; }
+		IReportApiExtAsync Report { get; }
 
-		/// <summary>
-		/// Get Template API
-		/// </summary>
-		ITemplateApiAsync Template { get; }
+        /// <summary>
+        /// Get Template API
+        /// </summary>
+        ITemplateApiExtAsync Template { get; }
 
 		/// <summary>
 		/// 

@@ -2,6 +2,12 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Connection Rest API 1.0",
+    "description": "API for designing steel connections",
+    "contact": {
+      "name": "IDEA StatiCa",
+      "url": "https://github.com/idea-statica/ideastatica-public",
+      "email": "info@ideastatica.com"
+    },
     "version": "1.0"
   },
   "paths": {
@@ -48,7 +54,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/connections/results": {
@@ -94,7 +102,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/connections/rawresults-text": {
@@ -140,7 +150,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/clients/connect-client": {
@@ -166,7 +178,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": false,
+        "x-requiresConnection": false
       }
     },
     "/api/1/clients/idea-service-version": {
@@ -187,7 +201,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": false,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/connections": {
@@ -196,7 +212,7 @@
           "Connection"
         ],
         "summary": "Get data about all connections in the project",
-        "operationId": "GetAllConnectionsData",
+        "operationId": "GetConnections",
         "parameters": [
           {
             "name": "projectId",
@@ -223,7 +239,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}": {
@@ -232,7 +250,7 @@
           "Connection"
         ],
         "summary": "Get data about a specific connection in the project",
-        "operationId": "GetConnectionData",
+        "operationId": "GetConnection",
         "parameters": [
           {
             "name": "projectId",
@@ -266,14 +284,16 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       },
       "put": {
         "tags": [
           "Connection"
         ],
         "summary": "Update data of a specific connection in the project",
-        "operationId": "UpdateConnectionData",
+        "operationId": "UpdateConnection",
         "parameters": [
           {
             "name": "projectId",
@@ -317,7 +337,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/production-cost": {
@@ -360,7 +382,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/export-iom": {
@@ -369,7 +393,7 @@
           "Export"
         ],
         "summary": "Export connection to XML which includes https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/OpenModelContainer.cs",
-        "operationId": "ExportIomXml",
+        "operationId": "ExportIom",
         "parameters": [
           {
             "name": "projectId",
@@ -404,7 +428,9 @@
           "200": {
             "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/export-iom-connection-data": {
@@ -413,7 +439,7 @@
           "Export"
         ],
         "summary": "Get https://github.com/idea-statica/ideastatica-public/blob/main/src/IdeaRS.OpenModel/Connection/ConnectionData.cs for required connection",
-        "operationId": "ExportConnectionData",
+        "operationId": "ExportIomConnectionData",
         "parameters": [
           {
             "name": "projectId",
@@ -452,7 +478,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/export-ifc": {
@@ -461,7 +489,7 @@
           "Export"
         ],
         "summary": "Export connection to IFC format",
-        "operationId": "ExportConnectionIFC",
+        "operationId": "ExportIFC",
         "parameters": [
           {
             "name": "projectId",
@@ -488,7 +516,10 @@
           "200": {
             "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true,
+        "x-extensionMethodName": "ExportIfcFile"
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/load-effects": {
@@ -542,7 +573,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       },
       "post": {
         "tags": [
@@ -588,12 +621,67 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LoadEffectData"
+                  "$ref": "#/components/schemas/ConLoadEffect"
                 }
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
+      },
+      "put": {
+        "tags": [
+          "LoadEffect"
+        ],
+        "summary": "Update load impulses in conLoading",
+        "operationId": "UpdateLoadEffect",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConLoadEffect"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConLoadEffect"
+                }
+              }
+            }
+          }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/load-effects/{loadEffectId}": {
@@ -654,68 +742,9 @@
               }
             }
           }
-        }
-      },
-      "put": {
-        "tags": [
-          "LoadEffect"
-        ],
-        "summary": "Update load impulses in loadEffectId",
-        "operationId": "UpdateLoadEffect",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "loadEffectId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConLoadEffect"
-              }
-            }
-          }
         },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConLoadEffect"
-                }
-              }
-            }
-          }
-        }
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       },
       "delete": {
         "tags": [
@@ -767,7 +796,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/load-effects/get-load-settings": {
@@ -810,7 +841,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/load-effects/set-load-settings": {
@@ -863,7 +896,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/materials": {
@@ -897,7 +932,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/materials/steel": {
@@ -931,7 +968,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       },
       "post": {
         "tags": [
@@ -963,16 +1002,11 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConMprlElement"
-                }
-              }
-            }
+            "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/materials/concrete": {
@@ -1006,7 +1040,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       },
       "post": {
         "tags": [
@@ -1038,16 +1074,11 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConMprlElement"
-                }
-              }
-            }
+            "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/materials/bolt-grade": {
@@ -1056,7 +1087,7 @@
           "Material"
         ],
         "summary": "Get materials which are used in the project projectId",
-        "operationId": "GetBlotGradeMaterials",
+        "operationId": "GetBoltGradeMaterials",
         "parameters": [
           {
             "name": "projectId",
@@ -1081,7 +1112,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       },
       "post": {
         "tags": [
@@ -1113,16 +1146,11 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConMprlElement"
-                }
-              }
-            }
+            "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/materials/welding": {
@@ -1156,7 +1184,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       },
       "post": {
         "tags": [
@@ -1188,16 +1218,11 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConMprlElement"
-                }
-              }
-            }
+            "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/materials/cross-sections": {
@@ -1231,7 +1256,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       },
       "post": {
         "tags": [
@@ -1263,16 +1290,11 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConMprlCrossSection"
-                }
-              }
-            }
+            "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/materials/bolt-assemblies": {
@@ -1306,7 +1328,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       },
       "post": {
         "tags": [
@@ -1338,16 +1362,11 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConMprlElement"
-                }
-              }
-            }
+            "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/members": {
@@ -1356,7 +1375,7 @@
           "Member"
         ],
         "summary": "Get information about all members in the connection",
-        "operationId": "GetAllMemberData",
+        "operationId": "GetMembers",
         "parameters": [
           {
             "name": "projectId",
@@ -1393,7 +1412,62 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
+      },
+      "put": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "Update the member in the connection by newMemberData",
+        "operationId": "UpdateMember",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "path",
+            "description": "Id of the connection to to update is member newMemberData",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New member data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConMember"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConMember"
+                }
+              }
+            }
+          }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}": {
@@ -1402,7 +1476,7 @@
           "Member"
         ],
         "summary": "Get information about the requires member in the connection",
-        "operationId": "GetMemberData",
+        "operationId": "GetMember",
         "parameters": [
           {
             "name": "projectId",
@@ -1446,68 +1520,9 @@
               }
             }
           }
-        }
-      },
-      "put": {
-        "tags": [
-          "Member"
-        ],
-        "summary": "Update the member in the connection by newMemberData",
-        "operationId": "UpdateMember",
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "path",
-            "description": "The unique identifier of the opened project in the ConnectionRestApi service",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "connectionId",
-            "in": "path",
-            "description": "Id of the connection to to update is member memberId",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "memberId",
-            "in": "path",
-            "description": "Id of the member to be updated in the connection",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "New member data",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConMember"
-              }
-            }
-          }
         },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ConMember"
-                }
-              }
-            }
-          }
-        }
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/members/{memberId}/set-bearing-member": {
@@ -1560,7 +1575,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/operations": {
@@ -1606,7 +1623,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       },
       "delete": {
         "tags": [
@@ -1640,7 +1659,9 @@
           "200": {
             "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/parameters": {
@@ -1695,7 +1716,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       },
       "put": {
         "tags": [
@@ -1746,13 +1769,15 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ParameterData"
+                    "$ref": "#/components/schemas/IdeaParameter"
                   }
                 }
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/evaluate-expression": {
@@ -1805,7 +1830,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/presentations": {
@@ -1848,7 +1875,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/presentations/text": {
@@ -1896,7 +1925,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/open": {
@@ -1937,7 +1968,10 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": false,
+        "x-requiresConnection": false,
+        "x-extensionMethodName": "OpenProject"
       }
     },
     "/api/1/projects/{projectId}/close": {
@@ -1954,7 +1988,8 @@
             "description": "The unique identifier of the project to be closed",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -1969,7 +2004,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects": {
@@ -1993,7 +2030,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": false,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/download": {
@@ -2019,7 +2058,10 @@
           "200": {
             "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false,
+        "x-extensionMethodName": "SaveProject"
       }
     },
     "/api/1/projects/{projectId}": {
@@ -2052,7 +2094,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       },
       "put": {
         "tags": [
@@ -2093,7 +2137,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/import-iom-file": {
@@ -2144,7 +2190,10 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": false,
+        "x-requiresConnection": false,
+        "x-extensionMethodName": "CreateProjectFromIomFile"
       }
     },
     "/api/1/projects/{projectId}/update-iom-file": {
@@ -2197,7 +2246,10 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false,
+        "x-extensionMethodName": "UpdateProjectFromIomFile"
       }
     },
     "/api/1/projects/{projectId}/connection-setup": {
@@ -2230,7 +2282,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       },
       "put": {
         "tags": [
@@ -2271,7 +2325,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": false
       }
     },
     "/api/1/projects/{projectId}/reports/{connectionId}/pdf": {
@@ -2307,7 +2363,10 @@
           "200": {
             "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true,
+        "x-extensionMethodName": "SaveReportPdf"
       }
     },
     "/api/1/projects/{projectId}/reports/{connectionId}/word": {
@@ -2343,7 +2402,10 @@
           "200": {
             "description": "Success"
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true,
+        "x-extensionMethodName": "SaveReportWord"
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/get-template": {
@@ -2386,7 +2448,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/get-default-mapping": {
@@ -2440,7 +2504,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     },
     "/api/1/projects/{projectId}/connections/{connectionId}/apply-template": {
@@ -2493,7 +2559,9 @@
               }
             }
           }
-        }
+        },
+        "x-requiresProject": true,
+        "x-requiresConnection": true
       }
     }
   },
@@ -2502,6 +2570,10 @@
       "AnchorGrid": {
         "type": "object",
         "properties": {
+          "shearInThread": {
+            "type": "boolean",
+            "description": "Indicates, whether a shear plane is in the thread of a bolt."
+          },
           "concreteBlock": {
             "$ref": "#/components/schemas/ConcreteBlock"
           },
@@ -2513,78 +2585,18 @@
             "description": "Washer Size used if AnchorType is washer",
             "format": "double"
           },
-          "boltAssemblyRef": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "description": "Unique Id of the bolt grid",
-            "format": "int32"
-          },
-          "isAnchor": {
-            "type": "boolean",
-            "description": "Is Anchor"
-          },
-          "anchorLen": {
+          "anchoringLength": {
             "type": "number",
-            "description": "Anchor lenght",
+            "description": "Anchoring Length",
             "format": "double"
           },
-          "holeDiameter": {
+          "hookLength": {
             "type": "number",
-            "description": "The diameter of the hole",
+            "description": "Length of anchor hook<br />\r\n(distance from the inner surface of the anchor shaft to the outer tip of the hook specified as an anchor diameter multiplier)",
             "format": "double"
           },
-          "diameter": {
-            "type": "number",
-            "description": "The diameter of bolt",
-            "format": "double"
-          },
-          "headDiameter": {
-            "type": "number",
-            "description": "The head diameter of bolt",
-            "format": "double"
-          },
-          "diagonalHeadDiameter": {
-            "type": "number",
-            "description": "The Diagonal Head Diameter of bolt",
-            "format": "double"
-          },
-          "headHeight": {
-            "type": "number",
-            "description": "The Head Height of bolt",
-            "format": "double"
-          },
-          "boreHole": {
-            "type": "number",
-            "description": "The BoreHole of bolt",
-            "format": "double"
-          },
-          "tensileStressArea": {
-            "type": "number",
-            "description": "The Tensile Stress Area of bolt",
-            "format": "double"
-          },
-          "nutThickness": {
-            "type": "number",
-            "description": "The Nut Thickness of bolt",
-            "format": "double"
-          },
-          "boltAssemblyName": {
-            "type": "string",
-            "description": "The description of the bolt assembly",
-            "nullable": true
-          },
-          "standard": {
-            "type": "string",
-            "description": "The standard of the bolt assembly",
-            "nullable": true
-          },
-          "material": {
-            "type": "string",
-            "description": "The material of the bolt assembly",
-            "nullable": true
+          "boltAssembly": {
+            "$ref": "#/components/schemas/ReferenceElement"
           },
           "origin": {
             "$ref": "#/components/schemas/Point3D"
@@ -2603,32 +2615,31 @@
             "items": {
               "$ref": "#/components/schemas/Point3D"
             },
-            "description": "Positions of holes in the local coodinate system of the bolt grid",
+            "description": "Positions of holes in the local coordinate system of the grid",
             "nullable": true
           },
-          "connectedPlates": {
+          "connectedParts": {
             "type": "array",
             "items": {
-              "type": "integer",
-              "format": "int32"
+              "$ref": "#/components/schemas/ReferenceElement"
             },
-            "description": "Identifiers of the connected plates",
+            "description": "List of the connected parts",
             "nullable": true
           },
-          "connectedPartIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Id of the weld",
+          "name": {
+            "type": "string",
+            "description": "Name",
             "nullable": true
           },
-          "shearInThread": {
-            "type": "boolean",
-            "description": "Indicates, whether a shear plane is in the thread of a bolt."
+          "length": {
+            "type": "number",
+            "description": "Length",
+            "format": "double"
           },
-          "boltInteraction": {
-            "$ref": "#/components/schemas/BoltShearType"
+          "id": {
+            "type": "integer",
+            "description": "Element Id",
+            "format": "int32"
           }
         },
         "additionalProperties": false,
@@ -2638,7 +2649,8 @@
         "enum": [
           "straight",
           "washerPlateCircular",
-          "washerPlateRectangular"
+          "washerPlateRectangular",
+          "hook"
         ],
         "type": "string",
         "description": "Defines a type of anchor end."
@@ -2789,78 +2801,15 @@
       "BoltGrid": {
         "type": "object",
         "properties": {
-          "boltAssemblyRef": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "description": "Unique Id of the bolt grid",
-            "format": "int32"
-          },
-          "isAnchor": {
+          "shearInThread": {
             "type": "boolean",
-            "description": "Is Anchor"
+            "description": "Indicates, whether a shear plane is in the thread of a bolt."
           },
-          "anchorLen": {
-            "type": "number",
-            "description": "Anchor lenght",
-            "format": "double"
+          "boltInteraction": {
+            "$ref": "#/components/schemas/BoltShearType"
           },
-          "holeDiameter": {
-            "type": "number",
-            "description": "The diameter of the hole",
-            "format": "double"
-          },
-          "diameter": {
-            "type": "number",
-            "description": "The diameter of bolt",
-            "format": "double"
-          },
-          "headDiameter": {
-            "type": "number",
-            "description": "The head diameter of bolt",
-            "format": "double"
-          },
-          "diagonalHeadDiameter": {
-            "type": "number",
-            "description": "The Diagonal Head Diameter of bolt",
-            "format": "double"
-          },
-          "headHeight": {
-            "type": "number",
-            "description": "The Head Height of bolt",
-            "format": "double"
-          },
-          "boreHole": {
-            "type": "number",
-            "description": "The BoreHole of bolt",
-            "format": "double"
-          },
-          "tensileStressArea": {
-            "type": "number",
-            "description": "The Tensile Stress Area of bolt",
-            "format": "double"
-          },
-          "nutThickness": {
-            "type": "number",
-            "description": "The Nut Thickness of bolt",
-            "format": "double"
-          },
-          "boltAssemblyName": {
-            "type": "string",
-            "description": "The description of the bolt assembly",
-            "nullable": true
-          },
-          "standard": {
-            "type": "string",
-            "description": "The standard of the bolt assembly",
-            "nullable": true
-          },
-          "material": {
-            "type": "string",
-            "description": "The material of the bolt assembly",
-            "nullable": true
+          "boltAssembly": {
+            "$ref": "#/components/schemas/ReferenceElement"
           },
           "origin": {
             "$ref": "#/components/schemas/Point3D"
@@ -2879,36 +2828,34 @@
             "items": {
               "$ref": "#/components/schemas/Point3D"
             },
-            "description": "Positions of holes in the local coodinate system of the bolt grid",
+            "description": "Positions of holes in the local coordinate system of the grid",
             "nullable": true
           },
-          "connectedPlates": {
+          "connectedParts": {
             "type": "array",
             "items": {
-              "type": "integer",
-              "format": "int32"
+              "$ref": "#/components/schemas/ReferenceElement"
             },
-            "description": "Identifiers of the connected plates",
+            "description": "List of the connected parts",
             "nullable": true
           },
-          "connectedPartIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Id of the weld",
+          "name": {
+            "type": "string",
+            "description": "Name",
             "nullable": true
           },
-          "shearInThread": {
-            "type": "boolean",
-            "description": "Indicates, whether a shear plane is in the thread of a bolt."
+          "length": {
+            "type": "number",
+            "description": "Length",
+            "format": "double"
           },
-          "boltInteraction": {
-            "$ref": "#/components/schemas/BoltShearType"
+          "id": {
+            "type": "integer",
+            "description": "Element Id",
+            "format": "int32"
           }
         },
-        "additionalProperties": false,
-        "description": "Data of the bolt grid"
+        "additionalProperties": false
       },
       "BoltShearType": {
         "enum": [
@@ -3175,10 +3122,6 @@
           },
           "analysisType": {
             "$ref": "#/components/schemas/ConAnalysisTypeEnum"
-          },
-          "bearingMemberId": {
-            "type": "integer",
-            "format": "int32"
           },
           "isCalculated": {
             "type": "boolean",
@@ -3659,10 +3602,8 @@
       "ConnectionData": {
         "type": "object",
         "properties": {
-          "conenctionPointId": {
-            "type": "integer",
-            "description": "Connection Point Id",
-            "format": "int32"
+          "connectionPoint": {
+            "$ref": "#/components/schemas/ReferenceElement"
           },
           "beams": {
             "type": "array",
@@ -3702,6 +3643,14 @@
               "$ref": "#/components/schemas/AnchorGrid"
             },
             "description": "Anchor grids which belongs to the connection",
+            "nullable": true
+          },
+          "pinGrids": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PinGrid"
+            },
+            "description": "Pin grids which belongs to the connection",
             "nullable": true
           },
           "welds": {
@@ -4288,38 +4237,6 @@
         },
         "additionalProperties": false
       },
-      "LoadEffectData": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "isActive": {
-            "type": "boolean"
-          },
-          "internalForces": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "nullable": true
-          },
-          "purpose": {
-            "$ref": "#/components/schemas/ePurpose"
-          }
-        },
-        "additionalProperties": false
-      },
       "MessageNumber": {
         "enum": [
           "unspecified",
@@ -4401,57 +4318,62 @@
         "additionalProperties": false,
         "description": "Open messages collection"
       },
-      "ParameterData": {
+      "PinGrid": {
         "type": "object",
         "properties": {
+          "isReplaceable": {
+            "type": "boolean",
+            "description": "Replaceable pin"
+          },
+          "pin": {
+            "$ref": "#/components/schemas/ReferenceElement"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/Point3D"
+          },
+          "axisX": {
+            "$ref": "#/components/schemas/Vector3D"
+          },
+          "axisY": {
+            "$ref": "#/components/schemas/Vector3D"
+          },
+          "axisZ": {
+            "$ref": "#/components/schemas/Vector3D"
+          },
+          "positions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Point3D"
+            },
+            "description": "Positions of holes in the local coordinate system of the grid",
+            "nullable": true
+          },
+          "connectedParts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReferenceElement"
+            },
+            "description": "List of the connected parts",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Name",
+            "nullable": true
+          },
+          "length": {
+            "type": "number",
+            "description": "Length",
+            "format": "double"
+          },
           "id": {
             "type": "integer",
+            "description": "Element Id",
             "format": "int32"
-          },
-          "identifier": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "parameterType": {
-            "type": "string",
-            "nullable": true
-          },
-          "value": {
-            "nullable": true
-          },
-          "defaultValue": {
-            "nullable": true
-          },
-          "evaluatedValue": {
-            "nullable": true
-          },
-          "evaluatedDefaultValue": {
-            "nullable": true
-          },
-          "validationValue": {
-            "type": "string",
-            "nullable": true
-          },
-          "evaluatedValidationValue": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationType": {
-            "$ref": "#/components/schemas/ValidationType"
-          },
-          "userUnitId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "isVisibleForSimpleConnection": {
-            "type": "boolean"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Data of the pin grid"
       },
       "PlateData": {
         "type": "object",
@@ -4724,13 +4646,6 @@
         },
         "additionalProperties": false
       },
-      "ValidationType": {
-        "enum": [
-          "warning",
-          "restricted"
-        ],
-        "type": "string"
-      },
       "Vector3D": {
         "type": "object",
         "properties": {
@@ -4824,15 +4739,6 @@
         ],
         "type": "string",
         "description": "enum of weld types"
-      },
-      "ePurpose": {
-        "enum": [
-          "common",
-          "maxCapacityCalculation",
-          "maxCapacityCalculationNegative",
-          "horizontalTyingCalculation"
-        ],
-        "type": "string"
       }
     }
   }

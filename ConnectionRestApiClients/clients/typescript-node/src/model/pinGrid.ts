@@ -11,35 +11,19 @@
  */
 
 import { RequestFile } from './models';
-import { AnchorType } from './anchorType';
-import { ConcreteBlock } from './concreteBlock';
 import { Point3D } from './point3D';
 import { ReferenceElement } from './referenceElement';
 import { Vector3D } from './vector3D';
 
 /**
-* Data of the anchor grid
+* Data of the pin grid
 */
-export class AnchorGrid {
+export class PinGrid {
     /**
-    * Indicates, whether a shear plane is in the thread of a bolt.
+    * Replaceable pin
     */
-    'shearInThread'?: boolean;
-    'concreteBlock'?: ConcreteBlock;
-    'anchorType'?: AnchorType;
-    /**
-    * Washer Size used if AnchorType is washer
-    */
-    'washerSize'?: number;
-    /**
-    * Anchoring Length
-    */
-    'anchoringLength'?: number;
-    /**
-    * Length of anchor hook<br />  (distance from the inner surface of the anchor shaft to the outer tip of the hook specified as an anchor diameter multiplier)
-    */
-    'hookLength'?: number;
-    'boltAssembly'?: ReferenceElement;
+    'isReplaceable'?: boolean;
+    'pin'?: ReferenceElement;
     'origin'?: Point3D;
     'axisX'?: Vector3D;
     'axisY'?: Vector3D;
@@ -69,38 +53,13 @@ export class AnchorGrid {
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "shearInThread",
-            "baseName": "shearInThread",
+            "name": "isReplaceable",
+            "baseName": "isReplaceable",
             "type": "boolean"
         },
         {
-            "name": "concreteBlock",
-            "baseName": "concreteBlock",
-            "type": "ConcreteBlock"
-        },
-        {
-            "name": "anchorType",
-            "baseName": "anchorType",
-            "type": "AnchorType"
-        },
-        {
-            "name": "washerSize",
-            "baseName": "washerSize",
-            "type": "number"
-        },
-        {
-            "name": "anchoringLength",
-            "baseName": "anchoringLength",
-            "type": "number"
-        },
-        {
-            "name": "hookLength",
-            "baseName": "hookLength",
-            "type": "number"
-        },
-        {
-            "name": "boltAssembly",
-            "baseName": "boltAssembly",
+            "name": "pin",
+            "baseName": "pin",
             "type": "ReferenceElement"
         },
         {
@@ -150,9 +109,7 @@ export class AnchorGrid {
         }    ];
 
     static getAttributeTypeMap() {
-        return AnchorGrid.attributeTypeMap;
+        return PinGrid.attributeTypeMap;
     }
 }
 
-export namespace AnchorGrid {
-}

@@ -47,18 +47,16 @@ export * from './cutOrientation';
 export * from './cutPart';
 export * from './distanceComparison';
 export * from './drawData';
-export * from './ePurpose';
 export * from './foldedPlateData';
 export * from './iGroup';
 export * from './ideaParameter';
 export * from './ideaParameterUpdate';
 export * from './line';
-export * from './loadEffectData';
 export * from './messageNumber';
 export * from './openElementId';
 export * from './openMessage';
 export * from './openMessages';
-export * from './parameterData';
+export * from './pinGrid';
 export * from './plateData';
 export * from './point2D';
 export * from './point3D';
@@ -71,7 +69,6 @@ export * from './selectedType';
 export * from './templateConversions';
 export * from './text';
 export * from './textPosition';
-export * from './validationType';
 export * from './vector3D';
 export * from './weldData';
 export * from './weldEvaluation';
@@ -137,18 +134,16 @@ import { CutOrientation } from './cutOrientation';
 import { CutPart } from './cutPart';
 import { DistanceComparison } from './distanceComparison';
 import { DrawData } from './drawData';
-import { EPurpose } from './ePurpose';
 import { FoldedPlateData } from './foldedPlateData';
 import { IGroup } from './iGroup';
 import { IdeaParameter } from './ideaParameter';
 import { IdeaParameterUpdate } from './ideaParameterUpdate';
 import { Line } from './line';
-import { LoadEffectData } from './loadEffectData';
 import { MessageNumber } from './messageNumber';
 import { OpenElementId } from './openElementId';
 import { OpenMessage } from './openMessage';
 import { OpenMessages } from './openMessages';
-import { ParameterData } from './parameterData';
+import { PinGrid } from './pinGrid';
 import { PlateData } from './plateData';
 import { Point2D } from './point2D';
 import { Point3D } from './point3D';
@@ -161,7 +156,6 @@ import { SelectedType } from './selectedType';
 import { TemplateConversions } from './templateConversions';
 import { Text } from './text';
 import { TextPosition } from './textPosition';
-import { ValidationType } from './validationType';
 import { Vector3D } from './vector3D';
 import { WeldData } from './weldData';
 import { WeldEvaluation } from './weldEvaluation';
@@ -190,9 +184,7 @@ let enumsMap: {[index: string]: any} = {
         "CutOrientation": CutOrientation,
         "CutPart": CutPart,
         "DistanceComparison": DistanceComparison,
-        "EPurpose": EPurpose,
         "MessageNumber": MessageNumber,
-        "ValidationType": ValidationType,
         "WeldEvaluation": WeldEvaluation,
         "WeldType": WeldType,
 }
@@ -240,11 +232,10 @@ let typeMap: {[index: string]: any} = {
     "IdeaParameter": IdeaParameter,
     "IdeaParameterUpdate": IdeaParameterUpdate,
     "Line": Line,
-    "LoadEffectData": LoadEffectData,
     "OpenElementId": OpenElementId,
     "OpenMessage": OpenMessage,
     "OpenMessages": OpenMessages,
-    "ParameterData": ParameterData,
+    "PinGrid": PinGrid,
     "PlateData": PlateData,
     "Point2D": Point2D,
     "Point3D": Point3D,

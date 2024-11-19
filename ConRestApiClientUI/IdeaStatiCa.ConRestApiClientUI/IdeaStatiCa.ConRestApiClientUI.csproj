@@ -10,12 +10,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="static\js\JavaScript1.js">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </None>
-	  <None Update="static\test1.html">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </None>
+		<Content Include="static\**\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="static2\**\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 </Project>

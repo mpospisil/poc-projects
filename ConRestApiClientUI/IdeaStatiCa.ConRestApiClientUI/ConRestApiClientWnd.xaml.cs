@@ -17,14 +17,9 @@ namespace IdeaStatiCa.ConRestApiClientUI
 
 		private async void InitializeWebView()
 		{
-
-			WebServer server = new WebServer("static");
-			server.Run();
 			await webView.EnsureCoreWebView2Async(null);
 
 			string htmlFilePath = "http://localhost:8080/index.html";
-
-
 			webView.CoreWebView2.Navigate(new Uri(htmlFilePath).AbsoluteUri);
 
 			var host = new ClientHost();

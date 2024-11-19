@@ -2,19 +2,30 @@
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace IdeaStatiCa.ConRestApiClientUI
 {
-	public class WebServer : IDisposable
+	public class WebServer
 	{
 		private bool disposedValue;
-		private readonly HttpListener _listener;
+		private HttpListener _listener;
 		private readonly string _rootDir;
+		CancellationTokenSource _cts;
+		Task _executionTask;
 
-		public WebServer(string rootDir)
+		public WebServer(string rootDir = null)
 		{
-			_rootDir = rootDir;
+			_cts = new CancellationTokenSource();
+			if (!string.IsNullOrEmpty(rootDir))
+			{
+				_rootDir = rootDir;
+			}
+			else
+			{
+				_rootDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "static");
+			}
 			_listener = new HttpListener();
 		}
 
@@ -25,21 +36,24 @@ namespace IdeaStatiCa.ConRestApiClientUI
 				throw new InvalidOperationException("The server is already running.");
 			}
 
-			string baseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _rootDir);
 			string prefix = "http://localhost:8080/";
 
 			_listener.Prefixes.Add(prefix);
 			_listener.Start();
 
-			Task.Run(async () => 
+			var token = _cts.Token;
+
+			_executionTask = Task.Run(async () => 
 			{
-					while (true)
+				while (!token.IsCancellationRequested)
+				{
+					try
 					{
 						HttpListenerContext context = await _listener.GetContextAsync();
 						HttpListenerRequest request = context.Request;
 						HttpListenerResponse response = context.Response;
 
-						string filePath = Path.Combine(baseDirectory, request.Url.LocalPath.TrimStart('/'));
+						string filePath = Path.Combine(_rootDir, request.Url.LocalPath.TrimStart('/'));
 						if (File.Exists(filePath))
 						{
 							byte[] fileBytes = File.ReadAllBytes(filePath);
@@ -57,7 +71,36 @@ namespace IdeaStatiCa.ConRestApiClientUI
 
 						response.OutputStream.Close();
 					}
-			});
+					catch
+					{
+					}
+				}
+			}, token);
+		}
+
+		public async Task StopAsync()
+		{
+			if(_cts != null)
+			{
+				if (_listener?.IsListening == true)
+				{
+					_listener.Stop();
+					_listener = null;
+				}
+
+				_cts.Cancel();
+
+				if (_executionTask != null)
+				{
+					await _executionTask;
+				}
+
+
+
+				_executionTask = null;
+				_cts.Dispose();
+				_cts = null;
+			}
 		}
 
 		private static string GetContentType(string filePath)
@@ -80,42 +123,6 @@ namespace IdeaStatiCa.ConRestApiClientUI
 				default:
 					return "application/octet-stream";
 			}
-		}
-
-		protected virtual void Dispose(bool disposing)
-		{
-			if (!disposedValue)
-			{
-				if (disposing)
-				{
-					if(_listener.IsListening)
-					{
-						_listener.Stop();
-					}
-
-					if (_listener is IDisposable disposable)
-					{
-						disposable.Dispose();
-				}
-
-				// TODO: free unmanaged resources (unmanaged objects) and override finalizer
-				// TODO: set large fields to null
-				disposedValue = true;
-			}
-		}
-
-		// // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
-		// ~WebServer()
-		// {
-		//     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-		//     Dispose(disposing: false);
-		}
-
-		public void Dispose()
-		{
-			// Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-			Dispose(disposing: true);
-			GC.SuppressFinalize(this);
 		}
 	}
 }

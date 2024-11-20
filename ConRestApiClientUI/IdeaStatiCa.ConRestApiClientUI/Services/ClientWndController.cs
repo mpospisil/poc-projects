@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace IdeaStatiCa.ConRestApiClientUI
+namespace IdeaStatiCa.ConRestApiClientUI.Services
 {
 	public class ClientWndController
 	{
-		//private static WebServer _server;
+		private IWebServer _server;
 
-		public ClientWndController()
+		public ClientWndController(IWebServer server)
 		{
+			_server = server;
 		}
 
-		//public void Start(string wwwroot = null)
+		//public async Task Start(string wwwroot = null)
 		//{
 		//	if(_server != null)
 		//	{
@@ -20,6 +21,8 @@ namespace IdeaStatiCa.ConRestApiClientUI
 
 		//	_server = new WebServer(wwwroot);
 		//	_server.Run();
+
+		//	await Task.CompletedTask;
 		//}
 
 		//public async Task StopAsync()

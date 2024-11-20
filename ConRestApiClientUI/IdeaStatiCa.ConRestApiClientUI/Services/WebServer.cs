@@ -5,18 +5,19 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace IdeaStatiCa.ConRestApiClientUI
+namespace IdeaStatiCa.ConRestApiClientUI.Services
 {
-	public class WebServer
+	public class WebServer : IWebServer
 	{
-		private bool disposedValue;
 		private HttpListener _listener;
 		private readonly string _rootDir;
 		CancellationTokenSource _cts;
+		private string _url;
 		Task _executionTask;
 
-		public WebServer(string rootDir = null)
+		public WebServer(string url = "http://localhost:8080/", string rootDir = null)
 		{
+			_url = url;
 			_cts = new CancellationTokenSource();
 			if (!string.IsNullOrEmpty(rootDir))
 			{
@@ -29,16 +30,14 @@ namespace IdeaStatiCa.ConRestApiClientUI
 			_listener = new HttpListener();
 		}
 
-		public void Run()
+		public async Task StartAsync()
 		{
 			if (_listener.IsListening)
 			{
 				throw new InvalidOperationException("The server is already running.");
 			}
 
-			string prefix = "http://localhost:8080/";
-
-			_listener.Prefixes.Add(prefix);
+			_listener.Prefixes.Add(_url);
 			_listener.Start();
 
 			var token = _cts.Token;
@@ -76,6 +75,9 @@ namespace IdeaStatiCa.ConRestApiClientUI
 					}
 				}
 			}, token);
+
+
+			await Task.CompletedTask;
 		}
 
 		public async Task StopAsync()
@@ -95,12 +97,15 @@ namespace IdeaStatiCa.ConRestApiClientUI
 					await _executionTask;
 				}
 
-
-
 				_executionTask = null;
 				_cts.Dispose();
 				_cts = null;
 			}
+		}
+
+		public string GetUrl()
+		{
+			return _url;
 		}
 
 		private static string GetContentType(string filePath)

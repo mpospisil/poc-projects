@@ -1,7 +1,6 @@
 ﻿using System.Windows;
-using IdeaStatiCa.ConRestApiClientUI;
 
-namespace ConRestApiClientUI_App
+namespace ConRestApiClientUI_App.View
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
@@ -11,12 +10,6 @@ namespace ConRestApiClientUI_App
 		public MainWindow()
 		{
 			InitializeComponent();
-		}
-
-		private void button_Click(object sender, RoutedEventArgs e)
-		{
-			var dlg = new ConRestApiClientWnd();
-			dlg.ShowDialog();
 		}
 	}
 }

@@ -1,6 +1,10 @@
-﻿using IdeaStatiCa.ConRestApiClientUI;
-using System.Configuration;
-using System.Data;
+﻿using ConRestApiClientUI_App.View;
+using ConRestApiClientUI_App.ViewModels;
+using IdeaStatiCa.ConRestApiClientUI;
+using IdeaStatiCa.ConRestApiClientUI.Services;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Windows;
 
 namespace ConRestApiClientUI_App
@@ -10,20 +14,43 @@ namespace ConRestApiClientUI_App
 	/// </summary>
 	public partial class App : Application
 	{
-		ClientWndController _controller;
+		private readonly IServiceProvider serviceProvider;
+
 		public App()
 		{
+			IConfiguration configuration = BuildConfiguration();
+			var services = new ServiceCollection();
+			services.AddSingleton<IConfiguration>(configuration);
+
+			Module.RegisterConRestApiClient(services);
+
+			services.AddTransient<MainWindow>(serviceProvider => new MainWindow
+			{
+				DataContext = serviceProvider.GetRequiredService<MainWindowViewModel>()
+			});
+
+			services.AddTransient<MainWindowViewModel>();
+			serviceProvider = services.BuildServiceProvider();
 		}
 
-		private void Application_Startup(object sender, StartupEventArgs e)
+		protected override void OnStartup(StartupEventArgs e)
 		{
-			_controller = new ClientWndController();
-			_controller.Start();
+			var mainWindow = serviceProvider.GetRequiredService<MainWindow>();
+			mainWindow.Show();
+			base.OnStartup(e);
 		}
 
-		private void Application_Exit(object sender, ExitEventArgs e)
+		protected override void OnExit(ExitEventArgs e)
 		{
-			_controller.StopAsync();
+			base.OnExit(e);
+		}
+
+		public static IConfigurationRoot BuildConfiguration()
+		{
+			return new ConfigurationBuilder()
+				.AddJsonFile("appsettings.json")
+				.AddEnvironmentVariables()
+				.Build();
 		}
 	}
 

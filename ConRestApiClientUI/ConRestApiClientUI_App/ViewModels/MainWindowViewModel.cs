@@ -1,4 +1,5 @@
 using CommunityToolkit.Mvvm.Input;
+using IdeaStatiCa.ConRestApiClientUI.Dialogs;
 using IdeaStatiCa.ConRestApiClientUI.Services;
 using IdeaStatiCa.ConRestApiClientUI.ViewModels;
 using System.Threading.Tasks;
@@ -8,8 +9,15 @@ namespace ConRestApiClientUI_App.ViewModels
 	public class MainWindowViewModel : ViewModelBase
 	{
 		private readonly IWebServer _webServer;
-		public MainWindowViewModel(IWebServer webServer)
+		private readonly IConApiClientVMProvider _conApiVmProvider;
+		private readonly IDialogService _dialogService;
+
+		public MainWindowViewModel(IWebServer webServer,
+			IConApiClientVMProvider conApiVmProvider,
+			IDialogService dialogService)
 		{
+			this._dialogService = dialogService;
+			this._conApiVmProvider = conApiVmProvider;
 			this._webServer = webServer;
 			ShowClientWndCommand = new AsyncRelayCommand<string>(ShowClientWndAsync, CanShowClientWndAsync);
 			_webServer.StartAsync().ContinueWith(_ =>
@@ -27,8 +35,12 @@ namespace ConRestApiClientUI_App.ViewModels
 
 		private async Task ShowClientWndAsync(string name)
 		{
-			//var projInfo = await projectService.CreateProjectAsync();
-			//Status = projInfo.Id;
+			var vm = _conApiVmProvider.CreateConApiClientViewModel();
+
+			var dlg = _dialogService.GetDialog(vm);
+
+			dlg.ShowDialog();
+
 			await Task.CompletedTask;
 		}
 

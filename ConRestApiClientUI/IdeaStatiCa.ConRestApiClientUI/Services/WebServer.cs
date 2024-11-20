@@ -30,6 +30,10 @@ namespace IdeaStatiCa.ConRestApiClientUI.Services
 			_listener = new HttpListener();
 		}
 
+		/// <inheritdoc />
+		public bool IsListening => _listener?.IsListening == true;
+
+		/// <inheritdoc />
 		public async Task StartAsync()
 		{
 			if (_listener.IsListening)
@@ -42,7 +46,7 @@ namespace IdeaStatiCa.ConRestApiClientUI.Services
 
 			var token = _cts.Token;
 
-			_executionTask = Task.Run(async () => 
+			_executionTask = Task.Run(async () =>
 			{
 				while (!token.IsCancellationRequested)
 				{
@@ -80,9 +84,10 @@ namespace IdeaStatiCa.ConRestApiClientUI.Services
 			await Task.CompletedTask;
 		}
 
+		/// <inheritdoc />
 		public async Task StopAsync()
 		{
-			if(_cts != null)
+			if (_cts != null)
 			{
 				if (_listener?.IsListening == true)
 				{
@@ -103,6 +108,7 @@ namespace IdeaStatiCa.ConRestApiClientUI.Services
 			}
 		}
 
+		/// <inheritdoc />
 		public string GetUrl()
 		{
 			return _url;

@@ -10,6 +10,7 @@
 		<ToolBarTray DockPanel.Dock="Top">
 			<ToolBar Band="1" DockPanel.Dock="Top">
 				<Button Command="{Binding ShowClientWndCommand, Mode=OneWay}">Show client window</Button>
+				<Button Command="{Binding CallScriptCommand, Mode=OneWay}">Call script</Button>
 			</ToolBar>
 		</ToolBarTray>
 		<StackPanel DockPanel.Dock="Bottom">

@@ -1,5 +1,7 @@
-﻿using IdeaStatiCa.ConRestApiClientUI.ViewModels;
+﻿using IdeaStatiCa.ConRestApiClientUI.Services;
+using IdeaStatiCa.ConRestApiClientUI.ViewModels;
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 
@@ -8,7 +10,7 @@ namespace IdeaStatiCa.ConRestApiClientUI.Views
 	/// <summary>
 	/// Interaction logic for ConRestApiClientWnd.xaml
 	/// </summary>
-	public partial class ConRestApiClient : Window
+	public partial class ConRestApiClient : Window, IScriptExecutor
 	{
 		public ConRestApiClient()
 		{
@@ -35,6 +37,31 @@ namespace IdeaStatiCa.ConRestApiClientUI.Views
 
 			// Expose .NET object to JavaScript
 			webView.CoreWebView2.AddHostObjectToScript("clientHost", vm.ClientHost);
+
+			vm.ClientHost.AttachScriptExecutor(this);
+		}
+
+		public async Task<string> ExecuteScriptAsync(string script)
+		{
+			var result = await webView.CoreWebView2.ExecuteScriptWithResultAsync(script);
+			if (!result.Succeeded)
+			{
+				throw new Exception(result.Exception.Message);
+			}
+			else
+			{ 
+				int is_success = 0;
+				string str = "";
+				result.TryGetResultAsString(out str, out is_success);
+				if (is_success == 1)
+				{
+					return str;
+				}
+				else
+				{
+				return string.Empty;
+				}
+			}
 		}
 	}
 }

@@ -17,6 +17,7 @@ export * from './checkResWeld';
 export * from './conAnalysisTypeEnum';
 export * from './conCalculationParameter';
 export * from './conConnection';
+export * from './conConversionSettings';
 export * from './conLoadEffect';
 export * from './conLoadEffectMemberLoad';
 export * from './conLoadEffectPositionEnum';
@@ -26,6 +27,7 @@ export * from './conMember';
 export * from './conMprlCrossSection';
 export * from './conMprlElement';
 export * from './conOperation';
+export * from './conOperationCommonProperties';
 export * from './conProductionCost';
 export * from './conProject';
 export * from './conProjectData';
@@ -39,6 +41,8 @@ export * from './coneBreakoutCheckType';
 export * from './connectionCheckRes';
 export * from './connectionData';
 export * from './connectionSetup';
+export * from './conversionMapping';
+export * from './countryCode';
 export * from './crtCompCheckIS';
 export * from './cutBeamByBeamData';
 export * from './cutData';
@@ -51,6 +55,7 @@ export * from './foldedPlateData';
 export * from './iGroup';
 export * from './ideaParameter';
 export * from './ideaParameterUpdate';
+export * from './ideaParameterValidation';
 export * from './line';
 export * from './messageNumber';
 export * from './openElementId';
@@ -104,6 +109,7 @@ import { CheckResWeld } from './checkResWeld';
 import { ConAnalysisTypeEnum } from './conAnalysisTypeEnum';
 import { ConCalculationParameter } from './conCalculationParameter';
 import { ConConnection } from './conConnection';
+import { ConConversionSettings } from './conConversionSettings';
 import { ConLoadEffect } from './conLoadEffect';
 import { ConLoadEffectMemberLoad } from './conLoadEffectMemberLoad';
 import { ConLoadEffectPositionEnum } from './conLoadEffectPositionEnum';
@@ -113,6 +119,7 @@ import { ConMember } from './conMember';
 import { ConMprlCrossSection } from './conMprlCrossSection';
 import { ConMprlElement } from './conMprlElement';
 import { ConOperation } from './conOperation';
+import { ConOperationCommonProperties } from './conOperationCommonProperties';
 import { ConProductionCost } from './conProductionCost';
 import { ConProject } from './conProject';
 import { ConProjectData } from './conProjectData';
@@ -126,6 +133,8 @@ import { ConeBreakoutCheckType } from './coneBreakoutCheckType';
 import { ConnectionCheckRes } from './connectionCheckRes';
 import { ConnectionData } from './connectionData';
 import { ConnectionSetup } from './connectionSetup';
+import { ConversionMapping } from './conversionMapping';
+import { CountryCode } from './countryCode';
 import { CrtCompCheckIS } from './crtCompCheckIS';
 import { CutBeamByBeamData } from './cutBeamByBeamData';
 import { CutData } from './cutData';
@@ -138,6 +147,7 @@ import { FoldedPlateData } from './foldedPlateData';
 import { IGroup } from './iGroup';
 import { IdeaParameter } from './ideaParameter';
 import { IdeaParameterUpdate } from './ideaParameterUpdate';
+import { IdeaParameterValidation } from './ideaParameterValidation';
 import { Line } from './line';
 import { MessageNumber } from './messageNumber';
 import { OpenElementId } from './openElementId';
@@ -179,6 +189,7 @@ let enumsMap: {[index: string]: any} = {
         "ConAnalysisTypeEnum": ConAnalysisTypeEnum,
         "ConLoadEffectPositionEnum": ConLoadEffectPositionEnum,
         "ConeBreakoutCheckType": ConeBreakoutCheckType,
+        "CountryCode": CountryCode,
         "CrtCompCheckIS": CrtCompCheckIS,
         "CutMethod": CutMethod,
         "CutOrientation": CutOrientation,
@@ -204,6 +215,7 @@ let typeMap: {[index: string]: any} = {
     "CheckResWeld": CheckResWeld,
     "ConCalculationParameter": ConCalculationParameter,
     "ConConnection": ConConnection,
+    "ConConversionSettings": ConConversionSettings,
     "ConLoadEffect": ConLoadEffect,
     "ConLoadEffectMemberLoad": ConLoadEffectMemberLoad,
     "ConLoadEffectSectionLoad": ConLoadEffectSectionLoad,
@@ -212,6 +224,7 @@ let typeMap: {[index: string]: any} = {
     "ConMprlCrossSection": ConMprlCrossSection,
     "ConMprlElement": ConMprlElement,
     "ConOperation": ConOperation,
+    "ConOperationCommonProperties": ConOperationCommonProperties,
     "ConProductionCost": ConProductionCost,
     "ConProject": ConProject,
     "ConProjectData": ConProjectData,
@@ -224,6 +237,7 @@ let typeMap: {[index: string]: any} = {
     "ConnectionCheckRes": ConnectionCheckRes,
     "ConnectionData": ConnectionData,
     "ConnectionSetup": ConnectionSetup,
+    "ConversionMapping": ConversionMapping,
     "CutBeamByBeamData": CutBeamByBeamData,
     "CutData": CutData,
     "DrawData": DrawData,
@@ -231,6 +245,7 @@ let typeMap: {[index: string]: any} = {
     "IGroup": IGroup,
     "IdeaParameter": IdeaParameter,
     "IdeaParameterUpdate": IdeaParameterUpdate,
+    "IdeaParameterValidation": IdeaParameterValidation,
     "Line": Line,
     "OpenElementId": OpenElementId,
     "OpenMessage": OpenMessage,

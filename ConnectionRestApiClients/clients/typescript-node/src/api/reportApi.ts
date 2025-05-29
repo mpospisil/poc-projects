@@ -1,6 +1,6 @@
 /**
  * Connection Rest API 1.0
- * API for designing steel connections
+ * IDEA StatiCa Connection API, used for the automated design and calculation of steel connections.
  *
  * The version of the OpenAPI document: 1.0
  * Contact: info@ideastatica.com
@@ -92,7 +92,7 @@ export class ReportApi {
      * @param connectionId 
      */
     public async generatePdf (projectId: string, connectionId: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
-        const localVarPath = this.basePath + '/api/1/projects/{projectId}/reports/{connectionId}/pdf'
+        const localVarPath = this.basePath + '/api/1/projects/{projectId}/connections/{connectionId}/reports/pdf'
             .replace('{' + 'projectId' + '}', encodeURIComponent(String(projectId)))
             .replace('{' + 'connectionId' + '}', encodeURIComponent(String(connectionId)));
         let localVarQueryParameters: any = {};
@@ -160,7 +160,7 @@ export class ReportApi {
      * @param connectionId 
      */
     public async generateWord (projectId: string, connectionId: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
-        const localVarPath = this.basePath + '/api/1/projects/{projectId}/reports/{connectionId}/word'
+        const localVarPath = this.basePath + '/api/1/projects/{projectId}/connections/{connectionId}/reports/word'
             .replace('{' + 'projectId' + '}', encodeURIComponent(String(projectId)))
             .replace('{' + 'connectionId' + '}', encodeURIComponent(String(connectionId)));
         let localVarQueryParameters: any = {};

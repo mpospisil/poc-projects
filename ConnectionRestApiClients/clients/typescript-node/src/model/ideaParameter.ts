@@ -1,6 +1,6 @@
 /**
  * Connection Rest API 1.0
- * API for designing steel connections
+ * IDEA StatiCa Connection API, used for the automated design and calculation of steel connections.
  *
  * The version of the OpenAPI document: 1.0
  * Contact: info@ideastatica.com
@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { IdeaParameterValidation } from './ideaParameterValidation';
 
 export class IdeaParameter {
     'key'?: string | null;
@@ -22,6 +23,9 @@ export class IdeaParameter {
     'description'?: string | null;
     'validationStatus'?: string | null;
     'isVisible'?: boolean | null;
+    'lowerBound'?: string | null;
+    'upperBound'?: string | null;
+    'parameterValidation'?: IdeaParameterValidation;
 
     static discriminator: string | undefined = undefined;
 
@@ -70,6 +74,21 @@ export class IdeaParameter {
             "name": "isVisible",
             "baseName": "isVisible",
             "type": "boolean"
+        },
+        {
+            "name": "lowerBound",
+            "baseName": "lowerBound",
+            "type": "string"
+        },
+        {
+            "name": "upperBound",
+            "baseName": "upperBound",
+            "type": "string"
+        },
+        {
+            "name": "parameterValidation",
+            "baseName": "parameterValidation",
+            "type": "IdeaParameterValidation"
         }    ];
 
     static getAttributeTypeMap() {

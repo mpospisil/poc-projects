@@ -5,6 +5,7 @@ api/apis.ts
 api/calculationApi.ts
 api/clientApi.ts
 api/connectionApi.ts
+api/conversionApi.ts
 api/exportApi.ts
 api/loadEffectApi.ts
 api/materialApi.ts
@@ -33,6 +34,7 @@ model/checkResWeld.ts
 model/conAnalysisTypeEnum.ts
 model/conCalculationParameter.ts
 model/conConnection.ts
+model/conConversionSettings.ts
 model/conLoadEffect.ts
 model/conLoadEffectMemberLoad.ts
 model/conLoadEffectPositionEnum.ts
@@ -42,6 +44,7 @@ model/conMember.ts
 model/conMprlCrossSection.ts
 model/conMprlElement.ts
 model/conOperation.ts
+model/conOperationCommonProperties.ts
 model/conProductionCost.ts
 model/conProject.ts
 model/conProjectData.ts
@@ -55,6 +58,8 @@ model/coneBreakoutCheckType.ts
 model/connectionCheckRes.ts
 model/connectionData.ts
 model/connectionSetup.ts
+model/conversionMapping.ts
+model/countryCode.ts
 model/crtCompCheckIS.ts
 model/cutBeamByBeamData.ts
 model/cutData.ts
@@ -67,6 +72,7 @@ model/foldedPlateData.ts
 model/iGroup.ts
 model/ideaParameter.ts
 model/ideaParameterUpdate.ts
+model/ideaParameterValidation.ts
 model/line.ts
 model/messageNumber.ts
 model/models.ts

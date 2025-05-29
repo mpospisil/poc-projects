@@ -13,10 +13,17 @@
 import { RequestFile } from './models';
 
 /**
-* Defines a transfer of shear force in bolts.
+* CountryCode
 */
-export enum BoltShearType {
-    Bearing = <any> 'bearing',
-    Interaction = <any> 'interaction',
-    Friction = <any> 'friction'
+export enum CountryCode {
+    None = <any> 'none',
+    Ecen = <any> 'ecen',
+    India = <any> 'india',
+    Sia = <any> 'sia',
+    American = <any> 'american',
+    Canada = <any> 'canada',
+    Australia = <any> 'australia',
+    Rus = <any> 'rus',
+    Chn = <any> 'chn',
+    Hkg = <any> 'hkg'
 }

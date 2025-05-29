@@ -4,6 +4,8 @@ export * from './clientApi';
 import { ClientApi } from './clientApi';
 export * from './connectionApi';
 import { ConnectionApi } from './connectionApi';
+export * from './conversionApi';
+import { ConversionApi } from './conversionApi';
 export * from './exportApi';
 import { ExportApi } from './exportApi';
 export * from './loadEffectApi';
@@ -35,4 +37,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [CalculationApi, ClientApi, ConnectionApi, ExportApi, LoadEffectApi, MaterialApi, MemberApi, OperationApi, ParameterApi, PresentationApi, ProjectApi, ReportApi, TemplateApi];
+export const APIS = [CalculationApi, ClientApi, ConnectionApi, ConversionApi, ExportApi, LoadEffectApi, MaterialApi, MemberApi, OperationApi, ParameterApi, PresentationApi, ProjectApi, ReportApi, TemplateApi];

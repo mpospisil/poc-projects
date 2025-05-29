@@ -11,30 +11,27 @@
  */
 
 import { RequestFile } from './models';
-import { ConAnalysisTypeEnum } from './conAnalysisTypeEnum';
 
-export class ConCalculationParameter {
-    'connectionIds'?: Array<number> | null;
-    'analysisType'?: ConAnalysisTypeEnum;
+export class ConversionMapping {
+    'sourceValue'?: string | null;
+    'targetValue'?: string | null;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "connectionIds",
-            "baseName": "connectionIds",
-            "type": "Array<number>"
+            "name": "sourceValue",
+            "baseName": "sourceValue",
+            "type": "string"
         },
         {
-            "name": "analysisType",
-            "baseName": "analysisType",
-            "type": "ConAnalysisTypeEnum"
+            "name": "targetValue",
+            "baseName": "targetValue",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return ConCalculationParameter.attributeTypeMap;
+        return ConversionMapping.attributeTypeMap;
     }
 }
 
-export namespace ConCalculationParameter {
-}

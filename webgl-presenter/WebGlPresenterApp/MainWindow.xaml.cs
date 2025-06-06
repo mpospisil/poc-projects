@@ -1,13 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WebGlPresenterApp
 {
@@ -23,14 +16,41 @@ namespace WebGlPresenterApp
 
 		private void button_Click(object sender, RoutedEventArgs e)
 		{
-			ShowAsync();
+			OpenWindowAsync();
 		}
 
-		private Task ShowAsync()
+		private Task OpenWindowAsync()
 		{
 			return Task.Run(() =>
 			{
-				WebGlPresenterApi.ShowScene("xxx");
+				WebGlPresenterApi.OpenWindow();
+			});
+		}
+
+		private void button1_Click(object sender, RoutedEventArgs e)
+		{
+			ShowAsync();
+		}
+
+
+		private Task ShowAsync()
+		{
+			//return Task.Run(() =>
+			//{
+			//	WebGlPresenterApi.ShowScene("window.myExportedTypeScriptApi.myTypeScriptFunction('xxxxxxxxx')");
+			//});
+
+			var dlg = new OpenFileDialog();
+			if (dlg.ShowDialog() != true)
+			{
+				return Task.CompletedTask;
+			}
+
+			var sceenData = File.ReadAllText(dlg.FileName);
+			return Task.Run(() =>
+			{
+				var javaScript = $"window.myExportedTypeScriptApi.myTypeScriptFunction('{sceenData}')";
+				WebGlPresenterApi.ShowScene(javaScript);
 			});
 		}
 	}

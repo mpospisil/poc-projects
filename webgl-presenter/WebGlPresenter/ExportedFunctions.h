@@ -15,6 +15,7 @@ extern "C" {
 #endif
 
 	WEBGLPRESENTER_API int AddNumbers(int a, int b);
+	WEBGLPRESENTER_API void OpenWindow();
 	WEBGLPRESENTER_API void ShowScene(const char* message);
 
 #ifdef __cplusplus

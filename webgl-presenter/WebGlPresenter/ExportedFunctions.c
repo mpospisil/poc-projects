@@ -13,9 +13,11 @@ WEBGLPRESENTER_API int AddNumbers(int a, int b) {
 	return a + b;
 }
 
-WEBGLPRESENTER_API void ShowScene(const char* message) {
+size_t react_window = -1;
+
+WEBGLPRESENTER_API void OpenWindow() {
   // Create new windows
-  size_t react_window = webui_new_window();
+  react_window = webui_new_window();
 
   // Set window size
   webui_set_size(react_window, 550, 450);
@@ -25,8 +27,6 @@ WEBGLPRESENTER_API void ShowScene(const char* message) {
 
   // Bind React HTML element IDs with a C functions
   webui_bind(react_window, "Exit", exit_app);
-
-  
 
   // VSF (Virtual File System) Example
   //
@@ -48,9 +48,17 @@ WEBGLPRESENTER_API void ShowScene(const char* message) {
 
   //webui_show(react_window, "http://localhost:3000");
 
-  // Wait until all windows get closed
-  webui_wait();
+  //// Wait until all windows get closed
+  //webui_wait();
 
-  // Free all memory resources (Optional)
-  webui_clean();
+  //// Free all memory resources (Optional)
+  //webui_clean();
+}
+
+WEBGLPRESENTER_API void ShowScene(const char* message) {
+  if (react_window < 0) {
+    return;
+  }
+
+  webui_run(react_window, message);
 }

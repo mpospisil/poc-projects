@@ -31,9 +31,9 @@ export const myTypeScriptFunction = async (data: string): Promise<string> => {
         window.myCSharpAPI.ReceiveMessageFromTypeScript("Message from TS to C#!");
     }
 
-      const sceneJson = '{"groups":[{"type":"singleColor","color":[],"faces":[],"lines":[],"priority":1,"text":[]}],"vertices":[]}';
+      // const sceneJson = '{"groups":[{"type":"singleColor","color":[],"faces":[],"lines":[],"priority":1,"text":[]}],"vertices":[]}';
 
-      const obj = JSON.parse(sceneJson);
+      const obj = JSON.parse(data);
       const scene : Scene = obj;
 
       const presenterData : PresenterData = {

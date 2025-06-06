@@ -39,14 +39,14 @@ WEBGLPRESENTER_API void ShowScene(const char* message) {
   // 3. use vfs in your custom files handler `webui_set_file_handler()`
   //    webui_set_file_handler(react_window, vfs);
 
-  //// Set a custom files handler
-  //webui_set_file_handler(react_window, vfs);
-  //webui_show(react_window, "index.html");
+  // Set a custom files handler
+  webui_set_file_handler(react_window, vfs);
+  webui_show(react_window, "index.html");
 
   //webui_set_default_root_folder("C:\\deve\\poc-projects-2\\webgl-presenter\\WebGlPresenter\\webui-react-example\\build");
   //webui_show(react_window, "index.html");
 
-  webui_show(react_window, "http://localhost:3000");
+  //webui_show(react_window, "http://localhost:3000");
 
   // Wait until all windows get closed
   webui_wait();

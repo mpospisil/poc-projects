@@ -37,12 +37,12 @@ WEBGLPRESENTER_API void ShowScene(const char* message) {
   // 3. use vfs in your custom files handler `webui_set_file_handler()`
   //    webui_set_file_handler(react_window, vfs);
 
-  // Set a custom files handler
-  webui_set_file_handler(react_window, vfs);
+  //// Set a custom files handler
+  //webui_set_file_handler(react_window, vfs);
 
   // Show the React window
   // webui_show_browser(react_window, "index.html", Chrome);
-  webui_show(react_window, "index.html");
+  webui_show(react_window, "http://localhost:3000");
 
   // Wait until all windows get closed
   webui_wait();

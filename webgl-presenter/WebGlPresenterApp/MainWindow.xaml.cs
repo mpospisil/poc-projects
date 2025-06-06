@@ -10,6 +10,8 @@ namespace WebGlPresenterApp
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		SceneController sceneController = new SceneController();
+
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -22,10 +24,7 @@ namespace WebGlPresenterApp
 
 		private Task OpenWindowAsync()
 		{
-			return Task.Run(() =>
-			{
-				WebGlPresenterApi.OpenWindow();
-			});
+			return sceneController.OpenWindowAsync();
 		}
 
 		private void button1_Click(object sender, RoutedEventArgs e)
@@ -36,23 +35,14 @@ namespace WebGlPresenterApp
 
 		private Task ShowAsync()
 		{
-			//return Task.Run(() =>
-			//{
-			//	WebGlPresenterApi.ShowScene("window.myExportedTypeScriptApi.myTypeScriptFunction('xxxxxxxxx')");
-			//});
-
 			var dlg = new OpenFileDialog();
 			if (dlg.ShowDialog() != true)
 			{
 				return Task.CompletedTask;
 			}
 
-			var sceenData = File.ReadAllText(dlg.FileName);
-			return Task.Run(() =>
-			{
-				var javaScript = $"window.myExportedTypeScriptApi.myTypeScriptFunction('{sceenData}')";
-				WebGlPresenterApi.ShowScene(javaScript);
-			});
+			var scenData = File.ReadAllText(dlg.FileName);
+			return sceneController.ShowSceneAsync(scenData);
 		}
 	}
 }

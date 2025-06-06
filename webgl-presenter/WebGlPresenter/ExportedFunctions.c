@@ -26,6 +26,8 @@ WEBGLPRESENTER_API void ShowScene(const char* message) {
   // Bind React HTML element IDs with a C functions
   webui_bind(react_window, "Exit", exit_app);
 
+  
+
   // VSF (Virtual File System) Example
   //
   // 1. Run Python script to generate header file of a folder
@@ -39,9 +41,11 @@ WEBGLPRESENTER_API void ShowScene(const char* message) {
 
   //// Set a custom files handler
   //webui_set_file_handler(react_window, vfs);
+  //webui_show(react_window, "index.html");
 
-  // Show the React window
-  // webui_show_browser(react_window, "index.html", Chrome);
+  //webui_set_default_root_folder("C:\\deve\\poc-projects-2\\webgl-presenter\\WebGlPresenter\\webui-react-example\\build");
+  //webui_show(react_window, "index.html");
+
   webui_show(react_window, "http://localhost:3000");
 
   // Wait until all windows get closed

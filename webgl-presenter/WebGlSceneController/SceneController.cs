@@ -4,10 +4,12 @@ namespace WebGlSceneController
 {
 	public class SceneController
 	{
+		private bool isOpen = false;
 		public Task OpenWindowAsync()
 		{
 			return Task.Run(() =>
 			{
+				isOpen = true;
 				WebGlPresenterApi.OpenWindow();
 			});
 		}

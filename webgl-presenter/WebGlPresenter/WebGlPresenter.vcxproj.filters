@@ -24,6 +24,9 @@
     <ClInclude Include="ExportedFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="vfs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.c">

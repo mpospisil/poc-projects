@@ -1,8 +1,13 @@
 #include "pch.h"
 #include "ExportedFunctions.h"
 #include "webui.h"
+#include "vfs.h"
 
 #include <stdio.h> // For printf, if you use it
+
+void exit_app(webui_event_t* e) {
+  webui_exit();
+}
 
 WEBGLPRESENTER_API int AddNumbers(int a, int b) {
 	return a + b;
@@ -18,7 +23,26 @@ WEBGLPRESENTER_API void ShowScene(const char* message) {
   // Set window position
   webui_set_position(react_window, 250, 250);
 
-  webui_show(react_window, "https://www.seznam.cz");
+  // Bind React HTML element IDs with a C functions
+  webui_bind(react_window, "Exit", exit_app);
+
+  // VSF (Virtual File System) Example
+  //
+  // 1. Run Python script to generate header file of a folder
+  //    python vfs.py "/path/to/folder" "vfs.h"
+  //
+  // 2. Include header file in your C project
+  //    #include "vfs.h"
+  //
+  // 3. use vfs in your custom files handler `webui_set_file_handler()`
+  //    webui_set_file_handler(react_window, vfs);
+
+  // Set a custom files handler
+  webui_set_file_handler(react_window, vfs);
+
+  // Show the React window
+  // webui_show_browser(react_window, "index.html", Chrome);
+  webui_show(react_window, "index.html");
 
   // Wait until all windows get closed
   webui_wait();

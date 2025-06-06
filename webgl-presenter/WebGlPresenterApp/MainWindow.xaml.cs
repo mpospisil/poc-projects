@@ -23,7 +23,15 @@ namespace WebGlPresenterApp
 
 		private void button_Click(object sender, RoutedEventArgs e)
 		{
-			WebGlPresenterApi.ShowScene("xxx");
+			ShowAsync();
+		}
+
+		private Task ShowAsync()
+		{
+			return Task.Run(() =>
+			{
+				WebGlPresenterApi.ShowScene("xxx");
+			});
 		}
 	}
 }

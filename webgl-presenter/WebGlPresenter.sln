@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebGlPresenter", "WebGlPres
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGlSceneController", "WebGlSceneController\WebGlSceneController.csproj", "{57E0808B-4546-4894-8643-1FF0DB3DED38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConApiWpfClientApp", "ConApiWpfClientApp\ConApiWpfClientApp.csproj", "{025625C5-590C-4689-BA6F-B1E880103690}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -27,6 +29,10 @@ Global
 		{57E0808B-4546-4894-8643-1FF0DB3DED38}.Debug|x64.Build.0 = Debug|x64
 		{57E0808B-4546-4894-8643-1FF0DB3DED38}.Release|x64.ActiveCfg = Release|x64
 		{57E0808B-4546-4894-8643-1FF0DB3DED38}.Release|x64.Build.0 = Release|x64
+		{025625C5-590C-4689-BA6F-B1E880103690}.Debug|x64.ActiveCfg = Debug|x64
+		{025625C5-590C-4689-BA6F-B1E880103690}.Debug|x64.Build.0 = Debug|x64
+		{025625C5-590C-4689-BA6F-B1E880103690}.Release|x64.ActiveCfg = Release|x64
+		{025625C5-590C-4689-BA6F-B1E880103690}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

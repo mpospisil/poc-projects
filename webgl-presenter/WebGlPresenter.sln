@@ -5,8 +5,6 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGlPresenterApp", "WebGlPresenterApp\WebGlPresenterApp.csproj", "{B998F2F9-25B0-4224-A2A7-187248D18FC9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebGlPresenter", "WebGlPresenter\WebGlPresenter.vcxproj", "{8E6428D3-C60F-4005-9D34-75B684ADECA3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGlSceneController", "WebGlSceneController\WebGlSceneController.csproj", "{57E0808B-4546-4894-8643-1FF0DB3DED38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConApiWpfClientApp", "ConApiWpfClientApp\ConApiWpfClientApp.csproj", "{025625C5-590C-4689-BA6F-B1E880103690}"
@@ -21,10 +19,6 @@ Global
 		{B998F2F9-25B0-4224-A2A7-187248D18FC9}.Debug|x64.Build.0 = Debug|x64
 		{B998F2F9-25B0-4224-A2A7-187248D18FC9}.Release|x64.ActiveCfg = Release|x64
 		{B998F2F9-25B0-4224-A2A7-187248D18FC9}.Release|x64.Build.0 = Release|x64
-		{8E6428D3-C60F-4005-9D34-75B684ADECA3}.Debug|x64.ActiveCfg = Debug|x64
-		{8E6428D3-C60F-4005-9D34-75B684ADECA3}.Debug|x64.Build.0 = Debug|x64
-		{8E6428D3-C60F-4005-9D34-75B684ADECA3}.Release|x64.ActiveCfg = Release|x64
-		{8E6428D3-C60F-4005-9D34-75B684ADECA3}.Release|x64.Build.0 = Release|x64
 		{57E0808B-4546-4894-8643-1FF0DB3DED38}.Debug|x64.ActiveCfg = Debug|x64
 		{57E0808B-4546-4894-8643-1FF0DB3DED38}.Debug|x64.Build.0 = Debug|x64
 		{57E0808B-4546-4894-8643-1FF0DB3DED38}.Release|x64.ActiveCfg = Release|x64

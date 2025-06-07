@@ -13,7 +13,7 @@ namespace PresenterSceneWebGL
 		public SceneController()
 		{
 			WebUI_wnd = new WebUIWindow();
-			WebUI_wnd.SetRootFolder("C:\\deve\\poc-projects-2\\webgl-presenter\\WebGlPresenter\\webui-react-example\\build");
+			WebUI_wnd.SetRootFolder("C:\\deve\\poc-projects-2\\webgl-presenter\\frontend\\build");
 			WebUI_wnd.SetSize(550, 450);
 		}
 

@@ -5,6 +5,18 @@
 
 #include <stdio.h> // For printf, if you use it
 
+
+void events(webui_event_t* e) {
+  if (e->event_type == WEBUI_EVENT_CONNECTED)
+    printf("Connected. \n");
+  else if (e->event_type == WEBUI_EVENT_DISCONNECTED)
+    printf("Disconnected. \n");
+  else if (e->event_type == WEBUI_EVENT_MOUSE_CLICK)
+    printf("Click. \n");
+  else if (e->event_type == WEBUI_EVENT_NAVIGATION)
+    printf("Starting navigation ");
+}
+
 void exit_app(webui_event_t* e) {
   webui_exit();
 }
@@ -16,6 +28,11 @@ WEBGLPRESENTER_API int AddNumbers(int a, int b) {
 size_t react_window = -1;
 
 WEBGLPRESENTER_API void OpenWindow() {
+  if(react_window < 0) {
+    return;
+  }
+
+
   // Create new windows
   react_window = webui_new_window();
 
@@ -24,6 +41,9 @@ WEBGLPRESENTER_API void OpenWindow() {
 
   // Set window position
   webui_set_position(react_window, 250, 250);
+
+  // set timeout for connection
+  webui_set_timeout(30);
 
   // Bind React HTML element IDs with a C functions
   webui_bind(react_window, "Exit", exit_app);

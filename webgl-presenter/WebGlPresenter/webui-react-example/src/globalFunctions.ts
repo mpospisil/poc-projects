@@ -11,29 +11,12 @@ declare global {
         myExportedTypeScriptApi: {
             myTypeScriptFunction: (data: string) => Promise<string>;
         };
-        // If you exposed C# directly to window.myCSharpAPI
-        myCSharpAPI?: {
-            SayHelloToCSharp: (name: string) => string;
-            ReceiveMessageFromTypeScript: (message: string) => void;
-        };
+
     }
 }
 
 export const myTypeScriptFunction = async (data: string): Promise<string> => {
-    console.log(`TypeScript function received: ${data}`);
-    // You can perform any logic here
-    const response = `Processed by TypeScript: ${data.toUpperCase()}`;
-
-    // Example: Calling a C# method from TypeScript
-    if (window.myCSharpAPI) {
-        const csharpResponse = await window.myCSharpAPI.SayHelloToCSharp("TypeScript");
-        console.log(`C# responded: ${csharpResponse}`);
-        window.myCSharpAPI.ReceiveMessageFromTypeScript("Message from TS to C#!");
-    }
-
-      // const sceneJson = '{"groups":[{"type":"singleColor","color":[],"faces":[],"lines":[],"priority":1,"text":[]}],"vertices":[]}';
-
-      const obj = JSON.parse(data);
+       const obj = JSON.parse(data);
       const scene : Scene = obj;
 
       const presenterData : PresenterData = {
@@ -43,7 +26,7 @@ export const myTypeScriptFunction = async (data: string): Promise<string> => {
       store.dispatch(setSceneData(presenterData))
 
 
-    return response;
+    return "OK";
 };
 
 // Make your TypeScript function globally accessible on a dedicated object

@@ -657,7 +657,9 @@ namespace ConApiWpfClientApp.ViewModels
 					return;
 				}
 
-				await _sceneController.ShowSceneAsync(sceneJson);
+				_sceneController.ShowSceneAsync(sceneJson);
+
+				await Task.CompletedTask;
 			}
 			catch (Exception ex)
 			{

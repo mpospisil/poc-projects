@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
 using System.IO;
 using System.Windows;
-using WebGlSceneController;
+using PresenterSceneWebGL;
 
 namespace WebGlPresenterApp
 {

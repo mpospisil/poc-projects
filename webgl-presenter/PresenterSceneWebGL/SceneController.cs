@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using WebUI4CSharp;
 
-namespace WebGlSceneController
+namespace PresenterSceneWebGL
 {
 	public class SceneController
 	{

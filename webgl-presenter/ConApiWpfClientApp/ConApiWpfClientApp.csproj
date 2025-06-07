@@ -36,7 +36,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\WebGlSceneController\WebGlSceneController.csproj" />
+	  <ProjectReference Include="..\PresenterSceneWebGL\PresenterSceneWebGL.csproj" />
 	</ItemGroup>
 
 

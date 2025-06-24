@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace IdeaStatiCa.ConRestApiClientUI
 {
-	public class WebServer : IDisposable
+	public interface IWebServer
+	{
+		void Start(string url);
+	}
+
+
+	public class WebServer : IDisposable, IWebServer
 	{
 		private bool disposedValue;
 		private readonly HttpListener _listener;
 		private readonly string _rootDir;
+		private Task ListenerTask { get; set; }
 
 		public WebServer(string rootDir)
 		{
@@ -18,7 +25,7 @@ namespace IdeaStatiCa.ConRestApiClientUI
 			_listener = new HttpListener();
 		}
 
-		public void Run()
+		public void Start(string url)
 		{
 			if (_listener.IsListening)
 			{
@@ -26,12 +33,12 @@ namespace IdeaStatiCa.ConRestApiClientUI
 			}
 
 			string baseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _rootDir);
-			string prefix = "http://localhost:8080/";
+			string prefix = url;
 
 			_listener.Prefixes.Add(prefix);
 			_listener.Start();
 
-			Task.Run(async () => 
+			ListenerTask = Task.Run(async () => 
 			{
 					while (true)
 					{

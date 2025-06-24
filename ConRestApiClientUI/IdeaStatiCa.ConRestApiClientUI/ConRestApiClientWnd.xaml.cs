@@ -9,28 +9,22 @@ namespace IdeaStatiCa.ConRestApiClientUI
 	/// </summary>
 	public partial class ConRestApiClientWnd : Window
 	{
+		private readonly SceneController _sceneController;
+		//private readonly C _sceneController2;
 		public ConRestApiClientWnd()
 		{
 			InitializeComponent();
-			InitializeWebView();
 		}
 
-		private async void InitializeWebView()
+		public async void ShowAsync(string url)
 		{
-
-			WebServer server = new WebServer("static");
-			server.Run();
 			await webView.EnsureCoreWebView2Async(null);
-
-			string htmlFilePath = "http://localhost:8080/index.html";
-
-
-			webView.CoreWebView2.Navigate(new Uri(htmlFilePath).AbsoluteUri);
-
 			var host = new ClientHost();
 
 			// Expose .NET object to JavaScript
 			webView.CoreWebView2.AddHostObjectToScript("clientHost", host);
+
+			webView.CoreWebView2.Navigate(url);
 		}
 	}
 }

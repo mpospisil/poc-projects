@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using IdeaStatiCa.ConRestApiClientUI;
+using Microsoft.Extensions.Configuration;
 
 namespace ConRestApiClientUI_App
 {
@@ -8,15 +9,17 @@ namespace ConRestApiClientUI_App
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		public MainWindow()
+		private readonly SceneController _sceneController;
+
+		public MainWindow(IConfiguration configuration)
 		{
+			this._sceneController = new SceneController(configuration);
 			InitializeComponent();
 		}
 
 		private void button_Click(object sender, RoutedEventArgs e)
 		{
-			var dlg = new ConRestApiClientWnd();
-			dlg.ShowDialog();
+			_sceneController.ShowWindowAsync();
 		}
 	}
 }

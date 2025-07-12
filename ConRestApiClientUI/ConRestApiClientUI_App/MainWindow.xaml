@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ConRestApiClientUI_App"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
-		<Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="400,157,0,0" VerticalAlignment="Top" Command="{Binding OpenSceneWndCommand}"/>
+	<Grid>
+		<Button x:Name="button" Content="Open window" HorizontalAlignment="Left" Margin="46,132,0,0" VerticalAlignment="Top" Command="{Binding OpenSceneWndCommand}"/>
+		<Button x:Name="button1" Content="Present" HorizontalAlignment="Left" Margin="57,187,0,0" VerticalAlignment="Top" Command="{Binding PresentCommand}"/>
 	</Grid>
 </Window>

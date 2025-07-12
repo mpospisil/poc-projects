@@ -38,5 +38,15 @@ namespace IdeaStatiCa.ConRestApiClientUI
 			var dlg = new ConRestApiClientWnd(_conRestApiClientVM);
 			dlg.Show();
 		}
+
+		public async Task PresentAsync(string sceneData)
+		{
+			if (!_conRestApiClientVM.IsViewReady)
+			{
+				return;
+			}
+
+			await _conRestApiClientVM.PresentAsync(sceneData);
+		}
 	}
 }

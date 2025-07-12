@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using Microsoft.Web.WebView2.WinForms;
+using System.Windows.Controls;
 
 namespace IdeaStatiCa.ConRestApiClientUI
 {
@@ -8,6 +9,7 @@ namespace IdeaStatiCa.ConRestApiClientUI
 	public partial class IdeaWebGlScene3D : UserControl
 	{
 		private readonly IConRestApiClientViewModel _viewModel;
+
 		public IdeaWebGlScene3D(IConRestApiClientViewModel viewModel)
 		{
 			this._viewModel = viewModel;
@@ -27,7 +29,7 @@ namespace IdeaStatiCa.ConRestApiClientUI
 
 		private void webView_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
 		{
-			_viewModel.NotifyViewInited();
+			_viewModel.NotifyViewInited(webView);
 		}
 
 		private void UserControl_Unloaded(object sender, System.Windows.RoutedEventArgs e)

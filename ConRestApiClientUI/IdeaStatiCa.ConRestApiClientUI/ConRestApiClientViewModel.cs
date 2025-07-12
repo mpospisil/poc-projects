@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using IdeaStatiCa.Plugin;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Web.WebView2.Wpf;
+using System.Threading.Tasks;
 
 namespace IdeaStatiCa.ConRestApiClientUI
 {
@@ -11,9 +13,11 @@ namespace IdeaStatiCa.ConRestApiClientUI
 
 		bool IsViewReady { get; }
 
-		void NotifyViewInited();
+		void NotifyViewInited(WebView2 webView);
 
 		void NotifyViewClosed();
+
+		Task PresentAsync(string sceneData);
 	}
 
 	public class ConRestApiClientViewModel : ObservableObject, IConRestApiClientViewModel
@@ -22,6 +26,7 @@ namespace IdeaStatiCa.ConRestApiClientUI
 		private readonly IClientHost _clientHost;
 		private readonly IConfiguration _configuration;
 		private bool isViewReady;
+		private WebView2 _webView;
 
 		public ConRestApiClientViewModel(IConfiguration configuration, IPluginLogger logger, IClientHost clientHost)
 		{
@@ -44,16 +49,30 @@ namespace IdeaStatiCa.ConRestApiClientUI
 			}
 		}
 
-		public void NotifyViewInited()
+		public void NotifyViewInited(WebView2 webView)
 		{
 			_logger.LogDebug("ConRestApiClientViewModel.OnViewInited");
+			_webView = webView;
 			IsViewReady = true;
 		}
 
 		public void NotifyViewClosed()
 		{
 			_logger.LogDebug("ConRestApiClientViewModel.OnViewClosed");
+			_webView = null;
 			IsViewReady = false;
+		}
+
+		public async Task PresentAsync(string sceneData)
+		{
+			if(_webView == null)
+			{
+				_logger.LogDebug("WebView is not connected");
+				return;
+			}
+
+			var javaScript = $"window.myExportedTypeScriptApi.myTypeScriptFunction('{sceneData}')";
+			await _webView.CoreWebView2.ExecuteScriptAsync(javaScript);
 		}
 	}
 }

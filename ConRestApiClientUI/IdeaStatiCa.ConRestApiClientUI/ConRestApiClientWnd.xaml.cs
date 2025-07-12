@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 
@@ -16,7 +17,7 @@ namespace IdeaStatiCa.ConRestApiClientUI
 			InitializeComponent();
 		}
 
-		public async void ShowAsync(string url)
+		public async Task ShowAsync(string url)
 		{
 			await webView.EnsureCoreWebView2Async(null);
 			var host = new ClientHost();

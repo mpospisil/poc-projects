@@ -21,8 +21,6 @@ namespace IdeaStatiCa.ConRestApiClientUI
 			var dlg = new ConRestApiClientWnd();
 			dlg.Show();
 
-
-
 			string htmlFilePath = _configuration["MAIN_PAGE_URL"];
 			dlg.ShowAsync(htmlFilePath);
 		}

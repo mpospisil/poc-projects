@@ -27,7 +27,12 @@ namespace IdeaStatiCa.ConRestApiClientUI
 
 		private void webView_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
 		{
-			_viewModel.OnViewInited();
+			_viewModel.NotifyViewInited();
+		}
+
+		private void UserControl_Unloaded(object sender, System.Windows.RoutedEventArgs e)
+		{
+			_viewModel.NotifyViewClosed();
 		}
 	}
 }

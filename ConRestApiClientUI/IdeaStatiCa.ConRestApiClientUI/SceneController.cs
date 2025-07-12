@@ -30,6 +30,11 @@ namespace IdeaStatiCa.ConRestApiClientUI
 
 		public void ShowWindow()
 		{
+			if(_conRestApiClientVM.IsViewReady)
+			{
+				return;
+			}
+
 			var dlg = new ConRestApiClientWnd(_conRestApiClientVM);
 			dlg.Show();
 		}

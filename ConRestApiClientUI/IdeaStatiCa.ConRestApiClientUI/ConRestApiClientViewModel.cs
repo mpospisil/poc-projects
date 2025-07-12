@@ -9,7 +9,11 @@ namespace IdeaStatiCa.ConRestApiClientUI
 		IClientHost ClientHost { get; }
 		string MainPageUrl { get; }
 
-		void OnViewInited();
+		bool IsViewReady { get; }
+
+		void NotifyViewInited();
+
+		void NotifyViewClosed();
 	}
 
 	public class ConRestApiClientViewModel : ObservableObject, IConRestApiClientViewModel
@@ -40,10 +44,16 @@ namespace IdeaStatiCa.ConRestApiClientUI
 			}
 		}
 
-		public void OnViewInited()
+		public void NotifyViewInited()
 		{
 			_logger.LogDebug("ConRestApiClientViewModel.OnViewInited");
 			IsViewReady = true;
+		}
+
+		public void NotifyViewClosed()
+		{
+			_logger.LogDebug("ConRestApiClientViewModel.OnViewClosed");
+			IsViewReady = false;
 		}
 	}
 }

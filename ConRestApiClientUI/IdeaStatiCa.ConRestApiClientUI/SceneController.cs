@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using IdeaStatiCa.Plugin;
+using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 
 namespace IdeaStatiCa.ConRestApiClientUI
@@ -7,15 +8,19 @@ namespace IdeaStatiCa.ConRestApiClientUI
 	{
 		private readonly IWebServer _webServer;
 		private readonly IConfiguration _configuration;
+		private readonly IPluginLogger _logger;
 		private readonly bool _isDevelop;
+		private readonly IConRestApiClientViewModel _conRestApiClientVM;
 
-		public SceneController(IConfiguration configuration)
+		public SceneController(IConfiguration configuration, IPluginLogger logger, IConRestApiClientViewModel conRestApiClientVM)
 		{
 			this._configuration = configuration;
+			this._conRestApiClientVM = conRestApiClientVM;
 			this._webServer = new WebServer("static");
+			this._logger = logger;
 			var baseUrl = _configuration["WEBSERVER_ENDPOINT"];
 			var useNodeJsServer = _configuration["USE_NODEJS_SERVER"];
-			this._isDevelop = "true".Equals(useNodeJsServer);
+			this._isDevelop = "true".Equals(useNodeJsServer, System.StringComparison.InvariantCultureIgnoreCase);
 
 			if (!_isDevelop)
 			{
@@ -23,13 +28,10 @@ namespace IdeaStatiCa.ConRestApiClientUI
 			}
 		}
 
-		public async Task ShowWindowAsync()
+		public void ShowWindow()
 		{
-			var dlg = new ConRestApiClientWnd();
+			var dlg = new ConRestApiClientWnd(_conRestApiClientVM);
 			dlg.Show();
-
-			string htmlFilePath = _configuration["MAIN_PAGE_URL"];
-			await dlg.ShowAsync(htmlFilePath);
 		}
 	}
 }

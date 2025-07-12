@@ -1,6 +1,7 @@
-﻿using System.Windows;
-using IdeaStatiCa.ConRestApiClientUI;
+﻿using ConRestApiClientUI_App.ViewModels;
 using Microsoft.Extensions.Configuration;
+using System.Diagnostics;
+using System.Windows;
 
 namespace ConRestApiClientUI_App
 {
@@ -9,17 +10,20 @@ namespace ConRestApiClientUI_App
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		private readonly SceneController _sceneController;
-
-		public MainWindow(IConfiguration configuration)
+		private readonly IMainWindowViewModel _viewModel;
+		public MainWindow(IConfiguration configuration, IMainWindowViewModel vm)
 		{
-			this._sceneController = new SceneController(configuration);
+			Debug.Assert(vm != null);
+			Debug.Assert(configuration != null);
+
+			this.DataContext = vm;
+			this._viewModel = vm;
 			InitializeComponent();
 		}
 
-		private void button_Click(object sender, RoutedEventArgs e)
+		private async void Window_Loaded(object sender, RoutedEventArgs e)
 		{
-			_sceneController.ShowWindowAsync();
+			await this._viewModel.OnLoadAsync();
 		}
 	}
 }

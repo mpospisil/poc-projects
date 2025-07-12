@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConRestApiClientUI_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-		<Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="400,157,0,0" VerticalAlignment="Top" Click="button_Click"/>
-
+		<Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="400,157,0,0" VerticalAlignment="Top" Command="{Binding OpenSceneWndCommand}"/>
 	</Grid>
 </Window>

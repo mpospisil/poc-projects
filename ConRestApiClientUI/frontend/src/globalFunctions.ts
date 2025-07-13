@@ -11,20 +11,23 @@ declare global {
         scene3dPresenterApi: {
             PresentFunction: (data: string) => Promise<string>;
         };
-
     }
 }
 
 export const PresentFunction = async (data: string): Promise<string> => {
-       const obj = JSON.parse(data);
-      const scene : Scene = obj;
+      if(data === undefined || data === null || data === "") {
+        store.dispatch(setSceneData(null));
+      }
+      else {
+        const obj = JSON.parse(data);
+        const scene : Scene = obj;
 
-      const presenterData : PresenterData = {
-        sceneData : scene,
-      };
+        const presenterData : PresenterData = {
+          sceneData : scene,
+        };
 
-      store.dispatch(setSceneData(presenterData))
-
+        store.dispatch(setSceneData(presenterData));
+    }
 
     return "OK";
 };

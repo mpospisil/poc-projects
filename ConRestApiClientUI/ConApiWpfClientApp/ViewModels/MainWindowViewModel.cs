@@ -68,8 +68,6 @@ namespace ConApiWpfClientApp.ViewModels
 
 			Connections = new ObservableCollection<ConnectionViewModel>();
 			selectedConnection = null;
-
-			_sceneController.ShowWindow();
 		}
 
 		private async Task CalculateAsync()
@@ -153,6 +151,7 @@ namespace ConApiWpfClientApp.ViewModels
 			{
 				SetProperty(ref selectedConnection, value);
 				RefreshConnectionChanged();
+				ShowClientUIAsync();
 			}
 		}
 
@@ -259,15 +258,6 @@ namespace ConApiWpfClientApp.ViewModels
 				OutputText = string.Format("ProjectId = {0}\n\n{1}", ConApiClient.ActiveProjectId, projectInfoJson);
 
 				Connections = new ObservableCollection<ConnectionViewModel>(ProjectInfo.Connections.Select(c => new ConnectionViewModel(c)));
-
-				if (Connections.Any())
-				{
-					SelectedConnection = Connections.First();
-				}
-				else
-				{
-					SelectedConnection = null;
-				}
 			}
 			catch (Exception ex)
 			{
@@ -278,6 +268,16 @@ namespace ConApiWpfClientApp.ViewModels
 			{
 				IsBusy = false;
 				RefreshCommands();
+
+
+				if (Connections?.Any() == true)
+				{
+					SelectedConnection = Connections.First();
+				}
+				else
+				{
+					SelectedConnection = null;
+				}
 			}
 
 			await Task.CompletedTask;
@@ -310,15 +310,6 @@ namespace ConApiWpfClientApp.ViewModels
 				OutputText = string.Format("ProjectId = {0}\n\n{1}", ConApiClient.ActiveProjectId, projectInfoJson);
 
 				Connections = new ObservableCollection<ConnectionViewModel>(ProjectInfo.Connections.Select(c => new ConnectionViewModel(c)));
-
-				if (Connections.Any())
-				{
-					SelectedConnection = Connections.First();
-				}
-				else
-				{
-					SelectedConnection = null;
-				}
 			}
 			catch (Exception ex)
 			{
@@ -329,6 +320,15 @@ namespace ConApiWpfClientApp.ViewModels
 			{
 				IsBusy = false;
 				RefreshCommands();
+
+				if (Connections?.Any() == true)
+				{
+					SelectedConnection = Connections.First();
+				}
+				else
+				{
+					SelectedConnection = null;
+				}
 			}
 
 			await Task.CompletedTask;
@@ -580,6 +580,8 @@ namespace ConApiWpfClientApp.ViewModels
 			{
 				IsBusy = false;
 				RefreshCommands();
+
+				await ShowClientUIAsync();
 			}
 		}
 
@@ -635,6 +637,7 @@ namespace ConApiWpfClientApp.ViewModels
 
 			if (ProjectInfo == null)
 			{
+				await _sceneController.PresentAsync(string.Empty);
 				return;
 			}
 
@@ -645,9 +648,11 @@ namespace ConApiWpfClientApp.ViewModels
 
 			if (SelectedConnection == null || SelectedConnection.Id < 1)
 			{
+				await _sceneController.PresentAsync(string.Empty);
 				return;
 			}
 
+			IsBusy = true;
 			try
 			{
 				var sceneJson = await ConApiClient.Presentation.GetDataScene3DTextAsync(ProjectInfo.ProjectId,

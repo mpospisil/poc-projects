@@ -1,27 +1,60 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-windows;net48</TargetFrameworks>
+		<NpmProjectDir>$(MSBuildProjectDirectory)\..\frontend</NpmProjectDir>
+		<NpmOutputDir>$(NpmProjectDir)\build</NpmOutputDir>
+
+		<StaticContentOutputRelPath>conrestapi_frontend</StaticContentOutputRelPath>
+		<StaticContentOutputAbsPath>$(OutDir)$(StaticContentOutputRelPath)</StaticContentOutputAbsPath>
+
+		<TargetFrameworks>net8.0-windows;net6.0-windows;net48</TargetFrameworks>
 		<UseWPF>true</UseWPF>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="25.0.3.895" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Content Include="static\**\*">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-	</ItemGroup>
+	<!--<Target Name="RestoreNpm" BeforeTargets="BeforeBuild">
+		<Message Text="Restoring NPM packages..." Importance="high" />
+		<Exec Command="npm install" WorkingDirectory="$(NpmProjectDir)" />
+	</Target>
+
+	<Target Name="BuildNpm" BeforeTargets="BeforeBuild" DependsOnTargets="RestoreNpm">
+		<Message Text="Building NPM project..." Importance="high" />
+		<Exec Command="npm run build" WorkingDirectory="$(NpmProjectDir)" />
+	</Target>
+
+	<Target Name="CopyNpmOutputToStatic"  BeforeTargets="BeforeBuild" DependsOnTargets="BuildNpm">
+		<Message Text="Copying NPM build output from $(NpmOutputDir) to $(StaticContentOutputAbsPath)..." Importance="high" />
+		<MakeDir Directories="$(StaticContentOutputAbsPath)" Condition="!Exists('$(StaticContentOutputAbsPath)')" />
+
+		<ItemGroup>
+			<NpmOutputFiles Include="$(NpmOutputDir)\**\*.*" />
+		</ItemGroup>
+		<Copy
+      SourceFiles="@(NpmOutputFiles)"
+      DestinationFiles="@(NpmOutputFiles->'$(StaticContentOutputAbsPath)\%(RecursiveDir)%(Filename)%(Extension)')"
+      SkipUnchangedFiles="true"
+    />
+	</Target>-->
+
+	<Target Name="CopyNpmOutputToStatic" BeforeTargets="BeforeBuild">
+		<Message Text="Copying NPM build output from $(NpmOutputDir) to $(StaticContentOutputAbsPath)..." Importance="high" />
+		<MakeDir Directories="$(StaticContentOutputAbsPath)" Condition="!Exists('$(StaticContentOutputAbsPath)')" />
+
+		<ItemGroup>
+			<NpmOutputFiles Include="$(NpmOutputDir)\**\*.*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(NpmOutputFiles)" DestinationFiles="@(NpmOutputFiles->'$(StaticContentOutputAbsPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+	</Target>
 
 	<ItemGroup>
-		<Content Include="static2\**\*">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
+		<Content Include="$(StaticContentOutputAbsPath)\**\*.*" CopyToPublishDirectory="PreserveNewest" />
 	</ItemGroup>
 
 </Project>

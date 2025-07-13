@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store'; // Import the Redux store
-import {myTypeScriptFunction} from './globalFunctions';
+import {PresentFunction} from './globalFunctions';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,13 +13,11 @@ const root = ReactDOM.createRoot(
 
 function onButtonClick() {
   console.log("Button clicked!");
-  const result = myTypeScriptFunction("Button clicked! XXXXXX");
+  const result = PresentFunction("Button clicked! XXXXXX");
 }
-
 
 root.render(
   <div>
-    <button id="global_button1" onClick={onButtonClick}>Global button</button>
     <Provider store={store}>
       <App />
     </Provider>
@@ -31,7 +29,7 @@ root.render(
 //     const testButton = document.getElementById('global_button1');
 //     if (testButton) {
 //         testButton.addEventListener('click', async () => {
-//             const result = await myTypeScriptFunction("Button clicked! XXXXXX");
+//             const result = await PresentFunction("Button clicked! XXXXXX");
 //             console.log(`Result from button click: ${result}`);
 //         });
 //     }

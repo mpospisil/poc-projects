@@ -71,7 +71,7 @@ namespace IdeaStatiCa.ConRestApiClientUI
 				return;
 			}
 
-			var javaScript = $"window.myExportedTypeScriptApi.myTypeScriptFunction('{sceneData}')";
+			var javaScript = $"window.scene3dPresenterApi.PresentFunction('{sceneData}')";
 			await _webView.CoreWebView2.ExecuteScriptAsync(javaScript);
 		}
 	}

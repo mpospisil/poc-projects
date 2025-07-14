@@ -9,5 +9,6 @@
 	<Grid>
 		<Button x:Name="button" Content="Open window" HorizontalAlignment="Left" Margin="46,132,0,0" VerticalAlignment="Top" Command="{Binding OpenSceneWndCommand}"/>
 		<Button x:Name="button1" Content="Present" HorizontalAlignment="Left" Margin="57,187,0,0" VerticalAlignment="Top" Command="{Binding PresentCommand}"/>
+		<Button x:Name="button2" Content="Capture scene" HorizontalAlignment="Left" Margin="79,247,0,0" VerticalAlignment="Top" Command="{Binding CaptureSceneCommand}"/>
 	</Grid>
 </Window>

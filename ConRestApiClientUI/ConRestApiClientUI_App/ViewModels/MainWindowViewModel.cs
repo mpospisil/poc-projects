@@ -30,6 +30,7 @@ namespace ConRestApiClientUI_App.ViewModels
 
 			OpenSceneWndCommand = new RelayCommand(OpenSceneWnd, () => true);
 			PresentCommand = new RelayCommand(Present, () => true);
+			CaptureSceneCommand = new AsyncRelayCommand(CaptureSceneAsync, () => true);
 		}
 
 		public async Task OnLoadAsync()
@@ -41,9 +42,11 @@ namespace ConRestApiClientUI_App.ViewModels
 
 		public RelayCommand PresentCommand { get; }
 
+		public AsyncRelayCommand CaptureSceneCommand { get; }
+
 		private void OpenSceneWnd()
 		{
-			_logger.LogInformation("ShowIdeaStatiCaLogsAsync");
+			_logger.LogInformation("OpenSceneWnd");
 			_sceneController.ShowWindow();
 		}
 
@@ -59,8 +62,23 @@ namespace ConRestApiClientUI_App.ViewModels
 				var sceneData = File.ReadAllText(dialog.FileName);
 				_sceneController.PresentAsync(sceneData);
 			}
+		}
 
-			
+		private async Task CaptureSceneAsync()
+		{
+			_logger.LogInformation("CaptureScene");
+
+
+			var stream = await _sceneController.CaptureSceneAsImage();
+
+			//OpenFileDialog dialog = new OpenFileDialog();
+			//var res = dialog.ShowDialog();
+
+			//if (res == true)
+			//{
+			//	var sceneData = File.ReadAllText(dialog.FileName);
+			//	_sceneController.PresentAsync(sceneData);
+			//}
 		}
 	}
 }

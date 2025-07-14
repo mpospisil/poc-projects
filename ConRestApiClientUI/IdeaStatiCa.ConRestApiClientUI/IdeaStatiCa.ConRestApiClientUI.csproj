@@ -55,8 +55,20 @@
 
 	<ItemGroup>
 		<Content Include="conrestapi_frontend\**\*">
+			<Pack>true</Pack>
+			<PackagePath>contentFiles\any\any\conrestapi_frontend\</PackagePath>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="build\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="build\IdeaStatiCa.ConRestApiClientUI.targets"
+					Pack="true"
+					PackagePath="build\IdeaStatiCa.ConRestApiClientUI.targets" />
+	</ItemGroup>
+	
 </Project>

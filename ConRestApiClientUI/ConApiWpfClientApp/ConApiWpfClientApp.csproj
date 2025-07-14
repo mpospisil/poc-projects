@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<Configurations>Debug;Release</Configurations>
+		<Platforms>x64</Platforms>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="Models\" />
+		<Folder Include="Tools\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="IdeaStatiCa.Api" Version="25.0.3.895" />
+		<PackageReference Include="IdeaStatiCa.ConnectionApi" Version="25.0.3.895" />
+		<PackageReference Include="IdeaStatiCa.OpenModel" Version="25.0.3.895" />
+		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="25.0.3.895" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\IdeaStatiCa.ConRestApiClientUI\IdeaStatiCa.ConRestApiClientUI.csproj" />
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+﻿<Project>
+  <Target Name="CopyWebAssetsToOutput" AfterTargets="Build">
+    <ItemGroup>
+			<conrestapi_frontend Include="$(MSBuildThisFileDirectory)..\contentFiles\any\any\conrestapi_frontend\**\*" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(conrestapi_frontend)"
+          DestinationFolder="$(OutputPath)conrestapi_frontend\%(RecursiveDir)"
+          SkipUnchangedFiles="true" />
+  </Target>
+</Project>

@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using IdeaStatiCa.Plugin;
+//using IdeaStatiCa.Plugin;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Web.WebView2.Wpf;
 using System.Threading.Tasks;
@@ -22,15 +22,15 @@ namespace IdeaStatiCa.ConRestApiClientUI
 
 	public class ConRestApiClientViewModel : ObservableObject, IConRestApiClientViewModel
 	{
-		private readonly IPluginLogger _logger;
+		//private readonly IPluginLogger _logger;
 		private readonly IClientHost _clientHost;
 		private readonly IConfiguration _configuration;
 		private bool isViewReady;
 		private WebView2 _webView;
 
-		public ConRestApiClientViewModel(IConfiguration configuration, IPluginLogger logger, IClientHost clientHost)
+		public ConRestApiClientViewModel(IConfiguration configuration,/* IPluginLogger logger, */IClientHost clientHost)
 		{
-			this._logger = logger;
+			//this._logger = logger;
 			this._clientHost = clientHost;
 			this._configuration = configuration;
 		}
@@ -51,14 +51,14 @@ namespace IdeaStatiCa.ConRestApiClientUI
 
 		public void NotifyViewInited(WebView2 webView)
 		{
-			_logger.LogDebug("ConRestApiClientViewModel.OnViewInited");
+			//_logger.LogDebug("ConRestApiClientViewModel.OnViewInited");
 			_webView = webView;
 			IsViewReady = true;
 		}
 
 		public void NotifyViewClosed()
 		{
-			_logger.LogDebug("ConRestApiClientViewModel.OnViewClosed");
+			//_logger.LogDebug("ConRestApiClientViewModel.OnViewClosed");
 			_webView = null;
 			IsViewReady = false;
 		}
@@ -67,7 +67,7 @@ namespace IdeaStatiCa.ConRestApiClientUI
 		{
 			if(_webView == null)
 			{
-				_logger.LogDebug("WebView is not connected");
+				//_logger.LogDebug("WebView is not connected");
 				return;
 			}
 

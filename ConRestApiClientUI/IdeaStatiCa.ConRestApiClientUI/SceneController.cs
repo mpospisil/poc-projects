@@ -16,7 +16,7 @@ namespace IdeaStatiCa.ConRestApiClientUI
 		{
 			this._configuration = configuration;
 			this._conRestApiClientVM = conRestApiClientVM;
-			this._webServer = new WebServer("static");
+			this._webServer = new WebServer("conrestapi_frontend");
 			this._logger = logger;
 			var baseUrl = _configuration["WEBSERVER_ENDPOINT"];
 			var useNodeJsServer = _configuration["USE_NODEJS_SERVER"];

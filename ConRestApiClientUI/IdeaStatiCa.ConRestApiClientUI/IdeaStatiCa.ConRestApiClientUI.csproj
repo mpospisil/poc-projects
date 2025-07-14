@@ -54,7 +54,9 @@
 	</Target>
 
 	<ItemGroup>
-		<Content Include="$(StaticContentOutputAbsPath)\**\*.*" CopyToPublishDirectory="PreserveNewest" />
+		<Content Include="conrestapi_frontend\**\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 </Project>
